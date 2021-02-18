@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-02-18T14:55:38.4725848Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.OB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>Interrupt</HeaderFamily>
+      <HeaderName>IntNMainProgram</HeaderName>
+      <HeaderVersion>0.0.0.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="Initial_Call" Datatype="Bool" Accessibility="Public" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Initial call of this OB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Remanence" Datatype="Bool" Accessibility="Public" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">=True, if remanent data are available</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>OB00001_IntNMainProgram</Name>
+      <Number>1</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SecondaryType>ProgramCycle</SecondaryType>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+ FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
+ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    PS2001 — PRACTICAL SERIES AUTOMATION LIBRARY
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+――――――――――――――――――――――――――――――――――
+COPYRIGHT:       © 2020 Michael Gledhill
+          Part of the Practical Series of Publications
+          Published in the United Kingdom
+          mg@practicalseries.com
+          https://practicalseries.com
+――――――――――――――――――――――――――――――――――
+CUSTOMER:       Practical Series of Publications (PSP)
+
+PROJECT:      Practical Series Automation Library (PAL)
+
+PROJECT NO.:       PS2001
+――――――――――――――――――――――――――――――――――
+CONTROLLER:       CPU 1515-2PN/DP
+
+CONTROLLER NAME:    CON100
+
+IP ADDRESS:      192.168.001.100
+――――――――――――――――――――――――――――――――――
+TIA PROJECT NAME:    PS2001-PAL-D0001 — HARDWARE ONLY BUILD
+
+STATUS:        DEVELOPMENT
+――――――――――――――――――――――――――――――――――
+PROTECTION:     To minimise the risk of inadvertent modification to 
+          tested modules, certain blocks will be released for 
+          use with “protected access” (referred to a “write 
+          protection” in Siemens terminology), this allows the 
+          block to be used normally, but prevents the block 
+          being accidentally modified. 
+
+          This is in accordance with the risk assessment given 
+          in the Validation Plant (VP), Appendix A [Ref. 002].
+
+          ┌─────────────────────┐
+          │ THE WRITE PROTECTION PASSWORD IS: PS2001 │
+          └─────────────────────┘
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+PROJECT OVERVIEW
+
+
+The PAL is a library of software modules and templates that have been developed for the 
+Siemens Simatic S7-1500 range of controllers (and to a lesser extent the S7-1200 range).
+
+The full library and all necessary documentation is available from the Practical Series website:
+
+     https://practicalseries.com/2001-pal/index.html
+
+
+The PAL is configured and deployed using the Siemens Simatic TIA Portal programming 
+environment.
+
+The PAL software structure is designed such that it is applicable to virtually all industrial 
+applications that can generally controlled by a programmable logic controller.
+
+The PAL software being developed as part of this Project, is considered to be suitable for use in 
+the following types of industries (this is not an exhaustive list):
+
+   •   Water and waste water treatment
+   •   Pharmaceutical and batch production
+   •   Brewing and fermentation
+   •   Chemical manufacturing
+   •   Oil and gas systems
+   •   Food and beverage production
+
+Such applications can generally be thought of as processes that operate with a response time
+of more than 100 ms. I.e. the system would not be expected to respond to some stimuli faster
+than 100 ms. In practice, a Controller may (and usually will) respond faster than this; however, 
+a response time of 100 ms is considered to be an acceptable limit for PLC control.
+
+At its most basic level, the PAL will be a library of software modules that control the fundamental 
+aspects of an industrial plant; such modules would for example read the value of an instrument, 
+operate a valve or drive, perform a calculation &amp;c.
+
+Such software modules are referred to as standard modules, these are fixed modules that 
+perform a particular function and are identical across all software installations.
+
+The PAL also contains application specific modules; these contain software that is applicable 
+to the plant being controlled.
+
+The Practical Series Automation Library is freely available under the MIT Open Source licence 
+(see below). Those who find it useful may, if they wish, make a donation to support the library. 
+
+Donations can be made here:
+
+     https://practicalseries.com/2001-pal/11-web/81-00-pay.html
+
+The PAL contains fully deployable software that has been developed by the author in his 
+profession as a chartered electrical engineer. It is currently in use on various live plants 
+throughout the UK and in some other parts of the world. 
+
+This software is suitable for controlling and automating most industrial applications (typical 
+process applications). It is easy to use and configure, but does have a degree of practical 
+complexity appropriate for the environments within which it is employed. It is heavily 
+configurable, has various operating modes and is suitable for a multitude of industrial 
+applications.
+
+IF YOU DON’T UNDERSTAND IT, DON’T USE IT. IF YOU DO USE IT, YOU DO SO AT YOUR OWN RISK.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+DOCUMENT REFERENCES
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.       TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 001  PS2001-5-0101-001   Quality Plan (QP)
+ 002  PS2001-5-0121-002   Validation Plan (VP)
+ 003  PS2001-5-0131-003   Test Plan (TP)
+ 004  PS2001-5-1101-001   User requirements specification (URS)
+ 005  PS2001-5-1111-001   Requirement Traceability Matrix (RTM)
+ 006  PS2001-5-2101-001   Functional Specification (FS) 
+ 007  PS2001-5-2211-001   Hardware Design Specification (HDS)
+ 008  PS2001-5-2311-001   Software Design Specification (SDS)
+ 009  PS2001-5-7111-001   User Guide (UG)
+ 010  PS2001-5-2313-011   Style Guide (SG)
+ 011  PS2001-5-2312-fcNo.    Software Module Design Specification (SMDS)
+ 012  PS2001-5-2301-001   Software Module Register (SMR)
+ 013  PS2001-5-2302-011   Software Control and Mechanism (SCM)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+COMPLETED MODULES 
+
+ ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
+ BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
+ ――――――――――――――――――――――――――――――――――――――――――
+
+         
+ ――――――――――――――――――――――――――――――――――――――――――
+ See Software Module Register [Ref. 012] for full details
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Project description</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module
+
+
+ ———————————————————————————————————————————
+ DATE     COMMIT TAG       AUTHOR        REASON FOR MODIFICATION
+ ———————————————————————————————————————————
+ 2021.02.18    D0001      M. Gledhill      Hardware build
+
+ 2021.02.18    D0000      M. Gledhill      Initial commit — repository created
+ ———————————————————————————————————————————
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="12" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="13" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Interrupt - Norm — Main Program Cyclic Execution</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.OB>
+</Document>
