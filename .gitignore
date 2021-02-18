@@ -1,0 +1,99 @@
+# PRACTICALSERIES (c) 2020
+# 
+# *******************************************************************************
+# Title:           REPOSITORY IGNORE FILE                              .GITIGNORE
+# *******************************************************************************
+# 
+# PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+#                  Published in the United Kingdom
+# 
+#                  Email: mg@practicalseries.com
+#                  Web:   www.practicalseries.com
+# # -------------------------------------------------------------------------------
+# DETAILS
+# 
+# This is the .gitignore file.
+# 
+# Its purpose it to tell Git and GitHub which files to ignore when making a
+# commit to the repository. Typically these are files created by the operating
+# system (.DS_Store on Macs, Thumbs.db on Windows &c.), temporary files,
+# automatically generated log files &c.
+# 
+# With these sorts of files Git would normally flag them as untracked and would
+# appear as such following a status command.
+
+# Git uses a .gitignore file to tell it what files should be ignored completely.
+# Such files are never mentioned in any status, never added to the staging area,
+#  or committed to the repository.
+# 
+# The .gitignore file should be in the root of the working area of the repository.
+# 
+# The .gitignore file is a simple text file (note it does not have an extension)
+#  that lists the files to ignore. It accepts single and multiple character
+# wildcards (? and * respectively). It also accepts comments; anything after
+# a # character to the end of the line is treated as a comment.
+# 
+# The following are example of .gitignore entries:
+# 
+#              # a comment everything after the # is treated as a comment
+# myfile.txt   # ignore the specific file myfile.txt wherever it occurs
+# *.log        # all files with a .log extension are ignored
+# /myfile.txt  # ignore myfile.txt in the root, but not in any other folder or
+#                subfolder
+# mywork/      # ignore anything in the mywork folder
+# doc/*.txt    # ignore any .txt file in the doc folder, but not in any other
+#                folder or subfolder
+# 
+# Further explanations can be found here:
+# https://www.practicalseries.com/1002-vcs/02-07-concept.html
+# https://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files
+# https://github.com/github/gitignore                  (Example .gitignore files)
+# -------------------------------------------------------------------------------
+# 
+# MODIFICATION HISTORY:
+# 
+# This is a complete summary of all software modifications. 
+# 
+# Date          Issue    Author         Reason for Modification
+# -------------------------------------------------------------------------------
+#18 Feb 2021   001.000   M. Gledhill    First release (comments added)
+# -------------------------------------------------------------------------------
+
+
+
+
+# IGNORE DEPENDENCY MANAGERS
+#              Dependency managers are software modules that coordinate the 
+#              integration of external libraries or packages into larger
+#              application stack. Dependency managers use configuration files
+#              like composer.json, package.json, build.gradle &c
+
+/bower_components/
+/node_modules/
+
+
+
+# IGNORE WINDOWS OS FILES
+#              Files created automatically by Windows (index files &c.)
+
+Thumbs.db
+Desktop.ini
+
+
+# IGNORE SYNOLOGY NAS FILES
+#              Files created automatically by Synology devices
+#              These files are created automatically if conflicts occur
+
+*conflict*
+**/*conflict*
+
+
+
+# IGNORE MAC OS FILES
+#              Files created automatically by the MAC OS (index files &c.)
+
+.DS_store
+.AppleDouble
+.LSOverride
+
