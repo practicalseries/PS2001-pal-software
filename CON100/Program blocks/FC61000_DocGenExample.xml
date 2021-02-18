@@ -1,0 +1,3696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-02-18T15:19:16.9202639Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>Documentation</HeaderFamily>
+      <HeaderName>DocGenExample</HeaderName>
+      <HeaderVersion>1.0</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licence information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant">
+    <Member Name="_FALSE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Temporary internal "False" signal</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC61000_DocGenExample</Name>
+      <Number>61000</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+ FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
+ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    EXAMPLE DOCUMENTATION FOR USE IN COMMENTS
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+This block contains examples of all the typical forms of documentation used within the PAL
+software. It provides the following:
+
+CONTENTS (BY NETWORK)
+
+NW 1.    Block Contents
+NW 2.    Current revision and modification history
+
+
+EXAMPLES
+
+NW 3.    Example — Block description — Sections 1 to 3
+NW 4.    Example — Block description — Sections 4 to 11
+NW 5.    Example — Current revision and modification history
+NW 6.    Example — Headings, lists and indented text
+NW 7.    Example — Body text
+NW 8.    Example — Standard Tables
+NW 9.    Example — Other tables
+NW 10.    Example — Equations
+NW 11.    Example — Figures
+
+
+CHARACTER LISTS
+
+NW 12.    Special characters — Hyphens, whitespace and construction lines
+NW 13.    Special characters — Arrows, box and block characters
+NW 14.    Special characters — Currency, punctuation and full-width characters
+NW 15.    Special characters — Greek, indexing characters and Roman numerals
+NW 16.    Special characters — Mathematical operators (including vulgar fractions)
+NW 17.    Special characters — Geometrical and ornamental characters
+NW 18.    Special characters — Common character widths and additional whitespace characters
+
+
+SPECIAL NETWORKS
+
+NW 19.    OB1 NETWORK 1 — Project description
+NW 20.    OB1 NETWORK 2 — Current revision and modification history
+
+TYPICAL NETWORK COMMENTS
+
+NW 21.    Load the system RTC and store in local variable  [typical network comment]
+NW 22.    ██ STEP 03340 — DECLARATION (RUNNING)    [sequence network comment]
+NW 23.       STEP 03340 — ACTION (INITIALISE)           [sequence network comment]
+NW 24.       STEP 03340 — TRANSITION 01                   [sequence network comment]
+NW 25.   LICENCE AND CONTACT INFORMATION       [final network]
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         Example Documentation for use in Comments
+ BLOCK FUNCTION GROUP    Documentation
+ BLOCK ADDRESS       FC 61000
+ BLOCK SYMBOL        FC61000_DocGenExample
+ BLOCK USER ID         DocGenExample
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        61000
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME       24.48 μs¹
+ LOAD MEMORY       50.26 kB  (51474 bytes)
+ WORK MEMORY           0.34 kB      (347 bytes)
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+FC61000 is a documentation module that contains examples of all the common block and 
+network comments used throughout the PAL software.
+
+All examples are based upon the Style Guide (Doc. No. PS2001-5-2313-011).
+
+FC61000 also contains lists of the characters available within the Siemens TIA font used within
+all comment sections.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+The purpose of this block is to provide an easy point of reference for the various documentation 
+constructs and styles used within the PAL.
+
+The block itself does not contain any executable code, with the exception of the revision and
+licence networks, all networks are empty. The block itself does nothing, and its execution will
+have no effect, other than extending the cycle time.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+
+This block has no parameters.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01001
+ UT01001_St_SysLicence           Licence information for this block  See FC01001
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+The following constants and temporary data storage are used:
+
+
+ Temporary (local) data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ wrkReal           Working storage (Real)             Real
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+ Constants data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ _FALSE            Temporary internal "False" signal      Bool
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+ 
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS
+
+
+There are no PAL block calls from within this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     ASSOCIATED BLOCKS
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+
+There are no system block calls.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     SPECIAL PROPERTIES AND REQUIREMENTS
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.1   Block optimisation
+
+
+Block optimisation is ACTIVE for this block
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.2   Calling requirements
+
+
+There are no special calling requirements for this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+11.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC61000:
+
+
+                      ┌────────────
+   ───────────────────┤ FC61000 
+                      ├──────────
+                      │
+                      │
+                      │               │
+                      │               │
+                                   │
+                      ─────────────┘
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block Contents</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalConstant" UId="21">
+      <Constant Name="_FALSE" />
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC61000'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'001.000'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2021.02.18'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION            MASTER BRANCH      DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2021.02.18    001.000   D0002      D0001 D0002  None    M. Gledhill
+                       FC61000 — RELEASED FOR USE
+                         Block imported form 000.125-Db
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text> Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>| ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    SUBROUTINE — EVENT TIMER USING RTC
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ 
+
+
+This block (FC18151_SubTimeEventRTC) is a subroutine block that times the duration of an event 
+to nanosecond resolution.
+
+The block records the time the event started (rising edge of the TRIGGER signal), the time the 
+event ended (falling edge of the TRIGGER signal) and calculates the duration of the event (end 
+time minus the start time).
+
+The start and end times are read from the real time clock of the controller.
+
+This is a subroutine block.
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         Subroutine Event Timer using RTC
+ BLOCK FUNCTION GROUP    Subroutine
+ BLOCK ADDRESS       FC18151
+ BLOCK SYMBOL        FC18151_SubTimeEventRTC
+ BLOCK USER ID         SubTimeEventRTC
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        18151
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME       18.41 μs¹
+ LOAD MEMORY       23.11 kB  (23667 bytes)
+ WORK MEMORY           0.43 kB      (442 bytes)
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+FC18151 is the Subroutine Event Timer using RTC block, it simply records the duration of an event 
+with a high degree of accuracy. The event being timed is a Boolean signal passed to the block as 
+the TRIGGER parameter.
+
+Three times are recorded for the event, the start time (rising edge of the TRIGGER parameter), the 
+end time (falling edge of the TRIGGER parameter) and the duration of the event (end time minus 
+the start time). The duration is calculated on the falling edge of the TRIGGER parameter, 
+immediately after the end time is recorded.
+
+The start and end times are read from the Controller’s internal real time clock (RTC) and are 
+stored in DTL (date time long) format, this format contains year, month, day, hours, minutes, 
+seconds, milliseconds, microseconds and nano seconds.
+
+The duration is stored in LTime (long time, 64-bit) format, and is very accurate, it resolves to 
+days, hours, minutes, seconds milliseconds, microseconds and nanoseconds, it keeps this 
+resolution irrespective of the duration.
+
+The duration is also calculated as a real number in seconds (or fractions thereof); this is a 
+more convenient format for holding the duration, but is not as accurate as the LTime format.
+
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+The purpose of this block is to determine with a high degree of accuracy the duration of an event, 
+the event itself must be in the form of a Boolean trigger signal, the rising edge of the signal is 
+considered to be the start of the event and the falling edge the end of the event.
+
+The event signal is passed to the block as the TRIGGER parameter. 
+The block returns five values, these are stored in a UDT passed to the block in the 
+DYNAMIC_DATA parameter: 
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ DYNAMIC_DATA     UT38151_Dy_SubTimeEventRTC       DB38151_Dy_SubTimeEventRTC
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The block returns the following data:
+
+ UT38151_Dy_SubTimeEventRTC
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running      STATUS — The event timer is running         Bool
+
+ actual_StartTime      ACTUAL — Time at which the TRIGGER signal        DTL
+                     went high (event start time)
+
+ actual_EndTime        ACTUAL — Time at which the TRIGGER signal     DTL
+                     went low (event end time)
+
+ actual_Duration        ACTUAL — Event duration              LTime
+
+ actual_DurationSec       ACTUAL — Event duration in seconds           REAL
+ ――――――――――――――――――――――――――――――――――――――――――
+ Block returned signals
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1     Timing an event
+
+The block constantly monitors the TRIGGER parameter; if a rising edge is seen on the TRIGGER 
+parameter (point ① in the figure below), the Controller RTC is read and its value is stored in 
+actual_StartTime, at the same time the running signal (status_Running) is activated.
+
+The block continues to monitor the TRIGGER parameter, when a falling edge is detected 
+(point ②), the RTC is read once more and its value is stored in actual_EndTime, and the running 
+signal (status_Running) is deactivated.
+
+Once the end time is stored, the following calculation is carried out:
+
+
+┌───────────────────────────┐
+│ actual_Duration =  actual_EndTime ─ actual_StartTime    │
+└───────────────────────────┘
+
+
+                    ①            ②
+  TRIGGER │             ┏━━━━━━━━━━━━┓
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃                              
+        ┼━━━━━━━━━━━━╶╶╶╶╶╶╶╶╶╶╶╶╶━━━━━━━━━━ time
+                 ↗             ↖
+           actual_StartTime ╎            ╎ actual_EndTime
+   DTL#2020-04-18-09:34:25.899548353        DTL#2020-04-18-09:34:36.004744916
+
+                   ╎               ╎                      actual_Duration
+                                     LT#10S_105MS_196US_563NS
+                   ╎               ╎  
+                                                    actual_DurationSec
+                   ╎               ╎                              10.10519
+
+        │status_Running      ┏━━━━━━━━━━━━┓
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃
+        ┼━━━━━━━━━━━━╶╶╶╶╶╶╶╶╶╶╶╶╶━━━━━━━━━━
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1     Date and time data types
+
+Both the start and end times (actual_StartTime and actual_EndTime) are of the type DTL 
+(date time long), this itself is a data structure in the form:
+
+ DTL Data Structure
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ YEAR             Year (returns a value in the range 1970 to 2262)     UInt
+ MONTH            Month (1-12 representing Jan to Dec)        USInt
+ DAY              Day of month (1-31)                USInt
+ WEEKDAY          Day of week (1-7, where 1=Sunday, 7=Saturday)    USInt
+ HOUR           Hour of day (0-23)                   USInt
+ MINUTE           Minutes (0-59)                   USInt
+ SECOND            Seconds (0-59)                  USInt
+ NANOSECOND        Nanoseconds (0-999,999,999)           UDint
+ ――――――――――――――――――――――――――――――――――――――――――
+
+When displayed, it has the format:
+
+      DTL#2020-04-18-09:34:25.899548353
+
+ I.e.      18th April 2020 at 09:43:25 AM and 899,548,353 ns.
+
+The calculated duration (actual_Duration) is of data type LTime (long time).
+
+The LTime data type is essentially an 8-byte number (64-bit number) that stores a time value in 
+nanoseconds. In the above example, the actual_Duration has the formatted value of:
+
+      LT#10S_105MS_196US_563NS
+
+ I.e.      10 seconds, 105 milliseconds, 196 microseconds and 563 nanoseconds.
+
+It is shown in this format, because TIA portal understands the LTime data type and is able to 
+interpret the value as days, hours, minute, seconds, milliseconds, microseconds and 
+nanoseconds. 
+
+In practice, the actual_Duration simply (in this example) holds a very large number:
+
+      10,105,196,563
+
+This is the duration of the event in nanoseconds (i.e. 10,105,196,563 nanoseconds). To convert 
+the number to seconds, simply divide by 1,000,000,000 (or 1 × 10^9); this would give:
+
+      10.105196563 seconds
+
+The reason the duration is specified as an LTime rather that DTL is that, somewhat confusingly, 
+DTL is a relative measure of time (relative to 1st January, 1970), if the above duration were 
+represented as a DTL value it would read:
+
+      DTL#1970-01-01-00:00:10.105196563
+
+Hours, minutes and seconds are OK, but the date part doesn’t make sense (to make it 
+meaningful, 1970 must be subtracted from the YEAR value and 1 from both the MONTH and 
+DAY values).
+
+The LTime data type can store a duration of up to 106,751 days (about 300 years) and while not 
+perfect, it seems long enough for most practical situations (possibly not for geological 
+applications).
+
+The actual_Duration in LTime format is very accurate, but it is an unwieldly data type, to provide a 
+more user friendly (although less accurate) format, the actual_Duration signal is converted to a 
+real number giving the duration in seconds, this is stored in the actual_DurationSec signal. In the 
+above example: 
+
+      actual_DurationSec has the value 10.10519 seconds
+
+It is less accurate, it does not resolve to nanoseconds; however, it is easier to use and display 
+and is accurate enough for most applications.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+A note on real numbers
+
+The LTime format is very accurate, it is basically counting nanoseconds, and because it is 64-bits 
+long it can count up to very high values (about 584 years at nanosecond resolution).
+
+Real numbers however, are limited to 32-bits and suffer from precision loss, this results from the 
+fact that the real number has an accuracy of “about” 7 decimal digits, for example 20365.45, 
+20.43728, 1.482967, 0.3356428, &amp;c. Essentially, the bigger the number, the fewer the decimal 
+places — a total of 7 decimal digits.
+
+Very big and very small numbers can be represented by adding trailing zeros for big numbers 
+(e.g. 3275625000) and leading zeros for small numbers (0.000003275625) in both these 
+examples, there are only 7 decimal digits, just shifted effectively left or right.
+
+This type of representation is usually handled by applying scientific notation, the number 
+1,568,497,000,000 would be represented as 1.568497 × 10^12, it only has 7 decimal digits, 
+the number 1,568,497,132,792, would be represented as exactly the same value, the 132,792 
+part of the number cannot be resolved and are lost.
+
+
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Block description — Sections 1 to 3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+
+The following parameters are associated with the block:
+
+ 
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ TRIGGER       Event trigger signal (a rising edge marks the     Bool   In
+          start of the event, the falling edge the end)
+
+ STATIC_DATA     Data structure that holds the configuration data     UT02001    In
+
+ DYNAMIC_DATA      Stores the results of the event timing       UT38151    InOut
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01001
+ UT01001_St_SysLicence           Licence information for this block  See FC01001
+ UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
+ UT38151_Dy_SubTimeEventRTC        Dynamic data structure for the event timing block
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.1     UT38151_Dy_TimeEventRTC
+
+Stores the timing values for the event:
+
+ UT38151_Dy_TimeEventRTC
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running      STATUS — The event timer is running         Bool
+
+ actual_StartTime      ACTUAL — Time at which the TRIGGER signal        DTL
+                     went high (event start time)
+
+ actual_EndTime        ACTUAL — Time at which the TRIGGER signal     DTL
+                     went low (event end time)
+
+ actual_Duration        ACTUAL — Event duration              LTime
+
+ actual_DurationSec       ACTUAL — Event duration in seconds           REAL
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+The following constants and temporary data storage are used:
+
+
+ Temporary (local) data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ wrkInt           Working storage area (integer)          Int
+ wrkReal           Working storage (Real)             Real
+ wrkLInt            Working storage area (long integer)        LInt
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS
+
+
+There are no PAL block calls from within this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     ASSOCIATED BLOCKS
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+
+
+The following calls are made to system blocks:
+
+
+ System block calls
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+There are no special system data types used.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     SPECIAL PROPERTIES AND REQUIREMENTS
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.1   Block optimisation
+
+
+Block optimisation is ACTIVE for this block
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.2   Calling requirements
+
+
+There are no special calling requirements for this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.3   Other properties
+
+
+This block does not require the usual SYS_SIGNALS logic and timing data.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+11.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC18151:
+
+                     ┌─────────────
+       ──────────────┤ FC18151
+                     ├───────────
+                %M100.0    │
+              "Event001"   ─┤ TRIGGER
+                     │
+    "DB38151_Dy_TimeEventRTC".Event001 ─┤ DYNAMIC_DATA
+                     │
+                     │             │
+                                   │
+                          ─────────┘
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Block description — Sections 4 to 11</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalConstant" UId="21">
+      <Constant Name="_FALSE" />
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC01001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'001.000'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020.11.09'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION            MASTER BRANCH      DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2020.11.09    001.000   D0003      D0002 D0003  None    M. Gledhill
+                       FC01001 — RELEASED FOR USE
+                         Merge back to master branch
+ 
+ 2020.11.09    001.000   D0002A-001.000  D0002 N/A     D0002A   M. Gledhill
+                       FC01001 — Post test released for use
+
+ 2020.11.08    000.801   D0002A-000.801  D0002 N/A     D0002A   M. Gledhill
+                       FC01001 — Released for SMT
+
+ 2020.11.04    000.102   D0002A-000.102  D0002 N/A     D0002A   M. Gledhill
+                       FC01001 — Incremental build
+
+ 2020.11.03    000.101   D0002A-000.101  D0002 N/A     D0002A   M. Gledhill
+                       FC01001 — Block created
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    HEADINGS, LISTS AND INDENTED TEXT
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━[1 empty line above, 3 empty lines below]
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[3 empty lines above, 5 if no ⬙ flourish]
+1.     [MAIN SECTION — ALL UPPERCASE — IF UNNUMBERED STARTS AT LEFT EDGE]
+10.     [MAIN SECTION — ALL UPPERCASE — IF UNNUMBERED STARTS AT LEFT EDGE]
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂[3 empty lines above]
+1.1     [Subsection, two single digits   — Sentence case — if unnumbered, starts at left edge]
+10.1   [Subsection, one double digit   — Sentence case — if unnumbered, starts at left edge]
+10.10    [Subsection, two double digits — Sentence case — if unnumbered, starts at left edge]
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁[3 empty lines above]
+1.1.1     [Inline, three single digits   — Sentence case — if unnumbered, starts at left edge]
+10.1.1   [Inline, one double digit   — Sentence case — if unnumbered, starts at left edge]
+10.10.1   [Inline, two double digits    — Sentence case — if unnumbered, starts at left edge]
+10.10.10 [Inline, three double digits — Sentence case — if unnumbered, starts at left edge]
+
+
+   •   [Lists — non-numbered]
+   ① [Lists — numbered]
+   1.  [Lists — numbered single digit   — less than 10 entries]
+     1.  [Lists — numbered single digit   — 10 or more entries]
+   10.  [Lists — numbered double digit — 10 or more entries]
+
+   1.  Communication handling
+     Executes system to system communications (Controller to Controller, point-to-point,
+     ProfiBus FMS &amp;c.)
+   2.  Subroutine functions
+     Various subroutines (called by other block) to execute particular functions 
+     (subroutines are organised into similar function areas)
+   3.  Normal (non-error) interrupt functions
+     Usually associated with specific OBs, interrupts generated by standard system events
+     (time of day, cyclic, hardware &amp;c.)
+
+Note:    Bipolar and unipolar instruments have different tolerances, a 0-20 mA unipolar signal
+     has a full instrument range of 16 mA and the 2.5% tolerance will thus be ±0.4 mA 
+
+――――――――――
+¹         Footnotes can use the characters ¹, ² and ³ to indicate the footnote number
+     Second lines are identical to those for notes.
+――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Headings, lists and indented text</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    BODY TEXT (AN EXAMPLE)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+Normal (body) text is left justified to the left hand edge of the comment area; manual line-breaks
+must be inserted when the text exceeds the range of the title bars (lines at the top of this block
+and above each section and subsection — exactly 44 em-spaces).
+
+The following fragment highlights this: 
+
+The alignments in Figure 7.4 are such that the leading edge (left side) of any indented character
+is aligned with the leading edge of an em-space in a line of em-spaces that span the page (this
+can be seen with the chequered patterns in the screen shot — all indents line up with the left
+edge of an em-space).
+
+The problem with this is that the alphanumeric characters are not all the same width and
+generally, they are not one em-space wide (there are no characters that are one em wide, not
+even the M, which is odd given that that is how the em unit was derived, see here).
+With the TIA Portal font, one em is exactly the same width as four normal space characters (a 
+normal space being the character entered when the space bar is pressed). The alphanumeric 
+characters (and in fact, all the characters) in the TIA Portal font have the peculiarity that they are
+all a multiple of ⅓ of a normal space , the “i" for example is one normal space wide, “a” is 2⅓
+normal space characters wide and “m” is 2⅔ normal space characters wide.
+
+This “feature?” of the font is a distinct advantage; it means that is possible to always bring things
+back into true alignment by using the range of whitespace characters. There are five such 
+whitespace characters.
+
+The width of the page is approximately 3.38 lowercase alphabets:
+
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij
+
+This averages at about 78 (non-space) characters per line.
+
+A comment field can contain 65000 characters (approx.) including spaces and line breaks.
+
+This broadly equates to 670 lines of standard text, approximately 13000 words.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Body text</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="27" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    STANDARD TABLES (EXAMPLES)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+Tables always have 2 blank lines above and 2 blank lines below.
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌PARAMETER TABLE▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      The system logic and timing signals for       UT21000    In
+          parametric access
+
+ RAW_ANALOG      The unscaled analogue input (input word         Word     In
+          address for the IO card to which the instrument 
+          is connected)
+
+ RAW_MIN     Minimum value of the analogue input range      Int      In
+          (see Table 3.1 to Table 3.3 for typical values)
+
+ RAW_MAX       Maximum value of the analogue input range      Int      In
+          (see Table 3.1 to Table 3.3 for typical values)
+
+ SCALE_MIN    Calibrated lower value of the instrument       Real      In
+          range in engineering units
+
+ SCALE_MAX      Calibrated upper value of the instrument      Real      In
+          range in engineering units
+
+ STATIC_DATA     The static data associated with the PID loop       UT10001 In
+
+ DYNAMIC_DATA      Stores the results of the event timing       UT38151    InOut
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌ DATA STRUCTURE LIST ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01000
+ UT01001_St_SysLicence           Licence information for this block  See FC01000
+ UT21000_Dy_SysSignals           System signals for logic and timing  See FC01000
+
+ UT02001_St_InstAnalogRead      Static data structure for an analogue instrument.
+                    Holds configuration information, instrument ranges 
+                    and scaling, alarm/warning thresholds &amp;c.
+
+ UT22001_Dy_InstAnalogRead        Dynamic data structure for an analogue instrument.
+                    Current scaled instrument reading, alarm status, 
+                    operating modes, timer values &amp;c.
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▌▌▌▌▌▌▌▌▌▌   DATA STRUCTURE CONTENTS AND INSTANCE DBs   ▐▐▐▐▐▐▐▐▐▐
+
+
+ UT38151_Dy_TimeEventRTC
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running      STATUS — The event timer is running         Bool
+
+ actual_StartTime      ACTUAL — Time at which the TRIGGER signal        DTL
+                     went high (event start time)
+
+ actual_EndTime        ACTUAL — Time at which the TRIGGER signal     DTL
+                     went low (event end time)
+
+ actual_Duration        ACTUAL — Event duration              LTime
+
+ actual_DurationSec       ACTUAL — Event duration in seconds           REAL
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  CONSTANTS AND LOCAL DATA  ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+[Keep local and constant data function description to one line and no gaps between rows]
+
+
+ CONSTANTS DATA
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ k_MIN_SP_HYST      Minimum value for SP achieved hysteresis (EU)     Real
+ k_MIN_ALM_HYST      Minimum value for ALARM hysteresis (EU)       Real
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+ TEMPORARY (LOCAL) DATA
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ wrkPercentPV          Process Variable as a percentage of inst. range     Real
+ wrkPercentSP          Setpoint as a percentage of PV instrument range     Real
+ wrkPercentDB         Deadband as a percentage of PV instrument range    Real
+ wrkGain          Gain (adjusted for reverse/normal Acting)      Real
+ wrkCycTime          Cyclic execution time (TIME format)         Time
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  BLOCK LIST  ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+ BLOCK CALLS
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC18001         StdSubScaleAI        Scales an analogue input signal 
+                           Continuation line
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+ ASSOCIATED BLOCKS
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC17102         StdCommsWrite65K       Write data partner block
+                           Continuation line 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  SYSTEM BLOCK LIST   ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+ SYSTEM BLOCK CALLS
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
+ (FC804)                        Continuation line 
+                           Continuation line
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="29" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Standard Tables</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    OTHER TABLES (EXAMPLES)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+Tables always have 2 blank lines above and 2 blank lines below.
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  TWO COLUMN TABLE ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ IO TYPE            DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ ET200MP         Standard IO high density IO for the S7-1500 range
+
+ ET200M           Standard IO high density IO for the S7-300 range, 
+              can be used as remote IO for the S7-1500
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌THREE COLUMN TABLE ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+[Numerical table with number alignment to the right]
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PRESSURE           RAW SIGNAL           SCALED VAL
+ ――――――――――――――――――――――――――――――――――――――――――
+ -250.0 Pa                   0             -250.0 Pa
+       0.0 Pa                  13824            0.0 Pa
+  250.0 Pa                  27648              250.0 Pa
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌ FOUR COLUMN TABLE ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+[Numerical table with number alignment to the right]
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ RAW MIN       RAW MAX      SCALED MIN       SCALED MAX
+ ――――――――――――――――――――――――――――――――――――――――――
+       0        27648        -250.0 Pa        250.0 Pa
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  TABLE WITH HEADING  ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+[Numerical table with number alignment to the right]
+
+
+ CURRENT SIGNALS
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL TYPE     SIG MIN VAL      RAW_MIN     SIG MAX VAL     RAW_MAX
+ ――――――――――――――――――――――――――――――――――――――――――
+   4-20 mA      4 mA          0          20 mA       27648
+   0-20 mA      0 mA          0          20 mA       27648
+ -20 to 20 mA      -20 mA      -27648          20 mA       27648
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2E" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Other tables</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="31" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    EQUATIONS (EXAMPLES)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+┌─────────────────────────────────────┐
+│                                                                                                              100                         │
+│ SigPercent = (Signal ─ PV_RANGE_MIN) ╳ ---------------------------------------------------------------    │
+│                    (PV_RANGE_MAX ─ PV_RANGE_MIN)    │
+└─────────────────────────────────────┘
+
+
+┌───────────────────────┐
+│        2.5               │
+│ CalcValOOR = ------------ ╳ (RAW_MAX ─ RAW_MIN)   │
+│       100               │
+└───────────────────────┘
+
+Mathematical operators:
+   Large:  ┼ ─ ╳
+   Small: + − × ÷ ± ≤ ≥
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="33" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Equations</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    FIGURES (EXAMPLES)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+Some example figures, always pad gaps with an EM-SPACE, where text is used add normal 
+spaces with either a THREE-PER-EM space or a SIX-PER-EM space — one of these will give an
+exact alignment.
+
+These figures are included to show what is possible.
+
+
+Figures have 1 blank line above and 1 below.
+
+  → ┌────────┐
+┌───┤   IDLE   │
+│   └───┬────┘
+│       ↓
+│       START
+│       │
+│   ┌───┴────┐ →
+│   │  STARTING     ├───┐
+│   └───┬────┘   │
+│       ↓        │
+│         Run*       ├────────────────────┐
+│       │        │                    │
+│   ┌───┴────┐ → │                    │
+│   │        ├───┴───  Hold  ───┐          │
+│   │        │             ↓          ↓
+│   │        │         ┌───┴────┐ ┌───┴────┐
+│   │        │         │  HOLDING    │ │ ErrHOLDING   │
+│   │        │         └───┬────┘ └───┬────┘
+│   │        │             Held*        ErrHeld*
+│   │        │         ┌───┴────┐ ┌───┴────┐
+│   │        │         │   HELD    │ │  ErrHELD   │
+│   │  RUNNING     │         └───┬────┘ └───┬────┘
+│   │        │              Resume         ErrResume
+│   │        │         ┌───┴────┐ ┌───┴────┐
+│  ┌┤        │         │   RESUMING    │ │  ErrRESUMING   │ 
+│  ││        │         └───┬────┘ └───┬────┘  
+│  ││        │             │          │
+│  ││        │ ←           ↓          ↓
+│  ││        │─────────────┴──────────┘
+│  │└───┬────┘   Returns to previous step (running or starting)
+│  ↓    ↓
+│  │    │
+│ Complete Complete*     Note: *indicates that the command is issued
+│  │    │           automatically by the sequence (it
+│  │┌───┴────┐      can also be triggered manually):
+│  └┤ COMPLETING  │          1. Run
+│   └───┬────┘          2. Complete
+│       ↓               3. Completed
+↑     Completed*              4. Held
+│       │               5. ErrHeld
+│   ┌───┴────┐          6. Stopped
+│   │  COMPLETED   │          7. Aborted
+│   └───┬────┘
+│       │
+│              RetIdle*
+│   ←   ↓
+├───────┘
+│   
+│
+│     ABORT ROUTE                  STOPPING ROUTE
+│Can be triggered in all states except       Can be triggered in all states except
+│ IDLE, COMPLETED, ABORTING or            IDLE, COMPLETED, ABORTING, 
+│       ABORTED                 ABORTED, STOPPING or STOPPED
+│       │                       │
+│       ↓                       ↓
+│                Abort                                                                                       Stop
+│       │                       │
+│   ┌───┴────┐              ┌───┴────┐
+↑   │ ABORTING    │              │  STOPPING    │
+│   └───┬────┘              └───┬────┘
+│       ↓                       ↓
+│              Aborted*                                                                                Stopped*
+│       │                       │
+│   ┌───┴────┐              ┌───┴────┐
+│   │ ABORTED      │              │ STOPPED   │
+│   └───┬────┘              └───┬────┘
+│       │                       │
+│      RetIdle (*)                                                                               RetIdle (*)
+│  ←    ↓                       ↓
+└───────┴───────────────────────┘
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌   INLINE FIGURES ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1     Step operation and phases
+
+
+ ┌─────┐  The sequence progresses from one step to the next if the
+ │Step n        │  transition logic for the step is TRUE. 
+ └┬────┘                                                                 
+  │       In this example, STEP n is active and will remain active
+        --- T n        until its associated transition (T n) becomes TRUE; at this
+  │       point the sequence will advance to the next step (STEP n+1)
+ ┌┴────┐  and execute the actions required of this step. The sequence
+ │Step n+1    │  will remain in this step until its transition condition is
+ └┬────┘  true, at which point the sequence will advance again.
+  │                                                                      
+        --- T n+1      Each step has a step number, this is an integer value in
+  │       the range 0 to 29999; step numbers are assigned in specific
+          Ranges for different operating states of the sequence (IDLE,
+          STARTING, RUNNING &amp;c.).
+
+Within an individual step, the step has three distinct phases and actions can 
+be attached to any of these phases (externally to the block). The phases are:
+
+INITIALISING (Phs_INIT)                   ┌──────┐
+This is activated for a single OB1 scan when the step   │INITIALISING   │
+is first processed (I.e. on the rising edge of the step     └┬─────┘
+becoming active).                     │      
+                          ┌┴─────┐ 
+PROCESSING (Phs_PROC)               │PROCESSING │
+This is the main phase of the step, it is activated        └┬─────┘
+immediately following the INITIALISING phase and remains  │       
+active until the step TRANSITION condition is TRUE. The     --- T n   
+PROCESSING phase becomes inactive on the rising edge   │     
+of the TRANSITION condition.              ┌┴─────┐
+                          │TERMINATING │    
+TERMINATING (Phs_TERM)               └──────┘    
+The TERMINATING phase is activated on the rising edge of the TRANSITION
+condition (the same condition that terminates the PROCESSING phase). The
+terminating phase is active for a single OB1 scan.
+
+
+[ALTERNATIVE]
+ ┌──────┐ INITIALISING (Phs_INIT)
+ │INITIALISING   │ This is activated for a single OB1 scan when the step
+ └┬─────┘ is first processed (I.e. on the rising edge of the step
+  │       becoming active).
+ ┌┴─────┐    
+ │PROCESSING │ PROCESSING (Phs_PROC)
+ └┬─────┘ This is the main phase of the step, it is activated 
+  │       immediately following the INITIALISING phase and remains
+         --- T n       active until the step TRANSITION condition is TRUE. The
+  │       PROCESSING phase becomes inactive on the rising edge
+ ┌┴─────┐ of the TRANSITION condition.
+ │TERMINATING │    
+ └──────┘
+
+TERMINATING (Phs_TERM)
+The TERMINATING phase is activated on the rising edge of the TRANSITION
+condition (the same condition that terminates the PROCESSING phase). The
+terminating phase is active for a single OB1 scan.
+
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌   GRAPHICAL FIGURE   ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+    No. of scans from start of STEP 1
+    1      2      3     4      5     6       7      8      9
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼  ─ ─ ┐
+                               │
+  ┌─┐                          │
+  │ │               Phs_INIT
+ ─┘ └────────────────────                   
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼                   
+ 
+    ┌───┐                       S
+    │   │           Phs_PROC      T
+ ───┘   └────────────────       E
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼       P
+ 
+        ┌─┐                     1
+        │ │         TRANSITION
+ ───────┘ └──────────────
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼
+
+        ┌─┐
+        │ │         Phs_TERM      │
+ ───────┘ └──────────────      │
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼  ─ ─ ┘
+
+
+    1      2      3     4      5     6       7      8      9
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼  ─ ─ ┐
+                               │
+          ┌─┐                  │
+          │ │       Phs_INIT
+  ────────┘ └────────────                   
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼                   
+
+            ┌───┐               S
+            │   │   Phs_PROC      T
+ ───────────┘   └────────       E
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼       P
+                          
+                ┌─┐             2
+                │ │ TRANSITION
+ ───────────────┘ └──────      
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼
+
+                ┌─┐
+                │ │ Phs_TERM      │
+ ───────────────┘ └──────      │
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼  ─ ─ ┘
+
+
+
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌    PAL LOGO    ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣶⣿⣿⣿⣿⣿⣿⣤
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣤⠉⠿⣿⣿⣿⣿⣿⠿⠛⣤⣶
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣿⣿⣿⣿⣿⣿⣿⣶⣤⠉⠉⠉⠀⠤⣿⣿⣿⣿⣶⣀⣀⣀⣀⣀⣀⣀⣀
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀⠉⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⣿⣿⣤
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣶⣶⣤⠉⠿⣿⣿⣿⣿⣿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀⠉⣿⣿⣤
+      ⠀⠀⠀⠀⠀⠀⠀⣀⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⠉⣿⣿⣿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿
+      ⠀⠀⠀⠀⠀⠀⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿
+      ⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣿⣿⣿⣤
+      ⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣿
+      ⠀⠀⠀⠀⠀⠀⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+      ⠀⠀⠀⠀⠀⠀⠀⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠉
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⣿⣿⣿⣿⣿⣿⣿⠿⠉
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣉⣉⣉⣉⣉⣀
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣿⣿⣿⣿⣿⣿⣿⣿⣀⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀
+      ⠀⠀⠀⠀⠀⠀⠀⠀⣤⣿⣿⣿⠿⠉⠉⣿⣿⣿⣿⣤⠉⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣀⠀⠀
+      ⠀⠀⠀⠀⠀⠀⠀⣶⣿⣿⣿⠛⠀⠀   ⠀⠀⠿⣿⣿⣿⣤⠀⠀⠀⠀⠀⠀⣶⣶⣶⣶⣤⠀⠀⠀⠀ ⣶⣶⣶         ⣶⣶⠀⠀⠀⠀⠀⠿⣿⣿⣿⣿⣶⠀
+      ⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠛⠀⠀⠀⠀   ⠀⠀⠛⣿⣿⣿⣶⠀⠀⠀⠀⠀⣿⣿⣿⠿⣿⣿⠀⠀⣤⣿⣿⣿⣤       ⣿⣿⠀⠀⠀⠀⠀⠀ ⠿⣿⣿⣿⣿⣤
+      ⠀⠀⠀⠀⠀⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀   ⠀⠀⠀⠛⣿⣿⣿⣿⠀⠀⠀⠀⣿⣿⣿⣶⣿⣿⠀⠀⣿⣿⠉⣿⣿       ⣿⣿⠀⠀⠀⠀⠀     ⣿⣿⣿⣿⣿
+      ⠀⠀⠀⣀⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠉⣿⣿⣿⣿      ⣿⣿⣿⠛⠛⠀⠀⣶⣿⣿⣿⣿⣿⣶    ⣿⣿⣤⣤⣤      ⣶⣿⣿⣿⣿⠛
+      ⠀⠀⣤⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⠀⠉⣿⣿⣿⣿⣀ ⠿⠿⠿⠀⠀⠀   ⠿⠿⠉⠉⠉⠿⠿    ⠿⠿⠿⠿⠿ ⠀⣶⣿⣿⣿⣿⠿⠀
+      ⠀⣤⣿⣿⣿⣿⣿⣶⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣶⣿⣿⣿⣿⣿⣀⠀⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⠉⠀⠀
+      ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀
+      ⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠉⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="38" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Example — Figures</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    SPECIAL CHARACTERS
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+The TIA Portal Basic font contains many different types of characters:
+
+   •   Hyphens and whitespace characters
+   •   Construction lines (these are specially ordered characters, useful for building tables &amp;c.)
+   •   Arrows
+   •   Box characters (for drawing box and line diagrams)
+   •   Block characters
+   •   Currency
+   •   Punctuation (extended list)
+   •   Non-proportional letters and numbers
+   •   Greek characters
+   •   Indexing characters
+   •   Roman numerals
+   •   Mathematical characters
+   •   Geometric characters
+   •   Dingbat characters
+
+The following sections contain a list of these characters for use in TIA Portal comment fields.
+
+Note:    The following tables of characters break the rules for comment fields by exceeding
+     the prescribed comment field width of 44 em-spaces. This is done to give the 
+     characters in a more concise form whilst maintaining reasonable descriptions for
+     the characters
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+HYPHENS AND WHITESPACE CHARACTERS
+
+
+— Em Dash               █ █ Em Space
+–   En Dash              █ █   En Space
+‐    Hyphen               █ █    Three-Per-Em Space
+¬   Soft Hyphen             █ █    Normal Space
+                      █ █     Six-Per-Em Space
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+CONSTRUCTION LINES AND USEFUL LINES
+
+
+[Copyable whitespace]
+ █ █ █ █ █ Em En ThreePerEm SixPerEM
+[Em-space construction line]
+▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+[Central header — used for examples]
+▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
+[Title start]
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+[Title end/section over-line]
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+[Subsection over-line]
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+[Inline section over-line]
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+[Table row line]
+ ――――――――――――――――――――――――――――――――――――――――――
+[Revision row line]
+ ―――――――――――――――――――――――――――――――――――――――――――
+[Flourish divider]
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+[End line]
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="3D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Hyphens, whitespace and construction lines</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="40" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ARROWS
+
+
+← Left Arrow              ⇐ Left dbl Arrow             ↩ Left Arrow Hook
+↑ Up Arrow               ⇑ Up dbl Arrow               ↪ Right Arrow Hook
+→ Right Arrow              ⇒ Right dbl Arrow           ⤣ North West Arrow Hook
+↓ Down Arrow             ⇓ Down dbl Arrow             ⤤ North East Arrow Hook
+↔ Left Right Arrow             ⇔ Left Right dbl Arrow          ⤥ South East Arrow Hook
+↕ Up Down Arrow          ⇕ Up Down dbl Arrow          ⤦ South West Arrow Hook
+↖ North West Arrow          ⇖ North West dbl Arrow         ↰    Up Arrow Tip Left
+↗ North East Arrow          ⇗ North East dbl Arrow          ↱    Up Arrow Tip Right
+↘ South East Arrow          ⇘ South East dbl Arrow         ↲    Down Arrow Tip Left
+↙ South West Arrow         ⇙    South West dbl Arrow        ↳ Down Arrow Tip Right
+⤡ North West &amp; South East Arrow    ⤂ Left dbl Arrow vert Stroke       ↴ Right Arrow Corner down
+⤢ North East &amp; South West Arrow    ⤃ Right dbl Arrow vert Stroke     ↵ Down Arrow Corner Left
+⇄ Right Arrow Over Left Arrow       ⤆ Left dbl Arrow From Bar        ↶ Anticlockwise Top Semicircle Arrow
+⇅ Up Arrow Left Of down Arrow        ⤇ Right dbl Arrow From Bar         ↷ Clockwise Top Semicircle Arrow
+⇆ Left Arrow Over Right Arrow       ⤄ Left Right dbl Arrow vert Stroke    ↺ Anticlockwise Open Circle Arrow
+⇇ Left Paired Arrows           ↼ Left Harpoon Barb up         ↻ Clockwise Open Circle Arrow
+⇈ Up Paired Arrows             ↽ Left Harpoon Barb down         ⟲ Anticlockwise Gapped Circle Arrow
+⇉ Right Paired Arrows         ↾ Up Harpoon Barb Right         ⟳ Clockwise Gapped Circle Arrow
+⇊ Down Paired Arrows           ↿ Up Harpoon Barb Left
+↤ Left Arrow From Bar           ⇀ Right Harpoon Barb up         ▲  Black Up Triangle 
+↥ Up Arrow From Bar          ⇁ Right Harpoon Barb down       ▼  Black Down Triangle
+↦ Right Arrow From Bar         ⇂ Down Harpoon Barb Right      ▶  Black Right Triangle
+↧ down Arrow From Bar        ⇃ Down Harpoon Barb Left         ◀  Black Left Triangle
+↨ Up Down Arrow Base         ⇋ Left Harpoon Over Right Harpoon
+↞ Left Two head Arrow          ⇌ Right Harpoon Over Left Harpoon
+↟ up Two head Arrow         ↯ Down Zigzag Arrow
+↠ Right Two head Arrow
+↡ Down Two head Arrow
+⤙ Left Arrow-Tail
+⤚ Right Arrow-Tail
+⤛ Left dbl Arrow-Tail    
+⤜ Right dbl Arrow-Tail    
+⤝ Left Arrow To Black Diamond    
+⤞ Right Arrow To Black Diamond    
+
+⟵  Long Left Arrow             ↢ Left Arrow Tail             ⌃   Up Arrowhead
+⟶  Long Right Arrow          ↣ Right Arrow Tail             ⌄   Down Arrowhead
+⟷  Long Left Right Arrow         ⤟ Left Arrow Bar To Black Diamond   ⌅   Projective
+⟸  Long Left dbl Arrow         ⤠ Right Arrow Bar To Black Diamond    ⌆   Perspective
+⟹  Long Right dbl Arrow          ⤌    Left dbl Dash Arrow         ⟰ Up Quadruple Arrow
+⟺  Long Left Right dbl Arrow        ⤍    Right dbl Dash Arrow         ⟱ Down Quadruple Arrow
+⟻  Long Left Arrow From Bar       ⤎    Left Triple Dash Arrow        ⤊ Up Triple Arrow
+⟼  Long Right Arrow From Bar        ⤏    Right Triple Dash Arrow         ⤋ Down Triple Arrow
+⟽  Long Left dbl Arrow From Bar       ⤈    Down Arrow horiz Stroke          ⤈   Down Arrow horiz Stroke
+⟾  Long Right dbl Arrow From Bar    ⤉    Up Arrow horiz Stroke             ⤉   Up Arrow horiz Stroke
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+BOX CHARACTERS
+
+
+─ Box Light horiz            ╌ Box Light dbl Dash horiz       ⋮     Vert Ellipsis
+│ Box Light vert             ╎ Box Light dbl Dash vert        ⋯    Midline horiz Ellipsis
+╱ Box Light diag top Right Left      ╍ Box Heavy dbl Dash horiz       ⋰     Up Right diag Ellipsis
+╲ Box Light diag top Left To btm Right    ╏ Box Heavy dbl Dash vert          ⋱    Down Right diag Ellipsis
+╳ Box Light diag Cross          ┄ Box Light Triple Dash horiz      ╴ Box Light Left
+━ Box Heavy horiz             ┆ Box Light Triple Dash vert       ╵ Box Light Up
+┃ Box Heavy vert           ┅ Box Heavy Triple Dash horiz       ╶ Box Light Right
+═ Box dbl horiz               ┇ Box Heavy Triple Dash vert        ╷ Box Light Down
+║ Box dbl vert              ┈ Box Light Quadruple Dash horiz     ╸ Box Heavy Left
+                      ┊ Box Light Quadruple Dash vert       ╹ Box Heavy Up
+                      ┉ Box Heavy Quadruple Dash horiz      ╺ Box Heavy Right
+                      ┋ Box Heavy Quadruple Dash vert     ╻ Box Heavy Down
+
+┌ Box Light Down &amp; Right        ├ Box Light vert &amp; Right         ─ Box Light horiz
+└ Box Light Up &amp; Right           ┤ Box Light vert &amp; Left        │ Box Light vert
+┐ Box Light Down &amp; Left           ┬ Box Light Down &amp; horiz         ┼ Box Light vert &amp; horiz
+┘ Box Light Up &amp; Left          ┴ Box Light Up &amp; horiz  
+┏ Box Heavy Down &amp; Right         ┣ Box Heavy vert &amp; Right          ━ Box Heavy horiz
+┗ Box Heavy Up &amp; Right         ┫ Box Heavy vert &amp; Left         ┃ Box Heavy vert
+┓ Box Heavy Down &amp; Left         ┳ Box Heavy Down &amp; horiz       ╋ Box Heavy vert &amp; horiz
+┛ Box Heavy Up &amp; Left        ┻ Box Heavy Up &amp; horiz  
+    
+┍ Box Down Light &amp; Right Heavy     ┝ Box vert Light &amp; Right Heavy      ━ Box Heavy horiz
+┕ Box Up Light &amp; Right Heavy        ┥ Box vert Light &amp; Left Heavy     │ Box Light vert
+┑ Box Down Light &amp; Left Heavy     ┯ Box Down Light &amp; horiz Heavy      ┿ Box vert Light &amp; horiz Heavy
+┙ Box Up Light &amp; Left Heavy       ┷ Box Up Light &amp; horiz Heavy  
+
+┎ Box Down Heavy &amp; Right Light     ┠ Box vert Heavy &amp; Right Light      ─ Box Light horiz
+┖ Box Up Heavy &amp; Right Light        ┨ Box vert Heavy &amp; Left Light     ┃ Box Heavy vert
+┒ Box Down Heavy &amp; Left Light     ┰ Box Down Heavy &amp; horiz Light      ╂ Box vert Heavy &amp; horiz Light
+┚ Box Up Heavy &amp; Left Light       ┸ Box Up Heavy &amp; horiz Light  
+
+┦ Box Up Heavy &amp; Left Down Light     ┪ Box Up Light &amp; Left Down Heavy     ╀ Box Up Heavy &amp; Down horiz Light
+┶ Box Right Heavy &amp; Left Up Light   ┹ Box Right Light &amp; Left Up Heavy   ┾ Box Right Heavy &amp; Left vert Light
+┟ Box Down Heavy &amp; Right Up Light     ┡ Box Down Light &amp; Right Up Heavy     ╁ Box Down Heavy &amp; Up horiz Light
+┭ Box Left Heavy &amp; Right Down Light    ┲ Box Left Light &amp; Right Down Heavy    ┽ Box Left Heavy &amp; Right vert Light
+ 
+┞ Box Up Heavy &amp; Right Down Light     ┢ Box Up Light &amp; Right Down Heavy     ╈ Box Up Light &amp; Down horiz Heavy
+┮ Box Right Heavy &amp; Left Down Light    ┱ Box Right Light &amp; Left Down Heavy    ╉ Box Right Light &amp; Left vert Heavy
+┧ Box Down Heavy &amp; Left Up Light     ┩ Box Down Light &amp; Left Up Heavy     ╇ Box Down Light &amp; Up horiz Heavy
+┵ Box Left Heavy &amp; Right Up Light      ┺ Box Left Light &amp; Right Up Heavy   ╊ Box Left Light &amp; Right vert Heavy
+
+╼ Box Light Left &amp; Heavy Right                            ╄ Box Right Up Heavy &amp; Left Down Light
+╽ Box Light Up &amp; Heavy Down                            ╆ Box Right Down Heavy &amp; Left Up Light
+╾ Box Heavy Left &amp; Light Right                            ╅ Box Left Down Heavy &amp; Right Up Light
+╿ Box Heavy Up &amp; Light Down                            ╃ Box Left Up Heavy &amp; Right Down Light
+
+╔ Box dbl Down &amp; Right         ╠ Box dbl vert &amp; Right         ═ Box dbl horiz
+╚ Box dbl Up &amp; Right           ╣ Box dbl vert &amp; Left           ║ Box dbl vert
+╗ Box dbl Down &amp; Left        ╦ Box dbl Down &amp; horiz         ╬ Box dbl vert &amp; horiz
+╝ Box dbl Up &amp; Left          ╩ Box dbl Up &amp; horiz  
+ 
+╒ Box Down Single &amp; Right dbl     ╞ Box vert Single &amp; Right dbl      ═ Box dbl horiz
+╘ Box Up Single &amp; Right dbl        ╡ Box vert Single &amp; Left dbl        │ Box Light vert
+╕ Box Down Single &amp; Left dbl        ╤ Box Down Single &amp; horiz dbl      ╪ Box vert Single &amp; horiz dbl
+╛ Box Up Single &amp; Left dbl       ╧ Box Up Single &amp; horiz dbl  
+
+╓ Box Down dbl &amp; Right Single     ╟ Box vert dbl &amp; Right Single      ─ Box Light horiz
+╙ Box Up dbl &amp; Right Single        ╢ Box vert dbl &amp; Left Single        ║ Box dbl vert
+╖ Box Down dbl &amp; Left Single        ╥ Box Down dbl &amp; horiz Single      ╫ Box vert dbl &amp; horiz Single
+╜ Box Up dbl &amp; Left Single       ╨ Box Up dbl &amp; horiz Single  
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+BLOCK CHARACTERS
+
+
+▀ Top Half Block             ❘    Light vert Bar              ❘ ❘     En Space
+▄ Btm Half Block            ❙    Medium vert Bar           ❘ ❘   Em Space
+▐ Right Half Block          ❚   Heavy vert Bar  
+▌ Left Half Block    
+
+▔ Top One Eighth Block        ▉ Left Seven Eighths Block
+▁ Btm One Eighth Block          ▊ Left Three Quarters Block
+▂ Btm One Quarter Block        ▋ Left Five Eighths Block
+▃ Btm Three Eighths Block      ▌ Left Half Block
+▄ Btm Half Block            ▍ Left Three Eighths Block
+▅ Btm Five Eighths Block         ▎ Left One Quarter Block
+▆ Btm Three Quarters Block       ▏ Left One Eighth Block
+▇ Btm Seven Eighths Block        ▕ Right One Eighth Block
+█ Full Block
+░ Light Shade
+▒ Medium Shade    
+▓ Dark Shade    
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="42" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Arrows, box and block characters</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="44" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="45" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+CURRENCY
+
+
+₳   Austral Sign             €   Euro Sign              ₦  Naira Sign
+₵   Cedi Sign               ₠  Euro-Currency Sign          ₪  New Shekel Sign
+¢   Cent Sign              ₣  French Franc Sign           ₧   Peseta Sign
+₡   Colon Sign               ₰   German Penny Sign           ₱   Peso Sign
+₢   Cruzeiro Sign           ₲   Guarani Sign              £  Pound Sign
+¤  Currency Sign             ₴   Hryvnia Sign            ₨    Rupee Sign
+$   Dollar Sign            ₭   Kip Sign              ₮   Tugrik Sign
+₫   Dong Sign             ₤   Lira Sign             ₩  Won Sign
+₯ Drachma Sign            ₥  Mill Sign              ¥   Yen Sign
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+PUNCTUATION AND COMMON SYMBOLS
+
+
+#  Hash Sign             "   Quote                 §   Section Sign
+$   Dollar Sign            “    Left dbl quote             ¶   Pilcrow Sign
+%  Percent Sign            ”    Right dbl quote
+&amp;   Ampersand             '    Apostrophe  
+*   Asterisk              ‘    Left Single quote          †   Dagger
+~   Tilde                 ’    Right Single quote           ‡   Dbl Dagger
++   Plus Sign               ‹    Single Left Angle quote       •   Bullet
+-    Hyphen/minus            ›    Single Right Angle quote        ·    Middle Dot
+=   Equals Sign                                ‣   Triangular Bullet
+&lt;   Less-Than Sign           ´   Acute Accent              ⁃    Hyphen Bullet
+&gt;   Greater-Than Sign           `   Grave Accent
+(    Left Parenthesis
+)    Right Parenthesis            ©  Copyright Sign           ⁎   Low Asterisk
+[    Left Square Bracket           ®  Registered Sign  
+]    Right Square Bracket         ℀  Account Of               ․    One Dot Leader
+{   Left Curly Bracket          ℁  Addressed To The Subject      ‥   Two Dot Leader
+}   Right Curly Bracket          ℂ  Dbl-Struck Capital C           …  Horiz Ellipsis
+〈    Left Angle Bracket           ℄   Centre Line Symbol  
+〉    Right Angle Bracket            ℅  Care Of               ※  Reference Mark
+⁅    Left Square Bracket Quill        ℗  Sound Recording Copyright       ‼   Dbl Exclamation Mark
+⁆    Right Square Bracket Quill      ™  Trade Mark Sign            ‽   Interrobang
+,    Comma                                 ⁇  Dbl Question Mark
+.    Full Stop                                   ⁈   Question Exclamation Mark
+:    Colon                                  ⁉  Exclamation Question Mark
+;    Semicolon    
+!    Exclamation Mark            ⁑   Two Asterisks Aligned vertically     |    Vert Line
+?   Question Mark           ⁂   Asterism               ¦    Broken Bar
+@  Commercial At                              ‖    Dbl vert Line
+^   Circumflex Accent            ⁀  Character Tie              ‗   Dbl Low Line
+/    Solidus               ‿  Undertie             ⁞    Vert Four Dots
+\    Reverse Solidus            ⁐  Close Up
+_   Underscore
+― Horiz Bar    
+¯   Macron
+‾   Overline
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+NON-PROPORTIONAL (FULL-WIDTH) LETTERS
+
+
+Ａ Fullwidth Capital Letter A        ａ Fullwidth Small Letter A       ＂ Fullwidth quote
+Ｂ Fullwidth Capital Letter B        ｂ Fullwidth Small Letter B       ＇ Fullwidth Apostrophe
+Ｃ Fullwidth Capital Letter C        ｃ Fullwidth Small Letter C       ＃ Fullwidth Number Sign
+Ｄ Fullwidth Capital Letter D       ｄ Fullwidth Small Letter D       ＄ Fullwidth Dollar Sign
+Ｅ Fullwidth Capital Letter E        ｅ Fullwidth Small Letter E       ％ Fullwidth Percent Sign
+Ｆ Fullwidth Capital Letter F        ｆ Fullwidth Small Letter F       ＆ Fullwidth Ampers&amp;
+Ｇ Fullwidth Capital Letter G       ｇ Fullwidth Small Letter G       ＊ Fullwidth Asterisk
+Ｈ Fullwidth Capital Letter H       ｈ Fullwidth Small Letter H          ～ Fullwidth Tilde
+Ｉ Fullwidth Capital Letter I         ｉ Fullwidth Small Letter I        ＋ Fullwidth Plus Sign
+Ｊ Fullwidth Capital Letter J         ｊ Fullwidth Small Letter J        － Fullwidth Hyphen-Minus
+Ｋ Fullwidth Capital Letter K        ｋ Fullwidth Small Letter K       ＝ Fullwidth Equals Sign
+Ｌ Fullwidth Capital Letter L        ｌ Fullwidth Small Letter L       ＜ Fullwidth Less-Than Sign
+Ｍ Fullwidth Capital Letter M       ｍ Fullwidth Small Letter M         ＞ Fullwidth Greater-Than Sign
+Ｎ Fullwidth Capital Letter N       ｎ Fullwidth Small Letter N          （ Fullwidth Left Parenthesis
+Ｏ Fullwidth Capital Letter O       ｏ Fullwidth Small Letter O       ） Fullwidth Right Parenthesis
+Ｐ Fullwidth Capital Letter P        ｐ Fullwidth Small Letter P       ［ Fullwidth Left Square Bracket
+Ｑ Fullwidth Capital Letter Q       ｑ Fullwidth Small Letter Q         ］ Fullwidth Right Square Bracket
+Ｒ Fullwidth Capital Letter R        ｒ Fullwidth Small Letter R       ｛ Fullwidth Left Curly Bracket
+Ｓ Fullwidth Capital Letter S        ｓ Fullwidth Small Letter S       ｝ Fullwidth Right Curly Bracket
+Ｔ Fullwidth Capital Letter T        ｔ Fullwidth Small Letter T        ， Fullwidth Comma
+Ｕ Fullwidth Capital Letter U       ｕ Fullwidth Small Letter U       ． Fullwidth Full Stop
+Ｖ Fullwidth Capital Letter V        ｖ Fullwidth Small Letter V       ： Fullwidth Colon
+Ｗ Fullwidth Capital Letter W       ｗ Fullwidth Small Letter W         ； Fullwidth Semicolon
+Ｘ Fullwidth Capital Letter X        ｘ Fullwidth Small Letter X       ！ Fullwidth Exclamation Mark
+Ｙ Fullwidth Capital Letter Y        ｙ Fullwidth Small Letter Y       ？ Fullwidth Question Mark
+Ｚ Fullwidth Capital Letter Z        ｚ Fullwidth Small Letter Z       ＠ Fullwidth Commercial At
+                                        ＾ Fullwidth Circumflex Accent
+０ Fullwidth Digit Zero         ５ Fullwidth Digit Five          ／ Fullwidth Solidus
+１ Fullwidth Digit One         ６ Fullwidth Digit Six         ＼ Fullwidth Reverse Solidus
+２ Fullwidth Digit Two          ７ Fullwidth Digit Seven         ＿ Fullwidth Low Line
+３ Fullwidth Digit Three          ８ Fullwidth Digit Eight           ｜ Fullwidth vert Line
+４ Fullwidth Digit Four         ９ Fullwidth Digit Nine         ❘ ❘   Fullwidth space    
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="47" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Currency, punctuation and full-width characters</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="49" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+GREEK CHARACTERS
+
+
+Α  Greek Capital Letter Alpha        α   Greek Small Letter Alpha
+Β   Greek Capital Letter Beta       β   Greek Small Letter Beta
+Γ   Greek Capital Letter Gamma       γ   Greek Small Letter Gamma
+Δ  Greek Capital Letter Delta      δ   Greek Small Letter Delta
+Ε   Greek Capital Letter Epsilon     ε   Greek Small Letter Epsilon
+Ζ   Greek Capital Letter Zeta       ζ   Greek Small Letter Zeta
+Η  Greek Capital Letter Eta       η   Greek Small Letter Eta
+Θ  Greek Capital Letter Theta      θ   Greek Small Letter Theta
+Ι    Greek Capital Letter Iota         ι    Greek Small Letter Iota
+Κ   Greek Capital Letter Kappa       κ   Greek Small Letter Kappa
+Λ   Greek Capital Letter Lambda       λ   Greek Small Letter Lambda
+Μ  Greek Capital Letter Mu       μ   Greek Small Letter Mu
+Ν  Greek Capital Letter Nu        ν   Greek Small Letter Nu
+Ξ   Greek Capital Letter Xi         ξ   Greek Small Letter Xi
+Ο  Greek Capital Letter Omicron      ο   Greek Small Letter Omicron
+Π  Greek Capital Letter Pi          π   Greek Small Letter Pi
+Ρ   Greek Capital Letter Rho      ρ   Greek Small Letter Rho
+Σ   Greek Capital Letter Sigma       ς   Greek Small Letter Final Sigma
+                      σ   Greek Small Letter Sigma
+Τ   Greek Capital Letter Tau         τ   Greek Small Letter Tau
+Υ   Greek Capital Letter Upsilon     υ   Greek Small Letter Upsilon
+Φ  Greek Capital Letter Phi       φ  Greek Small Letter Phi
+Χ   Greek Capital Letter Chi       χ   Greek Small Letter Chi
+Ψ  Greek Capital Letter Psi        ψ  Greek Small Letter Psi
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+INDEXING CHARACTERS  (all characters are 1 EM wide)
+
+
+① Circled One              ⑴ Bracketed One           ⒈ One Full Stop
+② Circled Two              ⑵ Bracketed Two           ⒉ Two Full Stop
+③ Circled Three              ⑶ Bracketed Three           ⒊ Three Full Stop
+④ Circled Four             ⑷ Bracketed Four             ⒋ Four Full Stop
+⑤ Circled Five              ⑸ Bracketed Five           ⒌ Five Full Stop
+⑥ Circled Six             ⑹ Bracketed Six             ⒍ Six Full Stop
+⑦ Circled Seven             ⑺ Bracketed Seven          ⒎ Seven Full Stop
+⑧ Circled Eight            ⑻ Bracketed Eight            ⒏ Eight Full Stop
+⑨ Circled Nine             ⑼ Bracketed Nine          ⒐ Nine Full Stop
+⑩ Circled Ten            ⑽ Bracketed Ten            ⒑ Ten Full Stop
+⑪ Circled Eleven            ⑾ Bracketed Eleven         ⒒ Eleven Full Stop
+⑫ Circled Twelve            ⑿ Bracketed Twelve         ⒓ Twelve Full Stop
+⑬ Circled Thirteen             ⒀ Bracketed Thirteen          ⒔ Thirteen Full Stop
+⑭ Circled Fourteen           ⒁ Bracketed Fourteen        ⒕ Fourteen Full Stop
+⑮ Circled Fifteen            ⒂ Bracketed Fifteen         ⒖ Fifteen Full Stop
+⑯ Circled Sixteen           ⒃ Bracketed Sixteen           ⒗ Sixteen Full Stop
+⑰ Circled Seventeen           ⒄ Bracketed Seventeen        ⒘ Seventeen Full Stop
+⑱ Circled Eighteen           ⒅ Bracketed Eighteen        ⒙ Eighteen Full Stop
+⑲ Circled Nineteen           ⒆ Bracketed Nineteen           ⒚ Nineteen Full Stop
+⑳ Circled Twenty            ⒇ Bracketed Twenty         ⒛ Twenty Full Stop
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ROMAN NUMERALS
+
+
+Ⅰ    Roman num One          ⅰ    Small Roman num One
+Ⅱ   Roman num Two           ⅱ   Small Roman num Two
+Ⅲ  Roman num Three           ⅲ  Small Roman num Three
+Ⅳ  Roman num Four          ⅳ  Small Roman num Four
+Ⅴ   Roman num Five          ⅴ   Small Roman num Five
+Ⅵ  Roman num Six             ⅵ  Small Roman num Six
+Ⅶ Roman num Seven         ⅶ    Small Roman num Seven
+Ⅷ    Roman num Eight           ⅷ   Small Roman num Eight
+Ⅸ  Roman num Nine            ⅸ  Small Roman num Nine
+Ⅹ   Roman num Ten           ⅹ   Small Roman num Ten
+Ⅺ  Roman num Eleven           ⅺ  Small Roman num Eleven
+Ⅻ Roman num Twelve           ⅻ  Small Roman num Twelve
+Ⅼ   Roman num Fifty           ⅼ    Small Roman num Fifty
+Ⅽ   Roman num One Hundred        ⅽ   Small Roman num One Hundred
+Ⅾ  Roman num Five Hundred      ⅾ   Small Roman num Five Hundred
+Ⅿ  Roman num One Thousand      ⅿ     Small Roman num One Thousand    
+
+
+████████████████████ END    ████████████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="4C" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="4D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Greek, indexing characters and Roman numerals</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MATHEMATICAL OPERATORS
+
+
+×   Multiplication Sign          ¹   Superscript One           ∅  Empty Set
+÷   Division Sign              ²   Superscript Two            ∈  Element Of
++   Plus sign                ³   Superscript Three         ∉  Not An Element Of
+−   Minus Sign            ½  Vulgar Fraction One Half         ∊   Small Element Of
+⁒   Commercial Minus Sign       ⅓  Vulgar Fraction One Third       ∋  Contains As Member
+±   Plus-Minus Sign             ⅔  Vulgar Fraction Two Thirds      ∌  Does Not Contain As Member
+∓   Minus-Or-Plus Sign          ¼  Vulgar Fraction One Quarter        ∍   Small Contains As Member
+≤   Less-Than Or Equal To       ¾  Vulgar Fraction Three Quarters      ∩   Intersection
+≥   Greater-Than Or Equal To        ⅕  Vulgar Fraction One Fifth        ∪   Union
+≪  Much Less-Than            ⅖  Vulgar Fraction Two Fifths       ⊂  Subset Of
+≫  Much Greater-Than          ⅗  Vulgar Fraction Three Fifths       ⊃  Superset Of
+√  Square Root             ⅘  Vulgar Fraction Four Fifths      ⊄  Not A Subset Of
+∛  Cube Root             ⅙  Vulgar Fraction One Sixth       ⊅  Not A Superset Of
+∜  Fourth Root              ⅚  Vulgar Fraction Five Sixths        ⊆  Subset Of Or Equal To
+∝  Proportional To           ⅛  Vulgar Fraction One Eighth       ⊇  Superset Of Or Equal To
+∞  Infinity              ⅜  Vulgar Fraction Three Eighths      ⊈  not A Subset Of Nor Equal To
+°   Degree Sign            ⅝  Vulgar Fraction Five Eighths     ⊉  not A Superset Of Nor Equal To
+µ   Micro Sign             ⅞  Vulgar Fraction Seven Eighths    ⊊  Subset Of Not Equal To
+‰   Per Mille Sign              ⅟   Fraction Numerator One         ⊋  Superset Of Not Equal To
+‱  Per Ten Thousand&amp; Sign          ⁄    Fraction Slash            ⊌   Multiset
+∀  For All                                    ⊍   Multiset Multiplication
+∁   Complement                                 ⊎   Multiset Union
+∂   Partial Differential                              ⊏  Square Image Of
+∃   There Exists                                ⊐  Square Original Of
+∄   There Does Not Exist          ∆   Increment             ⊑  Square Image Of Or Equal To
+∴    Therefore               ∇  Nabla               ⊒  Square Original Of Or Equal To
+∵    Because                                   ⊓  Square Cap
+∶   Ratio                                   ⊔  Square Cup
+∷  Proportion    
+∿  Sine Wave    
+     
+∥   Parallel To             ∫    Integral               ⌠    Top Half Integral
+∦   Not Parallel To            ∬    Dbl Integral              ⌡    Bottom Half Integral
+∟ Right Angle              ∭   Triple Integral             ❲   Light Left Shell Bracket 
+⊾  Right Angle Arc           ∮   Contour Integral           ❳   Light Right Shell Bracket 
+⊿  Right Triangle             ∯    Surface Integral            ⟪   Maths Left dbl Angle Bracket
+∠  Angle               ∰   Volume Integral            ⟫   Maths Right dbl Angle Bracket
+∡  Measured Angle           ∱   Clockwise Integral           ⟬   Maths Left White Shell Bracket
+∢  Spherical Angle            ∲   Clockwise Contour Integral       ⟭   Maths Right White Shell Bracket
+⌒    Arc                 ∳   Anticlockwise Contour Integral
+⌓    Segment    
+⌔     Sector    
+
+≃   Asymptotically Equal To       ⊕    Circled Plus              ′    Prime
+≄   Not Asymptotically Equal To      ⊖    Circled Minus              ″    Dbl Prime
+≅   Approx Equal To            ⊗    Circled Times              ‴   Triple Prime
+≆   Approx But Not Actually Equal To    ⊘    Circled Division Slash        ⁗   Quadruple Prime
+≇   Not approx Nor Actually Equal To   ⊙    Circled Dot Operator          ‵    Reversed Prime
+≈   Almost Equal To            ⊚    Circled Ring Operator        ‶    Reversed dbl Prime
+≉  Not Almost Equal To          ⊛    Circled Asterisk Operator        ‷   Reversed Triple Prime
+≊   Almost Equal Or Equal To       ⊜    Circled Equals
+≋   Triple Tilde             ⊝    Circled Dash
+≌   All Equal To              ⊞    Squared Plus
+≍  Equivalent To             ⊟    Squared Minus
+≡   Identical To              ⊠    Squared Times
+≢   Not Identical To             ⊡    Squared Dot Operator
+     
+∧  Logical &amp;               ⊢  Right Tack              °   Degree Sign
+∨  Logical Or             ⊣  Left Tack                ℃    Degree Celsius
+⊻  Xor                 ⊤  Down Tack               ℉    Degree Fahrenheit
+⊼  Nand                ⊥  Up Tack                Ω    Ohm Sign    
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="51" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Mathematical operators (including vulgar fractions)</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="53" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="54" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="55" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+GEOMETRICAL CHARACTERS
+
+
+⌉    Right Ceiling            ▬  Black Rectangle            ▭  White Rectangle
+⌋    Right Floor                ▮   Black vert Rectangle          ▯   White vert Rectangle
+⌈    Left Ceiling               ▰  Black Parallelogram           ▱  White Parallelogram
+⌊    Left Floor               ◆  Black Diamond             ◇ White Diamond
+⌝   Top Right Corner 
+⌟   Bottom Right Corner          ◈  Diamond with Diamond          ◊  Lozenge
+⌜   Top Left Corner           ▲  Black Up Triangle             △  White Up Triangle
+⌞   Bottom Left Corner          ▶  Black Right Triangle         ▷  White Right Triangle
+◝ Top Right quad Circular Arc        ▼  Black Down Triangle          ▽ White Down Triangle
+◞ Btm Right quad Circular Arc       ◀  Black Left Triangle           ◁  White Left Triangle
+◜ Top Left quad Circular Arc       ▴   Black Up Small Triangle       ▵   White Up Small Triangle
+◟ Btm Left quad Circular Arc      ▸   Black Right Small Triangle      ▹   White Right Small Triangle
+◘ Inv Bullet               ▾   Black Down Small Triangle     ▿   White Down Small Triangle
+◙ Inv White Circle             ◂   Black Left Small Triangle         ◃   White Left Small Triangle
+◚ Top Half inv White Circle       ►  Black Right Pointer          ▻  White Right Pointer
+◛ Btm Half inv White Circle      ◄  Black Left Pointer          ◅  White Left Pointer
+     
+◻  White Medium Square       ◼  Black Medium Square          ⬔    Square top Right diag Half Black
+□  White Square              ■  Black Square           ⬕    Square btm Left diag Half Black
+◽   White Medium Small Square     ◾   Black Medium Small Square     ⬖    Diamond Left Half Black
+▫  White Small Square           ▪  Black Small Square         ⬗    Diamond Right Half Black
+▣  Square with Square                              ⬘    Diamond Top Half Black
+◉  Fisheye                                  ⬙    Diamond Bottom Half Black
+○  White Circle              ●  Black Circle              ◪  Square btm Right diag Half Black
+◌  Dotted Circle              ◍  Circle vert Fill              ◫  White Square vert Bisecting Line
+◯ Large Circle             ◎ Bullseye              ◬  White Up Triangle Dot
+▢  White Square Rounded Corners                        ◭  Up Triangle Left Black
+▤  Square horiz Fill                               ◮  Up Triangle Right Black
+▥  Square vert Fill                                ◐  Circle Left Half Black
+▦  Square Orthogonal Crosshatch Fill   ◖   Left Half Black Circle          ◑  Circle Right Half Black
+▧  Square top Left To btm Right Fill     ◗   Right Half Black Circle        ◒  Circle btm Half Black
+▨  Square top Right To btm Left Fill                       ◓  Circle top Half Black
+▩  Square diag Crosshatch Fill    
+     
+◸    Top Left Triangle                                     ◰    White Square top Left quad
+◹    Top Right Triangle                               ◱    White Square btm Left quad
+◿    Btm Right Triangle                              ◲    White Square btm Right quad
+◺    Btm Left Triangle                                ◳    White Square top Right quad
+⧖  White Hourglass           ⧗  Black Hourglass            ◴    White Circle top Left quad
+⋈  Bowtie                                         ◵    White Circle btm Left quad
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ORNAMENTAL CHARACTERS
+
+
+⌂  House              ☣  Biohazard Sign           ♚  Black Chess King
+⌕  Telephone Recorder           ☤  Caduceus              ♛  Black Chess Queen
+⌖   Position Indicator            ☥  Ankh                 ♜  Black Chess Rook
+⌗    Viewdata Square          ☮    Peace Symbol            ♝  Black Chess Bishop
+⌘    Place Of Interest Sign        ☯ Yin Yang                ♞  Black Chess Knight
+⌚     Watch               ☰    Trigram For Heaven           ♟  Black Chess Pawn
+⌛  Hourglass             ☱    Trigram For Lake           ♠  Black Spade Suit
+⌢  Frown                  ☲    Trigram For Fire             ♡  White Heart Suit
+⌣  Smile               ☳    Trigram For Thunder           ♢  White Diamond Suit
+⌥  Option Key            ☴    Trigram For Wind           ♣    Black Club Suit
+⌦   Erase To The Right           ☵    Trigram For Water            ♤  White Spade Suit
+⌧    X In A Rectangle Box          ☶    Trigram For Mountain           ♥  Black Heart Suit
+⌨  Keyboard               ☷    Trigram For Earth          ♦  Black Diamond Suit
+⌫   Erase To The Left          ☸ Wheel Of Dharma            ♧    White Club Suit
+                      ☹  White Frowning Face         ♨    Hot Springs
+                      ☺  White Smiling Face         ♩  Quarter Note
+                      ☻  Black Smiling Face          ♪  Eighth Note
+☀  Black Sun Rays              ☼    White Sun Rays           ♫  Beamed Eighth Notes
+☁     Cloud               ☽  First Quarter Moon          ♬  Beamed Sixteenth Notes
+☂     Umbrella               ☾  Last Quarter Moon          ♭ Music Flat Sign
+☃  Snowman             ☿  Mercury               ♮  Music Natural Sign
+☄  Comet                 ♀  Female Sign               ♯ Music Sharp Sign
+★  Black Star              ♁  Earth                ⚀ Die Face-1
+☆ White Star             ♂    Male Sign              ⚁ Die Face-2
+☇   Lightning               ♃  Jupiter                 ⚂ Die Face-3
+☈  Thunderstorm            ♄  Saturn                 ⚃ Die Face-4
+☉    Sun                ♅  Uranus                ⚄ Die Face-5
+☊ Ascending Node           ♆   Neptune             ⚅ Die Face-6
+☋ Descending Node           ♇  Pluto                 ⚆ White Circle Dot Right
+☌  Conjunction             ♈   Aries                 ⚇ White Circle Two Dots
+☍    Opposition               ♉   Taurus                 ⚈ Black Circle White Dot Right
+☎   Black Telephone           ♊ Gemini               ⚉ Black Circle Two White Dots
+☏   White Telephone           ♋   Cancer                ⚠  Warning Sign
+☐  Ballot Box              ♌ Leo                ✁   Top Blade Scissors
+☑  Ballot Box Check           ♍ Virgo                ✂   Black Scissors
+☒  Ballot Box X              ♎    Libra                 ✃   Btm Blade Scissors
+☓   Saltire              ♏    Scorpius             ✄   White Scissors
+                      ♐ Sagittarius               
+☚    Black Left point Index        ♑   Capricorn              ✆    Telephone Location Sign
+☛    Black Right point Index         ♒   Aquarius                ✇  Tape Drive
+☜    White Left point Index        ♓    Pisces                 ✈  Airplane
+☝  White Up point Index          ♔  White Chess King          ✉  Envelope
+☞    White Right point Index         ♕  White Chess Queen           ✍ Writing H&amp;
+☟  White Down point Index       ♖  White Chess Rook         ✎   Btm Right Pencil
+☠ Skull &amp; Crossbones         ♗  White Chess Bishop           ✏   Pencil
+☡  Caution Sign            ♘  White Chess Knight         ✐   Top Right Pencil
+☢    Radioactive Sign           ♙  White Chess Pawn           ✓  Check Mark
+✔    Heavy Check Mark           ✬    Black Centre White Star        ❂  Circled Open Centre Eight point Star
+✕  Multiplication X          ✭    Outlined Black Star         ❃  Heavy Teardrop Pinwheel Asterisk
+✖  Heavy Multiplication X       ✮    Heavy Outlined Black Star      ❄  Snowflake
+✗  Ballot X               ✯    Pinwheel Star             ❅  Tight Trifoliate Snowflake
+✘  Heavy Ballot X            ✰    Shadowed White Star        ❆  Heavy Chevron Snowflake
+✚  Heavy Greek Cross          ✱  Heavy Asterisk           ❇  Sparkle
+✛  Open Centre Cross          ✲  Open Centre Asterisk        ❈  Heavy Sparkle
+✜  Heavy Open Centre Cross       ✳  Eight Spoked Asterisk          ❉  Balloon Asterisk
+✝   Latin Cross               ✴  Eight point Black Star        ❊  Eight Teardrop Asterisk
+✞  Shadowed White Latin Cross       ✵  Eight point Pinwheel Star       ❋  Heavy Eight Teardrop Asterisk
+✟   Outlined Latin Cross          ✶  Six point Black Star         ❍    Shadowed White Circle
+✠  Maltese Cross            ✷  Eight point Rectilinear Black Star   ❏  Btm Right Shadowed White Square
+✡  Star Of David           ✸  Heavy Eight point Black Star     ❐  Top Right Shadowed White Square
+✢  Four Teardrop Asterisk         ✹  Twelve point Black Star        ❑  Btm Right Shadowed White Square
+✣  Four Balloon Asterisk         ✺  Sixteen point Asterisk        ❒  Top Right Shadowed White Square
+✤  Heavy Four Balloon Asterisk      ✻  Teardrop Asterisk            ❖  Black Diamond Minus White X
+✥  Four Club Asterisk           ✼  Open Centre Teardrop Asterisk      
+✦  Black Four point Star         ✽  Heavy Teardrop Asterisk         ❛   Heavy Single Turned Comma quote 
+✧  White Four point Star         ✾  Six Petalled Black &amp; White Florette    ❜   Heavy Single Comma quote 
+✩    Stress Outlined White Star        ✿  Black Florette             ❝  Heavy dbl Turned Comma quote 
+✪  Circled White Star            ❀  White Florette             ❞  Heavy dbl Comma quote 
+✫    Open Centre Black Star        ❁  Eight Petalled Black Florette     
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="56" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Geometrical and ornamental characters</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="58" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="59" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    COMMON CHARACTER WIDTHS AND ADDITIONAL WHITESPACE CHARACTERS
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+This section contains a list of the alphanumeric characters and common punctuation in terms of
+character width (thinnest first).
+
+The average character widths for each group are based on the frequency of letter usage in 
+standard (British) English.
+
+The additional whitespace characters complete the set of TIA Portal whitespace characters, these
+are included for completeness, but duplicate the widths of the standard whitespace characters 
+listed in previous sections.
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+NORMAL CHARACTERS BY WIDTH
+
+
+▐I▌1sp
+▐J▌1⅓ sp
+▐T▌1⅔ SP
+▐F▌2 sp
+▐L▌2 sp
+▐P▌2 sp
+▐R▌2 sp
+▐A▌2⅓ SP
+▐B▌2⅓ SP
+▐C▌2⅓ SP
+▐E▌2⅓3 SP
+▐K▌2⅓ SP
+▐S▌2⅓ SP
+▐V▌2⅓ SP
+▐X▌2⅓ SP
+▐Y▌2⅓ SP
+▐Z▌2⅓ SP
+▐D▌2⅔ sp
+▐G▌2⅔ sp
+▐H▌2⅔ sp
+▐N▌2⅔ sp
+▐U▌2⅔ sp
+▐M▌3 sp
+▐O▌3 sp
+▐Q▌3 sp
+▐W▌3 sp
+Upper avg. (based on frequency and width) = 2.25 normal spaces
+
+▐f▌1 sp
+▐i▌1 sp
+▐j▌1 sp
+▐l▌1 sp
+▐r▌1⅓ sp
+▐t▌1⅓ sp
+▐x▌1⅔ sp
+▐y▌1⅔ sp
+▐z▌1⅔ sp
+▐c▌2 sp
+▐k▌2 sp
+▐s▌2 sp
+▐v▌2 sp
+▐a▌2⅓ sp
+▐b▌2⅓ sp
+▐d▌2⅓ sp
+▐e▌2⅓ sp
+▐g▌2⅓ sp
+▐h▌2⅓ sp
+▐n▌2⅓ sp
+▐o▌2⅓ sp
+▐p▌2⅓ sp
+▐q▌2⅓ sp
+▐u▌2⅓ sp
+▐w▌3 sp
+▐m▌3⅔ sp
+Lower avg. (based on frequency and width) = 2.00 normal spaces
+
+▐0▌2⅓ sp
+▐1▌2⅓ sp
+▐2▌2⅓ sp
+▐3▌2⅓ sp
+▐4▌2⅓ sp
+▐5▌2⅓ sp
+▐6▌2⅓ sp
+▐7▌2⅓ sp
+▐8▌2⅓ sp
+▐9▌2⅓ sp
+Numbers = 2.33 sp
+
+▐!▌1 sp
+▐'▌1 sp
+▐,▌1 sp
+▐-▌1 sp
+▐.▌1 sp
+▐/▌1 sp
+▐\▌1 sp
+▐|▌1 sp
+▐[▌1⅓ sp
+▐]▌1⅓ sp
+▐:▌1⅓ sp
+▐:▌1⅓ sp
+▐(▌1⅓ sp
+▐)▌1⅓ sp
+▐{▌1⅔ sp
+▐}▌1⅔ sp
+▐"▌1⅔ sp
+▐?▌1⅔ sp
+▐&lt;▌2 sp
+▐&gt;▌2 sp
+▐^▌2 sp
+▐_▌2 sp
+▐~▌2 sp
+▐=▌2⅓ sp
+▐$▌2⅓ sp
+▐*▌2⅓ sp
+▐+▌2⅓ sp
+▐`▌2⅓ sp
+▐&amp;▌2⅔ sp
+▐#▌2⅔ sp
+▐%▌3 sp
+▐@▌3⅓ sp
+Punctuation avg. 1 sp (based on comma, full stop and dash being the most common)
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ALL OTHER WHITESPACE CHARACTERS
+
+The other whitespace characters (Hair space, figure space &amp;c.) are supported by the Siemens
+font, but have the identical widths to those listed above. The full list is shown below:
+
+▐  ▌2 Em spaces
+▐    ▌4 En space      (1/2 em)
+▐      ▌6 Three per em     (1/3 em)
+▐        ▌8 Punctuation space (1/4 em)
+▐        ▌8 Normal space      (1/4 em)
+▐        ▌8 Four per em      (1/4 em)
+▐        ▌8 Figure space     (1/4 em)
+▐            ▌12 Six per em    (1/6 em)
+▐            ▌12 Hair space       (1/6 em)
+
+                ━━━  ⬙⬙⬙⬙⬙⬙  ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="5B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="5C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Special characters — Common character widths and additional whitespace characters</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    PS2001 — PRACTICAL SERIES AUTOMATION LIBRARY
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+――――――――――――――――――――――――――――――――――
+COPYRIGHT:       © 2020 Michael Gledhill
+          Part of the Practical Series of Publications
+          Published in the United Kingdom
+          mg@practicalseries.com
+          https://practicalseries.com
+――――――――――――――――――――――――――――――――――
+CUSTOMER:       Practical Series of Publications (PSP)
+
+PROJECT:      Practical Series Automation Library (PAL)
+
+PROJECT NO.:       PS2001
+――――――――――――――――――――――――――――――――――
+CONTROLLER:       CPU 1515-2PN/DP
+
+CONTROLLER NAME:    CON100
+
+IP ADDRESS:      192.168.001.100
+――――――――――――――――――――――――――――――――――
+TIA PROJECT NAME:    PS2001-PAL-D0000
+
+STATUS:        DEVELOPMENT
+――――――――――――――――――――――――――――――――――
+PROTECTION:     To minimise the risk of inadvertent modification to 
+          tested modules, certain blocks will be released for 
+          use with “protected access” (referred to a “write 
+          protection” in Siemens terminology), this allows the 
+          block to be used normally, but prevents the block 
+          being accidentally modified. 
+
+          This is in accordance with the risk assessment given 
+          in the Validation Plant (VP), Appendix A [Ref. 002].
+
+          ┌─────────────────────┐
+          │ THE WRITE PROTECTION PASSWORD IS: PS2001 │
+          └─────────────────────┘
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+PROJECT OVERVIEW
+
+
+The PAL is a library of software modules and templates that have been developed for the 
+Siemens Simatic S7-1500 range of controllers (and to a lesser extent the S7-1200 range).
+
+The full library and all necessary documentation is available from the Practical Series website:
+
+     https://practicalseries.com/2001-pal/index.html
+
+
+The PAL is configured and deployed using the Siemens Simatic TIA Portal programming 
+environment.
+
+The PAL software structure is designed such that it is applicable to virtually all industrial 
+applications that can generally controlled by a programmable logic controller.
+
+The PAL software being developed as part of this Project, is considered to be suitable for use in 
+the following types of industries (this is not an exhaustive list):
+
+   •   Water and waste water treatment
+   •   Pharmaceutical and batch production
+   •   Brewing and fermentation
+   •   Chemical manufacturing
+   •   Oil and gas systems
+   •   Food and beverage production
+
+Such applications can generally be thought of as processes that operate with a response time
+of more than 100 ms. I.e. the system would not be expected to respond to some stimuli faster
+than 100 ms. In practice, a Controller may (and usually will) respond faster than this; however, 
+a response time of 100 ms is considered to be an acceptable limit for PLC control.
+
+At its most basic level, the PAL will be a library of software modules that control the fundamental 
+aspects of an industrial plant; such modules would for example read the value of an instrument, 
+operate a valve or drive, perform a calculation &amp;c.
+
+Such software modules are referred to as standard modules, these are fixed modules that 
+perform a particular function and are identical across all software installations.
+
+The PAL also contains application specific modules; these contain software that is applicable 
+to the plant being controlled.
+
+The Practical Series Automation Library is freely available under the MIT Open Source licence 
+(see below). Those who find it useful may, if they wish, make a donation to support the library. 
+
+Donations can be made here:
+
+     https://practicalseries.com/2001-pal/11-web/81-00-pay.html
+
+The PAL contains fully deployable software that has been developed by the author in his 
+profession as a chartered electrical engineer. It is currently in use on various live plants 
+throughout the UK and in some other parts of the world. 
+
+This software is suitable for controlling and automating most industrial applications (typical 
+process applications). It is easy to use and configure, but does have a degree of practical 
+complexity appropriate for the environments within which it is employed. It is heavily 
+configurable, has various operating modes and is suitable for a multitude of industrial 
+applications.
+
+IF YOU DON’T UNDERSTAND IT, DON’T USE IT. IF YOU DO USE IT, YOU DO SO AT YOUR OWN RISK.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+DOCUMENT REFERENCES
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.       TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 001  PS2001-5-0101-001   Quality Plan (QP)
+ 002  PS2001-5-0121-002   Validation Plan (VP)
+ 003  PS2001-5-0131-003   Test Plan (TP)
+ 004  PS2001-5-1101-001   User requirements specification (URS)
+ 005  PS2001-5-1111-001   Requirement Traceability Matrix (RTM)
+ 006  PS2001-5-2101-001   Functional Specification (FS) 
+ 007  PS2001-5-2211-001   Hardware Design Specification (HDS)
+ 008  PS2001-5-2311-001   Software Design Specification (SDS)
+ 009  PS2001-5-7111-001   User Guide (UG)
+ 010  PS2001-5-2313-011   Style Guide (SG)
+ 011  PS2001-5-2312-fcNo.    Software Module Design Specification (SMDS)
+ 012  PS2001-5-2301-001   Software Module Register (SMR)
+ 013  PS2001-5-2302-011   Software Control and Mechanism (SCM)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+COMPLETED MODULES 
+
+COMPLETED MODULES 
+
+ ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
+ BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC01001 StdSysGlobalData      001.000   UT 01000   001.000-R UT 21000   001.000-R
+                 2020-11-20   UT 01001   001.000-R UT 21000   001.000-R 
+                          None           DB21000   001.000-R
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC02001 StdInstAnalogRead    001.000   UT 02001   001.000-R UT 22001   001.000-R
+                 2020-11-20   DB02001   001.000-R DB22001   001.000-R
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC18001 StdSubScaleAI      001.000   None           None 
+                 2020-12-09   None           None
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC18151 StdSubTimeEventRTC   001.000   None           UT 38151   001.000-R
+                 2020-11-20                  DB38151   001.000-R
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC61000 DocGenExample     001.000   None           None 
+                 2020-11-20   None           None          
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC21000 AppSys          001.000   None           None 
+                 2020-12-04   None           None          
+ ――――――――――――――――――――――――――――――――――――――――――
+ See Software Module Register [Ref. 012] for full details
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="60" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="61" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>OB1 NETWORK 1 — Project description</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="62" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalConstant" UId="21">
+      <Constant Name="_FALSE" />
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'PS2001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'001.000-R'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020.10.20'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="63" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="64" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY (GITHUB VERSION CONTROL SYSTEM)
+
+
+This is a complete summary of all primary software modifications (commit points) made to this 
+TIA Portal project (the latest commit tag is at the top of the list). 
+
+The latest commit tag, author and the date of the revision are hardcoded into the Controller in 
+this network (allowing revision data to be obtained directly from the Controller).
+
+The development of the software project is stored and managed within the GIT Source Code 
+Management system (a version control system or VCS) in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+This repository is public and can be freely “forked” (copied) and used under the MIT Licence.
+The MIT Licence is reproduced in full in the previous network.
+
+ ———————————————————————————————————————————
+ DATE     COMMIT TAG       AUTHOR        REASON FOR MODIFICATION
+ ———————————————————————————————————————————
+ 2021.02.02    D0002      M. Gledhill      Baseline build
+
+ 2021.02.02    D0001      M. Gledhill      Hardware build
+
+ 2021.02.02    D0000      M. Gledhill      Initial commit — repository created
+ ———————————————————————————————————————————
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="65" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="66" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>OB1 NETWORK 2 — Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="67" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="68" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="69" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The system block RD_SYS_T reads the time of day, the date and the day of week from the system 
+real time clock as a DTL (or Date_And_Time_Long) data type (one just being the shorthand 
+notation of the other). The result is stored in a local variable for decoding.
+
+The DTL data type stores the date and time information in 8 consecutive bytes in BCD format 
+as follows:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA         DESCRIPTION
+
+ 0          Dear        (00h-89h = 2000 to 2089)   (90h-99h = 1990 to 1999)
+ 1          Month      (00h-12h = Jan to Dec)
+ 2          Day       (01h-31h)
+ 3          Hour        (00h-23h)
+ 4          Minute        (00h-59h)
+ 5          Month      (00h-12h = Jan to Dec)
+ 6-7         Millisecond      Uses byte 6 and most significant 4 bits of byte 7)
+ 7          Day of Week    least significant 4 bits (1h-7h = Sun to Sat)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The local variable is of type DTL (Date_And_Time_Long), this is compatible with the DT output
+from RD_SYST, but allows the individual elements of the DT structure to be accesses
+individually as symbols.
+
+Note:    The DTL format can store more information (it can for example handle years in the 
+     range 1970 to 2262; however, it will still only store the data in the table above
+     when used with RS_SYS_T. 
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="6B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Load the system RTC and store in local variable  [typical network comment]</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="6C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="6D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+ ███   ███   ███  █  █   ███  
+█   █ █   █ █   █ █  █  █   █ 
+█  ██     █     █ █  █  █  ██ 
+█ █ █  ███   ███  █████ █ █ █ 
+██  █     █     █    █  ██  █ 
+█   █ █   █ █   █    █  █   █ 
+ ███   ███   ███     █   ███  
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+STEP DESCRIPTION
+
+
+Open the dry air purge valve (SV4201), activate the operator prompt ABORT PURGE.
+
+If the main chamber humidity level falls below the target value proceed to the next step.
+
+If the operator presses the ABORT PURGE button proceed to step 03400.
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+STEP PHASE AND DELAY CONDITIONS
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PHASE         ACTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ INITIALISING      Activate the ABORT PURGE enable signal
+
+ PROCESSING    Open SV4201
+
+ TERMINATING    Clear the ABORT PURGE enable signal and any ABORT PURGE pressed
+          signal
+
+ STEP DELAY      No delay
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+STEP TRANSITION CONDITIONS
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ TRANSITION      TO STEP    TRANSITION CONDITIONS
+ ――――――――――――――――――――――――――――――――――――――――――
+ 1.        03350      HIC001 ≤ HUMIDITY_LIMIT
+
+ 2.        03400      Operator has pressed ABORT PURGE button
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="70" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>██ STEP 03340 — DECLARATION (RUNNING) [sequence network comment]</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="71" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="72" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="73" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+INITIALISE PHASE
+
+Activate the ABORT PURGE enable signal
+(this is a temporary signal passed to the handling DB at the end of the block)
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="74" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="75" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>   STEP 03340 — ACTION (INITIALISE) [sequence network comment]</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="76" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="77" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="78" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+TRANSITION CONDITION 01
+
+Wait for humidity to reach target level HIC001 ≤ HUMIDITY_LIMIT
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="79" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>   STEP 03340 — TRANSITION 01 [sequence network comment]</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="7B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalConstant" UId="21">
+      <Constant Name="_FALSE" />
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="27" DisabledENO="true" />
+    <Part Name="S_Move" UId="28" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="7C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="7D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="7E" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION [final network]</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="80" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="81" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Documentation - Gen — Example Documentation (full)</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

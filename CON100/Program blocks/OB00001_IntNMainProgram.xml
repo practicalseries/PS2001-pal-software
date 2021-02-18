@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-02-18T14:55:38.4725848Z</Created>
+    <Created>2021-02-18T15:19:15.9197668Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -51,7 +51,32 @@
       </Comment>
     </Member>
   </Section>
-  <Section Name="Temp" />
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licence information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
   <Section Name="Constant" />
 </Sections></Interface>
       <IsIECCheckEnabled>false</IsIECCheckEnabled>
@@ -113,7 +138,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0001 — HARDWARE ONLY BUILD
+TIA PROJECT NAME:    PS2001-PAL-D0002 — BASELINE BUILD
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -226,8 +251,8 @@ COMPLETED MODULES
  ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
  BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
  ――――――――――――――――――――――――――――――――――――――――――
-
-         
+ FC61000 DocGenExample     001.000   None           None 
+                 2021.02.18   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
  See Software Module Register [Ref. 012] for full details
 
@@ -294,7 +319,119 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
         <AttributeList>
-          <NetworkSource />
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'PS2001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'D0002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2021.02.18'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
@@ -324,6 +461,8 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE     COMMIT TAG       AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2021.02.18    D0002      M. Gledhill      Baseline build
+
  2021.02.18    D0001      M. Gledhill      Hardware build
 
  2021.02.18    D0000      M. Gledhill      Initial commit — repository created
@@ -350,7 +489,73 @@ The MIT licence is reproduced in full in the last network of this software modul
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
         <AttributeList>
-          <NetworkSource />
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26" />
+    <Part Name="S_Move" UId="27" DisabledENO="true" />
+    <Part Name="S_Move" UId="28" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
