@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-02-19T13:29:14.7765099Z</Created>
+    <Created>2021-02-19T13:53:19.1750506Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -204,7 +204,7 @@ This is a subroutine block.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME      18.41 μs¹
- LOAD MEMORY       20.05 kB  (20531 bytes)
+ LOAD MEMORY       20.06 kB  (20537 bytes)
  WORK MEMORY           0.43 kB      (440 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
@@ -818,6 +818,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2021.02.19    001.000   D0003      D0002 D0003  None    M. Gledhill
+                       FC18151 — RELEASED FOR USE
+                         Merge back to master branch
+
  2021.02.19    001.000   D0002A-001.000   D0002 N/A     D0002A   M. Gledhill
                        FC18151 — Post test RELEASED FOR USE
  

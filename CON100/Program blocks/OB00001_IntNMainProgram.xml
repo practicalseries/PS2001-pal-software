@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-02-19T12:58:18.5990442Z</Created>
+    <Created>2021-02-19T13:53:18.5508194Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -138,7 +138,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0002A-001-000  FC18151 build 
+TIA PROJECT NAME:    PS2001-PAL-D0003
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -344,7 +344,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0002A-001.000'</ConstantValue>
+        <ConstantValue>'D0003'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -464,8 +464,7 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
- 2021.02.19    D0002A-001.000   M. Gledhill      FC18151 — Post test RELEASE
- 2021.02.18    D0002A-000.801   M. Gledhill      FC18151 — Released for SMT
+ 2021.02.19    D0003      M. Gledhill      FC18151 — Released for use
 
  2021.02.18    D0002      M. Gledhill      Baseline build
 
