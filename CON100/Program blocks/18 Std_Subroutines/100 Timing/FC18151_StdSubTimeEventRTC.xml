@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-02-19T12:08:59.0868483Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>Subroutine</HeaderFamily>
+      <HeaderName>StdSubTimeEventRTC</HeaderName>
+      <HeaderVersion>0.8</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="TRIGGER" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Trigger signal record start time on rising edge, end time on falling edge</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="DYNAMIC_DATA" Datatype="&quot;UT18151_Dy_SubTimeEventRTC&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Dynamic data storage (UDT)</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Int" />
+          <Member Name="___________0010_1" Datatype="Int" />
+          <Member Name="status_Running" Datatype="Bool" />
+          <Member Name="___________0020_0" Datatype="Int" />
+          <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="actual_StartTime" Datatype="DTL" Version="1.0" />
+          <Member Name="actual_EndTime" Datatype="DTL" Version="1.0" />
+          <Member Name="actual_Duration" Datatype="LTime" />
+          <Member Name="actual_DurationSec" Datatype="Real" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licence information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="wrkInt" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkLInt" Datatype="ULInt">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (long integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC18151_StdSubTimeEventRTC</Name>
+      <Number>18151</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+ FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
+ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text> ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    SUBROUTINE — EVENT TIMER USING RTC
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ 
+
+
+This block (FC18151_SubTimeEventRTC) is a subroutine block that times the duration of an event 
+to nanosecond resolution.
+
+The block records the time the event started (rising edge of the TRIGGER signal), the time the 
+event ended (falling edge of the TRIGGER signal) and calculates the duration of the event (end 
+time minus the start time).
+
+The start and end times are read from the real time clock of the controller.
+
+This is a subroutine block.
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         Subroutine Event Timer using RTC
+ BLOCK FUNCTION GROUP    Subroutine
+ BLOCK ADDRESS       FC18151
+ BLOCK SYMBOL        FC18151_SubTimeEventRTC
+ BLOCK USER ID         SubTimeEventRTC
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE        Function (FC)
+ BLOCK NUMBER       18151
+ LANGUAGE          LAD
+ OPTIMESED ACCESS   Yes
+ PAL USAGE TYPE      Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME      18.41 μs¹
+ LOAD MEMORY      19.80 kB
+ WORK MEMORY          0.43 kB
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+FC18151 is the Subroutine Event Timer using RTC block, it simply records the duration of an event 
+with a high degree of accuracy. The event being timed is a Boolean signal passed to the block as 
+the TRIGGER parameter.
+
+Three times are recorded for the event, the start time (rising edge of the TRIGGER parameter), the 
+end time (falling edge of the TRIGGER parameter) and the duration of the event (end time minus 
+the start time). The duration is calculated on the falling edge of the TRIGGER parameter, 
+immediately after the end time is recorded.
+
+The start and end times are read from the Controller’s internal real time clock (RTC) and are 
+stored in DTL (date time long) format, this format contains year, month, day, hours, minutes, 
+seconds, milliseconds, microseconds and nano seconds.
+
+The duration is stored in LTime (long time, 64-bit) format, and is very accurate, it resolves to 
+days, hours, minutes, seconds milliseconds, microseconds and nanoseconds, it keeps this 
+resolution irrespective of the duration.
+
+The duration is also calculated as a real number in seconds (or fractions thereof); this is a 
+more convenient format for holding the duration, but is not as accurate as the LTime format.
+
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+The purpose of this block is to determine with a high degree of accuracy the duration of an event, 
+the event itself must be in the form of a Boolean trigger signal, the rising edge of the signal is 
+considered to be the start of the event and the falling edge the end of the event.
+
+The event signal is passed to the block as the TRIGGER parameter. 
+The block returns five values, these are stored in a UDT passed to the block in the 
+DYNAMIC_DATA parameter: 
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ DYNAMIC_DATA     UT18151_Dy_SubTimeEventRTC       DB18151_Dy_SubTimeEventRTC
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The block returns the following data:
+
+ UT18151_Dy_SubTimeEventRTC
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running      STATUS — The event timer is running         Bool
+
+ actual_StartTime      ACTUAL — Time at which the TRIGGER signal        DTL
+                     went high (event start time)
+
+ actual_EndTime        ACTUAL — Time at which the TRIGGER signal     DTL
+                     went low (event end time)
+
+ actual_Duration        ACTUAL — Event duration              LTime
+
+ actual_DurationSec       ACTUAL — Event duration in seconds           REAL
+ ――――――――――――――――――――――――――――――――――――――――――
+ Block returned signals
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1     Timing an event
+
+The block constantly monitors the TRIGGER parameter; if a rising edge is seen on the TRIGGER 
+parameter (point ① in the figure below), the Controller RTC is read and its value is stored in 
+actual_StartTime, at the same time the running signal (status_Running) is activated.
+
+The block continues to monitor the TRIGGER parameter, when a falling edge is detected 
+(point ②), the RTC is read once more and its value is stored in actual_EndTime, and the running 
+signal (status_Running) is deactivated.
+
+Once the end time is stored, the following calculation is carried out:
+
+
+┌───────────────────────────┐
+│ actual_Duration =  actual_EndTime ─ actual_StartTime    │
+└───────────────────────────┘
+
+
+                    ①            ②
+  TRIGGER │             ┏━━━━━━━━━━━━┓
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃                              
+        ┼━━━━━━━━━━━━╶╶╶╶╶╶╶╶╶╶╶╶╶━━━━━━━━━━ time
+                 ↗             ↖
+         actual_Start_Time ╎            ╎ actual_End_Time
+   DTL#2020-04-18-09:34:25.899548353        DTL#2020-04-18-09:34:36.004744916
+
+                   ╎               ╎                      actual_Duration
+                                     LT#10S_105MS_196US_563NS
+                   ╎               ╎  
+                                                    actual_DurationSec
+                   ╎               ╎                              10.10519
+
+        │status_Running      ┏━━━━━━━━━━━━┓
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃
+        │             ┃               ┃
+        ┼━━━━━━━━━━━━╶╶╶╶╶╶╶╶╶╶╶╶╶━━━━━━━━━━
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1     Date and time data types
+
+Both the start and end times (actual_StartTime and actual_EndTime) are of the type DTL 
+(date time long), this itself is a data structure in the form:
+
+ DTL Data Structure
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ YEAR             Year (returns a value in the range 1970 to 2262)     UInt
+ MONTH            Month (1-12 representing Jan to Dec)        USInt
+ DAY              Day of month (1-31)                USInt
+ WEEKDAY          Day of week (1-7, where 1=Sunday, 7=Saturday)    USInt
+ HOUR           Hour of day (0-23)                   USInt
+ MINUTE           Minutes (0-59)                   USInt
+ SECOND            Seconds (0-59)                  USInt
+ NANOSECOND        Nanoseconds (0-999,999,999)           UDint
+ ――――――――――――――――――――――――――――――――――――――――――
+
+When displayed, it has the format:
+
+      DTL#2020-04-18-09:34:25.899548353
+
+ I.e.      18th April 2020 at 09:43:25 AM and 899,548,353 ns.
+
+The calculated duration (actual_Duration) is of data type LTime (long time).
+
+The LTime data type is essentially an 8-byte number (64-bit number) that stores a time value in 
+nanoseconds. In the above example, the actual_Duration has the formatted value of:
+
+      LT#10S_105MS_196US_563NS
+
+ I.e.      10 seconds, 105 milliseconds, 196 microseconds and 563 nanoseconds.
+
+It is shown in this format, because TIA portal understands the LTime data type and is able to 
+interpret the value as days, hours, minute, seconds, milliseconds, microseconds and 
+nanoseconds. 
+
+In practice, the actual_Duration simply (in this example) holds a very large number:
+
+      10,105,196,563
+
+This is the duration of the event in nanoseconds (i.e. 10,105,196,563 nanoseconds). To convert 
+the number to seconds, simply divide by 1,000,000,000 (or 1 × 10^9); this would give:
+
+      10.105196563 seconds
+
+The reason the duration is specified as an LTime rather that DTL is that, somewhat confusingly, 
+DTL is a relative measure of time (relative to 1st January, 1970), if the above duration were 
+represented as a DTL value it would read:
+
+      DTL#1970-01-01-00:00:10.105196563
+
+Hours, minutes and seconds are OK, but the date part doesn’t make sense (to make it 
+meaningful, 1970 must be subtracted from the YEAR value and 1 from both the MONTH and 
+DAY values).
+
+The LTime data type can store a duration of up to 106,751 days (about 300 years) and while not 
+perfect, it seems long enough for most practical situations (possibly not for geological 
+applications).
+
+The actual_Duration in LTime format is very accurate, but it is an unwieldly data type, to provide a 
+more user friendly (although less accurate) format, the actual_Duration signal is converted to a 
+real number giving the duration in seconds, this is stored in the actual_DurationSec signal. In the 
+above example: 
+
+      actual_DurationSec has the value 10.10519 seconds
+
+It is less accurate, it does not resolve to nanoseconds; however, it is easier to use and display 
+and is accurate enough for most applications.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+A note on real numbers
+
+The LTime format is very accurate, it is basically counting nanoseconds, and because it is 64-bits 
+long it can count up to very high values (about 584 years at nanosecond resolution).
+
+Real numbers however, are limited to 32-bits and suffer from precision loss, this results from the 
+fact that the real number has an accuracy of “about” 7 decimal digits, for example 20365.45, 
+20.43728, 1.482967, 0.3356428, &amp;c. Essentially, the bigger the number, the fewer the decimal 
+places — a total of 7 decimal digits.
+
+Very big and very small numbers can be represented by adding trailing zeros for big numbers 
+(e.g. 3275625000) and leading zeros for small numbers (0.000003275625) in both these 
+examples, there are only 7 decimal digits, just shifted effectively left or right.
+
+This type of representation is usually handled by applying scientific notation, the number 
+1,568,497,000,000 would be represented as 1.568497 × 10^12, it only has 7 decimal digits, 
+the number 1,568,497,132,792, would be represented as exactly the same value, the 132,792 
+part of the number can not be resolved and are lost.
+
+
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 1 to 3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+
+The following parameters are associated with the block:
+
+ 
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ TRIGGER       Event trigger signal (a rising edge marks the     Bool   In
+          start of the event, the falling edge the end)
+
+
+ DYNAMIC_DATA      Stores the results of the event timing       UT18151    InOut
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01000
+ UT01001_St_SysLicence           Licence information for this block  See FC01000
+ UT18151_Dy_SubTimeEventRTC        Dynamic data structure for the event timing block
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.1     UT18151_Dy_TimeEventRTC
+
+Stores the timing values for the event:
+
+ UT18151_Dy_TimeEventRTC
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running      STATUS — The event timer is running         Bool
+
+ actual_StartTime      ACTUAL — Time at which the TRIGGER signal        DTL
+                     went high (event start time)
+
+ actual_EndTime        ACTUAL — Time at which the TRIGGER signal     DTL
+                     went low (event end time)
+
+ actual_Duration        ACTUAL — Event duration              LTime
+
+ actual_DurationSec       ACTUAL — Event duration in seconds           REAL
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+The following constants and temporary data storage are used:
+
+
+ Temporary (local) data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ wrkInt           Working storage area (integer)          Int
+ wrkReal           Working storage (Real)             Real
+ wrkLInt            Working storage area (longinteger)      LInt
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS
+
+
+There are no PAL block calls from within this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     ASSOCIATED BLOCKS
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+
+
+The following calls are made to system blocks:
+
+
+ System block calls
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+There are no special system data types used.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     SPECIAL PROPERTIES AND REQUIREMENTS
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.1   Block optimisation
+
+
+Block optimisation is ACTIVE for this block
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.2   Calling requirements
+
+
+There are no special calling requirements for this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.3   Other properties
+
+
+This block does not require the usual SYS_SIGNALS logic and timing data.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+11.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC18151:
+
+                     ┌─────────────
+       ──────────────┤ FC18151
+                     ├───────────
+                %M100.0    │
+              "Event001"   ─┤ TRIGGER
+                     │
+    "DB18151_Dy_TimeEventRTC".Event001 ─┤ DYNAMIC_DATA
+                     │
+                     │             │
+                                   │
+                          ─────────┘
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 4 to 11</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC18151'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'000.801'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2021.02.18'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="31">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="32" />
+    <Part Name="O" UId="33">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+    <Part Name="S_Move" UId="35" DisabledENO="true" />
+    <Part Name="S_Move" UId="36" DisabledENO="true" />
+    <Part Name="S_Move" UId="37" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="38">
+      <Powerrail />
+      <NameCon UId="31" Name="in" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="21" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="31" Name="out" />
+      <NameCon UId="33" Name="in1" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="22" />
+      <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="in2" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <NameCon UId="34" Name="en" />
+      <NameCon UId="35" Name="en" />
+      <NameCon UId="36" Name="en" />
+      <NameCon UId="37" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="23" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="25" />
+      <NameCon UId="35" Name="in" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="35" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="27" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="36" Name="out" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="29" />
+      <NameCon UId="37" Name="in" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="out" />
+      <IdentCon UId="30" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2020.11.18    000.801   D0002A-000.801   D0002 N/A     D0002A   M. Gledhill
+                       FC18151 Migration to VCS — Released for test
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_StartTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26" />
+    <Part Name="Contact" UId="27">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="RD_LOC_T" Version="1.0" UId="28">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+    </Part>
+    <Part Name="SCoil" UId="29" />
+  </Parts>
+  <Wires>
+    <Wire UId="30">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="eno" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="28" Name="RET_VAL" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="25" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the TRIGGER parameter has gone high, and is seen for the first time (status_Running = 0),
+THEN a rising edge has been detected on the TRIGGER signal (event has started).
+
+If a rising edge is detected:
+  1. Read the real time clock and store the result as the actual_StartTime
+  2. Set the status_Running bit to a high state
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Check for TRIGGER rising edge — Start of event</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_EndTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_EndTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_StartTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Duration" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="29">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="30" />
+    <Part Name="RD_LOC_T" Version="1.0" UId="31">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="32" />
+    <Part Name="T_DIFF" Version="2.1" UId="33">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+      <TemplateValue Name="time_type" Type="Type">LTime</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="34">
+      <Powerrail />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="21" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="22" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="33" Name="en" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="eno" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="31" Name="RET_VAL" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="OUT" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="25" />
+      <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="IN1" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="27" />
+      <NameCon UId="33" Name="IN2" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="33" Name="OUT" />
+      <IdentCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the TRIGGER parameter has gone low, and is seen for the first time (status_Running = 1),
+THEN a falling edge has been detected on the TRIGGER signal (event has ended
+
+If a falling edge is detected:
+  1. Read the real time clock and store the result as the actual_EndTime
+  2. Set the status_Running bit to a lowstate
+  3. Subtract actual_StartTime from actual_EndTime and store asactual_Duration
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Check for TRIGGER falling edge — Endof event</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Duration" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="wrkLInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkLInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0E+09</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_DurationSec" />
+      </Symbol>
+    </Access>
+    <Part Name="T_CONV" Version="1.2" UId="28">
+      <TemplateValue Name="src_type" Type="Type">LTime</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">ULInt</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="29" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">ULInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="30" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="31">
+      <Powerrail />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="IN" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="28" Name="eno" />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="28" Name="OUT" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="29" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="26" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The actual_Duration signal is of data type LTime (a 64-bit number representing the recorded
+duration in nanoseconds).
+
+The actual_Duration signal is converted first to a LInt (long integer) and then to a REAL number.
+
+This REAL number is then divided by 1,000,000,000 (1×10^9) to convert the duration from 
+nanoseconds to seconds
+
+This final value is returned as actual_DurationSec
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Convert actual_Duration to a REAL number and scale for seconds</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="27">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="28" />
+    <Part Name="O" UId="29">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="S_Move" UId="30" DisabledENO="true" />
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="27" Name="in" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="29" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="22" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="en" />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="25" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="26" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="27" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Subroutine Block — Event Timer RTC</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

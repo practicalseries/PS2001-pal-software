@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-02-18T15:19:16.9202639Z</Created>
+    <Created>2021-02-19T12:10:00.1513631Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -527,8 +527,8 @@ The MIT licence is reproduced in full in the last network of this software modul
 
 
  ―――――――――――――――――――――――――――――――――――――――――――
- DATE       REVISION            MASTER BRANCH      DEV
-         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
  2021.02.18    001.000   D0002      D0001 D0002  None    M. Gledhill
                        FC61000 — RELEASED FOR USE
@@ -1206,20 +1206,20 @@ The MIT licence is reproduced in full in the last network of this software modul
 
 
  ―――――――――――――――――――――――――――――――――――――――――――
- DATE       REVISION            MASTER BRANCH      DEV
-         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
  2020.11.09    001.000   D0003      D0002 D0003  None    M. Gledhill
                        FC01001 — RELEASED FOR USE
                          Merge back to master branch
  
- 2020.11.09    001.000   D0002A-001.000  D0002 N/A     D0002A   M. Gledhill
+ 2020.11.09    001.000   D0002A-001.000   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Post test released for use
 
- 2020.11.08    000.801   D0002A-000.801  D0002 N/A     D0002A   M. Gledhill
+ 2020.11.08    000.801   D0002A-000.801   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Released for SMT
 
- 2020.11.04    000.102   D0002A-000.102  D0002 N/A     D0002A   M. Gledhill
+ 2020.11.04    000.102   D0002A-000.102   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Incremental build
 
  2020.11.03    000.101   D0002A-000.101  D0002 N/A     D0002A   M. Gledhill
@@ -3302,7 +3302,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-MODIFICATION HISTORY (GITHUB VERSION CONTROL SYSTEM)
+MODIFICATION HISTORY 
 
 
 This is a complete summary of all primary software modifications (commit points) made to this 
@@ -3321,7 +3321,7 @@ This repository is public and can be freely “forked” (copied) and used under
 The MIT Licence is reproduced in full in the previous network.
 
  ———————————————————————————————————————————
- DATE     COMMIT TAG       AUTHOR        REASON FOR MODIFICATION
+ DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
  2021.02.02    D0002      M. Gledhill      Baseline build
 
