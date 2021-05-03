@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-02T14:29:53.9564801Z</Created>
+    <Created>2021-05-03T11:59:57.6553901Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -138,7 +138,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0004
+TIA PROJECT NAME:    PS2001-PAL-D0005
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -464,6 +464,8 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2021.05.02    D0005      M. Gledhill      Typographical corrections only
+
  2021.05.02    D0004      M. Gledhill      Typographical corrections only
 
  2021.02.19    D0003      M. Gledhill      FC18151 — Released for use
