@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-02-19T12:10:00.1513631Z</Created>
+    <Created>2021-05-10T12:51:52.0815548Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,9 +37,47 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Documentation</HeaderFamily>
       <HeaderName>DocGenExample</HeaderName>
-      <HeaderVersion>1.0</HeaderVersion>
+      <HeaderVersion>1.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
-  <Section Name="Input" />
+  <Section Name="Input">
+    <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Common system signals — logic and timing signals</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="_False" Datatype="Bool" />
+          <Member Name="_True" Datatype="Bool" />
+          <Member Name="_50ms" Datatype="Bool" />
+          <Member Name="_100ms" Datatype="Bool" />
+          <Member Name="_200ms" Datatype="Bool" />
+          <Member Name="_500ms" Datatype="Bool" />
+          <Member Name="_1s" Datatype="Bool" />
+          <Member Name="_2s" Datatype="Bool" />
+          <Member Name="_CycleTick" Datatype="Bool" />
+          <Member Name="_CycleTock" Datatype="Bool" />
+          <Member Name="_CycleFirst" Datatype="Bool" />
+          <Member Name="_100msSqW" Datatype="Bool" />
+          <Member Name="_200msSqW" Datatype="Bool" />
+          <Member Name="_500msSqW" Datatype="Bool" />
+          <Member Name="_1sSqW" Datatype="Bool" />
+          <Member Name="_2sSqW" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
   <Section Name="Output" />
   <Section Name="InOut" />
   <Section Name="Temp">
@@ -73,13 +111,7 @@
       </Comment>
     </Member>
   </Section>
-  <Section Name="Constant">
-    <Member Name="_FALSE" Datatype="Bool" Accessibility="Public">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Temporary internal "False" signal</MultiLanguageText>
-      </Comment>
-    </Member>
-  </Section>
+  <Section Name="Constant" />
   <Section Name="Return">
     <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
   </Section>
@@ -202,8 +234,8 @@ NW 25.   LICENCE AND CONTACT INFORMATION       [final network]
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       24.48 μs¹
- LOAD MEMORY       50.26 kB  (51474 bytes)
- WORK MEMORY           0.34 kB      (347 bytes)
+ LOAD MEMORY       51.52 kB  (52753 bytes)
+ WORK MEMORY           0.37 kB      (376 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
 
@@ -229,6 +261,7 @@ all comment sections.
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 3.     DETAILED BLOCK DESCRIPTION
+
 
 The purpose of this block is to provide an easy point of reference for the various documentation 
 constructs and styles used within the PAL.
@@ -264,6 +297,7 @@ The block has the following associated data structure:
  UT01000_St_SysRevision          Revision information for this block    See FC01001
  UT01001_St_SysLicence           Licence information for this block  See FC01001
  ――――――――――――――――――――――――――――――――――――――――――
+
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -356,15 +390,15 @@ There are no special calling requirements for this block.
 The following shows a typical deployment of FC61000:
 
 
-                      ┌────────────
-   ───────────────────┤ FC61000 
-                      ├──────────
-                      │
-                      │
-                      │               │
-                      │               │
-                                   │
-                      ─────────────┘
+                       ┌────────────
+   ────────────────────┤ FC61000 
+                       ├──────────
+     "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS
+                       │
+                       │               │
+                       │               │
+                                    │
+                       ─────────────┘
 
               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -380,7 +414,7 @@ The following shows a typical deployment of FC61000:
               <MultilingualTextItem ID="7" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block Contents</Text>
+                  <Text>Block description </Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -391,8 +425,11 @@ The following shows a typical deployment of FC61000:
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalConstant" UId="21">
-      <Constant Name="_FALSE" />
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="22">
       <Constant>
@@ -409,7 +446,7 @@ The following shows a typical deployment of FC61000:
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.000'</ConstantValue>
+        <ConstantValue>'001.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -421,7 +458,7 @@ The following shows a typical deployment of FC61000:
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.02.18'</ConstantValue>
+        <ConstantValue>'2021.05.10'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -523,13 +560,17 @@ hosting system. The software in its entirety is available in the GitHub remote r
 The repository is public and can be freely copied (forked in GitHub terminology) and used 
 under the MIT licence. 
 
-The MIT licence is reproduced in full in the last network of this software module
+The MIT licence is reproduced in full in the last network of this software module.
 
 
  ―――――――――――――――――――――――――――――――――――――――――――
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2021.05.10    001.101   D0005A-000.101   D0005 N/A     D0005A   M. Gledhill
+                       SysSignals added, 
+                       comments updated to match Style Guide
+
  2021.02.18    001.000   D0002      D0001 D0002  None    M. Gledhill
                        FC61000 — RELEASED FOR USE
                          Block imported form 000.125-Db
@@ -586,6 +627,8 @@ The start and end times are read from the real time clock of the controller.
 
 This is a subroutine block.
 
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -619,6 +662,9 @@ This is a subroutine block.
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
 
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 2.     FUNCTIONAL DESCRIPTION
@@ -644,12 +690,13 @@ resolution irrespective of the duration.
 The duration is also calculated as a real number in seconds (or fractions thereof); this is a 
 more convenient format for holding the duration, but is not as accurate as the LTime format.
 
-
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 3.     DETAILED BLOCK DESCRIPTION
+
 
 The purpose of this block is to determine with a high degree of accuracy the duration of an event, 
 the event itself must be in the form of a Boolean trigger signal, the rising edge of the signal is 
@@ -659,6 +706,7 @@ The event signal is passed to the block as the TRIGGER parameter.
 The block returns five values, these are stored in a UDT passed to the block in the 
 DYNAMIC_DATA parameter: 
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
  ――――――――――――――――――――――――――――――――――――――――――
@@ -667,6 +715,7 @@ DYNAMIC_DATA parameter:
 
 
 The block returns the following data:
+
 
  UT38151_Dy_SubTimeEventRTC
  ―――――――――――――――――――――――――――――――――――――――――― 
@@ -684,12 +733,13 @@ The block returns the following data:
 
  actual_DurationSec       ACTUAL — Event duration in seconds           REAL
  ――――――――――――――――――――――――――――――――――――――――――
- Block returned signals
+ Block returned signals.
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 3.1     Timing an event
+
 
 The block constantly monitors the TRIGGER parameter; if a rising edge is seen on the TRIGGER 
 parameter (point ① in the figure below), the Controller RTC is read and its value is stored in 
@@ -736,8 +786,10 @@ Once the end time is stored, the following calculation is carried out:
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 3.1     Date and time data types
 
+
 Both the start and end times (actual_StartTime and actual_EndTime) are of the type DTL 
 (date time long), this itself is a data structure in the form:
+
 
  DTL Data Structure
  ――――――――――――――――――――――――――――――――――――――――――
@@ -752,6 +804,7 @@ Both the start and end times (actual_StartTime and actual_EndTime) are of the ty
  SECOND            Seconds (0-59)                  USInt
  NANOSECOND        Nanoseconds (0-999,999,999)           UDint
  ――――――――――――――――――――――――――――――――――――――――――
+
 
 When displayed, it has the format:
 
@@ -810,6 +863,7 @@ and is accurate enough for most applications.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 A note on real numbers
 
+
 The LTime format is very accurate, it is basically counting nanoseconds, and because it is 64-bits 
 long it can count up to very high values (about 584 years at nanosecond resolution).
 
@@ -827,13 +881,7 @@ This type of representation is usually handled by applying scientific notation, 
 the number 1,568,497,132,792, would be represented as exactly the same value, the 132,792 
 part of the number cannot be resolved and are lost.
 
-
-
-
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
 </Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -883,6 +931,7 @@ The following parameters are associated with the block:
  DYNAMIC_DATA      Stores the results of the event timing       UT38151    InOut
  ――――――――――――――――――――――――――――――――――――――――――
 
+
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
@@ -908,7 +957,9 @@ The block has the following associated data structure:
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 5.1     UT38151_Dy_TimeEventRTC
 
+
 Stores the timing values for the event:
+
 
  UT38151_Dy_TimeEventRTC
  ――――――――――――――――――――――――――――――――――――――――――
@@ -926,6 +977,7 @@ Stores the timing values for the event:
 
  actual_DurationSec       ACTUAL — Event duration in seconds           REAL
  ――――――――――――――――――――――――――――――――――――――――――
+
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -948,6 +1000,7 @@ The following constants and temporary data storage are used:
  wrkReal           Working storage (Real)             Real
  wrkLInt            Working storage area (long integer)        LInt
  ――――――――――――――――――――――――――――――――――――――――――
+
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -987,8 +1040,8 @@ The following calls are made to system blocks:
  RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
  ――――――――――――――――――――――――――――――――――――――――――
 
-There are no special system data types used.
 
+There are no special system data types used.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -1020,7 +1073,6 @@ There are no special calling requirements for this block.
 
 
 This block does not require the usual SYS_SIGNALS logic and timing data.
-
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -1069,8 +1121,11 @@ The following shows a typical deployment of FC18151:
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalConstant" UId="21">
-      <Constant Name="_FALSE" />
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="22">
       <Constant>
@@ -1202,7 +1257,7 @@ hosting system. The software in its entirety is available in the GitHub remote r
 The repository is public and can be freely copied (forked in GitHub terminology) and used 
 under the MIT licence. 
 
-The MIT licence is reproduced in full in the last network of this software module
+The MIT licence is reproduced in full in the last network of this software module.
 
 
  ―――――――――――――――――――――――――――――――――――――――――――
@@ -1213,16 +1268,16 @@ The MIT licence is reproduced in full in the last network of this software modul
                        FC01001 — RELEASED FOR USE
                          Merge back to master branch
  
- 2020.11.09    001.000   D0002A-001.000   D0002 N/A     D0002A   M. Gledhill
+ 2020.11.09    001.000   D0002A-001.000   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Post test released for use
 
- 2020.11.08    000.801   D0002A-000.801   D0002 N/A     D0002A   M. Gledhill
+ 2020.11.08    000.801   D0002A-000.801   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Released for SMT
 
- 2020.11.04    000.102   D0002A-000.102   D0002 N/A     D0002A   M. Gledhill
+ 2020.11.04    000.102   D0002A-000.102   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Incremental build
 
- 2020.11.03    000.101   D0002A-000.101  D0002 N/A     D0002A   M. Gledhill
+ 2020.11.03    000.101   D0002A-000.101   D0002 N/A     D0002A   M. Gledhill
                        FC01001 — Block created
  ———————————————————————————————————————————
   Where: nnn  =  Major revision
@@ -1259,35 +1314,55 @@ The MIT licence is reproduced in full in the last network of this software modul
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-
+↳
 TITLE:    HEADINGS, LISTS AND INDENTED TEXT
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━[1 empty line above, 3 empty lines below]
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[3 empty lines above, 5 if no ⬙ flourish]
+↳
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[3 empty lines below]
+↳
+↳
+↳
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+labore et dolore magna aliqua. Euismod lacinia at quis risus sed. Semper feugiat nibh sed 
+pulvinar proin gravida hendrerit.
+↳
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━[1 empty line above]
+↳
+↳
+↳
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[3 empty lines above, 2 after title]
 1.     [MAIN SECTION — ALL UPPERCASE — IF UNNUMBERED STARTS AT LEFT EDGE]
 10.     [MAIN SECTION — ALL UPPERCASE — IF UNNUMBERED STARTS AT LEFT EDGE]
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂[3 empty lines above]
+↳
+↳
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+labore et dolore magna aliqua. Euismod lacinia at quis risus sed. Semper feugiat nibh sed 
+pulvinar proin gravida hendrerit.
+↳
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━[1 empty line above]
+↳
+↳
+↳
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂[3 empty lines above, 2 after title]
 1.1     [Subsection, two single digits   — Sentence case — if unnumbered, starts at left edge]
 10.1   [Subsection, one double digit   — Sentence case — if unnumbered, starts at left edge]
 10.10    [Subsection, two double digits — Sentence case — if unnumbered, starts at left edge]
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁[3 empty lines above]
+↳
+↳
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+labore et dolore magna aliqua. Euismod lacinia at quis risus sed. Semper feugiat nibh sed 
+pulvinar proin gravida hendrerit.
+↳
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━[1 empty line above]
+↳
+↳
+↳
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁[3 empty lines above, 2 after title]
 1.1.1     [Inline, three single digits   — Sentence case — if unnumbered, starts at left edge]
 10.1.1   [Inline, one double digit   — Sentence case — if unnumbered, starts at left edge]
 10.10.1   [Inline, two double digits    — Sentence case — if unnumbered, starts at left edge]
 10.10.10 [Inline, three double digits — Sentence case — if unnumbered, starts at left edge]
-
-
+↳
+↳
    •   [Lists — non-numbered]
    ① [Lists — numbered]
    1.  [Lists — numbered single digit   — less than 10 entries]
@@ -1311,13 +1386,12 @@ Note:    Bipolar and unipolar instruments have different tolerances, a 0-20 
 ¹         Footnotes can use the characters ¹, ² and ³ to indicate the footnote number
      Second lines are identical to those for notes.
 ――――――――――
-
-
+↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
+↳
+↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-</Text>
+↳</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1350,7 +1424,6 @@ Note:    Bipolar and unipolar instruments have different tolerances, a 0-20 
 TITLE:    BODY TEXT (AN EXAMPLE)
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
 
 
 Normal (body) text is left justified to the left hand edge of the comment area; manual line-breaks
@@ -1386,11 +1459,12 @@ This averages at about 78 (non-space) characters per line.
 A comment field can contain 65000 characters (approx.) including spaces and line breaks.
 
 This broadly equates to 670 lines of standard text, approximately 13000 words.
-
+↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
+↳
+↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-</Text>
+↳</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1429,8 +1503,8 @@ TITLE:    STANDARD TABLES (EXAMPLES)
 Tables always have 2 blank lines above and 2 blank lines below.
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌PARAMETER TABLE▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
-
+↳
+↳
  ――――――――――――――――――――――――――――――――――――――――――
  PARAM         FUNCTION                    TYPE      IN-OUT 
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1457,12 +1531,12 @@ Tables always have 2 blank lines above and 2 blank lines below.
 
  DYNAMIC_DATA      Stores the results of the event timing       UT38151    InOut
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌ DATA STRUCTURE LIST ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
-
+↳
+↳
  ――――――――――――――――――――――――――――――――――――――――――
  DATA STRUCTURE             DESCRIPTION
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1478,12 +1552,12 @@ Tables always have 2 blank lines above and 2 blank lines below.
                     Current scaled instrument reading, alarm status, 
                     operating modes, timer values &amp;c.
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌   DATA STRUCTURE CONTENTS AND INSTANCE DBs   ▐▐▐▐▐▐▐▐▐▐
-
-
+↳
+↳
  UT38151_Dy_TimeEventRTC
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                     TYPE
@@ -1500,15 +1574,14 @@ Tables always have 2 blank lines above and 2 blank lines below.
 
  actual_DurationSec       ACTUAL — Event duration in seconds           REAL
  ――――――――――――――――――――――――――――――――――――――――――
-
-
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  CONSTANTS AND LOCAL DATA  ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
 
 [Keep local and constant data function description to one line and no gaps between rows]
-
-
+↳
+↳
  CONSTANTS DATA
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                     TYPE
@@ -1516,8 +1589,8 @@ Tables always have 2 blank lines above and 2 blank lines below.
  k_MIN_SP_HYST      Minimum value for SP achieved hysteresis (EU)     Real
  k_MIN_ALM_HYST      Minimum value for ALARM hysteresis (EU)       Real
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
  TEMPORARY (LOCAL) DATA
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                     TYPE
@@ -1528,12 +1601,12 @@ Tables always have 2 blank lines above and 2 blank lines below.
  wrkGain          Gain (adjusted for reverse/normal Acting)      Real
  wrkCycTime          Cyclic execution time (TIME format)         Time
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  BLOCK LIST  ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
-
+↳
+↳
  BLOCK CALLS
  ――――――――――――――――――――――――――――――――――――――――――
  BLOCK          TITLE             DESCRIPTION  
@@ -1541,8 +1614,8 @@ Tables always have 2 blank lines above and 2 blank lines below.
  FC18001         StdSubScaleAI        Scales an analogue input signal 
                            Continuation line
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
  ASSOCIATED BLOCKS
  ――――――――――――――――――――――――――――――――――――――――――
  BLOCK          TITLE             DESCRIPTION  
@@ -1550,12 +1623,12 @@ Tables always have 2 blank lines above and 2 blank lines below.
  FC17102         StdCommsWrite65K       Write data partner block
                            Continuation line 
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  SYSTEM BLOCK LIST   ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
-
+↳
+↳
  SYSTEM BLOCK CALLS
  ――――――――――――――――――――――――――――――――――――――――――
  BLOCK          TITLE             DESCRIPTION  
@@ -1564,16 +1637,16 @@ Tables always have 2 blank lines above and 2 blank lines below.
  (FC804)                        Continuation line 
                            Continuation line
  ――――――――――――――――――――――――――――――――――――――――――
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
-
+↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
+↳
+↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-</Text>
+↳</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1613,8 +1686,8 @@ Tables always have 2 blank lines above and 2 blank lines below.
 
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  TWO COLUMN TABLE ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
-
+↳
+↳
  ――――――――――――――――――――――――――――――――――――――――――
  IO TYPE            DESCRIPTION
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1623,13 +1696,14 @@ Tables always have 2 blank lines above and 2 blank lines below.
  ET200M           Standard IO high density IO for the S7-300 range, 
               can be used as remote IO for the S7-1500
  ――――――――――――――――――――――――――――――――――――――――――
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌THREE COLUMN TABLE ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
 
 [Numerical table with number alignment to the right]
-
-
+↳
+↳
  ――――――――――――――――――――――――――――――――――――――――――
  PRESSURE           RAW SIGNAL           SCALED VAL
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1637,25 +1711,27 @@ Tables always have 2 blank lines above and 2 blank lines below.
        0.0 Pa                  13824            0.0 Pa
   250.0 Pa                  27648              250.0 Pa
  ――――――――――――――――――――――――――――――――――――――――――
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌ FOUR COLUMN TABLE ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
 
 [Numerical table with number alignment to the right]
-
-
+↳
+↳
  ――――――――――――――――――――――――――――――――――――――――――
  RAW MIN       RAW MAX      SCALED MIN       SCALED MAX
  ――――――――――――――――――――――――――――――――――――――――――
        0        27648        -250.0 Pa        250.0 Pa
  ――――――――――――――――――――――――――――――――――――――――――
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌  TABLE WITH HEADING  ▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
 
 [Numerical table with number alignment to the right]
-
-
+↳
+↳
  CURRENT SIGNALS
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL TYPE     SIG MIN VAL      RAW_MIN     SIG MAX VAL     RAW_MAX
@@ -1664,16 +1740,16 @@ Tables always have 2 blank lines above and 2 blank lines below.
    0-20 mA      0 mA          0          20 mA       27648
  -20 to 20 mA      -20 mA      -27648          20 mA       27648
  ――――――――――――――――――――――――――――――――――――――――――
-
-
+↳
+↳
 
 ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐▐
-
+↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
+↳
+↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-</Text>
+↳</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1725,12 +1801,12 @@ TITLE:    EQUATIONS (EXAMPLES)
 Mathematical operators:
    Large:  ┼ ─ ╳
    Small: + − × ÷ ± ≤ ≥
-
+↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
+↳
+↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-</Text>
+↳</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1997,12 +2073,12 @@ terminating phase is active for a single OB1 scan.
       ⠀⣤⣿⣿⣿⣿⣿⣶⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣶⣿⣿⣿⣿⣿⣀⠀⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣿⣿⣿⣿⠉⠀⠀
       ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀
       ⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠉⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
-
+↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
+↳
+↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-</Text>
+↳</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2789,6 +2865,7 @@ TITLE:    COMMON CHARACTER WIDTHS AND ADDITIONAL WHITESPACE CHARACTERS
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
+
 This section contains a list of the alphanumeric characters and common punctuation in terms of
 character width (thinnest first).
 
@@ -3069,6 +3146,7 @@ IF YOU DON’T UNDERSTAND IT, DON’T USE IT. IF YOU DO USE IT, YOU DO SO AT YOU
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 DOCUMENT REFERENCES
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  REF.     DOCUMENT NO.       TITLE
  ――――――――――――――――――――――――――――――――――――――――――
@@ -3093,7 +3171,6 @@ DOCUMENT REFERENCES
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 COMPLETED MODULES 
 
-COMPLETED MODULES 
 
  ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
  BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
@@ -3157,9 +3234,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
 
 
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
@@ -3184,8 +3259,11 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalConstant" UId="21">
-      <Constant Name="_FALSE" />
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="22">
       <Constant>
@@ -3557,8 +3635,11 @@ Wait for humidity to reach target level HIC001 ≤ HUMIDITY_LIMIT
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalConstant" UId="21">
-      <Constant Name="_FALSE" />
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="22">
       <Constant>

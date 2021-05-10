@@ -1,0 +1,3938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-05-10T12:51:52.261023Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>System</HeaderFamily>
+      <HeaderName>StdSysGlobalData</HeaderName>
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="CLOCK_MEM" Datatype="Byte" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">The clock memory byte (within the PAL this is always MB10)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="SYS_SIGNAL_TAGS" Datatype="Int" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">The system logic and timing signals for direct access</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="InOut">
+    <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">The system logic and timing signals for parametric access</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="_False" Datatype="Bool" />
+          <Member Name="_True" Datatype="Bool" />
+          <Member Name="_50ms" Datatype="Bool" />
+          <Member Name="_100ms" Datatype="Bool" />
+          <Member Name="_200ms" Datatype="Bool" />
+          <Member Name="_500ms" Datatype="Bool" />
+          <Member Name="_1s" Datatype="Bool" />
+          <Member Name="_2s" Datatype="Bool" />
+          <Member Name="_CycleTick" Datatype="Bool" />
+          <Member Name="_CycleTock" Datatype="Bool" />
+          <Member Name="_CycleFirst" Datatype="Bool" />
+          <Member Name="_100msSqW" Datatype="Bool" />
+          <Member Name="_200msSqW" Datatype="Bool" />
+          <Member Name="_500msSqW" Datatype="Bool" />
+          <Member Name="_1sSqW" Datatype="Bool" />
+          <Member Name="_2sSqW" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="SYS_DATA" Datatype="&quot;UT21001_Dy_SysData&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">The system data storage structure interface, holds the cycle &amp; RTC data</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="CycTime_Prev" Datatype="Real" />
+          <Member Name="CycTime_Max" Datatype="Real" />
+          <Member Name="CycTime_Min" Datatype="Real" />
+          <Member Name="Cyc_Counter" Datatype="UDInt" />
+          <Member Name="__________0020_0" Datatype="Bool" />
+          <Member Name="__________0020_1" Datatype="Bool" />
+          <Member Name="RTC_Year" Datatype="Int" />
+          <Member Name="RTC_Month" Datatype="Int" />
+          <Member Name="RTC_Day" Datatype="Int" />
+          <Member Name="RTC_DayofWeek" Datatype="Int" />
+          <Member Name="RTC_Hour" Datatype="Int" />
+          <Member Name="RTC_Minute" Datatype="Int" />
+          <Member Name="RTC_Second" Datatype="Int" />
+          <Member Name="RTC_millisecond" Datatype="Int" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licence information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="SI_ProgramCycle" Datatype="SI_ProgramCycle" Version="1.0">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Used by RD_SINFO, holds information for the current OB</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="SI_Format" Datatype="USInt" />
+          <Member Name="OB_Class" Datatype="USInt" />
+          <Member Name="OB_Nr" Datatype="UInt" />
+          <Member Name="Initial_Call" Datatype="Bool" />
+          <Member Name="Remanence" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="SI_StartUp" Datatype="SI_Startup" Version="1.0">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Used by RD_SINFO, holds information for the last start-up OB</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="SI_Format" Datatype="USInt" />
+          <Member Name="OB_Class" Datatype="USInt" />
+          <Member Name="OB_Nr" Datatype="UInt" />
+          <Member Name="LostRetentive" Datatype="Bool" />
+          <Member Name="LostRTC" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="wrkInt" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkDInt" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (double integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkLTime" Datatype="LTime">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (Long Time)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkDTL" Datatype="DTL" Version="1.0">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (DateTimeLong)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC01001_StdSysGlobalData</Name>
+      <Number>1001</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+ FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
+ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text> ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    STANDARD SYSTEM GLOBAL DATA
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ 
+
+
+This is an essential system block that generates the internal logic and timing signals needed by 
+all the other PAL software modules.
+
+The block records the controller scan times and converts the Controller real time clock value 
+to discrete integers, making the data globally available to all systems including non-Siemens 
+equipment.
+
+The block provides the following functions:
+
+   •   Generates global logic signals (TRUE and FALSE)
+
+   •   Generates the following scan synchronised timing pulses:
+     50ms, 100ms, 200ms, 500ms, 1s and 2s
+
+   •   Generates the following (1:1 mark/space) square wave signals:
+     100ms, 200ms, 500ms, 1s and 2s
+
+   •   Generates odd and even (alternating) cycle tick-tock signals
+
+   •   Generates a first-cycle signal indicating the controller has just started
+
+   •   Records the cycle time of the last, maximum and minimum controller cycles
+
+   •   Reads the controller internal real time clock and converts the values to discrete 
+     integer values containing: year, month, day, day of week, hour, minute, second 
+     and millisecond
+
+The block requires that the controller clock memory function is enabled.
+
+The block must be the first non-debug block call within the main organisation block (OB 1).
+
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         Standard System Global Data
+ BLOCK FUNCTION GROUP    System
+ BLOCK ADDRESS       FC 01001
+ BLOCK SYMBOL        FC01001_StdSysGlobalData
+ BLOCK USER ID         StdSysGlobalData
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        01001
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ LANGUAGE           LAD
+ EXECUTION TIME       240.20 μs¹
+ LOAD MEMORY         43.40 kB  (44440 bytes)
+ WORK MEMORY             1.29 kB    (1322 bytes)
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+FC 01001 is the Standard System Global Data block, it is responsible for generating the 
+standard set of global system signals that are common to, and used by, all other blocks within 
+the PAL.
+
+The block is one of the few essential blocks required by the PAL and it must the first block call 
+within the main cyclic organisation block (OB 1) — it must be called before all other PAL software 
+modules (excepting any start-of-cycle debug module — such modules will not be present in the 
+released software)
+
+The block is used to generate all the necessary logic and timing signals that are common to all
+other PAL software modules. These signals are stored within DB21001_Dy_SysGlobalData as the 
+data point SysSignals with UDT type UT21000_Dy_SysSignals. These signals are passed to all 
+standard block as the parameter SYS_SIGNALS, this allows all standard blocks to access the 
+logic and timing data parametrically¹  in accordance with IEC guidelines.
+
+The block generates a second copy of the timing and logic signals and stores these as memory 
+bit tags, these are available for use within the application blocks, these blocks are project 
+specific (rather than the standard library blocks) and as such can directly access data points 
+without contravening the IEC requirements. These tags are in two bytes of bit memory and form 
+the basis of the PAL system tag table (PAL_SystemTags).
+
+――――――――――
+¹         The IEC guidelines state that standard (library) blocks should not directly access data 
+     points within the controller (direct access), to do so, means that the block cannot 
+     be a true library module that can be used on any system, it requires that system to 
+     have an underlying set of variables that existed outside the block.
+
+     The preference is for all standard (library) blocks to receive all the data they need 
+     via parameters passed to the block (parametric access). Hence the use here of UDT 
+     data that can be passed as a single parameter into every standard block.
+――――――――――
+
+FC 01001 is called cyclically and monitors the cycle time of the central processor unit (CPU). The 
+block records various cycle times: the cycle time of the previous cycle, the maximum cycle time 
+experienced since the CPU was started and the minimum cycle time since the CPU was started. 
+
+The block also decodes the CPU real time clock (RTC) value, converting it from a date_time 
+data type to discrete integers, these being generally more accessible and easier to understand. 
+The conversion to integers also provides simplified data for block that do not need the whole data 
+and time information provided by the RTC, some blocks may require only time of day, or the day 
+of the week for example. Others may only be monitoring the seconds count. It means that other 
+blocks do not need to decode the RTC data individually.
+
+All the cycle and RTC data is stored in part of the globally accessible system data block 
+DB21001_Dy_SysGlobalData in the variable SysData, this also is a UDT (UT21001_Dy_SysData).
+
+The CPU clock memory byte is used by the block (passed as a parameter) and the clock memory 
+must be enabled in the CPU settings.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+
+The functions of this block are broadly:
+
+   1.  Generate the global logic signals
+
+   2.  Generate various timing pulses and square wave signals
+
+   3.  Generate cyclically dependent signals
+
+   4.  Monitor and record various cycle times and properties
+
+   5.  Decode the CPU real time clock and store as integer values
+
+Each of these is examined in the following sections.
+
+To operate correctly, the block requires the CPU clock memory to be enabled and for the specified 
+clock memory byte to be passed as a parameter into the block. Additionally, the PAL system 
+tag table (PAL_SystemTags) must be configured and populated with the correct mnemonic 
+signal names. These requirements are discussed in the following sections.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1     Enabling the clock memory byte
+
+
+The clock memory is a CPU property that must be enabled.
+
+The CPU properties are accessed from the device configuration entry in the TIA Portal project tree.
+
+In the project tree select DEVICE CONFIGURATION, this opens an image of the Controller rack in 
+the central area, right click the CPU and from the dropdown menu select PROPERTIES, this 
+opens the property settings window in the centre-bottom area.
+
+In the property settings window, under the GENERAL tab, select the SYSTEM AND CLOCK MEMORY 
+option.
+
+To enable the clock memory ensure that the ENABLE THE USE OF CLOCK MEMORY BYTE box is 
+ticked.
+
+The PAL requires that the clock byte uses byte 10 of the internal memory bits (MB10); to do this 
+set the ADDRESS OF THE CLOCK MEMORY BYTE (MBx) to 10.
+
+Note:    The section immediately above the clock memory bits, SYSTEM MEMORY BITS, 
+     must not be enabled, ensure that the ENABLE USE OF SYSTEM MEMORY BYTE box 
+     is unticked.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.2     The PAL System signals (logic and timing)
+
+
+The PAL system signals (logic and timing signals) are stored in two formats, first as a UDT data 
+structure (UT21000_Dy_SysSignals) in the system global data block (DB21001_Dy_SysGlobalData) 
+in the variable SysSignals. This form of the system signals is designed to be passed as a 
+parameter to all standard (library) modules.
+
+Secondly, the same data is stored in bit memories, these can be accessed globally in all 
+application (project specific) blocks. The bit memories used to store the system signals are MB0 
+and MB1; the individual signals within the bytes being given symbolic tags in the tag table 
+PAL_SystemTags.
+
+Both forms of the data are discussed further in the following sections:
+
+Note:    There is absolutely no difference between the two form of the signals, it is simply a 
+     question of which to use under what circumstances: parametric for library modules, 
+     direct for application modules.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.1     System signals: parametric access and direct access
+
+
+The IEC guidelines state that standard (library) blocks should not directly access data points 
+within the controller (direct access), to do so, means that the block cannot be a true library 
+module that can be used on any system, it requires that system to have an under-lying set of 
+variables that existed outside the block.
+
+The preference is for all standard (library) block to receive all the data they need via parameters 
+passed to the block (parametric access). Hence the use here of UDT data that can be passed as
+a single parameter into every standard block.
+
+The application blocks are by their nature, specific to the project being developed, they are not 
+library modules. As such the application modules can use direct access to read the system 
+signals. 
+
+Hence the two versions:
+
+   •   Parametric access — UDT parameter for standard modules
+   •   Direct access — memory bits for application modules
+
+Examining these in turn:
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.2     UDT system signals for parametric access
+
+
+The system logic and timing signals for parametric access are stored in 
+DB21001_Dy_SysGlobalData in the variable SysSignals; this variable is a UDT of type 
+UT21000_Dy_SysSignals, it contains the 16 logic and timing signals shown below:
+
+ UT21000_Dy_SysGlobalData
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ _False              System Logic   — Always FALSE            Bool
+ _True             System Logic   — Always TRUE              Bool
+ _50ms             System Timing — 50 ms pulse           Bool
+ _100ms              System Timing — 100 ms pulse            Bool 
+ _200ms              System Timing — 200 ms pulse            Bool 
+ _500ms              System Timing — 500 ms pulse            Bool 
+ _1s             System Timing — 1 s pulse              Bool 
+ _2s             System Timing — 2 s pulse              Bool 
+ _CycleTick             System Timing — Cycle tick (odd cycles)         Bool
+ _CycleTock            System Timing — Cycle tock (even cycle)        Bool
+ _CycleFirst            System Timing — First cycle detected           Bool
+ _100msSqW         System Timing — 100 ms square wave        Bool 
+ _200msSqW         System Timing — 200 ms square wave        Bool 
+ _500msSqW         System Timing — 500 ms square wave        Bool 
+ _1sSqW              System Timing — 1 s square wave             Bool
+ _2sSqW              System Timing — 2 s square wave             Bool 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+This data is passed as a parameter to all standard (library) blocks; the parameter is named 
+SYS_SIGNALS on all standard blocks, and is always the first IN parameter:
+
+
+                       ┌─────────────
+ ──────────────────────┤ FCxxxxx_StdBlock
+                       ├───────────
+     "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS
+                       │
+                       │
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.3     Bit memory direct access and the PAL system tag table
+
+
+The clock memory signals generated by the CPU (stored in MB10) and all the global logic and 
+timing signals generated by this block (stored in MB0 and MB1, see Table 3.1) are given 
+symbolic names (tags) that are then used throughout the remaining PAL software modules.
+
+Note:    It is unusual for data to be stored in bit memories; the PAL generally uses data 
+     blocks to store information. 
+
+     An exception is made for the clock memory (this has to be stored in bit memories) 
+     and for the global logic and timing signals. These are used frequently within software 
+     modules and allocating the signals to memory bits means that the tags are shorter 
+     and more easily recognised a system signals. It is also quicker to enter these signals.
+
+The tags for these three bytes (MB0, MB1 and MB10) are specified in the PLC TAGS entry in the 
+project tree, and are stored in the tag table: 
+
+     PAL_SystemTags
+
+This tag table is provided as standard as part of the PAL. A full list of its contents is provided 
+in the table below.
+
+The PAL_SystemTags tag table is a fixed tag table and is a fundamental part of the PAL. 
+IT MUST NOT BE MODIFIED. 
+
+The bit memories contained in the bytes MB0, MB1 and MB10 are similarly reserved by the PAL 
+and must these not be reallocated, renamed or used in any other tag table.
+
+The memory bit system signals are given identical names to those in the 
+UT21000_Dy_SysSignals data type (those used for parametric access, see § 3.2.2); as follows:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  ADDRESS DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _SysSignals        Int      %MW0   System signals — Logic and timing
+ _SysSignals01         Byte   %MB0    System mem byte 01 — Logic and timing
+ _False            Bool     %M0.0   System Logic — Always FALSE
+ _True           Bool     %M0.1   System Logic — Always TRUE
+ _50ms           Bool     %M0.2   System Timing — 50 ms pulse 
+ _100ms            Bool     %M0.3   System Timing — 100 ms pulse 
+ _200ms            Bool     %M0.4   System Timing — 200 ms pulse 
+ _500ms            Bool     %M0.5   System Timing — 500 ms pulse 
+ _1s           Bool     %M0.6   System Timing — 1 s pulse 
+ _2s           Bool     %M0.7   System Timing — 2 s pulse 
+ ――――――――――――――――――――――――――――――――――――――――――
+ _SysSignals02         Byte   %MB1    System mem byte 02 — cycle &amp; square wave
+ _CycleTick           Bool     %M1.0   System Timing — Cycle tick (odd cycles)
+ _CycleTock          Bool     %M1.1   System Timing — Cycle tock (even cycle)
+ _CycleFirst          Bool     %M1.2   System Timing — First cycle detected
+ _100msSqW       Bool     %M1.3   System Timing — 100 ms square wave 
+ _200msSqW       Bool     %M1.4   System Timing — 200 ms square wave 
+ _500msSqW       Bool     %M1.5   System Timing — 500 ms square wave 
+ _1sSqW            Bool     %M1.6   System Timing — 1 s square wave 
+ _2sSqW            Bool     %M1.7   System Timing — 2 s square wave 
+ ――――――――――――――――――――――――――――――――――――――――――
+ _ClockMem         Byte   %MB10     Clock Memory (populated by the CPU)
+ _ClockMem_100msSqW    Bool     %M10.0    Clock Memory — 10.0 Hz square wave
+ _ClockMem_200msSqW    Bool     %M10.1    Clock Memory — 5.00 Hz square wave
+ _ClockMem_400msSqW    Bool     %M10.2    Clock Memory — 2.50 Hz square wave
+ _ClockMem_500msSqW    Bool     %M10.3    Clock Memory — 2.00 Hz square wave
+ _ClockMem_800msSqW    Bool     %M10.4    Clock Memory — 1.25 Hz square wave
+ _ClockMem_1000msSqW  Bool     %M10.5    Clock Memory — 1.00 Hz square wave
+ _ClockMem_1600msSqW  Bool     %M10.6    Clock Memory — 0.62 Hz square wave
+ _ClockMem_2000msSqW  Bool     %M10.7    Clock Memory — 0.50 Hz square wave
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+All PAL system tags contained within the PAL_SystemTags tag table are identified by a leading 
+underscore character (_).
+
+The PAL system tags are named according to the following conventions:
+
+   1.  Each tag is prefixed with the underscore [ _ ] character
+
+   2.  The remaining tag name is written in camel case 
+
+   3.  The name (including prefix) must be no more than 24 characters 
+
+   4.  It is permissible to separate parts of the name with an underscore [ _ ] character 
+     (e.g. _ClockMem_100msSqW)
+
+   5.  Units (such as milliseconds, ms) are not capitalised
+
+   6.  The dash/hyphen [-] is not to be used (use the underscore in-stead)
+
+   7.  Only use the characters [a-z], [A-Z], the numbers [0-9], and the underscore [ _ ]
+
+All PAL system tags have a brief explanation of what the tag does stored in the comment field 
+of the tag.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.3     General point for the following sections
+
+
+The following sections refer to the logic and timing signals generated by the block. These can 
+refer to either the parametric version of the data stored as a UDT or the direct access version 
+stored as memory bits. The name of each signal is the same in either case (e.g. _True, _False &amp;c.); 
+the difference is that the parametric version will be proceeded by the SYS_SIGNALS parameter 
+name e.g.:
+          #SYS_SIGNALS._True
+
+For brevity, the following section just refer to the signal name e.g. _True; where the parametric 
+access is used, this should be preceded by #SYS_SIGNALS.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.4     Global logic signals
+
+
+The block generates two fixed logic signals, these are allocated as follows:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _False            Bool     System Logic Bit — Always FALSE
+ _True           Bool     System Logic Bit — Always TRUE
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The two signals _False and _True are logically testable signals, the _False signal being always 
+set to 0 and the _True signal being always set to 1.
+
+These two signals should be considered read only; other software modules must not change the 
+state of these signals.
+
+This block, FC 01001, will ensure that the _False signal is always set to 0 and the _True signal is 
+always set to 1.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.5     Global timing signals
+
+
+The block generates two types of timing signals: scan synchronised pulses that are active for a 
+single controller cycle (scan) and scan synchronised even mark/space ratio square waves.
+
+Both types of timing signal are derived from the CPU clock memory functions (see table below). 
+Within the PAL the clock memory is given the tag _ClockMem and is assigned to memory 
+byte MB10. The CPU populates the _ClockMem byte with eight square wave signals each with a 
+different frequency.
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  ADDRESS DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _ClockMem         Byte   %MB10     Clock Memory (populated by the CPU)
+ _ClockMem_100msSqW    Bool     %M10.0    Clock Memory — 10.0 Hz square wave
+ _ClockMem_200msSqW    Bool     %M10.1    Clock Memory — 5.00 Hz square wave
+ _ClockMem_400msSqW    Bool     %M10.2    Clock Memory — 2.50 Hz square wave
+ _ClockMem_500msSqW    Bool     %M10.3    Clock Memory — 2.00 Hz square wave
+ _ClockMem_800msSqW    Bool     %M10.4    Clock Memory — 1.25 Hz square wave
+ _ClockMem_1000msSqW  Bool     %M10.5    Clock Memory — 1.00 Hz square wave
+ _ClockMem_1600msSqW  Bool     %M10.6    Clock Memory — 0.62 Hz square wave
+ _ClockMem_2000msSqW  Bool     %M10.7    Clock Memory — 0.50 Hz square wave
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Each of these square wave signals is free running (they run independently to the CPU cycle), 
+but are synchronised with each other (i.e. they all start at the same time and have rising edges 
+that coincide with each other in multiples of 100 ms).
+
+This block uses the CPU clock memory signals to generate the derived scan synchronised timing 
+pulses and square waves.
+
+Examining these in turn:
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.1     Scan synchronised timing pulses
+
+
+This block produces six individual timing pulses:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _50ms           Bool     System Timing — 50 ms pulse 
+ _100ms            Bool     System Timing — 100 ms pulse 
+ _200ms            Bool     System Timing — 200 ms pulse 
+ _500ms            Bool     System Timing — 500 ms pulse 
+ _1s           Bool     System Timing — 1 s pulse 
+ _2s           Bool     System Timing — 2 s pulse 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Each pulse is active for a single CPU cycle, and is activated at the start of the cycle following the 
+rising edge of the associated _ClockMem bit (there is an exception for the _50ms pulse; this is 
+explained at the end of this section).
+
+The _ClockMem signals are free running square wave signals that are completely independent 
+of the CPU cycle times, this means that the signal can change state partway through a controller 
+cycle, if each block within the controller were evaluating the clock memory for timing 
+arrangements, it would mean that some blocks would see the timing signal in one state (before 
+it changed) and others would see it in the second state (after it changed) and this can lead to 
+inconsistences with software reactions.
+
+This type of reaction (signals that are independent of the controller cycle) is referred to as 
+asynchronous behaviour and it is generally to be avoided.
+
+To avoid this problem, this block (FC 01001) monitors the clock memory signals, if the block 
+detects a rising edge on any of the clock memory signals (the edge may have occurred in the 
+preceding cycle, but will not be detected until the block is executed at the start of the following 
+cycle), it activates the associated timing pulse, the timing pulse is then deactivated the next 
+time FC 01001 is called.
+
+FC 01001 is called as the first executable block in the main organisation block (OB 1), thus 
+any timing pulses are effectively present to all the other blocks for the cycle within which it is 
+triggered. This is called scan synchronisation.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Scan synchronised timing pulse accuracy
+
+
+The accuracy of the timing pulse is compromised by the scan synchronisation actions of 
+FC 01001. 
+
+If for example, the 100 ms clock memory square wave went to high state just after FC 01001 
+had been executed in cycle n, it would not be detected until FC 01001 was executed in 
+cycle n + 1. If in this example the cycle is approximately 12 ms, the timing pulse would be 
+delayed by 12 ms.
+
+Thus the maximum inaccuracy of the timing pulse is limited to the cycle time of the controller.
+
+These inaccuracies are not cumulative. The delay of up to one cycle is applicable to each pulse in 
+turn; the pulse will always be activated no later than one cycle duration from the time at which 
+the clock memory signal goes high.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Generating the 50 ms timing pulse
+
+
+Each of the timing pulse signals: _100ms, _200ms, _500ms, _1s and _2s are generated by 
+detecting a rising edge on each of the corresponding clock memory signals: 
+_ClockMem_100msSqW, _ClockMem_200msSqW, _ClockMem_500msSqW, 
+_ClockMem_1000msSqW and _ClockMem_2000msSqW. 
+
+There is no 50 ms square wave provided by the clock memory function; to generate the 50 ms 
+timing pulse, the pulse is generated on both the rising and falling edge of the 100 ms clock 
+memory square wave.
+
+The clock memory square wave have an equal mark/space ratio, thus the falling edge occurs 
+after 50 ms.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.2     Scan synchronised timing square waves
+
+
+This block produces five individual timing square wave signals:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _100msSqW       Bool     System Timing — 100 ms square wave 
+ _200msSqW       Bool     System Timing — 200 ms square wave 
+ _500msSqW       Bool     System Timing — 500 ms square wave 
+ _1sSqW            Bool     System Timing — 1 s square wave 
+ _2sSqW            Bool     System Timing — 2 s square wave 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+These signals are again scan synchronised in a similar manner to the timing pulses, the 
+rising and falling edges of the scan synchronised timing square wave occur at the start of the 
+cycle following the change in state of the clock memory square wave.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Scan synchronised timing square wave accuracy
+
+Again, the scan synchronisation actions of FC 01001 compromise the accuracy of the timing 
+square wave signals and again by the same amount, each rising and falling edge of the square 
+wave can be delayed by up to the duration of one cycle.
+
+These inaccuracies are again, not cumulative. The period of the square wave (rising edge to 
+rising edge) will be no more than the duration of a single cycle for each square wave cycle.
+
+The mark/space ratio of the timing square wave will also be compromised, again by up to one 
+cycle duration.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.6     Cyclically dependent signals
+
+
+The block generates three cycle dependent signals:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _CycleTick           Bool     System Timing — Cycle tick (odd cycles)
+ _CycleTock          Bool     System Timing — Cycle tock (even cycle)
+ _CycleFirst          Bool     System Timing — First cycle detected
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The first two of these signals (_CycleTick and _CycleTock) are alternating signals that change 
+state at the start of each cycle, the _CycleTick being active on every odd cycle since the CPU 
+Started (cycles 1, 3, 5, 7 …).
+
+_CycleTock activates on each even numbered cycle since the CPU started (cycles 2, 4, 6, 8 …).
+
+The _CycleTick and _CycleTock signals are often used as “dead-man” signals that show the CPU 
+is running.
+
+The _CycleFirst signal is active on the first cycle of the CPU after a STOP → RUN transition.
+
+The _CycleFirst signal is an important signal and is generally used to set the controller to a given 
+condition. It should be interpreted as telling the software that the processor has just started and 
+all modules should be initialised and set to the correct start-up conditions.
+
+The _CycleFirst signal is generated by using the system start information block (RD_SINFO), this 
+is called with the system data structure SI_ProgramCycle, see § 9.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.6.1     Record various cycle times and properties
+
+
+The block reads various cycle time values and generates a cycle count that is incremented at 
+the start of each cycle.
+
+This data is stored in the system data block: DB21001_Dy_SysGlobalData in the variable 
+SysData. The storage location is passed to the block as a parameter (SYS_DATA) of data type 
+UT21001_Dy_SysData (see Section 5 for details of the full structure).
+
+The following data is recorded:
+
+
+ UT21001_Dy_SysGlobalData (Partial contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ CycTime_Prev          Previous cycle time (ms)             Real
+ CycTime_Max          Maximum cycle time - since start-up (ms)       Real
+ CycTime_Min        Minimum cycle time - since start-up (ms)        Real
+ Cyc_Counter         Cycle rolling counter - incremented each scan     UDint
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The data for the min, max and previous cycle times is provided by the system function RT_INFO, 
+this returns the various cycle times in LTime data format, this is converted to a real number that 
+specifies the cycle times in milliseconds.
+
+For example if the signal CycTime_Prev returned a value of 15.36, it would indicate that the 
+duration of the previous cycle was 15.36 ms.
+
+The Cyc_Counter signal is simply an unsigned double integer (UDint) that is incremented by one 
+each scan. This is done within FC 01001, the counter can count up to 4.3 billion cycles 
+(4,294,967,296) before repeating (at an average cycle time of 15 ms, it would be two years 
+before the counter wrapped around and started again at zero).
+
+The Cyc_Counter signal is reset to zero if the CPU is restarted (_CycleFirst signal is triggered), it is 
+also reset to zero if the count exceeds the maximum value for a UDint (4,294,967,296).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.7     Real time clock (RTC) data
+
+
+The CPU maintains an internal real time clock (RTC), this is generally synchronised to an external 
+time server (a SCADA system for example). The RTC contains date, time and day of week 
+information and can be accessed using the system function RD_LOC_T. This function returns the 
+RTC value in a variable that uses a date and time based data type (DateTime, DTL, LDT &amp;c.).
+
+The DTL data type is used by preference, it is a structured data type, with fields for each time and 
+date component, it allows each field to be easily split out and stored separately. It does, 
+however, theoretically provide accuracy down to the nanosecond, in practice, most of the 
+nanosecond digits are set to zero with only the three most significant digits being populated. 
+
+Essentially it just gives an accuracy of milliseconds, and it is this millisecond value that is stored.
+
+FC 01001 converts the RTC data to a series of unsigned integers that are stored as part of the 
+UT21001_Dy_SysGlobalData data type that is passed to the block as the parameter 
+(SYSTEM_DATA). It provides the following information:
+
+Note:    The RTC data is local to the time zone set in the CPU and adopts any local daylight 
+     saving that is in effect.
+
+
+ UT21001_Dy_SysGlobalData (partial contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ RTC_Year            Year (returns a value in the range 1970 to 2262)     UInt
+ RTC_Month         Month (1-12 representing Jan to Dec)        UInt
+ RTC_Day          Day of month (1-31)                  UInt
+ RTC_DayOfWeek         Day of week (1-7, where 1=Sunday, 7=Saturday)    UInt
+ RTC_Hour           Hour of day (0-23)                UInt
+ RTC_Minute           Minutes (0-59)                   UInt
+ RTC_Second         Seconds (0-59)                  UInt
+ RTC_Millisecond         Milliseconds (0-999)                  UInt
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 1 to 3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text> ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+
+The following parameters are associated with the block:
+
+ 
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ CLOCK_MEM     The clock memory byte (within the PAL this      Byte      In
+          is always MB10)
+
+ SYS_SIGNALS      The system logic and timing signals for       UT21000    InOut
+          parametric access
+
+ SYS_DATA      The system data storage structure interface,   UT21001    InOut
+          holds the cycle &amp; RTC data
+
+ SYS_SIGNAL_TAGS   The system logic and timing signals for       Int      Out
+          direct access
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block
+ UT01001_St_SysLicence           Licence information for this block
+ UT21000_Dy_SysSignals           System signals (logic and timing) storage structure
+ UT21001_Dy_SysData          System data storage structure
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.1     UT01000_St_SysRevision
+
+
+Used to store the revision information for the block:
+
+
+ UT01000_St_SysRevision    (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ REV_BLOCK          Block number (of this block)             String[7]
+ REV_NUMBER          Revision status and revision number (for this block)   String[20]
+ REV_DATE          Revision date in format YYYY-MM-DD          String[10]
+ REV_AUTHOR        Revision author (initial and surname)        String[20]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.2     UT01001_St_SysLicence
+
+
+Used to store the licencing information for the block:
+
+
+ UT01001_St_SysLicence    (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ LICENCE_TYPE         Type of licence under which the block can be used  String[20]
+ COPYRIGHT           Copyright holder of the software           String[30]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.3     UT21000_Dy_SysSignals
+
+
+Used to store system logic and timing signals for parametric access:
+
+
+ UT21000_Dy_SysSignals (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ _False              System Logic   — Always FALSE            Bool
+ _True             System Logic   — Always TRUE              Bool
+ _50ms             System Timing — 50 ms pulse           Bool
+ _100ms              System Timing — 100 ms pulse            Bool 
+ _200ms              System Timing — 200 ms pulse            Bool 
+ _500ms              System Timing — 500 ms pulse            Bool 
+ _1s             System Timing — 1 s pulse              Bool 
+ _2s             System Timing — 2 s pulse              Bool 
+ _CycleTick             System Timing — Cycle tick (odd cycles)         Bool
+ _CycleTock            System Timing — Cycle tock (even cycle)        Bool
+ _CycleFirst            System Timing — First cycle detected           Bool
+ _100msSqW         System Timing — 100 ms square wave        Bool 
+ _200msSqW         System Timing — 200 ms square wave        Bool 
+ _500msSqW         System Timing — 500 ms square wave        Bool 
+ _1sSqW              System Timing — 1 s square wave             Bool
+ _2sSqW              System Timing — 2 s square wave             Bool 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.4     UT21001_Dy_SysData
+
+
+Used to store system cycle and time data:
+
+
+ UT21001_Dy_SysData (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ CycTime_Prev          Previous cycle time (ms)             Real
+ CycTime_Max          Maximum cycle time - since start-up (ms)       Real
+ CycTime_Min        Minimum cycle time - since start-up (ms)        Real
+ Cyc_Counter         Cycle rolling counter - incremented each scan     UDint
+
+ RTC_Year            Year (returns a value in the range 1970 to 2262)     UInt
+ RTC_Month         Month (1-12 representing Jan to Dec)        UInt
+ RTC_Day          Day of month (1-31)                  UInt
+ RTC_DayOfWeek         Day of week (1-7, where 1=Sunday, 7=Saturday)    UInt
+ RTC_Hour           Hour of day (0-23)                UInt
+ RTC_Minute           Minutes (0-59)                   UInt
+ RTC_Second         Seconds (0-59)                  UInt
+ RTC_Millisecond         Milliseconds (0-999)                  UInt
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+The following constants and temporary data storage are used:
+
+
+ Temporary (local) data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ SI_ProgramCycle       Used by RD_SINFO, holds first scan data   SI_ProgramCycle
+ SI_StartUp         Required by RD_SINFO (not used)         SI_StartUp
+ wrkInt           Working storage area (integer)          Int
+ wrkDInt           Working storage area (double integer)         DInt
+ wrkReal           Working storage area (real)             Real
+ wrkLTime           Working storage area (long time)         LT
+ wrkDTL            Working storage area (DateTime long)      DTL
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS
+
+
+There are no PAL block calls from within this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     ASSOCIATED BLOCKS
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+
+
+The following calls are made to system blocks:
+
+
+ System block calls
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ RD_SINFO          Read OB start info       Used to read the OB start information
+                           including first scan information
+
+ RT_INFO             Read runtime statistics    Used to return the previous, min 
+                           and max cycle times
+
+ RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The following system data types are required:
+
+
+ SI_ProgramCycle (System Data Type)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ SI_Format          Start information format, indicates if the         USInt
+              current OB is using block optimisation
+                16#FF = No information
+                16#FE = Block optimised
+
+ OB_Class           Class  of the calling OB, for this data structure     USInt 
+              the result is always 1 (indicating cyclic OB)
+
+ OB_Nr           Number of the calling OB               UInt
+
+ Initial_Call         Indicates the first call of the block           Bool
+                1 = First call (in the case of OB1 this
+                       is the first cycle of the CPU) 
+
+ Remanence         Indicates the block is using retentive data        Bool
+                1 = Retentive storage has been allocated
+                       to the block
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+ SI_StartUp (System Data Type)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ SI_Format          Start information format, indicates if the         USInt
+              current OB is using block optimisation
+                16#FF = No information
+                16#FE = Block optimised
+
+ OB_Class           Class  of the calling OB, for this data structure     USInt 
+              the result is always 1 (indicating cyclic OB)
+
+ OB_Nr           Number of the calling OB               UInt
+
+ LostRetentive         Retentive data has been lost           Bool
+                1 = data has been lost
+
+ LostRTC           RTC data has been lost                Bool
+                1 = data has been lost
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     SPECIAL PROPERTIES AND REQUIREMENTS
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.1   Block optimisation
+
+
+     Block optimisation is ACTIVE for this block
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.2   Calling requirements
+
+
+This block must be the first non-debug block call within the main organisation block (OB 1). 
+It should be in Network 3 of OB1.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+11.     EXAMPLE USAGE
+
+
+     OB1 NETWORK 3
+
+                      ┌────────────
+   ───────────────────┤ FC01001 
+                      ├──────────
+                 "_ClockMem" ─┤ CLOCK_MEM
+                      │
+ "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS
+                      │
+      "DB21001_DY_StdGlobalData".SysData ─┤ SYS_DATA
+                      │               │
+                      │               │
+                             SYS_SIGNAL_TAGS├─ "_SysSignals"
+                                   │
+                      ─────────────┘
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 4 to 11</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC01001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'000.101'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2021.05.08'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="31">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="32" />
+    <Part Name="O" UId="33">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+    <Part Name="S_Move" UId="35" DisabledENO="true" />
+    <Part Name="S_Move" UId="36" DisabledENO="true" />
+    <Part Name="S_Move" UId="37" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="38">
+      <Powerrail />
+      <NameCon UId="31" Name="in" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="21" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="31" Name="out" />
+      <NameCon UId="33" Name="in1" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="22" />
+      <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="in2" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <NameCon UId="34" Name="en" />
+      <NameCon UId="35" Name="en" />
+      <NameCon UId="36" Name="en" />
+      <NameCon UId="37" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="23" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="25" />
+      <NameCon UId="35" Name="in" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="35" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="27" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="36" Name="out" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="29" />
+      <NameCon UId="37" Name="in" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="out" />
+      <IdentCon UId="30" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module.
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2021.05.08    000.101   D0005A-000.101   D0005 N/A     D0005A   M. Gledhill
+                       FC01001 Migration to VCS
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Part Name="RCoil" UId="22" />
+  </Parts>
+  <Wires>
+    <Wire UId="23">
+      <Powerrail />
+      <NameCon UId="22" Name="in" />
+    </Wire>
+    <Wire UId="24">
+      <IdentCon UId="21" />
+      <NameCon UId="22" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Permanently DEACTIVATE the _False signal
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — Always FALSE Logic</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Part Name="SCoil" UId="22" />
+  </Parts>
+  <Wires>
+    <Wire UId="23">
+      <Powerrail />
+      <NameCon UId="22" Name="in" />
+    </Wire>
+    <Wire UId="24">
+      <IdentCon UId="21" />
+      <NameCon UId="22" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Permanently ACTIVATE the _True signal
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — Always TRUE Logic</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x0" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x0" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_50ms" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26" />
+    <Part Name="Contact" UId="27">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="28">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="29" />
+    <Part Name="O" UId="30">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="31" />
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="24" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="25" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Each of the timing pulse signals: 100ms, 200ms, 500ms, 1s and 2s are generated by detecting 
+a rising edge on each of the corresponding clock memory signals: _ClockMem_100msSqW, 
+_ClockMem_200msSqW, _ClockMem_500msSqW, _ClockMem_1000msSqW 
+and _ClockMem_2000msSqW. 
+
+There is no 50 ms square wave provided by the clock memory function; to generate the 50 ms 
+timing pulse, the pulse is generated on both the rising and falling edge of the 100 ms clock 
+memory square wave:
+
+A rising edge is detected if bit 0 of the clock memory byte has gone high, but the scan
+synchronised square wave (_100msSqW) has not yet changed to reflect this (the _100msSqW
+signal will not be updated until a later network in this block). I.e. a rising edge has been
+detected.
+
+The falling edge is detected in much the same way, if bit 0 of the clock memory had gone low,
+but the _100msSqW is still high (has not yet seen the change).
+
+In either case a _50ms pulse signal is generated, this is active for just one cycle.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — 50ms pulse generation</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x0" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_200msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_200ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_500msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_500ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_1sSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_1s" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_2sSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_2s" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="37" />
+    <Part Name="Contact" UId="38" />
+    <Part Name="Contact" UId="39">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="40" />
+    <Part Name="Contact" UId="41" />
+    <Part Name="Contact" UId="42">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="43" />
+    <Part Name="Contact" UId="44" />
+    <Part Name="Contact" UId="45">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="46" />
+    <Part Name="Contact" UId="47" />
+    <Part Name="Contact" UId="48">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="49" />
+    <Part Name="Contact" UId="50" />
+    <Part Name="Contact" UId="51">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="52" />
+  </Parts>
+  <Wires>
+    <Wire UId="53">
+      <Powerrail />
+      <NameCon UId="37" Name="in" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="21" />
+      <NameCon UId="37" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="in" />
+      <NameCon UId="41" Name="in" />
+      <NameCon UId="44" Name="in" />
+      <NameCon UId="47" Name="in" />
+      <NameCon UId="50" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="22" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="23" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="24" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="25" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="26" />
+      <NameCon UId="42" Name="operand" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="42" Name="out" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="27" />
+      <NameCon UId="43" Name="operand" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="28" />
+      <NameCon UId="44" Name="operand" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="29" />
+      <NameCon UId="45" Name="operand" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="45" Name="out" />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="30" />
+      <NameCon UId="46" Name="operand" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="31" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="in" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="32" />
+      <NameCon UId="48" Name="operand" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="48" Name="out" />
+      <NameCon UId="49" Name="in" />
+    </Wire>
+    <Wire UId="75">
+      <IdentCon UId="33" />
+      <NameCon UId="49" Name="operand" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="34" />
+      <NameCon UId="50" Name="operand" />
+    </Wire>
+    <Wire UId="77">
+      <NameCon UId="50" Name="out" />
+      <NameCon UId="51" Name="in" />
+    </Wire>
+    <Wire UId="78">
+      <IdentCon UId="35" />
+      <NameCon UId="51" Name="operand" />
+    </Wire>
+    <Wire UId="79">
+      <NameCon UId="51" Name="out" />
+      <NameCon UId="52" Name="in" />
+    </Wire>
+    <Wire UId="80">
+      <IdentCon UId="36" />
+      <NameCon UId="52" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Each of the remaining timing pulse signals: 100ms, 200ms, 500ms, 1s and 2s is generated by 
+detecting a rising edge on each of the corresponding clock memory signals: 
+_ClockMem_100msSqW, _ClockMem_200msSqW, _ClockMem_500msSqW, 
+_ClockMem_1000msSqW and _ClockMem_2000msSqW. 
+
+A rising edge is detected if the specific bit of the clock memory byte has gone high, but the scan
+synchronised square wave (_100msSqW, _200msSqW &amp;c.) has not yet changed to reflect this (the 
+scan synchronised square wave signal will not be updated until a later network in this block). 
+I.e. a rising edge has been detected.
+
+The following pulses are generated:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _50ms           Bool     System Timing — 50 ms pulse 
+ _100ms            Bool     System Timing — 100 ms pulse 
+ _200ms            Bool     System Timing — 200 ms pulse 
+ _500ms            Bool     System Timing — 500 ms pulse 
+ _1s           Bool     System Timing — 1 s pulse 
+ _2s           Bool     System Timing — 2 s pulse 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — remaining timing signal pulse generation</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x0" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_200msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_500msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_1sSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="CLOCK_MEM" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_2sSqW" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="32" />
+    <Part Name="Contact" UId="33" />
+    <Part Name="Coil" UId="34" />
+    <Part Name="Contact" UId="35" />
+    <Part Name="Coil" UId="36" />
+    <Part Name="Contact" UId="37" />
+    <Part Name="Coil" UId="38" />
+    <Part Name="Contact" UId="39" />
+    <Part Name="Coil" UId="40" />
+    <Part Name="Contact" UId="41" />
+    <Part Name="Coil" UId="42" />
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="21" />
+      <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="in" />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="37" Name="in" />
+      <NameCon UId="39" Name="in" />
+      <NameCon UId="41" Name="in" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="operand" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="33" Name="out" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="23" />
+      <NameCon UId="34" Name="operand" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="24" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="50">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="26" />
+      <NameCon UId="37" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="28" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="29" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="31" />
+      <NameCon UId="42" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="27" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The CLOCK_MEM parameter is "sliced" into individual bits and these are passed to the scan
+synchronised square wave global data signals (only five are used).
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ CLOCK_MEM ADDRESS    BIT    DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ #CLOCK_MEM.%X0    Bit 0    Clock Memory — 10.0 Hz square wave -   100ms period
+ #CLOCK_MEM.%X1    Bit 1    Clock Memory — 5.00 Hz square wave -   200ms period
+ #CLOCK_MEM.%X2    Bit 2    Clock Memory — 2.50 Hz square wave -   400ms period
+ #CLOCK_MEM.%X3    Bit 3    Clock Memory — 2.00 Hz square wave -   500ms period
+ #CLOCK_MEM.%X4    Bit 4    Clock Memory — 1.25 Hz square wave -   800ms period
+ #CLOCK_MEM.%X5    Bit 5    Clock Memory — 1.00 Hz square wave - 1000ms period
+ #CLOCK_MEM.%X6    Bit 6    Clock Memory — 0.62 Hz square wave - 1600ms period
+ #CLOCK_MEM.%X7    Bit 7    Clock Memory — 0.50 Hz square wave - 2000ms period
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The five signal generate the following square waves:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NAME          TYPE  DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ _100msSqW       Bool     System Timing — 100 ms square wave 
+ _200msSqW       Bool     System Timing — 200 ms square wave 
+ _500msSqW       Bool     System Timing — 500 ms square wave 
+ _1sSqW            Bool     System Timing — 1 s square wave 
+ _2sSqW            Bool     System Timing — 2 s square wave 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="29" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — synchronised square wave generation</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleTick" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleTick" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleTick" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleTock" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26" />
+    <Part Name="Contact" UId="27">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="28" />
+    <Part Name="Contact" UId="29">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="30" />
+  </Parts>
+  <Wires>
+    <Wire UId="31">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="24" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="29" Name="out" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The _CycleTick and _CycleTock are alternating signals that change state at the start of each cycle, 
+the _CycleTick being active on every odd cycle since the CPU started (cycles 1, 3, 5, 7 …).
+
+_CycleTock activates on the even numbered cycle since the CPU started (cycles 2, 4, 6, 8 …).
+
+The _CycleTick and _CycleTock signals are often used as “dead-man” signals that show the 
+CPU is running.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2E" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — Cycle tick, tock signals</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="SI_ProgramCycle" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="SI_StartUp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SI_ProgramCycle" />
+        <Component Name="Initial_Call" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleFirst" />
+      </Symbol>
+    </Access>
+    <Part Name="RD_SINFO" Version="1.2" UId="26">
+      <TemplateValue Name="si_type" Type="Type">Variant</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="27" />
+    <Part Name="Coil" UId="28" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="26" Name="eno" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="RET_VAL" />
+      <IdentCon UId="21" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="26" Name="TOP_SI" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="START_UP_SI" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="25" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="31" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The _CycleFirst signal is active on the first cycle of the CPU after a stop → run transition.
+
+The _CycleFirst signal is an important signal and is generally used to set the controller to a 
+given condition. It should be interpreted as telling the software that the processor has just 
+started and all modules should be initialised and set to the correct start-up conditions.
+
+The _CycleFirst signal is generated by using the system start information block (RD_SINFO), 
+this is called with the system data structure SI_ProgramCycle.
+
+The SI_ProgramCycle holds the following information:
+
+
+ SI_ProgramCycle (System Data Type)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ SI_Format          Start information format, indicates if the         USInt
+              current OB is using block optimisation
+                16#FF = No information
+                16#FE = Block optimised
+
+ OB_Class           Class  of the calling OB, for this data structure     USInt 
+              the result is always 1 (indicating cyclic OB)
+
+ OB_Nr           Number of the calling OB               UInt
+
+ Initial_Call         Indicates the first call of the block           Bool
+                1 = First call (in the case of OB1 this
+                       is the first cycle of the CPU) 
+
+ Remanence         Indicates the block is using retentive data        Bool
+                1 = Retentive storage has been allocated
+                       to the block
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+If the Initial_Call signal is active, the CPU is executing the first cycle of OB 1.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="33" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — First cycle (CPU start-up) signal</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>UInt</ConstantType>
+        <ConstantValue>25</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>OB_ANY</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="wrkLTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="wrkLTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="wrkDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="wrkDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1000000.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="CycTime_Prev" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="33">
+      <Constant>
+        <ConstantType>UInt</ConstantType>
+        <ConstantValue>24</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="34">
+      <Constant>
+        <ConstantType>OB_ANY</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="wrkLTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="wrkLTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="wrkDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="wrkDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="42">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1000000.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="CycTime_Min" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="44">
+      <Constant>
+        <ConstantType>UInt</ConstantType>
+        <ConstantValue>23</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="45">
+      <Constant>
+        <ConstantType>OB_ANY</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="46">
+      <Symbol>
+        <Component Name="wrkLTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="47">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="48">
+      <Symbol>
+        <Component Name="wrkLTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="49">
+      <Symbol>
+        <Component Name="wrkDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="50">
+      <Symbol>
+        <Component Name="wrkDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="51">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="52">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="53">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1000000.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="54">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="CycTime_Max" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="55" />
+    <Part Name="RT_INFO" Version="1.2" UId="56" />
+    <Part Name="T_CONV" Version="1.2" UId="57">
+      <TemplateValue Name="src_type" Type="Type">LTime</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">DInt</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="58" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="59" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="RT_INFO" Version="1.2" UId="60" />
+    <Part Name="T_CONV" Version="1.2" UId="61">
+      <TemplateValue Name="src_type" Type="Type">LTime</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">DInt</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="62" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="63" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="RT_INFO" Version="1.2" UId="64" />
+    <Part Name="T_CONV" Version="1.2" UId="65">
+      <TemplateValue Name="src_type" Type="Type">LTime</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">DInt</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="66" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">DInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="67" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="68">
+      <Powerrail />
+      <NameCon UId="55" Name="in" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="21" />
+      <NameCon UId="55" Name="operand" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="55" Name="out" />
+      <NameCon UId="56" Name="en" />
+      <NameCon UId="60" Name="en" />
+      <NameCon UId="64" Name="en" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="22" />
+      <NameCon UId="56" Name="MODE" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="23" />
+      <NameCon UId="56" Name="OB" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="24" />
+      <NameCon UId="56" Name="INFO" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="56" Name="eno" />
+      <NameCon UId="57" Name="en" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="56" Name="Ret_Val" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="26" />
+      <NameCon UId="57" Name="IN" />
+    </Wire>
+    <Wire UId="77">
+      <NameCon UId="57" Name="eno" />
+      <NameCon UId="58" Name="en" />
+    </Wire>
+    <Wire UId="78">
+      <NameCon UId="57" Name="OUT" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="79">
+      <IdentCon UId="28" />
+      <NameCon UId="58" Name="in" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="58" Name="eno" />
+      <NameCon UId="59" Name="en" />
+    </Wire>
+    <Wire UId="81">
+      <NameCon UId="58" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="82">
+      <IdentCon UId="30" />
+      <NameCon UId="59" Name="in1" />
+    </Wire>
+    <Wire UId="83">
+      <IdentCon UId="31" />
+      <NameCon UId="59" Name="in2" />
+    </Wire>
+    <Wire UId="84">
+      <NameCon UId="59" Name="out" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="85">
+      <IdentCon UId="33" />
+      <NameCon UId="60" Name="MODE" />
+    </Wire>
+    <Wire UId="86">
+      <IdentCon UId="34" />
+      <NameCon UId="60" Name="OB" />
+    </Wire>
+    <Wire UId="87">
+      <IdentCon UId="35" />
+      <NameCon UId="60" Name="INFO" />
+    </Wire>
+    <Wire UId="88">
+      <NameCon UId="60" Name="eno" />
+      <NameCon UId="61" Name="en" />
+    </Wire>
+    <Wire UId="89">
+      <NameCon UId="60" Name="Ret_Val" />
+      <IdentCon UId="36" />
+    </Wire>
+    <Wire UId="90">
+      <IdentCon UId="37" />
+      <NameCon UId="61" Name="IN" />
+    </Wire>
+    <Wire UId="91">
+      <NameCon UId="61" Name="eno" />
+      <NameCon UId="62" Name="en" />
+    </Wire>
+    <Wire UId="92">
+      <NameCon UId="61" Name="OUT" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="93">
+      <IdentCon UId="39" />
+      <NameCon UId="62" Name="in" />
+    </Wire>
+    <Wire UId="94">
+      <NameCon UId="62" Name="eno" />
+      <NameCon UId="63" Name="en" />
+    </Wire>
+    <Wire UId="95">
+      <NameCon UId="62" Name="out" />
+      <IdentCon UId="40" />
+    </Wire>
+    <Wire UId="96">
+      <IdentCon UId="41" />
+      <NameCon UId="63" Name="in1" />
+    </Wire>
+    <Wire UId="97">
+      <IdentCon UId="42" />
+      <NameCon UId="63" Name="in2" />
+    </Wire>
+    <Wire UId="98">
+      <NameCon UId="63" Name="out" />
+      <IdentCon UId="43" />
+    </Wire>
+    <Wire UId="99">
+      <IdentCon UId="44" />
+      <NameCon UId="64" Name="MODE" />
+    </Wire>
+    <Wire UId="100">
+      <IdentCon UId="45" />
+      <NameCon UId="64" Name="OB" />
+    </Wire>
+    <Wire UId="101">
+      <IdentCon UId="46" />
+      <NameCon UId="64" Name="INFO" />
+    </Wire>
+    <Wire UId="102">
+      <NameCon UId="64" Name="eno" />
+      <NameCon UId="65" Name="en" />
+    </Wire>
+    <Wire UId="103">
+      <NameCon UId="64" Name="Ret_Val" />
+      <IdentCon UId="47" />
+    </Wire>
+    <Wire UId="104">
+      <IdentCon UId="48" />
+      <NameCon UId="65" Name="IN" />
+    </Wire>
+    <Wire UId="105">
+      <NameCon UId="65" Name="eno" />
+      <NameCon UId="66" Name="en" />
+    </Wire>
+    <Wire UId="106">
+      <NameCon UId="65" Name="OUT" />
+      <IdentCon UId="49" />
+    </Wire>
+    <Wire UId="107">
+      <IdentCon UId="50" />
+      <NameCon UId="66" Name="in" />
+    </Wire>
+    <Wire UId="108">
+      <NameCon UId="66" Name="eno" />
+      <NameCon UId="67" Name="en" />
+    </Wire>
+    <Wire UId="109">
+      <NameCon UId="66" Name="out" />
+      <IdentCon UId="51" />
+    </Wire>
+    <Wire UId="110">
+      <IdentCon UId="52" />
+      <NameCon UId="67" Name="in1" />
+    </Wire>
+    <Wire UId="111">
+      <IdentCon UId="53" />
+      <NameCon UId="67" Name="in2" />
+    </Wire>
+    <Wire UId="112">
+      <NameCon UId="67" Name="out" />
+      <IdentCon UId="54" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Uses the system function RT_INFO to return the previous, min and max cycle times. 
+
+The value returned depends on the MODE parameter: 23 = Previous, 24 = min and 25 = max.
+
+The result is given as a LTIME data type (in milliseconds, micro seconds and nano seconds). 
+This result is converted to a real number and divided by 1,000,000 to give a cycle time in ms.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="38" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System data — Cycle time data (previous, max and min)</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="Cyc_Counter" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="Cyc_Counter" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleFirst" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="Cyc_Counter" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="28" />
+    <Part Name="Add" UId="29" DisabledENO="false">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Contact" UId="30" />
+    <Part Name="Move" UId="31" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="22" />
+      <NameCon UId="29" Name="in1" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="23" />
+      <NameCon UId="29" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="29" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="out1" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The Cyc_Counter signal is simply an unsigned double integer (UDint) that is incremented by one 
+each scan. The counter can count up to 4.3 billion cycles (4,294,967,296) before repeating (at an 
+average cycle time of 15 ms, it would be two years before the counter wrapped around and 
+started again at zero).
+
+The Cyc_Counter signal is reset to zero if the CPU is restarted (_CycleFirst signal is triggered), it is 
+also reset to zero if the count exceeds the maximum value for a UDint (4,294,967,296).
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="3D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System data — Cycle counter</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="wrkDTL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="YEAR" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_Year" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="MONTH" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_Month" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="DAY" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_Day" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="WEEKDAY" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_DayofWeek" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="HOUR" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_Hour" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="MINUTE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_Minute" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="SECOND" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_Second" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="wrkDTL" />
+        <Component Name="NANOSECOND" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="38">
+      <Constant>
+        <ConstantType>UDInt</ConstantType>
+        <ConstantValue>1000000</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="SYS_DATA" />
+        <Component Name="RTC_millisecond" />
+      </Symbol>
+    </Access>
+    <Part Name="RD_LOC_T" Version="1.0" UId="40">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="41" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="42" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="43" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="44" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="45" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="46" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="47" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="48" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="49">
+      <Powerrail />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="50">
+      <NameCon UId="40" Name="eno" />
+      <NameCon UId="41" Name="en" />
+      <NameCon UId="42" Name="en" />
+      <NameCon UId="43" Name="en" />
+      <NameCon UId="44" Name="en" />
+      <NameCon UId="45" Name="en" />
+      <NameCon UId="46" Name="en" />
+      <NameCon UId="47" Name="en" />
+      <NameCon UId="48" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="40" Name="RET_VAL" />
+      <IdentCon UId="21" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="40" Name="OUT" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="23" />
+      <NameCon UId="41" Name="in" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="41" Name="out1" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="25" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="42" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="27" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="43" Name="out1" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="29" />
+      <NameCon UId="44" Name="in" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="44" Name="out1" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="31" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="45" Name="out1" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="33" />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="46" Name="out1" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="35" />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="47" Name="out1" />
+      <IdentCon UId="36" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="37" />
+      <NameCon UId="48" Name="in1" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="38" />
+      <NameCon UId="48" Name="in2" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="48" Name="out" />
+      <IdentCon UId="39" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="40" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The CPU RTC contains date, time and day of week information and is accessed using the system 
+function RD_LOC_T. This function returns the RTC value in a variable of type DTL.
+
+This data is then decoded into individual integers and stored as follows in the SYSTEM_DATA
+parameter variable.
+
+
+ UT21000_Dy_SysData (partial contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ RTC_Year            Year (returns a value in the range 1970 to 2262)     UInt
+ RTC_Month         Month (1-12 representing Jan to Dec)        UInt
+ RTC_Day          Day of month (1-31)                  UInt
+ RTC_DayOfWeek         Day of week (1-7, where 1=Sunday, 7=Saturday)    UInt
+ RTC_Hour           Hour of day (0-23)                UInt
+ RTC_Minute           Minutes (0-59)                   UInt
+ RTC_Second         Seconds (0-59)                  UInt
+ RTC_Millisecond         Milliseconds (0-999)                  UInt
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The RD_LOC_T returns a nanosecond value from the RTC, this is divided by 1,000,000 to convert it 
+to milliseconds.
+
+Note:    The RTC data is local to the time zone set in the CPU and adopts any local daylight 
+     saving that is in effect.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="42" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System data — Reads the real time clock and converts its value to integers</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="44" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x8" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x9" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_50ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x10" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x11" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_200ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x12" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_500ms" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x13" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_1s" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x14" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_2s" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x15" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleTick" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x0" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleTock" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_CycleFirst" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_100msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_200msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x4" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="46">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_500msSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="47">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x5" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="48">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_1sSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="49">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x6" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="50">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_2sSqW" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="51">
+      <Symbol>
+        <Component Name="SYS_SIGNAL_TAGS" SliceAccessModifier="x7" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="52" />
+    <Part Name="RCoil" UId="53" />
+    <Part Name="SCoil" UId="54" />
+    <Part Name="Contact" UId="55" />
+    <Part Name="Coil" UId="56" />
+    <Part Name="Contact" UId="57" />
+    <Part Name="Coil" UId="58" />
+    <Part Name="Contact" UId="59" />
+    <Part Name="Coil" UId="60" />
+    <Part Name="Contact" UId="61" />
+    <Part Name="Coil" UId="62" />
+    <Part Name="Contact" UId="63" />
+    <Part Name="Coil" UId="64" />
+    <Part Name="Contact" UId="65" />
+    <Part Name="Coil" UId="66" />
+    <Part Name="Contact" UId="67" />
+    <Part Name="Coil" UId="68" />
+    <Part Name="Contact" UId="69" />
+    <Part Name="Coil" UId="70" />
+    <Part Name="Contact" UId="71" />
+    <Part Name="Coil" UId="72" />
+    <Part Name="Contact" UId="73" />
+    <Part Name="Coil" UId="74" />
+    <Part Name="Contact" UId="75" />
+    <Part Name="Coil" UId="76" />
+    <Part Name="Contact" UId="77" />
+    <Part Name="Coil" UId="78" />
+    <Part Name="Contact" UId="79" />
+    <Part Name="Coil" UId="80" />
+    <Part Name="Contact" UId="81" />
+    <Part Name="Coil" UId="82" />
+  </Parts>
+  <Wires>
+    <Wire UId="83">
+      <Powerrail />
+      <NameCon UId="52" Name="in" />
+    </Wire>
+    <Wire UId="84">
+      <IdentCon UId="21" />
+      <NameCon UId="52" Name="operand" />
+    </Wire>
+    <Wire UId="85">
+      <NameCon UId="52" Name="out" />
+      <NameCon UId="53" Name="in" />
+      <NameCon UId="54" Name="in" />
+      <NameCon UId="55" Name="in" />
+      <NameCon UId="57" Name="in" />
+      <NameCon UId="59" Name="in" />
+      <NameCon UId="61" Name="in" />
+      <NameCon UId="63" Name="in" />
+      <NameCon UId="65" Name="in" />
+      <NameCon UId="67" Name="in" />
+      <NameCon UId="69" Name="in" />
+      <NameCon UId="71" Name="in" />
+      <NameCon UId="73" Name="in" />
+      <NameCon UId="75" Name="in" />
+      <NameCon UId="77" Name="in" />
+      <NameCon UId="79" Name="in" />
+      <NameCon UId="81" Name="in" />
+    </Wire>
+    <Wire UId="86">
+      <IdentCon UId="22" />
+      <NameCon UId="53" Name="operand" />
+    </Wire>
+    <Wire UId="87">
+      <IdentCon UId="23" />
+      <NameCon UId="54" Name="operand" />
+    </Wire>
+    <Wire UId="88">
+      <IdentCon UId="24" />
+      <NameCon UId="55" Name="operand" />
+    </Wire>
+    <Wire UId="89">
+      <NameCon UId="55" Name="out" />
+      <NameCon UId="56" Name="in" />
+    </Wire>
+    <Wire UId="90">
+      <IdentCon UId="25" />
+      <NameCon UId="56" Name="operand" />
+    </Wire>
+    <Wire UId="91">
+      <IdentCon UId="26" />
+      <NameCon UId="57" Name="operand" />
+    </Wire>
+    <Wire UId="92">
+      <NameCon UId="57" Name="out" />
+      <NameCon UId="58" Name="in" />
+    </Wire>
+    <Wire UId="93">
+      <IdentCon UId="27" />
+      <NameCon UId="58" Name="operand" />
+    </Wire>
+    <Wire UId="94">
+      <IdentCon UId="28" />
+      <NameCon UId="59" Name="operand" />
+    </Wire>
+    <Wire UId="95">
+      <NameCon UId="59" Name="out" />
+      <NameCon UId="60" Name="in" />
+    </Wire>
+    <Wire UId="96">
+      <IdentCon UId="29" />
+      <NameCon UId="60" Name="operand" />
+    </Wire>
+    <Wire UId="97">
+      <IdentCon UId="30" />
+      <NameCon UId="61" Name="operand" />
+    </Wire>
+    <Wire UId="98">
+      <NameCon UId="61" Name="out" />
+      <NameCon UId="62" Name="in" />
+    </Wire>
+    <Wire UId="99">
+      <IdentCon UId="31" />
+      <NameCon UId="62" Name="operand" />
+    </Wire>
+    <Wire UId="100">
+      <IdentCon UId="32" />
+      <NameCon UId="63" Name="operand" />
+    </Wire>
+    <Wire UId="101">
+      <NameCon UId="63" Name="out" />
+      <NameCon UId="64" Name="in" />
+    </Wire>
+    <Wire UId="102">
+      <IdentCon UId="33" />
+      <NameCon UId="64" Name="operand" />
+    </Wire>
+    <Wire UId="103">
+      <IdentCon UId="34" />
+      <NameCon UId="65" Name="operand" />
+    </Wire>
+    <Wire UId="104">
+      <NameCon UId="65" Name="out" />
+      <NameCon UId="66" Name="in" />
+    </Wire>
+    <Wire UId="105">
+      <IdentCon UId="35" />
+      <NameCon UId="66" Name="operand" />
+    </Wire>
+    <Wire UId="106">
+      <IdentCon UId="36" />
+      <NameCon UId="67" Name="operand" />
+    </Wire>
+    <Wire UId="107">
+      <NameCon UId="67" Name="out" />
+      <NameCon UId="68" Name="in" />
+    </Wire>
+    <Wire UId="108">
+      <IdentCon UId="37" />
+      <NameCon UId="68" Name="operand" />
+    </Wire>
+    <Wire UId="109">
+      <IdentCon UId="38" />
+      <NameCon UId="69" Name="operand" />
+    </Wire>
+    <Wire UId="110">
+      <NameCon UId="69" Name="out" />
+      <NameCon UId="70" Name="in" />
+    </Wire>
+    <Wire UId="111">
+      <IdentCon UId="39" />
+      <NameCon UId="70" Name="operand" />
+    </Wire>
+    <Wire UId="112">
+      <IdentCon UId="40" />
+      <NameCon UId="71" Name="operand" />
+    </Wire>
+    <Wire UId="113">
+      <NameCon UId="71" Name="out" />
+      <NameCon UId="72" Name="in" />
+    </Wire>
+    <Wire UId="114">
+      <IdentCon UId="41" />
+      <NameCon UId="72" Name="operand" />
+    </Wire>
+    <Wire UId="115">
+      <IdentCon UId="42" />
+      <NameCon UId="73" Name="operand" />
+    </Wire>
+    <Wire UId="116">
+      <NameCon UId="73" Name="out" />
+      <NameCon UId="74" Name="in" />
+    </Wire>
+    <Wire UId="117">
+      <IdentCon UId="43" />
+      <NameCon UId="74" Name="operand" />
+    </Wire>
+    <Wire UId="118">
+      <IdentCon UId="44" />
+      <NameCon UId="75" Name="operand" />
+    </Wire>
+    <Wire UId="119">
+      <NameCon UId="75" Name="out" />
+      <NameCon UId="76" Name="in" />
+    </Wire>
+    <Wire UId="120">
+      <IdentCon UId="45" />
+      <NameCon UId="76" Name="operand" />
+    </Wire>
+    <Wire UId="121">
+      <IdentCon UId="46" />
+      <NameCon UId="77" Name="operand" />
+    </Wire>
+    <Wire UId="122">
+      <NameCon UId="77" Name="out" />
+      <NameCon UId="78" Name="in" />
+    </Wire>
+    <Wire UId="123">
+      <IdentCon UId="47" />
+      <NameCon UId="78" Name="operand" />
+    </Wire>
+    <Wire UId="124">
+      <IdentCon UId="48" />
+      <NameCon UId="79" Name="operand" />
+    </Wire>
+    <Wire UId="125">
+      <NameCon UId="79" Name="out" />
+      <NameCon UId="80" Name="in" />
+    </Wire>
+    <Wire UId="126">
+      <IdentCon UId="49" />
+      <NameCon UId="80" Name="operand" />
+    </Wire>
+    <Wire UId="127">
+      <IdentCon UId="50" />
+      <NameCon UId="81" Name="operand" />
+    </Wire>
+    <Wire UId="128">
+      <NameCon UId="81" Name="out" />
+      <NameCon UId="82" Name="in" />
+    </Wire>
+    <Wire UId="129">
+      <IdentCon UId="51" />
+      <NameCon UId="82" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="45" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Copies all the system logic and timing signals to the SYS_SIGNAL_TAGS parameter.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="47" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>System signals — Copy data to memory bit area</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="49" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_True" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26" />
+    <Part Name="S_Move" UId="27" DisabledENO="true" />
+    <Part Name="S_Move" UId="28" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="4C" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="4D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="4E" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="4F" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Standard - Sys — Global Data</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
