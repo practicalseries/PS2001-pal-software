@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-12T12:48:20.3773243Z</Created>
+    <Created>2021-05-12T13:46:08.5835643Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>System</HeaderFamily>
       <HeaderName>StdSysGlobalData</HeaderName>
-      <HeaderVersion>0.8</HeaderVersion>
+      <HeaderVersion>1.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="CLOCK_MEM" Datatype="Byte" Accessibility="Public">
@@ -315,7 +315,7 @@ The block must be the first non-debug block call within the main organisation bl
  ――――――――――――――――――――――――――――――――――――――――――
  LANGUAGE           LAD
  EXECUTION TIME       240.20 μs¹
- LOAD MEMORY         43.40 kB  (44440 bytes)
+ LOAD MEMORY         43.44 kB  (44485 bytes)
  WORK MEMORY             1.29 kB    (1322 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
@@ -1330,7 +1330,7 @@ It should be in Network 3 of OB1.
     <Access Scope="LiteralConstant" UId="25">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.801'</ConstantValue>
+        <ConstantValue>'001.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -1469,6 +1469,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2021.05.11    001.000   D0005A-001.000   D0005 N/A     D0005A   M. Gledhill
+                       FC01001 — Post test RELEASED FOR USE
+
  2021.05.11    000.801   D0005A-000.801   D0005 N/A     D0005A   M. Gledhill
                        FC01001 — Released for SMT
 
