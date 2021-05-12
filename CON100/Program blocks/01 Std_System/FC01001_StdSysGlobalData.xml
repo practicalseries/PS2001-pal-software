@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-12T13:46:08.5835643Z</Created>
+    <Created>2021-05-12T14:39:33.0868571Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -315,7 +315,7 @@ The block must be the first non-debug block call within the main organisation bl
  ――――――――――――――――――――――――――――――――――――――――――
  LANGUAGE           LAD
  EXECUTION TIME       240.20 μs¹
- LOAD MEMORY         43.44 kB  (44485 bytes)
+ LOAD MEMORY         43.73 kB  (44781 bytes)
  WORK MEMORY             1.29 kB    (1322 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
@@ -1469,6 +1469,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2021.05.11    001.000   D0006      D0005 D0006  None    M. Gledhill
+                       FC01001 — RELEASED FOR USE
+                         Merge back to master branch
+
  2021.05.11    001.000   D0005A-001.000   D0005 N/A     D0005A   M. Gledhill
                        FC01001 — Post test RELEASED FOR USE
 
