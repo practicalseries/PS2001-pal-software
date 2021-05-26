@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-22T12:22:38.6520762Z</Created>
+    <Created>2021-05-26T11:53:36.142188Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -136,9 +136,9 @@ CONTROLLER:       CPU 1515-2PN/DP
 
 CONTROLLER NAME:    CON100
 
-IP ADDRESS:      192.168.001.000
+IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0007
+TIA PROJECT NAME:    PS2001-PAL-D0008
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -260,6 +260,9 @@ COMPLETED MODULES
                  2021-05-11                  UT 21001   001.000
                                    DB21001   001.000
  ――――――――――――――――――――――――――――――――――――――――――
+ FC02001 StdInstAnalogRead    001.000   UT 02001   001.000    UT 22001   001.000
+                 2021-05-26   DB02001   001.000       DB22001   001.000
+ ――――――――――――――――――――――――――――――――――――――――――
  FC18001 StdSubScaleAI      001.000   None           None 
                  2021.05.22   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
@@ -356,7 +359,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0007'</ConstantValue>
+        <ConstantValue>'D0008'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -368,7 +371,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.05.22'</ConstantValue>
+        <ConstantValue>'2021.05.26'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -476,6 +479,8 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2021.05.26    D0008      M. Gledhill      FC02001 — RELEASED FOR USE
+
  2021.05.22    D0007      M. Gledhill      FC18001 — RELEASED FOR USE
 
  2021.05.11    D0006      M. Gledhill      FC01001 — RELEASED FOR USE
@@ -731,7 +736,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           <MultilingualTextItem ID="18" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Interrupt [Normal] — Main Program Cyclic Execution</Text>
+              <Text>Interrupt - Norm — Main Program Cyclic Execution</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
