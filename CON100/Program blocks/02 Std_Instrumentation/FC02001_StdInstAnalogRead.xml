@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-24T13:16:23.2992Z</Created>
+    <Created>2021-05-26T11:17:54.0778825Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Instrumentation</HeaderFamily>
       <HeaderName>StdInstAnalogRead</HeaderName>
-      <HeaderVersion>0.8</HeaderVersion>
+      <HeaderVersion>1.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -439,7 +439,7 @@ the instrument is out of service for any reason.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       87.69 μs¹
- LOAD MEMORY       83.59 kB  (85603 bytes)
+ LOAD MEMORY       83.67 kB  (85679 bytes)
  WORK MEMORY           2.16 kB    (2213 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
@@ -2077,7 +2077,7 @@ The following shows a typical deployment of FC02001:
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.801'</ConstantValue>
+        <ConstantValue>'001.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2089,7 +2089,7 @@ The following shows a typical deployment of FC02001:
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.05.24'</ConstantValue>
+        <ConstantValue>'2021.05.26'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2199,6 +2199,13 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2021.05.26    001.000   D0008      D0006 D0008  None    M. Gledhill
+                       FC02001 — RELEASED FOR USE
+                         Merge back to master branch
+
+ 2021.05.26    001.000   D0006B-001.000   D0006 N/A     D0006B   M. Gledhill
+                       FC02001 — Post test RELEASED FOR USE
+
  2021.05.24    000.801   D0006B-000.801   D0006 N/A     D0006B   M. Gledhill
                        FC02001 — Released for SMT
 
