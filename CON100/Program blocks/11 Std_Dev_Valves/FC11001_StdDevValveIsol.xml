@@ -1,0 +1,3139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-07-13T12:40:09.3580373Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>DeviceDriver</HeaderFamily>
+      <HeaderName>StdDevValveIsol</HeaderName>
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Common system signals — logic and timing signals</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="_False" Datatype="Bool" />
+          <Member Name="_True" Datatype="Bool" />
+          <Member Name="_50ms" Datatype="Bool" />
+          <Member Name="_100ms" Datatype="Bool" />
+          <Member Name="_200ms" Datatype="Bool" />
+          <Member Name="_500ms" Datatype="Bool" />
+          <Member Name="_1s" Datatype="Bool" />
+          <Member Name="_2s" Datatype="Bool" />
+          <Member Name="_CycleTick" Datatype="Bool" />
+          <Member Name="_CycleTock" Datatype="Bool" />
+          <Member Name="_CycleFirst" Datatype="Bool" />
+          <Member Name="_100msSqW" Datatype="Bool" />
+          <Member Name="_200msSqW" Datatype="Bool" />
+          <Member Name="_500msSqW" Datatype="Bool" />
+          <Member Name="_1sSqW" Datatype="Bool" />
+          <Member Name="_2sSqW" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="EXT_FAULT" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Device external fault signal (1 = fault, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FBK_OPEN" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Positive open position feedback (1 = valve open, 0 = valve not open)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FBK_CLOSED" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Positive closed position feedback (1 = valve closed, 0 = valve not closed)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="EXT_FAULT_1" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Instrument External Fault (1 = fault, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="E_STOP" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Safety (E-STOP) signal (1 = ESTOP active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TRIP" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Interlock (TRIP) signal (1 = TRIP active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="INTERLOCK" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Interlock (INTERLOCK) signal (1 = INTERLOCK active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PERMISSIVE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Interlock (PERMISSIVE) signal (1 = PERMISSIVE active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="STATIC_DATA" Datatype="&quot;UT11001_St_DevValveIsol&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Static data storage (UDT)</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Int" />
+          <Member Name="___________0010_1" Datatype="Int" />
+          <Member Name="CONFIG_NO_NC" Datatype="Bool" />
+          <Member Name="CONFIG_FBK_OPEN_EN" Datatype="Bool" />
+          <Member Name="CONFIG_FBK_CLOSED_EN" Datatype="Bool" />
+          <Member Name="CONFIG_ESTOP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_TRIP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_ILOCK_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_PERM_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_TRIP_OP_CL" Datatype="Bool" />
+          <Member Name="CONFIG_ILOCK_OP_CL" Datatype="Bool" />
+          <Member Name="CONFIG_PERM_OP_CL" Datatype="Bool" />
+          <Member Name="CONFIG_FP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_MAN_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_BYPASS_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_SIM_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_RL_EN" Datatype="Bool" />
+          <Member Name="___________0020_0" Datatype="Int" />
+          <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="INFO_TAG" Datatype="String[20]" />
+          <Member Name="___________0030_0" Datatype="Int" />
+          <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="TIME_OPENING_MAX" Datatype="Real" />
+          <Member Name="TIME_CLOSING_MAX" Datatype="Real" />
+          <Member Name="TIME_FBK_OPEN_SIM" Datatype="Real" />
+          <Member Name="TIME_FBK_CLOSED_SIM" Datatype="Real" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="OPERATE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Valve operate signal (1 = energise the valve, 0 = deenergise the valve)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="InOut">
+    <Member Name="DYNAMIC_DATA" Datatype="&quot;UT31001_Dy_DevValveIsol&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Dynamic data storage (UDT)</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Int" />
+          <Member Name="___________0010_1" Datatype="Int" />
+          <Member Name="status_Closed" Datatype="Bool" />
+          <Member Name="status_Open" Datatype="Bool" />
+          <Member Name="status_Closing" Datatype="Bool" />
+          <Member Name="status_Opening" Datatype="Bool" />
+          <Member Name="status_Operating" Datatype="Bool" />
+          <Member Name="status_Fault" Datatype="Bool" />
+          <Member Name="status_Energised" Datatype="Bool" />
+          <Member Name="status_Aut" Datatype="Bool" />
+          <Member Name="status_Man" Datatype="Bool" />
+          <Member Name="status_EStop" Datatype="Bool" />
+          <Member Name="status_Trip" Datatype="Bool" />
+          <Member Name="status_Ilock" Datatype="Bool" />
+          <Member Name="status_Perm" Datatype="Bool" />
+          <Member Name="status_BypassOn" Datatype="Bool" />
+          <Member Name="status_SimOn" Datatype="Bool" />
+          <Member Name="status_RemoteOn" Datatype="Bool" />
+          <Member Name="status_LocalOn" Datatype="Bool" />
+          <Member Name="status_RLOff" Datatype="Bool" />
+          <Member Name="___________0020_0" Datatype="Int" />
+          <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="msg_FailToOpen" Datatype="Int" />
+          <Member Name="msg_FailToClose" Datatype="Int" />
+          <Member Name="msg_FailWhileOpen" Datatype="Int" />
+          <Member Name="msg_FailWhileClosed" Datatype="Int" />
+          <Member Name="msg_Flt_External" Datatype="Int" />
+          <Member Name="___________0030_0" Datatype="Int" />
+          <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="mode_AutMan" Datatype="Int" />
+          <Member Name="mode_BypassOn" Datatype="Int" />
+          <Member Name="mode_SimOn" Datatype="Int" />
+          <Member Name="mode_SimValue" Datatype="Int" />
+          <Member Name="mode_RemoteOn" Datatype="Int" />
+          <Member Name="mode_LocalOn" Datatype="Int" />
+          <Member Name="mode_Reset" Datatype="Int" />
+          <Member Name="___________0040_0" Datatype="Int" />
+          <Member Name="___________0040_1" Datatype="Int" />
+          <Member Name="ctrl_Aut_OpenClose" Datatype="Int" />
+          <Member Name="ctrl_Man_OpenClose" Datatype="Int" />
+          <Member Name="___________0050_0" Datatype="Int" />
+          <Member Name="___________0050_1" Datatype="Int" />
+          <Member Name="batch_ID" Datatype="Int" />
+          <Member Name="___________0060_0" Datatype="Int" />
+          <Member Name="___________0060_1" Datatype="Int" />
+          <Member Name="actual_Operating_Timer" Datatype="Real" />
+          <Member Name="___________0090_0" Datatype="Int" />
+          <Member Name="___________0090_1" Datatype="Int" />
+          <Member Name="$pret_1" Datatype="Bool" />
+          <Member Name="$Pret_2" Datatype="Bool" />
+          <Member Name="$pret_3" Datatype="Bool" />
+          <Member Name="$pret_4" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licence information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="wrkInt" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (Integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkDInt" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (Double integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC11001_StdDevValveIsol</Name>
+      <Number>11001</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+ FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
+ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+TITLE:    STANDARD — DEVICE DRIVER FOR AN ISOLATING VALVE
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+This blockcontrols the operation of either a normally closed or normally open isolating valve 
+configured with either open, closed, both open and closed or no position feedback.
+
+The module supports automatic and manual control and can be configured with simulation 
+mode to allow the valve limit switch signals to be overwritten or set to follow the demand 
+output. 
+
+The module can be configured for normally closed (energise to open) or normally open 
+(energise to close) valves.
+
+The module generates fault logic for the valve that will trigger specific alarms depending on the fault in question. The alarms within this block are: 
+
+   •   Failed to Open 
+
+   •   Failed to Close 
+
+   •   Failed while Open
+
+   •   Failed while Closed
+
+   •   External Fault 
+
+Separate operation times for opening and closing can be defined. 
+
+The valve module supports all forms of interlock, permissive and trip signals, and emergency stop 
+signals. The module has the conditional facility to allow the operator to bypass interlocks, 
+permissive and trip conditions.
+
+Various status signals are generated for supervisory systems:
+
+   •   Closed
+
+   •   Closing
+
+   •   Open
+
+   •   Opening
+
+   •   Fault
+
+The module also generates status signals for the selected operating modes and conditions.
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         Isolating Valve
+ BLOCK FUNCTION GROUP    Device Driver 
+ BLOCK ADDRESS       FC11001
+ BLOCK SYMBOL        FC11001_StdDevValveIsol
+ BLOCK USER ID         StdDevValveIsol
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        11001
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME       00.00 μs¹
+ LOAD MEMORY       00.00 kB  (00000 bytes)
+ WORK MEMORY           0.00 kB    (0000 bytes)
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+FC11001 is the Isolating Valve device driver module, it is a comprehensive block designed to 
+operate and monitor a standard isolating valve. 
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1     Defining an isolating valve
+
+
+An isolating valve is any valve that has only two states, it is either open or closed and cannot 
+sustain any intermediate position, isolating valves are generally spring-return type valves that 
+adopt a particular state when energised, and return to the other state when deenergised. 
+Such valves are generally operated directly via an electronic solenoid. Some are pneumatically 
+operated, again by an energising solenoid that when energised applies air to one side to the 
+valve, driving it to the ener-gised state, the solenoid then vents the air when deenergised 
+allowing the valve to return to its deenergised state via the spring-return mechanism within 
+the valve. 
+
+Isolating valves have a single flow-path through the valve, and this path is either open or 
+closed depending on the state of the valve.
+
+From the software perspective, there are two types of isolating valve: normally closed (the most 
+common type) and normally open:
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1.1     Normally open and normally closed valves
+
+
+A normally closed valve is closed in the deenergised state and will open when an energising 
+signal is applied — normally closed valves operate in the manner most commonly associated 
+with how valves are envisaged to work. I.e. they open when a voltage is applied to them and 
+close when that voltage is removed.
+
+A normally open valve operates in the reverse arrangement, the valve is open in the 
+deenergised state and will only close when the energising signal is present. Normally open 
+valves are used in fail-safe applications where a power failure causes the valve to open by 
+default, usually to vent pressure or release some other motive force from the vessel to which 
+it is connected.
+
+Both normally open and normally closed valves require the continuous application of the 
+energising signal to maintain the energised state, the valves have no latching characteristic 
+(cf. a bi-stable valve that can maintain either state without the con-tinuous application of 
+the energising signal). For example, to maintain an open state with a normally closed valve, the 
+energising signal must be constantly present; if it is removed, the valve will close, and will only 
+re-open when the energising signal is once more present.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1.2     Valve operating times
+
+
+An isolating valve, will move from its closed state to its open state when the energising signal 
+is applied (normally closed valve) or removed (normally open valve); this transition will occur in 
+a specified time (the time taken will depend on the size and operating mechanism within the 
+valve itself), this is referred to as the opening time.
+
+Similarly, the transition from open to closed will again occur in a specified time. This is referred 
+to as the closing time. 
+
+The opening and closing times can be different for a given valve. 
+
+The maximum opening and closing times for a valve are generally given as part of the 
+specification for the valve itself.
+
+If a valve does not reach the required state within the specified maximum operating times, the 
+valve is generally considered to be in a fault condition (either failed to open or failed to close 
+depending on the action being undertaken).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1.3     Valve limit switch arrangements
+
+
+Isolating valves can be equipped with limit switch signals that positively identify the current 
+position of the valve. There are four combinations of limit switches:
+
+   1.  No limit switches         There is no positive indication of the current state 
+                     of the valve, it is assumed to be in the expected 
+                     state.
+
+   2.  Closed limit switch only       Positive indication is given for the closed state 
+                     only. The valve is assumed to be open if the 
+                     closed signal is inactive.
+
+   3.  Open limit switch only      Positive indication is given for the open state 
+                     only. The valve is assumed to be closed if the 
+                     open signal is inactive.
+
+   4.  Open and closed limit switches    Positive indication is given for both states. 
+                     This allows the true state of the valve to be 
+                     determined under all circumstances.
+
+Isolating valve limit switches are always linked to the true state of the valve (i.e. open or 
+closed, not energised or deenergised). 
+
+I.e. a closed limit will always indicate when the valve is closed (preventing flow through the 
+valve); for a normally closed valve, the closed limit will activate when the valve is deenergised. 
+For a normally open valve, the closed limit will activate when the valve is energised.
+
+Note:    Positive indication of a valve state need not be determined by a limit switch 
+     (though this is by far the most common arrangement), it could for example, be 
+     determined by some process value: if a flow is detected after the opening of a valve, 
+     this could be used as a positive indication that the valve was open.
+
+     In practice, limit switches are the preferred mechanism for the positive indication 
+     of a given valve state.
+
+Where a limit switch is absent, the valve is assumed to have reached the correct position when 
+the relevant operation time has counted for 95% (adjustable) of its specified time.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.2     Module operation
+
+
+FC11001 is used to control either a normally closed or normally open isolating valve, the module 
+also monitors the various configurations of valve limit switch signals to determine if the valve is 
+in a fault condition.
+
+The module will drive the valve to the requested state by energising or deenergising a digital 
+signal (usually a digital output signal).
+
+The state of the digital output signal for a given state of the valve is dependent on the type of 
+valve in use (normally open or normally closed), the following table shows the state of the 
+output signal for each type of valve:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REQUESTED STATE     NORMALLY OPEN OUTPUT     NORMALLY CLOSED OUTPUT
+ ――――――――――――――――――――――――――――――――――――――――――
+ Closed             Energised              Deenergised
+ Open             Deenergised            Energised            
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+If the requested state of the valve requires the output to be energised, the output will remain 
+energised until the requested state changes.
+
+If the requested state signal changes (either from closed to open, or from open to closed), the 
+module will start either an opening operation timer (request has changed from closed to open) 
+or a closing operation timer (request has changed from open to closed); these timers can have 
+different values.
+
+The valve will be expected to reach the requested state before the relevant operation timer 
+expires; if it does not, the valve will enter a fault state and an appropriate alarm will be generated 
+when the operation timer expires.
+
+Once the valve has reached its requested state, the operation time will reset and the module 
+will continue to monitor the state of the valve. 
+
+If the request signal changes whilst the valve is in the process of changing state (e.g. the valve 
+is requested to change from closed to open and whilst the opening operation timer is running, 
+the request is changed back to closed), the running operation timer will be reset and the 
+operation timer for the second request will start from its specified value. I.e. no allowance is 
+made for how far the valve may have moved following the first request change.
+
+If the valve is stable, in a given state (i.e. is not in the process of changing state) and the valve 
+position signals no longer match the required state (e.g. the valve had correctly opened, but at 
+some time after this, the open position feedback is lost), the valve will instantly generate an 
+alarm condition.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.3     Safety and interlocks
+
+
+There module accommodates a single safety signal (emergency stop), and the standard 
+arrangement of three interlock signals (interlock, permissive and trip) as follows:
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.3.1     Safety (emergency stop) signal
+
+
+Safety or emergency stop signals are hardwired signals that remove power from a device forcing 
+it to a safe state. Such signals act independently of the software (the pressing of an emergency 
+stop button will physically remove power from the affected devices).
+
+The emergency stop signal passed to the module is used to allow the state of the valve to be 
+correctly interpreted within the software under emergency stop conditions.
+
+When the emergency stop signal is removed, the valve will resume the requested state (with 
+the appropriate operation timer).
+
+The presence of an emergency stop signal is indicated via the block icon status signals 
+generated by the module.
+
+Emergency stop signals cannot be bypassed under any circumstances (cf. interlock signals).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.3.2     Interlock signals
+
+
+There are three types of interlock signal:
+
+   1.  Interlock
+     A simple interlock that is active whenever a set of conditions is true, it will force any 
+     associated devices to a given safe state.
+
+   2.  Permissive
+     Takes no action if a device is in a non-safe state, but once the device is in a safe 
+     state will prevent a transition to a non-safe state (i.e. will not force a valve to close, 
+     but once it is closed, will prevent it from re-opening).
+
+   3.  Trip
+     A latching interlock, it activates whenever a set of events are true (like an interlock), 
+     but will not deactivate until the triggering conditions are removed and a reset signal 
+     has been given (effectively a latching interlock), it will force any associated devices 
+     to a given safe state.
+
+Note:    The trip reset signal is handled by the trip logic, the valve module will simply respond 
+     to the presence or absence of a trip signal.
+
+Each type of interlock has its own individual signal passed to the module (three signals in total).
+
+Interlock signals can be optionally bypassed (effectively disabled) under specific, manually 
+selected operations.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.3.3     Priority of safety and interlock signals
+
+
+The presence of any interlock stop signal is indicated via the block icon status signals generated 
+by the module. The priority order of the various types of interlock (if more than one is active at 
+the same time) is as follows:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL TYPE        PRIORITY        CAN BE BYPASSED
+ ――――――――――――――――――――――――――――――――――――――――――
+ Emergency Stop         High               NO
+ Trip             ↑              YES
+ Interlock             ↑              YES
+ Permissive          Low               YES
+ ――――――――――――――――――――――――――――――――――――――――――
+ High priority signal take precedence over lower priority signals.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4     Alarms and warnings
+
+
+The module can generate up to five distinct alarms:
+
+
+   1.  FAILED TO OPEN
+     Indicates that the valve did not open when requested to do so. Alarm is generated 
+     when the opening operation timer expires without the corresponding limit switch 
+     activating.
+
+   2.  FAILED TO CLOSE
+     Indicates that the valve did not close when requested to do so. Alarm is generated 
+     when the closing operation timer expires without the corresponding limit switch 
+     activating.
+
+
+   3.  FAILED WHILE OPEN
+     Indicates that the valve opened correctly, but then at some later point, the positive 
+     feedback signals, indicating the open state of the valve, were lost.
+
+   4.  FAILED WHILE CLOSED
+     Indicates that the valve closed correctly, but then at some later point, the positive 
+     feedback signals, indicating the closed state of the valve, were lost.
+
+
+   5.  EXTERNAL FAULT
+     External fault is a separate (and optional) hardwired signal from the valve that 
+     indicates the valve itself has detected a problem (e.g. a trip signal from a 
+     motorised valve)
+
+The module does not generate any warnings.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4.1     Alarm — Failed to open/close
+
+
+Failed to open and failed to close alarms are generated if the valve is required to change state 
+and fails to do so within the time set by the relevant operation timer.
+
+For example, if the valve were in a closed state and was requested to open, the failed to open 
+alarm would be generated if valve had not received positive indication that the valve was 
+correctly open (from the valve limit switches) by the time the opening operation timer expired.
+
+If the valve is not equipped with any limit switches, then there are no circumstances under 
+which the failed to open and failed to close alarms can be generated (the valve is always 
+assumed to operate correctly and be in the required position).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4.2     Alarm — Failed while open/closed
+
+
+Failed while open and failed while closed are generated if the valve is in a steady state (not in 
+the process of changing from open to closed or vice versa) and the positive indication of the 
+valve position changes to indicate the steady state position has changed.
+
+An example would be for a normally closed valve, with both open and closed limit switches, 
+to be in the open (energised) state, where the open limit is active and closed limit is inactive 
+(positively indicating the valve is open). If the power to the valve failed (a blown fuse or broken 
+wire, for example), the valve would deenergise and return to the closed state and this would be 
+reflected in the state of the limit switches. The module, knowing nothing of the power failure, 
+would expect the valve to still be open and would instantly generate a failed while open alarm.
+
+If the valve is not equipped with any limit switches, then there are no circumstances under which 
+the failed while open and failed while closed alarms can be generated (the valve is always 
+assumed to operate correctly and be in the required position).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4.3     Alarm — External fault
+
+
+The external fault alarm is activated whenever the external fault signal provided to the module 
+is active. The external fault signal is an optional signal that indicates that the valve itself is 
+experiencing a problem. The signal is more commonly associated with motorised valves where 
+thermal overload “trip” signals are used to indicate that the valve motor has experienced a fault, 
+it could also be used to indicate the loss of pneumatic pressure for pneumatic solenoid valves.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4.4     Resetting alarm conditions
+
+
+The four alarms derived from valve limit switches:
+
+   1.  FAILED TO OPEN
+
+   2.  FAILED TO CLOSE
+
+   3.  FAILED WHILE OPEN
+
+   4.  FAILED WHILE CLOSED
+
+Are latching alarms, if the alarm conditions occur, the valve will be placed in a fault conditions 
+(see § 2.5) and will no longer be operable, the vale will remain in a deenergised condition until 
+the fault is corrected.
+
+The alarm conditions are only reset when the module receives a RESET command (usually 
+from the operator).
+
+The fifth alarm:
+
+   5.  EXTERNAL FAULT
+
+Is a non-latching alarm that is reset automatically whenever the external fault signal is 
+deactivated. It should be noted however, that the cause of the external fault (say a thermal 
+overload) may itself, require some form of manual or physical reset, before the fault condition 
+is removed.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.5     Fault conditions
+
+
+The valve is in a fault condition if any alarm conditions is active:
+
+   1.  FAILED TO OPEN
+
+   2.  FAILED TO CLOSE
+
+   3.  FAILED WHILE OPEN
+
+   4.  FAILED WHILE CLOSED
+
+   5.  EXTERNAL FAULT
+
+A valve cannot operate if any fault condition is active and it will return to its deenergised state.
+
+For a normally closed valve, the deenergised state is closed and for a normally open valve, 
+the deenergised state is open.
+
+A valve that is in a fault state will ignore any request that would move it to an energised state, 
+irrespective of the source of the command: automatic operation, manual operation or even an 
+interlock condition.
+
+
+The valve will remain in a fault state until all alarms have been reset, in the case of the four limit 
+switch derived alarms the module must receive a RESET command (see § 2.4.4) to remove the 
+alarms, and consequently, the fault conditions.
+
+The EXTERNAL FAULT alarm is a non-latching alarm that is reset automatically whenever the 
+external fault signal is deactivated, consequently, the fault state will automatically reset when 
+the external fault signal deactivates.
+
+It should be noted however, that the cause of the external fault (say a thermal overload) may 
+itself, require some form of manual or physical reset, before the fault condition is removed.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.6     Operating modes
+
+
+The module supports the following optional modes of operation:
+
+   •   Automatic/manual control (allows the operator to take manual control of the valve 
+     and open or close it irrespective of the control system requirements)
+
+   •   Interlock bypass mode (allows the operator to override permissive, interlock and 
+     trip signals
+
+   •   Simulation mode (allows the operator to override the current instrument reading 
+     with a simulated value)
+
+   •   Remote/local/all selection (allows control of the instrument to be restricted to a 
+     specific SCADA/HMI device) 
+
+   •   Faceplate disabled (disables all optional modes)
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.6.1     Automatic and manual control modes
+
+
+By default, the module will be in automatic mode; this means that any open or close instruction 
+received by the module from the control software (continuous or sequential control) will cause 
+the valve to adopt the requested state (if the valve is not in fault and is free of interlock and 
+safety conditions).
+
+If the module is switched to manual mode, the automatic control signals will be ignored and the 
+module will adopt the state required by the manual request signals set by the operator 
+(again, the valve must not be in fault and must be free of interlock and safety conditions).
+
+Selecting automatic or manual mode is an operator action and can be implemented at any time. 
+Changing from automatic mode to manual mode is a bumpless operation, in which the initial 
+manual state of the valve is set to match the current automatic state. For example, if a valve 
+were open under automatic control, switching the valve to manual would cause the initial 
+manual state to set to open (matching the automatic state), ensuring that the valve does not 
+initially change state when changing to manual mode.
+
+Once manual mode is established, the operator is free to open and close the valve as required.
+
+There is no bumpless transfer back to automatic mode, the valve will simply adopt the state 
+required by the control software.
+
+Interlocks, faults and safety signals operate in exactly the same way for a valve in manual mode 
+as they do for a valve in automatic mode and will take priority over any command issued in either 
+automatic or manual mode.
+
+If the faceplate is disabled (see § 3.5.5), the valve will be set to automatic mode and manual 
+mode will not be available.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.6.2     Interlock bypass mode
+
+
+Interlock bypass mode allows the three interlock types (trip, interlock and permissive) to be 
+overridden (bypassed) by the operator.
+
+If bypass mode is activated, any interlock signal will be ignored by the module.
+
+Bypass mode is an entirely manual operation that can only be initiated by an operator, usually 
+via a supervisory system (SCADA or HMI).
+
+If the faceplate is disabled (see § 3.5.5), bypass mode will not be available.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.6.3     Simulation mode
+
+
+The module can be switched to a simulation mode, under which any positive position feedback 
+signals from valve limit switches are replaced by simulated signals selected by the operator. 
+Simulation mode can be used during testing and can also be applied in a process environment 
+if a fault condition is detected within the valve.
+
+The operator can select any one of the following possible simulation arrangements (only one 
+can be active at any given time):
+
+
+   •   Follow demand    The simulation will generate open and closed signals that 
+                match the requested state of the valve
+
+   •   Open          The simulation will generate signals to give a permanently 
+                open state for the valve, irrespective of any valve state 
+                request (allows failed open conditions to be simulated)
+
+   •   Closed           The simulation will generate signals to give a permanently 
+                closed state for the valve, irrespective of any valve state 
+                request (allows failed closed conditions to be simulated)
+                request (allows failed open conditions to be simulated)
+
+   •   No limits       No limit switch signals will be simulated
+
+Simulation mode is a manual operation that can only be initiated by an operator.
+
+If the faceplate is disabled (see § 3.5.5), simulation mode will not be available.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.6.4     Remote/local/all mode
+
+Remote and local operating modes refer to the device that has control of the module; where 
+a plant has more than one SCADA/HMI, say a SCADA in a remote control room and a field 
+mounted HMI local to the device, it is possible to restrict the operator control of the module to 
+one, or the other, or both supervisor systems as follows
+
+   •   Remote Only the remote system in the control room can control the device
+
+   •   Local     A local system has taken control of the device and the remote system can 
+           no longer issue commands to it
+
+   •    All    Any system can control the device
+
+The default arrangement if for all system to have access to the device.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.4.3     Facepalte disabled mode
+
+Prevents the supervisory system from displaying the faceplate from which the above options are 
+selected. If the faceplate is disabled, this module will disable simulation and manual modes and 
+will set the module to automatic mode.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.7      Supervisory system interface
+
+See the online documentation for this block — select the block in the project tree and press:
+     SHIFT + F1
+
+An overview of the supervisory system interface is given in section 2.7 of the online SMDS 
+document [Ref. 011].
+
+A detailed description of this interface is given in sections 3.6-3.8 of the online SMDS 
+document [Ref. 011].
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 1 to 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+
+This block, FC11001_StdDevValveIsol uses user data types to provide the primary interface to 
+the block, it also uses direct digital signals to provide an interface for the position feedback 
+signals and for the fault, safety and interlock signals. It also has a single output signal used to 
+operate the valve. 
+
+These are the formal block parameters: 
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ FBK_OPEN     Optional open state positive feedback        Bool      In
+          (1 = open, 0 = not open) If not required, set 
+          permanently to _False
+
+ FBK_CLOSED    Optional closed state positive feedback        Bool      In
+          (1 = closed 0 = not closed) If not required, set 
+          permanently to _False
+
+ EXT_FAULT     Optional external fault signal for the device     Bool      In
+          (1 = fault, 0 = healthy). If not required, set 
+          permanently to _False
+
+ E_STOP        Optional emergency stop (safety) signal        Bool      In
+          (1 = emergency stop active, 0 = healthy) If not 
+          required, set permanently to _False
+
+ TRIP        Optional trip signal                  Bool      In
+          (1 = trip condition active, 0 = healthy) If not 
+          required, set permanently to _False
+
+ INTERLOCK     Optional interlock signal               Bool      In
+          (1 = interlock condition active, 0 = healthy) If 
+          not required, set permanently to _False
+
+ PERMISSIVE      Optional permissive signal             Bool      In
+          (1 = permissive condition active, 0 = healthy) 
+          If not required, set permanently to _False
+
+ STATIC_DATA     Data structure that holds the configuration data     UT11001    In
+          for the device (normally open/closed, limit switch 
+          and interlock configuration &amp;c.)
+
+ DYNAMIC_DATA      Data structure that holds the live data for the       UT31001    InOut
+          device (its mode, status and messages and 
+          any other dynamic information required by the 
+          module)
+
+ OPERATE        Output to drive the valve to a particular state    Bool      Out
+          (1 = energised state, 0 = deenergised state)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+FBK_OPEN, FBK_CLOSED and EXT_FAULT parameters are input signals provided directly from the 
+device itself (via digital input cards). The OPERATE signal is an output signal (via a digital output 
+card) that causes the valve to open and close.
+
+The E-STOP parameter is the interface to any safety signal that might apply to the valve; 
+similarly, the PERMISSIVE, INTERLOCK and TRIP parameters are the links to any such interlock 
+signals that may be applied to the device.
+
+The STATIC_DATA and DYNAMIC_DATA parameters are UDTs that hold (respectively) the 
+configuration information and the live data for the device.
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT          ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ STATIC_DATA     UT11001_St_DevValveIsol        DB11001_St_DevValveIsol
+ DYNAMIC_DATA   UT31001_Dy_DevValveIsol        DB31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Section 5 contains a full list of all variables within these UDTs.
+
+This arrangement conforms with the PAL philosophy where IO card connections, safety 
+signals and interlocks have unique formal parameters; all remaining signals are passed as 
+variables within UDTs, see the Software Design Specification [Ref. 008].
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1      Typical wiring arrangement
+
+
+The typical wiring arrangements for a valve with all signals is as follows:
+
+    24VDC  
+     ─┬─                                ┌───────┐
+      │                                 │       │  
+      ├────┬────┐                 │      ─┴─
+      │       │       │                 │        GND
+      │       │       │             ┌┻┐ ▁▁
+   ▁│ ○   ▁│○   ▁│○             │ │▁＼／ NORMALLY 
+   ▔│ ○   ▔│○   ▔│○             │ │ ／＼   CLOSED
+    FAULT│ CLOSED│   OPEN│             └┬┘ ▔▔ 
+      │       │       │                 │     
+      │       │       │              │  
+    ┌─┻─┐┌─┻─┐┌─┻─┐          ┌─┻─┐
+    │  I1.0  ││  I1.1  ││  I1.2  │DI CARD        │  Q1.0 │DO CARD
+    └─┬─┘└─┬─┘└─┬─┘          └─┬─┘
+      │       │       │ ┌────────    │
+      │       │       │ │ FC11001          │
+      │       │       │ ├──────────┤ │
+      │       │       │ │          │ │
+      │       │       │ │           OPERATE ├─┘
+      │       │       │ │          │
+      │       │       └─┤ FBK_OPEN        │
+      │       │         │          │
+      │       └──────┤ FBK_CLOSED       │
+      │                 │          │
+      └───────────┤ EXT_FAULT        │
+                        │           
+                        │
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.2      Normal operation
+
+
+Normal operation can generally be considered the operation of both normally open and normally 
+closed valves under automatic or manual control (see § 3.5.1 for a full explanation of how 
+automatic and manual modes are selected). And the mechanisms used to determine the state 
+of the valve.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.1     Opening and closing the valve
+
+
+Under automatic mode, the valve is controlled be separate software within the Controller (this 
+is usually derived from either continuous control logic or sequential control logic and 
+implemented by the command handling application module).
+
+The result of the separate software will be to either open the valve or close the valve.
+
+Under manual mode, the valve is controlled directly by the operator via some form of 
+supervisory system (SCADA or HMI). Again, the result of the manual operator action will be to 
+either open or close the valve.
+
+There are two signals that can cause the valve to move to a particular state, one for automatic 
+mode and one for manual mode, both are passed to the module as part of the DYNAMIC_DATA 
+parameter (UT31001_Dy_DevValveIsol):
+
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ ctrl_Aut_OpenClose Causes the valve to open and close     Bool  1 = open the valve
+           if automatic mode is active            0 = close the valve
+           (mode_AutMan = 1). If auto mode is 
+           not active, signal is ignored
+
+ ctrl_Man_OpenClose  Causes the valve to open and close     Bool  1 = open the valve
+           if manual mode is active             0 = close the valve
+           (mode_AutMan = 0). If man mode is 
+           not active, signal is ignored
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Note:    The above signals specify the required physical state of the valve (either open or 
+     closed), i.e. it specifies the true state required of the valve irrespective of whether 
+     the valve is normally open or normally closed. 
+
+     The module will determine whether the OPERATE signal should be activated or 
+     deactivated to achieve the required state depending on the configuration of the 
+     valve (either normally open or normally closed).
+
+The operating mode (either automatic or manual) is specified within the DYNAMIC_DATA 
+parameter UDT (UT31001_Dy_DevValveIsol) mode_AutMan as follows:
+
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ Mode_AutMan     Identifies the operating mode of     Bool  1 = automatic mode
+           the valve.                   0 = manual mode
+ ――――――――――――――――――――――――――――――――――――――――――
+
+By default the device will be in automatic mode.
+
+The state of the OPERATE parameter is determined by either the ctrl_Aut_OpenClose or 
+ctrl_Man_OpenClose (depending on whether automatic mode or manual mode is active) and 
+the type of valve in use (either normally open or normally closed). 
+
+The type of valve is determined by the CONFIG_NO_NC signal specified within the STATIC_DATA 
+parameter UDT (UT11001_St_DevValveIsol) as follows:
+
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_NO_NC      Identifies the type of the valve      Bool  1 = normally open
+           as either normally open or normally         0 = normally closed
+           closed.
+
+           A normally closed valve is energised 
+           to open, deenergised to close.
+
+           A normally open valve is deenergised 
+           to open and energised to close.
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The various states of the valve for both automatic/manual and normally open/closed are given 
+in the following table:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ MODE:   AUTOMATIC MODE (mode_AutMan = 1)
+ ctrl_Aut_OpenClose ctrl_Man_OpenClose CONFIG_NO_NC   OPERATE  VALVE STATE
+ ――――――――――――――――――――――――――――――――――――――――――
+     0         N/A      0 (normally closed)   0      Closed
+     1         N/A      0 (normally closed)   1      Open
+     0         N/A      1 (normally open)      1      Closed
+     1         N/A      1 (normally open)      0      Open
+ ――――――――――――――――――――――――――――――――――――――――――
+ MODE:   MANUAL MODE (mode_AutMan = 0)
+ ctrl_Aut_OpenClose ctrl_Man_OpenClose CONFIG_NO_NC   OPERATE  VALVE STATE
+ ――――――――――――――――――――――――――――――――――――――――――
+      N/A          0       0 (normally closed)   0      Closed
+      N/A          1       0 (normally closed)   1      Open
+      N/A          0       1 (normally open)      1      Closed
+      N/A          1       1 (normally open)      0      Open
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The module will determine the correct state of the OPERATE parameter based on the operating 
+mode, required state in that mode and the type of valve in use.
+
+If the valve is in a fault state (see § 3.4), the OPERATE parameter will be set to 0 (deenergised), 
+irrespective of any other signals.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.2     Operation timers
+
+
+The module has two independent operation timers, one for opening the valve (opening timer) 
+and one for closing the valve (closing timer).
+
+The relevant timer is started whenever the valve is requested to change state. Both timers 
+count down from specified values to zero (the valve can have different times for opening 
+and closing).
+
+The specified operating times are given within the STATIC_DATA parameter UDT 
+(UT11001_St_DevValveIsol) as follows:
+
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ TIME_OPENING_MAX The maximum time required for the     Real     Time in seconds
+           valve to travel from a closed state to
+           an open state
+
+ TIME_CLOSING_MAX The maximum time required for the     Real     Time in seconds
+           valve to travel from an open state to 
+           a closed state
+ ――――――――――――――――――――――――――――――――――――――――――
+
+If a timer is running, the elapsed (counting down) time is stored within the DYNAMIC_DATA 
+parameter UDT (UT31001_Dy_DevValveIsol) as follows:
+
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ actual_Operating_Timer    The actual elapsed operation time       Real     Time in seconds
+ ――――――――――――――――――――――――――――――――――――――――――
+
+There is a single operating timer for both opening and closing (opening and closing are mutually 
+exclusive operations, hence only one timer is needed. The timer is preloaded with either the 
+opening time preset or the closing time preset prior to the timer starting).
+
+The preset signals TIME_OPENING_MAX and TIME_CLOSING_MAX are the maximum possible 
+times it can take for the valve to reach the expected position. This should be set to between 
+110% and 120% of the normal opening and closing times specified for the valve. For example, 
+if a valve has a normal opening time of 5 seconds and a normal closing time of 3 seconds, 
+sensible values for TIME_OPENING_MAX and TIME_CLOSING_MAX would be between 5.5-6.0 s 
+and 3.3-4.0 s respectively.
+
+A valve will enter a fault state (see § 3.4) if the operation timer counts down to a value of zero 
+without confirmation that the valve has reached the required state. Such confirmation is 
+provided by positive feedback from the valve limit switches (or other indicating device) or 
+by simulated signal within the module itself (see § 3.2.3).
+
+The operation timer always counts down from a preset value to zero, this is in accordance 
+with the general requirements and practices of the PAL software.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.3     Position feedback signals
+
+
+The module can accommodate either none, one or two positive position indication signals:
+
+
+   1.  No limit switches         There is no positive indication of the current state 
+                     of the valve, it is assumed to be in the expected 
+                     state.
+
+   2.  Closed limit switch only       Positive indication is given for the closed state 
+                     only. The valve is assumed to be open if the 
+                     closed signal is inactive.
+
+   3.  Open limit switch only      Positive indication is given for the open state 
+                     only. The valve is assumed to be closed if the 
+                     open signal is inactive.
+
+   4.  Open and closed limit switches    Positive indication is given for both states. 
+                     This allows the true state of the valve to be 
+                     determined under all circumstances.
+
+There are two configuration signals that determine the position feedback arrangements, these 
+are stored within the STATIC_DATA parameter UDT as follows:
+
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION              TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_FBK_OPEN_EN    Indicates that positive feedback for    Bool  1 = open feedback
+             the open state is present           0 = no feedback
+
+ CONFIG_FBK_CLOSED_EN  Indicates that positive feedback for    Bool  1 = closed feedback
+             the closaed state is present         0 = no feedback
+ ――――――――――――――――――――――――――――――――――――――――――
+
+If the CONFIG_FBK_OPEN_EN signal is activated (set to 1), the module will use the state of the 
+signal connected to the FBK_OPEN parameter to determine the open position of the valve. 
+
+If the CONFIG_FBK_OPEN_EN signal is deactivated (set to 0), the module will derive the open 
+position of the valve such that it matches the requested state of the valve.
+
+Similarly, if the CONFIG_FBK_CLOSED_EN signal is activated (set to 1), the module will use the 
+state of the signal connected to the FBK_CLOSED parameter to determine the open position of 
+the valve. 
+
+If the CONFIG_FBK_CLOSED_EN signal is deactivated (set to 0), the module will derive the 
+closed position of the valve such that it matches the requested state of the valve.
+
+Where a CONFIG_FBK_ ... _EN signal is activated (set to 1), a true state on the associated 
+parameter FBK_... indicates that the valve is in that position, a false state indicates that the 
+valve is not in that position as follows:
+
+ OPEN SIGNALS  ―――――――――――――――――――――――――――――――――――
+ CONFIG_FBK_OPEN_EN    FBK_OPEN    MEANING
+ ――――――――――――――――――――――――――――――――――――――――――
+      1            0       Not open
+      1            1       Confirmed open
+      0          N/A     Internally derived open signal matches
+                       requested valve state, FBK_OPEN is ignored
+ ――――――――――――――――――――――――――――――――――――――――――
+ CLOSED SIGNALS ――――――――――――――――――――――――――――――――――
+ CONFIG_FBK_CLOSED_EN  FBK_CLOSED  MEANING
+ ――――――――――――――――――――――――――――――――――――――――――
+      1            0       Not closed
+      1            1       Confirmed closed
+      0          N/A     Internally derived closed signal matches
+                       requested valve state, FBK_CLOSED is ignored
+ ――――――――――――――――――――――――――――――――――――――――――   
+
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Position status signals
+
+
+The true position of the valve is given as status signals:
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL          FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Closed      Valve is confirmed closed         Bool     1 = closed
+                                   0 = not closed
+
+ status_Opening      Valve is opening             Bool     1 = opening
+                                   0 = not opening
+
+ status_Open      Valve is confirmed open         Bool     1 = open
+                                   0 = not open
+
+ status_Closing     Valve is closing               Bool     1 = closing
+                                   0 = not closing
+
+ status_Operating      Valve is changing state          Bool     1 = changing state
+            (either opening or closing)           0 = fixed state
+
+ status_Fault       Valve is in a fault condition          Bool     1 = fault
+                                   0 = healthy
+ ――――――――――――――――――――――――――――――――――――――――――   
+
+The standard arrangement is for symbols to show discrete opening and closing symbols; there 
+are some instances (usually on less sophisticated HMIs) where it is necessary to show only that 
+the valve is in the process of changing state.
+
+This is achieved through the use of the status_Operating signal (this is active whenever either 
+status_Opening or status_Closing is active), status_Operating indicates that the valve is either 
+opening or closing, but does not distinguish which.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Understanding derived position signals
+
+
+Where either the CONFIG_FBK_OPEN_EN or CONFIG_FBK_CLOSED_EN signal is deactivated 
+(set to 0), the associated position feedback is internally determined by the module according to 
+the actual state of the valve (determined by the OPERATE parameter and the type of valve in use).
+
+These internally determined signals are themselves configurable and can be set such that the 
+position feedback signal occurs after a particular percentage of the associated operation timer 
+has expired.
+
+For the derived FBK_OPEN signal, the configurable percentage signal is TIME_FBK_OPEN_SIM 
+stored within the STATIC_DATA parameter. Similarly, for the derived FBK_CLOSED signal, the 
+configurable percentage signal is TIME_FBK_CLOSED_SIM, again, stored within the STATIC_DATA 
+parameter.
+
+The operation of these parameters can be seen below:
+
+    ①                ③
+│   ┌────────────────┐
+│   │                │
+│   │                │      ctrl_Aut_OpenClose
+│   │                │
+┼───┘┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈└───────────────
+
+
+                     TIME_OPENING_MAX            TIME_CLOSING_MAX
+     ←         →       ←                →
+│   ┌──────┐┄┄┐      ┌───────┐┄┄┐
+│   │      │  ┆      │       │  ┆
+│   │←    Ａ  →│  ┆      │←      Ｂ    →│  ┆actual_Operating_Timer
+│   │      │  ┆      │       │  ┆
+┼───┘┈┈┈┈┈┈└──┴──────┘┈┈┈┈┈┈┈└──┴────
+    ╎      ②         ╎       ④
+    ╎      ╎         ╎       ╎
+    ↓      ╎         ╎       ↓
+│───┐      ╎         ╎       ┌───────
+│   │      ╎         ╎       │
+│   │      ╎         ╎       │                FBK_CLOSED (derived)
+│   │      ╎         ╎       │
+┼┈┈┈└────────────────────────┘┈┈┈┈┈┈┈
+    Ｃ      ╎         ╎       Ｆ
+           ╎         ╎
+           ╎         ╎
+           ↓         ↓
+│          ┌─────────┐
+│          │         │
+│          │         │               FBK_OPEN (derived)
+│          │         │
+┼──────────┘┈┈┈┈┈┈┈┈┈└────────────────
+           Ｄ         Ｅ
+
+  Ａ TIME_FBK_OPEN_SIM  (95%)
+  Ｂ TIME_FBK_CLOSED_SIM  (80%)
+  Ｃ Closed signal deactivates instantly when the valve is asked to open
+  Ｄ Open signal activates when actual_Operating_Timer reaches TIME_FBK_OPEN_SIM 
+    as a percentage of TIME_OPENING_MAX
+  Ｅ Open signal deactivates instantly when the valve is asked to close
+  Ｆ Closed signal activates when actual_Operating_Timer reaches TIME_FBK_CLOSED_SIM 
+    as a percentage of TIME_CLOSING_MAX
+
+The figure above assumes a normally closed valve with no position feedback signals (both 
+CONFIG_FBK_OPEN_EN and CONFIG_FBK_CLOSED_EN are set to 0) operating in automatic mode. 
+It also assumes that the valve is free to operate without restriction (there are no active interlock 
+or safety signals).
+
+The valve is initially closed with the derived FBK_CLOSED signal active (1) and the derived 
+FBK_OPEN signal deactivated (0). At some point 1, the module receives a request to open the 
+valve.
+
+At this point two things happen, firstly the operation timer starts, with a countdown from the 
+value TIME_OPENING_MAX, which in this case is 3 seconds. Secondly, the derived FBK_CLOSED 
+signal is deenergised (indicating the valve is no longer closed).
+
+The simulated opening time (TIME_FBK_OPEN_SIM) is set to 95%, this means that the derived 
+FBK_OPEN signal will activate when the actual_Operating_Timer value has counted down for 
+95% of the TIME_OPENING_MAX value (i.e. when the timer has counted down to 0.15s or less). 
+
+The exact formula used is:
+
+┌───────────────────────────────────────────┐
+│Derived FBK_OPEN=1 when:                               │
+│                                 TIME_FBK_OPEN_SIM   │
+│actual_Operating_Time ≤ TIME_OPENING_MAX ─ TIME_OPENING_MAX ╳ ---------------------------------------- │
+│                                     100     │
+└───────────────────────────────────────────┘
+
+This can be seen at point ②, where the derived FBK_OPEN signal activates. The valve now 
+remains in the open state (FBK_OPEN = 1. FBK_CLOSED = 0) until there is a request to close 
+the valve, point ③.
+
+At point ③, the module receives a request to close the valve.
+
+At this point two things happen, firstly the operation timer starts, with a countdown from the 
+value TIME_CLOSING_MAX, which in this case is 4 seconds. Secondly, the derived FBK_OPEN signal 
+is deenergised (indicating the valve is no longer open).
+
+The simulated closing time (TIME_FBK_CLOSED_SIM) is set to 80%, this means that the derived 
+FBK_CLOSED signal will activate when the actual_Operating_Timer value has counted down 
+for 80% of the TIME_CLOSING_MAX value (i.e. when the timer has counted down to 0.80s or less). 
+
+The exact formula used is:
+
+┌────────────────────────────────────────────┐
+│Derived FBK_CLOSED=1 when:                               │
+│                                 TIME_FBK_CLOSED_SIM  │
+│actual_Operating_Time ≤ TIME_CLOSING_MAX ─ TIME_CLOSING_MAX ╳ -------------------------------------------   │
+│                                     100            │
+└────────────────────────────────────────────┘
+
+This can be seen at point ④, where the derived FBK_CLOSED signal activates. The valve now 
+remains in the closed state (FBK_OPEN = 0. FBK_CLOSED = 1) until there is a request a 
+subsequent request to reopen the valve.
+
+If only one position feedback is derived (the other being an actual signal), then the derived signal 
+will be generated in exactly the same way as above, the non-derived signal will simply use the 
+true status of the signal passed to the module.
+
+The simulated time signals are passed to the module within the STATIC_DATA parameter 
+UDT (UT11001_St_DevValveIsol) as follows:
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL        FUNCTION              TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ TIME_FBK_CLOSED_SIM   Specifies the percentage of the     Real     Percentage
+             TIME_OPENING_MAX value that 
+             must expire before the derived 
+             FBK_OPEN signal activates.
+
+
+ TIME_FBK_OPEN_SIM     Specifies the percentage of the     Real     Percentage
+             TIME_CLOSINGING_MAX value that 
+             must expire before the derived 
+             FBK_CLOSED signal activates.
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Both configuration signals are restricted to the range 0.00-100.00, the default value is 90% for 
+both open and closed.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.2.4    Detecting position faults
+
+
+There are two types of position faults: dynamic and static. 
+
+Dynamic faults occur when the valve is changing state (from open to closed or closed to open) 
+and fails to achieve the requested position within the relevant operation time.
+
+The dynamic faults are:
+
+   •   Failed to open
+
+   •   Failed to close
+
+Static faults occur when a valve is stable in the requested state (either open or closed) and is 
+not in the process of moving between states, and some fault occurs such that the position 
+feedback no longer matches the requested state (e.g. the valve was correctly in the open 
+state, and then at some point, the open feedback signal was lost without any change being 
+made to the state of the valve by the module. Such a fault could be a power failure at the valve).
+
+The static faults are:
+
+   •   Failed while open
+
+   •   Failed while closed
+
+If the valve is not equipped with any limit switches (both CONFIG_FBK_OPEN_EN and 
+CONFIG_FBK_CLOSED_EN are set to 0), then there are no circumstances under which any 
+position fault can be generated (the valve is always assumed to operate correctly and be in the 
+required position). 
+
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+                   FAILED TO OPEN         FAILED TO CLOSE
+       LIMIT SWITCH         Opening operation timer    Closing operation timer 
+     ARRANGEMENT         expired and:                 expired and:
+ ――――――――――――――――――――――――――――――――――――――――――
+       No feedback
+    CONFIG_FBK_OPEN_EN = 0       Not available         Not available
+ CONFIG_FBK_CLOSED_EN = 0 
+
+      Open feedback only
+    CONFIG_FBK_OPEN_EN = 1   Open feedback is INACTIVE     Open feedback is ACTIVE
+ CONFIG_FBK_CLOSED_EN = 0
+
+     Closed feedback only
+    CONFIG_FBK_OPEN_EN = 0    Closed feedback is ACTIVE     Closed feedback is INACTIVE
+ CONFIG_FBK_CLOSED_EN = 1
+
+   Open and closed feedback    Closed feedback is ACTIVE     Closed feedback is INACTIVE
+    CONFIG_FBK_OPEN_EN = 1          OR                   OR
+ CONFIG_FBK_CLOSED_EN = 1    Open feedback is INACTIVE     Open feedback is ACTIVE
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ ――――――――――――――――――――――――――――――――――――――――――
+                   FAILED WHILE OPEN       FAILED WHILE CLOSED
+       LIMIT SWITCH         Opening operation timer    Closing operation timer 
+     ARRANGEMENT         not running and:         not running and:
+ ――――――――――――――――――――――――――――――――――――――――――
+       No feedback
+    CONFIG_FBK_OPEN_EN = 0       Not available         Not available
+ CONFIG_FBK_CLOSED_EN = 0 
+
+      Open feedback only
+    CONFIG_FBK_OPEN_EN = 1   Open feedback is INACTIVE     Open feedback is ACTIVE
+ CONFIG_FBK_CLOSED_EN = 0
+
+     Closed feedback only
+    CONFIG_FBK_OPEN_EN = 0    Closed feedback is ACTIVE     Closed feedback is INACTIVE
+ CONFIG_FBK_CLOSED_EN = 1
+
+   Open and closed feedback    Closed feedback is ACTIVE     Closed feedback is INACTIVE
+    CONFIG_FBK_OPEN_EN = 1          OR                   OR
+ CONFIG_FBK_CLOSED_EN = 1    Open feedback is INACTIVE     Open feedback is ACTIVE
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The OR in the alarm conditions is a logical or, it covers the conditions in which both or neither 
+limit switches are active; consider the failed to open alarm, if both limits were active, the alarm 
+would be generated because the closed limit switch is active (irrespective of the state of the 
+open limit). Similarly, if neither switch were active, the alarm would be generated because the 
+open limit is inactive (irrespective of the state of the closed limit).
+
+All alarms are reported as message signals, these form part of the DYNAMIC_DATA parameter 
+UDT as follows:
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL          FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ msg_FailToOpen     Valve failed to open in the specified     Bool     1 = alarm active
+            opening operation time                0 = no alarm
+
+ msg_FailToClose     Valve failed to close in the specified     Bool     1 = alarm active
+            closing operation time               0 = no alarm
+
+ msg_FailWhileOpen  Valve suffered position failure while      Bool     1 = alarm active
+            in a static OPEN state              0 = no alarm
+
+ msg_FailWhileClosed   Valve suffered position failure while      Bool     1 = alarm active
+            in a static CLOSED state            0 = no alarm
+ ――――――――――――――――――――――――――――――――――――――――――   
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Section 3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.3     Safety and interlocks
+
+
+Safety and interlock signals are passed as individual parameters to the module (in the same a 
+manner as IO signals), all such signals are optional, a valve can have all, none or any 
+combination of the signals.
+
+Safety and interlock signals all act to override the normal operation of the valve (whether in 
+automatic or manual mode) and force the valve to a particular state.
+
+There is one safety signal and three interlock signals, each having its own formal module 
+parameter:
+
+
+ SAFETY SIGNAL
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM        FUNCTION                   TYPE     DETAILS 
+ ――――――――――――――――――――――――――――――――――――――――――
+ E_STOP       Optional emergency stop (safety) signal       Bool     1 = E-stop active
+         (1 = emergency stop active, 0 = healthy) If not         0 = healthy
+         required, set permanently to _False
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+ INTERLOCK SIGNALS
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM        FUNCTION                   TYPE     DETAILS  
+ ――――――――――――――――――――――――――――――――――――――――――
+ TRIP       Optional trip signal                 Bool     1 = Trip active
+         (1 = trip condition active, 0 = healthy) If not            0 = healthy
+         required, set permanently to _False
+
+ INTERLOCK    Optional interlock signal              Bool     1 = Interlock active
+         (1 = interlock condition active, 0 = healthy) If         0 = healthy
+         not required, set permanently to _False
+
+ PERMISSIVE     Optional permissive signal            Bool     1 = Permissive active
+         (1 = permissive condition active, 0 = healthy)           0 = healthy
+         If not required, set permanently to _False
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Each safety and interlock signal has its own configuration signal that must be used to formally 
+disable the parameter if the signal is not required, these are all within the STATIC_DATA parameter 
+UDT (UT11001_St_DevValveIsol) as follows:
+
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL        FUNCTION              TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_ESTOP_DIS    Disables the safety signal.        Bool     1 = ESTOP disabled
+             If set to 1, any signal on the          0 = ESTOP enabled
+             ESTOP parameter will be 
+             ignored.
+
+ CONFIG_TRIP_DIS      Disables the trip interlock signal.   Bool     1 = TRIP disabled
+             If set to 1, any signal on the          0 = TRIP enabled
+             TRIP parameter will be 
+             ignored.
+
+ CONFIG_ILOCK_DIS     Disables the interlock signal.    Bool     1 = INTERLOCK disabled
+             If set to 1, any signal on the          0 = INTERLOCK enabled
+             INTERLOCK parameter will be 
+             ignored.
+
+ CONFIG_PERM_DIS   Disables the permissive interlock  Bool     1 = PERMISSIVE disabled
+             signal. If set to 1, any signal on the       0 = PERMISSIVE enabled
+             TRIP parameter will be 
+             ignored.
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The disable signals are used to formally configure the valve, the allow any supervisory system to 
+know the correct configuration of the valve and display information accordingly.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.3.1    Safety signal operation
+
+
+Safety or emergency stop signals are hardwired signals that remove power from a device forcing 
+it to a safe state. Such signals act independently of the software (the pressing of an emergency 
+stop button will physically remove power from the affected devices).
+
+The emergency stop signal passed to the module as the parameter ESTOP; it informs the module 
+that the safety signal has been activated and allows the module to adjust the state of the valve to 
+follow the emergency stop conditions.
+
+When the emergency stop signal is removed, the valve will resume the requested state (with the 
+appropriate operation timer).
+
+Under emergency stop conditions the valve is always deenergised (both physically by the 
+hardware and within the software via the actions of this module), the OPERATE output is set to 
+zero (OPERATE = 0); for a normally closed valve (CONFIG_NO_NC = 0) this means the valve will 
+close, for a normally open valve (CONFIG_NO_NC = 1), the valve will open.
+
+The emergency stop signal is absolute and will override any other demand made of the valve. 
+There is no mechanism for bypassing this form of safety signal.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Typical usage of the ESTOP parameter
+
+
+Any safety signal connected to the ESTOP parameter must be active high (i.e. the signal must be 
+set to 1 to activate the safety signal response). It is often the case, where hardwired emergency 
+stop signals are used, that the emergency stop condition is activated by the absence of a signal 
+(a failsafe response) rather than the application of a signal. The module can accommodate this 
+sense of signal by inverting the ESTOP input:
+
+
+                        ┌─────────────
+     ───────────────────┤ FC11001 
+                        ├───────────────┤
+          "ZONEA_ESTOP"              │               │
+       ────┤╱├──────────┤ ESTOP               │
+                        │               
+                        │               
+
+
+If no safety signal is used, the parameter is set to the _False tag (note, also that the configuration 
+signal CONFIG_ESTOP_DIS should also be set to 1):
+
+
+                        ┌─────────────
+     ───────────────────┤ FC11001 
+                        ├───────────────┤
+                        │               │
+                     _False ──┤ ESTOP               │
+                        │               
+                        │    
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.3.2    Interlock signals
+
+
+Interlock signals are a more flexible mechanism for overriding the requested position of the valve. 
+Interlock signals can be both hardware driven (similar to a safety signal) or can be purely software 
+derived (unlike a safety signal).
+
+Software derived interlock signals can accommodate more complex and more flexible 
+arrangements, it would for example, be possible to disable a software derived interlock if the 
+process were undergoing some particular function, such as cleaning &amp;c.
+
+There are three different types of interlock arrangements:
+
+There are three types of interlock signal:
+
+   1.  INTERLOCK
+     A simple interlock that is active whenever a set of conditions is true, it will force any 
+     associated devices to a given safe state.
+
+   2.  PERMISSIVE
+     Takes no action if a device is in a non-safe state, but once the device is in a safe 
+     state will prevent a transition to a non-safe state (i.e. will not force a valve to close, 
+     but once it is closed, will prevent it from re-opening).
+
+   3.  TRIP
+     A latching interlock, it activates whenever a set of events are true (like an interlock), 
+     but will not deactivate until the triggering conditions are removed and a reset signal 
+     has been given (effectively a latching interlock), it will force any associated devices 
+     to a given safe state.
+
+For any type of interlock, the specified interlock state (or permitted state) can be either open or 
+closed irrespective of the type of valve (normally open or normally closed); unlike the safety signal, 
+it does not have to be the deenergised state of the valve.
+
+That said, the most common interlock state is the deenergised state of the valve; i.e. the failsafe 
+position of the valve.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Typical usage of interlock signals
+
+
+Each type of interlock is passed as its own parameter: TRIP, INTERLOCK or PERMISSIVE. Like the 
+safety signal (ESTOP), each parameter is active high (i.e. the signal must be set to 1 to activate 
+the associated interlock signal response). 
+
+Again, it is often the case, where hardwired interlock signals are used, that the condition is 
+activated by the absence of a signal (i.e. a failsafe response) rather than the application of a 
+signal. The module can accommodate this sense of signal by inverting the relevant input:
+
+
+                        ┌─────────────
+     ───────────────────┤ FC11001 
+                        ├───────────────┤
+       "DB23102_Dy_Perm.V001"     │               │
+       ────┤╱├──────────┤ PERMISSIVE           │
+                        │               
+
+If a particular interlock signal is not used, the parameter is set to the _False tag (note, also that 
+the appropriate configuration signal should also be set to 1: CONFIG_TRIP_DIS, CONFIG_ILOCK_DIS 
+or CONFIG_PERM_DIS).
+
+                        ┌─────────────
+     ───────────────────┤ FC11001 
+                        ├───────────────┤
+                        │               │
+                     _False ──┤ TRIP                    │
+                        │               
+                        │  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Configuring the interlock signals
+
+
+The state adopted by the valve when a particular interlock is active (TRIP or INTERLOCK) or the 
+permitted state of the valve (PERMISSIVE) are set individually for each type of interlock signal. 
+These configuration signals are stored within the STATIC_DATA parameter UDT as follows:
+
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL        FUNCTION              TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_TRIP_OP_CL   The required state of a valve if     Bool     1 = valve will open
+             the TRIP signal is active            0 = valve will close
+
+ CONFIG_ILOCK_OP_CL  The required state of a valve if     Bool     1 = valve will open
+             the INTERLOCK signal is active         0 = valve will close
+
+ CONFIG_PERM_OP_CL  The permitted state of a valve if   Bool     1 = valve may open
+             the PERMISSIVE signal is active          0 = valve may close
+ ――――――――――――――――――――――――――――――――――――――――――
+
+For example, if CONFIG_ILOCK_OP_CL is set to 1, the valve will open whenever the INTERLOCK 
+signal is active (set to 1), this will override any automatic or manual requirement for the valve 
+(but will not override a safety signal, see below). If CONFIG_ILOCK_OP_CL were set to 0, the 
+valve would close whenever the INTERLOCK signal was active.
+
+The TRIP signal behaves in exactly the same way as the INTERLOCK signal, but uses 
+CONFIG_TRIP_OP_CL to set the tripped state of the valve.
+
+Although the TRIP signal requires a reset signal to disengage the interlock conditions, this is 
+handled by the trip logic itself (usually handled by the trip application modules: FC23200) and 
+not via this module; simply deactivating the TRIP signal removes the trip state from the valve 
+and allows it to operate normally.
+
+The PERMISSIVE signal operates in a different way, if CONFIG_PERM_OP_CL were set to 1 
+(valve is permitted to open), and the valve was currently closed under automatic control when 
+the PERMISSIVE signal became active, nothing would happen to the valve (it would remain 
+closed), if the valve then subsequently opened under automatic control, the PERMISSIVE signal
+ would allow the valve to do so (the valve permitted state is open). However, any attempt by 
+the automatic system to re-close the valve would not be allowed by the PERMISSIVE signal.
+
+Conversely, if CONFIG_PERM_OP_CL were set to 0 (valve is permitted to close), and the valve 
+was currently open under automatic control when the PERMISSIVE signal became active, 
+nothing would happen to the valve (it would remain open), if the valve then subsequently 
+closed under automatic control, the PERMISSIVE signal would allow the valve to do so (the 
+valve permitted state is close). However, any attempt by the automatic system to re-open 
+the valve would not be allowed by the PERMISSIVE signal.
+
+Note:    Where multiple interlock signals are used, it is possible for the different interlocks 
+     to apply different states to the valve, for example an active t TRIP rip could close 
+     the valve and an active INTERLOCK open it. Such conflicts are managed by the 
+     different priorities applied to the interlock signals (see below).  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Interlock priorities
+
+
+Interlock signals (and also the safety ESTOP signal) are ranked by priority, and only one will be in 
+effect at any given time. The applicable priorities are:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL TYPE        PRIORITY        CAN BE BYPASSED
+ ――――――――――――――――――――――――――――――――――――――――――
+ Emergency Stop         High               NO
+ Trip             ↑              YES
+ Interlock             ↑              YES
+ Permissive          Low               YES
+ ――――――――――――――――――――――――――――――――――――――――――
+ High priority signal take precedence over lower priority signals.
+
+Thus, if both the TRIP signal and the INTERLOCK signal were active at the same time, the module 
+will behave as if only the TRIP signal (with the higher priority) were active.  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Bypassing interlocks
+
+
+Unlike safety signals, all interlock signals can be overridden (or bypassed). The bypass signal is a 
+single signal that, if active, overrides and deactivates any TRIP, INTERLOCK or PERMISSIVE signal 
+that may have been activated.
+
+The bypass signal is specified within the DYNAMIC_DATA parameter UDT as follows:
+
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ mode_BypassOn   Activates bypass mode, if active, any    Bool     1 = bypass mode on
+           TRIP, INTERLOCK or PERMISSIVE signal          0 = bypass mode off
+           will be ignored
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Bypass mode can only be activated by the operator via a faceplate available at the supervisory 
+system (SCADA/HMI).
+
+It is possible to configure the module such that bypass is permanently disabled, this uses the 
+following STATIC_DATA parameter:
+
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL       FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_BYPASS_DIS    Prevents bypass mode being      Bool     1 = no bypass mode
+            activatedunder all circumstances          0 = bypass permitted
+ ――――――――――――――――――――――――――――――――――――――――――
+  
+If bypass mode is disabled (configuration signal CONFIG_BYPASS_DIS is set to 1), then the bypass 
+mode cannot be turned on under any circumstances, the option will be greyed out on the 
+supervisory system faceplate and the block will constantly reset the mode_BypassOn signal.
+
+Note:    Safety (ESTOP) signals cannot be bypassed.  
+
+     Similarly, if an interlock signal has a hardwired component (that will override any 
+     software actions), it also must not be bypassed.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.4     Fault handling
+
+
+There are five fault conditions, four are derived from position faults and one from an external 
+fault signal:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ FAULT         DESCRIPTION                     LATCHING
+ ――――――――――――――――――――――――――――――――――――――――――
+ Failed to open      Valve failed to open in the specified               YES
+            opening operation time
+
+ Failed to close      Valve failed to close in the specified              YES
+            closing operation time
+
+ Failed while open   Valve suffered position failure while            YES
+            in a static OPEN state
+
+ Failed while closed   Valve suffered position failure while            YES
+            in a static CLOSED state
+
+ External fault        The EXT_FAULT signal is active                 NO
+  ――――――――――――――――――――――――――――――――――――――――――
+
+If any of the above faults are active, the valve will be deenergised (the OPERATE parameter will be 
+set to 0) and the module will ignore all commands either automatic or manual and will ignore all 
+interlock conditions.  
+
+Latching fault conditions require the operator to issue a reset command, this is usually via a 
+faceplate available at the supervisory system (SCADA/HMI), but could also be via a hardwired 
+(pushbutton) signal. 
+
+The reset signal is specified within the DYNAMIC_DATA parameter UDT as follows:        
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ mode_Reset        A reset pulse                Bool     1 = reset latched faults
+           (active for one Controller cycle)            0 = no action
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.1    External fault
+
+
+The external fault is an optional hardwired signal from the valve, it indicates that the device 
+itself is registering that there is some problem. Such external fault signals are more commonly 
+associated with motorised valves (equipped with thermal overload detectors), but may also be 
+associated with pneumatic or hydraulic operated valves to indicate that the is a 
+pneumatic/hydraulic system failure.
+
+Such fault signals are generally indicated via a hardwired digital input to the Controller.
+
+The external fault signal (if used) is passed to the block as the parameter: EXT_FAULT .
+
+Any signal connected to the EXT_FAULT parameter must be active high (i.e. the signal must be 
+set to 1 to indicate the fault condition is present). 
+
+Where a failsafe response signal (active when set to 0) is used, it must be inverted at the 
+EXT_FAULT parameter (similar to theESTOP signal).
+
+If the EXT_FAULT signal is not required, the input should be set to _False  (again, similar to the
+ESTOP signal).
+
+The EXT_FAULT signal is non-latching; it does not require a Mode_Reset signal to clear the fault. 
+The external fault will automatically reset whenever the EXT_FAULT signal is set to 0.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.5     Operating modes
+
+
+This block FC11001_StdDevValveIsol supports various operating modes:
+
+   •   Automatic/manual mode
+
+   •   Interlock bypass mode
+
+   •   Simulation mode
+
+   •   Remote/loca mode
+
+   •   Faceplate disabled mode
+
+Examining these in turn:   
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.1    Automatic and manual modes
+
+
+Under normal operation, the valve is in automatic mode and is controlled directly by the 
+Controller software (usually, sequential of continuous logic); however, it is possible for the 
+operator to take direct control of the valve by switching it to manual mode.
+
+If manual mode is active, the valve will open and close directly at the command of the operator 
+and will ignore any automatic mode open and close requests.
+
+If the valve is operating under automatic mode, the manual open/close request follows that of 
+the automatic mode; this ensures that the valve remains in the same state when initially 
+switched from automatic mode to manual mode, referred to as bumpless transfer. This approach 
+minimises any disturbance to the process should the valve be inadvertently switched to manual 
+mode.
+
+The following data points are associated with automatic/manual mode:
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ Mode_AutMan     Identifies the operating mode of     Bool  1 = automatic mode
+           the valve.                   0 = manual mode
+
+ ctrl_Aut_OpenClose Causes the valve to open and close     Bool  1 = open the valve
+           if automatic mode is active            0 = close the valve
+           (mode_AutMan = 1). If auto mode is 
+           not active, signal is ignored
+
+ ctrl_Man_OpenClose  Causes the valve to open and close     Bool  1 = open the valve
+           if manual mode is active             0 = close the valve
+           (mode_AutMan = 0). If man mode is 
+           not active, signal is ignored
+
+ status_Aut      The valve is in automatic mode      Bool  1 = auto mode
+                                 0 = no in auto
+
+ status_Man       The valve is in manualmode      Bool  1 = manual mode
+                                 0 = no in manual
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Manual mode can only be activated by the operator via a faceplate available at the supervisory 
+system (SCADA/HMI).
+
+If the faceplate is disabled (CONFIG_FP_DIS = 1), the valve will be set to automatic mode and 
+manual mode will not be available (Mode_AutMan = 1)  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.2    Interlock bypass mode
+
+
+All interlock signals (TRIP, INTERLOCK or PERMISSIVE) can be overridden (bypassed). The bypass 
+signal is a single signal that, if active, overrides and deactivates any TRIP, INTERLOCK or 
+PERMISSIVE signal that may have been activated.
+
+It is possible to permanently disable the bypass mode for any given valve (preventing the 
+operator from activating it).
+
+The following data points are associated with the bypass mode:
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL       FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_BYPASS_DIS    Prevents bypass mode being      Bool     1 = no bypass mode
+            activatedunder all circumstances          0 = bypass permitted
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ mode_BypassOn   Activates bypass mode, if active, any    Bool     1 = bypass mode on
+           TRIP, INTERLOCK or PERMISSIVE signal          0 = bypass mode off
+           will be ignored
+
+ status_BypassOn   Status indication, shows if bypass      Bool     1 = bypass active
+           mode is active                 0 = bypass inactive
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Bypass mode can only be activated by the operator usually via a faceplate available at the 
+supervisory system (SCADA/HMI), alternatively it may be via some form of hardwired signal such 
+as a key-switch &amp;c. 
+
+If bypass mode is disabled (configuration signal CONFIG_BYPASS_DIS is set to 1), then the bypass 
+mode cannot be turned on under any circumstances, the option will be greyed out on the 
+supervisory system faceplate and the block will constantly reset the mode_BypassOn signal.  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.3    Simulation mode
+
+
+The module can be switched to a simulation mode, in which the position feedback for the valve 
+is replaced by a simulated signals specified by the operator. 
+
+Simulation mode is generally used during testing, but can also be applied in a process 
+environment if a fault condition is detected; this scenario allows the plant to continue operating 
+(albeit under some degree of manual control) until the valve is repaired or replaced.
+
+The following data points are associated with the simulation mode:
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL       FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_SIM_DIS     Prevents simulation mode being     Bool     1 = no sim mode
+            activatedunder all circumstances          0 = sim permitted
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION                TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ mode_SimOn      Activates simulation mode, if active, the   Bool     1 = sim mode on
+           position feedback will be specified by         0 = sim mode off
+           mode_SimValue      
+ mode_SimValue    Specifies the type of simulated position     Int     0 = no feedback
+           feedback in use                  1 = permanently open
+                                     2 = permanently closed
+                                     3 = follow demand
+
+ status_SimOn     Status indication, shows if simulation     Bool     1 = sim active
+           mode is active                 0 = siminactive
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Simulation mode can only be activated by the operator via a faceplate available at the 
+supervisory system (SCADA/HMI).
+
+If simulation mode is activated, the position feedback for the valve is forced to one of four 
+states specified by the mode_SimValue variable (this is an enumerated variable):
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ mode_SimValue  DESCRIPTION               FBK_OPEN FBK_CLOSED
+ ――――――――――――――――――――――――――――――――――――――――――
+     0        Permanently disables all position feedback    0     0
+            (irrespective of any valve position)
+
+     1        Permanently sets valve position to open         1     0
+            (irrespective of any valve position)
+
+     2        Permanently sets valve position to closed      0     1
+            (irrespective of any valve position)
+
+     3        Position feedback follows the requested        1/0    0/1
+            state of the valve              (if valve is open/closed)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The mode_SimValue is restricted to the range 0-3.
+
+If simulation mode is disabled (configuration signal CONFIG_SIM_OFF is set to 1), then the 
+simulation mode cannot be turned on under any circumstances, the option will be greyed out on 
+the supervisory system faceplate and the block will constantly reset the mode_SimOn signal.
+
+If simulation mode is permitted (CONFIG_SIM_OFF = 0), then setting mode_SimOn to 1 will activate 
+simulation mode and the any position feedback signals (connected to FBK_OPEN and 
+FBK_CLOSED) will be overridden according to the value stored in mode_SimValue (see Table above).
+
+The operator can set and adjust the simulation value (mode_SimValue) from the instrument 
+faceplate on the supervisory system. The simulation value can be adjusted at any time by the 
+operator (even if simulation mode has not been activated), but will not be applied until 
+simulation mode is turned on (mode_SimOn = 1). 
+
+If simulation mode is completely disabled (CONFIG_SIM_OFF is set to 1) then the operator will not 
+be able to adjust the simulated value (mode_SimValue will be greyed out on the faceplate).
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.4     Remote/local mode
+
+Remote and local operating modes refer to the supervisory system that has control of the 
+device (i.e. which system can write to the device and change the operating mode of the 
+device). 
+
+This type of mode is usual present where a plant has a remote central control location (a control 
+room) that normally controls the device (remote control), but also has a field panel with a local 
+HMI that an operator in the field can select to take over control of the device (local control) for 
+maintenance purposes.
+
+The modes are as follows (and are mutually exclusive, only one will be active):
+
+   Remote        Only the remote system in the control room can 
+                control the device
+
+   Local            A local system has taken control of the device and the remote 
+                system can no longer issue commands to it
+
+   Remote/local disabled   The system does not use remote/local modes and any 
+     (ALL mode)     supervisory system can issue commands to the device 
+ 
+Remote/local control is generally handled by the supervisory systems themselves; however, the 
+supervisory systems need a storage area per device to record which mode that device is in, local 
+control is often activated by a panel key-switch, that changes the state of several devices from 
+remote to local (usually all the devices controlled by the local panel).
+
+The block simply identifies the remote/local mode from the mode signals and configuration 
+signals provided to the block.
+
+For systems that do not use remote/local modes (any supervisory system can control the device, 
+or control is determined by operator privileges), the remote/local modes can be disabled 
+(CONFIG_RL_EN is set to zero) and the device is effectively in ALL mode (any system can 
+control the device).
+
+If remote/local operation is in use, the supervisory system that does not have control will still 
+display all the information from the device, but will not be able to control the device (it could not 
+for example, activate simulation mode) and all control function (faceplate functions) will be 
+greyed out.
+
+The following signals are associated with remote/local/all modes:
+
+ DATA STRUCTURE    UT11001_St_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION            TYPE   DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_RL_EN      Allows Remote and Local      Bool    1 = Remote/local selected
+                modes to be selected        0 = All mode is active
+
+ DATA STRUCTURE    UT31001_Dy_DevValveIsol
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION            TYPE   DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ mode_RemoteOn       Activates remote mode     Bool    1 = remote mode on, 
+                CONFIG_RL_ENABLE must = 1    0 = remote mode off
+
+ mode_LocalOn     Activates local mode          Bool    1 = local mode on, 
+                CONFIG_RL_ENABLE must = 1    0 = remote mode off
+
+ status_RemoteOn      Status remote mode on     Bool    1 = remote mode on, 
+                              0 = remote mode off
+
+ status_LocalOn       Status local mode on      Bool 1 = local mode on, 
+                              0 = local mode off
+
+ status_RLOff       Status ALL mode is on = 0    Bool 1 = ALL mode on, 
+                              0 = ALL mode off
+ ――――――――――――――――――――――――――――――――――――――――――
+ Block remote/local signals 
+
+By default, remote/local is disabled — ALL mode is selected (CONFIG_RL_EN = 0).
+
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.5     Faceplate disable mode
+
+It is possible to disable the supervisory system faceplate from within the block, the configuration 
+signal:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION            TYPE   DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_FP_DIS        Disable the supervisory      Bool    1 = Faceplate disabled
+                system faceplate           0 = normal
+ ――――――――――――――――――――――――――――――――――――――――――
+
+If the faceplate is disabled (CONFIG_FP_DISABLE = 1), the supervisory system will not allow the 
+device faceplate to be opened (normally achieved by clicking the block icon or device symbol), 
+this in turn prevents the operator from affecting the device in anyway, it would not, for example, 
+be possible to put the device into simulation mode.
+
+Similarly, if the faceplate is disabled, the module will set the device to automatic mode, will 
+set remote/local mode to ALL and will disable simulation mode.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.6      Symbols, block icons and faceplates
+
+See the online documentation for this module — select the the module in the project tree and 
+press:
+     SHIFT + F1
+
+An explanation of the symbols, block icons and faceplates available to the supervisory system 
+for this module is given in sections 3.6, 3.7 and 3.8 of the online SMDS document [Ref. 011].
+
+A downloadable copy of the SMDS (and all other project documentation) is available here:
+
+     https://practicalseries.com/2001-pal/21-project/01-00-docs.html
+
+Document number: PS2001-5-2312-fc11001
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+
+The following parameters are associated with the block:
+
+ 
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ FBK_OPEN     Optional open state positive feedback        Bool      In
+          (1 = open, 0 = not open) If not required, set 
+          permanently to _False
+
+ FBK_CLOSED    Optional closed state positive feedback        Bool      In
+          (1 = closed 0 = not closed) If not required, set 
+          permanently to _False
+
+ EXT_FAULT     Optional external fault signal for the device     Bool      In
+          (1 = fault, 0 = healthy). If not required, set 
+          permanently to _False
+
+ E_STOP        Optional emergency stop (safety) signal        Bool      In
+          (1 = emergency stop active, 0 = healthy) If not 
+          required, set permanently to _False
+
+ TRIP        Optional trip signal                  Bool      In
+          (1 = trip condition active, 0 = healthy) If not 
+          required, set permanently to _False
+
+ INTERLOCK     Optional interlock signal               Bool      In
+          (1 = interlock condition active, 0 = healthy) If 
+          not required, set permanently to _False
+
+ PERMISSIVE      Optional permissive signal             Bool      In
+          (1 = permissive condition active, 0 = healthy) 
+          If not required, set permanently to _False
+
+ STATIC_DATA     Data structure that holds the configuration data     UT11001    In
+          for the device (normally open/closed, limit switch 
+          and interlock configuration &amp;c.)
+
+ DYNAMIC_DATA      Data structure that holds the live data for the       UT31001    InOut
+          device (its mode, status and messages and 
+          any other dynamic information required by the 
+          module)
+
+ OPERATE        Output to drive the valve to a particular state    Bool      Out
+          (1 = energised state, 0 = deenergised state)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01001
+ UT01001_St_SysLicence           Licence information for this block  See FC01001
+ UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
+
+ UT11001_St_DevValveIsol        Static data that holds the configuration data
+                    for the device (normally open/closed, limit switch 
+                    and interlock configuration &amp;c.)
+
+ UT31001_Dy_DevValveIsol          Dynamic data that holds the live data for the
+                    device (its mode, status and messages and 
+                    any other dynamic information required by the 
+                    module)
+
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.1     UT11001_St_DevValveIsol
+
+The static data structure for an isolating valve.
+
+
+ UT11001_St_DevValveIsol (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_NO_NC        CONFIG — Normally open or normally closed valve     Bool
+                     (1 = normally open, 0 = normally closed)
+ CONFIG_FBK_OPEN_EN    CONFIG — Open feedback is enabled        Bool
+                     (1 = open feedback, 0 = no feedback)
+ CONFIG_FBK_CLOSED_EN   CONFIG — Closed feedback is enabled         Bool
+                     (1 = closed feedback, 0 = no feedback)
+ CONFIG_ESTOP_DIS     CONFIG — ESTOP signal disabled          Bool
+                     (1 = ESTOP not used, 0 = in use)
+ CONFIG_TRIP_DIS      CONFIG — TRIP signal disabled           Bool
+                     (1 = TRIP not used, 0 = in use)
+ CONFIG_ILOCK_DIS     CONFIG — INTERLOCK signal disabled        Bool
+                     (1 = INTERLOCK not used, 0 = in use)
+ CONFIG_PERM_DIS      CONFIG — PERMISSIVE signal disabled         Bool
+                     (1 = PERMISSIVE not used, 0 = in use)
+ CONFIG_TRIP_OP_CL       CONFIG — TRIP state                  Bool
+                     (1 = open, 0 = close)
+ CONFIG_ILOCK_OP_CL      CONFIG — INTERLOCK state              Bool
+                     (1 = open, 0 = close)
+ CONFIG_PERM_OP_CL       CONFIG — PERMISSIVE permitted state         Bool
+                     (1 = open, 0 = closed)
+ CONFIG_FP_DIS               CONFIG — Faceplate is disabled           Bool
+                     (1 = no Faceplate, 0 = normal)
+ CONFIG_MAN_DIS              CONFIG — Manual mode is disabled          Bool
+                     (1 = no manual mode, 0 = normal)
+ CONFIG_BYPASS_DIS     CONFIG — Bypass mode is disabled           Bool
+                     (1 = no bypass mode, 0 = normal)
+ CONFIG_SIM_DIS             CONFIG — Simulation is disabled            Bool
+                     (1 = no simulation, 0 = normal)
+ CONFIG_RL_EN       CONFIG — Remote/local mode enabled       Bool
+                     (1 = enabled, 0 = all mode)
+
+ INFO_TAG          INFORMATION — Instrument ID tag          String[20]
+
+ TIME_OPENING_MAX    TIMER — Initial value of opening operation timer      Real
+                     (counts down from this value), [seconds]
+ TIME_CLOSING_MAX       TIMER — Initial value of closing operation timer     Real
+                     (counts down from this value), [seconds]
+ TIME_FBK_OPEN_SIM      TIMER — Percentage of opening timer to expired      Real
+                     before simulating FBK_OPEN, [percent]
+ TIME_FBK_CLOSED_SIM    TIMER — Percentage of closing timer to expired        Real
+                     before simulating FBK_CLOSED, [percent]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.2      UT22001_Dy_InstAnalogRead
+
+The static data structure for an isolating valve.
+
+
+
+ UT31001_Dy_DevValveIsol (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Closed        STATUS — Valve is confirmed closed          Bool
+                     (1 = closed, 0 = not closed)
+ status_Open        STATUS — Valve is confirmed open         Bool
+                     (1 = open, 0 = not open)
+ status_Closing       STATUS — Valve is closing             Bool
+                     (1 = closing, 0 = not closing)
+ status_Opening        STATUS — Valve is opening              Bool
+                     (1 = opening, 0 = not opening)
+ status_Operating        STATUS — Valve is changing state           Bool
+                     (1 = changing state, 0 = fixed state)
+ status_Fault            STATUS — Valve is in fault              Bool
+                     (1 = fault present, 0 = healthy)
+ status_Energised        STATUS — Valve output is on              Bool
+                     (1 = energised, 0 = deenergised)
+ status_Aut           STATUS — Automaticmode active            Bool
+                     (1 = auto mode on, 0 = auto mode off)
+ status_Man          STATUS — Manual mode active             Bool
+                     (1 = man mode on, 0 = man mode off)
+ status_EStop          STATUS — ESTOP safety signal is active           Bool
+                     (1 = active, 0 = healthy)
+ status_Trip        STATUS — TRIP signal is active             Bool
+                     (1 = active, 0 = healthy)
+ status_Ilock         STATUS — INTERLOCK signal is active            Bool
+                     (1 = active, 0 = healthy)
+ status_Perm        STATUS — PERMISSIVE signal is active           Bool
+                     (1 = active, 0 = healthy)
+ status_BypassOn        STATUS — Valve is in bypass mode          Bool
+                     (1 = Simulation mode, 0 = normal)
+ status_SimOn           STATUS — Valve is in simulation mode               Bool
+                     (1 = Simulation mode, 0 = normal)
+ status_RemoteOn       STATUS — Valve is in remote mode                  Bool
+                     (1 = Remote mode, 0 = normal)
+ status_LocalOn         STATUS — Valve is in local mode                    Bool
+                     (1 = Local mode, 0 = normal)
+ status_RLOff         STATUS — Valve is in ALL mode                   Bool
+                     (1 = ALL mode, 0 = normal)
+
+ msg_FailToOpen       MESSAGE — Alarm – “Fail to open” is active         Bool
+ msg_FailToClose       MESSAGE — Alarm – “Fail to close” is active        Bool
+ msg_FailWhileOpen    MESSAGE — Alarm – “Fail while open” is active      Bool
+ msg_FailWhileClosed     MESSAGE — Alarm – “Fail while closed” is active   Bool
+ msg_Flt_External         MESSAGE — Alarm – “external fault" is active      Bool
+
+ mode_AutMan        MODE — Automatic or manual mode selection     Bool
+                   (1 = auto mode active, 0 = man mode)
+ mode_BypassOn      MODE — Bypass mode                Bool
+                   (1 = bypass mode active, 0 = normal)
+ mode_SimOn         MODE — Simulation mode               Bool
+                   (1 = sim mode active, 0 = normal)
+ mode_SimValue       MODE — Simulation value               Int
+                   (0 = no limits, 1 = always open, 
+                   2 = always closed, 3 = follow demand)
+ mode_RemoteOn        MODE — Remote SCADA control enabled       Bool
+                   (1 = active, 0 = disabled or N/A)
+ mode_LocalOn         MODE — Local HMI control enabled           Bool
+                   (1 = active, 0 = disabled or N/A)
+ mode_Reset        MODE — Fault reset – 1 cycle only           Bool
+                   (1 = Reset faults, 0 = does nothing)
+ ctrl_Aut_OpenClose       CONTROL — Auto mode open or close valve     Bool
+                         (1 = open valve , 0 = close valve)
+ ctrl_Man_OpenClose      CONTROL — Manual mode open or close valve   Bool
+                         (1 = open valve , 0 = close valve)
+
+ batch_ID         BATCH — Booking ID (optional for batch operations)   Int
+
+ actual_Operating_Timer     ACTUAL — Timer value — operating opening/closing  Real
+                     timer actual value [seconds]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+With the exception of the flowing, all these signals are discussed in the previous sections, the 
+outstanding items are firstly:
+
+     batch_ID
+
+The batch_ID is not required for normal use; it is only used where a “booking” system is used 
+(common in batch and routing applications). Such booking applications can acquire the device 
+if it is free and reserve it for a particular phase of the batch. Batch applications are a topic in 
+their own right and are discussed separately in the online User Guide.
+
+There are internal working signals (all signals the start with a $ are internal working signals used 
+by the module). In this instance they are: 
+     $pret_
+     $pret_
+     $pret_
+     $pret_
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+No constants are used
+
+The following constants and temporary data storage are used:
+
+
+ Temporary (local) data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ wrkInt           Working storage area (integer)          Int
+ wrkReal           Working storage (Real)             Real
+ wrkDInt           Working storage area (double integer)         DInt
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS
+
+There are no PAL block calls from within this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     ASSOCIATED BLOCKS
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+
+There are no system block calls.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     SPECIAL PROPERTIES AND REQUIREMENTS
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.1   Block optimisation
+
+
+Block optimisation is ACTIVE for this block
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.2   Calling requirements
+
+
+There are no special calling requirements for this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+11.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC11001:
+
+                        ┌─────────────
+     ───────────────────┤ FC11001 
+                        ├───────────────┤
+   "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS            %Q1.0
+                        │             OPERATE ├─  "V001_OPR"
+                  %I1.2     │               │
+                "V001_FBK_OPEN" ─┤ FBK_OPEN             │
+                        │               │
+                  %I1.1     │               │
+              "V001_FBK_CLOSED" ─┤ FBK_CLOSED            │
+                        │               │
+           %I1.0            │               │
+          "V001_FAULT"             │               │
+       ────┤╱├──────────┤ EXT_FAULT                │
+                        │               │
+           %I1.4            │               │
+         "ZONEA_ESTOP"               │               │
+       ────┤╱├──────────┤ ESTOP               │
+                        │               │
+                   "_False" ─┤ TRIP                    │
+                        │               │
+           "DB23002_Dy_ILock.V001"─┤ INTERLOCK             │
+                        │               │
+                   "_False" ─┤ PERMISSIVE            │
+                        │               │
+                        │               │
+                        │               │
+        "DB11001_St_DevValveIsol".V001 ─┤ STATIC_DATA             │
+                        │
+        "DB31001_Dy_DevValveIsol".V001 ─┤ DYNAMIC_DATA
+                        │
+                        │
+                                        │
+                               ─────────┘
+
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+   </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 4 to 11</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC11001'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'000.101'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2021.07.13'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module.
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2021.07.13    000.101   D0008A-000.101   D0008 N/A     D0008A   M. Gledhill
+                       FC11001 Block created — Comments added
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="27" DisabledENO="true" />
+    <Part Name="S_Move" UId="28" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="21" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="22" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Standard Module [Device Driver Valve] — Isolating Valve </Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

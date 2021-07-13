@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-26T11:53:36.142188Z</Created>
+    <Created>2021-07-13T12:41:07.7667794Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -138,7 +138,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0008
+TIA PROJECT NAME:    PS2001-PAL-D0008A-000-101
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -359,7 +359,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0008'</ConstantValue>
+        <ConstantValue>'D0008A-000.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -371,7 +371,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.05.26'</ConstantValue>
+        <ConstantValue>'2021.07.13'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -479,6 +479,8 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2021.07.13    D0008A-000.101   M. Gledhill      FC11001 — Block created
+
  2021.05.26    D0008      M. Gledhill      FC02001 — RELEASED FOR USE
 
  2021.05.22    D0007      M. Gledhill      FC18001 — RELEASED FOR USE
