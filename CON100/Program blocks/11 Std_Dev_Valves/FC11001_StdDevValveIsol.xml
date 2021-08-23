@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-08-10T13:40:22.5303069Z</Created>
+    <Created>2021-08-22T12:54:51.8303247Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>DeviceDriver</HeaderFamily>
       <HeaderName>StdDevValveIsol</HeaderName>
-      <HeaderVersion>0.1</HeaderVersion>
+      <HeaderVersion>0.8</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -152,8 +152,8 @@
           <Member Name="___________0030_1" Datatype="Int" />
           <Member Name="TIME_OPENING_MAX" Datatype="Real" />
           <Member Name="TIME_CLOSING_MAX" Datatype="Real" />
-          <Member Name="TIME_FBK_OPEN" Datatype="Real" />
-          <Member Name="TIME_FBK_CLOSED" Datatype="Real" />
+          <Member Name="TIME_DER_OPEN" Datatype="Real" />
+          <Member Name="TIME_DER_CLOSED" Datatype="Real" />
         </Section>
       </Sections>
     </Member>
@@ -402,7 +402,7 @@ configured with either open, closed, both open and closed or no position feedbac
 
 The module supports automatic and manual control and can be configured with simulation 
 mode to allow the valve limit switch signals to be overwritten or set to follow the demand 
-output. 
+output or other states.
 
 The module can be configured for normally closed (energise to open) or normally open 
 (energise to close) valves.
@@ -422,8 +422,8 @@ fault in question. The alarms within this module are:
 
 Separate operation times for opening and closing can be defined. 
 
-The valve module supports all forms of interlock, permissive and trip signals, and emergency stop 
-signals. The module has the conditional facility to allow the operator to bypass interlocks, 
+The valve module supports all forms of interlock, permissive and trip signals, and emergency 
+stop signals. The module has the conditional facility to allow the operator to bypass interlocks, 
 permissive and trip conditions.
 
 Various status signals are generated for supervisory systems:
@@ -467,8 +467,8 @@ The module also generates status signals for the selected operating modes and co
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME       00.00 μs¹
- LOAD MEMORY       98.34 kB   (100708 bytes)
+ EXECUTION TIME       80.03 μs¹
+ LOAD MEMORY       98.44 kB   (100805 bytes)
  WORK MEMORY           2.17 kB    (2227 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
@@ -545,6 +545,9 @@ to as the closing operation time.
 
 The opening and closing times can be different for a given valve. 
 
+Collectively, the opening and closing times are referred to as the operating times (sometimes 
+operation times) of the valve.
+
 The maximum opening and closing times for a valve are generally given as part of the 
 specification for the valve itself.
 
@@ -593,7 +596,8 @@ Note:    Positive indication of a valve state need not be determined by a li
      of a given valve state.
 
 Where a limit switch is absent, the valve is assumed to have reached the correct position when 
-the relevant operation time has counted for an adjustable percentage of its specified time.
+the relevant operation time has counted for an adjustable percentage of its maximum operating 
+time.
 
 
 
@@ -653,8 +657,8 @@ alarm condition.
 2.3     Safety and interlocks
 
 
-There module accommodates a single safety signal (emergency stop), and the standard 
-arrangement of three interlock signals (interlock, permissive and trip) as follows:
+The module, optionally, accommodates a single safety signal (emergency stop), and the 
+standard arrangement of up to three interlock signals (interlock, permissive and trip) as follows:
 
 
 
@@ -817,7 +821,7 @@ assumed to operate correctly and be in the required position).
 The external fault alarm is activated whenever the external fault signal provided to the module 
 is active. The external fault signal is an optional signal that indicates that the valve itself is 
 experiencing a problem. The signal is more commonly associated with motorised valves where 
-thermal overload “trip” signals are used to indicate that the valve motor has experienced a fault, 
+thermal overload signals are used to indicate that the valve motor has experienced a fault, 
 it could also be used to indicate the loss of pneumatic pressure for pneumatic solenoid valves.
 
 
@@ -836,8 +840,8 @@ The four alarms derived from valve position feedback signals:
 
    4.  FAILED WHILE CLOSED
 
-Are latching alarms, if the alarm conditions occur, the valve will be placed in a fault conditions 
-(see § 2.5) and will no longer be operable, the vale will remain in a deenergised condition until 
+Are latching alarms, if the alarm conditions occur, the valve will be placed in a fault condition 
+(see § 2.5) and will no longer be operable, the valve will remain in a deenergised condition until 
 the fault is corrected.
 
 The alarm conditions are only reset when the module receives a RESET command (usually 
@@ -912,7 +916,7 @@ The module supports the following optional modes of operation:
      specific SCADA/HMI device) 
 
    •   Faceplate disabled (informs the supervisory system not to display any faceplates 
-     for the device, preventing operator selections)
+     for the device, preventing graphical operator selections)
 
 
 
@@ -1007,7 +1011,7 @@ one, or the other, or both supervisor systems as follows
 
    •    All    Any system can control the device
 
-The default arrangement if for all system to have access to the device.
+The default arrangement if for all systems to have access to the device.
 
 
 
@@ -1206,9 +1210,9 @@ Under manual mode, the valve is controlled directly by the operator via some for
 supervisory system (SCADA or HMI). Again, the result of the manual operator action will be to 
 either open or close the valve.
 
-There are two signals that can cause the valve to move to a particular state, one for automatic 
-mode and one for manual mode, both are passed to the module as part of the DYNAMIC_DATA 
-parameter (UT31001_Dy_DevValveIsol):
+There are two signals that, under normal operation, can cause the valve to move to a particular 
+state, one for automatic mode and one for manual mode, both are passed to the module as 
+part of the DYNAMIC_DATA parameter (UT31001_Dy_DevValveIsol):
 
 
  DATA STRUCTURE    UT31001_Dy_DevValveIsol
@@ -1259,7 +1263,7 @@ the following STATIC_DATA parameter:
            set permanently to 1
  ――――――――――――――――――――――――――――――――――――――――――
 
-If manual mode is disabled (configuration signal CONFIG_MAN_DIS is set to 1), then the manual 
+If manual mode is disabled (configuration signal CONFIG_MAN_DIS is set to 1), then manual 
 mode cannot be turned on under any circumstances, the option will be greyed out on the 
 supervisory system faceplate and the module will constantly set the mode_AutMan signal to 1.
 
@@ -1323,15 +1327,14 @@ irrespective of any other signals.
 3.2.2     Operation timers
 
 
-The module has two independent operation timers, one for opening the valve (opening operation 
-timer)  and one for closing the valve (closing operation timer).
+The module an operation timer used for both opening the valve and for closing the valve.
 
-The relevant timer is started whenever the valve is requested to change state. Both timers 
-count down from specified values to zero (the valve can have different times for opening 
-and closing).
+The timer is loaded with either the opening operation time or closing operation time whenever 
+the valve is requested to change state. The timer counts down from the loaded value to zero 
+(the valve can have different times for opening and closing).
 
-The specified operating times are given within the STATIC_DATA parameter UDT 
-(UT11001_St_DevValveIsol) as follows:
+The specific operating times are given within the STATIC_DATA parameter 
+UDT (UT11001_St_DevValveIsol) as follows:
 
 
  DATA STRUCTURE    UT11001_St_DevValveIsol
@@ -1347,7 +1350,7 @@ The specified operating times are given within the STATIC_DATA parameter UDT
            a closed state
  ――――――――――――――――――――――――――――――――――――――――――
 
-If a timer is running, the elapsed (counting down) time is stored within the DYNAMIC_DATA 
+If the timer is running, the elapsed (counting down) time is stored within the DYNAMIC_DATA 
 parameter UDT (UT31001_Dy_DevValveIsol) as follows:
 
 
@@ -1371,7 +1374,7 @@ and 3.3-4.0 s respectively.
 
 A valve will enter a fault state (see § 3.4) if the operation timer counts down to a value of zero 
 without confirmation that the valve has reached the required state. Such confirmation is 
-provided by positive feedback from the valve limit switches (or other indicating device) or 
+provided by positive feedback from the valve limit switches (or other indicating devices) or 
 by simulated signal within the module itself (see § 3.2.3).
 
 The operation timer always counts down from a preset value to zero, this is in accordance 
@@ -1424,15 +1427,15 @@ If the CONFIG_FBK_OPEN_EN signal is deactivated (set to 0), the module will deri
 position of the valve such that it matches the requested state of the valve.
 
 Similarly, if the CONFIG_FBK_CLOSED_EN signal is activated (set to 1), the module will use the 
-state of the signal connected to the FBK_CLOSED parameter to determine the open position of 
+state of the signal connected to the FBK_CLOSED parameter to determine the closed position of 
 the valve. 
 
 If the CONFIG_FBK_CLOSED_EN signal is deactivated (set to 0), the module will derive the 
 closed position of the valve such that it matches the requested state of the valve.
 
-Where a CONFIG_FBK_ ... _EN signal is activated (set to 1), a true state on the associated 
-parameter FBK_... indicates that the valve is in that position, a false state indicates that the 
-valve is not in that position as follows:
+Where a CONFIG_FBK_OPEN/CLOSED_EN signal is activated (set to 1), a true state on the 
+associated parameter FBK_OPEN/CLOSED indicates that the valve is in that position, a false 
+state indicates that the valve is not in that position as follows:
 
  OPEN SIGNALS  ―――――――――――――――――――――――――――――――――――
  CONFIG_FBK_OPEN_EN    FBK_OPEN    MEANING
@@ -1501,13 +1504,13 @@ Where either the CONFIG_FBK_OPEN_EN or CONFIG_FBK_CLOSED_EN signal is deactivate
 (set to 0), the associated position feedback is internally determined by the module according to 
 the actual state of the valve (determined by the OPERATE parameter and the type of valve in use).
 
-These internally determined signals are themselves configurable and can be set such that the 
+These internally derived signals are themselves configurable and can be set such that the 
 position feedback signal occurs after a particular percentage of the associated operation timer 
 has expired.
 
-For the derived FBK_OPEN signal, the configurable percentage signal is TIME_FBK_OPEN 
+For the derived FBK_OPEN signal, the configurable percentage signal is TIME_DER_OPEN 
 stored within the STATIC_DATA parameter. Similarly, for the derived FBK_CLOSED signal, the 
-configurable percentage signal is TIME_FBK_CLOSED, again, stored within the STATIC_DATA 
+configurable percentage signal is TIME_DER_CLOSED, again, stored within the STATIC_DATA 
 parameter.
 
 The operation of these parameters can be seen below:
@@ -1546,13 +1549,13 @@ The operation of these parameters can be seen below:
 ┼──────────┘┈┈┈┈┈┈┈┈┈└────────────────
            Ｄ         Ｅ
 
-  Ａ TIME_FBK_OPEN  (95%)
-  Ｂ TIME_FBK_CLOSED  (80%)
+  Ａ TIME_DER_OPEN  (95%)
+  Ｂ TIME_DER_CLOSED  (80%)
   Ｃ Closed signal deactivates instantly when the valve is asked to open
-  Ｄ Open signal activates when actual_Operating_Timer reaches TIME_FBK_OPEN 
+  Ｄ Open signal activates when actual_Operating_Timer reaches TIME_DER_OPEN 
     as a percentage of TIME_OPENING_MAX
   Ｅ Open signal deactivates instantly when the valve is asked to close
-  Ｆ Closed signal activates when actual_Operating_Timer reaches TIME_FBK_CLOSED 
+  Ｆ Closed signal activates when actual_Operating_Timer reaches TIME_DER_CLOSED 
     as a percentage of TIME_CLOSING_MAX
 
 The figure above assumes a normally closed valve with no position feedback signals (both 
@@ -1568,7 +1571,7 @@ At this point two things happen, firstly the operation timer starts, with a coun
 value TIME_OPENING_MAX, which in this case is 3 seconds. Secondly, the derived FBK_CLOSED 
 signal is deenergised (indicating the valve is no longer closed).
 
-The simulated opening time (TIME_FBK_OPEN) is set to 95%, this means that the derived 
+The simulated opening time (TIME_DER_OPEN) is set to 95%, this means that the derived 
 FBK_OPEN signal will activate when the actual_Operating_Timer value has counted down for 
 95% of the TIME_OPENING_MAX value (i.e. when the timer has counted down to 0.15s or less). 
 
@@ -1576,7 +1579,7 @@ The exact formula used is:
 
 ┌───────────────────────────────────────────┐
 │Derived FBK_OPEN=1 when:                                     │
-│                                 TIME_FBK_OPEN        │
+│                                 TIME_DER_OPEN        │
 │actual_Operating_Timer ≤ TIME_OPENING_MAX ─ TIME_OPENING_MAX ╳ --------------------------------        │
 │                                     100     │
 └───────────────────────────────────────────┘
@@ -1585,13 +1588,13 @@ This can be seen at point ②, where the derived FBK_OPEN signal activates. The 
 remains in the open state (FBK_OPEN = 1. FBK_CLOSED = 0) until there is a request to close 
 the valve, point ③.
 
-At point ③, the module receives a request to close the valve.
+Again, at point ③, the module receives a request to close the valve.
 
 At this point two things happen, firstly the operation timer starts, with a countdown from the 
 value TIME_CLOSING_MAX, which in this case is 4 seconds. Secondly, the derived FBK_OPEN signal 
 is deenergised (indicating the valve is no longer open).
 
-The simulated closing time (TIME_FBK_CLOSED) is set to 80%, this means that the derived 
+The simulated closing time (TIME_DER_CLOSED) is set to 80%, this means that the derived 
 FBK_CLOSED signal will activate when the actual_Operating_Timer value has counted down 
 for 80% of the TIME_CLOSING_MAX value (i.e. when the timer has counted down to 0.80s or less). 
 
@@ -1599,7 +1602,7 @@ The exact formula used is:
 
 ┌────────────────────────────────────────────┐
 │Derived FBK_CLOSED=1 when:                               │
-│                                 TIME_FBK_CLOSED          │
+│                                 TIME_DER_CLOSED          │
 │actual_Operating_Timer ≤ TIME_CLOSING_MAX ─ TIME_CLOSING_MAX ╳ ------------------------------------         │
 │                                     100            │
 └────────────────────────────────────────────┘
@@ -1610,7 +1613,7 @@ subsequent request to reopen the valve.
 
 If only one position feedback is derived (the other being an actual signal), then the derived signal 
 will be generated in exactly the same way as above, the non-derived signal will simply use the 
-true status of the signal passed to the module.
+true status of the signal passed as a parameter to the module.
 
 The simulated time signals are passed to the module within the STATIC_DATA parameter 
 UDT (UT11001_St_DevValveIsol) as follows:
@@ -1619,13 +1622,13 @@ UDT (UT11001_St_DevValveIsol) as follows:
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL        FUNCTION              TYPE     DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- TIME_FBK_CLOSED           Specifies the percentage of the     Real     Percentage
+ TIME_DER_CLOSED           Specifies the percentage of the     Real     Percentage
              TIME_OPENING_MAX value that 
              must expire before the derived 
              FBK_OPEN signal activates.
 
 
- TIME_FBK_OPEN             Specifies the percentage of the     Real     Percentage
+ TIME_DER_OPEN             Specifies the percentage of the     Real     Percentage
              TIME_CLOSING_MAX value that 
              must expire before the derived 
              FBK_CLOSED signal activates.
@@ -1715,7 +1718,7 @@ for the various position feedback combinations:
      ARRANGEMENT         expired and:                 expired and:
  ――――――――――――――――――――――――――――――――――――――――――
        No feedback
-    CONFIG_FBK_OPEN_EN = 0       Not available         Not available
+    CONFIG_FBK_OPEN_EN = 0     Not applicable       Not applicable
  CONFIG_FBK_CLOSED_EN = 0 
 
       Open feedback only
@@ -1737,7 +1740,7 @@ for the various position feedback combinations:
      ARRANGEMENT         not running and:         not running and:
  ――――――――――――――――――――――――――――――――――――――――――
        No feedback
-    CONFIG_FBK_OPEN_EN = 0       Not available         Not available
+    CONFIG_FBK_OPEN_EN = 0     Not applicable       Not applicable
  CONFIG_FBK_CLOSED_EN = 0 
 
       Open feedback only
@@ -1883,7 +1886,7 @@ The external fault signal (if used) is passed to the module as the parameter: EX
 Any signal connected to the EXT_FAULT parameter must be active high (i.e. the signal must be 
 set to 1 to indicate the fault condition is present). 
 
-Where a failsafe response signal (active when set to 0) is used, it must be inverted at the 
+Where a failsafe response signal is used (active when set to 0) is used, it must be inverted at the 
 EXT_FAULT parameter (similar to the E_STOP signal).
 
 If the EXT_FAULT signal is not required, the input should be set to _False  (again, similar to the
@@ -1898,9 +1901,9 @@ The external fault will automatically reset whenever the EXT_FAULT signal is set
 3.4     Safety and interlocks
 
 
-Safety and interlock signals are passed as individual parameters to the module (in the same a 
-manner as IO signals), all such signals are optional, a valve can have all, none or any 
-combination of the signals.
+Safety and interlock signals are optional signals, passed as individual parameters to the module 
+(in the same a manner as IO signals), all such signals are optional, a valve can have all, none or 
+any combination of the signals.
 
 Safety and interlock signals all act to override the normal operation of the valve (whether in 
 automatic or manual mode) and force the valve to a particular state.
@@ -2159,7 +2162,7 @@ the valve would not be allowed by the PERMISSIVE signal.
 Note:    Where multiple interlock signals are used, it is possible for the different interlocks 
      to apply different states to the valve, for example an active TRIP could close 
      the valve and an active INTERLOCK open it. Such conflicts are managed by the 
-     different priorities applied to the interlock signals (see below).  
+     different priorities applied to the interlock signals (see § 3.5).  
 
 
 
@@ -2184,8 +2187,9 @@ The bypass signal is specified within the DYNAMIC_DATA parameter UDT as follows:
  ――――――――――――――――――――――――――――――――――――――――――
 
 
-Bypass mode can only be activated by the operator via a faceplate available at the supervisory 
-system (SCADA/HMI), or via some hardwired signal, such as a key-switch.
+Bypass mode is a manual operation, generally activated by the operator via a faceplate 
+available at the supervisory system (SCADA/HMI), or via some hardwired signal, such as 
+a key-switch.
 
 It is possible to configure the module such that bypass mode is permanently disabled, this uses 
 the following STATIC_DATA parameter:
@@ -2289,7 +2293,7 @@ Examining these in turn:   
 
 
 Under normal operation, the valve is in automatic mode and is controlled directly by the 
-Controller software (usually, sequential of continuous logic); however, it is possible for the 
+Controller software (usually, sequential or continuous logic); however, it is possible for the 
 operator to take direct control of the valve by switching it to manual mode.
 
 If manual mode is active, the valve will open and close directly at the command of the operator 
@@ -2384,7 +2388,7 @@ supervisory system faceplate and the module will constantly reset the mode_Bypas
 
 
 The module can be switched to a simulation mode, in which the position feedback for the valve 
-is replaced by a simulated signals specified by the operator. 
+is replaced by simulated signals specified by the operator. 
 
 Simulation mode is generally used during testing, but can also be applied in a process 
 environment if a fault condition is detected; this scenario allows the plant to continue operating 
@@ -2548,7 +2552,7 @@ configuration signal:
                 system faceplate           0 = normal
  ――――――――――――――――――――――――――――――――――――――――――
 
-If the faceplate is disabled (CONFIG_FP_DISABLE = 1), the supervisory system will not allow the 
+If the faceplate is disabled (CONFIG_FP_DISABLE = 1), the supervisory system must not allow the 
 device faceplate to be opened (normally achieved by clicking the block icon or device symbol), 
 this in turn prevents the operator from affecting the device in anyway, it would not, for example, 
 be possible to put the device into simulation mode.
@@ -2737,9 +2741,9 @@ The static data structure for an isolating valve.
                      (counts down from this value), [seconds]
  TIME_CLOSING_MAX       TIMER — Initial value of closing operation timer     Real
                      (counts down from this value), [seconds]
- TIME_FBK_OPEN              TIMER — Percentage of opening timer to expired      Real
+ TIME_DER_OPEN              TIMER — Percentage of opening timer to expired      Real
                      before simulating FBK_OPEN, [percent]
- TIME_FBK_CLOSED            TIMER — Percentage of closing timer to expired        Real
+ TIME_DER_CLOSED            TIMER — Percentage of closing timer to expired        Real
                      before simulating FBK_CLOSED, [percent]
  ――――――――――――――――――――――――――――――――――――――――――
 
@@ -2819,7 +2823,7 @@ The static data structure for an isolating valve.
  ctrl_Man_OpenClose      CONTROL — Manual mode open or close valve   Bool
                          (1 = open valve , 0 = close valve)
 
- batch_ID         BATCH — Booking ID (optional for batch operations)   Int
+ batch_ID         BATCH — Booking ID (optional for batch operations)   UInt
 
  actual_Operating_Timer     ACTUAL — Timer value — operating opening/closing  Real
                      timer actual value [seconds]
@@ -2865,7 +2869,7 @@ The $sim_fbk_open and $sim_fbk_closed are the simulated position feedback signal
 place of FBK_OPEN and FBK_CLOSED if simulation mode is active.
 
 $ctrl_OpenClose is the required state of the valve, it takes into account the auto/manual 
-requested state and modifies this according to any interlocks, safety signals or fault that 
+requested state and modifies this according to any interlocks, safety signals or faults that 
 may be present.
 
 The $pret_Open and $nret_Close are edge retention signals used to detect either a rising 
@@ -3057,7 +3061,7 @@ The following shows a typical deployment of FC11001:
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.103'</ConstantValue>
+        <ConstantValue>'000.801'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3069,7 +3073,7 @@ The following shows a typical deployment of FC11001:
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.08.10'</ConstantValue>
+        <ConstantValue>'2021.08.17'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3179,6 +3183,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2021.08.17    000.801   D0008A-000.801   D0008 N/A     D0008A   M. Gledhill
+                       FC11001 Released for SMT
+
  2021.08.10    000.103   D0008A-000.103   D0008 N/A     D0008A   M. Gledhill
                        FC11001 Initial development testing
 
@@ -3217,7 +3224,7 @@ The MIT licence is reproduced in full in the last network of this software modul
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="TIME_FBK_OPEN" />
+        <Component Name="TIME_DER_OPEN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
@@ -3228,7 +3235,7 @@ The MIT licence is reproduced in full in the last network of this software modul
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="TIME_FBK_OPEN" />
+        <Component Name="TIME_DER_OPEN" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="24">
@@ -3251,7 +3258,7 @@ The MIT licence is reproduced in full in the last network of this software modul
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="TIME_FBK_OPEN" />
+        <Component Name="TIME_DER_OPEN" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="28">
@@ -3274,7 +3281,7 @@ The MIT licence is reproduced in full in the last network of this software modul
     <Access Scope="LocalVariable" UId="31">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="TIME_FBK_CLOSED" />
+        <Component Name="TIME_DER_CLOSED" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="32">
@@ -3285,7 +3292,7 @@ The MIT licence is reproduced in full in the last network of this software modul
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="TIME_FBK_CLOSED" />
+        <Component Name="TIME_DER_CLOSED" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="34">
@@ -3308,7 +3315,7 @@ The MIT licence is reproduced in full in the last network of this software modul
     <Access Scope="LocalVariable" UId="37">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="TIME_FBK_CLOSED" />
+        <Component Name="TIME_DER_CLOSED" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="38">
