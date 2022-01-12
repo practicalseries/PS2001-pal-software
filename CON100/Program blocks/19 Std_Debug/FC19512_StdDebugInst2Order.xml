@@ -1,0 +1,3063 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2022-01-12T15:13:10.5549944Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>DeviceDriver</HeaderFamily>
+      <HeaderName>StdDebugInst2Order</HeaderName>
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Common system signals — logic and timing signals</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="_False" Datatype="Bool" />
+          <Member Name="_True" Datatype="Bool" />
+          <Member Name="_50ms" Datatype="Bool" />
+          <Member Name="_100ms" Datatype="Bool" />
+          <Member Name="_200ms" Datatype="Bool" />
+          <Member Name="_500ms" Datatype="Bool" />
+          <Member Name="_1s" Datatype="Bool" />
+          <Member Name="_2s" Datatype="Bool" />
+          <Member Name="_CycleTick" Datatype="Bool" />
+          <Member Name="_CycleTock" Datatype="Bool" />
+          <Member Name="_CycleFirst" Datatype="Bool" />
+          <Member Name="_100msSqW" Datatype="Bool" />
+          <Member Name="_200msSqW" Datatype="Bool" />
+          <Member Name="_500msSqW" Datatype="Bool" />
+          <Member Name="_1sSqW" Datatype="Bool" />
+          <Member Name="_2sSqW" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="FBK_OPEN" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Positive open position feedback (1 = valve open, 0 = valve not open)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="FBK_CLOSED" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Positive closed position feedback (1 = valve closed, 0 = valve not closed)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="EXT_FAULT" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Device external fault signal (1 = fault, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="E_STOP" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Safety (E-STOP) signal (1 = ESTOP active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="TRIP" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Interlock (TRIP) signal (1 = TRIP active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="INTERLOCK" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Interlock (INTERLOCK) signal (1 = INTERLOCK active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="PERMISSIVE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Interlock (PERMISSIVE) signal (1 = PERMISSIVE active, 0 = healthy)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="STATIC_DATA" Datatype="&quot;UT11001_St_DevValveIsol&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Static data storage (UDT)</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Int" />
+          <Member Name="___________0010_1" Datatype="Int" />
+          <Member Name="CONFIG_NO_NC" Datatype="Bool" />
+          <Member Name="CONFIG_FBK_OPEN_EN" Datatype="Bool" />
+          <Member Name="CONFIG_FBK_CLOSED_EN" Datatype="Bool" />
+          <Member Name="CONFIG_ESTOP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_TRIP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_ILOCK_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_PERM_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_TRIP_OP_CL" Datatype="Bool" />
+          <Member Name="CONFIG_ILOCK_OP_CL" Datatype="Bool" />
+          <Member Name="CONFIG_PERM_OP_CL" Datatype="Bool" />
+          <Member Name="CONFIG_FP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_MAN_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_BYPASS_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_SIM_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_RL_EN" Datatype="Bool" />
+          <Member Name="___________0020_0" Datatype="Int" />
+          <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="INFO_TAG" Datatype="String[20]" />
+          <Member Name="___________0030_0" Datatype="Int" />
+          <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="TIME_OPENING_MAX" Datatype="Real" />
+          <Member Name="TIME_CLOSING_MAX" Datatype="Real" />
+          <Member Name="TIME_DER_OPEN" Datatype="Real" />
+          <Member Name="TIME_DER_CLOSED" Datatype="Real" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="OPERATE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Valve operate signal (1 = energise the valve, 0 = deenergise the valve)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="InOut">
+    <Member Name="DYNAMIC_DATA" Datatype="&quot;UT31001_Dy_DevValveIsol&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Dynamic data storage (UDT)</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Int" />
+          <Member Name="___________0010_1" Datatype="Int" />
+          <Member Name="status_Closed" Datatype="Bool" />
+          <Member Name="status_Open" Datatype="Bool" />
+          <Member Name="status_Closing" Datatype="Bool" />
+          <Member Name="status_Opening" Datatype="Bool" />
+          <Member Name="status_Operating" Datatype="Bool" />
+          <Member Name="status_Fault" Datatype="Bool" />
+          <Member Name="status_Energised" Datatype="Bool" />
+          <Member Name="status_Aut" Datatype="Bool" />
+          <Member Name="status_Man" Datatype="Bool" />
+          <Member Name="status_EStop" Datatype="Bool" />
+          <Member Name="status_Trip" Datatype="Bool" />
+          <Member Name="status_Ilock" Datatype="Bool" />
+          <Member Name="status_Perm" Datatype="Bool" />
+          <Member Name="status_BypassOn" Datatype="Bool" />
+          <Member Name="status_SimOn" Datatype="Bool" />
+          <Member Name="status_RemoteOn" Datatype="Bool" />
+          <Member Name="status_LocalOn" Datatype="Bool" />
+          <Member Name="status_RLOff" Datatype="Bool" />
+          <Member Name="___________0020_0" Datatype="Int" />
+          <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="msg_FailToOpen" Datatype="Bool" />
+          <Member Name="msg_FailToClose" Datatype="Bool" />
+          <Member Name="msg_FailWhileOpen" Datatype="Bool" />
+          <Member Name="msg_FailWhileClosed" Datatype="Bool" />
+          <Member Name="msg_Flt_External" Datatype="Bool" />
+          <Member Name="___________0030_0" Datatype="Int" />
+          <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="mode_AutMan" Datatype="Bool" />
+          <Member Name="mode_BypassOn" Datatype="Bool" />
+          <Member Name="mode_SimOn" Datatype="Bool" />
+          <Member Name="mode_SimValue" Datatype="Int" />
+          <Member Name="mode_RemoteOn" Datatype="Bool" />
+          <Member Name="mode_LocalOn" Datatype="Bool" />
+          <Member Name="mode_Reset" Datatype="Bool" />
+          <Member Name="___________0040_0" Datatype="Int" />
+          <Member Name="___________0040_1" Datatype="Int" />
+          <Member Name="ctrl_Aut_OpenClose" Datatype="Bool" />
+          <Member Name="ctrl_Man_OpenClose" Datatype="Bool" />
+          <Member Name="___________0050_0" Datatype="Int" />
+          <Member Name="___________0050_1" Datatype="Int" />
+          <Member Name="batch_ID" Datatype="UInt" />
+          <Member Name="___________0060_0" Datatype="Int" />
+          <Member Name="___________0060_1" Datatype="Int" />
+          <Member Name="actual_Operating_Timer" Datatype="Real" />
+          <Member Name="actual_Last_Op_Time" Datatype="Real" />
+          <Member Name="___________0090_0" Datatype="Int" />
+          <Member Name="___________0090_1" Datatype="Int" />
+          <Member Name="$derived_fbk_open" Datatype="Bool" />
+          <Member Name="$derived_fbk_closed" Datatype="Bool" />
+          <Member Name="$sim_fbk_open" Datatype="Bool" />
+          <Member Name="$sim_fbk_closed" Datatype="Bool" />
+          <Member Name="$ctrl_OpenClose" Datatype="Bool" />
+          <Member Name="$pret_Open" Datatype="Bool" />
+          <Member Name="$nret_Close" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licensing information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="calcClosedElapsedTime" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Calculation - Derived closed signal elapsed time limit</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="calcOpenElapsedTime" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Calculation - Derived open signal elapsed time limit</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkOpen" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - open position feedback signal (actual or derived)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkClosed" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - closed position feedback signal (actual or derived)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkCtrlPriority40" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - priority 40 condition controls the valve</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkCtrlPriority30" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - priority 30 condition controls the valve</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkCtrlPriority20" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - priority 20 condition controls the valve</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkCtrlPriority10" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - priority 10 condition controls the valve</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkCtrlPriority00" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - priority 00 condition controls the valve</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkCtrlAutManOpCl" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - consolidated auto/manual open or close request</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkTimeFbkOpenSim" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - value of opening timer before derived open feedback</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkTimeFbkClosedSim" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - value of closing timer before derived closed feedback</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkInt" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - storage area (integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - storage (Real)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkDInt" Datatype="DInt">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working - storage area (double integer)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant">
+    <Member Name="k_TIME_OP_MIN" Datatype="Real" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Minimum value for the valve operation timer</MultiLanguageText>
+      </Comment>
+      <StartValue>0.21</StartValue>
+    </Member>
+  </Section>
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC19512_StdDebugInst2Order</Name>
+      <Number>19512</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+ FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
+ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+│
+TITLE:    STANDARD — DEBUG SECOND ORDER RESPONSE SIMULATION
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+
+FC19152_StdDebugInst2Order is a debug simulation subroutine.
+
+The module simulates a second order process reaction in response to an input signal.
+
+The simulation is adjustable in terms of the system gain, the frequency of oscillation (for those 
+responses that have oscillating outputs) and the applied damping factor.
+
+The output of the second order response simulation is in the form of a real number and is 
+constrained to the resolution and range limits applicable to this number type within the 
+Siemens Simatic S7-1500 controller.
+
+The following second order responses can be simulated:
+
+   1.  Undamped (oscillating system with constant amplitude)
+   2.  Under damped (oscillating with decreasing amplitude)
+   3.  Critically damped (fastest response without oscillation)
+   4.  Under damped (slower response without oscillation)
+   5.  Unstable system with increasing oscillations
+   6.  Unstable system with unbounded rise (non-oscillating)
+
+The module will simulate the 2nd order response according to the elapsed time since the 
+module was activated.
+
+The module also has a manual mode that can simulate an output at any specific time.
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         2nd Order Response Simulation
+ BLOCK FUNCTION GROUP    Debug  
+ BLOCK ADDRESS       FC19152
+ BLOCK SYMBOL        FC19152_StdDebugInst2Order
+ BLOCK USER ID         StdDebugInst2Order
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        19152
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME       00.00 μs¹
+ LOAD MEMORY       00.00 kB   (00000 bytes)
+ WORK MEMORY           0.00 kB    (000 bytes)
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1      Additional referenced documents
+
+
+In addition to the documents referenced in OB1 [DOCUMENT REFERENCES], the following 
+document is associated with this module:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.       TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 101  PS2001-5-2331-001-0   FC19152 Calculation Sheet
+ 102  PS2001-5-2331-001-02   FC19152 2nd Order Response Simulation Spreadsheet
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+████████████████████████████████████████████
+█                                          █
+█ Note:   The following descriptions are taken from the associated Software Module     █
+█     Design Specification [PS2001-5-2312-fc19152], the SMDS contains various     █
+█     graphs that cannot be easily reproduced in these module comments. Where    █
+█     essential, some rudimentary images have been included; however,        █
+█     these are better viewed directly in the SMDS.                   █
+█                                          █
+█     Where images of the graphs are included, these are generated using           █
+█     the unicode braille characters and were generated by the following web site:      █
+█                                          █
+█     https://505e06b2.github.io/Image-to-Braille/                  █
+█     (the images are 100 braille characters wide)                   █
+█                                          █
+█     The SMDS can be accessed directly by selecting this module (FC19152) in the     █
+█     Project Tree (on the left) and pressing SHIFT+F1.                 █
+█                                          █
+█     It is also available in Section 2 of the following web page:           █
+█                                          █
+█     https://practicalseries.com/2001-pal/21-project/01-00-docs.html#js--020000     █
+█                                          █
+████████████████████████████████████████████
+
+FC19152 is the 2nd Order Response Simulation module. The purpose of this module is to 
+simulate a “second order” process reaction in response to an input signal.
+
+Second order systems are the lowest order systems capable of an oscillatory response to a step 
+input, such systems require two independent mechanisms for energy storage, for example an 
+inert mass connected to a spring; a real-world example being the controlled damping of a car 
+suspension system, the wheel representing the mass and the suspension system the spring, 
+the control system would increase or decrease the applied damping to give the required 
+response. Tuned mass damping of bridges and buildings are other examples.
+
+Second order system can produce a range of responses depending on the damping 
+configuration of the system. The typically quoted responses are:
+
+
+Output y(t)
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣶⣤⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣾⠋⠄⠙⢷⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠏⠄⠄⠄⠘⣷⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡟⠄⠄⠄⠄⠄⠸⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⠃⠄⠄⠄⠄⠄⠄⢹⣇←— — UNDER DAMPED (ζ &lt; 1)  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡿⠄⠄⠄⠄⠄⠄⠄⠄⢿⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⡇⠄⠄⠄⠄⠄⠄⠄⠄⠸⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⣿⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⣇⠄⠄⠄⠄⠄⠄CRITICALLY DAMPED (ζ =1)   ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄│ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄│ ⠄⠄⠄⠄⠄⠄⠄⠄⣀⣠⣤⣤⣤⣤⣤⣄⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄↓ ⠄⠄⠄⠄⠄⢀⣤⡾⠛⠉⠄⠄⠄⠄⠈⠉⠛⠷⣦⣤⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢿⡄⠄⣀⣀⣀⣤⣤⣤⣴⣶⣶⠶⠶⠶⠶⣶⡿⠿⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠾⠿⠿⠷⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⠶⠶⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠶⢶⣶⣶
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⣴⡾⣿⡛⠋⠉⠉⠉⠄⠄⠄⠄⠄⠄⠄⣠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠄⢀⣀⣀⣠⣤⣤⣤⣴⣶⣶⠶⠶⠶⠶⠿⠛⠛⠛⠛⠛⠛⠛⠋⠉
+│⠄⠄⠄⠄⠄⠄⠄⠄⢰⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡶⠟⠋⠁⠄⠸⣧⡀⠄⠄⠄⠄⠄⠄⠄⠄⢀⣾⠟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣠⣤⣤⡶⠶⠶⠿⠛⠛⠛⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⣸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⡾⠋⠄⠄⠄⠄⠄⠄⠹⣷⡀⠄⠄⠄⠄⠄⠄⣤⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣤⣤⡶⠾⠟⠛⠛⠉⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⣿⠇⠄⠄⠄⠄⠄⠄⠄⣠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢿⣦⡀⠄⣀⣴⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣤⣶⠾⠛⠛⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄⠄⠄⠄⠄⣴⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠛⠛⠋⠉⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣤⡶⠟⠛⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢸⣿⠄⠄⠄⠄⠄⠄⣼⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣴⡾⠟⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⣼⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⡾⠟⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⣾⠇⠄⠄⠄⠄⣼⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣴⠾⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄⠄⣰⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⡾⠛⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢠⣿⠄⠄⠄⢠⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣴⠟⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⣾⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡾⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⢸⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡾⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⣿⠃⠄⢀⣿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⣿⠄⠄⣸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣾⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢸⣿⠄⢀⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣰⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢸⡇⠄⣼⡇⠄⠄⠄⠄⠄⠄⠄⠄⢠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⣾⡇⢠⣿⠄⠄⠄⠄⠄⠄⠄⠄⣴⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⣿⠃⣼⠇⠄⠄⠄⠄⠄⠄⢀⣾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⢀⣿⢀⣿⠄⠄⠄⠄⠄⠄⣠⡿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⢸⡏⢸⡇⠄⠄⠄⠄⠄⣰⡟⠁←— — OVER DAMPED (ζ &gt; 1)   ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⣸⡇⣿⠁⠄⠄⠄⠄⣼⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⣿⢻⡿⠄⠄⠄⢀⣼⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⣿⣾⡇⠄⠄⢀⣾⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢸⣟⣿⠄⠄⢀⣾⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢸⣿⡇⠄⢀⣾⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⣿⣿⠁⢀⣾⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢠⣿⡟⠄⣼⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢸⣿⠇⣼⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⣿⣿⣸⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⢀⣿⣷⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⢸⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⢰⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    Time (t)
+
+
+Second order systems can also produce unstable responses under certain conditions:
+
+
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠇⢀⣤⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣿⢰⡟⣿⡆⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡏⣾⡇⢹⡇⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠇⣿⠁⢸⣷⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡿⢰⡿⠄⠈⣿⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⡇⢸⡇⠄⠄⢿⡆⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣿⠁⣾⠇⠄⠄⢸⡇⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡟⠄⣿⠄⠄⠄⢸⡇⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⠇⢠⣿⠄⠄⠄⢸⡇⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡿⠄⢸⡿⠄⠄⠄⢸⣿⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⡇⠄⢸⡇⠄⠄⠄⠄⣿⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣿⠄⠄⣼⡇⠄⠄⠄⠄⣿⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ UNBOUNDED INSTABILITY (ζ ≤ -1) — —→⣼⡇⠄⠄⣿⠇⠄⠄⠄⠄⣿⡆⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡿⠁⠄⠄⣿⠄⠄⠄⠄⠄⣿⡇⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠇⠄⠄⢠⣿⠄⠄⠄⠄⠄⢹⡇⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡿⠄⠄⠄⢸⡟⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⠃⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⢸⣇⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⡏⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⢸⣿⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡿⠄⠄⠄⠄⠄⣾⡇⠄⠄⠄⠄⠄⢸⣿⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣾⠃⠄⠄⠄⠄⠄⣿⠄⠄⠄⠄⠄⠄⠸⣿⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠏⠄⠄⠄⠄⠄⢀⣿⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⡟⠄⠄⠄⠄⠄⠄⢸⣿⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⡟⠄⠄⠄⠄⠄⠄⠄⢸⡟⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⡿⠁⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⣿⡆⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⣼⡇⠄⠄⠄⠄⠄⠄⠄⢿⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⡇⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣴⠟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠁⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣴⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⣿⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡏⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣤⡾⣋⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣴⠟⣹⡾⠋⠛⣷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠈⣿⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠟⠋⢀⣼⠏⠄⠄⠄⠘⣷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣠⣴⠶⠟⠛⠉⠄⠄⢀⣾⠏⠄⠄⠄⠄⠄⠹⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⣀⣤⣤⣴⠶⠶⠿⠛⠋⠉⠄⠄⠄⠄⠄⠄⢠⣾⠃⠄⠄⠄⠄⠄⠄⠄⢿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄⠄
+│⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣾⣿⡿⠿⠟⠛⠛⠛⠻⠶⣦⣄⡀─ ─ ─ ─ ⠄⣠⡿⠃ ─ ─ ─ ─⠸⣷ ─ ─ ─ ─ ─⢸⡿ ─  ─ ─ ─ Time (t)
+│⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠉⠉⠉⠉⠉⠉⠙⠛⠛⠛⠛⠛⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠛⢷⣤⡀⠄⠄⠄⠄⢀⣴⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠻⠷⣦⣤⡶⠿⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⡄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣇⠄⠄⠄⠄⠄⠄⠄⢀⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣿⠄⠄⠄⠄⠄⠄⠄⢸⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⡇⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⣷⠄⠄⠄⠄⠄⠄⣾⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⡆⠄⠄⠄⠄⢀⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄  UNSTABLE OSCILLATIONS (-1 &lt; ζ &lt; 0) — —→⢸⣧⠄⠄⠄⠄⢸⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣿⡀⠄⠄⠄⣼⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣇⠄⠄⢀⣿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⡆⠄⢸⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⢷⣴⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣿⠄
+
+
+Unstable system will either oscillate with increasing amplitude or increase asymptotically until 
+the physical constraints of the system are reached.
+
+Whilst second order systems are not as common as first order systems (see FC19151 and its 
+associated calculation sheet), control systems are required to interface with them and hence 
+a block to simulate them is a requirement of the PAL.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1      Scope and limitations of the simulation
+
+
+The second order response simulation is able to simulate any of the following conditions:
+
+   1.  Over damped (slow response without oscillation)
+   2.  Critically damped (fastest response without oscillation)
+   3.  Under damped (oscillating with decreasing amplitude)
+   4.  Undamped (oscillating system with constant amplitude)
+   5.  Unstable system with increasing oscillations
+   6.  Unstable system with unbounded rise (non-oscillating) 
+
+The simulation is adjustable in terms of the fundamental constants of a 2nd order system: 
+system gain (K), natural frequency of oscillation (ω) and the applied damping factor (ζ).
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.1     The limitations of the simulation
+
+
+The output of the second order response simulation will be in the form of a real number and will 
+be constrained to the limits applicable to this number type within the Siemens controller.
+
+The S7-1500 range of Controllers supports real numbers as values, these are 32-bit numbers 
+and, within a Controller, have the following range limits:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+             LOWER RANGE LIMIT     UPPER RANGE LIMIT
+ ――――――――――――――――――――――――――――――――――――――――――
+ S7-1500 real number:     -3.402323×10^(-38)             +3.402323×10^(+38)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+It should be noted that with unstable responses, the result of any calculation will be constrained 
+by the above limits; and, these limits may be reached very quickly.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.2     The nature of the simulation calculations
+
+
+The module will generate the correct responses for the six conditions listed in the previous 
+section (§ 2.1). The responses for each of these conditions is specified in the associated 
+calculations sheet [Ref. 101].
+
+These calculations are based around the mathematical functions available to the Controller 
+(these are in addition to the standard mathematical operations: addition, subtraction, 
+multiplication and division).
+
+Each Controller supports the following common mathematical functions:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ OPERATION    EXAMPLE         DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ SQR        x^2          Form the square
+ SQRT         √x            Form the square root
+ EXP        e^x          Exponential
+ LN          log_e(⁡x)        Natural logarithm
+ SIN         sin(⁡x)         Sine
+ ASIN          sin^-1(x)          Arcsine, inverse sine
+ COS          cos(⁡x)        Cosine
+ ACOS        cos^-1(x)         Arccsine, inverse cosine
+ TAN           tan(⁡x)         Tangent
+ ATAN         tan^-1(x)         Arctangent, inverse tangent
+ ABS        |x|            Modulus
+ ――――――――――――――――――――――――――――――――――――――――――
+ Table 2.1 S7 Controller — common mathematical functions
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.3     A note on Laplace transforms
+
+
+The interpretation of the time domain response of a second order system, is complex in nature 
+and makes extensive use of the mathematical Laplace transform; this is a mechanism that 
+allows ordinary differential equation to be manipulated algebraically; it replaces functions of 
+time with a complex variable denoted by the symbol s, where s represents the complex 
+number σ+jω.
+
+The calculation sheet associated with this module [Ref. 101], explains the Laplace transform 
+mechanisms and how they are used within the calculations necessary for the functioning of this 
+module. Further explanation of the Laplace transform is not given in this document, again the 
+reader is referred to the calculation sheet [Ref. 101].
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.2      The second order response
+
+
+The response of a second order system (y) to an input (x) is defined using the general form of a 
+second order system transfer function, this is expressed below in the time domain as a second 
+order differential equation (see the calculation sheet [Ref. 101], Appendix B for details):
+
+ d²y                dy
+ ------  ┼  2ζω ----- ┼  ω²y  =  Kω² x
+ dt²                dt
+
+Where:    K is the system gain
+     ω is the natural frequency of the system (rad/s)
+     ζ is the damping factor
+
+Applying the Laplace transforms for derivatives (see  the calculation sheet 
+[Ref. 101], Appendix A for details) gives a frequency domain equivalent of:
+
+
+ s²y(s) ┼  2ζωsy(s) ┼  ω²y(s)  =  Kω² x(s)
+
+The transfer function is defined as the output divided by the input, in this case:
+
+ y(s)                 Kω²
+ ------- = --------------------------------
+ x(s)      s² ┼  2ζωs ┼  ω²
+
+The denominator of this equation, when equated with zero is referred to as the characteristic 
+equation and in the case of a second order system it is a quadratic equation:
+
+ s² ┼  2ζωs ┼  ω² = 0
+
+This can be expressed in the form (see the calculation sheet [Ref. 101], Appendix A for details):
+
+ (s ─ α )(s ─ β ) = 0
+
+Where α and β are the roots of the equation, these can be determined using the standard 
+solution for a quadratic equation (see the calculation sheet [Ref. 101], Appendix C for 
+details), and are:
+
+
+ α = ─ζω ┼ ω √(ζ²-1)
+
+ β = ─ζω ─ ω √(ζ²-1)
+
+In the case of a second order system, the nature of the response depends upon the values 
+of the roots of the characteristic equation (α and β).
+
+There are several possible responses and all are dependent on the damping factor (ζ):
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DAMPING FACTOR (ζ)  ROOTS (α and β)          DESCRIPTION OF RESPONSE
+ ――――――――――――――――――――――――――――――――――――――――――
+ ζ &gt; 1         Unique negative real roots      Under damped, slow response 
+                           no overshoot
+
+ ζ = 1            Coincident negative real roots  Critically damped, fastest response 
+                           without overshoot
+
+ 0 &lt; ζ &lt; 1         Complex conjugate,      Under damped, decreasing 
+            negative real part          oscillations	
+
+ ζ = 0            Zero real part,          Undamped, oscillates with 
+            imaginary part ±jω         frequency ω
+
+ −1 &lt; ζ &lt; 0          Complex conjugate,      Unstable, oscillations of increasing 
+            positive real part        amplitude
+
+ ζ ≤ −1          Unique positive real roots    Unstable, unbounded asymptotic 
+                           increase
+ ――――――――――――――――――――――――――――――――――――――――――
+ Table 2.2 Second order system responses to changes in damping factor (ζ)
+
+
+To give some indication of how these responses are dependent on the α and β root values 
+(either real or as complex conjugates), it is possible to plot these roots in an s plane diagram, this 
+uses the base equation of the s value (see the calculation sheet [Ref. 101], Appendix A for 
+details): 
+
+ s = σ ┼ jω
+
+The s plane plots the complex conjugates for the α and β root values on an x-y graph where the 
+x-axis represents the real component (σ) and the y-axis the imaginary component (jω).
+
+                     jω
+                    ↑
+                    │
+                    │
+       UNDER DAMPED         │
+                 ╲     │
+                ╲   │
+                    ↘  │
+                    ⊙ - - │ω √(1 ─ ζ²)
+                    ╎  │
+                    ╎  │
+                    ╎  │        ⊠          UNSTABLE 
+                    ╎  │     ╎         OVER DAMPED 
+                    ╎  │     ╎           ╎ ╎
+                    ╎  │     ╎           ╎ ╎
+                    ╎  │     ╎           ↓ ↓
+─ ⊕ ⊕ ──────── ⊗ ────  -ζω ─ ∅───────────────⊞ ⊞─── σ
+  ↑ ↑            ↑     ╎  │↖    ╎
+  ╎ ╎            ╎     ╎  │ ╲   ╎
+  ╎ ╎            ╎     ╎  │  ❘     ╎
+  ╎ ╎      CRITICALLY DAMPED    ╎     │  ❘        ⊠
+  ╎ ╎                  ╎  │  ❘     ↖
+  ╎ ╎                  ╎  │  ❘      ╲
+OVER DAMPED               ╎  │  ❘          ╲
+                    ⊙     │  ❘        UNSTABLE UNDER  DAMPED
+                    │  ❘ 
+                    │ UNDAMPED
+                    │
+                    │
+                    │
+
+
+If the root of a second order characteristic equation has positive real parts, the resulting system 
+response will be unstable.
+
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 1 to 2.2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.3      The calculations
+
+
+The calculations needed to produce the second order system responses listed in Table 2.2 are 
+all produced in the associated calculation sheet [Ref. 101]. 
+
+There are six possible solutions to the second order system response and all are dependent on 
+the damping factor ζ (see [Ref. 101], Section 6 for details). The final calculations are reproduced 
+below and are shown in descending value of the damping factor ζ.
+
+An accompanying spreadsheet [Ref. 102] is available, this allows all the various responses to be 
+graphically simulated with adjustable values (it was this spreadsheet that was used to produce 
+the various response plots used within this document).
+
+The following sections show each of the six possible responses:
+
+   1.  Over damped (slow response without oscillation)
+   2.  Critically damped (fastest response without oscillation)
+   3.  Under damped (oscillating with decreasing amplitude)
+   4.  Undamped (oscillating system with constant amplitude)
+   5.  Unstable system with increasing oscillations
+   6.  Unstable system with unbounded rise (non-oscillating) 
+
+For the stable responses, the output is generated for a step input x(t) = 1. The calculations also 
+generate a good approximation for a ramp input x(t) = t and to a lesser extent, adequate 
+responses for sinusoidal functions: x(t) = cos (t) or sin (t).
+
+The ramp and sinusoidal response for unstable systems, are, in effect, identical to the step input, 
+the nature of the input value rapidly becoming negligible compared to the unstable output values.
+
+Note:    In the following sections, where ζ is a negative number, the expression | ζ | refers to 
+     the magnitude of the damping constant, i.e. if ζ = –2 then | ζ | = 2. 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.1     Over damped, slow response no overshoot             ζ &gt; 1
+
+
+
+═══ CALCULATION    ═════════════════════════════════
+
+      ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ─ 1│ｅ           ║ (2.1)
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+
+
+
+═══ STEP  RESPONSE:     ═══════════════════════════════
+
+
+             Graph shown has values: ζ = 2    ω = 6π = 18.8 (rad/s)
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+K─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─⢀⣀⣀⣀⣀⣀⣀⣀⣀
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⣀⣠⣤⡤⠤⠤⠶⠶⠶⠶⠒⠒⠒⠒⠚⠛⠛⠛⠛⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣠⡤⠤⠶⠖⠒⠛─ ─ ─ ─ ─  TSS = 98% of steady state   ⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣠⠴⠖⠚⠋⠉⠁⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⡤⠖⠚⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡴⠚⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠖⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡤⠚⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣴⠋─ ─ ─ ─ ─  T63 = 63% of steady state   ⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡾⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠞⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠏⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠋⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠃⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢠⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⣸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⢀⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢀⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⣸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡴⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1.0 s
+
+Note:
+   •   A lower damping factor  ζ gives a faster response
+   •   A higher natural frequency ω gives a faster response
+
+
+
+═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+
+                         1
+Time to 63% of steady state value = T63 = ---------------------------------- seconds
+                    ω [ ζ ─ √(ζ² ─ 1) ]
+
+
+                         4
+Time to 98% of steady state value = TSS = ---------------------------------- seconds
+                    ω [ ζ ─ √(ζ² ─ 1) ]
+
+
+                                               ╓      - ω [ ζ ┼ √(ζ² ─ 1) ]t  ╖
+Approximate first order response (where ζ &gt; 5)   y(t) = K║x(t) ─ ｅ         ║
+                                               ╙                ╜ 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.2     Critically damped, fastest response without overshoot        ζ = 1
+
+
+
+═══ CALCULATION    ═════════════════════════════════
+
+      ╓           - ωt  ╖
+y(t) = K║x(t) ─ (1 ┼ ωt) ｅ  ║   (2.2)
+      ╙             ╜
+
+
+
+═══ STEP  RESPONSE:     ═══════════════════════════════
+
+
+             Graph shown has values: ζ = 1    ω = 6π = 18.8 (rad/s)
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+K─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ⢀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⡤⠴⠶⠒⠚⠛⠉─ ─ ─ ─ ─  TSS = 98% of steady state   ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡴⠚⠉⠁⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡰⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⠇─ ─ ─ ─ ─  T63 = 63% of steady state   ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⢰⠇ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢰⠇⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢀⡏⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⡼⠁⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡴⠃⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1.0 s
+
+
+Note:
+   •   A higher natural frequency ω gives a faster response
+
+
+
+═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+
+                    2
+Time to 63% of steady state value = T63 = ---- seconds
+                    ω 
+
+
+                    6
+Time to 98% of steady state value = TSS = ---- seconds 
+                    ω 
+ 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.3     Under damped, decreasing oscillations              0 &lt; ζ &lt; 1
+
+
+
+═══ CALCULATION    ═════════════════════════════════
+
+      ╓      - ζω t  ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ   │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)    (2.3)
+      ╙       └       √(1 ─ ζ²)       ┘╜
+
+
+
+═══ STEP  RESPONSE:     ═══════════════════════════════
+
+
+             Graph shown has values: ζ = 0.3    ω = 6π = 18.8 (rad/s) giving:   Ω = 17.9 (rad/s)  
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡴⠒⠲⣄─ ─ ─  Peak value (Ypk) ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡞⠄╎ ⠘⢧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡼⠁⠄╎ ⠄⠈⢧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⠇⠄⠄╎ ⠄⠄⠘⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄╎ ⠄⠄⠄⠸⡆⠄⠄⠄ Oscillation period (Td) ⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄╎╌ ╌ ⢹⡄ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⢳⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠈⢧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠘⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠴⠒⠛⠋⠛⠛⠓⠲⠤⣄⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+K─ ─ ─ ─    ⡟ ─ ─  ╎  ─ ─ ─ ⠘⣆─ ─ ─ ─ ─ ─ ⣀⡴⠋⠁  ─ ─ ─ ─   ⠈⠉⠓⠲⠦⢤⣄⣀⣀⣀⣀⣀⣀⣠⣤⠤⠤⠴⠶⠖⠒⠒⠒⠛⠛⠛⠛⠛⠓⠒⠒⠒⠒⠒⠲⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶
+│⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠘⣆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⣀⢀⡀⡄⠤⠠⠄⠄⠂⠂⠂⠂⠒⠄⠁⠁⠁⠄⠄⠄⠄╎─ ─ ─  TSS = 98% of steady state  ⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢧⡀⠄⠄⠄⠄⠄⠄⣠⠞⠁⢀⢀⠠⠄⠄⠒⠐⠉⠈⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⠦⣤⣀⡤⡴⡫⠑⠐⠁⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠠⠐⠐⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⡀⠤⠊⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⢀⠔⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⡠⠂⠁↖ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄╎ ⠄⡠⠊⠄⠄⠄⠄⠄╲ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⣾⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠊⠄⠄⠄⠄⠄⠄⠄⠄⠄DECAY ENVELOPE ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⢀⠔⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⡠⠊╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⡔⠁⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⢀⠎⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⢰⡇⠄⠄⠄⢠⠊⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⢸⠃⠄⠄⠠⠃⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⣾⠄⠄⠠⠃⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢀⡇⠄⠠⠅⠄⠄⠄⠄⠄⠄⠄╎ Time to peak (Tpk)  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢸⠃⢀⠇⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⡾⢀⡊⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢠⡇⠔⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⣸⡩⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⢀⣟⠂⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⡸⠂⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⣰⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎ ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1.0 s
+
+
+Note:
+   •   A lower damping factor  ζ gives a faster response and higher frequency
+   •   A higher natural frequency ω gives a faster response and higher frequency
+
+
+
+═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+
+
+Damped frequency of oscillation (rad/s)   Ω =  ω √(1 ─ ζ²)
+
+
+                     Ω
+Damped frequency of oscillation (Hz)    f =  ------ 
+                       2π
+
+                       2π    1
+Period of oscillation (seconds)       Td =  ------ = ------
+                     Ω        f
+
+                      - ζ(ω / Ω) 
+Peak overshoot value           Ypk = K ｅ
+
+
+                     π    Td
+Time to peak value (seconds)      Tpk =  ------ = ------
+                     Ω       2
+
+                       - ζωt 
+Oscillation decay curve            = 1 ─ ｅ
+
+
+                           4
+Time to steady state value (±2%)            TSS = ------   (seconds) 
+                          ζω 
+ 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.4     Undamped, oscillates with frequency ω              ζ = 0
+
+
+
+═══ CALCULATION    ═════════════════════════════════
+
+      ╓       ╖
+y(t) = K║x(t) ─ COS (ωt) ║   (2.4)
+      ╙       ╜
+
+
+
+═══ STEP  RESPONSE:     ═══════════════════════════════
+
+
+             Graph shown has values: ζ = 0.0    ω = 6π = 18.8 (rad/s)
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄ ⠄⠄⠄   Oscillation period (Tn)   ⠄⠄⠄⠄╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠞⠳⣆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⠞⠳⣆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠞⠻⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠏⠄⠄⠸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡏⠄⠄⠸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠏⠄⠄⠸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄⢻⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄⢳⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄⢳⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠈⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄⢹⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⢷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⢸⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇
+│⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃
+│⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄
+│⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄
+K  ╌ ╌ ╌  ⡿  ╌ ╌ ╌ ╌ ╌ ╌  ⢹  ╌ ╌ ╌ ╌ ╌ ╌  ⡟  ╌ ╌ ╌ ╌ ╌ ╌  ⢻  ╌ ╌ ╌ ╌ ╌ ╌  ⡟  ╌ ╌ ╌ ╌ ╌ ╌  ⢹  ╌ ╌ ╌ ╌ ╌ ╌  ⡏⠄⠄
+│⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄
+│⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄
+│⠄⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄
+│⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄
+│⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄
+│⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄
+│⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡇⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡇⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄⠄
+│⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢷⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄
+│⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄
+│⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢧⠄⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣇⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄
+│⠄⠄⢀⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⢀⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⡀⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄
+│⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⣼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣇⠄⠄⠄⠄⣼⠁⠄⠄⠄⠄⠄⠄
+│⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡆⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡆⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡆⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄
+│⣠⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⣄⣠⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⣆⣠⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⣄⣠⠏⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1.0 s
+
+
+Note:
+   •   A higher natural frequency ω gives a higher frequency
+
+
+
+═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+
+
+Frequency of oscillation (rad/s)       = ω 
+
+
+                     ω 
+Frequency of oscillation (Hz)          f =  ------ 
+                       2π
+
+                       2π    1
+Period of oscillation (seconds)       Tn =  ------ = ------
+                     ω         f
+ 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.5     Unstable, oscillations of increasing amplitude           -1 &lt; ζ &lt; 0
+
+
+
+═══ CALCULATION    ═════════════════════════════════
+
+      ╓      | ζ | ω t ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ    │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)    (2.5)
+      ╙        └       √(1 ─ ζ²)       ┘╜
+
+
+
+
+═══ STEP  RESPONSE:     ═══════════════════════════════
+
+
+             Graph shown has values: ζ = - 0.1    ω = 6π = 18.8 (rad/s)
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠠⠄⠁⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠠⠂⠁⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠄⠂⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠠⠐⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ INCREASING OSCILLATION ENVELOPE ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡠⠄⠂⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╲  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠠⠐⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╲  ⠄⠄⠄⠄⠄⠄⠄⡀⠄⢂⡼⠒⢦⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ↘⠄⡀⠄⠐⠈⠄⠄⢀⡞⠁⠄⠈⢳⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡀⠠⠄⠂⠁⠄⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠄⠄⢷⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡀⡀⠄⠄⠂⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡀⡀⠄⠐⠄⠊⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⢹⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠄⡀⠄⠠⠐⠐⣨⠴⠳⢦⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠈⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡀⢀⠄⠠⠄⠄⠐⠄⠂⠁⠈⠄⠄⠄⠄⠄⢠⡞⠁⠄⠄⠄⠙⢦⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠄⡀⢀⠄⠄⠠⠄⠂⠐⠐⠈⠄⠁⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠏⠄⠄⠄⠄⠄⠄⠈⢧⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄
+│⠄⠂⠐⠄⠂⠐⠈⠄⠁⠈⠄⣠⠶⠋⠉⠉⠙⠲⣄⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠈⢧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠈⠳⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄
+│⠄⠄⠄⠄⠄⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢧⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄
+ 0  ╌  ╌ ⣠⠞⠁  ╌ ╌ ╌ ╌ ╌ ╌  ⠳⡄  ╌ ╌ ╌ ╌ ╌  ⣰⠃  ╌ ╌ ╌ ╌ ╌ ╌  ⢹⡄  ╌ ╌ ╌ ╌ ╌  ⢀⡏  ╌ ╌ ╌ ╌ ╌ ╌  ⢸⡀⡄  ╌ ╌ ╌ ╌ ╌  ⣾⠄⠄
+│⠄⠄⣀⡴⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⣆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇⠄⠄
+│⠛⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢳⡀⠄⠄⠄⠄⠄⠄⢀⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢦⣀⠄⠄⢀⡰⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠙⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢳⡀⠄⠄⠄⠄⠄⠄⠄⣸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢳⡀⠄⠄⠄⠄⠄⢠⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢳⡀⠄⠄⠄⢠⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠁⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠻⢤⣀⡴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣷⠄⠄⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣇⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╌ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⡄⠄⠄⠄⠄⠄⢀⡏⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄ ⠄⠄⠄   Oscillation period (Td)   ⠄⠄⠄⠄╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣇⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⡄⠄⠄⠄⢀⡏⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢳⡀⠄⠄⡼⠁⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠳⠤⠞⠁⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1.0 s
+
+
+Note:
+   •   A lower (incresingly negative) damping factor  ζ gives a faster response and higher frequency
+   •   A higher natural frequency ω gives a higher frequency
+
+
+
+═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+
+
+Damped frequency of oscillation (rad/s)   Ω =  ω √(1 ─ ζ²)
+
+
+                     Ω
+Damped frequency of oscillation (Hz)    f =  ------ 
+                       2π
+
+                       2π    1
+Period of oscillation (seconds)       Td =  ------ = ------
+                     Ω        f
+
+                        +| ζ | ωt 
+Increasing oscillation curve          = 1 ─ ｅ
+
+Note:    The magnitude of oscillation increases exponentially and is constrained only by the 
+     limits of the Controller, this will result in a cap of the OUTPUT value, this being 
+     ±3.4 × 10±38. In the example above, this limit will be reached after ≈ 47 seconds
+     i.e. unstable system reach the computing limits of the system very quickly.
+
+
+ 
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.6     Unstable, unbounded asymptotic increase              ζ ≤ -1
+
+
+
+═══ CALCULATION    ═════════════════════════════════
+
+      ╓   1 ┌   ζ       ┐     ω [ | ζ | ─ √(ζ² ─ 1) ]t    1 ┌   ζ       ┐     ω [ | ζ | ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ┼ 1│ｅ              ║ (2.6)
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘               ╜
+
+
+
+
+═══ STEP  RESPONSE:     ═══════════════════════════════
+
+
+             Graph shown has values: ζ = -1.1    ω = 6π = 18.8 (rad/s)
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+690x10^9   ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡼⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠶⠖⠚⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     0.1      0.2      0.3      0.4      0.5      0.6      0.7      0.8      0.9      1.0 s
+
+
+Note:
+   •   A lower (incresingly negative) damping factor ζ gives a faster response
+   •   A higher natural frequency ω gives a faster response
+
+
+═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+
+
+There are no anciliary calculations for thei model
+
+Note:    The magnitude of oscillation increases exponentially and is constrained only by the 
+     limits of the Controller, this will result in a cap of the OUTPUT value, this being 
+     ±3.4 × 10±38. In the example above, this limit will be reached after ≈ 3 seconds
+     i.e. unstable system reach the computing limits of the system very quickly.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4      Operating modes
+
+
+The block supports two modes of operation:
+
+   •   Automatic mode:
+     The module automatically calculates the elapsed time since the simulation started 
+     and generates the appropriate output value
+
+   •   Manual mode:
+     The current elapsed time is supplied manually to the module; the module will then 
+     calculate the output value based on this manual time value
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.5      Supervisory system interface
+
+
+There is no supervisory system interface for this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 2.3 to 2.5</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+
+This module, FC19152_StdDebugInst2Order uses user data types to provide the primary 
+interface to the block. There are four formal parameters:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ TRIGGER       Activates the simulation (the simulation will run     Bool      In
+          whilever this signal is high), the elapsed time 
+          is measured from the rising edge of this signal
+
+ INPUT        The input time function, x(t) in the calculations     Real      In
+
+ DYNAMIC_DATA      Data structure that holds the live data for the       UT39152    InOut
+          simulation (damping factor, natural frequency, 
+          system gain, elapsed time &amp;c.)
+
+ OUTPUT       The output time response, y(t) in the calculations   Real      Out
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The DYNAMIC_DATA parameter is a UDT that holds all the data for the simulation.
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT          ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ DYNAMIC_DATA   UT39152_Dy_DebugInst2Order      DB39152_Dy_DebugInst2Order
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Section 5 contains a full list of all variables within these UDTs.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1      The primary simulation signals
+
+
+The simulation is based upon various signals passed to the module and the elapsed time since 
+the simulation started:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               RANGE       ACCESSED VIA
+ ――――――――――――――――――――――――――――――――――――――――――
+ INPUT         The INPUT parameter is the x value    -2.0 to 2.0¹  Parameter 
+           in the calculations of § 2.3
+	
+ OUTPUT        The OUTPUT parameter is the y value   Unrestricted     Parameter 
+           in the calculations of § 2.3
+
+ TRIGGER        The TRIGGER parameter activates      0 or 1     Parameter
+           the simulation
+
+ k_Gain          The system gain (K) term         Unrestricted     UT39152
+           in the calculations of § 2.3       typ. 1-10
+
+ k_NatFreq       The natural frequency of the system     +ve number      UT39152
+           (ω) term in the calculations of § 2.3.     typ. 1-100
+           In units of radians/second (rad/s)
+
+ cal_DampFreq        Damped (actual) frequency of      +ve number      UT39152
+           the system (rad/s).           calculated by
+           Ω in the calculations of § 2.3      the module
+
+ k_DampFactor     The damping factor of the system      Unrestricted     UT39152
+           (ζ) in the calculations of § 2.3 
+
+           The damping factor determines the type of response:
+           ζ &gt; 1        Stable over damped (no oscillations)
+           ζ = 1     Stable critically damped (no oscillations)
+           0 &lt; ζ &lt; 1  Stable under damped (decaying oscillations)
+           ζ = 0     Stable undamped (constant oscillations)
+           -1 &lt; ζ &lt; 0 Unstable under damped (inc. oscillations)
+           ζ ≤ -1       Unstable over damped (asymptotic increase)
+
+ actual_StartTime   The CPU time when the simulation    DTL value    UT39152
+           started (rising edge of TRIGGER)      of RTC
+
+ actual_RunTime     The elapsed time (t) term           +ve number      UT39152
+           in the calculations of § 2.3.         calculated by
+           Always measured in seconds       the module
+           Current CPU time - actual_StartTime
+ ――――――――――――――――――――――――――――――――――――――――――
+ Note:   The INPUT range is not actually limited; however, if a very large number is used, 
+     it will dominate the result and the 2nd order effects will be less noticeable. 
+     Normalising the INPUT signal to ±2 gives good results. To generate larger output 
+     values, the system gain should be increased, this is applied universally.
+
+
+The most important of these terms is the damping factor (k_DampFactor), this determines the 
+type of response (stable, unstable, oscillating, exponential &amp;c.) and also the speed of the 
+response, the smaller the damping factor, the faster the system will reach the steady state 
+value (in the case where k_DampFactor is between zero and one, the steady state value will 
+be reached quickly, but there will be some degree of overshoot, see the figures of § 2.3).
+
+The natural frequency (k_NatFreq), determines the frequency of oscillation for those responses 
+that oscillate (oscillations occur when –1 &lt; k_DampFactor &lt; +1). For non-oscillating responses, 
+the larger the natural frequency, the quicker the response.
+
+The system gain (k_Gain), is simply a common multiplier that amplifies the output response. 
+By default the system gain is set to a value of one (i.e. unity gain). If the system gain k_Gain 
+is set zero, the OUTPUT will be zero under all circumstances
+
+The elapsed time actual_RunTime is calculated from the real time clock within the CPU. On the 
+rising edge of the TRIGGER parameter, the CPU real time clock is read and the value stored in 
+the variable actual_StartTime, on each subsequent call to the block, the real time clock is 
+once again read and the actual_StartTime value is subtracted from this value to give the 
+current elapsed time, this is converted to seconds and is stored as the actual_RunTime value.
+
+The TRIGGER signal is simply used to start and stop the simulation. A rising edge on the TRIGGER 
+signal causes the current CPU time to be stored (actual_StartTime) and sets the elapsed time 
+to zero (actual_RunTime). The simulation will run whilever the TRIGGER signal is high (has a
+ value of 1), each time the module is called, the elapsed time (actual_RunTime) is updated 
+(see the previous paragraph) and the output calculated accordingly.
+
+If the TRIGGER signal is low (0), the simulation is instantly stopped and the OUTPUT parameter 
+is set to zero.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.2      The response calculation
+
+
+The calculation that is performed by the module is entirely dependent on the k_DampFactor 
+(referred to as ζ, the Greek letter Zeta, in the following equations).
+
+The calculations given in section 2.3 (and summarised below) use Greek characters for the 
+main variables, the calculations use various parameters and UDT variables that have plain
+English names, The association between these variables and the Greek nomenclature is given
+below.
+
+――――――――――――――――――――――――――――――――――――――――――――――――
+ζ &gt; 1        STABLE     over damped (no oscillations)       Equation (2.1)
+
+      ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ─ 1│ｅ           ║
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+――――――――――――――――――――――――――――――――――――――――――――――――
+ζ = 1     STABLE     critically damped (no oscillations)      Equation (2.2)
+
+      ╓           - ωt  ╖
+y(t) = K║x(t) ─ (1 ┼ ωt) ｅ  ║
+      ╙             ╜
+――――――――――――――――――――――――――――――――――――――――――――――――
+0 &lt; ζ &lt; 1  STABLE     under damped (decaying oscillations)     Equation (2.3)
+
+      ╓      - ζω t  ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ   │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)
+      ╙       └       √(1 ─ ζ²)       ┘╜
+――――――――――――――――――――――――――――――――――――――――――――――――
+ζ = 0     STABLE     undamped (constant oscillations)      Equation (2.4)
+
+      ╓       ╖
+y(t) = K║x(t) ─ COS (ωt) ║
+      ╙       ╜
+――――――――――――――――――――――――――――――――――――――――――――――――
+-1 &lt; ζ &lt; 0 UNSTABLE   under damped (inc. oscillations)         Equation (2.5)
+
+      ╓      | ζ | ω t ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ    │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)
+      ╙        └       √(1 ─ ζ²)       ┘╜
+――――――――――――――――――――――――――――――――――――――――――――――――
+ζ ≤ -1       UNSTABLE   over damped (asymptotic increase)      Equation (2.6)
+
+      ╓   1 ┌   ζ       ┐     ω [ | ζ | ─ √(ζ² ─ 1) ]t    1 ┌   ζ       ┐     ω [ | ζ | ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ┼ 1│ｅ              ║
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘               ╜
+――――――――――――――――――――――――――――――――――――――――――――――――
+
+Where:    x is the input signal,       parameter INPUT
+     y is the output response,    parameter OUTPUT
+     K   is the system gain    k_Gain
+     ζ is the damping factor    k_DampFactor
+     ω   is the natural frequency   k_NatFreq
+     Ω   is the damped frequency cal_DampFreq
+     t    is the elapsed time     actual_RunTime
+
+The module will determine which calculation to perform based entirely on the value of the 
+damping factor k_DampFactor (Greek symbol ζ) as shown above.
+
+Each of these calculations, while being somewhat complicated and convoluted, can all be 
+accommodated with the mathematical functions available to a Siemens Controller, see § 3.5.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.3      Status and informative signals
+
+
+The module produces various status signals that reflect the nature of the simulation:
+
+ DATA STRUCTURE      UT39152_Dy_DebugInst2Order
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION            TYPE   DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running        The simulation is running     Bool    1 = Simulation is running 
+                              0 = Simulation is stopped
+
+ status_Stopped       The simulation is stopped    Bool    1 = Simulation is stopped 
+                              0 = Simulation is running
+
+ status_Stable        Simulation response type     Bool    1 = Stable
+                is stable              1 = Unstable
+
+ status_OverDamp      Simulation response type:   Bool    1 = Stable, over damped 
+                stable and over damped         0 = No value
+
+ status_CritDamp     Simulation response type:   Bool    1 = Stable, critically damped
+                stable and critically damped        0 = No value
+
+ status_UnderDamp      Simulation response type:   Bool    1 = Stable, under damped
+                stable and under damped         0 = No value
+
+ status_Undamped     Simulation response type:   Bool    1 = Stable, undamped 
+                stable and undamped             0 = No value
+
+ status_USUnder      Simulation response type:   Bool    1 = Unstable, under damped
+                unstable and under damped     0 = No value
+
+ status_USOver         Simulation response type:   Bool    1 = Unstable, over damped
+                unstable and over damped       0 = No value
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The status_Running and status_Stopped are determined purely by the status of the TRIGGER 
+parameter, if this is set high (1), status_Running will be high and status_Stopped low. If  TRIGGER 
+parameter, if this is set low (0), status_Running will be low and status_Stopped high. The 
+status_Running and status_Stopped signals are always the inverse of each other.	 
+
+The six simulation response type signals are mutually exclusive, only one will be active if the 
+simulation is running. Whichever is active, is determined by the k_DampFactor (ζ in the equations) 
+as follows:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL          FUNCTION         OSCILLATING   STABLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_OverDamp     k_DampFactor &gt; 1      NO        YES
+ status_CritDamp     k_DampFactor = 1      NO        YES
+ status_UnderDamp   0 &lt; k_DampFactor &lt; 1   YES       YES
+ status_Undamped     k_DampFactor = 0      YES       YES
+ status_USUnder      –1 &lt; k_DampFactor &lt; 0      YES       NO
+ status_USOver     k_DampFactor ≤ –1      NO        NO
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+If the response is stable (k_DampFactor ≥ 0), status_Stable is set high (1), if the response is 
+unstable (k_DampFactor &lt; 0), status_Stable is set low (0).
+
+The module also produces some additional, informational, signals:
+
+ DATA STRUCTURE      UT39152_Dy_DebugInst2Order
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION            TYPE   DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Osc         The response is oscillatory   Bool    1 = Oscillating response 
+                              0 = non-oscillating response
+
+ status_OscFreqRS      The frequency of oscillation  Real Oscillating frequency (rad/s)
+                in radians per second 
+                (ω or Ω in the § 3.2)
+
+ status_OscFreqHz      The frequency of oscillation  Real Oscillating frequency (Hz)
+                in Hertz
+                (ω or Ω in the § 3.2)
+
+ status_Period        The period of oscillation     Real Period of oscillation (s)
+                in seconds
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ 
+If the response is oscillatory in nature (i.e. –1 &lt; k_DampFactor &lt; 1), the status_Osc signal will be 
+set high (1), if the response is non-oscillatory in nature, status_Osc signal will be set low (0).
+
+For oscillatory responses, the frequency of the oscillation is specified in radians per second in 
+the signal status_OscFreqRS, and in Hertz in the status_OscFreqHz  signal. 
+
+For undamped systems, the frequency is the equivalent to k_NatFreq (ω in the calculations 
+above), for under damped systems this set to cal_DampFreq (Ω in the calculations above).
+
+Note:    cal_DampFreq is a calculated value, calculated internally by the module.
+
+The period of oscillation, is given in status_Period and is always in units of seconds.
+
+If the system is non-oscillatory, the signals status_OscFreqRS, status_OscFreqHz  and 
+status_Period are all set to zero.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.4     Understanding the responses
+
+
+Section 2.3 gives graphical examples of the six types of 2nd order systems responses along with 
+the calculation used to generate each type of response (summarised in § 3.2).
+
+In all the examples of section 2.3, the system gain (k_Gain, K in the calculations) is set to 1, 
+giving a common scale to the output responses. Setting a different value for k_Gain simply scales 
+the results accordingly.
+
+Various rules of thumb for each of the six types of responses are given in section 2.3, these are 
+summarised below and where calculated by the module, the associated variable in the 
+DYNAMIC_DATA parameter is specified.
+
+The following is a full list of the variables associated with such calculated values:
+
+Note:    The following calculated value variables are not applicable to all response types, 
+     where a calculated value is not applicable to a particular response, it will be set to zero.
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               RANGE       ACCESSED VIA
+ ――――――――――――――――――――――――――――――――――――――――――
+ cal_DampFreq        Damped (actual) frequency of      +ve number      UT39152
+           the system (rad/s).           calculated by
+           Ω in the calculations below        the module
+
+ cal_DampFreqHZ   Damped (actual) frequency of      +ve number      UT39152
+           the system (Hz).                calculated by
+           f in the calculations below          the module
+
+ cal_NatPeriod      Natural period of  oscillation        +ve number      UT39152
+           in seconds (peak to peak).         calculated by
+           Tn in the calculations below       the module
+
+ cal_DampPeriod    Damped period of  oscillation      +ve number      UT39152
+           in seconds (peak to peak).         calculated by
+           Td in the calculations below       the module
+
+
+ cal_Time63%       Time to reach 63% of steady         +ve number      UT39152
+           state value (seconds)         calculated by
+           T63 in the calculations below       the module
+
+ cal_TimeSteady      Time to reach the steady         +ve number      UT39152
+           state value (seconds)         calculated by
+           TSS in the calculations below       the module
+
+ cal_PeakValue     Peak output value            Unrestricted     UT39152
+           Ypk in the calculations below
+
+ cal_TimePeak      Time to reach the peak         +ve number      UT39152
+           output value (seconds)         calculated by
+           Tpk in the calculations below        the module
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.1     Over damped, slow response no overshoot             ζ &gt; 1
+
+
+CALCULATION:
+
+      ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ─ 1│ｅ           ║
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+Note:
+   •   A lower damping factor  ζ gives a faster response
+   •   A higher natural frequency ω gives a faster response
+
+
+ ――   ANCILIARY  CALCULATIONS WITH UDT SIGNALS:   ――――――――――――――――――
+ DESCRIPTION                 CALCULATION         SIGNAL (UT39152)
+ ――――――――――――――――――――――――――――――――――――――――――
+                                   1
+ Time to 63% of steady state value (s)     T63 = ----------------------------------     cal_Time63%
+                            ω [ ζ ─ √(ζ² ─ 1) ]
+
+                                   4
+ Time to 98% of steady state value(s)   TSS = ----------------------------------     cal_TimeSteady
+                            ω [ ζ ─ √(ζ² ─ 1) ]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ The following variables are not used in this type of response and are set to zero:
+    cal_DampFreq
+    cal_DampFreqHZ
+    cal_NatPeriod
+    cal_DampPeriod
+    cal_PeakValue
+    cal_TimePeak
+
+
+ ――   OTHER ANCILIARY  CALCULATIONS WITHOUT UDT SIGNALS:   ―――――――――――――
+
+                                         ╓      - ω [ ζ ┼ √(ζ² ─ 1) ]t  ╖
+ Approx. first order response (ζ &gt; 5)     y(t) = K║x(t) ─ ｅ         ║
+                                         ╙                ╜ 
+ ―――――――――――――――――――――――――――――――――――――――――― 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.2     Critically damped, fastest response without overshoot        ζ = 1
+
+
+CALCULATION:
+
+      ╓           - ωt  ╖
+y(t) = K║x(t) ─ (1 ┼ ωt) ｅ  ║
+      ╙             ╜
+Note:
+   •   A higher natural frequency ω gives a faster response
+
+
+ ――   ANCILIARY  CALCULATIONS WITH UDT SIGNALS:   ――――――――――――――――――
+ DESCRIPTION                 CALCULATION         SIGNAL (UT39152)
+ ――――――――――――――――――――――――――――――――――――――――――
+                         2
+ Time to 63% of steady state value (s)     T63 = ----              cal_Time63%
+                           ω 
+
+                         4
+ Time to 98% of steady state value (s)     TSS = ----              cal_TimeSteady
+                           ω  
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ The following variables are not used in this type of response and are set to zero:
+    cal_DampFreq
+    cal_DampFreqHZ
+    cal_NatPeriod
+    cal_DampPeriod
+    cal_PeakValue
+    cal_TimePeak
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.3     Under damped, decreasing oscillations              0 &lt; ζ &lt; 1
+
+
+CALCULATION:
+
+      ╓      - ζω t  ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ   │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)
+      ╙       └       √(1 ─ ζ²)       ┘╜
+Note:
+   •   A lower damping factor  ζ gives a faster response and higher frequency
+   •   A higher natural frequency ω gives a faster response and higher frequency
+
+
+ ――   ANCILIARY  CALCULATIONS WITH UDT SIGNALS:   ――――――――――――――――――
+ DESCRIPTION                 CALCULATION         SIGNAL (UT39152)
+ ――――――――――――――――――――――――――――――――――――――――――
+ Damped frequency of oscillation (rad/s)    Ω =  ω √(1 ─ ζ²)         cal_DampFreq
+
+
+                       Ω
+ Damped frequency of oscillation (Hz)     f =  ------              cal_DampFreqHZ
+                         2π
+
+                         2π    1
+ Damped (actual) period of oscillation (s)    Td =  ------ = ------          cal_DampPeriod
+                       Ω        f
+
+                        - ζ(ω / Ω) 
+ Peak overshoot value            Ypk = K ｅ                    cal_PeakValue
+
+
+                       π    Td
+ Time to peak value (s)           Tpk =  ------ = ------          cal_TimePeak
+                       Ω       2
+
+                          4
+ Time to 98% of steady state value (s)     TSS = ------            cal_TimeSteady
+                            ζω 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ The following variables are not used in this type of response and are set to zero:
+    cal_Time63%
+    cal_NatPeriod
+
+
+ ――   OTHER ANCILIARY  CALCULATIONS WITHOUT UDT SIGNALS:   ―――――――――――――
+                         - ζωt 
+ Oscillation decay curve             = 1 ─ ｅ
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.4     Undamped, oscillates with frequency ω              ζ = 0
+
+
+CALCULATION:
+
+      ╓       ╖
+y(t) = K║x(t) ─ COS (ωt) ║
+      ╙       ╜
+Note:
+   •   A higher natural frequency ω gives a higher frequency
+
+
+ ――   ANCILIARY  CALCULATIONS WITH UDT SIGNALS:   ――――――――――――――――――
+ DESCRIPTION                 CALCULATION         SIGNAL (UT39152)
+ ――――――――――――――――――――――――――――――――――――――――――
+                       ω 
+ Frequency of oscillation (Hz)           f =  ------           status_OscFreqHz
+                         2π
+
+                         2π    1
+ Natural (actual) period of oscillation (s)   Tn =  ------ = ------          cal_NatPeriod
+                       ω         f
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ 
+ The following variables are not used in this type of response and are set to zero:
+    cal_DampFreq
+    cal_DampFreqHZ
+    cal_DampPeriod
+    cal_Time63%
+    cal_TimeSteady
+    cal_PeakValue
+    cal_TimePeak
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.5     Unstable, oscillations of increasing amplitude           -1 &lt; ζ &lt; 0
+
+
+CALCULATION:
+
+      ╓      | ζ | ω t ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ    │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)
+      ╙        └       √(1 ─ ζ²)       ┘╜
+Note:
+   •   A lower (incresingly negative) damping factor  ζ gives a faster response and higher frequency
+   •   A higher natural frequency ω gives a higher frequency
+
+Note:    The magnitude of oscillation increases exponentially and is constrained only by the 
+     limits of the Controller, this will result in a cap of the OUTPUT value at ±3.4 × 10±38.
+
+
+ ――   ANCILIARY  CALCULATIONS WITH UDT SIGNALS:   ――――――――――――――――――
+ DESCRIPTION                 CALCULATION         SIGNAL (UT39152)
+ ――――――――――――――――――――――――――――――――――――――――――
+ Damped frequency of oscillation (rad/s)    Ω =  ω √(1 ─ ζ²)         cal_DampFreq
+
+
+                       Ω
+ Damped frequency of oscillation (Hz)     f =  ------              cal_DampFreqHZ
+                         2π
+
+                         2π    1
+ Damped (actual) period of oscillation (s)    Td =  ------ = ------          cal_DampPeriod
+                       Ω        f
+
+ ――――――――――――――――――――――――――――――――――――――――――
+
+ The following variables are not used in this type of response and are set to zero:
+    cal_NatPeriod
+    cal_Time63%
+    cal_TimeSteady
+    cal_PeakValue
+    cal_TimePeak
+
+
+ ――   OTHER ANCILIARY  CALCULATIONS WITHOUT UDT SIGNALS:   ―――――――――――――
+                         +| ζ | ωt 
+ Oscillation decay curve             = 1 ─ ｅ
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.6     Unstable, unbounded asymptotic increase              ζ ≤ -1
+
+
+CALCULATION:
+
+      ╓   1 ┌   ζ       ┐     ω [ | ζ | ─ √(ζ² ─ 1) ]t    1 ┌   ζ       ┐     ω [ | ζ | ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ┼ 1│ｅ              ║
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘               ╜
+
+Note:
+   •   A lower (incresingly negative) damping factor ζ gives a faster response
+   •   A higher natural frequency ω gives a faster response
+
+
+Note:    The magnitude of oscillation increases exponentially and is constrained only by the 
+     limits of the Controller, this will result in a cap of the OUTPUT value at ±3.4 × 10±38.
+
+The following variables are not used in this type of response and are set to zero:
+    cal_DampFreq
+    cal_DampFreqHZ
+    cal_NatPeriod
+    cal_DampPeriod
+    cal_Time63%
+    cal_TimeSteady
+    cal_PeakValue
+    cal_TimePeak</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Section 3 to 3.2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.5     Expressing the calculations in Controller operations
+
+The calculations above must be rendered in a form suitable for the Simatic S7-1500 Controller, 
+using the mathematical operations available to that Controller, these are listed in Table 2.1.
+
+To perform the calculations in the Controller it will be necessary to use partial calculation to 
+hold separate components of the overall calculation and combine these to produce the final 
+result. 
+
+The following sections breakdown each of the response calculations into these partial 
+calculations and demonstrate how these are then combined to provide a final result that is 
+compatible with the Controller mathematical operations and Controller notations.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.1     Over damped, slow response no overshoot             ζ &gt; 1
+
+
+CALCULATION:
+
+      ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ─ 1│ｅ           ║
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = SQRT ( SQR (ζ) - 1)         = √(ζ² ─ 1)
+
+                                 ζ
+ cal_02 = ζ ÷ cal_01              = -----------------
+                         √(ζ² ─ 1)
+
+ cal_03 = ζ + cal_01              = ζ ┼ √(ζ² ─ 1)
+
+ cal_04 = -1 × ω × t × cal_03           = - ω [ ζ ┼ √(ζ² ─ 1) ]t
+
+                             -ω [ ζ ┼ √(ζ² ─ 1) ]t 
+ cal_05 = EXP( cal_04 )              =ｅ
+
+ cal_06 = ζ - cal_01               = ζ ─ √(ζ² ─ 1)
+
+ cal_07 = -1 × ω × t × cal_06           = - ω [ ζ ─ √(ζ² ─ 1) ]t
+
+                           -ω [ ζ ─ √(ζ² ─ 1) ]t 
+ cal_08 = EXP( cal_07 )              =ｅ
+
+                          1 ┌   ζ       ┐
+ cal_09 = (cal_02 - 1) × 0.5           = -- │------------------ ─ 1│
+                          2 └ √(ζ² ─ 1)     ┘
+
+                          1 ┌   ζ       ┐
+ cal_10 = (cal_02 + 1) × 0.5            = -- │------------------ ┼ 1│
+                          2 └ √(ζ² ─ 1)     ┘
+
+                          1 ┌   ζ       ┐   -ω [ ζ ┼ √(ζ² ─ 1) ]t
+ cal_11 = cal_09 × cal_05             = -- │------------------ ─ 1│ｅ
+                          2 └ √(ζ² ─ 1)     ┘
+
+                          1 ┌   ζ       ┐   -ω [ ζ ─ √(ζ² ─ 1) ]t
+ cal_12 = cal_10 × cal_08             = -- │------------------ ┼ 1│ｅ
+                          2 └ √(ζ² ─ 1)     ┘
+
+                         ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+ cal_13 = INPUT - cal_12 + cal_11        = ║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ─ 1│ｅ           ║
+                         ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+
+                            ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+ OUTPUT  = K × cal_13             =  K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ─ 1│ｅ           ║
+                            ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.2     Critically damped, fastest response without overshoot        ζ = 1
+
+
+CALCULATION:
+
+      ╓           - ωt  ╖
+y(t) = K║x(t) ─ (1 ┼ ωt) ｅ  ║
+      ╙             ╜
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = -1 × ω × t                = - ωt  
+
+                         - ωt
+ cal_02 = EXP( cal_01 )              =ｅ
+
+ cal_03 = 1 - cal_01              = 1 ─ (-ωt) = 1 ┼ ωt
+
+                             - ωt
+ cal_04 = cal_03 × cal_02            = (1 ┼ ωt) ｅ
+
+                                - ωt
+ cal_05 = INPUT  - cal_04            = x(t) ─ (1 ┼ ωt) ｅ
+
+                            ╓           - ωt  ╖
+ OUTPUT  = K × cal_05             =  K║x(t) ─ (1 ┼ ωt) ｅ  ║
+                            ╙             ╜
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.3     Under damped, decreasing oscillations              0 &lt; ζ &lt; 1
+
+
+CALCULATION:
+
+      ╓      - ζω t  ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ   │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)
+      ╙       └       √(1 ─ ζ²)       ┘╜
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = SQRT ( 1 - SQR (ζ))         = √(1 ─ ζ²)
+
+                                 ζ
+ cal_02 = ζ ÷ cal_01              = -----------------
+                         √(1 ─ ζ²)
+
+ cal_03 = ω × cal_01                = ω √(1 ─ ζ²) = Ω
+
+ cal_04 = t × cal_03              = Ωt
+
+ cal_05 = COS( cal_04 )             = COS (Ωt)
+
+ cal_06 = SIN( cal_04 )               = SIN (Ωt)
+
+ cal_07 = -1 × ζ × ω × t             = - ζω t 
+
+                         - ζω t 
+ cal_08 = EXP( cal_07 )              =ｅ
+
+                         - ζω t 
+ cal_09 = cal_08 × cal_05            =ｅ         COS (Ωt)
+
+ 
+                                 ζ      - ζω t
+ cal_10 = cal_02 × cal_08 × cal_06        = ----------------- ｅ         SIN (Ωt)
+                         √(1 ─ ζ²)
+
+                           ╓      - ζω t          ζ     - ζω t            ╖  ╓      - ζω t  ┌        ζ            ┐╖
+ cal_11 = INPUT - cal_09 - cal_10          =║x(t) ─ ｅ   COS (Ωt) ─ ------------------ ｅ   SIN (Ωt)║=║x(t) ─ ｅ   │COS (Ωt) ┼ ------------------ SIN (Ωt)│║
+                           ╙              √(1 ─ ζ²)              ╜  ╙       └       √(1 ─ ζ²)       ┘╜
+
+                            ╓      - ζω t  ┌        ζ            ┐╖
+ OUTPUT  = K × cal_11             =  K║x(t) ─ ｅ   │COS (Ωt) ┼ ------------------ SIN (Ωt)│║
+                            ╙       └       √(1 ─ ζ²)       ┘╜
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.4     Undamped, oscillates with frequency ω              ζ = 0
+
+
+CALCULATION:
+
+      ╓       ╖
+y(t) = K║x(t) ─ COS (ωt) ║
+      ╙       ╜
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = ω × t                  = ωt
+
+ cal_02 = COS( cal_01 )             = COS (ωt)
+
+ cal_03 = INPUT - cal_02             = x(t) ─ COS (ωt) 
+
+ OUTPUT  = K × cal_03             =  K [ x(t) ─ COS (ωt) ]
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.5     Unstable, oscillations of increasing amplitude           -1 &lt; ζ &lt; 0
+
+
+CALCULATION:
+
+      ╓      | ζ | ω t ┌        ζ            ┐╖
+y(t) = K║x(t) ─ ｅ    │COS (Ωt) ┼ ------------------ SIN (Ωt)│║  where Ω =  ω √(1 ─ ζ²)
+      ╙          └       √(1 ─ ζ²)       ┘╜
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = SQRT ( 1 - SQR (ζ))         = √(1 ─ ζ²)
+
+                                 ζ
+ cal_02 = ζ ÷ cal_01              = -----------------
+                         √(1 ─ ζ²)
+
+ cal_03 = ω × cal_01                = ω √(1 ─ ζ²) = Ω
+
+ cal_04 = t × cal_03              = Ωt
+
+ cal_05 = COS( cal_04 )             = COS (Ωt)
+
+ cal_06 = SIN( cal_04 )               = SIN (Ωt)
+
+ cal_07 = ABS(ζ) × ω × t              =  | ζ | ω t 
+
+                          | ζ | ω t 
+ cal_08 = EXP( cal_07 )              =ｅ
+
+                          | ζ | ω t 
+ cal_09 = cal_08 × cal_05            =ｅ         COS (Ωt)
+
+ 
+                                 ζ      | ζ | ω t
+ cal_10 = cal_02 × cal_08 × cal_06        = ----------------- ｅ         SIN (Ωt)
+                         √(1 ─ ζ²)
+
+                           ╓       | ζ | ω t         ζ      | ζ | ω t         ╖  ╓      | ζ | ω t ┌        ζ            ┐╖
+ cal_11 = INPUT - cal_09 - cal_10          =║x(t) ─ ｅ   COS (Ωt) ─ ------------------ ｅ   SIN (Ωt)║=║x(t) ─ ｅ    │COS (Ωt) ┼ ------------------ SIN (Ωt)│║
+                           ╙              √(1 ─ ζ²)              ╜  ╙        └       √(1 ─ ζ²)       ┘╜
+
+                            ╓      | ζ | ω t ┌        ζ            ┐╖
+ OUTPUT  = K × cal_11             =  K║x(t) ─ ｅ    │COS (Ωt) ┼ ------------------ SIN (Ωt)│║
+                            ╙          └       √(1 ─ ζ²)       ┘╜
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.6     Unstable, unbounded asymptotic increase              ζ ≤ -1
+
+
+CALCULATION:
+
+      ╓   1 ┌   ζ       ┐     ω [ | ζ | ─ √(ζ² ─ 1) ]t    1 ┌   ζ       ┐     ω [ | ζ | ┼ √(ζ² ─ 1) ]t ╖
+y(t) = K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ┼ 1│ｅ              ║
+      ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘               ╜
+
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = SQRT ( SQR (ζ) - 1)         = √(ζ² ─ 1)
+
+                                 ζ
+ cal_02 = ζ ÷ cal_01              = -----------------
+                         √(ζ² ─ 1)
+
+ cal_03 = ABS (ζ) + cal_01            = | ζ | ┼ √(ζ² ─ 1)
+
+ cal_04 = ω × t × cal_03             = ω [ | ζ | ┼ √(ζ² ─ 1) ]t
+
+                              ω [ | ζ | ┼ √(ζ² ─ 1) ]t 
+ cal_05 = EXP( cal_04 )              =ｅ
+
+ cal_06 = ABS (ζ) - cal_01             =  | ζ | ─ √(ζ² ─ 1)
+
+ cal_07 = ω × t × cal_06             = ω [  | ζ | ─ √(ζ² ─ 1) ]t
+
+                              ω [  | ζ | ─ √(ζ² ─ 1) ]t 
+ cal_08 = EXP( cal_07 )              =ｅ
+
+                          1 ┌   ζ       ┐
+ cal_09 = (cal_02 + 1) × 0.5            = -- │------------------ ┼ 1│
+                          2 └ √(ζ² ─ 1)     ┘
+
+                          1 ┌   ζ       ┐   -ω [ ζ ─ √(ζ² ─ 1) ]t
+ cal_10 = cal_09 × cal_08             = -- │------------------ ┼ 1│ｅ
+                          2 └ √(ζ² ─ 1)     ┘
+
+                          1 ┌   ζ       ┐   -ω [ ζ ┼ √(ζ² ─ 1) ]t
+ cal_11 = cal_09 × cal_05             = -- │------------------ ┼ 1│ｅ
+                          2 └ √(ζ² ─ 1)     ┘
+
+                         ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+ cal_12 = INPUT - cal_10 + cal_11        = ║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ┼ 1│ｅ           ║
+                         ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+
+                            ╓   1 ┌   ζ       ┐   - ω [ ζ ─ √(ζ² ─ 1) ]t       1 ┌   ζ       ┐   - ω [ ζ ┼ √(ζ² ─ 1) ]t ╖
+ OUTPUT  = K × cal_12             =  K║x(t) ─ -- │------------------ ┼ 1│ｅ         ┼ -- │------------------ ┼ 1│ｅ           ║
+                            ╙   2 └ √(ζ² ─ 1)     ┘            2 └ √(ζ² ─ 1)     ┘            ╜
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.6     Operating modes
+
+
+This block FC19152_StdDebugInst2Order supports manual and automatic operating modes, the 
+default mode is automatic.
+
+The module can be switched between automatic and manual modes with the 
+mode_AutMan signal:
+
+ DATA STRUCTURE    UT39152_Dy_DebugInst2Order
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ Mode_AutMan     Specifies the operating mode of     Bool  1 = automatic mode
+           the simulation                 0 = manual mode
+
+ Mode_Time       Specifies the manual time value of       Real     Elapsed time
+           the simulation in seconds           in seconds
+
+ status_Aut      The simulation is in automatic mode   Bool  1 = auto mode
+                                 0 = no in auto
+
+ status_Man       The simulation is in manual mode    Bool  1 = manual mode
+                                 0 = no in manual
+ ――――――――――――――――――――――――――――――――――――――――――  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.6.1    Automatic mode
+
+
+By default the module will be in automatic mode. 
+
+In automatic mode, if the simulation is active (TRIGGER = 1), the module carries out the relevant 
+calculation (listed in § 3.2) depending on the value of the damping factor (k_DampFactor) each 
+time the module is called. The module calculates the elapsed time based on the current CPU 
+time when the module was called, compared with the CPU time when the simulation was 
+started (rising edge of TRIGGER) and stored in actual_StartTime.
+
+In automatic mode, a real time simulation occurs, generating responses similar to those shown 
+in the plots of § 2.3.  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.6.2    Manual mode
+
+
+In manual mode, if the simulation is active (TRIGGER = 1), the module carries out the relevant 
+calculation (listed in § 3.2) depending on the value of the damping factor (k_DampFactor) each 
+time the module is called; in exactly the same way as automatic mode.
+
+The difference with manual mode, is that the time used in the calculation must be uniquely 
+specified, the elapsed time is not calculated and a manual time value must be provided.
+
+The manual time is given in the variable mode_ManTime and is specified in seconds.
+
+If mode mode_ManTime remains constant between module calls, the module will return the 
+same OUTPUT value each time (assuming all other signals remain unchanged).
+
+Manual mode allows the module to calculate the correct response for a particular and exact time, 
+and is not dependent on cycle times or other factors that may affect when the module is called.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.7      Symbols, block icons and faceplates
+
+There is no supervisory system interface for this block. It is a debug simulation module and as
+such has no  graphical symbol, block icon or faceplate.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Section 3.5 to 3.5</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+
+The following parameters are associated with the block:
+
+ 
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ TRIGGER       Activates the simulation (the simulation will run     Bool      In
+          whilever this signal is high), the elapsed time 
+          is measured from the rising edge of this signal
+
+ INPUT        The input time function, x(t) in the calculations     Real      In
+
+ DYNAMIC_DATA      Data structure that holds the live data for the       UT39152    InOut
+          simulation (damping factor, natural frequency, 
+          system gain, elapsed time &amp;c.)
+
+ OUTPUT       The output time response, y(t) in the calculations   Real      Out
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01001
+ UT01001_St_SysLicence           Licence information for this block  See FC01001
+ UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
+
+ UT39152_Dy_DebugInst2Orderl       Dynamic data storage, contains live data, such as 
+                    calculation variables, elapsed time, oscillation 
+                    frequency and status signals
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.2      UT39152_Dy_DebugInst2Order
+
+The static data structure for an isolating valve.
+
+
+
+ UT39152_Dy_DebugInst2Order (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ k_Gain             CONSTANT — Simulation system gain        Real
+ k_NatFreq          CONSTANT — Simulation natural frequency (rad/s)   Real
+ k_DampFactor        CONSTANT — Simulation damping factor        Real
+ status_Running      STATUS — Simulation is running  Bool
+                     (1 = running, 0 = stopped)
+ status_Stopped        STATUS — Simulation is stopped (not running)    Bool
+                     (1 = stopped, 0 = running)
+ status_Stable         STATUS — Simulation response type is stable     Bool
+                     (1 = stable, 0 = unstable)
+ status_OverDamp       STATUS — Response is stable/over damped      Bool
+                     (1 = stable, over damped)
+ status_CritDamp       STATUS — Response is stable/critically damped     Bool
+                     (1 = stable, critically damped)
+ status_UnderDamp     STATUS — Response is stable/under damped      Bool
+                     (1 = stable, under damped)
+ status_Undamped      STATUS — Response is stable/undamped       Bool
+                     (1 = stable, undamped)
+ status_USUnder        STATUS — Response is unstable/under damped    Bool
+                     (1 = unstable, under damped)
+ status_USOver       STATUS — Response is unstable/over damped    Bool
+                     (1 = unstable, over damped)
+ status_Osc          STATUS — Oscillatory response             Real
+                     (1 = osc. response, 0 = non-osc.)
+ status_OscFreqRS       STATUS — Frequency of oscillation, zero if       Real
+                     non-oscillatory (rad/s)
+ status_OscFreqHz       STATUS — Frequency of oscillation, zero if       Real
+                     non-oscillatory (Hz)
+ status_Period         STATUS — Period of oscillation, zero if           Real
+                     non-oscillatory (s)
+ status_Aut           STATUS — Simulation is in automatic mode      Bool
+                     (1 = automatic, 0 = manual)
+ status_Man          STATUS — Simulation is in manual mode        Bool
+                     (1 = manual, 0 = automatic)
+ cal_PeakValue          CALC — Peak output value             Real
+ cal_NatPeriod        CALC — Period of natural oscillations (s)       Real
+                   zero for non-oscillatory response
+ cal_DampFreq       CALC — Damped frequency of the system (rad/s)    Real
+ cal_DampFreqHz         CALC — Damped frequency of the system (Hz)     Real
+ cal_DampPeriod       CALC — Period of damped oscillations (s)       Real
+                   zero for non-oscillatory response
+ cal_TimeSteady        CALC — Time to reach steady state (s)       Real
+                   zero for unstable response
+ cal_Time63%          CALC — Time to reach 63% of steady state (s)      Real
+                   zero for unstable response
+ cal_TimePeak            CALC — Time to reach the peak ouptut value (s)    Real
+ mode_AutMan       MODE — Automatic/manual mode selection     Bool
+                     (1 = auto mode, 0 = manual mode)
+ mode_ManTime       MODE — Manual mode time value (s)        Real
+ actual_StartTime         ACTUAL — CPU time when simulation started       Real
+ actual_RunTime        ACTUAL — Elapsed time since the            Real
+                     simulation started (s)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+There is no constant data.
+
+The following temporary data is used:
+
+ Temporary (local) data
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ cal_01          Partial calculation see § 3.5 for details      Real
+ cal_02          Partial calculation see § 3.5 for details      Real
+ cal_03          Partial calculation see § 3.5 for details      Real
+ cal_04          Partial calculation see § 3.5 for details      Real
+ cal_05          Partial calculation see § 3.5 for details      Real
+ cal_06          Partial calculation see § 3.5 for details      Real
+ cal_07          Partial calculation see § 3.5 for details      Real
+ cal_08          Partial calculation see § 3.5 for details      Real
+ cal_09          Partial calculation see § 3.5 for details      Real
+ cal_10          Partial calculation see § 3.5 for details      Real
+ cal_11          Partial calculation see § 3.5 for details      Real
+ cal_12          Partial calculation see § 3.5 for details      Real
+ cal_13          Partial calculation see § 3.5 for details      Real
+ wrkInt           Working storage area (integer)          Int
+ wrkDInt           Working storage area (double integer)         DInt
+ wrkLInt            Working storage area (long integer)        LInt
+ wrkLTime           Working storage area (long time)         LT
+ wrkDTL            Working storage area (DateTime long)      DTL
+ wrkReal           Working storage (Real)             Real
+ ―――――――――――――――――――――――――――――――――――――――――― █ █ █
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS
+
+There are no PAL block calls from within this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     ASSOCIATED BLOCKS
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+
+The following calls are made to system blocks:
+
+
+ System block calls
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+There are no special system data types used.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     SPECIAL PROPERTIES AND REQUIREMENTS
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.1   Block optimisation
+
+
+Block optimisation is ACTIVE for this block
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+10.2   Calling requirements
+
+
+There are no special calling requirements for this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+11.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC19512:
+
+                        ┌─────────────
+     ───────────────────┤ FC19512
+                        ├───────────────┤
+   "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS            
+                        │               OUTPUT ├─  "wrk_Real"
+                        │               │
+                                                       "1.0" ─┤ INPUT                     │
+                        │               │
+                  %M999.0     │               │
+                   "SIM01_TRIG" ─┤ TRIGGER                     │
+                        │               │
+                        │
+      "DB39152_Dy_DebugInst2Order".S001 ─┤ DYNAMIC_DATA
+                        │
+                        │
+                                        │
+                               ─────────┘
+
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+   </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 4 to 11</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC19512'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'000.101'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2022.01.12'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module.
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2022.01.12    000.101   D0009A-000.101   D0009 N/A     D0009A   M. Gledhill
+                       FC19512 Block created — Comments added
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="27" DisabledENO="true" />
+    <Part Name="S_Move" UId="28" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="26" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="27" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Standard Module [Debug] — Second Order Response Simulation </Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
