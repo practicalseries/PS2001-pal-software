@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-03-04T11:27:50.7049096Z</Created>
+    <Created>2022-03-04T12:00:39.2396788Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Debug</HeaderFamily>
       <HeaderName>StdDebugInst2Order</HeaderName>
-      <HeaderVersion>0.8</HeaderVersion>
+      <HeaderVersion>1.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -407,8 +407,8 @@ The module also has a manual mode that can simulate an output at any specific ti
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME        150.17 μs¹    (Note: = 4.6µs if TRIGGER is FALSE)
- LOAD MEMORY       87.92 kB   (90025 bytes)
- WORK MEMORY           2.93 kB  (3003 bytes)
+ LOAD MEMORY       88.27 kB   (90388 bytes)
+ WORK MEMORY           2.94 kB  (3011 bytes)
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
 
@@ -2748,7 +2748,7 @@ The following shows a typical deployment of FC19512:
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.801'</ConstantValue>
+        <ConstantValue>'001.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2760,7 +2760,7 @@ The following shows a typical deployment of FC19512:
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.02.18'</ConstantValue>
+        <ConstantValue>'2022.03.04'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2870,6 +2870,13 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.03.04    001.000   D0010      D0009 D0010  None    M. Gledhill
+                       FC19512 — RELEASED FOR USE
+                         Merge back to master branch
+
+ 2022.03.04    001.000   D0008A-001.000   D0009 N/A     D0009A   M. Gledhill
+                       FC119512 — Post test RELEASED FOR USE
+
  2022.02.18    000.801   D0009A-000.801   D0009 N/A     D0009A   M. Gledhill
                        FC19512 Released for test
 
