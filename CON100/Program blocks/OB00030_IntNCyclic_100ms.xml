@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-02-18T13:17:56.4029765Z</Created>
+    <Created>2022-03-04T10:52:05.6814005Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -88,11 +88,10 @@
         <Component Name="SIM001_TRIGGER" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="23">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>1.0</ConstantValue>
-      </Constant>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="SIM001_INPUT" />
+      </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="24">
       <Symbol>
