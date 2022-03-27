@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-03-04T13:12:16.4951194Z</Created>
+    <Created>2022-03-27T15:45:31.2800855Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -36,8 +36,8 @@
       <AutoNumber>true</AutoNumber>
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Interrupt</HeaderFamily>
-      <HeaderName>IntNMainProgram</HeaderName>
-      <HeaderVersion>0.0.0.0</HeaderVersion>
+      <HeaderName>IntINrmMainProgram</HeaderName>
+      <HeaderVersion>0.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="Initial_Call" Datatype="Bool" Accessibility="Public" Informative="true">
@@ -81,7 +81,7 @@
 </Sections></Interface>
       <IsIECCheckEnabled>false</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
-      <Name>OB00001_IntNMainProgram</Name>
+      <Name>OB00001_IntINrmMainProgram</Name>
       <Number>1</Number>
       <ProgrammingLanguage>LAD</ProgrammingLanguage>
       <SecondaryType>ProgramCycle</SecondaryType>
@@ -93,10 +93,10 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
                   ———— ◆ ————
- FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
- FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
@@ -138,7 +138,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0010
+TIA PROJECT NAME:    PS2001-PAL-D0010A-000-101
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -221,6 +221,8 @@ IF YOU DON’T UNDERSTAND IT, DON’T USE IT. IF YOU DO USE IT, YOU DO SO AT YOU
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
+
+
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 DOCUMENT REFERENCES
 
@@ -242,12 +244,17 @@ DOCUMENT REFERENCES
  013  PS2001-5-2302-011   Software Control and Mechanism (SCM)
  014  PS2001-5-7111-001   User Guide (UG)
  ――――――――――――――――――――――――――――――――――――――――――
+ Note:   Where a block references another document not listed above (a calculation sheet
+     for example), that document will be referenced separately in section 1.1 of the 
+     block description for the block in question.
+
 
 A full list of all project documentation is available here:
 
      https://practicalseries.com/2001-pal/21-project/01-00-docs.html
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -275,12 +282,13 @@ COMPLETED MODULES
  FC19512 StdDebugInst2Order    001.000   None           UT 39512   001.000
                  2022-03-04                  DB39512   001.000
  ――――――――――――――――――――――――――――――――――――――――――
- FC61000 DocGenExample     001.101   None           None 
-                 2021.05.10   None           None          
+ FC61000 DocGenExample     001.105   None           None 
+                 2022.03.24   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
  See Software Module Register [Ref. 012] for full details
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
 
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -317,7 +325,6 @@ You can reach the author by email here:   │  mg@practicalseries.com  │
 Questions, corrections, constructive criticism and complaints (polite ones) are invited.
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -356,8 +363,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
         <ConstantValue>'PS2001'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="23">
+    <Access Scope="GlobalVariable" UId="23">
       <Symbol>
+        <Component Name="DB21001_Dy_SysGlobalData" />
         <Component Name="revInfo" />
         <Component Name="REV_BLOCK" />
       </Symbol>
@@ -365,11 +373,12 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D00010'</ConstantValue>
+        <ConstantValue>'D00010A-000.101'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="25">
+    <Access Scope="GlobalVariable" UId="25">
       <Symbol>
+        <Component Name="DB21001_Dy_SysGlobalData" />
         <Component Name="revInfo" />
         <Component Name="REV_NUMBER" />
       </Symbol>
@@ -377,11 +386,12 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.03.04'</ConstantValue>
+        <ConstantValue>'2022.03.27'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="27">
+    <Access Scope="GlobalVariable" UId="27">
       <Symbol>
+        <Component Name="DB21001_Dy_SysGlobalData" />
         <Component Name="revInfo" />
         <Component Name="REV_DATE" />
       </Symbol>
@@ -392,8 +402,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
         <ConstantValue>'M. Gledhill'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="29">
+    <Access Scope="GlobalVariable" UId="29">
       <Symbol>
+        <Component Name="DB21001_Dy_SysGlobalData" />
         <Component Name="revInfo" />
         <Component Name="REV_AUTHOR" />
       </Symbol>
@@ -467,6 +478,10 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
                   <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 MODIFICATION HISTORY
 
+The revision data herein contains the current revision of the whole software project 
+(rather than of a particular block). The whole project is issued at a particular release and this is 
+independent of individual module revisions.
+
 The revision data shown here, in the network comments, contains additional information 
 reflecting the software development workflow under the version control system (VCS) employed 
 to track all software changes.
@@ -479,12 +494,15 @@ hosting system. The software in its entirety is available in the GitHub remote r
 The repository is public and can be freely copied (forked in GitHub terminology) and used 
 under the MIT licence. 
 
-The MIT licence is reproduced in full in the last network of this software module
+The MIT licence is reproduced in full in the last network of this software module.
 
 
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2022.03.27    D0010A-000.101   M. Gledhill      FC61000  — Comment unification
+                           OB00001 — Comment unification
+
  2022.03.04    D0010      M. Gledhill      FC19512 — RELEASED FOR USE
 
  2021.08.23    D0009      M. Gledhill      FC11001 — RELEASED FOR USE
@@ -520,7 +538,7 @@ The MIT licence is reproduced in full in the last network of this software modul
               <MultilingualTextItem ID="C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Current revision and modification history</Text>
+                  <Text>Project revision and modification history</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -746,7 +764,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           <MultilingualTextItem ID="18" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Interrupt - Norm — Main Program Cyclic Execution</Text>
+              <Text>Interrupt Module [Normal Interrupt] — Main Program Cyclic Execution</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
