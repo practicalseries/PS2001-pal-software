@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-03-27T15:45:31.2800855Z</Created>
+    <Created>2022-04-02T11:35:35.4671013Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -112,11 +112,13 @@ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pa
               <MultilingualTextItem ID="5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ 
+
 
 TITLE:    PS2001 — PRACTICAL SERIES AUTOMATION LIBRARY
 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
 
 
 ――――――――――――――――――――――――――――――――――
@@ -138,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0010A-000-101
+TIA PROJECT NAME:    PS2001-PAL-D0010A-000-102
 
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
@@ -263,8 +265,8 @@ COMPLETED MODULES
  ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
  BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
  ――――――――――――――――――――――――――――――――――――――――――
- FC01001 StdSysGlobalData      001.000   None           UT 21000   001.000
-                 2021-05-11                  UT 21001   001.000
+ FC01001 StdSysGlobalData      001.101   None           UT 21000   001.000
+                 2022-04-01                  UT 21001   001.000
                                    DB21001   001.000
  ――――――――――――――――――――――――――――――――――――――――――
  FC02001 StdInstAnalogRead    001.000   UT 02001   001.000    UT 22001   001.000
@@ -282,8 +284,8 @@ COMPLETED MODULES
  FC19512 StdDebugInst2Order    001.000   None           UT 39512   001.000
                  2022-03-04                  DB39512   001.000
  ――――――――――――――――――――――――――――――――――――――――――
- FC61000 DocGenExample     001.105   None           None 
-                 2022.03.24   None           None          
+ FC61000 DocGenExample     001.106   None           None 
+                 2022-04-01   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
  See Software Module Register [Ref. 012] for full details
 
@@ -373,7 +375,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D00010A-000.101'</ConstantValue>
+        <ConstantValue>'D00010A-000.102'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -500,6 +502,7 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2022.03.27    D0010A-000.102   M. Gledhill      FC01001  — IEC Conf. Comments
  2022.03.27    D0010A-000.101   M. Gledhill      FC61000  — Comment unification
                            OB00001 — Comment unification
 
@@ -612,8 +615,30 @@ The MIT licence is reproduced in full in the last network of this software modul
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-Calls the standard system block that generates the various global logic, timing signals, 
-cyclic data and real time clock (RTC) information.
+ＳＹＳＴＥＭ ＦＵＮＣＴＩＯＮＳ
+
+Global system data generation. Generates all common logic and timing signals for all other 
+modules:
+
+   •   Generates global logic signals (TRUE and FALSE)
+
+   •   Generates the following scan synchronised timing pulses:
+       50ms, 100ms, 200ms, 500ms, 1s and 2s
+
+   •   Generates the following (1:1 mark/space) square wave signals:
+       100ms, 200ms, 500ms, 1s and 2s
+
+   •   Generates odd and even (alternating) cycle tick-tock signals
+
+   •   Generates a first-cycle signal indicating the controller has just started
+
+   •   Records the cycle time of the last, maximum and minimum controller cycles
+
+   •   Reads the controller internal real time clock and converts the values to discrete 
+     integer values containing: year, month, day, day of week, hour, minute, second 
+     and millisecond
+
+The block must be the first non-debug block call within the main organisation block (OB 1).
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -624,7 +649,7 @@ cyclic data and real time clock (RTC) information.
               <MultilingualTextItem ID="11" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Generate Standard System Global Data</Text>
+                  <Text>Generate the Standard System Global Data Signals</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>

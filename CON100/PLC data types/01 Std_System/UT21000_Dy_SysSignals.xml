@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-12T13:46:09.0558352Z</Created>
+    <Created>2022-04-02T11:35:36.3201287Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -35,7 +35,7 @@
     <AttributeList>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="None">
-    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">▀▀▀▀ UDT CURRENT REVISION</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="REV_BLOCK" Datatype="String[7]"><StartValue>'UT21000'</StartValue></Member><Member Name="REV_NUMBER" Datatype="String[20]"><StartValue>'001.000'</StartValue></Member><Member Name="REV_DATE" Datatype="String[10]"><StartValue>'2021-05-11'</StartValue></Member><Member Name="REV_AUTHOR" Datatype="String[20]"><StartValue>'M. Gledhill'</StartValue></Member></Section></Sections></Member>
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">▀▀▀▀ UDT CURRENT REVISION</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="REV_BLOCK" Datatype="String[7]"><StartValue>'UT21000'</StartValue></Member><Member Name="REV_NUMBER" Datatype="String[20]"><StartValue>'001.101'</StartValue></Member><Member Name="REV_DATE" Datatype="String[10]"><StartValue>'2022-04-01'</StartValue></Member><Member Name="REV_AUTHOR" Datatype="String[20]"><StartValue>'M. Gledhill'</StartValue></Member></Section></Sections></Member>
     <Member Name="___________0010_0" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US"> </MultiLanguageText></Comment></Member>
     <Member Name="___________0010_1" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">▀▀▀▀ SYSTEM SIGNALS</MultiLanguageText></Comment></Member>
     <Member Name="_False" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">System Logic Bit — Always FALSE</MultiLanguageText></Comment></Member>
@@ -65,7 +65,10 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Global Logic and Timing Signals</Text>
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
@@ -75,7 +78,7 @@
           <MultilingualTextItem ID="4" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Dynamic UDT — Sys - Global Signals</Text>
+              <Text>Dynamic UDT  [SYSTEM] — Global Signals</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>

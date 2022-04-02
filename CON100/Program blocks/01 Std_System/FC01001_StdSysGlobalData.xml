@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-12T14:39:33.0868571Z</Created>
+    <Created>2022-04-02T11:35:36.0037509Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>System</HeaderFamily>
       <HeaderName>StdSysGlobalData</HeaderName>
-      <HeaderVersion>1.0</HeaderVersion>
+      <HeaderVersion>1.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="CLOCK_MEM" Datatype="Byte" Accessibility="Public">
@@ -190,6 +190,11 @@
         <MultiLanguageText Lang="en-US">Working storage (double integer)</MultiLanguageText>
       </Comment>
     </Member>
+    <Member Name="wrkUDInt" Datatype="UDInt">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (unsigned double integer)</MultiLanguageText>
+      </Comment>
+    </Member>
     <Member Name="wrkReal" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
@@ -211,7 +216,7 @@
     <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
   </Section>
 </Sections></Interface>
-      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
       <Name>FC01001_StdSysGlobalData</Name>
       <Number>1001</Number>
@@ -226,10 +231,10 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
                   ———— ◆ ————
- FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
- FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
@@ -245,16 +250,29 @@
               <MultilingualTextItem ID="5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text> ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-
-TITLE:    STANDARD SYSTEM GLOBAL DATA
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
- 
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
 
 
-This is an essential system block that generates the internal logic and timing signals needed by 
-all the other PAL software modules.
+TITLE:    SYSTEM — GLOBAL DATA
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
+
+┌──────────────────────────────────────────┐
+│                                          │
+│          FC01001 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
+│                                          │
+│      The PDF version of the SMDS for this module is available online here:        │
+│              http://psop.uk/pal-smds-fc01001-p              │
+│                                          │
+│      It is also available as part of the Project User Defined Documentation,      │
+│      it can be accessed by selecting this module in the Project Tree          │
+│      (on the left) and pressing SHIFT+F1                        │
+│                                          │
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵃ ┘
+
+FC01001_StdSysGlobalData is an essential system block that generates the internal logic and 
+timing signals needed by all the other PAL software modules.
 
 The block records the controller scan times and converts the Controller real time clock value 
 to discrete integers, making the data globally available to all systems including non-Siemens 
@@ -282,8 +300,15 @@ The block provides the following functions:
 
 The block requires that the controller clock memory function is enabled.
 
-The block must be the first non-debug block call within the main organisation block (OB 1).
 
+████████████████████████████████████████████
+█                                          █
+█ Note:   This block is essential to the operation of all other PAL software and it must      █
+█     be the first block call within the main cyclic organisation block (OB 1).        █
+█                                          █
+█     It must be called before all other PAL software modules.              █
+█                                          █
+████████████████████████████████████████████
 
 
 
@@ -313,12 +338,21 @@ The block must be the first non-debug block call within the main organisation bl
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- LANGUAGE           LAD
- EXECUTION TIME       240.20 μs¹
- LOAD MEMORY         43.73 kB  (44781 bytes)
- WORK MEMORY             1.29 kB    (1322 bytes)
+ EXECUTION TIME       240.2 μs¹
+ LOAD MEMORY         45.9 kB
+ WORK MEMORY             1.3 kB  
  ――――――――――――――――――――――――――――――――――――――――――
-               ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
+                            http://psop.uk/pal-ds-cpu1515
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1      Additional document references
+
+
+Only those documents listed in OB1 section DOCUMENT REFERENCES are listed within this block.
+There are no additional document references.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -596,7 +630,7 @@ UT21000_Dy_SysSignals data type (those used for parametric access, see § 3.2.2)
 
 
 All PAL system tags contained within the PAL_SystemTags tag table are identified by a leading 
-underscore character (_).
+underscore character ( _ ).
 
 The PAL system tags are named according to the following conventions:
 
@@ -811,6 +845,7 @@ cycle following the change in state of the clock memory square wave.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Scan synchronised timing square wave accuracy
 
+
 Again, the scan synchronisation actions of FC 01001 compromise the accuracy of the timing 
 square wave signals and again by the same amount, each rising and falling edge of the square 
 wave can be delayed by up to the duration of one cycle.
@@ -855,7 +890,7 @@ condition. It should be interpreted as telling the software that the processor h
 all modules should be initialised and set to the correct start-up conditions.
 
 The _CycleFirst signal is generated by using the system start information block (RD_SINFO), this 
-is called with the system data structure SI_ProgramCycle, see § 9.
+is called with the system data structure SI_ProgramCycle, see § 7.3.
 
 
 
@@ -1140,27 +1175,38 @@ The following constants and temporary data storage are used:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     BLOCK CALLS
+7.     BLOCK CALLS AND ASSOCIATIONS
+
+
+This section details any blocks which may be called from within this software module (subroutine 
+functions for example), any partner blocks with which it may be associated (for example a 
+receive module that is partner with a transmit module &amp;c.). It lists any system functions which 
+may be called (e.g. reading the real time clock) and any system data types that may be used.
+
+Finally, it lists any special calling requirements for the block (for example, must be called from 
+within a cyclic interrupt organisation block) and if the block is using “optimised access” (this is 
+the default arrangement).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Block calls from within this module
 
 
 There are no PAL block calls from within this block.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     ASSOCIATED BLOCKS
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.3     System block calls and system data types
 
 
 The following calls are made to system blocks:
@@ -1229,36 +1275,51 @@ The following system data types are required:
  ――――――――――――――――――――――――――――――――――――――――――
 
 
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.4     Special properties and requirements
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+7.4.1     Block optimisation, IEC compatibility and library conformance
+
+
+   •   Block optimisation is ACTIVE for this block.
+
+   •   The block has been checked for IEC compatibility and is compliant.
+
+   •   The block is compatible with all IEC library-conformance module constraints
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+7.4.2     Calling requirements
+
+
+████████████████████████████████████████████
+█                                          █
+█    This block is essential to the operation of all other PAL software and it must       █
+█    be the first block call within the main cyclic organisation block (OB 1).         █
+█                                          █
+█    It must be called before all other PAL software modules (excepting any       █
+█    start-of-cycle debug modules).                         █
+█                                          █
+█    This block must be the first non-debug block call within the main            █
+█    organisation block (OB 1). It should be in Network 3 of OB1, following          █
+█    the Project revision and modification history network.              █
+█                                          █
+████████████████████████████████████████████
+
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-10.     SPECIAL PROPERTIES AND REQUIREMENTS
+8.     EXAMPLE USAGE
 
 
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.1   Block optimisation
-
-
-     Block optimisation is ACTIVE for this block
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.2   Calling requirements
-
-
-This block must be the first non-debug block call within the main organisation block (OB 1). 
-It should be in Network 3 of OB1.
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-11.     EXAMPLE USAGE
+The following shows a typical deployment of FC01001:
 
 
      OB1 NETWORK 3
@@ -1266,19 +1327,77 @@ It should be in Network 3 of OB1.
                       ┌────────────
    ───────────────────┤ FC01001 
                       ├──────────
+                   %MB10  │  
                  "_ClockMem" ─┤ CLOCK_MEM
                       │
  "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS
                       │
       "DB21001_DY_StdGlobalData".SysData ─┤ SYS_DATA
                       │               │
-                      │               │
+                      │               │  %MW 0
                              SYS_SIGNAL_TAGS├─ "_SysSignals"
                                    │
                       ─────────────┘
 
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     TEST AND VERIFICATION PATH
+
+
+The following diagram shows the full test and verification path for the formal release of each 
+version of the software module. See the Test Plan [Ref. 003] for full details, available here:
+        http://psop.uk/pal-tp-p
+
+
+        FC01001-T001         FC01001-T002
+
+    Test version: 000.801     Test version: 001.801
+ Released version: 001.000     Released version: 002.000
+Released commit: D0006    Released commit: D0011
+
+       SCR      SMT         SCR      SMT  
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿
+      └┘   ▙▟         └┘   ▙▟   
+Initial test           IEC compliance
+
+Initial test to release the      Comments updated &amp; 
+module following the      type conversion made
+development stage.       explicit (NW13)
+Full SMTS            Full SMTS
+
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
 
 
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
@@ -1330,7 +1449,7 @@ It should be in Network 3 of OB1.
     <Access Scope="LiteralConstant" UId="25">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.000'</ConstantValue>
+        <ConstantValue>'001.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -1342,7 +1461,7 @@ It should be in Network 3 of OB1.
     <Access Scope="LiteralConstant" UId="27">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.05.11'</ConstantValue>
+        <ConstantValue>'2022.04.01'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="28">
@@ -1469,12 +1588,17 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.01    001.101   D0010A-000.102   D0010 N/A     D010A   M. Gledhill
+                       Comments updated and standardised
+                       NW13 implicit type conversion (MOVE) 
+                       replaced with explicit (CONVERT) instruction
+
  2021.05.11    001.000   D0006      D0005 D0006  None    M. Gledhill
                        FC01001 — RELEASED FOR USE
                          Merge back to master branch
 
  2021.05.11    001.000   D0005A-001.000   D0005 N/A     D0005A   M. Gledhill
-                       FC01001 — Post test RELEASED FOR USE
+                       FC01001 — Post-test RELEASED FOR USE
 
  2021.05.11    000.801   D0005A-000.801   D0005 N/A     D0005A   M. Gledhill
                        FC01001 — Released for SMT
@@ -3186,129 +3310,162 @@ also reset to zero if the count exceeds the maximum value for a UDint (4,294,967
     </Access>
     <Access Scope="LocalVariable" UId="39">
       <Symbol>
+        <Component Name="wrkUDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="wrkUDInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
         <Component Name="SYS_DATA" />
         <Component Name="RTC_millisecond" />
       </Symbol>
     </Access>
-    <Part Name="RD_LOC_T" Version="1.0" UId="40">
+    <Part Name="RD_LOC_T" Version="1.0" UId="42">
       <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
     </Part>
-    <Part Name="Move" UId="41" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="43" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">UInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Move" UId="42" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="44" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">USInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Move" UId="43" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="45" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">USInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Move" UId="44" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="46" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">USInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Move" UId="45" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="47" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">USInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Move" UId="46" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="48" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">USInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Move" UId="47" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    <Part Name="Convert" UId="49" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">USInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
-    <Part Name="Div" UId="48" DisabledENO="true">
+    <Part Name="Div" UId="50" DisabledENO="true">
       <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Convert" UId="51" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">UDInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
     </Part>
   </Parts>
   <Wires>
-    <Wire UId="49">
+    <Wire UId="52">
       <Powerrail />
-      <NameCon UId="40" Name="en" />
-    </Wire>
-    <Wire UId="50">
-      <NameCon UId="40" Name="eno" />
-      <NameCon UId="41" Name="en" />
       <NameCon UId="42" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="42" Name="eno" />
       <NameCon UId="43" Name="en" />
       <NameCon UId="44" Name="en" />
       <NameCon UId="45" Name="en" />
       <NameCon UId="46" Name="en" />
       <NameCon UId="47" Name="en" />
       <NameCon UId="48" Name="en" />
-    </Wire>
-    <Wire UId="51">
-      <NameCon UId="40" Name="RET_VAL" />
-      <IdentCon UId="21" />
-    </Wire>
-    <Wire UId="52">
-      <NameCon UId="40" Name="OUT" />
-      <IdentCon UId="22" />
-    </Wire>
-    <Wire UId="53">
-      <IdentCon UId="23" />
-      <NameCon UId="41" Name="in" />
+      <NameCon UId="49" Name="en" />
+      <NameCon UId="50" Name="en" />
     </Wire>
     <Wire UId="54">
-      <NameCon UId="41" Name="out1" />
-      <IdentCon UId="24" />
+      <NameCon UId="42" Name="RET_VAL" />
+      <IdentCon UId="21" />
     </Wire>
     <Wire UId="55">
-      <IdentCon UId="25" />
-      <NameCon UId="42" Name="in" />
+      <NameCon UId="42" Name="OUT" />
+      <IdentCon UId="22" />
     </Wire>
     <Wire UId="56">
-      <NameCon UId="42" Name="out1" />
-      <IdentCon UId="26" />
-    </Wire>
-    <Wire UId="57">
-      <IdentCon UId="27" />
+      <IdentCon UId="23" />
       <NameCon UId="43" Name="in" />
     </Wire>
-    <Wire UId="58">
-      <NameCon UId="43" Name="out1" />
-      <IdentCon UId="28" />
+    <Wire UId="57">
+      <NameCon UId="43" Name="out" />
+      <IdentCon UId="24" />
     </Wire>
-    <Wire UId="59">
-      <IdentCon UId="29" />
+    <Wire UId="58">
+      <IdentCon UId="25" />
       <NameCon UId="44" Name="in" />
     </Wire>
-    <Wire UId="60">
-      <NameCon UId="44" Name="out1" />
-      <IdentCon UId="30" />
+    <Wire UId="59">
+      <NameCon UId="44" Name="out" />
+      <IdentCon UId="26" />
     </Wire>
-    <Wire UId="61">
-      <IdentCon UId="31" />
+    <Wire UId="60">
+      <IdentCon UId="27" />
       <NameCon UId="45" Name="in" />
     </Wire>
-    <Wire UId="62">
-      <NameCon UId="45" Name="out1" />
-      <IdentCon UId="32" />
+    <Wire UId="61">
+      <NameCon UId="45" Name="out" />
+      <IdentCon UId="28" />
     </Wire>
-    <Wire UId="63">
-      <IdentCon UId="33" />
+    <Wire UId="62">
+      <IdentCon UId="29" />
       <NameCon UId="46" Name="in" />
     </Wire>
-    <Wire UId="64">
-      <NameCon UId="46" Name="out1" />
-      <IdentCon UId="34" />
+    <Wire UId="63">
+      <NameCon UId="46" Name="out" />
+      <IdentCon UId="30" />
     </Wire>
-    <Wire UId="65">
-      <IdentCon UId="35" />
+    <Wire UId="64">
+      <IdentCon UId="31" />
       <NameCon UId="47" Name="in" />
     </Wire>
+    <Wire UId="65">
+      <NameCon UId="47" Name="out" />
+      <IdentCon UId="32" />
+    </Wire>
     <Wire UId="66">
-      <NameCon UId="47" Name="out1" />
-      <IdentCon UId="36" />
+      <IdentCon UId="33" />
+      <NameCon UId="48" Name="in" />
     </Wire>
     <Wire UId="67">
-      <IdentCon UId="37" />
-      <NameCon UId="48" Name="in1" />
+      <NameCon UId="48" Name="out" />
+      <IdentCon UId="34" />
     </Wire>
     <Wire UId="68">
-      <IdentCon UId="38" />
-      <NameCon UId="48" Name="in2" />
+      <IdentCon UId="35" />
+      <NameCon UId="49" Name="in" />
     </Wire>
     <Wire UId="69">
-      <NameCon UId="48" Name="out" />
+      <NameCon UId="49" Name="out" />
+      <IdentCon UId="36" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="37" />
+      <NameCon UId="50" Name="in1" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="38" />
+      <NameCon UId="50" Name="in2" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="50" Name="eno" />
+      <NameCon UId="51" Name="en" />
+    </Wire>
+    <Wire UId="73">
+      <NameCon UId="50" Name="out" />
       <IdentCon UId="39" />
+    </Wire>
+    <Wire UId="74">
+      <IdentCon UId="40" />
+      <NameCon UId="51" Name="in" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="51" Name="out" />
+      <IdentCon UId="41" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -3938,7 +4095,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           <MultilingualTextItem ID="4F" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Standard - Sys — Global Data</Text>
+              <Text>Standard Module [SYSTEM] — Global Data</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
