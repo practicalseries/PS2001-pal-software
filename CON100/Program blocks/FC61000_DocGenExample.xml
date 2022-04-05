@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-02T11:35:35.6871272Z</Created>
+    <Created>2022-04-05T11:55:10.7824651Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -191,7 +191,7 @@ TITLE:    GENERAL — EXAMPLE DOCUMENTATION
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵃ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵈ ┘
 
 FC61000_DocGenExample is a documentation block that contains examples of all the typical 
 forms of documentation used within the PAL.
@@ -256,7 +256,7 @@ PAL software.
 1.1      Additional document references
 
 
-In addition to the documents referenced in the OB1 section DOCUMENT REFERENCES, the 
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
 following documents are associated with this module:
 
 
@@ -296,7 +296,7 @@ CONTENTS (BY NETWORK)
 
 NW 1.    Block description — Sections 1 to 3.2 (this network)
 NW 2.    Block description — Sections 3.3 to 3.4
-NW 3.    Block description — Sections 3.5 to 9
+NW 3.    Block description — Sections 3.5 to 10
 NW 4.    Current revision and modification history
 
 
@@ -304,7 +304,7 @@ WORKED EXAMPLES
 
 NW 5.    Example — OB1 NETWORK 1  — Project description
 NW 6.    Example — OB1 NETWORK 2  — Project revision and modification history
-NW 7.    Example — BLOCK LEVEL       — Block description — Sections 1 to 9
+NW 7.    Example — BLOCK LEVEL       — Block description — Sections 1 to 10
 NW 8.    Example — BLOCK LEVEL       — Current revision and modification history
 
 
@@ -944,12 +944,13 @@ used within the block. The block description should contain the following sectio
    1. Block technical summary
    2. Functional description
    3. Detailed block description
-   4. Parameters 
-   5. Data structures and usage [and instance DBs]
-   6. Constants and Temporary (local) data
-   7. Block calls and associations
-   8. Example usage
-   9. Test and verification path
+   4. Supervisory system interface
+   5. Parameters 
+   6. Data structures and usage [and instance DBs]
+   7. Constants and Temporary (local) data
+   8. Block calls and associations
+   9. Example usage
+    10. Test and verification path
 
 Each of these areas has its own section in the block description.
 
@@ -1020,18 +1021,18 @@ an introduction to the block and provides a synopsis of the block: what it does 
 The overview should be:
    •   presented as an article that can stand on its own
    •   written in plain English with limited use of abbreviations and engineering jargon 
-   •   Be short, three or four paragraphs at most
+   •   be short, three or four paragraphs at most
    •   written in a formal tone, avoiding the use of first-person pronouns 
  
 The overview should conform to these guidelines:
-   •   Clearly state the purpose of the block
-   •   Quickly summarise the functions of the block
+   •   clearly state the purpose of the block
+   •   quickly summarise the functions of the block
    •   avoid introducing information that is not addressed in the following sections
 
 When writing the overview, ensure that:
-   1. The message is clear
-   2. It includes the key points and functions
-   3. The message is unambiguous (i.e. a reader reading the overview could not miss the 
+   1. the message is clear
+   2. it includes the key points and functions
+   3. the message is unambiguous (i.e. a reader reading the overview could not miss the 
        main point of the block)
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
@@ -1071,7 +1072,7 @@ Reference section of OB1 are listed here, the references should start at 101 to 
 from those in OB1 (which start at 001). See below:
 
 [Additional document reference]
-In addition to the documents referenced in the OB1 section DOCUMENT REFERENCES, the 
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
 following documents are associated with this module:
 
 
@@ -1082,9 +1083,8 @@ following documents are associated with this module:
  ――――――――――――――――――――――――――――――――――――――――――
 
 [Alternate text, use if there are no additional references]
-Only those documents listed in OB1 section DOCUMENT REFERENCES are listed within this block.
-There are no additional document references.
-
+Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
+block. There are no additional document references.
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Section 2 — Functional description
 
@@ -1147,9 +1147,8 @@ The detailed block description should as a minimum provide:
 
    •   Explanations of all operating modes and how they are selected
 
-   •   Full details of any supervisory system interface (at the variable level)
-
    •   Details of all timed events (including ranges and resolutions)
+
    •   Details of all alarms, warnings and events generated by the block and the 
      circumstances under which they are generated
 
@@ -1161,7 +1160,36 @@ The detailed block description should as a minimum provide:
      block
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Section 4 — Parameters
+Section 4 — Supervisory system interface
+
+Gives a full and detailed explanation of the supervisory system interface. This includes 
+the following:
+   •   Examples of any symbols used
+   •   Examples of any block icons used
+   •   Examples of any faceplates used
+   •   Precise details of the signals used to animate the graphical ob-jects
+   •   Precise details of the signals that can be operated (changed) via the interface
+
+Given the limitations of the block comment fields it may not be practical to reproduce the graphical 
+elements of the supervisory system interface, in which case, the user should be referred to the 
+SMDS [Ref. 011] by using the following text:
+
+See the online documentation for this block — select the block in the project tree and press:
+     SHIFT + F1 or follow the link: http://psop.uk/pal-smds-fcnnnnn-p 
+
+An explanation of the block icons and faceplates available to the supervisory system for this 
+module is given in section 4 of the SMDS document [Ref. 011].
+
+A downloadable copy of the SMDS (and all other project documentation) is available here:
+
+     https://practicalseries.com/2001-pal/21-project/01-00-docs.html
+
+For this module, the document number is: PS2001-5-2312-fcnnnnn
+
+[Where nnnnn is the block number in question]
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Section 5 — Parameters
 
 This section contains a list in tabular form of all the formal parameters associated with the block. 
 The table includes the following:
@@ -1183,7 +1211,7 @@ the following text is used:
      This block has no formal parameters
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Section 5 — Data structures and usage (and instance data blocks)
+Section 6 — Data structures and usage (and instance data blocks)
 
 This section contains a list in tabular form of any UDTs that are used by the block. 
 
@@ -1201,27 +1229,44 @@ circumstances the following text is used:
 If the block is a function block (FB), it will have an associated instance data block. Under these 
 circumstances a full description of the structures and elements within the instance data block 
 must be given (generally, this will be the static elements of the DB; all other aspects will be 
-duplicates of section 4 (parameters) and section 6 (constants and local data), these will be 
-created automatically when the DB is initialised).
+duplicates of section 5 (Parameters) and section 7 (Constants &amp; Temporary (local) data), these 
+will be created automatically when the DB is initialised).
 
 For functions (FCs) the “(and instance data blocks)” can be removed from the section heading.
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Section 6 — Constants and temporary (local) data
+Section 7 — Constants and temporary (local) data
 
-This section contains a list in tabular form of any constants and temporary (local) data used by 
-the block. 
+This section contains a list any constants and temporary (local) data used by the block.  
 
 Where such data is used, each constant and variable must be identified and an explanation of 
 how the block uses that data given.
 
 The section must be included even if the block has no associated constants or temporary (local) 
-data, under this circumstance the following text is used:
+data, under this circumstance the following text is used.
 
-     None.
+The section broken down into the following subsections:
+
+
+
+Section 7.1 — Constants
+
+Lists in tabular form all constants used by the block. If there are no constants, the following 
+text is used:
+
+     No constants are used in this block.
+
+
+
+Section 7.2 — Temporary (local) data
+
+Lists in tabular form all temporary (local) data used by the block. If there are no temporary 
+variables, the following text is used:
+
+     No temporary (local) data is used in this block
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Section 7 — Block calls and associations
+Section 8 — Block calls and associations
 
 This section details any blocks which may be called from within this software module (subroutine 
 functions for example), any partner blocks with which it may be associated (for example a receive 
@@ -1236,7 +1281,7 @@ It is broken down into the following subsections:
 
 
 
-Section 7.1 — Block calls from within this module
+Section 8.1 — Block calls from within this module
 
 This section contains a list of all the non-system block that are called from within the block (these 
 are other PAL blocks or third-party blocks for specific equipment). The list is presented in 
@@ -1251,7 +1296,7 @@ the following text is used:
 
 
 
-Section 7.2 — Blocks associated with this module 
+Section 8.2 — Blocks associated with this module 
 
 If the block is associated with other blocks, i.e. it is part of a set of blocks that together form a 
 particular function (an example of this would be a transmit communication block that had a 
@@ -1270,7 +1315,7 @@ if this is the case, the following text is used:
 
 
 
-Section 7.3 — System block calls and system data types
+Section 8.3 — System block calls and system data types
 
 This section contains a list of all the system blocks and extended instructions that are called 
 from within the block (these are either built into the Controller or made available via TIA Portal). 
@@ -1290,12 +1335,12 @@ instructions; under these circumstances, the following text is used:
 
 
 
-Section 7.4 — Special properties and requirements
+Section 8.4 — Special properties and requirements
 
 This section specifies any specific requirements for calling and using the block, this is usually 
 split into two subsections:
 
-Section 7.4.1 — Block optimisation, IEC compatibility and library conformance
+Section 8.4.1 — Block optimisation, IEC compatibility and library conformance
          Does the block use Optimised Block Access (all blocks should generally be 
          optimised, if not explain why)?
 
@@ -1305,21 +1350,21 @@ Section 7.4.1 — Block optimisation, IEC compatibility and library conformance
          library-conformance module constraints
 
 
-Section 7.4.2 — Calling requirements
+Section 8.4.2 — Calling requirements
          Is the block time dependant (i.e. is it called from a timed interrupt) or can the 
          block be called as part of the main (OB 1) cycle?
 
-If block optimisation is used, section 7.4.1 should have the following standard text:
+If block optimisation is used, section 8.4.1 should have the following standard text:
 
      This block is configured with Block Optimised Access (default arrangement).
 
-Where there are no special calling requirements, Section 7.4.2 should have the following 
+Where there are no special calling requirements, Section 8.4.2 should have the following 
 standard text:
 
      This are no special calling requirements for this block.
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Section 8 — Example usage
+Section 9 — Example usage
 
 This section contains a typical example of how the block is used and called. It should show the 
 block call and typical data block arrangements needed by the block.
@@ -1327,7 +1372,7 @@ block call and typical data block arrangements needed by the block.
 Where a block has multiple types of usage, additional examples can be included.
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Section 9 —Test and verification path
+Section 10 —Test and verification path
 
 This section shows all the software module tests and verification activities that have taken place 
 to achieve the current release of the module, it has the following appearance:
@@ -1549,7 +1594,7 @@ WORKED EXAMPLES
 
 NW 5.    Example — OB1 NETWORK 1  — Project description
 NW 6.    Example — OB1 NETWORK 2  — Project revision and modification history
-NW 7.    Example — BLOCK LEVEL       — Block description — Sections 1 to 9
+NW 7.    Example — BLOCK LEVEL       — Block description — Sections 1 to 10
 NW 8.    Example — BLOCK LEVEL       — Current revision and modification history
 
 
@@ -1949,12 +1994,25 @@ listed):
 
  ――――――――――――――――――――――――――――――――――――――――――――――――――
 
+
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     PARAMETERS
+4.     Supervisory system interface
+
+
+FC61000 is an Example Documentation block, it is a documentation module that contains 
+examples of all the common block and network comments used through-out the PAL software. 
+As such it does not have any supervisory system interface.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     PARAMETERS
 
 
 The following parameters are associated with the block:
@@ -1972,7 +2030,7 @@ The following parameters are associated with the block:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+6.     DATA STRUCTURES AND USAGE
 
 
 The block has the following associated data structure:
@@ -1986,13 +2044,17 @@ The block has the following associated data structure:
  UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
  ――――――――――――――――――――――――――――――――――――――――――
 
-
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Constants
 
 
 The following constants data is used:
@@ -2004,6 +2066,11 @@ The following constants data is used:
  k_PI         3.141592    Value of Pi (π)                 Real
  k_2PI          6.283185    Value of 2 X Pi (2π)              Real
  ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Temporary (local) data
 
 
 The following temporary data is used:
@@ -2020,13 +2087,12 @@ The following temporary data is used:
  wrkReal           Working storage (Real)                Real
  ――――――――――――――――――――――――――――――――――――――――――
 
-
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
  
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     BLOCK CALLS AND ASSOCIATIONS
+8.     BLOCK CALLS AND ASSOCIATIONS
 
 
 This section details any blocks which may be called from within this software module (subroutine 
@@ -2041,7 +2107,7 @@ the default arrangement).
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.1     Block calls from within this module
+8.1     Block calls from within this module
 
 
 There are no PAL block calls from within this block.
@@ -2049,7 +2115,7 @@ There are no PAL block calls from within this block.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.2     Blocks associated with this module
+8.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
@@ -2057,7 +2123,7 @@ This is a stand-alone block and is not associated with any other blocks.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.3     System block calls and system data types
+8.3     System block calls and system data types
 
 
 There are no system block calls.
@@ -2065,12 +2131,12 @@ There are no system block calls.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.4     Special properties and requirements
+8.4     Special properties and requirements
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-7.4.1     Block optimisation, IEC compatibility and library conformance
+8.4.1     Block optimisation, IEC compatibility and library conformance
 
 
    •   Block optimisation is ACTIVE for this block.
@@ -2082,7 +2148,7 @@ There are no system block calls.
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-7.4.2     Calling requirements
+8.4.2     Calling requirements
 
 
 This block is a documentation block and as such is a reference block that should not be called.
@@ -2105,7 +2171,7 @@ have no effect, other than extending the cycle time.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     EXAMPLE USAGE
+9.     EXAMPLE USAGE
 
 
 FC61000 is an example module for documentation only. It should not be called (the module 
@@ -2139,7 +2205,7 @@ Should it be called, the following shows a typical arrangement:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     TEST AND VERIFICATION PATH
+10.     TEST AND VERIFICATION PATH
 
 
 The following diagram shows the full test and verification path for the formal release of each 
@@ -2238,7 +2304,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.106'</ConstantValue>
+        <ConstantValue>'001.107'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2250,7 +2316,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.01'</ConstantValue>
+        <ConstantValue>'2022.04.04'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2360,6 +2426,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.04    001.107   D0010A-000.103   D0010 N/A     D0010A   M. Gledhill
+                       Comments Section 4 (SCADA) added
+
  2022.04.01    001.106   D0010A-000.102   D0010 N/A     D0010A   M. Gledhill
                        Comments corrected, small letters added
 
@@ -2814,7 +2883,7 @@ This is a subroutine block.
 1.1      Additional document references
 
 
-In addition to the documents referenced in the OB1 section DOCUMENT REFERENCES, the 
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
 following documents are associated with this module:
 
 
@@ -2827,9 +2896,8 @@ following documents are associated with this module:
 
 
 [Alternate text, use if there are no additional references]
-
-Only those documents listed in OB1 section DOCUMENT REFERENCES are listed within this block.
-There are no additional document references.
+Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
+block. There are no additional document references.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -2951,7 +3019,7 @@ Once the end time is stored, the following calculation is carried out:
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-3.1     Date and time data types
+3.2     Date and time data types
 
 
 Both the start and end times (actual_StartTime and actual_EndTime) are of the type DTL 
@@ -3050,7 +3118,30 @@ part of the number cannot be resolved and are lost.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     PARAMETERS
+4.     Supervisory system interface
+
+
+See the online documentation for this block — select the block in the project tree and press:
+     SHIFT + F1 or follow the link: http://psop.uk/pal-smds-fc18151-p 
+
+An explanation of the block icons and faceplates available to the supervisory system for this 
+module is given in section 4 of the SMDS document [Ref. 011].
+
+A downloadable copy of the SMDS (and all other project documentation) is available here:
+
+     https://practicalseries.com/2001-pal/21-project/01-00-docs.html
+
+For this module, the document number is: PS2001-5-2312-fc1815
+
+[Alternate text]
+This module does not interface with a supervisory system.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     PARAMETERS
 
 
 The following parameters are associated with the block:
@@ -3074,7 +3165,7 @@ The following parameters are associated with the block:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+6.     DATA STRUCTURES AND USAGE
 
 
 The block has the following associated data structure:
@@ -3092,7 +3183,7 @@ The block has the following associated data structure:
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-5.1     UT38151_Dy_TimeEventRTC
+6.1     UT38151_Dy_TimeEventRTC
 
 
 Stores the timing values for the event:
@@ -3119,7 +3210,12 @@ Stores the timing values for the event:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Constants
 
 
 The following constants data is used:
@@ -3131,6 +3227,11 @@ The following constants data is used:
  k_PI         3.141592    Value of Pi (π)                 Real
  k_2PI          6.283185    Value of 2 X Pi (2π)              Real
  ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Temporary (local) data
 
 
 The following temporary data is used:
@@ -3150,7 +3251,7 @@ The following temporary data is used:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     BLOCK CALLS AND ASSOCIATIONS
+8.     BLOCK CALLS AND ASSOCIATIONS
 
 
 This section details any blocks which may be called from within this software module (subroutine 
@@ -3165,7 +3266,7 @@ the default arrangement).
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.1     Block calls from within this module
+8.1     Block calls from within this module
 
 
 There are no PAL block calls from within this block.
@@ -3173,7 +3274,7 @@ There are no PAL block calls from within this block.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.2     Blocks associated with this module
+8.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
@@ -3181,7 +3282,7 @@ This is a stand-alone block and is not associated with any other blocks.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.3     System block calls and system data types
+8.3     System block calls and system data types
 
 
 The following calls are made to system blocks:
@@ -3199,12 +3300,12 @@ There are no special system data types used.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.4     Special properties and requirements
+8.4     Special properties and requirements
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-7.4.1     Block optimisation, IEC compatibility and library conformance
+8.4.1     Block optimisation, IEC compatibility and library conformance
 
 
    •   Block optimisation is ACTIVE for this block.
@@ -3216,7 +3317,7 @@ There are no special system data types used.
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-7.4.2     Calling requirements
+8.4.2     Calling requirements
 
 
 This block is a documentation block and as such is a reference block that should not be called.
@@ -3230,7 +3331,7 @@ have no effect, other than extending the cycle time.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     EXAMPLE USAGE
+9.     EXAMPLE USAGE
 
 
 The following shows a typical deployment of FC18151:
@@ -3252,7 +3353,7 @@ The following shows a typical deployment of FC18151:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     TEST AND VERIFICATION PATH
+10.     TEST AND VERIFICATION PATH
 
 
 The following diagram shows the full test and verification path for the formal release of each 

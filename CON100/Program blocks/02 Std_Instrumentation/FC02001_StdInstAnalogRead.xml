@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-26T11:17:54.0778825Z</Created>
+    <Created>2022-04-05T12:25:42.3878698Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Instrumentation</HeaderFamily>
       <HeaderName>StdInstAnalogRead</HeaderName>
-      <HeaderVersion>1.0</HeaderVersion>
+      <HeaderVersion>1.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -108,13 +108,13 @@
           </Member>
           <Member Name="___________0010_0" Datatype="Int" />
           <Member Name="___________0010_1" Datatype="Int" />
-          <Member Name="CONFIG_ALM_H_ENABLE" Datatype="Bool" />
-          <Member Name="CONFIG_ALM_L_ENABLE" Datatype="Bool" />
-          <Member Name="CONFIG_WRN_H_ENABLE" Datatype="Bool" />
-          <Member Name="CONFIG_WRN_L_ENABLE" Datatype="Bool" />
-          <Member Name="CONFIG_FP_DISABLE" Datatype="Bool" />
-          <Member Name="CONFIG_SIM_DISABLE" Datatype="Bool" />
-          <Member Name="CONFIG_RL_ENABLE" Datatype="Bool" />
+          <Member Name="CONFIG_ALM_H_EN" Datatype="Bool" />
+          <Member Name="CONFIG_ALM_L_EN" Datatype="Bool" />
+          <Member Name="CONFIG_WRN_H_EN" Datatype="Bool" />
+          <Member Name="CONFIG_WRN_L_EN" Datatype="Bool" />
+          <Member Name="CONFIG_FP_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_SIM_DIS" Datatype="Bool" />
+          <Member Name="CONFIG_RL_EN" Datatype="Bool" />
           <Member Name="___________0020_0" Datatype="Int" />
           <Member Name="___________0020_1" Datatype="Int" />
           <Member Name="RANGE_RAW_MIN" Datatype="Int" />
@@ -124,6 +124,7 @@
           <Member Name="RANGE_OOR_PERCENT" Datatype="Real" />
           <Member Name="___________0030_0" Datatype="Int" />
           <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="INFO_TYPE" Datatype="Int" />
           <Member Name="INFO_TAG" Datatype="String[20]" />
           <Member Name="INFO_UNITS" Datatype="String[10]" />
           <Member Name="___________0040_0" Datatype="Int" />
@@ -187,16 +188,20 @@
           <Member Name="status_RLOff" Datatype="Bool" />
           <Member Name="___________0020_0" Datatype="Int" />
           <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="cal_OR_Abs" Datatype="Real" />
+          <Member Name="cal_UR_Abs" Datatype="Real" />
+          <Member Name="___________0030_0" Datatype="Int" />
+          <Member Name="___________0030_2" Datatype="Int" />
           <Member Name="mode_Alm_H_MaskOn" Datatype="Bool" />
           <Member Name="mode_Alm_L_MaskOn" Datatype="Bool" />
           <Member Name="mode_Wrn_H_MaskOn" Datatype="Bool" />
           <Member Name="mode_Wrn_L_MaskOn" Datatype="Bool" />
           <Member Name="mode_SimOn" Datatype="Bool" />
           <Member Name="mode_SimValue" Datatype="Real" />
-          <Member Name="mode_LocalOn" Datatype="Bool" />
           <Member Name="mode_RemoteOn" Datatype="Bool" />
-          <Member Name="___________0030_0" Datatype="Int" />
-          <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="mode_LocalOn" Datatype="Bool" />
+          <Member Name="___________0040_0" Datatype="Int" />
+          <Member Name="___________0040_1" Datatype="Int" />
           <Member Name="msg_Alm_H" Datatype="Bool" />
           <Member Name="msg_Alm_L" Datatype="Bool" />
           <Member Name="msg_Wrn_H" Datatype="Bool" />
@@ -205,11 +210,11 @@
           <Member Name="msg_Flt_OverRange" Datatype="Bool" />
           <Member Name="msg_Flt_UnderRange" Datatype="Bool" />
           <Member Name="msg_Flt_OutOfRange" Datatype="Bool" />
-          <Member Name="___________0040_0" Datatype="Int" />
-          <Member Name="___________0040_1" Datatype="Int" />
-          <Member Name="batch_ID" Datatype="Int" />
           <Member Name="___________0050_0" Datatype="Int" />
           <Member Name="___________0050_1" Datatype="Int" />
+          <Member Name="batch_ID" Datatype="Int" />
+          <Member Name="___________0060_0" Datatype="Int" />
+          <Member Name="___________0060_1" Datatype="Int" />
           <Member Name="actual_Value" Datatype="Real" />
           <Member Name="actual_Alm_H_Timer" Datatype="Real" />
           <Member Name="actual_Alm_L_Timer" Datatype="Real" />
@@ -272,7 +277,7 @@
     </Member>
     <Member Name="calcPart1" Datatype="Real">
       <Comment>
-        <MultiLanguageText Lang="en-US">Scale value calculation part 1 (RAW_VALUE − RAW_MIN)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Scale value calculation part 1 (RAW_ANALOG − RAW_MIN)</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="calcPart2" Datatype="Real">
@@ -287,22 +292,12 @@
     </Member>
     <Member Name="calcRawOOR" Datatype="Real">
       <Comment>
-        <MultiLanguageText Lang="en-US">Calculated OOR absolute value in terms of the RAW_VALUE</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="calcOverRange" Datatype="Real">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Calculated over range limit (in raw units)</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="calcUnderRange" Datatype="Real">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Calculated under range limit (in raw units)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Calculated OOR absolute value in terms of the scaled value</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="calcHystAbs" Datatype="Real">
       <Comment>
-        <MultiLanguageText Lang="en-US">Absolute Hysteresis (in relation to alarm/waringin)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Absolute Hysteresis (in relation to alarm/warning)</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="wrkHyst" Datatype="Real">
@@ -336,7 +331,7 @@
     <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
   </Section>
 </Sections></Interface>
-      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
       <Name>FC02001_StdInstAnalogRead</Name>
       <Number>2001</Number>
@@ -351,10 +346,10 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
                   ———— ◆ ————
- FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
- FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
@@ -370,15 +365,29 @@
               <MultilingualTextItem ID="5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
+
 
 TITLE:    STANDARD — ANALOG INSTRUMENT READ, SCALE AND MONITOR
 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
 
+┌──────────────────────────────────────────┐
+│                                          │
+│          FC02001 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
+│                                          │
+│      The PDF version of the SMDS for this module is available online here:        │
+│              http://psop.uk/pal-smds-fc02001-p              │
+│                                          │
+│      It is also available as part of the Project User Defined Documentation,      │
+│      it can be accessed by selecting this module in the Project Tree          │
+│      (on the left) and pressing SHIFT+F1                        │
+│                                          │
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵉ ┘
 
-This block reads and scales an analog instrument signal received via an analog input card.
+FC02001_StdInstAnalogRead reads and scales an analog instrument signal received via 
+an analog input card.
 
 The resultant scaled value is a real (floating point) number that matches the calibrated range of 
 the instrument in engineering units.
@@ -438,11 +447,21 @@ the instrument is out of service for any reason.
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME       87.69 μs¹
- LOAD MEMORY       83.67 kB  (85679 bytes)
- WORK MEMORY           2.16 kB    (2213 bytes)
+ EXECUTION TIME       87.7 μs¹
+ LOAD MEMORY       87.3 kB
+ WORK MEMORY           2.2 kB  
  ――――――――――――――――――――――――――――――――――――――――――
-               ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
+                            http://psop.uk/pal-ds-cpu1515
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1      Additional document references
+
+
+Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
+block. There are no additional document references.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -450,6 +469,7 @@ the instrument is out of service for any reason.
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 2.     FUNCTIONAL DESCRIPTION
+
 
 This block is a comprehensive block designed to read and scale an analog instrument; it 
 provides the following broad functions:
@@ -473,14 +493,15 @@ provides the following broad functions:
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 2.1     Read and scale and instrument signal
 
+
 The principal function of the block is to read a raw integer signal from an analog instrument 
 (in the form of an input word, IW), and convert it into a scaled, floating point (real) number that 
 reflects the calibrated reading of the instrument in question.
 
 For example, if a flow meter with a calibrated range of -100 l/s to +100 l/s provided a 4-20 mA 
-signal to the PLC, then 4 mA would represent -100 l/s and 20 mA would rep-resent +100 l/s.
+signal to the PLC, then 4 mA would represent -100 l/s and 20 mA would represent +100 l/s.
 
-A typical 4-20 mA analog input signal returns raw value of 0 at 4 mA and 27648 at 20 mA. 
+A typical 4-20 mA analog input signal returns a raw value of 0 at 4 mA and 27648 at 20 mA. 
 
 The block would return scaled values as follows (it would also return every value in between; five 
 typical values have been shown):
@@ -552,6 +573,7 @@ Each alarm and warning has its own configurable on and off filtering delays.
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 2.3     Fault signals
 
+
 The block is able to generate four fault signals:
 
    •   External fault
@@ -561,7 +583,7 @@ The block is able to generate four fault signals:
 
 The external fault is generated by a hardwired signal from the instrument that indicates the 
 instrument itself is reporting a fault. External fault signals are common with certain types of 
-instrument (mass flow meters &amp;c.) and are used to indicate such things as medium not present 
+instruments (mass flow meters &amp;c.) and are used to indicate such things as medium not present 
 (liquid flow meters) or calibration and maintenance issues (instrument requires calibrating or 
 cleaning or some other form of servicing).
 
@@ -577,14 +599,15 @@ In the example of § 2.1, the instrument had a range of -100 to +100 l/s, this i
 instrument would be over-range if it were reading above 105 l/s; it would be under-range below
 -105 l/s.
 
-The out-of-range fault signal is a common signal the activates if either the over-range or 
-under-range signal is active. It indicated the instrument is either over-range or under-range, but 
+The out-of-range fault signal is a common signal that activates if either the over-range or 
+under-range signal is active. It indicates the instrument is either over-range or under-range, but 
 doesn’t specify which.
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 2.4     Operating modes
+
 
 The block supports the following optional modes of operation:
 
@@ -601,6 +624,7 @@ The block supports the following optional modes of operation:
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 2.4.1     Simulation mode
 
+
 The instrument can be switched to a simulation mode, in which the actual reading from the 
 instrument is replaced by a simulated value provided by the operator. Simulation mode can be 
 used during testing and can also be applied in a process environment if a fault condition is 
@@ -613,27 +637,29 @@ Simulation mode is a manual operation that can only be initiated by an operator.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 2.4.2     Remote/local/all mode
 
+
 Remote and local operating modes refer to the device that has control of the instrument; where 
 a plant has more than one SCADA/HMI, say a SCADA in a remote control room and a field 
 mounted HMI local to the instrument, it is possible to restrict the control of the instrument to 
 one, or the other, or both devices as follows:
 
-   •   Remote Only the remote system in the control room can control the 
+   •   Remote Only the remote system in the control room can control the device
 
    •   Local     A local system has taken control of the device and the remote system can 
            no longer issue commands to it
 
    •    All    Any system can control the device
 
-The default arrangement if for all system to have access to the device.
+The default arrangement is for all system to have access to the device.
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-2.4.3     Facepalte disabled mode
+2.4.3     Faceplate disabled mode
+
 
 Prevents the supervisory system from displaying the faceplate from which the above options are 
-selected. If the faceplate is disabled, this module will set re-mote/local mode to ALL and will 
+selected. If the faceplate is disabled, this module will set remote/local mode to ALL and will 
 disable simulation mode.
 
 
@@ -641,10 +667,12 @@ disable simulation mode.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 2.5      Supervisory system interface
 
-See the online documentation for this block — select the block in the project tree and press:
-     SHIFT + F1
 
-The supervisory system interface is available in section 2.5 of the online SMDS document.
+See the online documentation for this block — select the block in the project tree and press:
+     SHIFT + F1 or follow the link: http://psop.uk/pal-smds-fc02001-p 
+
+The supervisory system interface is available in sections 2.5 and 4 of the online SMDS 
+document.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -653,8 +681,10 @@ The supervisory system interface is available in section 2.5 of the online SMDS 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 3.     DETAILED BLOCK DESCRIPTION
 
+
 This block, FC02001_StdInstAnalogRead uses user data types to provide the primary interface 
 to the block. There are five formal parameters: 
+
 
  ――――――――――――――――――――――――――――――――――――――――――
  PARAM         FUNCTION                      TYPE      IN-OUT 
@@ -682,6 +712,7 @@ to the block. There are five formal parameters:
           mode &amp;c.)
  ――――――――――――――――――――――――――――――――――――――――――
 
+
 RAW_ANALOG and EXT_FAULT are signals provided directly from the instrument itself (via input 
 cards). The other two parameters: STATIC_DATA and DYNAMIC_DATA are UDTs that hold 
 (respectively) the configuration information and the live data for the instrument.
@@ -693,7 +724,7 @@ cards). The other two parameters: STATIC_DATA and DYNAMIC_DATA are UDTs that hol
  DYNAMIC_DATA      UT22001_Dy_InstAnalogRead       DB22001_Dy_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
 
-Section 5 contains a full list of all variables within these UDTs.
+Section 6 contains a full list of all variables within these UDTs.
 
 This arrangement conforms with the PAL philosophy whereby IO card connections have unique 
 formal parameters; all remaining signals are passed as variables within UDTs.
@@ -703,67 +734,67 @@ formal parameters; all remaining signals are passed as variables within UDTs.
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 3.1     Converting the raw instrument signal to a scaled value
 
-The RAW_ANALOG is the raw instrument signal received from an analog input card; these have 
+
+The RAW_ANALOG is the raw instrument signal received from an analog input card; this has 
 specific ranges depending on the type of IO card and the type of signal in use.
  
 Note:    It is assumed that the instrument has a linear response.
 
-The following tables show the typical ranges for the RAW_ANALOG:
+The following tables show the typical ranges for the RAW_ANALOG signal:
 
 
- ――――――――――――――――――――――――――――――――――――――――――
-            LOWER LIMIT     EQUIVALENT   UPPER LIMIT     EQUIVALENT
- SIGNAL TYPE      (RAW_MIN)          TO      (RAW_MAX)         TO
- ――――――――――――――――――――――――――――――――――――――――――
- -10 V to 10 V         -27648      -10 V          27648        +10 V
- -5 V to 5 V       -27648        -5 V          27648       +5 V
- -2.5 V to 2.5 V       -27648        -2.5 V          27648       +2.5 V
- -1 V to 1 V       -27648        -1 V          27648       +1 V
- -500 mV to 500 mV      -27648       -500 mV      27648      +500 mV
- -250 mV to 250 mV      -27648       -250 mV      27648      +250 mV
- -80 mV to 80 mV       -27648      -80 mV      27648        +80 mV
- -50 mV to 50 mV    -27648      -50 mV      27648        +50 mV
- 1 V to 5 V          0       +1 V          27648       +5 V
+ ―――――――――――――――――――――――――――――――――――――――――― 
+            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT    INFO_TYPE
+ SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      (enum value)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ -10 V to 10 V         -27648     -10 V        27648      +10 V      001
+ -5 V to 5 V       -27648       -5 V        27648     +5 V      002
+ -2.5 V to 2.5 V       -27648       -2.5 V        27648     +2.5 V      003
+ -1 V to 1 V       -27648       -1 V        27648     +1 V      004
+ -500 mV to 500 mV      -27648      -500 mV    27648    +500 mV      005
+ -250 mV to 250 mV      -27648      -250 mV    27648    +250 mV      006
+ -80 mV to 80 mV       -27648     -80 mV    27648      +80 mV      007
+ -50 mV to 50 mV    -27648     -50 mV    27648      +50 mV      008
+ 1 V to 5 V          0      +1 V        27648     +5 V      009
  ――――――――――――――――――――――――――――――――――――――――――
  Input ranges for typical instrument types (voltage)
 
 
-
  ――――――――――――――――――――――――――――――――――――――――――
-            LOWER LIMIT     EQUIVALENT   UPPER LIMIT     EQUIVALENT
- SIGNAL TYPE      (RAW_MIN)          TO      (RAW_MAX)         TO
+            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT    INFO_TYPE
+ SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      (enum value)
  ――――――――――――――――――――――――――――――――――――――――――
- -500 mV to 500 mV   -27648       -500 mV      27648      +500 mV
- -20 mA to 20 mA       -27648      -20 mA      27648        +20 mA
- 0 mA to 20 mA         0         0 mA      27648        +20 mA
- 4 mA to 20 mA         0         4 mA      27648        +20 mA
+ -20 mA to 20 mA       -27648     -20 mA    27648      +20 mA      101
+ 0 mA to 20 mA         0        0 mA    27648      +20 mA      102
+ 4 mA to 20 mA (2w)      0        4 mA    27648      +20 mA      103
+ 4 mA to 20 mA (4w)      0        4 mA    27648      +20 mA      104
  ――――――――――――――――――――――――――――――――――――――――――
  Input ranges for typical instrument types (current)
 
 
-
-
  ――――――――――――――――――――――――――――――――――――――――――
-            LOWER LIMIT     EQUIVALENT   UPPER LIMIT     EQUIVALENT
- SIGNAL TYPE      (RAW_MIN)          TO      (RAW_MAX)         TO
+            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT    INFO_TYPE
+ SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      (enum value)
  ――――――――――――――――――――――――――――――――――――――――――
- RTD 150 Ω            0         0 Ω         27648        150 Ω
- RTD 300 Ω            0         0 Ω         27648        300 Ω
- RTD 600 Ω            0         0 Ω         27648        600 Ω
- RTD 6000 Ω         0         0 Ω         27648      6000 Ω
- PT x00           -2000        200.0°C        8500        850.0°C
- Ni x00          -600      -60.0°C          250        250.0°C
- Type B thermocouple     -2100       -210.0°C        12000      1200.0°C
- Type K thermocouple     -2700       -270.0°C        13720      1372.0°C
- Type N thermocouple    -2700       -210.0°C        13000      1300.0°C
- Type R/S thermocouple    -500      -50.0°C        17690      1769.0°C
- Type T thermocouple     -2700       -270.0°C        4000        400.0°C
+ RTD 150 Ω            0        0 Ω       27648      150 Ω      201
+ RTD 300 Ω            0        0 Ω       27648      300 Ω      202
+ RTD 600 Ω            0        0 Ω       27648      600 Ω      203
+ RTD 6000 Ω         0        0 Ω       27648    6000 Ω      204
+ PT x00           -2000       200.0°C      8500      850.0°C     205
+ Ni x00          -600     -60.0°C        250      250.0°C     206
+ Type B thermocouple     -2100      -210.0°C      12000    1200.0°C     301
+ Type K thermocouple     -2700      -270.0°C      13720    1372.0°C     302
+ Type N thermocouple    -2700      -210.0°C      13000    1300.0°C     303
+ Type R/S thermocouple    -500     -50.0°C      17690    1769.0°C     304
+ Type T thermocouple     -2700      -270.0°C      4000      400.0°C     305
  ――――――――――――――――――――――――――――――――――――――――――
  Input ranges for typical instrument types (resistance thermometers and thermocouples)
+
 
 The RAW_MIN and the RAW_MAX values in the above tables are the numerical values for the 
 instrument range; the appropriate values must be entered in the STATIC_DATA data structure 
 passed to the block. These are the UDT variables:
+
 
  UT02001_St_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
@@ -775,7 +806,9 @@ passed to the block. These are the UDT variables:
                     signal (at the card)
  ――――――――――――――――――――――――――――――――――――――――――
 
+
 The corresponding values for the scaled instrument signal are:
+
 
  UT02001_St_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
@@ -787,8 +820,10 @@ The corresponding values for the scaled instrument signal are:
                     signal [engineering units]
  ――――――――――――――――――――――――――――――――――――――――――
 
+
 Thus, if a flow meter with a calibrated range of -100 l/s to +100 l/s provided a 4 20 mA signal to 
 the PLC, then:
+
 
  ――――――――――――――――――――――――――――――――――――――――――
  RANGE_RAW_MIN   RANGE_RAW_MAX   RANGE_SCALE_MIN     RANGE_SCALE_MAX
@@ -796,7 +831,9 @@ the PLC, then:
         0           27648             -100.0            +100.0
  ――――――――――――――――――――――――――――――――――――――――――
 
+
 The scaled value is stored in the DATA_DYNAMIC structure in the following variable:
+
 
  UT22001_Dy_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
@@ -805,6 +842,7 @@ The scaled value is stored in the DATA_DYNAMIC structure in the following variab
  actual_Value          ACTUAL — SCALED INSTRUMENT VALUE         Real
                      [engineering units]
  ――――――――――――――――――――――――――――――――――――――――――
+
 
 The scaled value (actual_Value) is calculated as follows:
 
@@ -852,6 +890,7 @@ Note:    RAW_MIN, RAW_MAX,  SCALE_MIN and SCALE_MAX are all preceded with RA
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.1.1     Configuration errors
 
+
 The block requires that both the RANGE_RAW and RANGE_SCALE signals conform to certain rules:
 
    1.  RANGE_RAW_MIN must be less than, and not equal to RANGE_RAW_MAX
@@ -870,6 +909,83 @@ the actual_Value will be set to zero irrespective of any values given to RAW_ANA
 Note:    This avoids the potential for a divide by zero error: if the RANGE_RAW_MIN and 
      RANGE_RAW_MAX are exactly equal, the calculation of the actual_Value in 
      equation (3.1) would result in a divide by zero error. 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.1.2     Instrument type identification
+
+
+The configuration static variable INFO_TYPE is an enumerated value that stores the type of 
+instrument being used, the value of this variable should be set to the enumerated values listed 
+in the right-most column of the tables above. This al-lows the SCADA/HMI faceplates to identify 
+the type of instrument being used.
+The enumerated values listed are for standard instrument types supported by usual range of 
+analogue input modules and the values specified should not be reassigned (i.e. the 
+ranges 000-009 for voltage, 100-104 for current, 200-206 for RTD, 300-301 and 300-305 for 
+thermocouples).
+
+If additional (non-standard) instrument types are required, any numbers outside the above 
+ranges can be specified.
+
+The standard enumerated values are used at the supervisory system to identify the precise signal 
+type of the instrument. These values and corresponding text fields are as follows:
+
+
+ ―――――――――――――――――――――――――――――――――――――――――― 
+        VOLTAGE SIGNALS
+ INFO_TYPE   SIGNAL TYPE           TEXT FIELD
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ 000      Generic voltage signal       Voltage signal
+ 001      -10 V to 10 V          Voltage (-10 V to 10 V)
+ 002      -5 V to 5 V            Voltage (-5 V to 5 V)
+ 003      -2.5 V to 2.5 V           Voltage (-2.5 V to 2.5 V)
+ 004      -1 V to 1 V            Voltage (-1 V to 1 V)
+ 005      -500 mV to 500 mV       Voltage (-500 mV to 500 mV)
+ 006      -250 mV to 250 mV       Voltage (-250 mV to 250 mV)
+ 007      -80 mV to 80 mV         Voltage (-80 mV to 80 mV)
+ 008      -50 mV to 50 mV         Voltage (-50 mV to 50 mV)
+ 009      1 V to 5 V             Voltage (1 V to 5 V)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+        CURRENT SIGNALS
+ INFO_TYPE   SIGNAL TYPE           TEXT FIELD
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ 100      Generic current signal     Current signal
+ 101      -20 mA to 20 mA         Current (-20 mA to 20 mA)
+ 102      0 mA to 20 mA         Current (0 mA to 20 mA
+ 103      4 mA to 20 mA (2-wire)       Current (4 mA to 20 mA 2-wire)
+ 104      4 mA to 20 mA (4-wire)       Current (4 mA to 20 mA 4wire)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+        RTD SIGNALS
+ INFO_TYPE   SIGNAL TYPE           TEXT FIELD
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ 200      Generic RTD signal         RTD signal
+ 201      RTD 150 Ω            RTD (150 Ω)
+ 202      RTD 300 Ω            RTD (300 Ω)
+ 203      RTD 600 Ω            RTD (600 Ω)
+ 204      RTD 6000 Ω             RTD (6000 Ω)
+ 205      PT x00             RTD (PT x00)
+ 206      Ni x00             RTD (Ni x00)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+        THERMOCOUPLE SIGNALS
+ INFO_TYPE   SIGNAL TYPE           TEXT FIELD
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ 300      Generic Thermocouple signal    Thermocouple
+ 301      Type B thermocouple       Thermocouple (Type B)
+ 302      Type K thermocouple       Thermocouple (Type K)
+ 303      Type N thermocouple       Thermocouple (Type N)
+ 304      Type R/S thermocouple       Thermocouple (Type R/S)
+ 305      Type T thermocouple        Thermocouple (Type T)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ INFO_TYPE enumerated values and definitions
+
+
+Of these INFO_TYPE enumerated values, the values 000, 100, 200 and 300 are reserved for generic 
+signal types, respectively Voltage, Current, RTD and Thermocouple. These can be used in place of 
+a specific signal type.
+
+Note:    The INFO_TYPE value must be set manually for each instrument (in the same way as 
+     INFO_TAG and INFO_UNITS), it is not derived internally within the module.
 
 </Text>
                 </AttributeList>
@@ -902,6 +1018,7 @@ Note:    This avoids the potential for a divide by zero error: if the RANGE_
                   <Text>▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 3.2     Warnings and alarms
 
+
 By default, the block generates 4 alarms and warnings (2 warnings and 2 alarms, 4 in total) 
 as follows:
 
@@ -920,6 +1037,7 @@ as follows:
 The active state of any alarm or warning is stored in the DATA_DYNAMIC structure in the following 
 variables:
 
+
  UT22001_Dy_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                     TYPE
@@ -930,6 +1048,7 @@ variables:
  msg_Wrn_L          MESSAGE — Warning - low warning is active        Bool
  ――――――――――――――――――――――――――――――――――――――――――
 
+
 The alarms and warnings that end with _H are activated when the scaled instrument reading is 
 greater than or equal to a setpoint threshold (i.e. activate when the measured quantity is too 
 high; generally, if there is both an alarm high and a warning high, the convention within the PAL 
@@ -937,7 +1056,7 @@ is that the warning should activate before the alarm².
 
 
 The alarms and warnings that end with _L are activated when the scaled instrument reading is 
-less than or equal to a setpoint threshold (i.e. activate when the measured quantity is too high; 
+less than or equal to a setpoint threshold (i.e. activate when the measured quantity is too low; 
 generally, if there is both an alarm low and a warning low, the convention within the PAL is that 
 the warning should activate before the alarm².
 
@@ -951,7 +1070,7 @@ the warning should activate before the alarm².
 All alarms and warnings are individually enabled (a disabled alarm or warning will never be 
 activated), all alarms and warnings have individual setpoint values (the value at which the 
 alarm or warning is triggered), all alarms and warnings have individual hysteresis valves 
-(effectively a tolerance band, the difference between where an alarm activates and where is 
+(effectively a tolerance band, the difference between where an alarm activates and where it 
 deactivates, used to prevent nuisance or “chattering” alarms). Finally, each alarm and warning 
 has a configurable on and off delay (the alarm or warning will only activate if the reading is 
 outside the threshold for the on-delay time and similarly will only deactivate when the reading 
@@ -959,10 +1078,11 @@ is inside the threshold and hysteresis for the off-delay time).
 
 The following table summarises all the available signals for each alarm and warning:
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL          FUNCTION             TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- CONFIG_XXX_Y_ENABLE Alarm/warning enabled      Bool    1 = enabled, 0 = disabled
+ CONFIG_XXX_Y_EN    Alarm/warning enabled      Bool    1 = enabled, 0 = disabled
  SP_XXX_Y_VAL      Alarm/warning setpoint value    Real Engineering units
  SP_XXX_Y_HYST_VAL    Alarm/warning hysteresis value Real Engineering units
  TIME_XXX_Y_ON_DEL   Alarm/warning on delay time   Real In seconds
@@ -977,14 +1097,17 @@ The following table summarises all the available signals for each alarm and warn
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.2.1     High alarms and warnings (an example)
 
+
 This example explains how a high alarm signal is generated, a high warning works in exactly the 
 same way with WRN being substituted for ALM.
 
 The full set of signals associated with the high alarm are:
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
+ CONFIG_ALM_H_EN    Alarm high enabled      Bool    1 = enabled, 0 = disabled
  SP_ALM_H_VAL      Alarm high setpoint value    Real Engineering units
  SP_ALM_H_HYST_VAL    Alarm high hysteresis value Real Engineering units
  TIME_ALM_H_ON_DEL   Alarm high on delay time   Real In seconds
@@ -992,6 +1115,7 @@ The full set of signals associated with the high alarm are:
  mode_Alm_H_MaskOn    Alarm is masked         Bool    1 = masked, 0 = normal
  msg_Alm_H        Alarm high is active      Bool    1 = active, 0 = inactive
  ――――――――――――――――――――――――――――――――――――――――――
+
 
 The figure below indicates how each of these signal functions (note TIME_ALM_H_ON_DEL and
 TIME_ALM_H_OFF_DEL have been abbreviated to ON_DEL and OFF_DEL respectively):
@@ -1013,7 +1137,7 @@ TIME_ALM_H_OFF_DEL have been abbreviated to ON_DEL and OFF_DEL respectively):
 
         msg_Alm_H │             ┏━━━━━━━━━━━━┓
                 │             ┃               ┃
-CONFIG_ALM_H_ENABLE = 1  │             ┃   ALARM IS ACTIVE    ┃
+CONFIG_ALM_H_EN = 1     │             ┃   ALARM IS ACTIVE    ┃
 &amp; mode_Alm_H_MaskOn = 0 │             ┃               ┃
                 │             ┃               ┃
                 ┼━━━━━━━━━━━━╶╶╶╶╶╶╶╶╶╶╶╶╶━━━━
@@ -1022,9 +1146,9 @@ CONFIG_ALM_H_ENABLE = 1  │             ┃   ALA
 
         msg_Alm_H │          
 ⑤               │             ╎               ╎             
-CONFIG_ALM_H_ENABLE = 0  │             
+CONFIG_ALM_H_EN = 0     │             
     OR          │             ╎               ╎
-CONFIG_ALM_H_ENABLE = 1  │          
+CONFIG_ALM_H_EN = 1     │          
 &amp; mode_Alm_H_MaskOn = 1 ┼━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
@@ -1032,10 +1156,11 @@ CONFIG_ALM_H_ENABLE = 1  │          
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Scenario ①, alarm setpoint reached, but for less than on-delay duration
 
+
 The graph represents the scaled analog instrument reading, actual_Value (in engineering 
 units). The top horizontal line is the setpoint for the high alarm (SP_ALM_H_VAL).
 
-If the alarm is enabled (CONFIG_ALM_H_ENABLE = 1) then the following actions occur:
+If the alarm is enabled (CONFIG_ALM_H_EN = 1) then the following actions occur:
 
 At point ① on the graph, the signal actual_Value reaches (and exceeds) the threshold value 
 SP_ALM_H_VAL; i.e.:
@@ -1051,6 +1176,7 @@ the time set in TIME_ALM_H_ON_DEL, consequently the alarm does not activate.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Scenario ②, alarm setpoint reached for more than the on-delay duration
 
+
 At point ② on the graph, the signal actual_Value again reaches (and exceeds) the setpoint value 
 SP_ALM_H_VAL.
 
@@ -1064,6 +1190,7 @@ state), this is indicated in the middle msg_Alm_H graph.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Scenario ③, alarm reset level reached, but for less than the off-delay duration
 
+
 At point ③, the signal actual_Value falls to the point at which the alarm is no longer active i.e.:
 
           actual_Value &lt; (SP_ALM_H_VAL − SP_ALM_H_HYST_VAL)
@@ -1076,7 +1203,7 @@ At this point, the signal is below the alarm reset level:
 
           SP_ALM_H_VAL − SP_ALM_H_HYST_VAL
 
-and the off-delay timer starts; in the case of point 3, the signal actual_Value re-turns above the 
+and the off-delay timer starts; in the case of point ③, the signal actual_Value returns above the 
 reset threshold before the off-delay timer reaches the time set in TIME_ALM_H_OFF_DEL, 
 consequently, the alarm does not deactivate.
 
@@ -1084,6 +1211,7 @@ consequently, the alarm does not deactivate.
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Scenario ④, alarm reset level reached for more than the off-delay duration
+
 
 At point ④ on the graph, the signal actual_Value again falls below the alarm reset level 
 (SP_ALM_H_VAL − SP_ALM_H_HYST_VAL).
@@ -1098,7 +1226,8 @@ middle msg_Alm_H graph.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Scenario ⑤, alarm is disabled
 
-If the alarm is disabled (CONFIG_ALM_H_ENABLE = 0) then the alarm will never activate 
+
+If the alarm is disabled (CONFIG_ALM_H_EN = 0) then the alarm will never activate 
 (msg_Alm_H is always in a low state), this is indicated in the lower msg_Alm_H graph.
 
 Note:    The timer for disabled alarms and warnings is permanently set to zero.
@@ -1106,6 +1235,7 @@ Note:    The timer for disabled alarms and warnings is permanently set to ze
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.2.2     Low alarms and warnings
+
 
 Low alarms and warnings are very similar to the high alarms of § 3.2.1, they do however work
 in the opposite sense (the inequalities are reversed), low alarms and warnings are activated
@@ -1117,13 +1247,14 @@ On and off delays work in exactly the same way as those for the high alarm.
 A worked example of the low alarm is given in the online documentation for this block:
 
 select this block in the project tree and press:
-     SHIFT + F1
+     SHIFT + F1 or follow the link: http://psop.uk/pal-smds-fc02001-p
 
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.2.3     Masking alarms and warnings
+
 
 There are conditions where it can become necessary to mask (supress) alarms and warnings, a 
 typical example could be a flow meter that monitors the flow into a filter; under normal 
@@ -1138,6 +1269,7 @@ operation, not when the filter is being cleaned.
 This suppression of an alarm or warning is referred to as “masking”, and there is a mask bit for 
 each alarm and warning:
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION           TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1149,9 +1281,9 @@ each alarm and warning:
  Alarm and warning mask signals
 
  
-Any alarm or warning that is masked (the mode_Xxx_Y_MaskOn = 1), will deactivate instantly 
+Any alarm or warning that is masked (mode_Xxx_Y_MaskOn = 1), will deactivate instantly 
 (there is no off-delay) and will not reactivate activate (the msg_Xxx_Y will be set to zero), the 
-effect is the same as if the CONFIG_XXX_Y_ENABLE bit were turned off.
+effect is the same as if the CONFIG_XXX_Y_EN bit were turned off.
 
 The difference between the mask and the ENABLE signals is that the enable signal is a 
 configuration of the instrument (it determines which alarms and warnings are configured for the 
@@ -1161,7 +1293,7 @@ The mask signal on the other hand can be changed at run-time (either by some asp
 Controller program or by the operator). The mask signal is stored in a dynamic data block and 
 can be freely modified.
 
-Note:    If an alarm or warning is not enabled (CONFIG_XXX_Y_ENABLE = 0), then the mask bit 
+Note:    If an alarm or warning is not enabled (CONFIG_XXX_Y_EN = 0), then the mask bit 
      (mode_Xxx_Y_MaskOn) will not do anything (setting it will not enable the alarm), in 
      fact if the alarm or warning is not enabled, the mask bit will be permanently set to 
      zero.
@@ -1180,15 +1312,16 @@ true even if the alarm were active before being masked.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.2.4     A note on dynamically enabling alarms
 
+
 In normal operations, alarms are either enabled or disabled as part of the instrument 
 configuration and this configuration will not change during run-time; the enable signal 
-(CONFIG_XXX_Y_ENABLE) is after all in a static data block. 
+(CONFIG_XXX_Y_EN) is after all in a static data block. 
 
 However, it is possible that the static data block is being used as a recipe block and as such it 
 could be overloaded at some point during run-time.
 
-Should the block detect a change in any of the CONFIG_XXX_Y_ENABLE; specifically, a rising 
-edge, the block provided error checking to ensure that the associated alarm/warning timer 
+Should the block detect a change in any of the CONFIG_XXX_Y_EN; specifically, a rising 
+edge, the block provides error checking to ensure that the associated alarm/warning timer 
 (actual_Xxx_Y_Timer) is preset to correct TIME_XXX_Y_ON_DEL, this prevents the alarm/warning 
 from activating instantly, if the actual_Value is outside the alarm/warning setpoint. A condition 
 that could arise because the timer is set to zero while ever the alarm/warning is disabled.
@@ -1201,19 +1334,20 @@ Note:    This is a minor technical point, but it is a necessary error trappi
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 3.3     Fault signals
 
+
 There are four fault signals that can be produced by the block:
 
 
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- msg_Flt_UnderRange   The instrument is more than   Bool    1 = under range, 0 = healthy
+ msg_Flt_UnderRange   The instrument is more than   Bool    1 = under-range, 0 = healthy
                 a percentage below the its 
                 minimum value
- msg_Flt_OverRange     The instrument is more than   Bool    1 = over range, 0 = healthy
+ msg_Flt_OverRange     The instrument is more than   Bool    1 = over-range, 0 = healthy
                 a percentage above its 
                 maximum value
- msg_Flt_OutOfRange   Common fault, either       Bool    1 = out of range, 0 = healthy
+ msg_Flt_OutOfRange   Common fault, either       Bool    1 = out-of-range, 0 = healthy
                 under or over range
  msg_Flt_External     The instrument itself is    Bool    1 = fault, 0 = healthy
                 indicating a fault 
@@ -1226,62 +1360,55 @@ There are four fault signals that can be produced by the block:
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.3.1     Over, under and out of range fault signals
 
-If the signal from the instrument the RAW_ANALOG signal, is outside the RANGE_RAW_MIN to 
-RANGE_RAW_MAX range (red dotted area of the graph, Figure 3.1), the scaled instrument reading 
-(actual_Value) will still be calculated correctly; however, an appropriate, over-range or 
-under-range (msg_Flt_OverRange or msg_Flt_UnderRange) signal will be generated to indicate 
-that the instrument signal is outside of its calibrated range and is potentially no longer accurate.
+If the scaled signal actual_Value , is outside the RANGE_SCALE_MIN to RANGE_SCALE_MAX range 
+(dotted area of the graph, § 3.1), the scaled instrument reading (actual_Value) will still be 
+calculated correctly; however, an appropriate, over-range or under-range (msg_Flt_OverRange or 
+msg_Flt_UnderRange) signal will be generated to indicate that the instrument signal is outside 
+of its calibrated range and is potentially no longer accurate.
 
 Some tolerance is permitted before either the msg_Flt_OverRange or msg_Flt_UnderRange 
 signals is activated (this is to prevent nuisance alarms — most instruments are tolerant of slight 
 over and under shoot readings). 
 
-The tolerance applied to the out of range signals is a percentage of the raw range of the 
-instrument (the raw range being RANGE_RAW_MAX − RANGE_RAW_MIN). 
+The tolerance applied to the out-of-range signals is a percentage of the scaled range of the 
+instrument (the scaled range being RANGE_SCALE_MAX − RANGE_SCALE_MIN). 
 
 The tolerance to be applied is given in the parameter RANGE_OOR_PERCENT, this is a real 
 (floating point) number in the range 0.0-10.0%.
 
 If the tolerance for the instrument is not known, a generic value of 2.5% should be used.
 
-The out of range tolerance absolute value (in terms of the RAW_ANALOG rather than as a 
+The out-of-range tolerance absolute value (in terms of the actual_Value rather than as a 
 percentage) is calculated as:
 
 
+┌───────────────────────────────────────┐
+│                            (RANGE_SCALE_MAX ─ RANGE_SCALE_MIN) ╳ RANGE_OOR_PERCENT  │
+│ calcRawOOR =  ―――――――――――――――――――――――――――――― │
+│                        100                 │
+└───────────────────────────────────────┘
 
-┌─────────────────────────────────────┐
-│                            (RANGE_RAW_MAX ─ RANGE_RAW_MIN) ╳ RANGE_OOR_PERCENT  │
-│ calcRawOOR =  ―――――――――――――――――――――――――――― │
-│                      100              │
-└─────────────────────────────────────┘
 
-Thus, if RANGE_RAW_MIN is 0, RANGE_RAW_MAX is 27648 and a RANGE_OOR_PERCENT of 2.5% is 
-selected, the absolute out of range value (calcRawOOR in the above equation) has a calculated
- value of 691. 
+Thus, if RANGE_SCALE_MIN is −100 l/s, RANGE_SCALE_MAX is +100 l/s (giving a span of 200 l/s) and 
+a RANGE_OOR_PERCENT of 2.5% is selected, the absolute out of range value (calcRawOOR in the 
+above equation) has a calculated value of 5.00 l/s (2.5% of 200).
 
-In this example, the msg_Flt_OverRange signal would activate when RAW_ANALOG 
-exceeded a value of RANGE_RAW_MAX + 691 (or 28,339). The msg_Flt_UnderRange signal would 
-activate when RAW_ANALOG fell below a value of RANGE_RAW_MIN − 691 (or −691).
+In this example, the msg_Flt_OverRange signal would activate when actual_Value exceeded a 
+value of RANGE_SCALE_MAX + 5.00 (or 105.00  l/s). This value (the absolute over range limit 
+value) is stored in a calculated variable cal_OR_Abs. 
 
-The RANGE_OOR_PERCENT is applied directly to the RAW_ANALOG signal, however, because the 
-instrument is considered to be linear, the same calculation can also be ap-plied directly to the 
-scaled reading of the instrument (actual_Value). 
+Similarly, the msg_Flt_UnderRange signal would activate when actual_Value fell below a value 
+of RANGE_SCALE_MIN – 5.00 (or −105.00  l/s). This value (the absolute under range limit value) 
+is stored in a calculated variable cal_UR_Abs.
 
-In the example given in § 2.1, the instrument spans the range of −100 l/s to +100 l/s 
-(i.e. RANGE_SCALE_MIN = -100 and RANGE_SCALE_MAX = +100) then the scaled range of the 
-instrument is 200 l/s (RANGE_SCALE_MAX − RANGE_SCALE_MIN) and the absolute out of range 
-value would be 2.5% of the scaled range (or 5 l/s). thus, the msg_Flt_OverRange signal would 
-activate above 105 l/s and the msg_Flt_UnderRange signal would activate below −105 l/s.
-
-Note:    If the range information supplied to the module is incorrect, either:
-       •   RAW_MAX &lt;= RAW_MIN or
-       •   SCALE_MAX &lt;= SCALE_MIN
-     Then all the out of range signals are activated
+Both the cal_OR_Abs and cal_UR_Abs values are stored in  the dynamic data area and can be 
+accessed by SCADA and HMI systems, or other aspects of the Con-troller software.
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Common out of range signal
+
 
 There is a third out of range signal: msg_Flt_OutOfRange, this signal is a common signal that 
 just indicates the instrument is out of its calibrated range (it does not specify whether it is over 
@@ -1291,7 +1418,20 @@ active.
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+Configuration error
+
+If a range configuration error is present (see § 3.1.1), all three out of range signals will activate 
+msg_Flt_OverRange, msg_Flt_UnderRange and msg_Flt_OutOfRange.
+
+The configuration error is summarised as either:
+       •   RAW_MAX &lt;= RAW_MIN or
+       •   SCALE_MAX &lt;= SCALE_MIN
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.3.2     External fault signal
+
 
 The external fault is an optional hardwired signal from the instrument, it indicates that the 
 instrument itself is registering that there is some problem. Such external fault signals are more 
@@ -1311,6 +1451,7 @@ Such fault signals are generally indicated via a hardwired digital input to the 
 
 The external fault signal (if used) is passed to the block as the parameter: EXT_FAULT
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  PARAMETER          FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1320,12 +1461,13 @@ The external fault signal (if used) is passed to the block as the parameter: EXT
  ――――――――――――――――――――――――――――――――――――――――――
  Block external fault parameter 
 
+
 If the EXT_FAULT signal is not required, the input should be set to _false.
 
 If the instrument generates a fault signal in the opposite sense, i.e. 0 = fault and 1 = healthy (this 
 is a common fail-safe condition, that generates a fault signal if the instrument is disconnected 
 or a wire break occurs), then a normally closed contact should be applied to the EXT_FAULT 
-parameter to invert the signal into the block (see Figure 3.4):
+parameter to invert the signal into the block (see below):
 
 
                       ┌─────────────
@@ -1356,6 +1498,7 @@ Note:    The external fault does not in any way impact the reading and scali
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 3.4     Operating mode
 
+
 This block  supports various operating modes:
 
    •   Simulation mode
@@ -1368,6 +1511,7 @@ Examining these in turn:
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.4.1     Simulation mode
 
+
 The instrument can be switched to a simulation mode, in which the actual reading from the 
 instrument is replaced by a simulated value provided by the operator. 
 
@@ -1378,23 +1522,25 @@ repaired or replaced.
 
 The following data points are associated with the simulation mode:
 
+
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- CONFIG_SIM_DISABLE      Prevents simulation mode   Bool    1 = no sim, 0 = sim permitted
+ CONFIG_SIM_DIS         Prevents simulation mode   Bool    1 = no sim, 0 = sim permitted
                 being activated under all 
                 circumstances
 
  mode_SimOn        Activates simulation mode,    Bool    1 = sim on, 0 = sim off
                 if active, the scaled reading 
-                of the instrument (Value) will 
-                be set to mode_SimValue
+                of the instrument:
+                actual_Value will be set 
+                to mode_SimValue
 
  mode_SimValue      Scaled instrument reading   Real    Simulated instrument value
-                (Value) will be set to this if 
-                simulation mode is on
-                (CONFIG_SIM_OFF = 0 and 
-                mode_SimOn = 1)
+                actual_Value will be set to  
+                this if simulation mode is 
+                on (CONFIG_SIM_DIS = 0 
+                and mode_SimOn = 1)
 
  status_SimOn       Status indication, shows if    Bool    1 = sim active, 0 = Sim off
                 simulation mode is active
@@ -1404,11 +1550,11 @@ The following data points are associated with the simulation mode:
 Simulation mode can only be activated by the operator via a faceplate available at the 
 supervisory system (SCADA/HMI).
 
-If simulation mode is disabled (configuration signal CONFIG_SIM_OFF is set to 1), then the 
+If simulation mode is disabled (configuration signal CONFIG_SIM_DIS is set to 1), then the 
 simulation mode cannot be turned on under any circumstances, the option is greyed out on the 
 supervisory system faceplate and the block will constantly reset the mode_SimOn signal.
 
-If simulation mode is permitted (CONFIG_SIM_OFF = 0), then setting mode_SimOn to 1 will 
+If simulation mode is permitted (CONFIG_SIM_DIS = 0), then setting mode_SimOn to 1 will 
 activate simulation mode and the scaled instrument value (actual_Value) will be set to the 
 value stored in mode_SimValue:
 
@@ -1421,13 +1567,14 @@ faceplate on the supervisory system. The simulation value can be adjusted at any
 operator (even if simulation mode has not been activated), but will not be applied until 
 simulation mode is turned on (mode_SimOn = 1). 
 
-If simulation mode is completely disabled (CONFIG_SIM_OFF is set to 1) then the operator will
+If simulation mode is completely disabled (CONFIG_SIM_DIS is set to 1) then the operator will
 not be able to adjust the simulated value (mode_SimValue will be greyed out on the faceplate).
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.4.2     Remote/local mode
+
 
 Remote and local operating modes refer to the supervisory system that has control of the 
 instrument (i.e. which system can write to the device and change the operating mode of the 
@@ -1447,7 +1594,7 @@ The modes are as follows (and are mutually exclusive, only one will be active):
                 system can no longer issue commands to it
 
    Remote/local disabled   The system does not use remote/local modes and any 
-     (ALL mode)     supervisory system can issue commands to the device 
+   (ALL mode)       supervisory system can issue commands to the device 
  
 Remote/local control is generally handled by the supervisory systems themselves; however, the 
 supervisory systems need a storage area per device to record which mode that device is in, local 
@@ -1459,7 +1606,7 @@ signals provided to the block.
 
 For systems that do not use remote/local modes (any supervisory system can control the device, 
 or control is determined by operator privileges), the remote/local modes can be disabled 
-(CONFIG_RL_ENABLE is set to zero) and the device is effectively in ALL mode (any system can 
+(CONFIG_RL_EN is set to zero) and the device is effectively in ALL mode (any system can 
 control the device).
 
 If remote/local operation is in use, the supervisory system that does not have control will still 
@@ -1473,33 +1620,35 @@ The following signals are associated with remote/local/all modes:
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- CONFIG_RL_ENABLE   Allows Remote and Local      Bool    1 = Remote/local selected
+ CONFIG_RL_EN      Allows Remote and Local      Bool    1 = Remote/local selected
                 modes to be selected        0 = All mode is active
 
  mode_RemoteOn       Activates remote mode     Bool    1 = remote mode on, 
-                CONFIG_RL_ENABLE must = 1    0 = remote mode off
+                CONFIG_RL_EN must = 1       0 = remote mode off
 
  mode_LocalOn     Activates local mode          Bool    1 = local mode on, 
-                CONFIG_RL_ENABLE must = 1    0 = remote mode off
+                CONFIG_RL_EN must = 1       0 = remote mode off
 
  status_RemoteOn      Status remote mode on     Bool    1 = remote mode on, 
                               0 = remote mode off
 
- status_LocalOn       Status local mode on      Bool 1 = local mode on, 
+ status_LocalOn       Status local mode on      Bool    1 = local mode on, 
                               0 = local mode off
 
- status_RLOff       Status ALL mode is on = 0    Bool 1 = ALL mode on, 
-                              0 = ALL mode off
+ status_RLOff       Status Remote/local is off     Bool    1 = ALL mode on, 
+             (ALL mode active)         0 = ALL mode off
  ――――――――――――――――――――――――――――――――――――――――――
  Block remote/local signals 
 
-By default, remote/local is disabled — ALL mode is selected (CONFIG_RL_ENABLE = 0).
+
+By default, remote/local is disabled — ALL mode is selected (CONFIG_RL_EN = 0).
 
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 3.4.3     Faceplate disable mode
+
 
 It is possible to disable the supervisory system faceplate from within the block, the configuration 
 signal:
@@ -1508,42 +1657,63 @@ signal:
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- CONFIG_FP_DISABLE     Disable the supervisory      Bool    1 = Faceplate disabled
+ CONFIG_FP_DIS        Disable the supervisory      Bool    1 = Faceplate disabled
                 system faceplate           0 = normal
  ――――――――――――――――――――――――――――――――――――――――――
  Block faceplate disable signal 
 
-If the faceplate is disabled (CONFIG_FP_DISABLE = 1), the supervisory system will not allow the 
+
+If the faceplate is disabled (CONFIG_FP_DIS = 1), the supervisory system will not allow the 
 device faceplate to be opened (normally achieved by clicking the block icon or device symbol), 
 this in turn prevents the operator from affecting the device in anyway, it would not, for example, 
 be possible to put the device into simulation mode.
 
-Similarly, if the faceplate is disabled, the module will set remote/local mode to ALL and will 
-disable simulation mode.
 
 
 
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-3.5     Block icon signals
+    </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 3.2 to 3.4</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.5     Status reporting
 
-This block has a partner block icon that represents the instrument and its various modes and 
-status in a graphical format (block icon) that is displayed on a supervisory system (SCADA or HMI).
-
-See the online documentation for this block — select the block in the project tree and press:
-     SHIFT + F1
-
-The supervisory system interface is available in section 3.7 of the online SMDS document.
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.5.1     Understanding status signals
+The module constantly reports the status of the instrument (i.e. alarm/warning states, faults &amp;c.) 
+via various status signals. These signals can be used within the Controller software to determine 
+specific device conditions (e.g. a high alarm is active), the signals may also be used by 
+supervisory systems to display (in an ani-mated fashion) the state of the instrument.
 
 The status signals for faults, alarms and warnings are either duplicates of the message signals 
 (signals beginning with msg_) or logical combinations of them.
 
 The following is a full list of the status signals:
 
+
+ UT22001_Dy_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL           FUNCTION            TYPE   DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
@@ -1592,20 +1762,23 @@ The following is a full list of the status signals:
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.5.2     String constants for tag name and units
+3.5.1     String constants for tag name and units
+
 
 The STATIC_DATA structure holds two string values:
 
- UT02001_St_InstAnalogRead (full contents)
+
+ UT02001_St_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                     TYPE
  ――――――――――――――――――――――――――――――――――――――――――
  INFO_TAG          INFORMATION — Instrument ID tag          String[20]
 
- INFO_UNITS          INFORMATION — Engineering units of the instrument  String[10]
+ INFO_UNITS          INFORMATION — Instrument engineering units       String[10]
                        (unit of measure)
  ――――――――――――――――――――――――――――――――――――――――――
  String constants for the instrument
+
 
 These two strings allow the supervisory system to populate the instrument tag (e.g. FIC001) and 
 the engineering units applicable to the instrument (L/s for example) directly from the data 
@@ -1616,36 +1789,28 @@ graphic without customisation; all the data will be populated directly at runtim
 
 
 
-    </Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="B" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="C" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>Block description — Sections 3.2 to 3.7</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource />
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="E" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="F" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     PARAMETERS
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     Supervisory system interface
+
+
+See the online documentation for this block — select the block in the project tree and press:
+     SHIFT + F1 or follow the link: http://psop.uk/pal-smds-fc02001-p 
+
+An explanation of the block icons and faceplates available to the supervisory system for this 
+module is given in section 4 of the SMDS document [Ref. 011].
+
+A downloadable copy of the SMDS (and all other project documentation) is available here:
+
+     https://practicalseries.com/2001-pal/21-project/01-00-docs.html
+
+For this module, the document number is: PS2001-5-2312-fc02001
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     PARAMETERS
 
 
 The following parameters are associated with the block:
@@ -1682,7 +1847,7 @@ The following parameters are associated with the block:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+6.     DATA STRUCTURES AND USAGE
 
 
 The block has the following associated data structure:
@@ -1707,28 +1872,29 @@ The block has the following associated data structure:
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-5.1     UT02001_St_InstAnalogRead
+6.1     UT02001_St_InstAnalogRead
+
 
 The static data structure for an analog instrument.
 
 
  UT02001_St_InstAnalogRead (full contents)
- ――――――――――――――――――――――――――――――――――――――――――
+ ―――――――――――――――――――――――――――――――――――――――――― 
  SIGNAL NAME          FUNCTION                     TYPE
- ――――――――――――――――――――――――――――――――――――――――――
- CONFIG_ALM_H_ENABLE  CONFIG — High alarm is enabled          Bool
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ CONFIG_ALM_H_EN     CONFIG — High alarm is enabled          Bool
                      (1 = enabled, 0 = no alarm) 
- CONFIG_ALM_L_ENABLE   CONFIG — Low alarm is enabled           Bool
+ CONFIG_ALM_L_EN      CONFIG — Low alarm is enabled           Bool
                      (1 = enabled, 0 = no alarm)
- CONFIG_WRN_H_ENABLE     CONFIG — High warning is enabled         Bool
+ CONFIG_WRN_H_EN        CONFIG — High warning is enabled         Bool
                      (1 = enabled, 0 = no warning)
- CONFIG_WRN_L_ENABLE     CONFIG — Low warning is enabled          Bool
+ CONFIG_WRN_L_EN        CONFIG — Low warning is enabled          Bool
                      (1 = enabled, 0 = no warning)
- CONFIG_FP_DISABLE      CONFIG — Faceplate is disabled           Bool
+ CONFIG_FP_DIS         CONFIG — Faceplate is disabled           Bool
                      (1 = no Faceplate, 0 = normal)
- CONFIG_SIM_DISABLE    CONFIG — Simulation is disabled            Bool
+ CONFIG_SIM_DIS       CONFIG — Simulation is disabled            Bool
                      (1 = no Simulation, 0 = normal)
- CONFIG_RL_ENABLE    CONFIG — Remote/local mode enabled       Bool
+ CONFIG_RL_EN       CONFIG — Remote/local mode enabled       Bool
                      (1 = enabled, 0 = all mode)
 
  RANGE_RAW_MIN       RANGE — Minimum value of the raw analog      Int
@@ -1742,9 +1908,11 @@ The static data structure for an analog instrument.
  RANGE_OOR_PERCENT      RANGE — Out of range percentage, beyond which    Real
                     the instrument is out of range
 
+ INFO_TYPE         INFORMATION — Specifies the instrument type    Int
+                       (enumerated value, see § 3.1) 
  INFO_TAG          INFORMATION — Instrument ID tag          String[20]
 
- INFO_UNITS          INFORMATION — Engineering units of the instrument  String[10]
+ INFO_UNITS          INFORMATION — Instrument engineering units    String[10]
                        (unit of measure)
 
  SP_ALM_H_VAL       SETPOINT — High alarm threshold value         Real
@@ -1785,10 +1953,10 @@ The static data structure for an analog instrument.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-5.2      UT22001_Dy_InstAnalogRead
+6.2      UT22001_Dy_InstAnalogRead
+
 
 The static data structure for an analog instrument.
-
 
 
  UT22001_Dy_InstAnalogReadl (full contents)
@@ -1823,14 +1991,17 @@ The static data structure for an analog instrument.
                      (1 = warning disabled, 0 = normal)
  status_Fault            STATUS — Instrument is in fault             Bool
                      (1 = fault present, 0 = healthy)
- status_SimOn           STATUS — Instrument is in simulation mode     Bool
+ status_SimOn           STATUS — Device is in simulation mode             Bool
                      (1 = Simulation mode, 0 = normal)
- status_RemoteOn       STATUS — Instrument is in remote mode        Bool
+ status_RemoteOn       STATUS — Device is in remote mode                  Bool
                      (1 = Remote mode, 0 = normal)
- status_LocalOn         STATUS — Instrument is in local mode          Bool
+ status_LocalOn         STATUS — Device is in local mode                 Bool
                      (1 = Local mode, 0 = normal)
- status_RLOff         STATUS — Instrument is in ALL mode         Bool
+ status_RLOff         STATUS — Device is in ALL mode                   Bool
                      (1 = ALL mode, 0 = normal)
+
+ cal_OR_Abs          CALC — Over-range limit (absolute value)      Real
+ cal_UR_Abs          CALC — Under-range limit (absolute value)       Real
 
  mode_Alm_H_MaskOn     MODE — Masks the high alarm             Bool    
                    (1 = alarm masked, 0 = normal)
@@ -1844,9 +2015,9 @@ The static data structure for an analog instrument.
                    (1 = sim mode active, 0 = normal)
  mode_SimValue       MODE — Simulation value               Real
                    (engineering units)
- mode_LocalOn         MODE — Local HMI control enabled           Bool
-                   (1 = active, 0 = disabled or N/A)
  mode_RemoteOn        MODE — Remote SCADA control enabled       Bool
+                   (1 = active, 0 = disabled or N/A)
+ mode_LocalOn         MODE — Local HMI control enabled           Bool
                    (1 = active, 0 = disabled or N/A)
 
  msg_Alm_H         MESSAGE — Alarm - high alarm is active        Bool
@@ -1880,6 +2051,7 @@ The static data structure for an analog instrument.
      activate if a configuration error is active status_ConfigError = 1, actual_Value will 
      also be set to zero under these conditions.
 
+
 With the exception of the flowing, all these signals are discussed in the previous sections, the 
 outstanding items are firstly:
 
@@ -1891,10 +2063,10 @@ if it is free and reserve it for a particular phase of the batch. Batch applicat
 their own right and are discussed separately in the online User Guide.
 
 Next:
-     actual_Alm_H_Timer	Real
-     actual_Alm_L_Timer	Real
-     actual_Wrn_H_Timer	Real
-     actual_Wrn_L_Timer	Real
+     actual_Alm_H_Timer Real
+     actual_Alm_L_Timer Real
+     actual_Wrn_H_Timer Real
+     actual_Wrn_L_Timer Real
 
 These data points hold the actual value of the running timer for each of the alarms/warnings, 
 both on and off-delay timers used the same timer within the block (the timers are mutually 
@@ -1919,10 +2091,23 @@ and warning enable signals. 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
 
 
-The following constants and temporary data storage are used:
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Constants
+
+
+No constants are used in this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Temporary (local) data
+
+
+The following temporary data is used:
 
 
  Temporary (local) data
@@ -1939,8 +2124,6 @@ The following constants and temporary data storage are used:
  calcPart2           Scale value part 2 (SCALE_MAX − SCALE_MIN)   Real
  calcPart3           Scale value part 3 (RAW_MAX − RAW_MIN)     Real
  calcRawOOR        Calculated OOR absolute value          Real
- calcOverRange       Calculated over range limit (in raw units)    Real
- calcUnderRange       Calculated under range limit (in raw units)     Real
  calcHystAbs         Absolute hysteresis value           Real
  wrkHyst           Working hysteresis value            Real
  wrkOORPercent         Working out of range percentage          Real
@@ -1954,48 +2137,62 @@ The following constants and temporary data storage are used:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     BLOCK CALLS
+8.     BLOCK CALLS AND ASSOCIATIONS
+
+
+This section details any blocks which may be called from within this software module (subroutine 
+functions for example), any partner blocks with which it may be associated (for example a 
+receive module that is partner with a transmit module &amp;c.). It lists any system functions which 
+may be called (e.g. reading the real time clock) and any system data types that may be used.
+
+Finally, it lists any special calling requirements for the block (for example, must be called from 
+within a cyclic interrupt organisation block) and if the block is using “optimised access” (this is 
+the default arrangement).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.1     Block calls from within this module
+
 
 There are no PAL block calls from within this block.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     ASSOCIATED BLOCKS
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.3     System block calls and system data types
 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
-
-There are no system block calls.
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-10.     SPECIAL PROPERTIES AND REQUIREMENTS
+There are no system block calls
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.1   Block optimisation
-
-
-Block optimisation is ACTIVE for this block
+8.4     Special properties and requirements
 
 
 
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.2   Calling requirements
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.1     Block optimisation, IEC compatibility and library conformance
+
+
+   •   Block optimisation is ACTIVE for this block.
+
+   •   The block has been checked for IEC compatibility and is compliant.
+
+   •   The block is compatible with all IEC library-conformance module constraints
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.2     Calling requirements
 
 
 There are no special calling requirements for this block.
@@ -2005,7 +2202,7 @@ There are no special calling requirements for this block.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-11.     EXAMPLE USAGE
+9.     EXAMPLE USAGE
 
 
 The following shows a typical deployment of FC02001:
@@ -2029,8 +2226,63 @@ The following shows a typical deployment of FC02001:
                                         │
                                ─────────┘
 
-
               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     TEST AND VERIFICATION PATH
+
+
+The following diagram shows the full test and verification path for the formal release of each 
+version of the software module. See the Test Plan [Ref. 003] for full details, available here:
+        http://psop.uk/pal-tp-p
+
+
+        FC01001-T001         FC01001-T002
+
+    Test version: 000.801     Test version: 001.801
+ Released version: 001.000     Released version: 002.000
+Released commit: D0008    Released commit: D0011
+
+       SCR      SMT         SCR      SMT  
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿
+      └┘   ▙▟         └┘   ▙▟   
+Initial test           IEC compliance
+
+Initial test to release the      Comments updated &amp; 
+module following the      UDT  variable names
+development stage.       standardised
+Full SMTS            Full SMTS
+
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
@@ -2045,7 +2297,7 @@ The following shows a typical deployment of FC02001:
               <MultilingualTextItem ID="11" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description — Sections 4 to 11</Text>
+                  <Text>Block description — Sections 3.5 to 11</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2077,7 +2329,7 @@ The following shows a typical deployment of FC02001:
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.000'</ConstantValue>
+        <ConstantValue>'001.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2089,7 +2341,7 @@ The following shows a typical deployment of FC02001:
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.05.26'</ConstantValue>
+        <ConstantValue>'2022.04.05'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2199,12 +2451,18 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.05    001.101   D0010A-000.103   D0010 N/A     D010A   M. Gledhill
+                       Over and under range based on scaled signal
+                       INFO_TYPE, cal_OR_Abs and cal_UR_Abs added
+                       Comments updated and standardised
+                       UDT variable names standardised
+
  2021.05.26    001.000   D0008      D0006 D0008  None    M. Gledhill
                        FC02001 — RELEASED FOR USE
                          Merge back to master branch
 
  2021.05.26    001.000   D0006B-001.000   D0006 N/A     D0006B   M. Gledhill
-                       FC02001 — Post test RELEASED FOR USE
+                       FC02001 — Post-test RELEASED FOR USE
 
  2021.05.24    000.801   D0006B-000.801   D0006 N/A     D0006B   M. Gledhill
                        FC02001 — Released for SMT
@@ -2360,13 +2618,13 @@ If either, or both, conditions are true, the status_ConfigError signal is activa
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_SIM_DISABLE" />
+        <Component Name="CONFIG_SIM_DIS" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_FP_DISABLE" />
+        <Component Name="CONFIG_FP_DIS" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -2423,8 +2681,8 @@ If either, or both, conditions are true, the status_ConfigError signal is activa
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-If simulation mode is disabled (CONFIG_SIM_DISABLE = 1), or if the faceplate is disabled 
-(CONFIG_FP_DISABLE = 1),reset any simulation mode activation signal.
+If simulation mode is disabled (CONFIG_SIM_DIS = 1), or if the faceplate is disabled 
+(CONFIG_FP_DIS = 1),reset any simulation mode activation signal.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 </Text>
                 </AttributeList>
@@ -2450,25 +2708,25 @@ If simulation mode is disabled (CONFIG_SIM_DISABLE = 1), or if the faceplate is 
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_RL_ENABLE" />
+        <Component Name="CONFIG_RL_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_FP_DISABLE" />
+        <Component Name="CONFIG_FP_DIS" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Part Name="Contact" UId="25">
@@ -2527,8 +2785,8 @@ If simulation mode is disabled (CONFIG_SIM_DISABLE = 1), or if the faceplate is 
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-If remote/local mode is not enabled (CONFIG_RL_ENABLE = 0), or if the faceplate is disabled 
-(CONFIG_FP_DISABLE = 1),reset both mode_RemoteOn and mode_LocalOn.
+If remote/local mode is not enabled (CONFIG_RL_EN = 0), or if the faceplate is disabled 
+(CONFIG_FP_DIS = 1),reset both mode_RemoteOn and mode_LocalOn.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 </Text>
                 </AttributeList>
@@ -2554,37 +2812,37 @@ If remote/local mode is not enabled (CONFIG_RL_ENABLE = 0), or if the faceplate 
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_RL_ENABLE" />
+        <Component Name="CONFIG_RL_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_FP_DISABLE" />
+        <Component Name="CONFIG_FP_DIS" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2596,13 +2854,13 @@ If remote/local mode is not enabled (CONFIG_RL_ENABLE = 0), or if the faceplate 
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="30">
@@ -2614,25 +2872,25 @@ If remote/local mode is not enabled (CONFIG_RL_ENABLE = 0), or if the faceplate 
     <Access Scope="LocalVariable" UId="31">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="32">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="34">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Part Name="Contact" UId="35" />
@@ -2775,8 +3033,8 @@ If remote/local mode is not enabled (CONFIG_RL_ENABLE = 0), or if the faceplate 
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-If remote/local mode is enabled (CONFIG_RL_ENABLE = 1), and the  faceplate is not disabled 
-(CONFIG_FP_DISABLE = 0), and:
+If remote/local mode is enabled (CONFIG_RL_EN = 1), and the  faceplate is not disabled 
+(CONFIG_FP_DIS = 0), and:
 
    1.  Neither mode_RemoteOn or mode_LocalOn is active, default to remote mode
    2.  A rising edge is detected on mode_LocalOn, reset mode_RemoteOn (in local)
@@ -2812,7 +3070,7 @@ If remote/local mode is enabled (CONFIG_RL_ENABLE = 1), and the  faceplate is no
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_ALM_H_ENABLE" />
+        <Component Name="CONFIG_ALM_H_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -2824,7 +3082,7 @@ If remote/local mode is enabled (CONFIG_RL_ENABLE = 1), and the  faceplate is no
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_ALM_L_ENABLE" />
+        <Component Name="CONFIG_ALM_L_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2836,7 +3094,7 @@ If remote/local mode is enabled (CONFIG_RL_ENABLE = 1), and the  faceplate is no
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_WRN_H_ENABLE" />
+        <Component Name="CONFIG_WRN_H_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2848,7 +3106,7 @@ If remote/local mode is enabled (CONFIG_RL_ENABLE = 1), and the  faceplate is no
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_WRN_L_ENABLE" />
+        <Component Name="CONFIG_WRN_L_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
@@ -2950,7 +3208,7 @@ If remote/local mode is enabled (CONFIG_RL_ENABLE = 1), and the  faceplate is no
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-If an alarm or warning is not enabled (CONFIG_XXX_Y_ENABLE = 0), reset any associated 
+If an alarm or warning is not enabled (CONFIG_XXX_Y_EN = 0), reset any associated 
 mask bit (mode_Xxx_Y_MaskOn).
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
@@ -2982,7 +3240,7 @@ mask bit (mode_Xxx_Y_MaskOn).
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_ALM_H_ENABLE" />
+        <Component Name="CONFIG_ALM_H_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -2999,7 +3257,7 @@ mask bit (mode_Xxx_Y_MaskOn).
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_ALM_L_ENABLE" />
+        <Component Name="CONFIG_ALM_L_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -3016,7 +3274,7 @@ mask bit (mode_Xxx_Y_MaskOn).
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_WRN_H_ENABLE" />
+        <Component Name="CONFIG_WRN_H_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
@@ -3033,7 +3291,7 @@ mask bit (mode_Xxx_Y_MaskOn).
     <Access Scope="LocalVariable" UId="31">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_WRN_L_ENABLE" />
+        <Component Name="CONFIG_WRN_L_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="32">
@@ -4351,29 +4609,30 @@ If a configuration error exists, the actual value is set to zero for all conditi
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="calcPart3" />
+        <Component Name="STATIC_DATA" />
+        <Component Name="RANGE_SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="wrkOORPercent" />
+        <Component Name="STATIC_DATA" />
+        <Component Name="RANGE_SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="wrkReal" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="wrkReal" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="25">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>100.0</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkOORPercent" />
+      </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
@@ -4382,24 +4641,24 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_RAW_MAX" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="28">
-      <Symbol>
         <Component Name="calcRawOOR" />
       </Symbol>
     </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>100.0</ConstantValue>
+      </Constant>
+    </Access>
     <Access Scope="LocalVariable" UId="29">
       <Symbol>
-        <Component Name="calcOverRange" />
+        <Component Name="calcRawOOR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_RAW_MIN" />
+        <Component Name="RANGE_SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="31">
@@ -4409,85 +4668,122 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="32">
       <Symbol>
-        <Component Name="calcUnderRange" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_OR_Abs" />
       </Symbol>
     </Access>
-    <Part Name="Mul" UId="33" DisabledENO="false">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
-    </Part>
-    <Part Name="Div" UId="34" DisabledENO="true">
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="STATIC_DATA" />
+        <Component Name="RANGE_SCALE_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="calcRawOOR" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_UR_Abs" />
+      </Symbol>
+    </Access>
+    <Part Name="Sub" UId="36" DisabledENO="true">
       <AutomaticTyped Name="SrcType" />
     </Part>
-    <Part Name="Add" UId="35" DisabledENO="false">
+    <Part Name="Mul" UId="37" DisabledENO="false">
       <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Sub" UId="36" DisabledENO="false">
+    <Part Name="Div" UId="38" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Add" UId="39" DisabledENO="false">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Sub" UId="40" DisabledENO="false">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
   </Parts>
   <Wires>
-    <Wire UId="37">
-      <Powerrail />
-      <NameCon UId="33" Name="en" />
-    </Wire>
-    <Wire UId="38">
-      <IdentCon UId="21" />
-      <NameCon UId="33" Name="in1" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="22" />
-      <NameCon UId="33" Name="in2" />
-    </Wire>
-    <Wire UId="40">
-      <NameCon UId="33" Name="eno" />
-      <NameCon UId="34" Name="en" />
-    </Wire>
     <Wire UId="41">
-      <NameCon UId="33" Name="out" />
-      <IdentCon UId="23" />
-    </Wire>
-    <Wire UId="42">
-      <IdentCon UId="24" />
-      <NameCon UId="34" Name="in1" />
-    </Wire>
-    <Wire UId="43">
-      <IdentCon UId="25" />
-      <NameCon UId="34" Name="in2" />
-    </Wire>
-    <Wire UId="44">
-      <NameCon UId="34" Name="eno" />
-      <NameCon UId="35" Name="en" />
+      <Powerrail />
       <NameCon UId="36" Name="en" />
     </Wire>
-    <Wire UId="45">
-      <NameCon UId="34" Name="out" />
-      <IdentCon UId="26" />
-    </Wire>
-    <Wire UId="46">
-      <IdentCon UId="27" />
-      <NameCon UId="35" Name="in1" />
-    </Wire>
-    <Wire UId="47">
-      <IdentCon UId="28" />
-      <NameCon UId="35" Name="in2" />
-    </Wire>
-    <Wire UId="48">
-      <NameCon UId="35" Name="out" />
-      <IdentCon UId="29" />
-    </Wire>
-    <Wire UId="49">
-      <IdentCon UId="30" />
+    <Wire UId="42">
+      <IdentCon UId="21" />
       <NameCon UId="36" Name="in1" />
     </Wire>
-    <Wire UId="50">
-      <IdentCon UId="31" />
+    <Wire UId="43">
+      <IdentCon UId="22" />
       <NameCon UId="36" Name="in2" />
     </Wire>
-    <Wire UId="51">
+    <Wire UId="44">
+      <NameCon UId="36" Name="eno" />
+      <NameCon UId="37" Name="en" />
+    </Wire>
+    <Wire UId="45">
       <NameCon UId="36" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="in1" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="25" />
+      <NameCon UId="37" Name="in2" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="37" Name="eno" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="37" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="in1" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="in2" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="38" Name="eno" />
+      <NameCon UId="39" Name="en" />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="30" />
+      <NameCon UId="39" Name="in1" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="31" />
+      <NameCon UId="39" Name="in2" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="39" Name="out" />
       <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="33" />
+      <NameCon UId="40" Name="in1" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="34" />
+      <NameCon UId="40" Name="in2" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="40" Name="out" />
+      <IdentCon UId="35" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -4500,27 +4796,23 @@ If a configuration error exists, the actual value is set to zero for all conditi
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The out of range limits are calculated from the raw span of the instrument 
-(RAW_MAX - RAW_MIN, stored in calcPart3).
+The out of range limits are calculated from the scaled span of the instrument 
+(RANGE_SCALE_MAX - RANGE_SCALE_MIN).
 
 The absolute value of the out of range tolerance is stored in calcRawOOR and is calculated as
 follows:
 
+┌───────────────────────────────────────┐
+│                            (RANGE_SCALE_MAX ─ RANGE_SCALE_MIN) ╳ RANGE_OOR_PERCENT  │
+│ calcRawOOR =  ―――――――――――――――――――――――――――――― │
+│                        100                 │
+└───────────────────────────────────────┘
 
-                               (RAW_MAX - RAW_MIN) x wrkOORPercent
-calcRawOOR  =  ————————————————————
-                                                               100
+The instrument is over range if the actual_Value is greater than SCALE_MAX + calcRawOOR,
+this absolute value is stored in the calculation variable cal_OR_Abs.
 
-OR
-
-                              calcPart3 x wrkOORPercent
-calcRawOOR  =  ——————————————
-                                                100
-
-
-The instrument is over range if the RAW_ANALOG is greater than RAW_MAX + calcRawOOR
-
-The instrument is under range if the RAW_ANALOG is less than RAW_MIN - calcRawOOR
+The instrument is under range if the RAW_ANALOG is less than SCALE_MIN - calcRawOOR,
+this absolute value is stored in the calculation variable cal_UR_Abs.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 </Text>
@@ -4558,12 +4850,14 @@ The instrument is under range if the RAW_ANALOG is less than RAW_MIN - calcRawOO
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="RAW_ANALOG" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Value" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calcUnderRange" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_UR_Abs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -4580,12 +4874,14 @@ The instrument is under range if the RAW_ANALOG is less than RAW_MIN - calcRawOO
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="RAW_ANALOG" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Value" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
-        <Component Name="calcOverRange" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_OR_Abs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
@@ -4770,9 +5066,9 @@ The instrument is under range if the RAW_ANALOG is less than RAW_MIN - calcRawOO
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The instrument is over range if the RAW_ANALOG is greater than or equal to calcOverRange.
+The instrument is over range if the actual_Value is greater than or equal to cal_OR_Abs.
 
-The instrument is under range if the RAW_ANALOG is less than or equal to calcUnderRange.
+The instrument is under range if the actual_Value  is less than or equal to  cal_UR_Abs.
 
 If either of these conditions is true, the common out of range signal is activated
 
@@ -7886,7 +8182,7 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="38">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_ALM_H_ENABLE" />
+        <Component Name="CONFIG_ALM_H_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="39">
@@ -7898,7 +8194,7 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="40">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_ALM_L_ENABLE" />
+        <Component Name="CONFIG_ALM_L_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="41">
@@ -7910,7 +8206,7 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="42">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_WRN_H_ENABLE" />
+        <Component Name="CONFIG_WRN_H_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="43">
@@ -7922,7 +8218,7 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="44">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="CONFIG_WRN_L_ENABLE" />
+        <Component Name="CONFIG_WRN_L_EN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="45">
@@ -7964,7 +8260,7 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="51">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="52">
@@ -7976,7 +8272,7 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="53">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="54">
@@ -7988,13 +8284,13 @@ the OFF-DELAY to start again.
     <Access Scope="LocalVariable" UId="55">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_RemoteOn" />
+        <Component Name="mode_LocalOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="56">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
-        <Component Name="mode_LocalOn" />
+        <Component Name="mode_RemoteOn" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="57">
@@ -8524,7 +8820,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           <MultilingualTextItem ID="B3" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Standard Module [Instrumentation] — Analog Instrument Read, Scale and Monitor</Text>
+              <Text>Standard Module [INSTRUMENTATION] — Analog Instrument Read, Scale and Monitor</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
