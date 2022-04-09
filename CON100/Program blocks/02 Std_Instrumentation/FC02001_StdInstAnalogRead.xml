@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-05T12:25:42.3878698Z</Created>
+    <Created>2022-04-09T14:12:42.5584604Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -212,7 +212,7 @@
           <Member Name="msg_Flt_OutOfRange" Datatype="Bool" />
           <Member Name="___________0050_0" Datatype="Int" />
           <Member Name="___________0050_1" Datatype="Int" />
-          <Member Name="batch_ID" Datatype="Int" />
+          <Member Name="batch_ID" Datatype="UInt" />
           <Member Name="___________0060_0" Datatype="Int" />
           <Member Name="___________0060_1" Datatype="Int" />
           <Member Name="actual_Value" Datatype="Real" />
@@ -275,27 +275,27 @@
         <MultiLanguageText Lang="en-US">Working storage (Wrn_L is enabled and not masked)</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calcPart1" Datatype="Real">
+    <Member Name="calPart1" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Scale value calculation part 1 (RAW_ANALOG − RAW_MIN)</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calcPart2" Datatype="Real">
+    <Member Name="calPart2" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calcPart3" Datatype="Real">
+    <Member Name="calPart3" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Scale value calculation part 1 (RAW_MAX − RAW_MIN)</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calcRawOOR" Datatype="Real">
+    <Member Name="calAbsOOR" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Calculated OOR absolute value in terms of the scaled value</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calcHystAbs" Datatype="Real">
+    <Member Name="calHystAbs" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Absolute Hysteresis (in relation to alarm/warning)</MultiLanguageText>
       </Comment>
@@ -368,7 +368,7 @@ FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pa
                   <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
 
 
-TITLE:    STANDARD — ANALOG INSTRUMENT READ, SCALE AND MONITOR
+TITLE:    INSTRUMENTATION — ANALOG INSTRUMENT READ, SCALE AND MONITOR
 
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
@@ -384,7 +384,7 @@ TITLE:    STANDARD — ANALOG INSTRUMENT READ, SCALE AND MONITOR
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵉ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈʰ ┘
 
 FC02001_StdInstAnalogRead reads and scales an analog instrument signal received via 
 an analog input card.
@@ -448,7 +448,7 @@ the instrument is out of service for any reason.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       87.7 μs¹
- LOAD MEMORY       87.3 kB
+ LOAD MEMORY       87.4 kB
  WORK MEMORY           2.2 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
@@ -1384,13 +1384,13 @@ percentage) is calculated as:
 
 ┌───────────────────────────────────────┐
 │                            (RANGE_SCALE_MAX ─ RANGE_SCALE_MIN) ╳ RANGE_OOR_PERCENT  │
-│ calcRawOOR =  ―――――――――――――――――――――――――――――― │
+│ calAbsOOR =  ――――――――――――――――――――――――――――――    │
 │                        100                 │
 └───────────────────────────────────────┘
 
 
 Thus, if RANGE_SCALE_MIN is −100 l/s, RANGE_SCALE_MAX is +100 l/s (giving a span of 200 l/s) and 
-a RANGE_OOR_PERCENT of 2.5% is selected, the absolute out of range value (calcRawOOR in the 
+a RANGE_OOR_PERCENT of 2.5% is selected, the absolute out of range value (calAbsOOR in the 
 above equation) has a calculated value of 5.00 l/s (2.5% of 200).
 
 In this example, the msg_Flt_OverRange signal would activate when actual_Value exceeded a 
@@ -2029,7 +2029,7 @@ The static data structure for an analog instrument.
  msg_Flt_UnderRange¹      MESSAGE — Fault - instrument is under-range       Bool
  msg_Flt_OutOfRange¹      MESSAGE — Fault - instrument is out-of-range        Bool
 
- batch_ID         BATCH — Booking ID (optional for batch operations)   Int
+ batch_ID         BATCH — Booking ID (optional for batch operations)   UInt
 
  actual_Value          ACTUAL — SCALED INSTRUMENT VALUE         Real
                      [engineering units]
@@ -2120,11 +2120,11 @@ The following temporary data is used:
  wrkAlmLEn        Working Alm_L is enabled and not masked    Bool
  wrkWrnHEn           Working Wrn_H is enabled and not masked    Bool
  wrkWrnLEn           Working Wrn_L is enabled and not masked    Bool
- calcPart1           Scale value part 1 (RAW_ANALOG − RAW_MIN)   Real
- calcPart2           Scale value part 2 (SCALE_MAX − SCALE_MIN)   Real
- calcPart3           Scale value part 3 (RAW_MAX − RAW_MIN)     Real
- calcRawOOR        Calculated OOR absolute value          Real
- calcHystAbs         Absolute hysteresis value           Real
+ calPart1             Scale value part 1 (RAW_ANALOG − RAW_MIN)   Real
+ calPart2             Scale value part 2 (SCALE_MAX − SCALE_MIN)   Real
+ calPart3             Scale value part 3 (RAW_MAX − RAW_MIN)     Real
+ calAbsOOR           Calculated OOR absolute value          Real
+ calHystAbs           Absolute hysteresis value           Real
  wrkHyst           Working hysteresis value            Real
  wrkOORPercent         Working out of range percentage          Real
  wrkInt           Working storage area (integer)          Int
@@ -2239,7 +2239,7 @@ version of the software module. See the Test Plan [Ref. 003] for full details, a
         http://psop.uk/pal-tp-p
 
 
-        FC01001-T001         FC01001-T002
+        FC02001-T001         FC02001-T002
 
     Test version: 000.801     Test version: 001.801
  Released version: 001.000     Released version: 002.000
@@ -2253,7 +2253,7 @@ Initial test           IEC compliance
 Initial test to release the      Comments updated &amp; 
 module following the      UDT  variable names
 development stage.       standardised
-Full SMTS            Full SMTS
+Full SMT              Full SMT
 
 
 Where:
@@ -2329,7 +2329,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.101'</ConstantValue>
+        <ConstantValue>'001.102'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2341,7 +2341,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.05'</ConstantValue>
+        <ConstantValue>'2022.04.08'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2451,6 +2451,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.08    001.102   D0010A-000.104   D0010 N/A     D010A   M. Gledhill
+                       Temporary variable name change (cal)
+
  2022.04.05    001.101   D0010A-000.103   D0010 N/A     D010A   M. Gledhill
                        Over and under range based on scaled signal
                        INFO_TYPE, cal_OR_Abs and cal_UR_Abs added
@@ -4168,7 +4171,7 @@ calculations
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="calcPart1" />
+        <Component Name="calPart1" />
       </Symbol>
     </Access>
     <Part Name="Sub" UId="24" DisabledENO="false">
@@ -4248,7 +4251,7 @@ Scale value calculation part 1 is (RAW_ANALOG − RAW_MIN)
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="calcPart2" />
+        <Component Name="calPart2" />
       </Symbol>
     </Access>
     <Part Name="Sub" UId="24" DisabledENO="false">
@@ -4319,7 +4322,7 @@ Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="calcPart3" />
+        <Component Name="calPart3" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
@@ -4336,7 +4339,7 @@ Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
-        <Component Name="calcPart3" />
+        <Component Name="calPart3" />
       </Symbol>
     </Access>
     <Part Name="Sub" UId="27" DisabledENO="false">
@@ -4399,7 +4402,7 @@ Scale value calculation part 3 (RAW_MAX − RAW_MIN)
 
 Note:    To prevent inconsistencies and divide by zero errors, if a configuration error is present
      (resulting from incorrect range data and indicated by status_ConfigError = TRUE), the
-     denominator of the calculation (CalcPart3) is set to 3.402823 × 1038 (i.e. a very large 
+     denominator of the calculation (CalPart3) is set to 3.402823 × 1038 (i.e. a very large 
      number), the result of this is that the  actual_Value will equal RANGE_SCALE_MIN for 
      all permitted values of RAW_ANALOG.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
@@ -4425,12 +4428,12 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="calcPart1" />
+        <Component Name="calPart1" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="calcPart2" />
+        <Component Name="calPart2" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -4445,7 +4448,7 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="calcPart3" />
+        <Component Name="calPart3" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -4581,9 +4584,9 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-                                                                             (calcPart1 x CalcPart2)
-Complete the calculation SCALE_VALUE =  —————————— + SCALE_MIN
-                                                                                        calcPart3
+                                                                             (calPart1 x CalPart2)
+Complete the calculation SCALE_VALUE =  ————————— + SCALE_MIN
+                                                                                        calPart3
 
 If a configuration error exists, the actual value is set to zero for all conditions
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
@@ -4636,12 +4639,12 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="calAbsOOR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="calAbsOOR" />
       </Symbol>
     </Access>
     <Access Scope="LiteralConstant" UId="28">
@@ -4652,7 +4655,7 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="29">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="calAbsOOR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="30">
@@ -4663,7 +4666,7 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="31">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="calAbsOOR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="32">
@@ -4680,7 +4683,7 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="34">
       <Symbol>
-        <Component Name="calcRawOOR" />
+        <Component Name="calAbsOOR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="35">
@@ -4799,19 +4802,19 @@ If a configuration error exists, the actual value is set to zero for all conditi
 The out of range limits are calculated from the scaled span of the instrument 
 (RANGE_SCALE_MAX - RANGE_SCALE_MIN).
 
-The absolute value of the out of range tolerance is stored in calcRawOOR and is calculated as
+The absolute value of the out of range tolerance is stored in calAbsOOR and is calculated as
 follows:
 
 ┌───────────────────────────────────────┐
 │                            (RANGE_SCALE_MAX ─ RANGE_SCALE_MIN) ╳ RANGE_OOR_PERCENT  │
-│ calcRawOOR =  ―――――――――――――――――――――――――――――― │
+│ calAbsOOR =  ――――――――――――――――――――――――――――――    │
 │                        100                 │
 └───────────────────────────────────────┘
 
-The instrument is over range if the actual_Value is greater than SCALE_MAX + calcRawOOR,
+The instrument is over range if the actual_Value is greater than SCALE_MAX + calcAbsOOR,
 this absolute value is stored in the calculation variable cal_OR_Abs.
 
-The instrument is under range if the RAW_ANALOG is less than SCALE_MIN - calcRawOOR,
+The instrument is under range if the RAW_ANALOG is less than SCALE_MIN - calcAbsOOR,
 this absolute value is stored in the calculation variable cal_UR_Abs.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
@@ -5487,7 +5490,7 @@ Note:    Any fault signals will be suppressed (turned off) is simulation mod
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Part Name="Contact" UId="31" />
@@ -5576,15 +5579,15 @@ its place.
 wrkHyst holds the value of the hysteresis signal being applied, this will either be 
 SP_ALM_H_HYST_VAL or zero (if SP_ALM_H_HYST_VAL were set to a negative value)
 
-calcHystAbs holds the absolute value of the alarm reset threshold, for high alarms this is:
+calHystAbs holds the absolute value of the alarm reset threshold, for high alarms this is:
 ┌─────────────────────┐
-│ calcHystAbs = SP_ALM_H_VAL — wrkHyst    │
+│ calHystAbs = SP_ALM_H_VAL — wrkHyst      │
 └─────────────────────┘
 
 The two threshold values for the high alarm are thus:
 
      High alarm activation threshold = SP_ALM_H_VAL
-     High alarm reset threshold          = calcHystAbs
+     High alarm reset threshold          = calHystAbs
 
 Note:    The hysteresis is only checked if alarm is being evaluated
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -5873,7 +5876,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -5926,7 +5929,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="34">
@@ -6064,7 +6067,7 @@ the ON-DELAY to start again.
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 If the high alarm has been enabled and is not masked and the high alarm message is active 
-(msg_Alm_H = 1), but the actual_Value has fallen below the reset threshold (held in calcHystAbs) 
+(msg_Alm_H = 1), but the actual_Value has fallen below the reset threshold (held in calHystAbs) 
 then the OFF-DELAY phase is active (the alarm timer is counting down).
 
 The timer will begin to count down from the value in TIME_ALM_H_OFF_DEL using the 200ms 
@@ -6072,7 +6075,7 @@ pulse (it will count down in increments of 0.2s). If the high alarm timer is les
 zero, then the OFF-DELAY has expired and the high alarm message will be reset.
 
 If at any point during the OFF-DELAY count down, the actual_Value returns above the reset
-threshold (calcHystAbs), the timer will be reset to the TIME_ALM_H_OFF_DEL value, forcing 
+threshold (calHystAbs), the timer will be reset to the TIME_ALM_H_OFF_DEL value, forcing 
 the OFF-DELAY to start again.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
@@ -6147,7 +6150,7 @@ the OFF-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Part Name="Contact" UId="31" />
@@ -6237,15 +6240,15 @@ its place.
 wrkHyst holds the value of the hysteresis signal being applied, this will either be 
 SP_ALM_L_HYST_VAL or zero (if SP_ALM_L_HYST_VAL were set to a negative value)
 
-calcHystAbs holds the absolute value of the alarm reset threshold, for low alarms this is:
+calHystAbs holds the absolute value of the alarm reset threshold, for low alarms this is:
 ┌─────────────────────┐
-│ calcHystAbs = SP_ALM_L_VAL ┼ wrkHyst     │
+│ calHystAbs = SP_ALM_L_VAL ┼ wrkHyst       │
 └─────────────────────┘
 
 The two threshold values for the low alarm are thus:
 
      Low alarm activation threshold = SP_ALM_L_VAL
-     Low alarm reset threshold          = calcHystAbs
+     Low alarm reset threshold          = calHystAbs
 
 Note:    The hysteresis is only checked if alarm is being evaluated
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -6534,7 +6537,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -6587,7 +6590,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="34">
@@ -6725,7 +6728,7 @@ the ON-DELAY to start again.
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 If the low alarm has been enabled and is not masked and the Low alarm message is active 
-(msg_Alm_L = 1), but the actual_Value has fallen below the reset threshold (held in calcHystAbs) 
+(msg_Alm_L = 1), but the actual_Value has fallen below the reset threshold (held in calHystAbs) 
 then the OFF-DELAY phase is active (the alarm timer is counting down).
 
 The timer will begin to count down from the value in TIME_ALM_L_OFF_DEL using the 200ms 
@@ -6733,7 +6736,7 @@ pulse (it will count down in increments of 0.2s). If the Low alarm timer is less
 zero, then the OFF-DELAY has expired and the Low alarm message will be reset.
 
 If at any point during the OFF-DELAY count down, the actual_Value returns above the reset
-threshold (calcHystAbs), the timer will be reset to the TIME_ALM_L_OFF_DEL value, forcing 
+threshold (calHystAbs), the timer will be reset to the TIME_ALM_L_OFF_DEL value, forcing 
 the OFF-DELAY to start again.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
@@ -6808,7 +6811,7 @@ the OFF-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Part Name="Contact" UId="31" />
@@ -6897,15 +6900,15 @@ its place.
 wrkHyst holds the value of the hysteresis signal being applied, this will either be 
 SP_WRN_H_HYST_VAL or zero (if SP_WRN_H_HYST_VAL were set to a negative value)
 
-calcHystAbs holds the absolute value of the warning reset threshold, for high warnings this is:
+calHystAbs holds the absolute value of the warning reset threshold, for high warnings this is:
 ┌─────────────────────┐
-│ calcHystAbs = SP_WRN_H_VAL — wrkHyst    │
+│ calHystAbs = SP_WRN_H_VAL — wrkHyst      │
 └─────────────────────┘
 
 The two threshold values for the high warning are thus:
 
      High warning activation threshold = SP_WRN_H_VAL
-     High warning reset threshold          = calcHystAbs
+     High warning reset threshold          = calHystAbs
 
 Note:    The hysteresis is only checked if warning is being evaluated
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -7194,7 +7197,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -7247,7 +7250,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="34">
@@ -7385,7 +7388,7 @@ the ON-DELAY to start again.
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 If the high warning has been enabled and is not masked and the high warning message is active 
-(msg_Wrn_H = 1), but the actual_Value has fallen below the reset threshold (held in calcHystAbs) 
+(msg_Wrn_H = 1), but the actual_Value has fallen below the reset threshold (held in calHystAbs) 
 then the OFF-DELAY phase is active (the warning timer is counting down).
 
 The timer will begin to count down from the value in TIME_WRN_H_OFF_DEL using the 200ms 
@@ -7393,7 +7396,7 @@ pulse (it will count down in increments of 0.2s). If the high warning timer is l
 zero, then the OFF-DELAY has expired and the high warning message will be reset.
 
 If at any point during the OFF-DELAY count down, the actual_Value returns above the reset
-threshold (calcHystAbs), the timer will be reset to the TIME_WRN_H_OFF_DEL value, forcing 
+threshold (calHystAbs), the timer will be reset to the TIME_WRN_H_OFF_DEL value, forcing 
 the OFF-DELAY to start again.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
@@ -7468,7 +7471,7 @@ the OFF-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Part Name="Contact" UId="31" />
@@ -7558,15 +7561,15 @@ its place.
 wrkHyst holds the value of the hysteresis signal being applied, this will either be 
 SP_WRN_L_HYST_VAL or zero (if SP_WRN_L_HYST_VAL were set to a negative value)
 
-calcHystAbs holds the absolute value of the warning reset threshold, for low warnings this is:
+calHystAbs holds the absolute value of the warning reset threshold, for low warnings this is:
 ┌─────────────────────┐
-│ calcHystAbs = SP_WRN_L_VAL ┼ wrkHyst    │
+│ calHystAbs = SP_WRN_L_VAL ┼ wrkHyst      │
 └─────────────────────┘
 
 The two threshold values for the low warning are thus:
 
      Low warning activation threshold = SP_WRN_L_VAL
-     Low warning reset threshold          = calcHystAbs
+     Low warning reset threshold          = calHystAbs
 
 Note:    The hysteresis is only checked if warning is being evaluated
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -7855,7 +7858,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -7908,7 +7911,7 @@ the ON-DELAY to start again.
     </Access>
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
-        <Component Name="calcHystAbs" />
+        <Component Name="calHystAbs" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="34">
@@ -8046,7 +8049,7 @@ the ON-DELAY to start again.
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 If the low warning has been enabled and is not masked and the Low warning message is active 
-(msg_Wrn_L = 1), but the actual_Value has fallen below the reset threshold (held in calcHystAbs) 
+(msg_Wrn_L = 1), but the actual_Value has fallen below the reset threshold (held in calHystAbs) 
 then the OFF-DELAY phase is active (the warning timer is counting down).
 
 The timer will begin to count down from the value in TIME_WRN_L_OFF_DEL using the 200ms 
@@ -8054,7 +8057,7 @@ pulse (it will count down in increments of 0.2s). If the Low warning timer is le
 zero, then the OFF-DELAY has expired and the Low warning message will be reset.
 
 If at any point during the OFF-DELAY count down, the actual_Value returns above the reset
-threshold (calcHystAbs), the timer will be reset to the TIME_WRN_L_OFF_DEL value, forcing 
+threshold (calHystAbs), the timer will be reset to the TIME_WRN_L_OFF_DEL value, forcing 
 the OFF-DELAY to start again.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>

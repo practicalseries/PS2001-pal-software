@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-05T11:55:10.7824651Z</Created>
+    <Created>2022-04-09T14:12:41.7408437Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -35,7 +35,7 @@
     <AttributeList>
       <AutoNumber>false</AutoNumber>
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
-      <HeaderFamily>Documentation</HeaderFamily>
+      <HeaderFamily>General</HeaderFamily>
       <HeaderName>DocGenExample</HeaderName>
       <HeaderVersion>1.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
@@ -191,7 +191,7 @@ TITLE:    GENERAL — EXAMPLE DOCUMENTATION
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵈ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈʰ ┘
 
 FC61000_DocGenExample is a documentation block that contains examples of all the typical 
 forms of documentation used within the PAL.
@@ -244,7 +244,7 @@ PAL software.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       22.3 μs¹
- LOAD MEMORY       80.4 kB
+ LOAD MEMORY       83.2 kB
  WORK MEMORY           0.3 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
@@ -2227,7 +2227,7 @@ Initial test           Comment update
 Initial test to release the      Comments updated &amp; 
 module following the      expanded. Empty networks 
 development stage.       added.
-Full SMTS            Full SMTS
+Full SMT              Full SMT
 
 
 Where:
@@ -2304,7 +2304,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.107'</ConstantValue>
+        <ConstantValue>'001.108'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2316,7 +2316,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.04'</ConstantValue>
+        <ConstantValue>'2022.04.08'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2426,6 +2426,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.08    001.108   D0010A-000.104   D0010 N/A     D0010A   M. Gledhill
+                       Comments updated
+
  2022.04.04    001.107   D0010A-000.103   D0010 N/A     D0010A   M. Gledhill
                        Comments Section 4 (SCADA) added
 
@@ -3375,7 +3378,7 @@ Initial test           Comments standardised
 Initial test to release the      Comments updated &amp; 
 module following the      minor typographical 
 development stage.       corrections
-Full SMTS            SCV only
+Full SMT              SCV only
 
 
 Where:
@@ -4388,7 +4391,7 @@ Equations are generally placed in boxes
 
 ┌───────────────────────┐
 │        2.5               │
-│ CalcValOOR = ------------ ╳ (RAW_MAX ─ RAW_MIN)   │
+│ CalValOOR = ------------ ╳ (RAW_MAX ─ RAW_MIN)     │
 │       100               │
 └───────────────────────┘
 

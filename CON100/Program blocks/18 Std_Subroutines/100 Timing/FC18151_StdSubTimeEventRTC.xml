@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-05-03T11:59:58.4595958Z</Created>
+    <Created>2022-04-09T14:12:41.986226Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Subroutine</HeaderFamily>
       <HeaderName>StdSubTimeEventRTC</HeaderName>
-      <HeaderVersion>1.0</HeaderVersion>
+      <HeaderVersion>1.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="TRIGGER" Datatype="Bool" Accessibility="Public">
@@ -104,17 +104,17 @@
     </Member>
     <Member Name="wrkInt" Datatype="Int">
       <Comment>
-        <MultiLanguageText Lang="en-US">Working storage (integer)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Working storage area (integer)</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="wrkReal" Datatype="Real">
       <Comment>
-        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Working storage area (real)</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="wrkLInt" Datatype="ULInt">
       <Comment>
-        <MultiLanguageText Lang="en-US">Working storage (long integer)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Working storage area (long integer, unsigned)</MultiLanguageText>
       </Comment>
     </Member>
   </Section>
@@ -123,7 +123,7 @@
     <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
   </Section>
 </Sections></Interface>
-      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
       <Name>FC18151_StdSubTimeEventRTC</Name>
       <Number>18151</Number>
@@ -138,10 +138,10 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
                   ———— ◆ ————
- FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
- FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
@@ -157,15 +157,28 @@
               <MultilingualTextItem ID="5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text> ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-
-TITLE:    SUBROUTINE — EVENT TIMER USING RTC
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
- 
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
 
 
-This block (FC18151_SubTimeEventRTC) is a subroutine block that times the duration of an event 
+TITLE:    SUBROUTINE — EVENT TIMER RTC
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
+
+┌──────────────────────────────────────────┐
+│                                          │
+│          FC18151 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
+│                                          │
+│      The PDF version of the SMDS for this module is available online here:        │
+│              http://psop.uk/pal-smds-fc18151-p              │
+│                                          │
+│      It is also available as part of the Project User Defined Documentation,      │
+│      it can be accessed by selecting this module in the Project Tree          │
+│      (on the left) and pressing SHIFT+F1                        │
+│                                          │
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈʰ ┘
+
+FC18151_SubTimeEventRTC is a subroutine block that times the duration of an event 
 to nanosecond resolution.
 
 The block records the time the event started (rising edge of the TRIGGER signal), the time the 
@@ -194,20 +207,33 @@ This is a subroutine block.
  ――――――――――――――――――――――――――――――――――――――――――
  BLOCK TYPE &amp; USAGE
  ――――――――――――――――――――――――――――――――――――――――――
- BLOCK TYPE        Function (FC)
- BLOCK NUMBER       18151
- LANGUAGE          LAD
- OPTIMESED ACCESS   Yes
- PAL USAGE TYPE      Standard block
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        18151
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
 
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME      18.41 μs¹
- LOAD MEMORY       20.06 kB  (20547 bytes)
- WORK MEMORY           0.43 kB      (440 bytes)
+ EXECUTION TIME       18.4 μs¹
+ LOAD MEMORY       21.4 kB
+ WORK MEMORY           0.4 kB  
  ――――――――――――――――――――――――――――――――――――――――――
-               ¹ Measured on: CPU-1515-2PN (order no. 6ES7 512-2AM02-0AB0)
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
+                            http://psop.uk/pal-ds-cpu1515
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1      Additional document references
+
+
+Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
+block. There are no additional document references.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -233,8 +259,6 @@ resolution irrespective of the duration.
 
 The duration is also calculated as a real number in seconds (or fractions thereof); this is a 
 more convenient format for holding the duration, but is not as accurate as the LTime format.
-
-
 
 
 
@@ -274,7 +298,6 @@ The block returns the following data:
 
  actual_DurationSec       ACTUAL — Event duration in seconds           REAL
  ――――――――――――――――――――――――――――――――――――――――――
- Block returned signals
 
 
 
@@ -398,10 +421,10 @@ and is accurate enough for most applications.
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-A note on real numbers
+A note on real numbers (and accuracy)
 
 The LTime format is very accurate, it is basically counting nanoseconds, and because it is 64-bits 
-long it can count up to very high values (about 584 years at nanosecond resolution).
+long it can count up to very high values (about 292 years at nanosecond resolution).
 
 Real numbers however, are limited to 32-bits and suffer from precision loss, this results from the 
 fact that the real number has an accuracy of “about” 7 decimal digits, for example 20365.45, 
@@ -417,43 +440,23 @@ This type of representation is usually handled by applying scientific notation, 
 the number 1,568,497,132,792, would be represented as exactly the same value, the 132,792 
 part of the number can not be resolved and are lost.
 
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     Supervisory system interface
+
+
+FC18151 is a Subroutine block. It does not have a supervisory system interface.
 
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
-</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="6" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="7" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>Block description — Sections 1 to 3</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource />
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="9" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="A" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     PARAMETERS
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     PARAMETERS
 
 
 The following parameters are associated with the block:
@@ -469,12 +472,15 @@ The following parameters are associated with the block:
  DYNAMIC_DATA      Stores the results of the event timing       UT38151    InOut
  ――――――――――――――――――――――――――――――――――――――――――
 
+Note:    FC18151 is one of the few blocks that does not require the SYS_SIGNALS parameter 
+     (this has been done to make minimise the block interface)
+
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+6.     DATA STRUCTURES AND USAGE
 
 
 The block has the following associated data structure:
@@ -491,7 +497,7 @@ The block has the following associated data structure:
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-5.1     UT38151_Dy_TimeEventRTC
+6.1     UT38151_Dy_TimeEventRTC
 
 Stores the timing values for the event:
 
@@ -517,13 +523,24 @@ Stores the timing values for the event:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
 
 
-The following constants and temporary data storage are used:
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Constants
 
 
- Temporary (local) data
+No constants are used in this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Temporary (local) data
+
+
+The following temporary data is used:
+
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                  TYPE
  ――――――――――――――――――――――――――――――――――――――――――
@@ -539,30 +556,38 @@ The following constants and temporary data storage are used:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     BLOCK CALLS
+8.     BLOCK CALLS AND ASSOCIATIONS
+
+
+This section details any blocks which may be called from within this software module (subroutine 
+functions for example), any partner blocks with which it may be associated (for example a 
+receive module that is partner with a transmit module &amp;c.). It lists any system functions which 
+may be called (e.g. reading the real time clock) and any system data types that may be used.
+
+Finally, it lists any special calling requirements for the block (for example, must be called from 
+within a cyclic interrupt organisation block) and if the block is using “optimised access” (this is 
+the default arrangement).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.1     Block calls from within this module
 
 
 There are no PAL block calls from within this block.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     ASSOCIATED BLOCKS
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
-
-
-The following calls are made to system blocks:
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.3     System block calls and system data typesThe following calls are made to system blocks:
 
 
  System block calls
@@ -575,44 +600,36 @@ The following calls are made to system blocks:
 There are no special system data types used.
 
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-10.     SPECIAL PROPERTIES AND REQUIREMENTS
-
-
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.1   Block optimisation
-
-
-Block optimisation is ACTIVE for this block
+8.4     Special properties and requirements
 
 
 
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.2   Calling requirements
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.1     Block optimisation, IEC compatibility and library conformance
+
+
+   •   Block optimisation is ACTIVE for this block.
+
+   •   The block has been checked for IEC compatibility and is compliant.
+
+   •   The block is compatible with all IEC library-conformance module constraints
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.2     Calling requirements
 
 
 There are no special calling requirements for this block.
 
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.3   Other properties
-
-
-This block does not require the usual SYS_SIGNALS logic and timing data.
-
-
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-11.     EXAMPLE USAGE
+9.     EXAMPLE USAGE
 
 
 The following shows a typical deployment of FC18151:
@@ -633,24 +650,80 @@ The following shows a typical deployment of FC18151:
 
 
 
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     TEST AND VERIFICATION PATH
+
+
+The following diagram shows the full test and verification path for the formal release of each 
+version of the software module. See the Test Plan [Ref. 003] for full details, available here:
+        http://psop.uk/pal-tp-p
+
+
+        FC18151-T001         FC18151-T002
+
+    Test version: 000.801     Test version: 001.801
+ Released version: 001.000     Released version: 002.000
+Released commit: D0003    Released commit: D0011
+
+       SCR      SMT              SCV     
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿╓╖＿＿
+      └┘   ▙▟             ╙╜  
+Initial test           Comments standardised
+
+Initial test to release the      Comments updated &amp; 
+module following the      minor typographical 
+development stage.       corrections
+Full SMT              SCV only
+
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="B" CompositionName="Title">
+          <MultilingualText ID="6" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="C" CompositionName="Items">
+              <MultilingualTextItem ID="7" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description — Sections 4 to 11</Text>
+                  <Text>Block description — Sections 1 to 3</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -679,7 +752,7 @@ The following shows a typical deployment of FC18151:
     <Access Scope="LiteralConstant" UId="25">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.000'</ConstantValue>
+        <ConstantValue>'001.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -691,7 +764,7 @@ The following shows a typical deployment of FC18151:
     <Access Scope="LiteralConstant" UId="27">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2021.02.19'</ConstantValue>
+        <ConstantValue>'2022.04.08'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="28">
@@ -790,9 +863,9 @@ The following shows a typical deployment of FC18151:
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="E" CompositionName="Comment">
+          <MultilingualText ID="9" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="F" CompositionName="Items">
+              <MultilingualTextItem ID="A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -818,6 +891,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.08    001.101   D0010A-000.104   D0010 N/A     D010A   M. Gledhill
+                       Comments updated and standardised
+                       NW 2 comments combined with NW 1
+
  2021.02.19    001.000   D0003      D0002 D0003  None    M. Gledhill
                        FC18151 — RELEASED FOR USE
                          Merge back to master branch
@@ -838,9 +915,9 @@ The MIT licence is reproduced in full in the last network of this software modul
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="10" CompositionName="Title">
+          <MultilingualText ID="B" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="11" CompositionName="Items">
+              <MultilingualTextItem ID="C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Current revision and modification history</Text>
@@ -850,7 +927,7 @@ The MIT licence is reproduced in full in the last network of this software modul
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -933,9 +1010,9 @@ The MIT licence is reproduced in full in the last network of this software modul
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="13" CompositionName="Comment">
+          <MultilingualText ID="E" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="14" CompositionName="Items">
+              <MultilingualTextItem ID="F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -950,9 +1027,9 @@ If a rising edge is detected:
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="15" CompositionName="Title">
+          <MultilingualText ID="10" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="16" CompositionName="Items">
+              <MultilingualTextItem ID="11" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Check for TRIGGER rising edge — Start of event</Text>
@@ -962,7 +1039,7 @@ If a rising edge is detected:
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1080,9 +1157,9 @@ If a rising edge is detected:
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="18" CompositionName="Comment">
+          <MultilingualText ID="13" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="19" CompositionName="Items">
+              <MultilingualTextItem ID="14" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -1098,9 +1175,9 @@ If a falling edge is detected:
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1A" CompositionName="Title">
+          <MultilingualText ID="15" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="1B" CompositionName="Items">
+              <MultilingualTextItem ID="16" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Check for TRIGGER falling edge — Endof event</Text>
@@ -1110,7 +1187,7 @@ If a falling edge is detected:
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1207,9 +1284,9 @@ If a falling edge is detected:
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="1D" CompositionName="Comment">
+          <MultilingualText ID="18" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="1E" CompositionName="Items">
+              <MultilingualTextItem ID="19" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -1227,9 +1304,9 @@ This final value is returned as actual_DurationSec
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1F" CompositionName="Title">
+          <MultilingualText ID="1A" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="20" CompositionName="Items">
+              <MultilingualTextItem ID="1B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Convert actual_Duration to a REAL number and scale for seconds</Text>
@@ -1239,7 +1316,7 @@ This final value is returned as actual_DurationSec
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -1335,9 +1412,9 @@ This final value is returned as actual_DurationSec
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="22" CompositionName="Comment">
+          <MultilingualText ID="1D" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="23" CompositionName="Items">
+              <MultilingualTextItem ID="1E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -1379,9 +1456,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="24" CompositionName="Title">
+          <MultilingualText ID="1F" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="25" CompositionName="Items">
+              <MultilingualTextItem ID="20" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>LICENCE AND CONTACT INFORMATION</Text>
@@ -1391,12 +1468,12 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="26" CompositionName="Title">
+      <MultilingualText ID="21" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="27" CompositionName="Items">
+          <MultilingualTextItem ID="22" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Subroutine Block — Event Timer RTC</Text>
+              <Text>Standard Module [SUBROUTINE] — Event Timer RTC</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>

@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-03-04T12:00:39.2396788Z</Created>
+    <Created>2022-04-09T14:12:43.5593367Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Debug</HeaderFamily>
       <HeaderName>StdDebugInst2Order</HeaderName>
-      <HeaderVersion>1.0</HeaderVersion>
+      <HeaderVersion>1.1</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -182,7 +182,7 @@
         </Section>
       </Sections>
     </Member>
-    <Member Name="actual_CPUTime" Datatype="DTL" Version="1.0">
+    <Member Name="act_CPUTime" Datatype="DTL" Version="1.0">
       <Comment>
         <MultiLanguageText Lang="en-US">Current CPU time (this block call)</MultiLanguageText>
       </Comment>
@@ -252,12 +252,12 @@
         <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="wrk_DampFactor" Datatype="Real">
+    <Member Name="wrkDampFactor" Datatype="Real">
       <Comment>
         <MultiLanguageText Lang="en-US">Adjusted (working) damping factor</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="wrk_ElapsedTime" Datatype="LTime">
+    <Member Name="wrkElapsedTime" Datatype="LTime">
       <Comment>
         <MultiLanguageText Lang="en-US">Working storage area (current elapsed time)</MultiLanguageText>
       </Comment>
@@ -311,7 +311,7 @@
     <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
   </Section>
 </Sections></Interface>
-      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
       <MemoryLayout>Optimized</MemoryLayout>
       <Name>FC19512_StdDebugInst2Order</Name>
       <Number>19512</Number>
@@ -326,10 +326,10 @@
           <MultilingualTextItem ID="2" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text> PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
                   ———— ◆ ————
- FOR DETAILED DOCUMENTATION — SELECT THE BLOCK IN THE PROJECT TREE AND PRESS SHIFT + F1
- FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
@@ -345,13 +345,26 @@
               <MultilingualTextItem ID="5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-│
-TITLE:    STANDARD — DEBUG SECOND ORDER RESPONSE SIMULATION
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
 
 
+TITLE:    DEBUG — SECOND ORDER RESPONSE SIMULATION
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
+
+┌──────────────────────────────────────────┐
+│                                          │
+│          FC19512 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
+│                                          │
+│      The PDF version of the SMDS for this module is available online here:        │
+│              http://psop.uk/pal-smds-fc19512-p              │
+│                                          │
+│      It is also available as part of the Project User Defined Documentation,      │
+│      it can be accessed by selecting this module in the Project Tree          │
+│      (on the left) and pressing SHIFT+F1                        │
+│                                          │
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈʰ ┘
 
 FC19512_StdDebugInst2Order is a debug simulation subroutine.
 
@@ -406,11 +419,12 @@ The module also has a manual mode that can simulate an output at any specific ti
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME        150.17 μs¹    (Note: = 4.6µs if TRIGGER is FALSE)
- LOAD MEMORY       88.27 kB   (90388 bytes)
- WORK MEMORY           2.94 kB  (3011 bytes)
+ EXECUTION TIME        150.2 μs¹    (Note: = 4.6µs if TRIGGER is FALSE)
+ LOAD MEMORY       89.7 kB
+ WORK MEMORY           2.9 kB  
  ――――――――――――――――――――――――――――――――――――――――――
-               ¹ Measured on: CPU-1515-2PN/DP (order no. 6ES7 515-2AM02-0AB0)
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
+                            http://psop.uk/pal-ds-cpu1515
 
 
 
@@ -418,8 +432,8 @@ The module also has a manual mode that can simulate an output at any specific ti
 1.1      Additional referenced documents
 
 
-In addition to the documents referenced in OB1 [DOCUMENT REFERENCES], the following 
-document is associated with this module:
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
+following documents are associated with this module:
 
 
  ――――――――――――――――――――――――――――――――――――――――――
@@ -455,9 +469,8 @@ document is associated with this module:
 █     The SMDS can be accessed directly by selecting this module (FC19512) in the     █
 █     Project Tree (on the left) and pressing SHIFT+F1.                 █
 █                                          █
-█     It is also available in Section 2 of the following web page:           █
-█                                          █
-█     https://practicalseries.com/2001-pal/21-project/01-00-docs.html#js--020000     █
+█      The PDF version of the SMDS for this module is available online here:        █
+█              http://psop.uk/pal-smds-fc19512-p              █
 █                                          █
 ████████████████████████████████████████████
 
@@ -529,7 +542,6 @@ Output y(t)
 
 
 Second order systems can also produce unstable responses under certain conditions:
-
 
 
 │⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣼⠇⢀⣤⠄⠄⠄⠄⠄⠄
@@ -641,8 +653,7 @@ The module will generate the correct responses for the six conditions listed in 
 section (§ 2.1). The responses for each of these conditions is specified in the associated 
 calculations sheet [Ref. 101], available here:
 
-https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/31-SW-Calculations/
-001-FC19512/PS2001-5-2331-001-01 CALC 2nd Order Response.pdf
+         http://psop.uk/pal-calc-fc19512-p
 
 These calculations are based around the mathematical functions available to the Controller 
 (these are in addition to the standard mathematical operations: addition, subtraction, 
@@ -802,15 +813,13 @@ OVER DAMPED               ╎  │      ❘   
                     │ UNDAMPED
                     │
                     │
-                    │
+        STABLE RESPONSE ←-------------│-------------→ UNSTABLE RESPONSE
 
 
 If the root of a second order characteristic equation has positive real parts, the resulting system 
 response will be unstable.
 
-
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━</Text>
+</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1109,7 +1118,8 @@ Period of oscillation (seconds)       Td =  ------ = ------
 
                       - ζπ(ω / Ω) 
 Peak overshoot value           Ypk = K ｅ
- Note:   The peak overshoot value of the response is above the steady state value 
+
+Note:    The peak overshoot value of the response is above the steady state value 
      and is a percentage of the steady state value (unit step only)
 
                      π    Td
@@ -1269,7 +1279,7 @@ Note:
 
 
 
-═══ ANCILIARY  CALCULATIONS:    ════════════════════════════
+═══ ANCILLARY  CALCULATIONS:    ════════════════════════════
 
 
 Damped frequency of oscillation (rad/s)   Ω =  ω √(1 ─ ζ²)
@@ -1382,14 +1392,6 @@ The block supports two modes of operation:
      The current elapsed time is supplied manually to the module; the module will then 
      calculate the output value based on this manual time value
 
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-2.5      Supervisory system interface
-
-
-There is no supervisory system interface for this block.
-
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 </Text>
@@ -1402,7 +1404,7 @@ There is no supervisory system interface for this block.
               <MultilingualTextItem ID="C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description — Sections 2.3 to 2.5</Text>
+                  <Text>Block description — Sections 2.3 to 2.4</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1455,7 +1457,7 @@ The DYNAMIC_DATA parameter is a UDT that holds all the data for the simulation.
  ――――――――――――――――――――――――――――――――――――――――――
 
 
-Section 5 contains a full list of all variables within these UDTs.
+Section 6 contains a full list of all variables within these UDTs.
 
 
 
@@ -2421,7 +2423,7 @@ such has no graphical symbol, block icon or faceplate.
               <MultilingualTextItem ID="16" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description — Section 3.5 to 3.5</Text>
+                  <Text>Block description — Section 3.3 to 3.5</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2440,7 +2442,19 @@ such has no graphical symbol, block icon or faceplate.
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     PARAMETERS
+4.     Supervisory system interface
+
+
+There is no supervisory system interface for this block. It is a debug simulation module and as 
+such has no graphical symbol, block icon or faceplate.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     PARAMETERS
 
 
 The following parameters are associated with the block:
@@ -2470,7 +2484,7 @@ The following parameters are associated with the block:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     DATA STRUCTURES AND USAGE (AND INSTANCE DATA BLOCKS)
+6.     DATA STRUCTURES AND USAGE
 
 
 The block has the following associated data structure:
@@ -2490,7 +2504,7 @@ The block has the following associated data structure:
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-5.2      UT39512_Dy_DebugInst2Order
+6.1      UT39512_Dy_DebugInst2Order
 
 The static data structure for an isolating valve.
 
@@ -2564,12 +2578,16 @@ The static data structure for an isolating valve.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Constants
 
 
 The following constants data is used:
 
- CONSTANTS DATA
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME       Value     FUNCTION                 TYPE
  ――――――――――――――――――――――――――――――――――――――――――
@@ -2578,15 +2596,19 @@ The following constants data is used:
  ――――――――――――――――――――――――――――――――――――――――――
 
 
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Temporary (local) data
+
+
 The following temporary data is used:
 
- TEMPORARY (LOCAL) DATA
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME          FUNCTION                  TYPE
  ――――――――――――――――――――――――――――――――――――――――――
  revInfo             Revision information for the block         UT01000
  licInfo           Licensing information for the block      UT01001
- actual_CPUTime        Current CPU time (this block call)       DTL
+ act_CPUTime         Current CPU time (this block call)         DTL
  cal_01          Partial calculation see § 3.5 for details      Real
  cal_02          Partial calculation see § 3.5 for details      Real
  cal_03          Partial calculation see § 3.5 for details      Real
@@ -2600,8 +2622,8 @@ The following temporary data is used:
  cal_11          Partial calculation see § 3.5 for details      Real
  cal_12          Partial calculation see § 3.5 for details      Real
  cal_13          Partial calculation see § 3.5 for details      Real
- wrk_DampFactor      Adjusted (working) damping factor      Real
- wrk_ElapsedTime        Working storage area (current elapsed time)    LTIme
+ wrkDampFactor        Adjusted (working) damping factor      Real
+ wrkElapsedTime          Working storage area (current elapsed time)    LTIme
  wrkInt           Working storage area (integer)          Int
  wrkDInt           Working storage area (double integer)         DInt
  wrkLInt            Working storage area (long integer)        ULInt
@@ -2616,26 +2638,38 @@ The following temporary data is used:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     BLOCK CALLS
+8.     BLOCK CALLS AND ASSOCIATIONS
+
+
+This section details any blocks which may be called from within this software module (subroutine 
+functions for example), any partner blocks with which it may be associated (for example a 
+receive module that is partner with a transmit module &amp;c.). It lists any system functions which 
+may be called (e.g. reading the real time clock) and any system data types that may be used.
+
+Finally, it lists any special calling requirements for the block (for example, must be called from 
+within a cyclic interrupt organisation block) and if the block is using “optimised access” (this is 
+the default arrangement).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.1     Block calls from within this module
+
 
 There are no PAL block calls from within this block.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     ASSOCIATED BLOCKS
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     SYSTEM BLOCK CALLS AND SYSTEM DATA TYPES
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.3     System block calls and system data types
 
 The following calls are made to system blocks:
 
@@ -2654,21 +2688,25 @@ There are no special system data types used.
 
 
 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-10.     SPECIAL PROPERTIES AND REQUIREMENTS
-
-
-
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.1   Block optimisation
-
-
-Block optimisation is ACTIVE for this block
+8.4     Special properties and requirements
 
 
 
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-10.2   Calling requirements
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.1     Block optimisation, IEC compatibility and library conformance
+
+
+   •   Block optimisation is ACTIVE for this block.
+
+   •   The block has been checked for IEC compatibility and is compliant.
+
+   •   The block is compatible with all IEC library-conformance module constraints
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.2     Calling requirements
 
 
 There are no special calling requirements for this block.
@@ -2678,7 +2716,7 @@ There are no special calling requirements for this block.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-11.     EXAMPLE USAGE
+9.     EXAMPLE USAGE
 
 
 The following shows a typical deployment of FC19512:
@@ -2705,6 +2743,62 @@ The following shows a typical deployment of FC19512:
               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     TEST AND VERIFICATION PATH
+
+
+The following diagram shows the full test and verification path for the formal release of each 
+version of the software module. See the Test Plan [Ref. 003] for full details, available here:
+        http://psop.uk/pal-tp-p
+
+
+        FC19152-T001         FC19152-T002
+
+    Test version: 000.801     Test version: 001.801
+ Released version: 001.000     Released version: 002.000
+Released commit: D0010    Released commit: D0011
+
+       SCR      SMT              SCV     
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿╓╖＿＿
+      └┘   ▙▟             ╙╜  
+Initial test           Comments standardised
+
+Initial test to release the      Comments updated &amp; 
+module following the      minor typographical 
+development stage.       corrections
+Full SMT              SCV only
+
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
    </Text>
                 </AttributeList>
@@ -2716,7 +2810,7 @@ The following shows a typical deployment of FC19512:
               <MultilingualTextItem ID="1B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description — Sections 4 to 11</Text>
+                  <Text>Block description — Sections 4 to 10</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2748,7 +2842,7 @@ The following shows a typical deployment of FC19512:
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.000'</ConstantValue>
+        <ConstantValue>'001.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2760,7 +2854,7 @@ The following shows a typical deployment of FC19512:
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.03.04'</ConstantValue>
+        <ConstantValue>'2022.04.06'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2870,12 +2964,15 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.06    001.101   D0010A-000.104   D0010 N/A     D010A   M. Gledhill
+                       Comments updated and standardised
+
  2022.03.04    001.000   D0010      D0009 D0010  None    M. Gledhill
                        FC19512 — RELEASED FOR USE
                          Merge back to master branch
 
  2022.03.04    001.000   D0008A-001.000   D0009 N/A     D0009A   M. Gledhill
-                       FC119512 — Post test RELEASED FOR USE
+                       FC119512 — Post-test RELEASED FOR USE
 
  2022.02.18    000.801   D0009A-000.801   D0009 N/A     D0009A   M. Gledhill
                        FC19512 Released for test
@@ -3790,7 +3887,7 @@ Reset all ancillary calculation data (this will be updated by calculation type).
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="actual_CPUTime" />
+        <Component Name="act_CPUTime" />
       </Symbol>
     </Access>
     <Part Name="RD_LOC_T" Version="1.0" UId="23">
@@ -3822,7 +3919,7 @@ Reset all ancillary calculation data (this will be updated by calculation type).
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 At this point the simulation is running (TRIGGER = 1), read the CPU real time clock and store in the 
-working variable actual_CPUTime.
+working variable act_CPUTime.
 
 This time is then used as the current time for all calculations within the module.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
@@ -3854,7 +3951,7 @@ This time is then used as the current time for all calculations within the modul
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="actual_CPUTime" />
+        <Component Name="act_CPUTime" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -3933,7 +4030,7 @@ If the TRIGGER parameter has gone high, and is seen for the first time (status_R
 THEN a rising edge has been detected on the TRIGGER signal (the simulation has started).
 
 If a rising edge is detected:
-  1. Store the current time (actual_CPUTime) as the simulation start time (actual_StartTime)
+  1. Store the current time (act_CPUTime) as the simulation start time (actual_StartTime)
   2. Set the status_Running bit to match the TRIGGER signal
   3. Set the status_Stopped bit to match the inverse of the TRIGGER signal
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -3960,7 +4057,7 @@ If a rising edge is detected:
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="actual_CPUTime" />
+        <Component Name="act_CPUTime" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
@@ -3971,7 +4068,7 @@ If a rising edge is detected:
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="wrk_ElapsedTime" />
+        <Component Name="wrkElapsedTime" />
       </Symbol>
     </Access>
     <Part Name="T_DIFF" Version="2.1" UId="24">
@@ -4008,7 +4105,7 @@ If a rising edge is detected:
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 If the TRIGGER parameter is high (the simulation is running), then:
-Subtract the start time from the current to give the current elapsed time (wrk_ElapsedTime)
+Subtract the start time from the current to give the current elapsed time (wrkElapsedTime)
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -4032,7 +4129,7 @@ Subtract the start time from the current to give the current elapsed time (wrk_E
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="wrk_ElapsedTime" />
+        <Component Name="wrkElapsedTime" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
@@ -4128,7 +4225,7 @@ Subtract the start time from the current to give the current elapsed time (wrk_E
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The wrk_ElapsedTime signal is of data type LTime (a 64-bit number representing the recorded
+The wrkElapsedTime signal is of data type LTime (a 64-bit number representing the recorded
 duration in nanoseconds).
 
 This signal is converted first to a LInt (long integer) and then to a REAL number.
@@ -4787,7 +4884,7 @@ It will be reset for responses 1, 2 and 5.
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -4810,12 +4907,12 @@ It will be reset for responses 1, 2 and 5.
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="28">
@@ -9291,7 +9388,7 @@ ANCILLARY CALCULATIONS:
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -9327,7 +9424,7 @@ ANCILLARY CALCULATIONS:
     </Access>
     <Access Scope="LocalVariable" UId="29">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="30">
@@ -9342,7 +9439,7 @@ ANCILLARY CALCULATIONS:
     </Access>
     <Access Scope="LocalVariable" UId="32">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="33">
@@ -9405,7 +9502,7 @@ ANCILLARY CALCULATIONS:
     </Access>
     <Access Scope="LocalVariable" UId="44">
       <Symbol>
-        <Component Name="wrk_DampFactor" />
+        <Component Name="wrkDampFactor" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="45">
@@ -10682,7 +10779,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           <MultilingualTextItem ID="90" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
-              <Text>Standard Module [Debug] — Second Order Response Simulation </Text>
+              <Text>Standard Module [DEBUG] — Second Order Response Simulation </Text>
             </AttributeList>
           </MultilingualTextItem>
         </ObjectList>
