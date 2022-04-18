@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-16T09:29:52.6002091Z</Created>
+    <Created>2022-04-18T16:30:59.7291529Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>DeviceDriver</HeaderFamily>
       <HeaderName>StdDevValveIsol</HeaderName>
-      <HeaderVersion>1.8</HeaderVersion>
+      <HeaderVersion>2.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -408,7 +408,7 @@ TITLE:    DEVICE DRIVER — ISOLATING VALVE
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵏ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
 
 FC11001_StdDevValveIsol controls the operation of either a normally closed or normally open 
 isolating valve configured with either open, closed, both open and closed or no position 
@@ -3163,7 +3163,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.801'</ConstantValue>
+        <ConstantValue>'002.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3175,7 +3175,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.11'</ConstantValue>
+        <ConstantValue>'2022.04.16'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3285,6 +3285,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.16    002.000   D0011      D0010 D0011  None    M. Gledhill
+                       FC11001 — RELEASED FOR USE
+                         Merge back to master branch
+
  2022.04.11    001.801   D0010A-000.801   D0010 N/A     D010A   M. Gledhill
                        Released for test (SCV)
 

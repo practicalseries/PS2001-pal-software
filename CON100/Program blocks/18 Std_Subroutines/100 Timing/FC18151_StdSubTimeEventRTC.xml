@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-16T09:29:51.6122509Z</Created>
+    <Created>2022-04-18T16:30:58.2652985Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Subroutine</HeaderFamily>
       <HeaderName>StdSubTimeEventRTC</HeaderName>
-      <HeaderVersion>1.8</HeaderVersion>
+      <HeaderVersion>2.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="TRIGGER" Datatype="Bool" Accessibility="Public">
@@ -176,7 +176,7 @@ TITLE:    SUBROUTINE — EVENT TIMER RTC
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵏ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
 
 FC18151_SubTimeEventRTC is a subroutine block that times the duration of an event 
 to nanosecond resolution.
@@ -217,7 +217,7 @@ This is a subroutine block.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       18.4 μs¹
- LOAD MEMORY       21.4 kB
+ LOAD MEMORY       21.5 kB
  WORK MEMORY           0.4 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
@@ -752,7 +752,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="25">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.801'</ConstantValue>
+        <ConstantValue>'002.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="26">
@@ -764,7 +764,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="27">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.11'</ConstantValue>
+        <ConstantValue>'2022.04.16'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="28">
@@ -891,6 +891,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.16    002.000   D0011      D0010 D0011  None    M. Gledhill
+                       FC18151 — RELEASED FOR USE
+                         Merge back to master branch
+
  2022.04.11    001.801   D0010A-000.801   D0010 N/A     D010A   M. Gledhill
                        Released for test (SCV)
 

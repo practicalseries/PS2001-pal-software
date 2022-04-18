@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-16T09:29:51.2936741Z</Created>
+    <Created>2022-04-18T16:30:58.0582619Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>General</HeaderFamily>
       <HeaderName>DocGenExample</HeaderName>
-      <HeaderVersion>1.8</HeaderVersion>
+      <HeaderVersion>2.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -191,7 +191,7 @@ TITLE:    GENERAL — EXAMPLE DOCUMENTATION
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵏ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
 
 FC61000_DocGenExample is a documentation block that contains examples of all the typical 
 forms of documentation used within the PAL.
@@ -2303,7 +2303,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.801'</ConstantValue>
+        <ConstantValue>'002.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2315,7 +2315,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.11'</ConstantValue>
+        <ConstantValue>'2022.04.16'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2425,6 +2425,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.04.16    002.000   D0011      D0010 D0011  None    M. Gledhill
+                       FC61000 — RELEASED FOR USE
+                         Merge back to master branch
+
  2022.04.11    001.801   D0010A-000.801   D0010 N/A     D010A   M. Gledhill
                        Released for test (SCV)
 
@@ -5130,7 +5134,7 @@ BLOCK CHARACTERS
               <MultilingualTextItem ID="55" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>s▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 CURRENCY
 
 
@@ -5247,7 +5251,7 @@ SMALL FORM LETTERS (MODIFIERS)
 ᴺ  Small form Capital Letter N       ⁿ    Small form Small Letter N
 ᴼ    Small form Capital Letter O       ᵒ Small form Small Letter O
 ᴾ  Small form Capital Letter P        ᵖ Small form Small Letter P
-ᵠ  Small form Capital Letter Q       ᵠ    Small form Small Letter Qt
+ᵠ  Small form Capital Letter Q       ᵠ    Small form Small Letter Q
 ᴿ  Small form Capital Letter R        ʳ    Small form Small Letter R
 ˢ  Small form Capital Letter S        ˢ Small form Small Letter S
 ᵀ  Small form Capital Letter T        ᵗ    Small form Small Letter T
