@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-19T11:02:00.219738Z</Created>
+    <Created>2022-05-03T13:49:39.0853191Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -254,7 +254,7 @@ TITLE:    SUBROUTINE — ANALOG INPUT SCALE
 │          FC18001 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
 │                                          │
 │      The PDF version of the SMDS for this module is available online here:        │
-│              http://psop.uk/pal-smds-fc18001-p              │
+│              https://psop.uk/pal-smds-fc18001-p               │
 │                                          │
 │      It is also available as part of the Project User Defined Documentation,      │
 │      it can be accessed by selecting this module in the Project Tree          │
@@ -313,7 +313,7 @@ This is a subroutine block.
  WORK MEMORY           0.6 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
-                            http://psop.uk/pal-ds-cpu1515
+                            https://psop.uk/pal-ds-cpu1515
 
 
 
@@ -909,7 +909,7 @@ The following shows a typical deployment of FC18001:
 
 The following diagram shows the full test and verification path for the formal release of each 
 version of the software module. See the Test Plan [Ref. 003] for full details, available here:
-        http://psop.uk/pal-tp-p
+        https://psop.uk/pal-tp-p
 
 
         FC18001-T001         FC18001-T002

@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-04-18T16:31:00.1607557Z</Created>
+    <Created>2022-05-03T13:49:40.5057066Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -358,7 +358,7 @@ TITLE:    DEBUG — SECOND ORDER RESPONSE SIMULATION
 │          FC19512 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
 │                                          │
 │      The PDF version of the SMDS for this module is available online here:        │
-│              http://psop.uk/pal-smds-fc19512-p              │
+│              https://psop.uk/pal-smds-fc19512-p               │
 │                                          │
 │      It is also available as part of the Project User Defined Documentation,      │
 │      it can be accessed by selecting this module in the Project Tree          │
@@ -424,7 +424,7 @@ The module also has a manual mode that can simulate an output at any specific ti
  WORK MEMORY           2.9 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
-                            http://psop.uk/pal-ds-cpu1515
+                            https://psop.uk/pal-ds-cpu1515
 
 
 
@@ -470,7 +470,7 @@ following documents are associated with this module:
 █     Project Tree (on the left) and pressing SHIFT+F1.                 █
 █                                          █
 █      The PDF version of the SMDS for this module is available online here:        █
-█              http://psop.uk/pal-smds-fc19512-p              █
+█              https://psop.uk/pal-smds-fc19512-p               █
 █                                          █
 ████████████████████████████████████████████
 
@@ -653,7 +653,7 @@ The module will generate the correct responses for the six conditions listed in 
 section (§ 2.1). The responses for each of these conditions is specified in the associated 
 calculations sheet [Ref. 101], available here:
 
-         http://psop.uk/pal-calc-fc19512-p
+         https://psop.uk/pal-calc-fc19512-p
 
 These calculations are based around the mathematical functions available to the Controller 
 (these are in addition to the standard mathematical operations: addition, subtraction, 
@@ -2750,7 +2750,7 @@ The following shows a typical deployment of FC19512:
 
 The following diagram shows the full test and verification path for the formal release of each 
 version of the software module. See the Test Plan [Ref. 003] for full details, available here:
-        http://psop.uk/pal-tp-p
+        https://psop.uk/pal-tp-p
 
 
         FC19152-T001         FC19152-T002
