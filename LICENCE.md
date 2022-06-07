@@ -65,6 +65,7 @@ The GPL licence is a copyleft licence and it has a whiff of fanaticism about it,
 This is a bit of a problem for me, let me give you an example, let say I produce my software called: “U-Can’t-Bend-It” and license it under the GPL licence. Now let’s say you come along and think U-Can’t-Bend-It is just the thing you need for your software; you take it modify it slightly and you now have your own version: “I-Can’t-Bend-It”. The problem here is that you can’t sell your new product; GPL requires that your software (based on my software) must be licensed under exactly the same licence as the original, i.e. distributed freely.
 
 It’s even worse, if you already have an existing software project (it could be absolutely massive) and you use any of my “U-Can’t-Bend-It” software (perhaps to provide a particular interface), then, under the terms of the GPL licence, your whole programme is considered a derivative work and it must be released under the same GPL licence.
+
 The LGPL (lesser GPL) has been introduce to address this particular problem (although bizarrely, the FSF website seems to discourage its use, see [here](https://www.gnu.org/licenses/why-not-lgpl.en.html)); the LPGL allows the use of library software in proprietary programmes (programmes for which you can charge).
 
 <br />
@@ -72,7 +73,8 @@ The LGPL (lesser GPL) has been introduce to address this particular problem (alt
 ## Limiting liabilities
 
 The other thing for me to consider, is the question of liability. I do not want to be liable for any problem you may encounter when using this software.
-Open source software licences (I’m including the GPL licences in this broad definition &mdash; it will probably annoy them) generally limit the liability of those providing the software to zero; this is exactly the same amount that those providing the software get paid &mdash; NOTHING.
+
+Open source software licences (I’m including the GPL licences in this broad definition &mdash; *it will probably annoy them*) generally limit the liability of those providing the software to zero; this is exactly the same amount that those providing the software get paid &mdash; NOTHING.
 
 Both the permissive licences and the copyleft licences have terms within them that limit any liability of the provider, terms like this:
 
