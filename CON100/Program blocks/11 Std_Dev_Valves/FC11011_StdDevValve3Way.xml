@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-06-07T12:11:13.6883381Z</Created>
+    <Created>2022-06-11T10:19:42.8891999Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>DeviceDriver</HeaderFamily>
       <HeaderName>StdDevValve3Way</HeaderName>
-      <HeaderVersion>0.1</HeaderVersion>
+      <HeaderVersion>0.8</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -407,7 +407,7 @@ TITLE:    DEVICE DRIVER — THREE-WAY VALVE
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᶠᵃ  ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᶠᵍ  ┘
 
 FC11011_StdDevValve3Way controls the operation of 3-way valve with a common energised port 
 (the action of the valve switches the common port to one of the other two ports) configured with 
@@ -475,7 +475,7 @@ The module also generates status signals for the selected operating modes and co
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME       80.0 μs¹
+ EXECUTION TIME       66.5 μs¹
  LOAD MEMORY       98.6 kB
  WORK MEMORY           2.1 kB  
  ――――――――――――――――――――――――――――――――――――――――――
@@ -3169,7 +3169,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.101'</ConstantValue>
+        <ConstantValue>'000.801'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3181,7 +3181,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.06.01'</ConstantValue>
+        <ConstantValue>'2022.06.07'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3291,6 +3291,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.06.07    000.801   D0014A-000.801   D0014 N/A     D0014A   M. Gledhill
+                       Released for test (SMTS)
+
  2022.06.01    000.101   D0014A-000.101   D0014 N/A     D0014A   M. Gledhill
                        Block created
  ———————————————————————————————————————————
@@ -9206,49 +9209,115 @@ If the external fault signal (EXT_FAULT) is active, generate the external fault 
         <Component Name="mode_Reset" />
       </Symbol>
     </Access>
-    <Part Name="Contact" UId="27" />
-    <Part Name="RCoil" UId="28" />
-    <Part Name="RCoil" UId="29" />
-    <Part Name="RCoil" UId="30" />
-    <Part Name="RCoil" UId="31" />
-    <Part Name="RCoil" UId="32" />
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Last_Op_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>-1.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Last_Op_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="mode_Reset" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="32" />
+    <Part Name="RCoil" UId="33" />
+    <Part Name="RCoil" UId="34" />
+    <Part Name="RCoil" UId="35" />
+    <Part Name="RCoil" UId="36" />
+    <Part Name="Contact" UId="37" />
+    <Part Name="Eq" UId="38">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="39" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="40" />
   </Parts>
   <Wires>
-    <Wire UId="33">
+    <Wire UId="41">
       <Powerrail />
-      <NameCon UId="27" Name="in" />
-    </Wire>
-    <Wire UId="34">
-      <IdentCon UId="21" />
-      <NameCon UId="27" Name="operand" />
-    </Wire>
-    <Wire UId="35">
-      <NameCon UId="27" Name="out" />
-      <NameCon UId="28" Name="in" />
-      <NameCon UId="29" Name="in" />
-      <NameCon UId="30" Name="in" />
-      <NameCon UId="31" Name="in" />
       <NameCon UId="32" Name="in" />
     </Wire>
-    <Wire UId="36">
-      <IdentCon UId="22" />
-      <NameCon UId="28" Name="operand" />
-    </Wire>
-    <Wire UId="37">
-      <IdentCon UId="23" />
-      <NameCon UId="29" Name="operand" />
-    </Wire>
-    <Wire UId="38">
-      <IdentCon UId="24" />
-      <NameCon UId="30" Name="operand" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="25" />
-      <NameCon UId="31" Name="operand" />
-    </Wire>
-    <Wire UId="40">
-      <IdentCon UId="26" />
+    <Wire UId="42">
+      <IdentCon UId="21" />
       <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="in" />
+      <NameCon UId="34" Name="in" />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="36" Name="in" />
+      <NameCon UId="37" Name="in" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="operand" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="23" />
+      <NameCon UId="34" Name="operand" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="24" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="26" />
+      <NameCon UId="37" Name="operand" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="pre" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="in1" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="in2" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="39" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="29" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="39" Name="out1" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="31" />
+      <NameCon UId="40" Name="operand" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -9261,7 +9330,12 @@ If the external fault signal (EXT_FAULT) is active, generate the external fault 
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-If the RESET signal is active, reset all position derived alarms and also clear the RESET signal
+If the RESET signal is active, reset all position derived alarms and also clear the RESET signal.
+
+If the actual_Last_Op time is at -1.0 (indicating the valve is in a fault condition), the 
+actual_Last_Op will be set to zero if a reset pulse is received. This ensures that a valve that was 
+in fault, but is now in the correct deenergised state when reset, generates an 
+actual_Last_Op value of zero.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
