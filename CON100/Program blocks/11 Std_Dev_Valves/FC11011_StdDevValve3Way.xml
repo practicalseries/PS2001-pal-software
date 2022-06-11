@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-06-11T10:19:42.8891999Z</Created>
+    <Created>2022-06-11T10:52:23.8097839Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>DeviceDriver</HeaderFamily>
       <HeaderName>StdDevValve3Way</HeaderName>
-      <HeaderVersion>0.8</HeaderVersion>
+      <HeaderVersion>1.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -407,7 +407,7 @@ TITLE:    DEVICE DRIVER — THREE-WAY VALVE
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᶠᵍ  ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᶠᵏ  ┘
 
 FC11011_StdDevValve3Way controls the operation of 3-way valve with a common energised port 
 (the action of the valve switches the common port to one of the other two ports) configured with 
@@ -476,8 +476,8 @@ The module also generates status signals for the selected operating modes and co
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       66.5 μs¹
- LOAD MEMORY       98.6 kB
- WORK MEMORY           2.1 kB  
+ LOAD MEMORY       99.5 kB
+ WORK MEMORY           2.2 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
                             https://psop.uk/pal-ds-cpu1515
@@ -3169,7 +3169,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.801'</ConstantValue>
+        <ConstantValue>'001.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3181,7 +3181,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.06.07'</ConstantValue>
+        <ConstantValue>'2022.06.11'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3291,6 +3291,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.06.11    001.000   D0015      D0014 D0015  None    M. Gledhill
+                       FC11011 — RELEASED FOR USE
+                         Merge back to master branch
+
  2022.06.07    000.801   D0014A-000.801   D0014 N/A     D0014A   M. Gledhill
                        Released for test (SMTS)
 
