@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2023-01-28T13:26:28.3917925Z</Created>
+    <Created>2023-02-01T15:24:12.2945142Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0015A-000-102
+TIA PROJECT NAME:    PS2001-PAL-D0015A-000-801
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -377,7 +377,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0015A-000-102'</ConstantValue>
+        <ConstantValue>'D0015A-000-801'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -390,7 +390,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.01.28'</ConstantValue>
+        <ConstantValue>'2023.02.01'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
@@ -504,6 +504,7 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2023.02.01    D0015A.000.801   M. Gledhill      FC11101 — Released for test (SMTS)
  2023.01.28    D0015A.000.102   M. Gledhill      FC11101 — Incremental build
  2022.08.15    D0015A.000.101   M. Gledhill      FC11101 — Block created
 
@@ -813,13 +814,13 @@ The block must be the first non-debug block call within the main organisation bl
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-FC11011 Module Test
+FC11101 Module Test
 
-Single call to a three-way valve device driver configured for valve V001.
+Single call to a three-waybistable valve device driver configured for valve V001.
 
-The valve data is simulated using internal memory bits defined in tag table: PAL_FC11011_Test.
+The valve data is simulated using internal memory bits defined in tag table: PAL_FC11101_Test.
 
-The static, dynamic and memory bits can be monitored using the FC11011_Test watch table.
+The static, dynamic and memory bits can be monitored using the FC11101_Test watch table.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -843,7 +844,7 @@ The static, dynamic and memory bits can be monitored using the FC11011_Test watc
   <Parts>
     <Access Scope="GlobalVariable" UId="21">
       <Symbol>
-        <Component Name="DB31001_Dy_DevValveIsol" />
+        <Component Name="DB31101_Dy_DevValveBi" />
         <Component Name="V001" />
         <Component Name="actual_Operating_Timer" />
       </Symbol>
@@ -856,7 +857,7 @@ The static, dynamic and memory bits can be monitored using the FC11011_Test watc
     </Access>
     <Access Scope="GlobalVariable" UId="23">
       <Symbol>
-        <Component Name="DB31001_Dy_DevValveIsol" />
+        <Component Name="DB31101_Dy_DevValveBi" />
         <Component Name="V001" />
         <Component Name="actual_Operating_Timer" />
       </Symbol>
@@ -923,7 +924,7 @@ valve position is reached.
               <MultilingualTextItem ID="1B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>FC11001 Module Test — Three-way valve device driver test — Position timer</Text>
+                  <Text>FC11101 Module Test — Bistable  valve device driver test — Position timer</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>

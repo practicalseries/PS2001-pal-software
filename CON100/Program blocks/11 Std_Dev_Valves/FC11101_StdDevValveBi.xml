@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2023-01-28T13:26:29.3329139Z</Created>
+    <Created>2023-02-01T15:24:13.3591852Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>DeviceDriver</HeaderFamily>
       <HeaderName>StdDevValveBi</HeaderName>
-      <HeaderVersion>0.1</HeaderVersion>
+      <HeaderVersion>0.8</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -425,7 +425,7 @@ TITLE:    DEVICE DRIVER — BISTABLE VALVE
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇʰᵒ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᶜᵇᵃ ┘
 
 FC11101_StdDevValveBi controls the operation of a bistable valve configured with either open, 
 closed, both open and closed or no position feedback (depending on the valve type).
@@ -498,9 +498,9 @@ The module also generates status signals for the selected operating modes and co
  ――――――――――――――――――――――――――――――――――――――――――
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME       80.0 μs¹
- LOAD MEMORY       99.7 kB
- WORK MEMORY           2.2 kB  
+ EXECUTION TIME       81.3 μs¹
+ LOAD MEMORY       113.1 kB
+ WORK MEMORY           2.5 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
                             https://psop.uk/pal-ds-cpu1515
@@ -578,7 +578,7 @@ actuator; it simply remains in its current state (even if this is an indetermina
      closed state and will open when an energising signal is applied. A normally open 
      valve operates in the reverse arrangement, the valve is open in the deenergised 
      state and will only close when the energising signal is present. Normally open valves 
-     are used in fail-safe applica-tions where a power failure causes the valve to open by 
+     are used in fail-safe applications where a power failure causes the valve to open by 
      default, usually to vent pressure or release some other motive force from the vessel 
      to which it is connected.
 ――――――――――
@@ -1614,11 +1614,17 @@ positions have been reached
 The run-on timer always counts down from a preset value to zero, this is in accordance with the 
 general requirements and practices of the PAL software.
 
+If the valve is required to change state while the run-on timer is active, the run-on timer will 
+simply stop (effectively be cancelled) until required to run again at the end of the operation timer.
+
 If the valve is in a fault condition (i.e. if the valve did not achieve the correct state), the run-on 
 timer will not activate.
 
-The run-on timer will not activate if the module is configured to maintain its outputs 
-(CONFIG_MAINT_OP = 1).
+The recovery timer will always run after a fault condition is reset (even an external fault), this 
+ensures that the valve movement operation is fully completed.
+
+The run-on timer will not activate under any circumstances if the module is configured to 
+maintain its outputs (CONFIG_MAINT_OP = 1).
 
 
 
@@ -2105,12 +2111,7 @@ UDT as follows:
 
  msg_FailWhileClosed   Valve suffered position failure while      Bool     1 = alarm active
             in a static CLOSED state            0 = no alarm
- ――――――――――――――――――――――――――――――――――――――――――   
-
-
-
-
-</Text>
+ ――――――――――――――――――――――――――――――――――――――――――</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2164,7 +2165,7 @@ fault signal:
   ――――――――――――――――――――――――――――――――――――――――――
 
 If any of the above faults are active, the valve will be deenergised (both the OPEN_CMD and 
-CLOSE_CMD parameters will be set to 0) and the module will ig-nore all commands either 
+CLOSE_CMD parameters will be set to 0) and the module will ignore all commands either 
 automatic or manual and will ignore all interlock conditions.
 
 Note:    If the maintain output option is activated (CONFIG_MAINT_OP = 1), the outputs will be 
@@ -2359,14 +2360,21 @@ between open and closed).
 
 To accommodate this condition, the active operation timer will simply pause at its current 
 elapsed value (the value reached when the emergency stop activated) and the valve will 
-remain in either the opening or closing state; i.e. status_opening or status_closing will remain 
+remain in either the opening or closing state; i.e. status_Opening or status_Closing will remain 
 active until the emergency stop condition is removed.
 
 Under these conditions (an emergency stop while changing state), the removal of the 
 emergency stop tiggers a recovery timer, this is used to delay the restarting of the operation 
-timer, the recover timer is used to allow the physical aspects of the valve itself to reset and 
-resume operation (e.g. to allow the valve to power-up and the motor to ramp to the correct 
-speed &amp;c.), this recovery time is configurable.
+timer (or the run-on timer if it is active), the recover timer is used to allow the physical aspects 
+of the valve itself to reset and resume operation (e.g. to allow the valve to power-up and the 
+motor to ramp to the correct speed &amp;c.), this recovery time is configurable.
+
+Note:    The recovery timer will also run when the emergency stop condition is removed 
+     even if the valve is in a defined position, under these circumstances, the operation 
+     timer will again be delayed until the recovery timer is complete (this avoids a 
+     situation where the valve is required to change state immediately after an estop 
+     while the valve motor is still recovering — again it effectively extends the operation 
+     timer sufficiently to allow the valve to recover).
 
 The recovery time preset is specified in the STATIC_DATA parameter 
 UDT (UT11101_St_DevValveBi) as follows. It is the same irrespective of whether the valve was 
@@ -2392,7 +2400,7 @@ DYNAMIC_DATA parameter UDT (UT31101_Dy_DevValveBi) as follows:
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL        FUNCTION              TYPE     DETAILS
  ――――――――――――――――――――――――――――――――――――――――――
- actual_recovery_Timer    Actual (elapsed) value of     Real     Seconds
+ actual_Recovery_Timer    Actual (elapsed) value of     Real     Seconds
              the recovery timer  
  ――――――――――――――――――――――――――――――――――――――――――
 
@@ -3173,9 +3181,9 @@ The static data structure for an isolating valve.
                      (counts down from this value), [seconds]
  TIME_CLOSING_MAX       TIMER — Initial value of closing operation timer     Real
                      (counts down from this value), [seconds]
- TIME_OPENING_RUNON     TIMER — Initial value of opening runon timer          Real
+ TIME_OPENING_RUNON     TIMER — Initial value of opening run-on timer         Real
                      (counts down from this value), [seconds]
- TIME_CLOSING_RUNON        TIMER — Initial value of closing runon timer            Real
+ TIME_CLOSING_RUNON        TIMER — Initial value of closing run-on timer           Real
                      (counts down from this value), [seconds]
  TIME_DER_OPEN              TIMER — Percentage of opening timer to expired      Real
                      before simulating FBK_OPEN, [percent]
@@ -3501,7 +3509,7 @@ version of the software module. See the Test Plan [Ref. 003] for full details, a
 
     Test version: 000.801
  Released version: 001.000
-Released commit: D0009 
+Released commit: D0016 
 
        SCR      SMT 
 ＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿
@@ -3586,7 +3594,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.102'</ConstantValue>
+        <ConstantValue>'000.801'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3598,7 +3606,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.01.28'</ConstantValue>
+        <ConstantValue>'2023.02.01'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3708,6 +3716,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2023.02.01    000.801   D0015A-000.801   D0015 N/A     D0015A   M. Gledhill
+                       FC11101  — Released for test (SMTS)
+
  2023.01.28    000.102   D0015A-000.102   D0015 N/A     D0015A   M. Gledhill
                        FC11101  — Incremental build
 
@@ -5616,6 +5627,8 @@ If simulation mode is active, the simulated open position signal is set as follo
    •   mode_SimValue = 2 (permanently closed), $sim_fbk_open = 0
 
    •   mode_SimValue = 3 (follow demand), $sim_fbk_open = $ctrl_OpenClose
+     with appropriate delay (the simulated position will activate when the
+     operation timer counts down to a value less than or equal to K_TIME_SIM_MIN
 
 If simulation mode is not active,  $sim_fbk_open = 0
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
@@ -5954,6 +5967,8 @@ If simulation mode is active, the simulated open position signal is set as follo
    •   mode_SimValue = 2 (permanently closed), $sim_fbk_closed = 1
 
    •   mode_SimValue = 3 (follow demand), $sim_fbk_closed = NOT $ctrl_OpenClose
+     with appropriate delay (the simulated position will activate when the
+     operation timer counts down to a value less than or equal to K_TIME_SIM_MIN
 
 If simulation mode is not active,  $sim_fbk_closed = 0
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
@@ -9677,21 +9692,21 @@ timer with the relevant timer preset
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Recovery_Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
         <Component Name="SYS_SIGNALS" />
         <Component Name="_200ms" />
       </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="25">
-      <Symbol>
-        <Component Name="DYNAMIC_DATA" />
-        <Component Name="actual_Runon_Timer" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="26">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>0.2</ConstantValue>
-      </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
@@ -9699,158 +9714,185 @@ timer with the relevant timer preset
         <Component Name="actual_Runon_Timer" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="28">
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.2</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Runon_Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
       <Symbol>
         <Component Name="STATIC_DATA" />
         <Component Name="CONFIG_MAINT_OP" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="29">
+    <Access Scope="LocalVariable" UId="31">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
         <Component Name="status_Fault" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="30">
+    <Access Scope="LocalVariable" UId="32">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
         <Component Name="actual_Runon_Timer" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="31">
+    <Access Scope="LiteralConstant" UId="33">
       <Constant>
         <ConstantType>Real</ConstantType>
         <ConstantValue>0.0</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LiteralConstant" UId="32">
+    <Access Scope="LiteralConstant" UId="34">
       <Constant>
         <ConstantType>Real</ConstantType>
         <ConstantValue>0.0</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="33">
+    <Access Scope="LocalVariable" UId="35">
       <Symbol>
         <Component Name="DYNAMIC_DATA" />
         <Component Name="actual_Runon_Timer" />
       </Symbol>
     </Access>
-    <Part Name="Contact" UId="34">
-      <Negated Name="operand" />
-    </Part>
-    <Part Name="Contact" UId="35">
-      <Negated Name="operand" />
-    </Part>
     <Part Name="Contact" UId="36">
       <Negated Name="operand" />
     </Part>
-    <Part Name="Contact" UId="37" />
-    <Part Name="Sub" UId="38" DisabledENO="true">
-      <AutomaticTyped Name="SrcType" />
+    <Part Name="Contact" UId="37">
+      <Negated Name="operand" />
     </Part>
-    <Part Name="Contact" UId="39" />
-    <Part Name="Contact" UId="40" />
-    <Part Name="Le" UId="41">
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Le" UId="39">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="O" UId="42">
+    <Part Name="Contact" UId="40" />
+    <Part Name="Sub" UId="41" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Contact" UId="42" />
+    <Part Name="Contact" UId="43" />
+    <Part Name="Le" UId="44">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="O" UId="45">
       <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
     </Part>
-    <Part Name="Move" UId="43" DisabledENO="true">
+    <Part Name="Move" UId="46" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
   </Parts>
   <Wires>
-    <Wire UId="44">
-      <Powerrail />
-      <NameCon UId="34" Name="in" />
-      <NameCon UId="39" Name="in" />
-      <NameCon UId="40" Name="in" />
-      <NameCon UId="41" Name="pre" />
-    </Wire>
-    <Wire UId="45">
-      <IdentCon UId="21" />
-      <NameCon UId="34" Name="operand" />
-    </Wire>
-    <Wire UId="46">
-      <NameCon UId="34" Name="out" />
-      <NameCon UId="35" Name="in" />
-    </Wire>
     <Wire UId="47">
-      <IdentCon UId="22" />
-      <NameCon UId="35" Name="operand" />
+      <Powerrail />
+      <NameCon UId="36" Name="in" />
+      <NameCon UId="42" Name="in" />
+      <NameCon UId="43" Name="in" />
+      <NameCon UId="44" Name="pre" />
     </Wire>
     <Wire UId="48">
-      <NameCon UId="35" Name="out" />
-      <NameCon UId="36" Name="in" />
-    </Wire>
-    <Wire UId="49">
-      <IdentCon UId="23" />
+      <IdentCon UId="21" />
       <NameCon UId="36" Name="operand" />
     </Wire>
-    <Wire UId="50">
+    <Wire UId="49">
       <NameCon UId="36" Name="out" />
       <NameCon UId="37" Name="in" />
     </Wire>
-    <Wire UId="51">
-      <IdentCon UId="24" />
+    <Wire UId="50">
+      <IdentCon UId="22" />
       <NameCon UId="37" Name="operand" />
     </Wire>
-    <Wire UId="52">
+    <Wire UId="51">
       <NameCon UId="37" Name="out" />
-      <NameCon UId="38" Name="en" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="23" />
+      <NameCon UId="38" Name="operand" />
     </Wire>
     <Wire UId="53">
-      <IdentCon UId="25" />
-      <NameCon UId="38" Name="in1" />
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="39" Name="pre" />
     </Wire>
     <Wire UId="54">
-      <IdentCon UId="26" />
-      <NameCon UId="38" Name="in2" />
+      <IdentCon UId="24" />
+      <NameCon UId="39" Name="in1" />
     </Wire>
     <Wire UId="55">
-      <NameCon UId="38" Name="out" />
-      <IdentCon UId="27" />
+      <IdentCon UId="25" />
+      <NameCon UId="39" Name="in2" />
     </Wire>
     <Wire UId="56">
-      <IdentCon UId="28" />
-      <NameCon UId="39" Name="operand" />
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="40" Name="in" />
     </Wire>
     <Wire UId="57">
-      <NameCon UId="39" Name="out" />
-      <NameCon UId="42" Name="in1" />
-    </Wire>
-    <Wire UId="58">
-      <IdentCon UId="29" />
+      <IdentCon UId="26" />
       <NameCon UId="40" Name="operand" />
     </Wire>
-    <Wire UId="59">
+    <Wire UId="58">
       <NameCon UId="40" Name="out" />
-      <NameCon UId="42" Name="in2" />
+      <NameCon UId="41" Name="en" />
     </Wire>
-    <Wire UId="60">
-      <IdentCon UId="30" />
+    <Wire UId="59">
+      <IdentCon UId="27" />
       <NameCon UId="41" Name="in1" />
     </Wire>
-    <Wire UId="61">
-      <IdentCon UId="31" />
+    <Wire UId="60">
+      <IdentCon UId="28" />
       <NameCon UId="41" Name="in2" />
     </Wire>
-    <Wire UId="62">
+    <Wire UId="61">
       <NameCon UId="41" Name="out" />
-      <NameCon UId="42" Name="in3" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="30" />
+      <NameCon UId="42" Name="operand" />
     </Wire>
     <Wire UId="63">
       <NameCon UId="42" Name="out" />
-      <NameCon UId="43" Name="en" />
+      <NameCon UId="45" Name="in1" />
     </Wire>
     <Wire UId="64">
-      <IdentCon UId="32" />
-      <NameCon UId="43" Name="in" />
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="operand" />
     </Wire>
     <Wire UId="65">
-      <NameCon UId="43" Name="out1" />
+      <NameCon UId="43" Name="out" />
+      <NameCon UId="45" Name="in2" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="32" />
+      <NameCon UId="44" Name="in1" />
+    </Wire>
+    <Wire UId="67">
       <IdentCon UId="33" />
+      <NameCon UId="44" Name="in2" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="45" Name="in3" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="45" Name="out" />
+      <NameCon UId="46" Name="en" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="34" />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="46" Name="out1" />
+      <IdentCon UId="35" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -9866,10 +9908,10 @@ timer with the relevant timer preset
 If the valve is either closed or open, is not in fault and is not configured to maintain outputs, the 
 run-on timer will count down from its preset value.
 
-If an emergency stop is activated whilst the runon timer is active, it will pause at the last elapsed
-value.
+If an emergency stop is activated whilst the run-on timer is active, it will pause at the last 
+elapsed value.
 
-If a fault condition is active or if the valve is configured to maintain outputs, the runon timer is
+If a fault condition is active or if the valve is configured to maintain outputs, the run-on timer is
 set to zero.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
@@ -10146,6 +10188,173 @@ indicate a fault state.
         <Component Name="msg_Flt_External" />
       </Symbol>
     </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="STATIC_DATA" />
+        <Component Name="CONFIG_MAINT_OP" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="$ctrl_OpenClose" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="STATIC_DATA" />
+        <Component Name="TIME_OPENING_RUNON" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Runon_Timer" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="$ctrl_OpenClose" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="STATIC_DATA" />
+        <Component Name="TIME_CLOSING_RUNON" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Runon_Timer" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="31" />
+    <Part Name="Contact" UId="32">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="33" />
+    <Part Name="Move" UId="34" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="35">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="36" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="37">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="operand" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="out" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="23" />
+      <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="in" />
+      <NameCon UId="35" Name="in" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="24" />
+      <NameCon UId="33" Name="operand" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="33" Name="out" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="25" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="34" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="27" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="28" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="36" Name="out1" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="D6" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the External Fault signal is removed, and the outputs are non-maintained, retrigger the run-on 
+timer (for open or close), to ensure the valve is over-driven to position.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="D8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="D9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>External fault alarm — Reset Detection</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="DA" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="EXT_FAULT" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="msg_Flt_External" />
+      </Symbol>
+    </Access>
     <Part Name="Contact" UId="23" />
     <Part Name="Coil" UId="24" />
   </Parts>
@@ -10171,9 +10380,9 @@ indicate a fault state.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="D6" CompositionName="Comment">
+          <MultilingualText ID="DB" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="D7" CompositionName="Items">
+              <MultilingualTextItem ID="DC" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -10183,9 +10392,9 @@ If the external fault signal (EXT_FAULT) is active, generate the external fault 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="D8" CompositionName="Title">
+          <MultilingualText ID="DD" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="D9" CompositionName="Items">
+              <MultilingualTextItem ID="DE" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>External fault alarm</Text>
@@ -10195,7 +10404,7 @@ If the external fault signal (EXT_FAULT) is active, generate the external fault 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="DA" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="DF" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -10415,9 +10624,9 @@ If the external fault signal (EXT_FAULT) is active, generate the external fault 
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="DB" CompositionName="Comment">
+          <MultilingualText ID="E0" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="DC" CompositionName="Items">
+              <MultilingualTextItem ID="E1" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -10432,9 +10641,9 @@ Finally, clear the RESET signal
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="DD" CompositionName="Title">
+          <MultilingualText ID="E2" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="DE" CompositionName="Items">
+              <MultilingualTextItem ID="E3" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Reset faults</Text>
@@ -10444,7 +10653,7 @@ Finally, clear the RESET signal
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="DF" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="E4" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -11054,9 +11263,9 @@ Finally, clear the RESET signal
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="E0" CompositionName="Comment">
+          <MultilingualText ID="E5" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="E1" CompositionName="Items">
+              <MultilingualTextItem ID="E6" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -11103,9 +11312,9 @@ The following is a full list of the status signals:
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="E2" CompositionName="Title">
+          <MultilingualText ID="E7" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="E3" CompositionName="Items">
+              <MultilingualTextItem ID="E8" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Status signals</Text>
@@ -11115,7 +11324,7 @@ The following is a full list of the status signals:
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="E4" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="E9" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -11281,13 +11490,13 @@ The following is a full list of the status signals:
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="E5" CompositionName="Comment">
+          <MultilingualText ID="EA" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="E6" CompositionName="Items">
+              <MultilingualTextItem ID="EB" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The OPEN_CMD ouptput drive will activate if all the following are true:
+The OPEN_CMD output drive will activate if all the following are true:
 
    1.  ESTOP is healthy or disabled (#wrkCtrlPriority40 = 1)
 
@@ -11306,9 +11515,9 @@ The status_OpenOn signal is set to match the state of the OPEN_CMD
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="E7" CompositionName="Title">
+          <MultilingualText ID="EC" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="E8" CompositionName="Items">
+              <MultilingualTextItem ID="ED" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>OPEN_CMD output driver</Text>
@@ -11318,7 +11527,7 @@ The status_OpenOn signal is set to match the state of the OPEN_CMD
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="E9" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="EE" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -11486,13 +11695,13 @@ The status_OpenOn signal is set to match the state of the OPEN_CMD
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="EA" CompositionName="Comment">
+          <MultilingualText ID="EF" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="EB" CompositionName="Items">
+              <MultilingualTextItem ID="F0" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The OPEN_CMD ouptput drive will activate if all the following are true:
+The OPEN_CMD output drive will activate if all the following are true:
 
    1.  ESTOP is healthy or disabled (#wrkCtrlPriority40 = 1)
 
@@ -11500,7 +11709,7 @@ The OPEN_CMD ouptput drive will activate if all the following are true:
 
    3.  The valve is requested closed ($ctrl_OpenClose = 0)
 
-   4. The valve is closinging (status_Closing =1)
+   4. The valve is closing (status_Closing =1)
         OR
      The valve is closed (status_Closed = 1) and either the run-on timer is active
      or the valve is configured to maintain outputs (CONFIG_MAINT_OP = 1)
@@ -11511,9 +11720,9 @@ The status_CloseOn signal is set to match the state of the CLOSE_CMD
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="EC" CompositionName="Title">
+          <MultilingualText ID="F1" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="ED" CompositionName="Items">
+              <MultilingualTextItem ID="F2" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>CLOSE_CMD output driver</Text>
@@ -11523,7 +11732,7 @@ The status_CloseOn signal is set to match the state of the CLOSE_CMD
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="EE" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="F3" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -11598,9 +11807,9 @@ The status_CloseOn signal is set to match the state of the CLOSE_CMD
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="EF" CompositionName="Comment">
+          <MultilingualText ID="F4" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="F0" CompositionName="Items">
+              <MultilingualTextItem ID="F5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -11641,9 +11850,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="F1" CompositionName="Title">
+          <MultilingualText ID="F6" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="F2" CompositionName="Items">
+              <MultilingualTextItem ID="F7" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>LICENCE AND CONTACT INFORMATION</Text>
@@ -11653,9 +11862,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="F3" CompositionName="Title">
+      <MultilingualText ID="F8" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="F4" CompositionName="Items">
+          <MultilingualTextItem ID="F9" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text>Standard Module [DEVICE DRIVER] — Bistable Valve </Text>
