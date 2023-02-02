@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2023-02-02T16:29:07.6882856Z</Created>
+    <Created>2023-02-02T16:36:20.2344667Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0015A-001-000
+TIA PROJECT NAME:    PS2001-PAL-D0016
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -380,7 +380,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0015A-001-000'</ConstantValue>
+        <ConstantValue>'D0016'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -507,10 +507,7 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
- 2023.02.02    D0015A.001.000   M. Gledhill      FC11101 — Released for use
- 2023.02.01    D0015A.000.801   M. Gledhill      FC11101 — Released for test (SMTS)
- 2023.01.28    D0015A.000.102   M. Gledhill      FC11101 — Incremental build
- 2022.08.15    D0015A.000.101   M. Gledhill      FC11101 — Block created
+ 2023.02.02    D0016      M. Gledhill      FC11101 — RELEASED FOR USE
 
  2022.06.11    D0015      M. Gledhill      FC11011 — RELEASED FOR USE
 
