@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2023-02-01T15:24:12.2945142Z</Created>
+    <Created>2023-02-02T16:29:07.6882856Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0015A-000-801
+TIA PROJECT NAME:    PS2001-PAL-D0015A-001-000
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -277,6 +277,9 @@ COMPLETED MODULES
  FC11011 StdDevValve3Way      001.000   UT 11011   001.000    UT 31011   001.000
                  2022-06-11   DB11011   001.000       DB31011   001.000
  ――――――――――――――――――――――――――――――――――――――――――
+ FC11101 StdDevValveBi      001.000   UT 11101   001.000    UT 31101   001.000
+                 2023-02-02   DB11101   001.000       DB31101   001.000
+ ――――――――――――――――――――――――――――――――――――――――――
  FC18001 StdSubScaleAI      002.000   None           None 
                  2022.04.16   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
@@ -377,7 +380,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0015A-000-801'</ConstantValue>
+        <ConstantValue>'D0015A-001-000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -390,7 +393,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.02.01'</ConstantValue>
+        <ConstantValue>'2023.02.02'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
@@ -504,6 +507,7 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2023.02.02    D0015A.001.000   M. Gledhill      FC11101 — Released for use
  2023.02.01    D0015A.000.801   M. Gledhill      FC11101 — Released for test (SMTS)
  2023.01.28    D0015A.000.102   M. Gledhill      FC11101 — Incremental build
  2022.08.15    D0015A.000.101   M. Gledhill      FC11101 — Block created
@@ -672,271 +676,6 @@ The block must be the first non-debug block call within the main organisation bl
   <Parts>
     <Access Scope="GlobalVariable" UId="21">
       <Symbol>
-        <Component Name="DB21001_Dy_SysGlobalData" />
-        <Component Name="SysSignals" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="22">
-      <Symbol>
-        <Component Name="V001_FBK_OPEN" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="23">
-      <Symbol>
-        <Component Name="V001_FBK_CLOSED" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="24">
-      <Symbol>
-        <Component Name="V001_FAULT" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="25">
-      <Symbol>
-        <Component Name="V001_ESTOP" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="26">
-      <Symbol>
-        <Component Name="V001_TRIP" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="27">
-      <Symbol>
-        <Component Name="V001_ILOCK" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="28">
-      <Symbol>
-        <Component Name="V001_PERM" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="29">
-      <Symbol>
-        <Component Name="DB11101_St_DevValveBi" />
-        <Component Name="V001" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="30">
-      <Symbol>
-        <Component Name="DB31101_Dy_DevValveBi" />
-        <Component Name="V001" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="31">
-      <Symbol>
-        <Component Name="V001_OPEN_CMD" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="32">
-      <Symbol>
-        <Component Name="V001_CLOSE_CMD" />
-      </Symbol>
-    </Access>
-    <Call UId="33">
-      <CallInfo Name="FC11101_StdDevValveBi" BlockType="FC">
-        <Parameter Name="SYS_SIGNALS" Section="Input" Type="&quot;UT21000_Dy_SysSignals&quot;" />
-        <Parameter Name="FBK_OPEN" Section="Input" Type="Bool" />
-        <Parameter Name="FBK_CLOSED" Section="Input" Type="Bool" />
-        <Parameter Name="EXT_FAULT" Section="Input" Type="Bool" />
-        <Parameter Name="E_STOP" Section="Input" Type="Bool" />
-        <Parameter Name="TRIP" Section="Input" Type="Bool" />
-        <Parameter Name="INTERLOCK" Section="Input" Type="Bool" />
-        <Parameter Name="PERMISSIVE" Section="Input" Type="Bool" />
-        <Parameter Name="STATIC_DATA" Section="Input" Type="&quot;UT11101_St_DevValveBi&quot;" />
-        <Parameter Name="OPEN_CMD" Section="Output" Type="Bool" />
-        <Parameter Name="CLOSE_CMD" Section="Output" Type="Bool" />
-        <Parameter Name="DYNAMIC_DATA" Section="InOut" Type="&quot;UT31101_Dy_DevValveBi&quot;" />
-      </CallInfo>
-    </Call>
-  </Parts>
-  <Wires>
-    <Wire UId="34">
-      <Powerrail />
-      <NameCon UId="33" Name="en" />
-    </Wire>
-    <Wire UId="35">
-      <IdentCon UId="21" />
-      <NameCon UId="33" Name="SYS_SIGNALS" />
-    </Wire>
-    <Wire UId="36">
-      <IdentCon UId="22" />
-      <NameCon UId="33" Name="FBK_OPEN" />
-    </Wire>
-    <Wire UId="37">
-      <IdentCon UId="23" />
-      <NameCon UId="33" Name="FBK_CLOSED" />
-    </Wire>
-    <Wire UId="38">
-      <IdentCon UId="24" />
-      <NameCon UId="33" Name="EXT_FAULT" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="25" />
-      <NameCon UId="33" Name="E_STOP" />
-    </Wire>
-    <Wire UId="40">
-      <IdentCon UId="26" />
-      <NameCon UId="33" Name="TRIP" />
-    </Wire>
-    <Wire UId="41">
-      <IdentCon UId="27" />
-      <NameCon UId="33" Name="INTERLOCK" />
-    </Wire>
-    <Wire UId="42">
-      <IdentCon UId="28" />
-      <NameCon UId="33" Name="PERMISSIVE" />
-    </Wire>
-    <Wire UId="43">
-      <IdentCon UId="29" />
-      <NameCon UId="33" Name="STATIC_DATA" />
-    </Wire>
-    <Wire UId="44">
-      <IdentCon UId="30" />
-      <NameCon UId="33" Name="DYNAMIC_DATA" />
-    </Wire>
-    <Wire UId="45">
-      <NameCon UId="33" Name="OPEN_CMD" />
-      <IdentCon UId="31" />
-    </Wire>
-    <Wire UId="46">
-      <NameCon UId="33" Name="CLOSE_CMD" />
-      <IdentCon UId="32" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="13" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="14" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-FC11101 Module Test
-
-Single call to a three-waybistable valve device driver configured for valve V001.
-
-The valve data is simulated using internal memory bits defined in tag table: PAL_FC11101_Test.
-
-The static, dynamic and memory bits can be monitored using the FC11101_Test watch table.
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="15" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="16" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>FC11101 Module Test — Bistable valve device driver test</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="GlobalVariable" UId="21">
-      <Symbol>
-        <Component Name="DB31101_Dy_DevValveBi" />
-        <Component Name="V001" />
-        <Component Name="actual_Operating_Timer" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="22">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>0.0</ConstantValue>
-      </Constant>
-    </Access>
-    <Access Scope="GlobalVariable" UId="23">
-      <Symbol>
-        <Component Name="DB31101_Dy_DevValveBi" />
-        <Component Name="V001" />
-        <Component Name="actual_Operating_Timer" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="24">
-      <Symbol>
-        <Component Name="OpTimeRem" />
-      </Symbol>
-    </Access>
-    <Part Name="Ne" UId="25">
-      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
-    </Part>
-    <Part Name="Move" UId="26" DisabledENO="true">
-      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
-    </Part>
-  </Parts>
-  <Wires>
-    <Wire UId="27">
-      <Powerrail />
-      <NameCon UId="25" Name="pre" />
-    </Wire>
-    <Wire UId="28">
-      <IdentCon UId="21" />
-      <NameCon UId="25" Name="in1" />
-    </Wire>
-    <Wire UId="29">
-      <IdentCon UId="22" />
-      <NameCon UId="25" Name="in2" />
-    </Wire>
-    <Wire UId="30">
-      <NameCon UId="25" Name="out" />
-      <NameCon UId="26" Name="en" />
-    </Wire>
-    <Wire UId="31">
-      <IdentCon UId="23" />
-      <NameCon UId="26" Name="in" />
-    </Wire>
-    <Wire UId="32">
-      <NameCon UId="26" Name="out1" />
-      <IdentCon UId="24" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="18" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="19" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-Position timer for derived energised and deenergised signals.
-
-Measures the elapsed time from a change of valve state to the point at which a confirmed 
-valve position is reached.
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="1A" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="1B" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>FC11101 Module Test — Bistable  valve device driver test — Position timer</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="GlobalVariable" UId="21">
-      <Symbol>
         <Component Name="_True" />
       </Symbol>
     </Access>
@@ -1003,9 +742,9 @@ valve position is reached.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="1D" CompositionName="Comment">
+          <MultilingualText ID="13" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="1E" CompositionName="Items">
+              <MultilingualTextItem ID="14" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -1047,9 +786,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1F" CompositionName="Title">
+          <MultilingualText ID="15" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="20" CompositionName="Items">
+              <MultilingualTextItem ID="16" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>LICENCE AND CONTACT INFORMATION</Text>
@@ -1059,9 +798,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="21" CompositionName="Title">
+      <MultilingualText ID="17" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="22" CompositionName="Items">
+          <MultilingualTextItem ID="18" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text>Interrupt Module [NORMAL INTERRUPT] — Main Program Cyclic Execution</Text>

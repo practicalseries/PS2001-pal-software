@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2023-02-01T15:24:13.3591852Z</Created>
+    <Created>2023-02-02T16:29:08.5240664Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>DeviceDriver</HeaderFamily>
       <HeaderName>StdDevValveBi</HeaderName>
-      <HeaderVersion>0.8</HeaderVersion>
+      <HeaderVersion>1.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -361,7 +361,7 @@
       </Comment>
       <StartValue>0.21</StartValue>
     </Member>
-    <Member Name="K_TIME_SIM_MIN" Datatype="Real" Accessibility="Public">
+    <Member Name="k_TIME_SIM_MIN" Datatype="Real" Accessibility="Public">
       <Comment>
         <MultiLanguageText Lang="en-US">Minimum value for the simulation operation timer</MultiLanguageText>
       </Comment>
@@ -425,7 +425,7 @@ TITLE:    DEVICE DRIVER — BISTABLE VALVE
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᶜᵇᵃ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᶜᵇᵇ ┘
 
 FC11101_StdDevValveBi controls the operation of a bistable valve configured with either open, 
 closed, both open and closed or no position feedback (depending on the valve type).
@@ -499,7 +499,7 @@ The module also generates status signals for the selected operating modes and co
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       81.3 μs¹
- LOAD MEMORY       113.1 kB
+ LOAD MEMORY       113.2 kB
  WORK MEMORY           2.5 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
@@ -3594,7 +3594,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'000.801'</ConstantValue>
+        <ConstantValue>'001.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3606,7 +3606,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.02.01'</ConstantValue>
+        <ConstantValue>'2023.02.02'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3716,6 +3716,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2023.02.02    001.000   D0016      D0015 D0016  None    M. Gledhill
+                       FC11101 — RELEASED FOR USE
+                         Merge back to master branch
+
  2023.02.01    000.801   D0015A-000.801   D0015 N/A     D0015A   M. Gledhill
                        FC11101  — Released for test (SMTS)
 
@@ -5401,7 +5405,7 @@ The derived closed signal ($derived_fbk_closed) is reset if the valve is request
       </Symbol>
     </Access>
     <Access Scope="LocalConstant" UId="36">
-      <Constant Name="K_TIME_SIM_MIN" />
+      <Constant Name="k_TIME_SIM_MIN" />
     </Access>
     <Access Scope="LocalVariable" UId="37">
       <Symbol>
@@ -5743,7 +5747,7 @@ If simulation mode is not active,  $sim_fbk_open = 0
       </Symbol>
     </Access>
     <Access Scope="LocalConstant" UId="36">
-      <Constant Name="K_TIME_SIM_MIN" />
+      <Constant Name="k_TIME_SIM_MIN" />
     </Access>
     <Access Scope="LocalVariable" UId="37">
       <Symbol>
