@@ -1,0 +1,4002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2023-02-26T15:55:10.3538181Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16 Update 2</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16 Update 3</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>Debug</HeaderFamily>
+      <HeaderName>StdDebugInst1Order</HeaderName>
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Common system signals — logic and timing signals</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="_False" Datatype="Bool" />
+          <Member Name="_True" Datatype="Bool" />
+          <Member Name="_50ms" Datatype="Bool" />
+          <Member Name="_100ms" Datatype="Bool" />
+          <Member Name="_200ms" Datatype="Bool" />
+          <Member Name="_500ms" Datatype="Bool" />
+          <Member Name="_1s" Datatype="Bool" />
+          <Member Name="_2s" Datatype="Bool" />
+          <Member Name="_CycleTick" Datatype="Bool" />
+          <Member Name="_CycleTock" Datatype="Bool" />
+          <Member Name="_CycleFirst" Datatype="Bool" />
+          <Member Name="_100msSqW" Datatype="Bool" />
+          <Member Name="_200msSqW" Datatype="Bool" />
+          <Member Name="_500msSqW" Datatype="Bool" />
+          <Member Name="_1sSqW" Datatype="Bool" />
+          <Member Name="_2sSqW" Datatype="Bool" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="TRIGGER" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Starts the simulation (rising edge starts the sim)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="INPUT" Datatype="Real" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">The input function, x in the calculations</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="OUTPUT" Datatype="Real" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">The output response, y in the calculations</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="InOut">
+    <Member Name="DYNAMIC_DATA" Datatype="&quot;UT39511_Dy_DebugInst1Order&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Dynamic data storage (UDT)</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Int" />
+          <Member Name="___________0010_1" Datatype="Int" />
+          <Member Name="k_Gain" Datatype="Real" />
+          <Member Name="k_TimeConstant" Datatype="Real" />
+          <Member Name="___________0020_0" Datatype="Int" />
+          <Member Name="___________0020_1" Datatype="Int" />
+          <Member Name="status_Running" Datatype="Bool" />
+          <Member Name="status_Stopped" Datatype="Bool" />
+          <Member Name="status_SteadyState" Datatype="Bool" />
+          <Member Name="status_Aut" Datatype="Bool" />
+          <Member Name="status_Man" Datatype="Bool" />
+          <Member Name="___________0030_0" Datatype="Int" />
+          <Member Name="___________0030_1" Datatype="Int" />
+          <Member Name="cal_TimeSteady" Datatype="Real" />
+          <Member Name="___________0040_0" Datatype="Int" />
+          <Member Name="___________0040_1" Datatype="Int" />
+          <Member Name="mode_AutMan" Datatype="Bool" />
+          <Member Name="mode_ManTime" Datatype="Real" />
+          <Member Name="___________0050_0" Datatype="Int" />
+          <Member Name="___________0050_1" Datatype="Int" />
+          <Member Name="actual_Output" Datatype="Real" />
+          <Member Name="actual_PrevOutput" Datatype="Real" />
+          <Member Name="actual_StartTime" Datatype="DTL" Version="1.0" />
+          <Member Name="actual_Time" Datatype="DTL" Version="1.0" />
+          <Member Name="actual_PrevTime" Datatype="DTL" Version="1.0" />
+          <Member Name="actual_RunTime" Datatype="Real" />
+          <Member Name="actual_DeltaTime" Datatype="Real" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licensing information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="act_CPUTime" Datatype="DTL" Version="1.0">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Current CPU time (this block call)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cal_01" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cal_02" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cal_03" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cal_04" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cal_05" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="cal_06" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Partial calculation see § 3.5 for details </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkElapsedTime" Datatype="LTime">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage area (current elapsed time)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkDeltaTime" Datatype="LTime">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage area (current ΔT)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkInt" Datatype="Int">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage area (integer)      </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkLInt" Datatype="ULInt">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage area (long integer)  </MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant">
+    <Member Name="k_NEG_MAX" Datatype="Real" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Largest negative number available to the REAL type</MultiLanguageText>
+      </Comment>
+      <StartValue>3.4E-38</StartValue>
+    </Member>
+  </Section>
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC19511_StdDebugInst1Order</Name>
+      <Number>19511</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
+
+
+TITLE:    DEBUG — FIRST ORDER RESPONSE SIMULATION
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
+
+┌──────────────────────────────────────────┐
+│                                          │
+│          FC19511 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
+│                                          │
+│      The PDF version of the SMDS for this module is available online here:        │
+│              https://psop.uk/pal-smds-fc19511-p               │
+│                                          │
+│      It is also available as part of the Project User Defined Documentation,      │
+│      it can be accessed by selecting this module in the Project Tree          │
+│      (on the left) and pressing SHIFT+F1                        │
+│                                          │
+└─────────────────────────────────────── ʷᴵᴰ⁻ᶜᵇᶻ ┘
+
+FC19511_StdDebugInst1Order is a debug simulation subroutine.
+
+The module simulates a first order process reaction in response to an input signal.
+
+The simulation is adjustable in terms of the system gain and the system time constant.
+The output of the first order response simulation is in the form of a real number and is 
+constrained to the resolution and range limits applicable to this number type within the Siemens 
+Simatic S7-1500 controller.
+
+The module will simulate a 1st order response to any type of input signal (step, ramp, sinusoid, 
+freeform &amp;c.).
+
+The module also has a manual mode that can simulate an output at any specific time in 
+response to a step input.
+
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         1st Order Response Simulation
+ BLOCK FUNCTION GROUP    Debug  
+ BLOCK ADDRESS       FC19511
+ BLOCK SYMBOL        FC19511_StdDebugInst1Order
+ BLOCK USER ID         StdDebugInst1Order
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        19511
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME        091.0 μs¹    (Note: = 14.4µs if TRIGGER is FALSE)
+ LOAD MEMORY       46.0 kB
+ WORK MEMORY           0.9 kB  
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
+                            https://psop.uk/pal-ds-cpu1515
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1      Additional referenced documents
+
+
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
+following documents are associated with this module:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.         TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 101  PS2001-5-2331-fc19511      FC19511 Calculation Sheet
+ 102  PS2001-5-2331-fc19511-011    FC19511 1st Order Response Simulation Spreadsheet
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     FUNCTIONAL DESCRIPTION
+
+
+████████████████████████████████████████████
+█                                          █
+█ Note:   The following descriptions are taken from the associated Software Module     █
+█     Design Specification [PS2001-5-2312-fc19511], the SMDS contains various     █
+█     graphs that cannot be easily reproduced in these module comments. Where    █
+█     essential, some rudimentary images have been included; however,        █
+█     these are better viewed directly in the SMDS.                   █
+█                                          █
+█     Where images of the graphs are included, these are generated using           █
+█     the Unicode braille characters and were generated by the following web site:     █
+█     https://505e06b2.github.io/Image-to-Braille/                  █
+█     (the images are 100 braille characters wide)                   █
+█                                          █
+█     The SMDS can be accessed directly by selecting this module (FC19511) in the     █
+█     Project Tree (on the left) and pressing SHIFT+F1.                 █
+█                                          █
+█      The PDF version of the SMDS for this module is available online here:        █
+█              https://psop.uk/pal-smds-fc19511-p               █
+█                                          █
+████████████████████████████████████████████
+
+FC19511 is the 1st Order Response Simulation module. The purpose of this module is to simulate 
+a “first order” process reaction in response to an input signal.
+
+First order systems are the most common type of system response for process control systems 
+(for example the response generated when heating a tank of liquid). First order systems are often 
+referred to as “first order lag” systems and generally reflect systems whereby the response of the 
+system (the temperature of the water in the above example) follows the input (the temperature 
+of the heating element) but with some delay (or lag). First order systems do not produce an 
+oscillatory response to a step change of input and do not overshoot the input.
+
+First order systems are so called because the equation linking the input to the out-put is always 
+defined by a first order differential equation.
+
+The following graphs show typical first order responses to a step change input:
+
+
+
+Output y(t)
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⢀⣀⣀⣀⣀⣀⣠⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣤⣤⡶⠶⠶⠒⠒⠛⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇←— STEP INPUT  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠖⠚⠉⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⡴⠖⠋⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡴⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠾⠁←— DELAYED OUTPUT  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡴⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣴⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡜⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⠟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⠄⣼⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⢰⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⠄⣰⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⢰⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⠄⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⢸⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⢠⡇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⣼⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⠄⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⢰⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠄⣾⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⢰⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⣾⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⡇⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  ─ ─ ─ ─    Time (t)
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1      Scope and limitations of the simulation
+
+
+The first order response simulation will provide a real time response for a first order simulation.
+
+The simulation will be adjustable in terms of the system gain (K) and the time constant of the 
+system (τ).
+
+The output of the first order response simulation will be in the form of a real number.
+
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.1     The limitations of the simulation
+
+
+The output of the second order response simulation will be in the form of a real number and will 
+be constrained to the limits applicable to this number type within the Siemens controller.
+
+The S7-1500 range of Controllers supports real numbers as values, these are 32-bit numbers 
+and, within a Controller, have the following range limits:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+             LOWER RANGE LIMIT     UPPER RANGE LIMIT
+ ――――――――――――――――――――――――――――――――――――――――――
+ S7-1500 real number:     ±3.402323×10^(-38)           ±3.402323×10^(+38)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+This range is considered acceptable for all practical uses of the module.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.2     The nature of the simulation calculations
+
+
+The module will generate the correct responses for any first order system. The module uses a 
+discrete time approximation calculation to determine the correct output for any given input. The 
+calculation is an iterative algorithm, the formulae for which is derived in full in the associated 
+calculations sheet [Ref. 101], available here:
+
+         https://psop.uk/pal-calc-fc19511-p
+
+These calculations are based around the mathematical functions available to the Controller 
+(these are in addition to the standard mathematical operations: addition, subtraction, 
+multiplication and division).
+
+Each Controller supports the following common mathematical functions:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ OPERATION    EXAMPLE         DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ SQR        x^2          Form the square
+ SQRT         √x            Form the square root
+ EXP        e^x          Exponential
+ LN          log_e(⁡x)        Natural logarithm
+ SIN         sin(⁡x)         Sine
+ ASIN          sin^-1(x)          Arcsine, inverse sine
+ COS          cos(⁡x)        Cosine
+ ACOS        cos^-1(x)         Arccosine, inverse cosine
+ TAN           tan(⁡x)         Tangent
+ ATAN         tan^-1(x)         Arctangent, inverse tangent
+ ABS        |x|            Modulus
+ ――――――――――――――――――――――――――――――――――――――――――
+ Table 2.1 S7 Controller — common mathematical functions
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.2      The second order response
+
+
+The response of a second order system (y) to an input (x) is defined using the general form of a 
+second order system transfer function, this is expressed below in the time domain as a second 
+order differential equation (see the calculation sheet [Ref. 101], Appendix B for details):
+
+                dy
+            τ ----- ┼  y  =  Kx  (2.1)
+                dt
+
+Where:    K is the system gain
+     τ is referred to as the system time constant (seconds)
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.3      The calculations
+
+
+Two forms of calculation are needed to produce a model for a first order system. The first being a 
+continuous simulation running in real-time with a varying or constant input signal.
+
+The second being the discrete result for a step input under manual conditions (i.e. a fixed input 
+and specific time are provided and a single, corresponding output value generated).
+
+Both of these calculations are discussed in the following sections:
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.1     Real-time simulation calculation for any input type
+
+
+The normal operation of the module (in automatic mode) is to produce a continuous real-time 
+model of a first order system that once triggered, runs continuously, producing an output 
+response that mimics a first order system responding to a variable (or constant) input as time 
+progresses, the simulation continues until the triggering condition is removed.
+
+The calculation needed to produce a first order system response to any type of input signal is 
+best achieved using a discrete time approximation method. The details of this method are given 
+in [Ref. 101], Section 2.1, and the results are given below:
+
+The final form of the calculations that will be used in the FC19511 software module for a real time 
+simulation to any input type is:
+
+   y[n] = Ka x[n]  ┼ (1-a) y[n-1]  (2.2)
+
+             ΔT
+   where:   a = ----------
+           τ+ΔT
+
+   K is the system gain (a constant number)
+   τ is the system time constant (in seconds)
+   Δt is the sampling interval between calculations (in seconds)
+   x[n] is the input at the current iteration 
+   y[n] is the output at the current iteration 
+   y[n-1] is the output at the previous iteration 
+
+
+It should be noted that this is an iterative algorithm, the previous value of the output must 
+be retained between calculations.
+
+For best results, Δt should be very much smaller than the system time constant, i.e.:
+
+                   τ
+   Δt ≪ τ      Typically, Δt ≤ ----
+                     10
+
+Note also, that Δt need not be constant between samples.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.2     Manual simulation calculation for a step input at a particular time
+
+
+In manual mode, an instantaneous calculation is carried out using the first order equation at a 
+particular time and for a particular input value.
+
+Since, under manual control, both the time and the input are fixed single values, it is not possible 
+to determine the nature of the input (i.e. is it a ramp, sinusoid &amp;c.), hence for all manual 
+operations within the simulation, the input is considered to be a step input that changed to the 
+manually specified input value at time = 0, and that prior to this the input was zero¹. I.e. a step 
+input that changed from zero to the specified value at time = 0.
+
+To produce a specific output value in response to a fixed step input at a particular time, it is 
+necessary to solve the first order differential equation given in equation (2.1), as a non-iterative, 
+discreate calculation. To do this, it is necessary to convert the equation into the Laplace domain² 
+(using standard Laplace transforms, see [Ref. 101], Appendix A) algebraically solve the equation 
+and then convert the result back to the time domain (using the standard inverse Laplace 
+transforms, again see [Ref. 101], Appendix A).
+
+The final form of the manual calculations that will be used in the FC19511 software module for a 
+single point input type is:
+
+         ┌      -t/τ  ┐
+   y(t) = KX│ 1 ─  e   │
+         └       ┘
+
+   K is the system gain (a constant number)
+   τ is the system time constant (in seconds)
+   X is the fixed input value
+
+
+――――――――――
+¹         A step response is the most common type of response
+
+²         The calculation sheet associated with this module [Ref. 101], explains the Laplace 
+     transform mechanisms and how they are used within the calculations necessary for 
+     the functioning of this module. Further explanation of the Laplace transform is not 
+     given in this document, again the reader is referred to the calculation 
+     sheet [Ref. 101].
+――――――――――
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.3.3     Calculation spreadsheet model
+
+
+An accompanying spreadsheet [Ref. 016] is available, this allows all the various responses to be 
+graphically simulated with adjustable values (it was this spreadsheet that produced the various 
+response plots used within this document), this spreadsheet is available here:
+
+     http://psop.uk/pal-calc-fc19511-p
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.4      Real-time responses for typical inputs
+
+
+First order systems respond to various types of input (step, ramp, sinusoidal) in very predictable 
+ways. First order systems never produce oscillatory responses (unless the input itself is 
+oscillating) and never overshoot the input (cf. 2nd order systems, see FC19512). The general 
+response of a first order system is that of an inherent delay (or lag) in the response of the output 
+compared with the input.
+
+This inherent delay is reflected in the system time constant (τ), measured in seconds.
+
+The following sections consider how the system time constant affects the output for several 
+typical input types:
+
+
+STEP INPUT
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄τ = 20s⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+X─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⣀⣠⣤⡤⠤⠤⠶⠶⠶⠶⠒⠒⠒⠒⠚⠛⠛⠛⠛⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣠⡤⠤⠶⠖⠒⠛⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄99% of steady state ─ ─ ─ ─ ╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣠⠴⠖⠚⠋⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⡤⠖⠚⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⡴⠚⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠖⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡤⠚⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣴⠋─ ─ ─ ─ ─  63% of steady state  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡾⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠞⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠏⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠋⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⠃⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠃⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⢠⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⠄⣸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⢀⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⠄⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⢀⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⠄⡼⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⠄⣸⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+│⡴⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄ ╎⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄╎⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     10       20       30       40       50       60       70       80       90      100 s
+              τ                                               5τ
+   Increasing τ gives a slower response.
+
+               1
+   Initial rate of change = ---   Time to reach 63% of input (X) = τ   Time to reach steady state = 5τ
+               τ
+
+
+RAMP INPUT
+
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄τ = 20s ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡠⠔
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠴⠊⠉⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⠴⠊⠉⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠒⠋← ─ INPUT
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡤⠖⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠔⠊⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡾
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠔⠚⠁← ─ ─  τ  ─ ─→⢀⣤⡶⠟⠋⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠤⠚⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣤⡶⠟⠋⠁⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠒⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣴⠞⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠖⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣴⠞⠛⠁← ─ OUTPUT
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡠⠴⠊⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣤⠶⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⠴⠊⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣴⠶⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⠴⠚⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣴⠶⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠒⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⠶⠟⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠖⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠟⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡠⠖⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠞⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠖⠊⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠟⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠤⠚⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣤⡶⠟⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠖⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠟⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⡤⠖⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣤⠾⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠔⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣤⡴⠞⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠔⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣤⡶⠟⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠴⠚⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⡶⠞⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⠤⠖⠉⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣤⡶⠿⠛⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢀⡠⠖⠉⠁⠄⠄⠄⠄⠄⢀⣀⣠⣤⠶⠞⠋⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢀⡠⠖⠊⠁⠄⠄⣀⣀⣠⣤⠶⠶⠛⠋⠉⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠴⠾⠿⠶⠶⠶⠞⠛⠛⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼
+0.0     10       20       30       40       50       60       70       80       90      100 s
+
+   Increasing τ gives a slower response.
+
+   Output follows input with a lag = τ   Time to reach steady state = 5τ
+
+
+SINUSOIDAL INPUT
+
+│⠄τ = 10s ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⣀⠄← ─ INPUT ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠔⠚⠉⠄⠄⠄⠈⠉⠒⢤⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠦⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⣀⣤⠶⠛⠛⠉⠙⢟⠳⠶⣄⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠋⠄⠄⠄⠄⠄⠄⠄⠄⣠⠾⠋⠄⠄⠄⠄⠄⠄⠄⠳⡀⠈⠙⢶⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡔⠁⠄⠄⠄⠄⠄⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⣄⠄⠄⠙⢷⣄⠄← ─ OUTPUT  ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠄⠄⠄⠄⣠⡞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⢆⠄⠄⠄⠙⣦⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠞⠄⠄⠄⠄⠄⠄⢀⣼⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢦⠄⠄⠄⠈⢳⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⡎⠄⠄⠄⠄⠄⠄⢠⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢇⠄⠄⠄⠄⠻⣆⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⢀⠎⠄⠄⠄⠄⠄⠄⣴⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢧⠄⠄⠄⠄⠙⣧⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⢀⠞⠄⠄⠄⠄⠄⢀⣼⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢧⠄⠄⠄⠄⠘⢷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⢀⡞⠄⠄⠄⠄⠄⢠⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢆⠄⠄⠄⠄⠈⢷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⡜⠄⠄⠄⠄⠄⣰⡟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡆⠄⠄⠄⠄⠈⢷⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⡼⠁⠄⠄⠄⠄⣴⠏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡄⠄⠄⠄⠄⠈⢻⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⡼⠁⠄⠄⠄⢀⡾⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⡄⠄⠄⠄⠄⠄⢿⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⢰⠁⠄⠄⠄⣠⡟⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⡀⠄⠄⠄⠄⠄⢷⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⢠⠇⠄⠄⢀⣰⠟⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢳⡀⠄⠄⠄⠄⠈⢷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⢀⠎⠄⠄⣠⡾⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢣⠄⠄⠄⠄⠄⠈⢷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⡞⠄⢀⣴⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⣆⠄⠄⠄⠄⠄⠈⢿⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⣜⣠⡾⠋⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡆⠄⠄⠄⠄⠄⠈⣷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡼
+┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ ┼ ─ ─ ─ ─ 
+0.0     10       20       30       40       50       60       70       80       90      100 s
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢧⠄⠄⠄⠄⠄⠄⠘⣧⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠏⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⢇⠄⠄⠄⠄⠄⠄⠘⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡎⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⣆⠄⠄⠄⠄⠄⠄⠘⣦⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡞⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠘⡄⠄⠄⠄⠄⠄⠄⠙⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡼⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⡀⠄⠄⠄⠄⠄⠄⠸⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣰⠁⠄⠄⠄⠄⢠
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠹⡀⠄⠄⠄⠄⠄⠄⠘⣧⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢰⠃⠄⠄⠄⠄⢀⡿
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢳⡀⠄⠄⠄⠄⠄⠄⠙⣧⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⠃⠄⠄⠄⠄⢠⡿⠁
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢳⠄⠄⠄⠄⠄⠄⠄⠘⢷⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠃⠄⠄⠄⠄⢰⡟⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢳⠄⠄⠄⠄⠄⠄⠄⠈⢳⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠎⠄⠄⠄⠄⣰⠏⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢣⠄⠄⠄⠄⠄⠄⠄⠄⢿⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠏⠄⠄⠄⢀⣴⠋⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢣←--   τ   -→⠹⣦⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠋⠄⠄⠄⢠⡾⠁⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠳⡀⠄⠄⠄⠄⠄⠄⠄⠈⢷⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⠃⠄⠄⠄⣴⠏⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠱⡄⠄⠄⠄⠄⠄⠄⠄⠄⠹⢦⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡠⠃⠄⠄⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⣄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠙⢶⣄⠄⠄⠄⠄⠄⠄⢀⡔⠁⢀⣠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠳⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠻⠶⣤⣄⣀⣠⣮⡴⠶⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⢆⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⠞⠉⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⠢⣄⠄⠄⠄⠄⠄⠄⢀⡠⠞⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+│⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠓⠒⠒⠒⠋⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
+
+   Increasing τ gives a slower response.
+
+   Output follows input with a lag = τ   Time to reach steady state = 5τ
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.5      Operating modes
+
+
+The block supports two modes of operation:
+
+   •   Automatic mode:
+     The module automatically calculates the elapsed time since the simulation started 
+     and generates the appropriate output value for any form of input.
+
+     Automatic mode can accommodate any form of input (step, ramp, sinusoid, 
+     freeform &amp;c.).
+
+   •   Manual mode:
+     The current elapsed time and fixed input value is supplied manually to the module; 
+     the module will then calculate the output value based on a step input at this input 
+     value and at this time value.
+
+     Manual mode only supports a step form of input (the input is considered to be a step 
+     input that changed to the manually specified input value at time = 0, and that prior to 
+     this the input was zero. I.e. a step input that changed from zero to the specified value 
+     at time = 0).
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 1 to 2 inclusive</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     DETAILED BLOCK DESCRIPTION
+
+
+This module, FC19511_StdDebugInst1Order uses user data types to provide the primary 
+interface to the block. There are four formal parameters:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ TRIGGER       Activates the simulation (the simulation will run     Bool      In
+          whilever this signal is high), the elapsed time 
+          is measured from the rising edge of this signal
+
+ INPUT        The input time function, x(t) in the calculations     Real      In
+
+ DYNAMIC_DATA      Data structure that holds the live data for the       UT39512    InOut
+          simulation (damping factor, natural frequency, 
+          system gain, elapsed time &amp;c.)
+
+ OUTPUT       The output time response, y(t) in the calculations   Real      Out
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The DYNAMIC_DATA parameter is a UDT that holds all the data for the simulation.
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT          ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ DYNAMIC_DATA   UT39511_Dy_DebugInst1Order      DB39511_Dy_DebugInst1Order
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+Section 6 contains a full list of all variables within these UDTs.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.1      The primary simulation signals
+
+
+The simulation is based upon various signals passed to the module and the elapsed time since 
+the simulation started:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               RANGE       ACCESSED VIA
+ ――――――――――――――――――――――――――――――――――――――――――
+ INPUT         The INPUT parameter is the x value    Unrestricted     Parameter 
+           in the calculations of § 3.2
+	
+ OUTPUT        The OUTPUT parameter is the y value   Unrestricted     Parameter 
+           in the calculations of § 3.2
+
+ TRIGGER        The TRIGGER parameter activates      0 or 1     Parameter
+           the simulation
+
+ k_Gain          The system gain (K) term         Unrestricted     UT39511
+           in the calculations of § 3.2       typ. 1-10
+
+ k_TimeConstant     The system time constant (τ) term in   +ve number      UT39511
+           the calculations of § 3.2.
+           In units of seconds (s)
+
+ actual_PrevOutput   The resulting output calculated in the  Unrestricted     UT39511
+           previous iteration of the calculation
+
+ actual_StartTime   The CPU time when the simulation    DTL value    UT39511
+           started (rising edge of TRIGGER)      of RTC
+
+ actual_Time      The current CPU time, for the current    DTL value    UT39511
+           iteration of the calculation         of RTC
+           (time at y[n])
+
+ actual_PrevTime    The CPU time of the last iteration    DTL value    UT39511
+           of the calculation              of RTC
+           (time at y[n-1])
+
+ actual_RunTime     The elapsed time of the simulation      +ve number      UT39511
+           in seconds (s)              calculated by
+                             the module
+
+ actual_DeltaTime     Time between the current iteration      +ve number      UT39511
+           and the previous iteration, Δt in the     calculated by 
+           calculations:             the module
+           = actual_Time – actual_PrevTime
+           In units of seconds (s)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+The system time constant (k_TimeConstant), determines the lag of the system, the higher the 
+value, the slower the response.
+
+The system gain (k_Gain), is simply a common multiplier that amplifies the output response. 
+By default the system gain is set to a value of one (i.e. unity gain).
+
+The elapsed time actual_RunTime is calculated from the real time clock within the CPU. On the 
+rising edge of the TRIGGER parameter, the CPU real time clock is read and the value stored in 
+the variable actual_StartTime, on each subsequent call to the block, the real time clock is 
+once again read and stored in the variable actual_Time. The elapsed time is calculated by 
+subtracting the actual_StartTime value from the actual_Time value and converting the result 
+to seconds this is then stored as the actual_RunTime value.
+
+The TRIGGER signal is simply used to start and stop the simulation. A rising edge on the 
+TRIGGER signal causes the current CPU time to be stored (actual_StartTime) and sets the 
+elapsed time to zero (actual_RunTime). The simulation will run whilever the TRIGGER signal is 
+high (has a value of 1), each time the module is called, the elapsed time (actual_RunTime) is 
+updated (see the previous paragraph) and the output calculated accordingly.
+
+If the simulation is active (the TRIGGER signal is high, has a value of 1) the time between the 
+current module call (actual_Time) and the previous module call (actual_PrevTime) is calculated 
+and stored in the variable actual_DeltaTime (∆t in the calculations), this is calculated as follows:
+
+     actual_DeltaTime= actual_Time-actual_PrevTime
+
+At the end of the current module call, the actual_PrevTime is set to the actual_Time, for the 
+next iteration of the calculation.
+
+At the end of the current module call, the actual_PrevOutput is set to the OUTPUT, value for the 
+next iteration of the calculation.
+
+If the TRIGGER signal is low (0), the simulation is instantly stopped and the OUTPUT parameter is 
+set to zero.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.2      The response calculation
+
+
+Two forms of calculation are carried out by the module, the first is the iterative, real-time 
+calculation for the automatic response, this is given in equation (2.2). The second is the discrete 
+manual response calculation given in equation (2.3). These are reproduced below.
+
+The calculations below use Greek characters for the main variables, the calculations use various 
+parameters and UDT variables that have plain English names, The association between these 
+variables and the Greek nomenclature is given below.
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――
+REAL-TIME AUTOMATIC SIMULATION         from equation 2.2
+
+   y[n] = Ka x[n]  ┼ (1-a) y[n-1]  (3.1)
+
+             ΔT
+   where:   a = ----------
+           τ+ΔT
+――――――――――――――――――――――――――――――――――――――――――――――――
+DISCRETE MANUAL RESPONSE TO A STEP INPUT      from equation 2.3
+
+         ┌      -t/τ  ┐
+   y(t) = KX│ 1 ─  e   │    (3.2)
+         └       ┘
+――――――――――――――――――――――――――――――――――――――――――――――――
+Where:    K      is the system gain (a constant number)             k_Gain
+     τ      is the system time constant (in seconds)             k_TimeConstant
+     Δt    is the sampling interval between calculations (in seconds)  actual_DeltaTime
+     X/x[n] is the input at the current iteration or in manual mode    parameter INPUT
+     y/y[n]  is the output at the current iteration or in manual mode    parameter OUTPUT
+     y[n-1] is the output at the previous iteration             actual_PrevOutput
+
+Note:    If the system gain k_Gain is set zero, the OUTPUT will be zero under all circumstances.
+
+Each of these calculations can be accommodated with the mathematical functions available to a 
+Siemens Controller, see § 3.4.
+
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.3      Status and informative signals
+
+
+The module produces various status signals that reflect the nature of the simulation:
+
+ DATA STRUCTURE      UT39511_Dy_DebugInst1Order
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL           FUNCTION            TYPE   DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ status_Running        The simulation is running     Bool    1 = Simulation is running 
+                              0 = Simulation is stopped
+
+ status_Stopped       The simulation is stopped    Bool    1 = Simulation is stopped 
+                              0 = Simulation is running
+
+ status_SteadyState      Simulation has achieved   Bool    1 = Stady state achieved
+                steady state ±2%           0 = Not in steady state
+
+ cal_TimeSteady       Time to reach steady state      Real Seconds
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The status_Running and status_Stopped are determined purely by the status of the TRIGGER 
+parameter, if this is set high (1), status_Running will be high and status_Stopped low. If  TRIGGER 
+parameter, if this is set low (0), status_Running will be low and status_Stopped high. The 
+status_Running and status_Stopped signals are always the inverse of each other.
+
+If the simulation has reached a steady state, i.e. the non-linear relationship between the output 
+and the input that occurs at the start of the simulation has concluded, the status_SteadyState 
+signal will be set high (1), it will be low (0) until the steady state conditions are achieved 
+(typically, this is at 5×τ seconds after the start of the simulation).
+
+In addition, the variable cal_TimeSteady give the time at which the steady state will be reached 
+(in seconds), this is true for all forms of input.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.4     Expressing the calculations in Controller operations
+
+The calculations above must be rendered in a form suitable for the Simatic S7-1500 Controller, 
+using the mathematical operations available to that Controller, these are listed in Table 2.1.
+
+To perform the calculations in the Controller it will be necessary to use partial calculation to 
+hold separate components of the overall calculation and combine these to produce the final 
+result. 
+
+The following sections breakdown each of the response calculations into these partial 
+calculations and demonstrate how these are then combined to provide a final result that is 
+compatible with the Controller mathematical operations and Controller notations.
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.1     Real-time simulation calculation
+
+
+CALCULATION:
+                              ΔT
+   y[n] = Ka x[n]  ┼ (1-a) y[n-1]   where: a = ----------
+                            τ+ΔT
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = ΔT             =  actual_Time - actual_PrevTime
+
+ cal_02 = τ + ΔT             = k_TimeConstant + cal_01
+
+               ΔT
+ cal_03 = a = ----------          = cal_01 ÷ cal_02
+                τ+ΔT
+
+ cal_04 = 1 - a             = 1 - cal_03
+
+
+ cal_05 = Kax[n]            = k_Gain × cal_03 × INPUT
+
+ cal_06 = (1-a) y[n-1]          = cal_04 × actual_PrevOutput
+
+
+ OUTPUT  = Ka x[n]  ┼ (1-a) y[n-1]      = cal_05 × cal_06
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.4.2     Discrete manual response to a step input
+
+
+CALCULATION:
+
+         ┌      -t/τ  ┐
+   y(t) = KX│ 1 ─  e   │
+         └       ┘
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 =  t/τ             = - 1 × actual_RunTime ÷  k_TimeConstant
+
+         - t/τ
+ cal_02 = ｅ              = EXP (cal_01)
+
+               - t/τ
+ cal_03 = 1 ─  ｅ              = 1 - cal_02
+
+
+             ┌      -t/τ  ┐
+ OUTPUT  = KX│ 1 ─  e   │       = k_Gain × INPUT × cal_03
+             └       ┘
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+3.5     Operating modes
+
+
+This block FC19511_StdDebugInst1Order supports manual and automatic operating modes, the 
+default mode is automatic.
+
+The module can be switched between automatic and manual modes with the 
+mode_AutMan signal:
+
+ DATA STRUCTURE    UT39511_Dy_DebugInst1Order
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL         FUNCTION               TYPE     DETAILS
+ ――――――――――――――――――――――――――――――――――――――――――
+ Mode_AutMan     Specifies the operating mode of     Bool  1 = automatic mode
+           the simulation                 0 = manual mode
+
+ Mode_ManTime     Specifies the manual time value of       Real     Elapsed time
+           the simulation in seconds           in seconds
+
+ status_Aut      The simulation is in automatic mode   Bool  1 = auto mode
+                                 0 = not in auto
+
+ status_Man       The simulation is in manual mode    Bool  1 = manual mode
+                                 0 = not in manual
+ ――――――――――――――――――――――――――――――――――――――――――  
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.1    Automatic mode
+
+
+By default the module will be in automatic mode. 
+
+In automatic mode, if the simulation is active (TRIGGER = 1), the module carries out the real-time 
+calculation given in § 3.4.1. 
+
+In automatic mode, a real time simulation occurs, generating responses similar to those shown 
+in the plots of § 2.4 (depending on the nature of the input).
+ 
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.5.2    Manual mode
+
+
+In manual mode, if the simulation is active (TRIGGER = 1), the module carries out the discrete 
+response to a step input calculation given in § 3.4.2. 
+
+The difference with manual mode, is that the time used in the calculation must be uniquely 
+specified; a manual time value must be provided.
+
+The manual time is given in the variable mode_ManTime and is specified in seconds.
+
+If mode mode_ManTime remains constant between module calls, the module will return the 
+same OUTPUT value each time (assuming all other signals remain unchanged).
+
+The manual mode response is that of a step input, the value of the INPUT parameter is taken as 
+the starting value of the step at time = 0.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Section 3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     Supervisory system interface
+
+
+There is no supervisory system interface for this block. It is a debug simulation module and as 
+such has no graphical symbol, block icon or faceplate.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     PARAMETERS
+
+
+The following parameters are associated with the block:
+
+ 
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         FUNCTION                    TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ SYS_SIGNALS      Common system signals              UT21000    In
+          logic and timing signals for parametric access
+
+ TRIGGER       Activates the simulation (the simulation will run     Bool      In
+          whilever this signal is high), the elapsed time 
+          is measured from the rising edge of this signal
+
+ INPUT        The input time function, x(t) in the calculations     Real      In
+
+ DYNAMIC_DATA      Data structure that holds the live data for the       UT39511    InOut
+          simulation (damping factor, natural frequency, 
+          system gain, elapsed time &amp;c.)
+
+ OUTPUT       The output time response, y(t) in the calculations   Real      Out
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     DATA STRUCTURES AND USAGE
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01001
+ UT01001_St_SysLicence           Licence information for this block  See FC01001
+ UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
+
+ UT39511_Dy_DebugInst1Order        Dynamic data storage, contains live data, such as 
+                    calculation variables, elapsed time, oscillation 
+                    frequency and status signals
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+6.1      UT39511_Dy_DebugInst1Order
+
+The static data structure for an isolating valve.
+
+
+
+ UT39511_Dy_DebugInst1Order (full contents)
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ k_Gain             CONSTANT — Simulation system gain        Real
+ k_TimeConstant        CONSTANT — The system time constant τ (s)       Real
+
+ status_Running      STATUS — Simulation is running  Bool
+                     (1 = running, 0 = stopped)
+ status_Stopped        STATUS — Simulation is stopped (not running)    Bool
+                     (1 = stopped, 0 = running)
+ status_SteadyState     STATUS — Response is at steady state value             Bool
+                     (1 = stead state reached ±2%)
+ status_Aut           STATUS — Simulation is in automatic mode      Bool
+                     (1 = automatic, 0 = manual)
+ status_Man          STATUS — Simulation is in manual mode        Bool
+                     (1 = manual, 0 = automatic)
+
+ cal_TimeSteady        CALC — Time to reach steady state (s)       Real
+                   zero for unstable response
+
+ mode_AutMan       MODE — Automatic/manual mode selection     Bool
+                     (1 = auto mode, 0 = manual mode)
+ mode_ManTime       MODE — Manual mode time value (s)        Real
+
+ actual_Output       ACTUAL — Output signal, same as OUTPUT param    Real
+                     (y(t) or y[n])
+ actual_PrevOutput      ACTUAL — Output value from the previous iteration    Real
+                     (y[n-1])
+ actual_StartTime         ACTUAL — CPU time when simulation started       DTL
+ actual_Time        ACTUAL — CPU time of this iteration of simulation  DTL
+ actual_PrevTime       ACTUAL — CPU time of last iteration of simulation     DTL
+ actual_RunTime        ACTUAL — Elapsed time since the            Real
+                     simulation started (s)
+ actual_DeltaTime        ACTUAL — Time between this and last iteration (s)   Real
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Constants
+
+
+The following constants data is used:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME       Value     FUNCTION                 TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ k_NEG_MAX       3.4E-38    Largest negative REAL number         Real
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Temporary (local) data
+
+
+The following temporary data is used:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                  TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block         UT01000
+ licInfo           Licensing information for the block      UT01001
+ act_CPUTime           Current CPU time (this block call)       DTL
+ cal_01          Partial calculation see § 3.4 for details      Real
+ cal_02          Partial calculation see § 3.4 for details      Real
+ cal_03          Partial calculation see § 3.4 for details      Real
+ cal_04          Partial calculation see § 3.4 for details      Real
+ cal_05          Partial calculation see § 3.4 for details      Real
+ cal_06          Partial calculation see § 3.4 for details      Real
+ wrkElapsedTime          Working storage area (current elapsed time)    LTIme
+ wrkDeltaTime         Working storage area (current delta time)   LTIme
+ wrkInt           Working storage area (integer)          Int
+ wrkLInt            Working storage area (long integer)        ULInt
+ wrkReal           Working storage (Real)             Real
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     BLOCK CALLS AND ASSOCIATIONS
+
+
+This section details any blocks which may be called from within this software module (subroutine 
+functions for example), any partner blocks with which it may be associated (for example a 
+receive module that is partner with a transmit module &amp;c.). It lists any system functions which 
+may be called (e.g. reading the real time clock) and any system data types that may be used.
+
+Finally, it lists any special calling requirements for the block (for example, must be called from 
+within a cyclic interrupt organisation block) and if the block is using “optimised access” (this is 
+the default arrangement).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.1     Block calls from within this module
+
+
+There are no PAL block calls from within this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.2     Blocks associated with this module
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.3     System block calls and system data types
+
+The following calls are made to system blocks:
+
+
+ System block calls
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK          TITLE             DESCRIPTION  
+ ――――――――――――――――――――――――――――――――――――――――――
+ RD_LOC_T             Read the local RTC time    Reads the CPU real time clock 
+ ――――――――――――――――――――――――――――――――――――――――――
+
+There are no special system data types used.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+8.4     Special properties and requirements
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.1     Block optimisation, IEC compatibility and library conformance
+
+
+   •   Block optimisation is ACTIVE for this block.
+
+   •   The block has been checked for IEC compatibility and is compliant.
+
+   •   The block is compatible with all IEC library-conformance module constraints
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+8.4.2     Calling requirements
+
+
+There are no special calling requirements for this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC19512:
+
+                        ┌─────────────
+     ───────────────────┤ FC19511
+                        ├───────────────┤
+   "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS                  %MD910 
+                        │               OUTPUT ├─  "SIM001_OUTPUT"
+                        │               │
+                                                       "1.0" ─┤ INPUT                     │
+                        │               │
+                  %M999.0     │               │
+                 "SIM001_TRIG" ─┤ TRIGGER                     │
+                        │               │
+                        │
+     "DB39511_Dy_DebugInst1Order".SIM001 ─┤ DYNAMIC_DATA
+                        │
+                        │
+                                        │
+                               ─────────┘
+
+
+              ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+10.     TEST AND VERIFICATION PATH
+
+
+The following diagram shows the full test and verification path for the formal release of each 
+version of the software module. See the Test Plan [Ref. 003] for full details, available here:
+        https://psop.uk/pal-tp-p
+
+
+        FC19151-T001
+
+    Test version: 000.801  
+ Released version: 001.000   
+Released commit: D0017    
+
+       SCR      SMT 
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿
+      └┘   ▙▟  
+Initial test           
+
+Initial test to release the      
+module following the      
+development stage.       
+Full SMT              
+
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+   </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 4 to 10</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC19511'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'000.101'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2023.02.26'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="28">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="30">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+    <Part Name="S_Move" UId="33" DisabledENO="true" />
+    <Part Name="S_Move" UId="34" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="43">
+      <NameCon UId="33" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module.
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2023.02.26    000.101   D0016A-000.101   D0016 N/A     D0016A   M. Gledhill
+                       FC19511 Block created — Comments added
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="mode_AutMan" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Man" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Aut" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Coil" UId="25" />
+    <Part Name="Not" UId="26" />
+    <Part Name="Coil" UId="27" />
+  </Parts>
+  <Wires>
+    <Wire UId="28">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="in" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="operand" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="23" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Identifies automatic and manual modes and sets the status bits accordingly.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION — Set Auto/Manual mode</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Part Name="Lt" UId="25">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="26" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <Powerrail />
+      <NameCon UId="25" Name="pre" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="in1" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="in2" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="25" Name="out" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="26" Name="out1" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the system time constant k_TimeConstant is negative, set its value to zero
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION — Error check for negative time constant</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="TRIGGER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Stopped" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_SteadyState" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_DeltaTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="OUTPUT" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="33">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_PrevOutput" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="35">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_TimeSteady" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="37">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>TRUE</ConstantValue>
+      </Constant>
+    </Access>
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="SCoil" UId="39" />
+    <Part Name="RCoil" UId="40" />
+    <Part Name="RCoil" UId="41" />
+    <Part Name="Move" UId="42" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="43" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="44" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="45" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="46" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="47" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="ReturnValue" UId="48" />
+  </Parts>
+  <Wires>
+    <Wire UId="49">
+      <Powerrail />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="21" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="39" Name="in" />
+      <NameCon UId="40" Name="in" />
+      <NameCon UId="41" Name="in" />
+      <NameCon UId="42" Name="en" />
+      <NameCon UId="44" Name="en" />
+      <NameCon UId="46" Name="en" />
+      <NameCon UId="47" Name="en" />
+      <NameCon UId="48" Name="in" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="22" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="23" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="24" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="25" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="42" Name="eno" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="42" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="27" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="43" Name="out1" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="29" />
+      <NameCon UId="44" Name="in" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="44" Name="eno" />
+      <NameCon UId="45" Name="en" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="44" Name="out1" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="31" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="45" Name="out1" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="33" />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="46" Name="out1" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="35" />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="47" Name="out1" />
+      <IdentCon UId="36" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="37" />
+      <NameCon UId="48" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the simulation is not running (TRIGGER = 0), set status to stopped and reset all calculated data
+and status signals.
+
+Set the previous time to the current CPU time (in readiness for the start of the simulation)
+
+Set the OUTPUT, actual_Output and actual_PrevOutput to zero
+
+If the simulation is not running, the block will terminate at this point.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION INACTIVE — Reset data — Block end</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="wrkInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Time" />
+      </Symbol>
+    </Access>
+    <Part Name="RD_LOC_T" Version="1.0" UId="23">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <Powerrail />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="25">
+      <NameCon UId="23" Name="RET_VAL" />
+      <IdentCon UId="21" />
+    </Wire>
+    <Wire UId="26">
+      <NameCon UId="23" Name="OUT" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="27" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+At this point the simulation is running (TRIGGER = 1), read the CPU real time clock and store in the 
+variable actual_Time.
+
+This time is then used as the current time for all calculations within the module.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="29" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Read current time</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Running" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_Stopped" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_StartTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_PrevTime" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="28">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="SCoil" UId="29" />
+    <Part Name="RCoil" UId="30" />
+    <Part Name="Move" UId="31" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="32" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="33">
+      <Powerrail />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in" />
+      <NameCon UId="30" Name="in" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="22" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="operand" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="24" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out1" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="26" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out1" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the TRIGGER parameter has gone high, and is seen for the first time (status_Running = 0),
+THEN a rising edge has been detected on the TRIGGER signal (the simulation has started).
+
+If a rising edge is detected:
+  1. Store the current time (actual_Time) as the simulation start time (actual_StartTime)
+  2. Set the status_Running bit to match the TRIGGER signal
+  3. Set the status_Stopped bit to match the inverse of the TRIGGER signal
+  4. Set the actual_PrevTime to the actual_Time, i.e. actual_DeltaTime = 0 for 1st iteration
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2E" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Check for TRIGGER rising edge</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_StartTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkElapsedTime" />
+      </Symbol>
+    </Access>
+    <Part Name="T_DIFF" Version="2.1" UId="24">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+      <TemplateValue Name="time_type" Type="Type">LTime</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <Powerrail />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="IN1" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="IN2" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="OUT" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="31" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the TRIGGER parameter is high (the simulation is running), then:
+Subtract the start time from the current time to give the current elapsed time (wrkElapsedTime)
+
+The elapsed time is calculated in the LTIme format
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="33" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Calculate current elapsed time</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="wrkElapsedTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="wrkLInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkLInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0E+09</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Part Name="T_CONV" Version="1.2" UId="28">
+      <TemplateValue Name="src_type" Type="Type">LTime</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">ULInt</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="29" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">ULInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="30" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="31">
+      <Powerrail />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="IN" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="28" Name="eno" />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="28" Name="OUT" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="29" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="26" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The wrkElapsedTime signal is of data type LTime (a 64-bit number representing the recorded
+duration in nanoseconds).
+
+This signal is converted first to a LInt (long integer) and then to a REAL number.
+
+This REAL number is then divided by 1,000,000,000 (1×10^9) to convert the duration from 
+nanoseconds to seconds
+
+This final value is returned as actual_RunTime
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="38" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Convert elapsed time to a REAL number in seconds</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_PrevTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkDeltaTime" />
+      </Symbol>
+    </Access>
+    <Part Name="T_DIFF" Version="2.1" UId="24">
+      <TemplateValue Name="date_type" Type="Type">DTL</TemplateValue>
+      <TemplateValue Name="time_type" Type="Type">LTime</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <Powerrail />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="IN1" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="IN2" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="OUT" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the TRIGGER parameter is high (the simulation is running), then:
+Subtract the previous iteration time from the current time to give the time between this iteration
+and the last iteration, this is ΔT in the calculations (wrkDeltaTime).
+
+The delta time is calculated in the LTIme format
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="3D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Calculate current delta time</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="wrkDeltaTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="wrkLInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkLInt" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0E+09</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_DeltaTime" />
+      </Symbol>
+    </Access>
+    <Part Name="T_CONV" Version="1.2" UId="28">
+      <TemplateValue Name="src_type" Type="Type">LTime</TemplateValue>
+      <TemplateValue Name="dest_type" Type="Type">ULInt</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="29" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">ULInt</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="30" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="31">
+      <Powerrail />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="IN" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="28" Name="eno" />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="28" Name="OUT" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="29" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="26" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="40" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The wrkDeltaTime signal is of data type LTime (a 64-bit number representing the recorded
+duration in nanoseconds).
+
+This signal is converted first to a LInt (long integer) and then to a REAL number.
+
+This REAL number is then divided by 1,000,000,000 (1×10^9) to convert the duration from 
+nanoseconds to seconds
+
+This final value is returned as actual_DeltaTime
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="42" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Convert delta time to a REAL number in seconds</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="44" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="mode_AutMan" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="mode_ManTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="28">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="29" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Lt" UId="30">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="31" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="pre" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="22" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="29" Name="out1" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="24" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="26" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="31" Name="out1" />
+      <IdentCon UId="27" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="45" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If manual mode is active, the elapsed time is replaced with the manual time (mode_ManTime)
+
+If the manual mode time is negative, the elapsed time is set to zero.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="47" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Check for manual mode</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="49" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="mode_AutMan" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_DeltaTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="cal_02" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="cal_02" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="cal_03" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="30">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="cal_03" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="cal_04" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_Gain" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="INPUT" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="cal_05" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="cal_05" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="cal_03" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="cal_05" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="cal_04" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_PrevOutput" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="cal_06" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="cal_05" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="cal_06" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="46">
+      <Symbol>
+        <Component Name="OUTPUT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="47" />
+    <Part Name="Move" UId="48" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Add" UId="49" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Div" UId="50" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Sub" UId="51" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Mul" UId="52" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Mul" UId="53" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Mul" UId="54" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Add" UId="55" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Move" UId="56" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="57">
+      <Powerrail />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="21" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="en" />
+      <NameCon UId="49" Name="en" />
+      <NameCon UId="50" Name="en" />
+      <NameCon UId="51" Name="en" />
+      <NameCon UId="52" Name="en" />
+      <NameCon UId="54" Name="en" />
+      <NameCon UId="55" Name="en" />
+      <NameCon UId="56" Name="en" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="22" />
+      <NameCon UId="48" Name="in" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="48" Name="out1" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="24" />
+      <NameCon UId="49" Name="in1" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="25" />
+      <NameCon UId="49" Name="in2" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="49" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="27" />
+      <NameCon UId="50" Name="in1" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="28" />
+      <NameCon UId="50" Name="in2" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="50" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="30" />
+      <NameCon UId="51" Name="in1" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="31" />
+      <NameCon UId="51" Name="in2" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="51" Name="out" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="33" />
+      <NameCon UId="52" Name="in1" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="34" />
+      <NameCon UId="52" Name="in2" />
+    </Wire>
+    <Wire UId="73">
+      <NameCon UId="52" Name="eno" />
+      <NameCon UId="53" Name="en" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="52" Name="out" />
+      <IdentCon UId="35" />
+    </Wire>
+    <Wire UId="75">
+      <IdentCon UId="36" />
+      <NameCon UId="53" Name="in1" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="37" />
+      <NameCon UId="53" Name="in2" />
+    </Wire>
+    <Wire UId="77">
+      <NameCon UId="53" Name="out" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="78">
+      <IdentCon UId="39" />
+      <NameCon UId="54" Name="in1" />
+    </Wire>
+    <Wire UId="79">
+      <IdentCon UId="40" />
+      <NameCon UId="54" Name="in2" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="54" Name="out" />
+      <IdentCon UId="41" />
+    </Wire>
+    <Wire UId="81">
+      <IdentCon UId="42" />
+      <NameCon UId="55" Name="in1" />
+    </Wire>
+    <Wire UId="82">
+      <IdentCon UId="43" />
+      <NameCon UId="55" Name="in2" />
+    </Wire>
+    <Wire UId="83">
+      <NameCon UId="55" Name="out" />
+      <IdentCon UId="44" />
+    </Wire>
+    <Wire UId="84">
+      <IdentCon UId="45" />
+      <NameCon UId="56" Name="in" />
+    </Wire>
+    <Wire UId="85">
+      <NameCon UId="56" Name="out1" />
+      <IdentCon UId="46" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the simulation is running and is in automatic mode, the following iterative, Real-time 
+simulation calculation is carried out:
+
+CALCULATION:
+                              ΔT
+   y[n] = Ka x[n]  ┼ (1-a) y[n-1]   where: a = ----------
+                            τ+ΔT
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 = ΔT             =  actual_DeltaTime
+
+ cal_02 = τ + ΔT             = k_TimeConstant + cal_01
+
+               ΔT
+ cal_03 = a = ----------          = cal_01 ÷ cal_02
+                τ+ΔT
+
+ cal_04 = 1 - a             = 1 - cal_03
+
+
+ cal_05 = Kax[n]            = k_Gain × cal_03 × INPUT
+
+ cal_06 = (1-a) y[n-1]          = cal_04 × actual_PrevOutput
+
+
+ OUTPUT  = Ka x[n]  ┼ (1-a) y[n-1]      = cal_05 × cal_06
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="4C" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="4D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Real-time simulation calculation</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="mode_AutMan" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>-1.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalConstant" UId="32">
+      <Constant Name="k_NEG_MAX" />
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="cal_01" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="cal_02" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="36">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>1.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="cal_02" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="cal_03" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_Gain" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="INPUT" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="cal_03" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="44">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="46">
+      <Symbol>
+        <Component Name="OUTPUT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="47">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Gt" UId="48">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Mul" UId="49" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Div" UId="50" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Le" UId="51">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="52" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Exp" UId="53" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Sub" UId="54" DisabledENO="true">
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Mul" UId="55" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Mul" UId="56" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Move" UId="57" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="58">
+      <Powerrail />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="21" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="pre" />
+      <NameCon UId="51" Name="pre" />
+      <NameCon UId="53" Name="en" />
+      <NameCon UId="54" Name="en" />
+      <NameCon UId="55" Name="en" />
+      <NameCon UId="57" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="22" />
+      <NameCon UId="48" Name="in1" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="23" />
+      <NameCon UId="48" Name="in2" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="48" Name="out" />
+      <NameCon UId="49" Name="en" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="24" />
+      <NameCon UId="49" Name="in1" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="25" />
+      <NameCon UId="49" Name="in2" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="49" Name="eno" />
+      <NameCon UId="50" Name="en" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="49" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="27" />
+      <NameCon UId="50" Name="in1" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="28" />
+      <NameCon UId="50" Name="in2" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="50" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="30" />
+      <NameCon UId="51" Name="in1" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="31" />
+      <NameCon UId="51" Name="in2" />
+    </Wire>
+    <Wire UId="73">
+      <NameCon UId="51" Name="out" />
+      <NameCon UId="52" Name="en" />
+    </Wire>
+    <Wire UId="74">
+      <IdentCon UId="32" />
+      <NameCon UId="52" Name="in" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="52" Name="out1" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="76">
+      <IdentCon UId="34" />
+      <NameCon UId="53" Name="in" />
+    </Wire>
+    <Wire UId="77">
+      <NameCon UId="53" Name="out" />
+      <IdentCon UId="35" />
+    </Wire>
+    <Wire UId="78">
+      <IdentCon UId="36" />
+      <NameCon UId="54" Name="in1" />
+    </Wire>
+    <Wire UId="79">
+      <IdentCon UId="37" />
+      <NameCon UId="54" Name="in2" />
+    </Wire>
+    <Wire UId="80">
+      <NameCon UId="54" Name="out" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="81">
+      <IdentCon UId="39" />
+      <NameCon UId="55" Name="in1" />
+    </Wire>
+    <Wire UId="82">
+      <IdentCon UId="40" />
+      <NameCon UId="55" Name="in2" />
+    </Wire>
+    <Wire UId="83">
+      <NameCon UId="55" Name="eno" />
+      <NameCon UId="56" Name="en" />
+    </Wire>
+    <Wire UId="84">
+      <NameCon UId="55" Name="out" />
+      <IdentCon UId="41" />
+    </Wire>
+    <Wire UId="85">
+      <IdentCon UId="42" />
+      <NameCon UId="56" Name="in1" />
+    </Wire>
+    <Wire UId="86">
+      <IdentCon UId="43" />
+      <NameCon UId="56" Name="in2" />
+    </Wire>
+    <Wire UId="87">
+      <NameCon UId="56" Name="out" />
+      <IdentCon UId="44" />
+    </Wire>
+    <Wire UId="88">
+      <IdentCon UId="45" />
+      <NameCon UId="57" Name="in" />
+    </Wire>
+    <Wire UId="89">
+      <NameCon UId="57" Name="out1" />
+      <IdentCon UId="46" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+If the simulation is running and is in manual mode, the following discrete manual response to a 
+step input calculation is carried out:
+
+
+CALCULATION:
+
+         ┌      -t/τ  ┐
+   y(t) = KX│ 1 ─  e   │
+         └       ┘
+
+
+Is rendered into the correct format as follows:
+
+
+ cal_01 =  -t/τ            = - 1 × actual_RunTime ÷  k_TimeConstant
+
+         - t/τ
+ cal_02 = ｅ              = EXP (cal_01)
+
+               - t/τ
+ cal_03 = 1 ─  ｅ              = 1 - cal_02
+
+
+             ┌      -t/τ  ┐
+ OUTPUT  = KX│ 1 ─  e   │       = k_Gain × INPUT × cal_03
+             └       ┘
+
+Note:    If k_TimeConstant = 0, cal_01 is set to the value k_NEG_MAX (the largest
+     negative value available to a real number), preventing divide by zero errors.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="51" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Over damped — Ancillary calculations</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="53" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>5.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="k_TimeConstant" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_TimeSteady" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_RunTime" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="cal_TimeSteady" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="status_SteadyState" />
+      </Symbol>
+    </Access>
+    <Part Name="Mul" UId="27" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Ge" UId="28">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="29" />
+  </Parts>
+  <Wires>
+    <Wire UId="30">
+      <Powerrail />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="pre" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="25" />
+      <NameCon UId="28" Name="in2" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="26" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="54" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="55" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Calculate the steady state time and set the status_SteadyState signal if the steady state time
+has been reached
+
+
+
+ANCILLARY CALCULATIONS:
+
+ Time to 98% of steady state value (s) = 5τ              cal_TimeSteady
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="56" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="57" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Ancillary calculations</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="58" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_PrevOutput" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_PrevTime" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="25" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="26" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <Powerrail />
+      <NameCon UId="25" Name="en" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out1" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="59" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The iterative nature of the calculation requires that the previous output and previous time are
+updated at the end of the module, prior to the next iteration
+
+The actual_PrevOutput is set to the current output (actual_Output) and the
+actual_PrevTime is set to the current iteration time (actual_Time)
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="5B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="5C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>SIMULATION RUNNING — Update iterative data</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="5D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="SYS_SIGNALS" />
+        <Component Name="_False" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="S_Move" UId="27" DisabledENO="true" />
+    <Part Name="S_Move" UId="28" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="28" Name="out" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="60" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="61" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="62" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="63" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Standard Module [DEBUG] — First Order Response Simulation </Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
