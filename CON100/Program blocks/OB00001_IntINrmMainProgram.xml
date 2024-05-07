@@ -2,24 +2,24 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-04-09T10:29:18.852717Z</Created>
+    <Created>2024-05-07T13:01:09.6258818Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
         <DisplayName>Totally Integrated Automation Portal</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>TIA Portal Version Control Interface</DisplayName>
-        <DisplayVersion>V16 Update 2</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <OptionPackage>
         <DisplayName>TIA Portal Openness</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <Product>
         <DisplayName>STEP 7 Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>STEP 7 Safety</DisplayName>
@@ -27,7 +27,7 @@
       </OptionPackage>
       <Product>
         <DisplayName>WinCC Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
     </InstalledProducts>
   </DocumentInfo>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0017A-000-101
+TIA PROJECT NAME:    PS2001-PAL-D0017A-000-102
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -383,7 +383,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0017A.000.101'</ConstantValue>
+        <ConstantValue>'D0017A.000.102'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -396,7 +396,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.03.08'</ConstantValue>
+        <ConstantValue>'2023.05.03'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
@@ -510,6 +510,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2024.05.03    D0017A.000.102   M. Gledhill      DB00800 — Created, populated
+                           and released for test
+
  2023.03.08    D0017A.000.101   M. Gledhill      FC18002 — Created
 
  2023.03.03    D0017      M. Gledhill      FC19511 — RELEASED FOR USE

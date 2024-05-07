@@ -2,24 +2,24 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-04-09T10:29:19.35285Z</Created>
+    <Created>2024-05-07T13:01:09.7650796Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
         <DisplayName>Totally Integrated Automation Portal</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>TIA Portal Version Control Interface</DisplayName>
-        <DisplayVersion>V16 Update 2</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <OptionPackage>
         <DisplayName>TIA Portal Openness</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <Product>
         <DisplayName>STEP 7 Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>STEP 7 Safety</DisplayName>
@@ -27,7 +27,7 @@
       </OptionPackage>
       <Product>
         <DisplayName>WinCC Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
     </InstalledProducts>
   </DocumentInfo>
