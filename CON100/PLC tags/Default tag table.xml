@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-05-16T11:52:19.9565344Z</Created>
+    <Created>2024-05-16T13:10:21.7877803Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -35,51 +35,5 @@
     <AttributeList>
       <Name>Default tag table</Name>
     </AttributeList>
-    <ObjectList>
-      <SW.Tags.PlcTag ID="1" CompositionName="Tags">
-        <AttributeList>
-          <DataTypeName>Int</DataTypeName>
-          <ExternalAccessible>true</ExternalAccessible>
-          <ExternalVisible>true</ExternalVisible>
-          <ExternalWritable>true</ExternalWritable>
-          <LogicalAddress>%MW100</LogicalAddress>
-          <Name>Tag_1</Name>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="2" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="3" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Tags.PlcTag>
-      <SW.Tags.PlcTag ID="4" CompositionName="Tags">
-        <AttributeList>
-          <DataTypeName>Bool</DataTypeName>
-          <ExternalAccessible>true</ExternalAccessible>
-          <ExternalVisible>true</ExternalVisible>
-          <ExternalWritable>true</ExternalWritable>
-          <LogicalAddress>%M110.0</LogicalAddress>
-          <Name>Tag_2</Name>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="5" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="6" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Tags.PlcTag>
-    </ObjectList>
   </SW.Tags.PlcTagTable>
 </Document>

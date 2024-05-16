@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-05-16T12:31:45.0724834Z</Created>
+    <Created>2024-05-16T13:10:21.3722748Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Instrumentation</HeaderFamily>
       <HeaderName>StdInstAnalogRead</HeaderName>
-      <HeaderVersion>2.8</HeaderVersion>
+      <HeaderVersion>3.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -497,7 +497,7 @@ TITLE:    INSTRUMENTATION — ANALOG INSTRUMENT READ, SCALE AND MONITOR
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵈᵉᵏ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵈᵉᵖ ┘
 
 FC02001_StdInstAnalogRead reads and scales an analog instrument signal received via 
 an analog input card.
@@ -561,7 +561,7 @@ the instrument is out of service for any reason.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       87.7 μs¹
- LOAD MEMORY       93.3 kB
+ LOAD MEMORY       93.4 kB
  WORK MEMORY           2.3 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
@@ -2591,7 +2591,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'002.801'</ConstantValue>
+        <ConstantValue>'003.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2603,7 +2603,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2024.05.11'</ConstantValue>
+        <ConstantValue>'2024.05.16'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2713,6 +2713,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2024.05.16    003.000   D0017A-000.105   D0017 D0018  None  M. Gledhill
+                       FC02001 — RELEASED FOR USE
+                         Merge back to master branch
+
  2024.05.11    002.801   D0017A-000.104   D0017 N/A     D017A   M. Gledhill
                        RAW_ANALOG changed to AI_RAW_SIGNAL
                        AI_RAW_DATA and AI_SCALE_DATA added and
