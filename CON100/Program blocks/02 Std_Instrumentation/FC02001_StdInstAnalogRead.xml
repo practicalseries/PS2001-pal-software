@@ -2,24 +2,24 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-05-03T13:49:39.708131Z</Created>
+    <Created>2024-05-16T12:31:45.0724834Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
         <DisplayName>Totally Integrated Automation Portal</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>TIA Portal Version Control Interface</DisplayName>
-        <DisplayVersion>V16 Update 2</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <OptionPackage>
         <DisplayName>TIA Portal Openness</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <Product>
         <DisplayName>STEP 7 Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>STEP 7 Safety</DisplayName>
@@ -27,7 +27,7 @@
       </OptionPackage>
       <Product>
         <DisplayName>WinCC Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
     </InstalledProducts>
   </DocumentInfo>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Instrumentation</HeaderFamily>
       <HeaderName>StdInstAnalogRead</HeaderName>
-      <HeaderVersion>2.0</HeaderVersion>
+      <HeaderVersion>2.8</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
@@ -77,10 +77,73 @@
         </Section>
       </Sections>
     </Member>
-    <Member Name="RAW_ANALOG" Datatype="Int" Accessibility="Public">
+    <Member Name="AI_RAW_SIGNAL" Datatype="Int" Accessibility="Public">
       <Comment>
-        <MultiLanguageText Lang="en-US">Analogue Input Signal</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Analog Input Signal</MultiLanguageText>
       </Comment>
+    </Member>
+    <Member Name="AI_RAW_DATA" Datatype="&quot;UT00801_St_ConstAiRawData&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Analog Input Signal — raw range and configuration data</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="AI_CODE" Datatype="UInt" />
+          <Member Name="___________0020_0" Datatype="Bool" />
+          <Member Name="___________0020_1" Datatype="Bool" />
+          <Member Name="RAW_MIN" Datatype="Int" />
+          <Member Name="RAW_MAX" Datatype="Int" />
+          <Member Name="RAW_DESC" Datatype="String[60]" />
+          <Member Name="___________0030_1" Datatype="Bool" />
+          <Member Name="___________0030_2" Datatype="Bool" />
+          <Member Name="PARAM_TYPE" Datatype="Byte" />
+          <Member Name="PARAM_RANGE" Datatype="Byte" />
+          <Member Name="PARAM_COEF" Datatype="Byte" />
+          <Member Name="___________0040_1" Datatype="Bool" />
+          <Member Name="___________0040_2" Datatype="Bool" />
+          <Member Name="VALUE_COEF" Datatype="Real" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AI_SCALE_DATA" Datatype="&quot;UT00851_Sy_ConstAiScaleData&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Analog Input Signal — scaled range and configuration data</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="AI_TAG" Datatype="String[20]" />
+          <Member Name="___________0020_0" Datatype="Bool" />
+          <Member Name="___________0020_1" Datatype="Bool" />
+          <Member Name="SCALE_MIN" Datatype="Real" />
+          <Member Name="SCALE_MAX" Datatype="Real" />
+          <Member Name="SCALE_UNITS" Datatype="String[20]" />
+          <Member Name="SCALE_DESC" Datatype="String[60]" />
+        </Section>
+      </Sections>
     </Member>
     <Member Name="EXT_FAULT" Datatype="Bool" Accessibility="Public">
       <Comment>
@@ -119,16 +182,9 @@
           <Member Name="___________0020_1" Datatype="Int" />
           <Member Name="RANGE_RAW_MIN" Datatype="Int" />
           <Member Name="RANGE_RAW_MAX" Datatype="Int" />
-          <Member Name="RANGE_SCALE_MIN" Datatype="Real" />
-          <Member Name="RANGE_SCALE_MAX" Datatype="Real" />
           <Member Name="RANGE_OOR_PERCENT" Datatype="Real" />
           <Member Name="___________0030_0" Datatype="Int" />
           <Member Name="___________0030_1" Datatype="Int" />
-          <Member Name="INFO_TYPE" Datatype="Int" />
-          <Member Name="INFO_TAG" Datatype="String[20]" />
-          <Member Name="INFO_UNITS" Datatype="String[10]" />
-          <Member Name="___________0040_0" Datatype="Int" />
-          <Member Name="___________0040_1" Datatype="Int" />
           <Member Name="SP_ALM_H_VAL" Datatype="Real" />
           <Member Name="SP_ALM_L_VAL" Datatype="Real" />
           <Member Name="SP_WRN_H_VAL" Datatype="Real" />
@@ -137,8 +193,8 @@
           <Member Name="SP_ALM_L_HYST_VAL" Datatype="Real" />
           <Member Name="SP_WRN_H_HYST_VAL" Datatype="Real" />
           <Member Name="SP_WRN_L_HYST_VAL" Datatype="Real" />
-          <Member Name="___________0050_0" Datatype="Int" />
-          <Member Name="___________0050_1" Datatype="Int" />
+          <Member Name="___________0040_1" Datatype="Int" />
+          <Member Name="___________0040_0" Datatype="Int" />
           <Member Name="TIME_ALM_H_ON_DEL" Datatype="Real" />
           <Member Name="TIME_ALM_L_ON_DEL" Datatype="Real" />
           <Member Name="TIME_WRN_H_ON_DEL" Datatype="Real" />
@@ -220,6 +276,63 @@
           <Member Name="actual_Alm_L_Timer" Datatype="Real" />
           <Member Name="actual_Wrn_H_Timer" Datatype="Real" />
           <Member Name="actual_Wrn_L_Timer" Datatype="Real" />
+          <Member Name="actual_AiRawData" Datatype="&quot;UT00801_St_ConstAiRawData&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="REV_BLOCK" Datatype="String[7]" />
+                      <Member Name="REV_NUMBER" Datatype="String[20]" />
+                      <Member Name="REV_DATE" Datatype="String[10]" />
+                      <Member Name="REV_AUTHOR" Datatype="String[20]" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="___________0010_0" Datatype="Bool" />
+                <Member Name="___________0010_1" Datatype="Bool" />
+                <Member Name="AI_CODE" Datatype="UInt" />
+                <Member Name="___________0020_0" Datatype="Bool" />
+                <Member Name="___________0020_1" Datatype="Bool" />
+                <Member Name="RAW_MIN" Datatype="Int" />
+                <Member Name="RAW_MAX" Datatype="Int" />
+                <Member Name="RAW_DESC" Datatype="String[60]" />
+                <Member Name="___________0030_1" Datatype="Bool" />
+                <Member Name="___________0030_2" Datatype="Bool" />
+                <Member Name="PARAM_TYPE" Datatype="Byte" />
+                <Member Name="PARAM_RANGE" Datatype="Byte" />
+                <Member Name="PARAM_COEF" Datatype="Byte" />
+                <Member Name="___________0040_1" Datatype="Bool" />
+                <Member Name="___________0040_2" Datatype="Bool" />
+                <Member Name="VALUE_COEF" Datatype="Real" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="actual_AiScaleData" Datatype="&quot;UT00851_Sy_ConstAiScaleData&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+                  <Sections>
+                    <Section Name="None">
+                      <Member Name="REV_BLOCK" Datatype="String[7]" />
+                      <Member Name="REV_NUMBER" Datatype="String[20]" />
+                      <Member Name="REV_DATE" Datatype="String[10]" />
+                      <Member Name="REV_AUTHOR" Datatype="String[20]" />
+                    </Section>
+                  </Sections>
+                </Member>
+                <Member Name="___________0010_0" Datatype="Bool" />
+                <Member Name="___________0010_1" Datatype="Bool" />
+                <Member Name="AI_TAG" Datatype="String[20]" />
+                <Member Name="___________0020_0" Datatype="Bool" />
+                <Member Name="___________0020_1" Datatype="Bool" />
+                <Member Name="SCALE_MIN" Datatype="Real" />
+                <Member Name="SCALE_MAX" Datatype="Real" />
+                <Member Name="SCALE_UNITS" Datatype="String[20]" />
+                <Member Name="SCALE_DESC" Datatype="String[60]" />
+              </Section>
+            </Sections>
+          </Member>
           <Member Name="___________0090_0" Datatype="Int" />
           <Member Name="___________0090_1" Datatype="Int" />
           <Member Name="$pret_AlmHEn" Datatype="Bool" />
@@ -384,7 +497,7 @@ TITLE:    INSTRUMENTATION — ANALOG INSTRUMENT READ, SCALE AND MONITOR
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵈᵉᵏ ┘
 
 FC02001_StdInstAnalogRead reads and scales an analog instrument signal received via 
 an analog input card.
@@ -448,8 +561,8 @@ the instrument is out of service for any reason.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       87.7 μs¹
- LOAD MEMORY       87.4 kB
- WORK MEMORY           2.2 kB  
+ LOAD MEMORY       93.3 kB
+ WORK MEMORY           2.3 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
                             https://psop.uk/pal-ds-cpu1515
@@ -460,11 +573,18 @@ the instrument is out of service for any reason.
 1.1      Additional document references
 
 
-Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
-block. There are no additional document references.
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
+following documents are associated with this module:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.       TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 101  PS2001-5-2312-db00801   DB00801 (analog input raw data) SMDS
+ 102  PS2001-5-2312-db00851   DB00851 (analog input scale data) SMDS
+ ――――――――――――――――――――――――――――――――――――――――――
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -682,8 +802,8 @@ document.
 3.     DETAILED BLOCK DESCRIPTION
 
 
-This block, FC02001_StdInstAnalogRead uses user data types to provide the primary interface 
-to the block. There are five formal parameters: 
+This block, FC02001_StdInstAnalogRead uses user data types (UDTs)to provide the primary 
+interface to the block. There are five formal parameters: 
 
 
  ――――――――――――――――――――――――――――――――――――――――――
@@ -692,9 +812,16 @@ to the block. There are five formal parameters:
  SYS_SIGNALS      Common system signals                UT21000    In
           logic and timing signals for parametric access
 
- RAW_ANALOG      The unscaled analog input (input word          Word     In
+ AI_RAW_SIGNAL      The unscaled analog input (input word          Word     In
           address for the IO card to which the instrument 
           is connected)
+ AI_RAW_DATA      Analog input signal configuration data (type,     UT00801    In
+          range, descriptions card parameters and 
+          coefficients)
+
+ AI_SCALE_DATA     Analog input signal scaled value data (instrument   UT00851   In
+          tag, range, descriptions and engineering units)
+
 
  EXT_FAULT     Optional external fault signal for the instrument     Bool      In
           (1 = fault, 0 = healthy). If not required, set 
@@ -713,9 +840,26 @@ to the block. There are five formal parameters:
  ――――――――――――――――――――――――――――――――――――――――――
 
 
-RAW_ANALOG and EXT_FAULT are signals provided directly from the instrument itself (via input 
-cards). The other two parameters: STATIC_DATA and DYNAMIC_DATA are UDTs that hold 
-(respectively) the configuration information and the live data for the instrument.
+AI_RAW_SIGNAL and EXT_FAULT are signals provided directly from the instrument itself (via 
+input cards). The AI_RAW_DATA and AI_SCALE_DATA parameters are UDTs that hold information 
+about the nature of the AI_RAW_SIGNAL, in the case of AI_RAW_DATA its input type: voltage, 
+current &amp;c., its range in integer values and various parametric information and a textual 
+description of the signal. In the case of AI_SCALE_DATA the scaled range of the signal, its 
+engineering units, a textual description of the instrument and the instrument tag itself.
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ AI_RAW_DATA      UT00801_St_ConstAiRawData       DB00801_St_ConstAiRawData
+ AI_SCALE_DATA     UT00851_St_ConstAiScaleData       DB00851_St_ConstAiScaleData
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Section 3.1.1 contains a full description of the AI_RAW_DATA and AI_SCALE_DATA parameters
+
+The other two parameters: STATIC_DATA and DYNAMIC_DATA are UDTs that hold (respectively) 
+the configuration information and the live data for the instrument.
+
 
  ――――――――――――――――――――――――――――――――――――――――――
  PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
@@ -735,102 +879,58 @@ formal parameters; all remaining signals are passed as variables within UDTs.
 3.1     Converting the raw instrument signal to a scaled value
 
 
-The RAW_ANALOG is the raw instrument signal received from an analog input card; this has 
+The AI_RAW_SIGNAL is the raw instrument signal received from an analog input card; this has 
 specific ranges depending on the type of IO card and the type of signal in use.
  
 Note:    It is assumed that the instrument has a linear response.
 
-The following tables show the typical ranges for the RAW_ANALOG signal:
-
+The following table shows example ranges for the AI_RAW_SIGNAL signal:
 
  ―――――――――――――――――――――――――――――――――――――――――― 
-            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT    INFO_TYPE
- SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      (enum value)
+            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT
+ SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      
  ―――――――――――――――――――――――――――――――――――――――――― 
- -10 V to 10 V         -27648     -10 V        27648      +10 V      001
- -5 V to 5 V       -27648       -5 V        27648     +5 V      002
- -2.5 V to 2.5 V       -27648       -2.5 V        27648     +2.5 V      003
- -1 V to 1 V       -27648       -1 V        27648     +1 V      004
- -500 mV to 500 mV      -27648      -500 mV    27648    +500 mV      005
- -250 mV to 250 mV      -27648      -250 mV    27648    +250 mV      006
- -80 mV to 80 mV       -27648     -80 mV    27648      +80 mV      007
- -50 mV to 50 mV    -27648     -50 mV    27648      +50 mV      008
- 1 V to 5 V          0      +1 V        27648     +5 V      009
- ――――――――――――――――――――――――――――――――――――――――――
- Input ranges for typical instrument types (voltage)
-
-
- ――――――――――――――――――――――――――――――――――――――――――
-            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT    INFO_TYPE
- SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      (enum value)
- ――――――――――――――――――――――――――――――――――――――――――
- -20 mA to 20 mA       -27648     -20 mA    27648      +20 mA      101
- 0 mA to 20 mA         0        0 mA    27648      +20 mA      102
- 4 mA to 20 mA (2w)      0        4 mA    27648      +20 mA      103
- 4 mA to 20 mA (4w)      0        4 mA    27648      +20 mA      104
- ――――――――――――――――――――――――――――――――――――――――――
- Input ranges for typical instrument types (current)
-
-
- ――――――――――――――――――――――――――――――――――――――――――
-            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT    INFO_TYPE
- SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      (enum value)
- ――――――――――――――――――――――――――――――――――――――――――
- RTD 150 Ω            0        0 Ω       27648      150 Ω      201
- RTD 300 Ω            0        0 Ω       27648      300 Ω      202
- RTD 600 Ω            0        0 Ω       27648      600 Ω      203
- RTD 6000 Ω         0        0 Ω       27648    6000 Ω      204
- PT x00           -2000       200.0°C      8500      850.0°C     205
- Ni x00          -600     -60.0°C        250      250.0°C     206
- Type B thermocouple     -2100      -210.0°C      12000    1200.0°C     301
- Type K thermocouple     -2700      -270.0°C      13720    1372.0°C     302
- Type N thermocouple    -2700      -210.0°C      13000    1300.0°C     303
- Type R/S thermocouple    -500     -50.0°C      17690    1769.0°C     304
- Type T thermocouple     -2700      -270.0°C      4000      400.0°C     305
+ -10 V to 10 V         -27648     -10 V        27648      +10 V      
+ 1 V to 5 V          0      +1 V        27648     +5 V      
+ -20 mA to 20 mA       -27648     -20 mA    27648      +20 mA      
+ 0 mA to 20 mA         0        0 mA    27648      +20 mA      
+ 4 mA to 20 mA (2w)      0        4 mA    27648      +20 mA      
+ 4 mA to 20 mA (4w)      0        4 mA    27648      +20 mA      
+ RTD 150 Ω            0        0 Ω       27648      150 Ω      
+ RTD 300 Ω            0        0 Ω       27648      300 Ω      
+ PT x00           -2000       200.0°C      8500      850.0°C     
+ Ni x00          -600     -60.0°C        250      250.0°C     
+ Type B thermocouple     -2100      -210.0°C      12000    1200.0°C     
+ Type K thermocouple     -2700      -270.0°C      13720    1372.0°C     
  ――――――――――――――――――――――――――――――――――――――――――
  Input ranges for typical instrument types (resistance thermometers and thermocouples)
 
 
 The RAW_MIN and the RAW_MAX values in the above tables are the numerical values for the 
-instrument range; the appropriate values must be entered in the STATIC_DATA data structure 
-passed to the block. These are the UDT variables:
+instrument range; the appropriate values are supplied as the RAW_MIN and RAW_MAX variables 
+provided in the UDT of parameter AI_RAW_DATA. (see § 3.1.1 for a full description).
+	
+
+The corresponding values for the scaled instrument signal are similarly provided by the 
+SCALE_MIN and SCALE_MAX values provided in the UDT of parameter AI_SCALE_DATA. 
+(see § 3.1.1for a full description).
+
+Thus, if a flow meter with a calibrated range of –100 l/s to +100 l/s provided a 4-20 mA signal 
+to the PLC, 
 
 
- UT02001_St_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME          FUNCTION                     TYPE
+ SIGNAL NAME          FUNCTION                   VALUE
  ――――――――――――――――――――――――――――――――――――――――――
- RANGE_RAW_MIN       RANGE — Minimum value of the raw analog      Int
+ AI_RAW_DATA.RAW_MIN     RANGE — Minimum value of the raw analog      0
                     signal (at the card)
- RANGE_RAW_MAX      RANGE — Maximum value of the raw analog        Int
+ AI_RAW_DATA.RAW_MAX    RANGE — Maximum value of the raw analog        27648
                     signal (at the card)
- ――――――――――――――――――――――――――――――――――――――――――
-
-
-The corresponding values for the scaled instrument signal are:
-
-
- UT02001_St_InstAnalogRead
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME          FUNCTION                     TYPE
- ――――――――――――――――――――――――――――――――――――――――――
- RANGE_SCALE_MIN      RANGE — Minimum value of the scaled analog       Real
+ AI_SCALE_DATA.SCALE_MIN   RANGE — Minimum value of the scaled analog       -100 l/s
                     signal [engineering units]
- RANGE_SCALE_MAX     RANGE — Maximum value of the scaled analog      Real
+ AI_SCALE_DATA.SCALE_MAX  RANGE — Maximum value of the scaled analog      +100 l/s
                     signal [engineering units]
  ――――――――――――――――――――――――――――――――――――――――――
-
-
-Thus, if a flow meter with a calibrated range of -100 l/s to +100 l/s provided a 4 20 mA signal to 
-the PLC, then:
-
-
- ――――――――――――――――――――――――――――――――――――――――――
- RANGE_RAW_MIN   RANGE_RAW_MAX   RANGE_SCALE_MIN     RANGE_SCALE_MAX
- ――――――――――――――――――――――――――――――――――――――――――
-        0           27648             -100.0            +100.0
- ――――――――――――――――――――――――――――――――――――――――――
-
 
 The scaled value is stored in the DATA_DYNAMIC structure in the following variable:
 
@@ -848,7 +948,7 @@ The scaled value (actual_Value) is calculated as follows:
 
 
 ┌─────────────────────────────────────────┐
-│                              (RAW_ANALOG ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)            │
+│                              (AI_RAW_SIGNAL ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)        │
 │actual_Value =  ――――――――――――――――――――――――――  ┼ SCALE_MIN    │
 │                              (RAW_MAX ─ RAW_MIN)                    │
 └───────────────────────────────────  (3.1)  ───┘
@@ -859,7 +959,7 @@ Note:    RAW_MIN, RAW_MAX,  SCALE_MIN and SCALE_MAX are all preceded with RA
 
            SCALE_VALUE
             ↑                    ⋰
-   RANGE_SCALE_MAX__│______________________________________⋰
+           SCALE_MAX__│______________________________________⋰
             │                  ╱|
             │                 ╱ |     
             │                ╱  |
@@ -875,119 +975,201 @@ Note:    RAW_MIN, RAW_MAX,  SCALE_MIN and SCALE_MAX are all preceded with RA
             │      ╱    ╎       |
             │     ╱     ╎       |
             │    ╱         ╎          |
-    RANGE_SCALE_MIN__│______╱          ╎          |
+            SCALE_MIN__│______╱          ╎          |
             │  ⋰|           ╎          |
             │ ⋰ |           ╎          |
-            ┼─────────────────────────→ RAW_ANALOG
+            ┼─────────────────────────→ AI_RAW_SIGNAL
                   |           ╎           |
-            RANGE_RAW_MIN      ╎     RANGE_RAW_MAX
-                       RAW_ANALOG
+               RAW_MIN        ╎        RAW_MAX
+                      AI_RAW_SIGNAL
 
-           Linear relationship between RAW_ANALOG and actual_Value
+           Linear relationship between AI_RAW_SIGNAL and actual_Value
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.1.1     Configuration errors
+3.1.1     Using AI_RAW_DATA and AI_SCALE_DATA
 
 
-The block requires that both the RANGE_RAW and RANGE_SCALE signals conform to certain rules:
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+The AI_RAW_DATA parameter
 
-   1.  RANGE_RAW_MIN must be less than, and not equal to RANGE_RAW_MAX
-   2.  RANGE_SCALE_MIN must be less than, and not equal to RANGE_SCALE_MAX
+The parameter AI_RAW_DATA is used to pass the analog input card type, range, description and
+coefficient data used by all analog input card channels. Data is supplied to this parameter using
+DB00801_St_ConstAiRawData, this contains a formal set of data for every type of Siemens 
+analog input (datasets), E.g.: for a 4-wire 4-20 mA signal it is:
+
+ AI_RAW_2003     "UT00801_St_ConstAiRawData" AI Current - 4-wire (4 mA to 20 mA)
+  revInfo          "UT01000_St_SysRevision"
+  ___________0010_0  Bool     false	 
+  ___________0010_1  Bool     false
+  AI_CODE       UInt      16#2003
+  ___________0020_0  Bool     false
+  ___________0020_1  Bool     false
+  RAW_MIN          Int        0
+  RAW_MAX         Int        27648
+  RAW_DESC       String[60]    'Current - 4-wire (4 mA to 20 mA)'
+  ___________0030_1  Bool     false
+  ___________0030_2  Bool     false
+  PARAM_TYPE       Byte        16#02
+  PARAM_RANGE      Byte        16#03
+  PARAM_COEF        Byte        16#00
+  ___________0040_1  Bool     false
+  ___________0040_2  Bool     false
+  VALUE_COEF        Real        0.0
+
+A full description of DB00801_St_ConstAiRawData and its associated datasets is given in 
+[Ref. 101].
+
+The whole dataset provided to the module via AI_RAW_DATA is copied to the DYNAMIC_DATA 
+structure in the following variable:
+
+
+ UT22001_Dy_InstAnalogRead
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ actual_AiRawData       ACTUAL — A copy of the analog input AI_RAW_DATA     UT00801
+                     parameter information
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The primary in formation needed by the module are maximum and minimum ranges for the 
+input signal, this information is given in in the DYNAMIC_DATA variables:
+
+
+ UT22001_Dy_InstAnalogRead
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME           FUNCTION                    TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ actual_AiRawData.RAW_MIN   ACTUAL — Minimum value of the analog input      Int
+                      range being used by the module
+ actual_AiRawData.RAW_MAX  ACTUAL — Maximum value of the analog input      Int
+                      range being used by the module
+ ――――――――――――――――――――――――――――――――――――――――――
+
+These are the RAW_MIN and RAW_MAX values used in (3.1).
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+The AI_SCALE_DATA parameter
+
+
+The AI_SCALE_DATA parameter is similar to the AI_RAW_DATA parameter except that in this case
+it holds the scaled range, instrument tag, signal description and as-sociated engineering unit 
+information. Data is supplied to this parameter using DB00851_St_ConstAiScaleData, this 
+contains a set of data each instrument config-ured for the project, each instrument being a 
+dataset. E.g.
+
+ AI_SCALE_FC001   "UT00851_Sy_ConstAiScaleData"	
+  revInfo        "UT01000_St_SysRevision"	
+  ___________0010_0  Bool     false
+  ___________0010_1  Bool     false
+  AI_TAG           String[20]    'FC001'
+  ___________0020_0  Bool     false
+  ___________0020_1  Bool     false
+  SCALE_MIN         Real        0.0
+  SCALE_MAX        Real        1000.0
+  SCALE_UNITS     String[20]    'l/s'
+  SCALE_DESC      String[60]    'Inlet flow (0 to 1000 l/s)'
+
+
+A full description of DB00851_St_ConstAiScaleData and its application is given in [Ref. 102].
+
+The whole dataset provided to the module via AI_SCALE_DATA is copied to the DYNAMIC_DATA 
+structure in the following variable:
+
+ UT22001_Dy_InstAnalogRead
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                      TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ actual_AiScaleData       FACTUAL — A copy of the analog input AI_SCALE_DATA UT00851
+                     parameter information
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The primary in formation needed by the module are maximum and minimum ranges for the 
+scaled signal, this information is given in in the DYNAMIC_DATA variables
+
+
+ UT22001_Dy_InstAnalogRead
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME            FUNCTION                    TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ actual_AiScaleData.SCALE_MIN   ACTUAL — Minimum value of the analog input      Int
+                       range being used by the module
+ actual_AiScaleData.SCALE_MAX  ACTUAL — Maximum value of the analog input      Int
+                       range being used by the module
+ ――――――――――――――――――――――――――――――――――――――――――
+
+These are the SCALE_MIN and SCALE_MAX values used in (3.1).
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+User defined analog input raw ranges
+
+
+DB00801_St_ConstAiRawData contains a full set of analog card input ranges available to all 
+Siemens Simatic analog input cards. However, if some non-Simatic card is being used 
+(i.e. a third-party card that may have a Profinet or ProfiBus interface) it may be necessary to 
+configure user defined RAW_MIN and RAW_MAX values. The module can accommodate this via the 
+use of the AI_RAW_0000 dataset defined in data block DB00801_St_ConstAiRawData. Applying this
+dataset to the AI_RAW_DATA parameter will cause the module to overwrite the 
+actual_AiRawData.RAW_MIN and actual_AiRawData.RAW_MAX with data from the STATIC_DATA UDT 
+parameter information. This contains the following:
+
+
+ UT02001_St_InstAnalogRead
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ RANGE_RAW_MIN       Optional minimum value of the raw analog signal	   Real
+               (at the card). Only used if AI_RAW_DATA is set to 
+               User Defined input (AI_RAW_0000)
+
+ RANGE_RAW_MAX      Optional maximum value of the raw analog signal	   Real
+              (at the card). Only used if AI_RAW_DATA is set to 
+              User Defined input (AI_RAW_0000)
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Note:    Only the RAW_MIN and RAW_MAX values are overwritten, the rest of the data in 
+     actual_AiRawData is taken from the supplied AI_RAW_DATA dataset.
+
+
+████████████████████████████████████████████
+█                                          █
+█ RANGE_RAW_MIN and RANGE_RAW_MAX are only used if AI_RAW_DATA is set to the manual    █
+█ configuration structure AI_RAW_0000.                         █
+█                                          █
+████████████████████████████████████████████
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+3.1.2     Configuration errors
+
+
+The block requires that both the raw and scale range signals conform to certain rules::
+
+   1.  actual_AiRawData.RAW_MIN must be less than, and not equal to 
+     actual_AiRawData.RAW_MAX 
+
+   2.  actual_AiScaleData.SCALE_MIN must be less than, and not equal to  
+     actual_AiScaleData.SCALE_MIN
 
 Should either of these conditions not be met, the signal: status_ConfigError will be activated 
-(set true), additionally the three out of range signals (see § 3.3.1):
+(set true), additionally the three out of range signals (see § 3.4.1):
 
      msg_Flt_OverRange
      msg_Flt_UnderRange
      msg_Flt_OutOfRange
 
 Will all be activated (this condition cannot be over-ridden by simulation mode, see § 3.4.1) and 
-the actual_Value will be set to zero irrespective of any values given to RAW_ANALOG.
+the actual_Value will be set to zero irrespective of any values given to AI_RAW_SIGNAL.
 
-Note:    This avoids the potential for a divide by zero error: if the RANGE_RAW_MIN and 
-     RANGE_RAW_MAX are exactly equal, the calculation of the actual_Value in 
-     equation (3.1) would result in a divide by zero error. 
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.1.2     Instrument type identification
-
-
-The configuration static variable INFO_TYPE is an enumerated value that stores the type of 
-instrument being used, the value of this variable should be set to the enumerated values listed 
-in the right-most column of the tables above. This al-lows the SCADA/HMI faceplates to identify 
-the type of instrument being used.
-The enumerated values listed are for standard instrument types supported by usual range of 
-analogue input modules and the values specified should not be reassigned (i.e. the 
-ranges 000-009 for voltage, 100-104 for current, 200-206 for RTD, 300-301 and 300-305 for 
-thermocouples).
-
-If additional (non-standard) instrument types are required, any numbers outside the above 
-ranges can be specified.
-
-The standard enumerated values are used at the supervisory system to identify the precise signal 
-type of the instrument. These values and corresponding text fields are as follows:
-
-
- ―――――――――――――――――――――――――――――――――――――――――― 
-        VOLTAGE SIGNALS
- INFO_TYPE   SIGNAL TYPE           TEXT FIELD
- ―――――――――――――――――――――――――――――――――――――――――― 
- 000      Generic voltage signal       Voltage signal
- 001      -10 V to 10 V          Voltage (-10 V to 10 V)
- 002      -5 V to 5 V            Voltage (-5 V to 5 V)
- 003      -2.5 V to 2.5 V           Voltage (-2.5 V to 2.5 V)
- 004      -1 V to 1 V            Voltage (-1 V to 1 V)
- 005      -500 mV to 500 mV       Voltage (-500 mV to 500 mV)
- 006      -250 mV to 250 mV       Voltage (-250 mV to 250 mV)
- 007      -80 mV to 80 mV         Voltage (-80 mV to 80 mV)
- 008      -50 mV to 50 mV         Voltage (-50 mV to 50 mV)
- 009      1 V to 5 V             Voltage (1 V to 5 V)
- ―――――――――――――――――――――――――――――――――――――――――― 
-        CURRENT SIGNALS
- INFO_TYPE   SIGNAL TYPE           TEXT FIELD
- ―――――――――――――――――――――――――――――――――――――――――― 
- 100      Generic current signal     Current signal
- 101      -20 mA to 20 mA         Current (-20 mA to 20 mA)
- 102      0 mA to 20 mA         Current (0 mA to 20 mA
- 103      4 mA to 20 mA (2-wire)       Current (4 mA to 20 mA 2-wire)
- 104      4 mA to 20 mA (4-wire)       Current (4 mA to 20 mA 4wire)
- ―――――――――――――――――――――――――――――――――――――――――― 
-        RTD SIGNALS
- INFO_TYPE   SIGNAL TYPE           TEXT FIELD
- ―――――――――――――――――――――――――――――――――――――――――― 
- 200      Generic RTD signal         RTD signal
- 201      RTD 150 Ω            RTD (150 Ω)
- 202      RTD 300 Ω            RTD (300 Ω)
- 203      RTD 600 Ω            RTD (600 Ω)
- 204      RTD 6000 Ω             RTD (6000 Ω)
- 205      PT x00             RTD (PT x00)
- 206      Ni x00             RTD (Ni x00)
- ―――――――――――――――――――――――――――――――――――――――――― 
-        THERMOCOUPLE SIGNALS
- INFO_TYPE   SIGNAL TYPE           TEXT FIELD
- ―――――――――――――――――――――――――――――――――――――――――― 
- 300      Generic Thermocouple signal    Thermocouple
- 301      Type B thermocouple       Thermocouple (Type B)
- 302      Type K thermocouple       Thermocouple (Type K)
- 303      Type N thermocouple       Thermocouple (Type N)
- 304      Type R/S thermocouple       Thermocouple (Type R/S)
- 305      Type T thermocouple        Thermocouple (Type T)
- ―――――――――――――――――――――――――――――――――――――――――― 
- INFO_TYPE enumerated values and definitions
-
-
-Of these INFO_TYPE enumerated values, the values 000, 100, 200 and 300 are reserved for generic 
-signal types, respectively Voltage, Current, RTD and Thermocouple. These can be used in place of 
-a specific signal type.
-
-Note:    The INFO_TYPE value must be set manually for each instrument (in the same way as 
-     INFO_TAG and INFO_UNITS), it is not derived internally within the module.
-
-</Text>
+Note:    This avoids the potential for a divide by zero error: if the RAW_MIN and 
+     RAW_MAX are exactly equal, the calculation of the actual_Value in 
+     equation (3.1) would result in a divide by zero error. </Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1034,7 +1216,7 @@ as follows:
  Default alarm and warning signals
 
 
-The active state of any alarm or warning is stored in the DATA_DYNAMIC structure in the following 
+The active state of any alarm or warning is stored in the DYNAMIC_DATA structure in the following 
 variables:
 
 
@@ -1344,11 +1526,14 @@ There are four fault signals that can be produced by the block:
  msg_Flt_UnderRange   The instrument is more than   Bool    1 = under-range, 0 = healthy
                 a percentage below the its 
                 minimum value
+
  msg_Flt_OverRange     The instrument is more than   Bool    1 = over-range, 0 = healthy
                 a percentage above its 
                 maximum value
+
  msg_Flt_OutOfRange   Common fault, either       Bool    1 = out-of-range, 0 = healthy
                 under or over range
+
  msg_Flt_External     The instrument itself is    Bool    1 = fault, 0 = healthy
                 indicating a fault 
                 (hardwired signal)
@@ -1420,12 +1605,8 @@ active.
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 Configuration error
 
-If a range configuration error is present (see § 3.1.1), all three out of range signals will activate 
+If a range configuration error is present (see § 3.1.2), all three out of range signals will activate 
 msg_Flt_OverRange, msg_Flt_UnderRange and msg_Flt_OutOfRange.
-
-The configuration error is summarised as either:
-       •   RAW_MAX &lt;= RAW_MIN or
-       •   SCALE_MAX &lt;= SCALE_MIN
 
 
 
@@ -1470,20 +1651,24 @@ or a wire break occurs), then a normally closed contact should be applied to the
 parameter to invert the signal into the block (see below):
 
 
-                      ┌─────────────
-   ───────────────────┤ FC02001 
-                     
-                          "FC001" ─┤ RAW_ANALOG           │
-                      │               │
-        "FC001_FAULT"           │               │
-     ────┤╱├──────────┤ EXT_FAULT                │
-                      │               │
-                      │               │
-  "DB02001_St_StdInstAnalogRead".FC001 ─┤ STATIC_DATA             │
-                      │
-  "DB22001_Dy_StdInstAnalogRead".FC001 ─┤ DYNAMIC_DATA
-                      │
-                      │
+                           ┌─────────────
+        ───────────────────┤ FC02001 
+                           │               │                       
+                               "FC001" ─┤ AI_RAW_SIGNAL          │
+                           │               │
+      "DB00801_St_ConstAiRawData".AI_RAW_2003 ─┤ AI_RAW_DATA           │
+                           │               │
+   "DB00851_St_ConstAiScaleData".AI_SCALE_FC001    ─┤ AI_SCALE_DATA          │
+                           │               │
+             "FC001_FAULT"           │               │
+          ────┤╱├──────────┤ EXT_FAULT                │
+                           │               │
+                           │               │
+        "DB02001_St_StdInstAnalogRead".FC001 ─┤ STATIC_DATA             │
+                           │
+       "DB22001_Dy_StdInstAnalogRead".FC001 ─┤ DYNAMIC_DATA
+                           │
+                           │
 
 
 If the EXT_FAULT parameter is activated (set to 1), the corresponding fault signal within the 
@@ -1817,30 +2002,38 @@ The following parameters are associated with the block:
 
  
  ――――――――――――――――――――――――――――――――――――――――――
- PARAM         FUNCTION                    TYPE      IN-OUT 
+ PARAM         FUNCTION                      TYPE      IN-OUT 
  ――――――――――――――――――――――――――――――――――――――――――
- SYS_SIGNALS      Common system signals              UT21000    In
+ SYS_SIGNALS      Common system signals                UT21000    In
           logic and timing signals for parametric access
 
- RAW_ANALOG      The unscaled analog input (input word           Word     In
+ AI_RAW_SIGNAL      The unscaled analog input (input word          Word     In
           address for the IO card to which the instrument 
           is connected)
+ AI_RAW_DATA      Analog input signal configuration data (type,     UT00801    In
+          range, descriptions card parameters and 
+          coefficients)
 
- EXT_FAULT     Optional external fault signal for the instrument      Bool      In
+ AI_SCALE_DATA     Analog input signal scaled value data (instrument   UT00851   In
+          tag, range, descriptions and engineering units)
+
+
+ EXT_FAULT     Optional external fault signal for the instrument     Bool      In
           (1 = fault, 0 = healthy). If not required, set 
           permanently to _False
 
- STATIC_DATA     Data structure that holds the configuration data     UT02001    In
+ STATIC_DATA     Data structure that holds the configuration data    UT02001    In
           for the instrument (raw range, scaled range 
           alarm and warning values, filtering times, 
           hysteresis values &amp;c.)
 
- DYNAMIC_DATA      Data structure that holds the live data for the       UT22001    InOut
+ DYNAMIC_DATA      Data structure that holds the live data for the      UT22001    InOut
           instrument (its reading in engineering units, 
           any alarms or warnings that may be active, 
           current timer values, selected operating 
           mode &amp;c.)
  ――――――――――――――――――――――――――――――――――――――――――
+
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -1860,6 +2053,14 @@ The block has the following associated data structure:
  UT01001_St_SysLicence           Licence information for this block  See FC01001
  UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
 
+ UT00801_St_ConstAiRawData        Analog input signal configuration data 
+                    (type, range, descriptions card parameters and 
+                    coefficients)
+
+ UT00851_St_ConstAiScaleData     Analog input signal scaled value data 
+                    (instrument tag, range, descriptions and 
+                    engineering units)
+
  UT02001_St_InstAnalogRead      Static data structure for an analog instrument.
                     Holds configuration information, instrument ranges 
                     and scaling, alarm/warning thresholds &amp;c.
@@ -1872,7 +2073,65 @@ The block has the following associated data structure:
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-6.1     UT02001_St_InstAnalogRead
+6.1     UT00801_St_ConstAiRawData
+
+
+The static data structure for an analog instrument.
+
+
+ UT00801_St_ConstAiRawData (full contents)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AI_CODE            A 16-bit hex value that uniquely identifies dataset   UInt
+              (it is the variable name of the dataset in DB00801)
+ RAW_MIN         Minimum value of the raw analog signal        Int
+              (at the card)
+
+ RAW_MAX           Maximum value of the raw analog signal        Int
+ RAW_DESC         Textual plain English description of the channel     String[60]
+              type and range
+ PARAM_TYPE         An 8-bit hex code that represents the input type    Byte
+              See [Ref. 101]
+
+ PARAM_RANGE        An 8-bit hex code that represents the input range    Byte
+              See [Ref. 101]
+
+ PARAM_COEF        An 8-bit hex code that represents a thermal        Byte
+              coefficient (thermal resistance channels only, 
+              otherwise set to 0). See [Ref. 101]
+
+ VALUE_COEF        The actual value of the temperature coefficient in    Real
+              use (thermal resistance channels only)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+6.2     UT00851_St_ConstAiScaleData
+
+
+The static data structure for an analog instrument.
+
+
+ UT00801_St_ConstAiRawData (full contents)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AI_TAG          Tag name of the instrument             UInt
+ SCALE_MIN        Minimum value of the scaled input signal range    Real
+              being used by the module
+ SCALE_MAX          Maximum value of the scaled input signal range      Real
+              being used by the module
+ SCALE_UNITS          Engineering units for the instrument         String[20]
+ SCALE_DESC           Textual plain English description of the instrument  String[60]
+
+ ―――――――――――――――――――――――――――――――――――――――――― 
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+6.3     UT02001_St_InstAnalogRead
 
 
 The static data structure for an analog instrument.
@@ -1898,22 +2157,15 @@ The static data structure for an analog instrument.
                      (1 = enabled, 0 = all mode)
 
  RANGE_RAW_MIN       RANGE — Minimum value of the raw analog      Int
-                    signal (at the card)
+                    signal (at the card). Only used if 
+                    AI_RAW_DATA is set to User Defined input 
+                    (AI_CODE = 0000)
  RANGE_RAW_MAX      RANGE — Maximum value of the raw analog        Int
-                    signal (at the card)
- RANGE_SCALE_MIN      RANGE — Minimum value of the scaled analog       Real
-                    signal [engineering units]
- RANGE_SCALE_MAX     RANGE — Maximum value of the scaled analog      Real
-                    signal [engineering units]
+                    signal (at the card). Only used if 
+                    AI_RAW_DATA is set to User Defined input 
+                    (AI_CODE = 0000)
  RANGE_OOR_PERCENT      RANGE — Out of range percentage, beyond which    Real
                     the instrument is out of range
-
- INFO_TYPE         INFORMATION — Specifies the instrument type    Int
-                       (enumerated value, see § 3.1) 
- INFO_TAG          INFORMATION — Instrument ID tag          String[20]
-
- INFO_UNITS          INFORMATION — Instrument engineering units    String[10]
-                       (unit of measure)
 
  SP_ALM_H_VAL       SETPOINT — High alarm threshold value         Real
                      [engineering units]
@@ -1953,7 +2205,7 @@ The static data structure for an analog instrument.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-6.2      UT22001_Dy_InstAnalogRead
+6.4      UT22001_Dy_InstAnalogRead
 
 
 The static data structure for an analog instrument.
@@ -2041,6 +2293,10 @@ The static data structure for an analog instrument.
                      timer [seconds]
  actual_Wrn_L_Timer       ACTUAL — Timer value — warning low operation      Real
                      timer [seconds]
+ actual_AiRawData       ACTUAL — Analog input Raw Data in use         UT00801
+                     A copy of the AI_RAW_DATA parameter
+ actual_AiScaleData     ACTUAL — Analog input Scale Data in use      UT00851
+                     A copy of the AI_SCALE_DATA parameter
 
  $pret_AlmHEn           INTERNAL — Edge retention (+ve) alarm high en      Bool
  $Pret_AlmLEn            INTERNAL — Edge retention (+ve) alarm low en     Bool
@@ -2120,7 +2376,7 @@ The following temporary data is used:
  wrkAlmLEn        Working Alm_L is enabled and not masked    Bool
  wrkWrnHEn           Working Wrn_H is enabled and not masked    Bool
  wrkWrnLEn           Working Wrn_L is enabled and not masked    Bool
- calPart1             Scale value part 1 (RAW_ANALOG − RAW_MIN)   Real
+ calPart1             Scale value part 1 (AI_RAW_SIGNAL − RAW_MIN)Real
  calPart2             Scale value part 2 (SCALE_MAX − SCALE_MIN)   Real
  calPart3             Scale value part 3 (RAW_MAX − RAW_MIN)     Real
  calAbsOOR           Calculated OOR absolute value          Real
@@ -2207,24 +2463,26 @@ There are no special calling requirements for this block.
 
 The following shows a typical deployment of FC02001:
 
-                        ┌─────────────
-     ───────────────────┤ FC02001 
-                        ├───────────────┤
-   "DB21001_DY_StdGlobalData".SysSignals ─┤ SYS_SIGNALS
-                        │               │
-                         "FC001" ─┤ RAW_ANALOG           │
-                        │               │
-          "FC001_FAULT"           │               │
-       ────┤╱├──────────┤ EXT_FAULT                │
-                        │               │
-                        │               │
-    "DB02001_St_StdInstAnalogRead".FC001 ─┤ STATIC_DATA             │
-                        │
-    "DB22001_Dy_StdInstAnalogRead".FC001 ─┤ DYNAMIC_DATA
-                        │
-                        │
-                                        │
-                               ─────────┘
+
+                           ┌─────────────
+        ───────────────────┤ FC02001 
+                           │               │                       
+                               "FC001" ─┤ AI_RAW_SIGNAL          │
+                           │               │
+      "DB00801_St_ConstAiRawData".AI_RAW_2003 ─┤ AI_RAW_DATA           │
+                           │               │
+   "DB00851_St_ConstAiScaleData".AI_SCALE_FC001    ─┤ AI_SCALE_DATA          │
+                           │               │
+             "FC001_FAULT"           │               │
+          ────┤╱├──────────┤ EXT_FAULT                │
+                           │               │
+                           │               │
+        "DB02001_St_StdInstAnalogRead".FC001 ─┤ STATIC_DATA             │
+                           │
+       "DB22001_Dy_StdInstAnalogRead".FC001 ─┤ DYNAMIC_DATA
+                           │
+                           │
+
 
               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
@@ -2239,22 +2497,22 @@ version of the software module. See the Test Plan [Ref. 003] for full details, a
         https://psop.uk/pal-tp-p
 
 
-        FC02001-T001         FC02001-T002
+        FC02001-T001         FC02001-T002         FC02001-T003
 
-    Test version: 000.801     Test version: 001.801
- Released version: 001.000     Released version: 002.000
-Released commit: D0008    Released commit: D0011
+    Test version: 000.801     Test version: 001.801     Test version: 002.801
+ Released version: 001.000     Released version: 002.000     Released version: 003.000
+Released commit: D0008    Released commit: D0011    Released commit: D0018
 
-       SCR      SMT         SCR      SMT  
-＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿
-      └┘   ▙▟         └┘   ▙▟   
-Initial test           IEC compliance
+       SCR      SMT         SCR      SMT                 SMTp  
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿ ▛ ┐＿＿
+      └┘   ▙▟         └┘   ▙▟             └ ▟   
+Initial test           IEC compliance       AI_RAW_DATA &amp; AI_SCALE_DATA
 
-Initial test to release the      Comments updated &amp; 
-module following the      UDT  variable names
-development stage.       standardised
-Full SMT              Full SMT
-
+Initial test to release the      Comments updated &amp;    DB00801 and DB00851 added 
+module following the      UDT  variable names       and used throughout, minor 
+development stage.       standardised        name changes, comments 
+Full SMT              Full SMT            updated. Only a partial retest 
+                            required
 
 Where:
 ――――――――――――――――――――――――――――――――――――――――――――
@@ -2269,6 +2527,10 @@ Where:
                It tests all the interfaces to the module, any data recorded or 
                stored by the module, all error and exception handling functions 
                and tests all timed and interrupt driven operations.
+
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
 
  SCV Software Compatibility     A mechanism for verifying that no executable code software 
 ╓╖    Verification          changes have been made to a module following changes to
@@ -2329,7 +2591,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'002.000'</ConstantValue>
+        <ConstantValue>'002.801'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2341,7 +2603,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.16'</ConstantValue>
+        <ConstantValue>'2024.05.11'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2451,7 +2713,12 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
- 2022.04.16    002.000   D0011      D0010 D0011  None    M. Gledhill
+ 2024.05.11    002.801   D0017A-000.104   D0017 N/A     D017A   M. Gledhill
+                       RAW_ANALOG changed to AI_RAW_SIGNAL
+                       AI_RAW_DATA and AI_SCALE_DATA added and
+                       copied to DYNAMIC_DATA (see db00801 SMDS)
+
+ 2022.04.16    002.000   D0011      D0010 D0011  None  M. Gledhill
                        FC02001 — RELEASED FOR USE
                          Merge back to master branch
 
@@ -2507,26 +2774,246 @@ The MIT licence is reproduced in full in the last network of this software modul
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_RAW_MAX" />
+        <Component Name="AI_RAW_DATA" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="AI_RAW_DATA" />
+        <Component Name="AI_CODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>UInt</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
       <Symbol>
         <Component Name="STATIC_DATA" />
         <Component Name="RANGE_RAW_MIN" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="23">
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
       <Symbol>
         <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MAX" />
+        <Component Name="RANGE_RAW_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MAX" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="29" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Eq" UId="30">
+      <TemplateValue Name="SrcType" Type="Type">UInt</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="31" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="32" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="33">
+      <Powerrail />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="pre" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="21" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="29" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="in1" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="24" />
+      <NameCon UId="30" Name="in2" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="30" Name="out" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="25" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="40">
+      <NameCon UId="31" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="27" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="42">
+      <NameCon UId="32" Name="out1" />
+      <IdentCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Identifies the source of the RAW_MAX and RAW_MIN ranges for analog input signal
+
+The range of the analog instrument is determined by either the RAW_MAX and RAW_MIN values 
+passed to the module through parameter AI_RAW_DATA (this is the normal way of allocating the 
+range) or via the STATIC_DATA UDT variables RANGE_RAW_MIN and RANGE_RAW_MAX.
+
+
+The STATIC_DATA UDT variables RANGE_RAW_MIN and RANGE_RAW_MAX are only used if the analog
+input configuration passed via the AI_RAW_DATA parameter is set to "user defined type" 
+(AI_RAW_0000). Under these circumstances, the AI_CODE variable passed via the parameter 
+AI_RAW_DATA will be set to zero and the STATIC_DATA UDT variables RANGE_RAW_MIN and 
+RANGE_RAW_MAX are to be used in place of the range data given via the AI_RAW_DATA parameter.
+
+Irrespective of the source, the RAW_MIN and RAW_MAX data in use will be copied to the 
+DYNAMIC_DATA variable actual_RawData.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Determine RAW_DATA source</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AI_SCALE_DATA" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="23" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <Powerrail />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="25">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="in" />
+    </Wire>
+    <Wire UId="26">
+      <NameCon UId="23" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The scaled data information (containing the SCALE_MAX and SCALE_MIN ranges applicable to
+the instrument) is copied to the DYNAMIC_DATA variable actual_ScaleData.
+
+This  actual_ScaleData information is then used throughout all further calculations.
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Copy the SCALE_DATA to the actual data area</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2589,13 +3076,12 @@ The MIT licence is reproduced in full in the last network of this software modul
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="18" CompositionName="Comment">
+          <MultilingualText ID="22" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="19" CompositionName="Items">
+              <MultilingualTextItem ID="23" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-
 Determines if a configuration error has occurred, this is true if either the RAW range or SCALED 
 range has not been specified correctly, either:
 
@@ -2608,9 +3094,9 @@ If either, or both, conditions are true, the status_ConfigError signal is activa
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1A" CompositionName="Title">
+          <MultilingualText ID="24" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="1B" CompositionName="Items">
+              <MultilingualTextItem ID="25" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Configuration Error Check</Text>
@@ -2620,7 +3106,7 @@ If either, or both, conditions are true, the status_ConfigError signal is activa
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2684,9 +3170,9 @@ If either, or both, conditions are true, the status_ConfigError signal is activa
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="1D" CompositionName="Comment">
+          <MultilingualText ID="27" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="1E" CompositionName="Items">
+              <MultilingualTextItem ID="28" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -2698,9 +3184,9 @@ If simulation mode is disabled (CONFIG_SIM_DIS = 1), or if the faceplate is disa
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1F" CompositionName="Title">
+          <MultilingualText ID="29" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="20" CompositionName="Items">
+              <MultilingualTextItem ID="2A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal Conditioning — Simulation mode disabled</Text>
@@ -2710,7 +3196,7 @@ If simulation mode is disabled (CONFIG_SIM_DIS = 1), or if the faceplate is disa
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -2788,9 +3274,9 @@ If simulation mode is disabled (CONFIG_SIM_DIS = 1), or if the faceplate is disa
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="22" CompositionName="Comment">
+          <MultilingualText ID="2C" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="23" CompositionName="Items">
+              <MultilingualTextItem ID="2D" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -2802,9 +3288,9 @@ If remote/local mode is not enabled (CONFIG_RL_EN = 0), or if the faceplate is d
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="24" CompositionName="Title">
+          <MultilingualText ID="2E" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="25" CompositionName="Items">
+              <MultilingualTextItem ID="2F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal Conditioning — Remote/local modes disabled</Text>
@@ -2814,7 +3300,7 @@ If remote/local mode is not enabled (CONFIG_RL_EN = 0), or if the faceplate is d
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3036,9 +3522,9 @@ If remote/local mode is not enabled (CONFIG_RL_EN = 0), or if the faceplate is d
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="27" CompositionName="Comment">
+          <MultilingualText ID="31" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="28" CompositionName="Items">
+              <MultilingualTextItem ID="32" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -3054,9 +3540,9 @@ If remote/local mode is enabled (CONFIG_RL_EN = 1), and the  faceplate is not di
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="29" CompositionName="Title">
+          <MultilingualText ID="33" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="2A" CompositionName="Items">
+              <MultilingualTextItem ID="34" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal Conditioning — Remote/Local selection if enabled</Text>
@@ -3066,7 +3552,7 @@ If remote/local mode is enabled (CONFIG_RL_EN = 1), and the  faceplate is not di
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3211,9 +3697,9 @@ If remote/local mode is enabled (CONFIG_RL_EN = 1), and the  faceplate is not di
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="2C" CompositionName="Comment">
+          <MultilingualText ID="36" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="2D" CompositionName="Items">
+              <MultilingualTextItem ID="37" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -3224,9 +3710,9 @@ mask bit (mode_Xxx_Y_MaskOn).
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="2E" CompositionName="Title">
+          <MultilingualText ID="38" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="2F" CompositionName="Items">
+              <MultilingualTextItem ID="39" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal conditioning — Check for permanently disabled alarm/warnings</Text>
@@ -3236,7 +3722,7 @@ mask bit (mode_Xxx_Y_MaskOn).
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3437,9 +3923,9 @@ mask bit (mode_Xxx_Y_MaskOn).
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="31" CompositionName="Comment">
+          <MultilingualText ID="3B" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="32" CompositionName="Items">
+              <MultilingualTextItem ID="3C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -3451,9 +3937,9 @@ alarm/warning is to be evaluated.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="33" CompositionName="Title">
+          <MultilingualText ID="3D" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="34" CompositionName="Items">
+              <MultilingualTextItem ID="3E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal conditioning — Identify alarm/warnings that are to be evaluated </Text>
@@ -3463,7 +3949,7 @@ alarm/warning is to be evaluated.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="3F" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3700,9 +4186,9 @@ alarm/warning is to be evaluated.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="36" CompositionName="Comment">
+          <MultilingualText ID="40" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="37" CompositionName="Items">
+              <MultilingualTextItem ID="41" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -3716,9 +4202,9 @@ zero.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="38" CompositionName="Title">
+          <MultilingualText ID="42" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="39" CompositionName="Items">
+              <MultilingualTextItem ID="43" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal conditioning — Reset the data for alarm/warnings that are not enabled</Text>
@@ -3728,7 +4214,7 @@ zero.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="44" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -3949,9 +4435,9 @@ zero.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="3B" CompositionName="Comment">
+          <MultilingualText ID="45" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="3C" CompositionName="Items">
+              <MultilingualTextItem ID="46" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -3971,9 +4457,9 @@ Note:    Technically, the ENABLE bit should not be modified at run-time, it 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="3D" CompositionName="Title">
+          <MultilingualText ID="47" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="3E" CompositionName="Items">
+              <MultilingualTextItem ID="48" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal conditioning — Detect recently enabled alarm/warnings</Text>
@@ -3983,7 +4469,7 @@ Note:    Technically, the ENABLE bit should not be modified at run-time, it 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="3F" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="49" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -4133,9 +4619,9 @@ Note:    Technically, the ENABLE bit should not be modified at run-time, it 
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="40" CompositionName="Comment">
+          <MultilingualText ID="4A" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="41" CompositionName="Items">
+              <MultilingualTextItem ID="4B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -4148,9 +4634,9 @@ calculations
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="42" CompositionName="Title">
+          <MultilingualText ID="4C" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="43" CompositionName="Items">
+              <MultilingualTextItem ID="4D" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Signal conditioning — Ensure Out of Range percentage is 10% or less</Text>
@@ -4160,19 +4646,20 @@ calculations
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="44" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="4E" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="RAW_ANALOG" />
+        <Component Name="AI_RAW_SIGNAL" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_RAW_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -4206,30 +4693,29 @@ calculations
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="45" CompositionName="Comment">
+          <MultilingualText ID="4F" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="46" CompositionName="Items">
+              <MultilingualTextItem ID="50" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 The following formula is used to calculate the scaled (actual_Value) signal:
 ┌─────────────────────────────────────────┐
-│                              (RAW_ANALOG ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)            │
+│                            (AI_RAW_SIGNAL ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)          │
 │actual_Value =  ――――――――――――――――――――――――――  ┼ SCALE_MIN    │
 │                              (RAW_MAX ─ RAW_MIN)                    │
 └─────────────────────────────────────────┘
-Note:    RAW_MIN, RAW_MAX,  SCALE_MIN and SCALE_MAX are all preceded with RANGE_
-     in the above equation 
 
-Scale value calculation part 1 is (RAW_ANALOG − RAW_MIN)
+
+Scale value calculation part 1 is (AI_RAW_SIGNAL − RAW_MIN)
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="47" CompositionName="Title">
+          <MultilingualText ID="51" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="48" CompositionName="Items">
+              <MultilingualTextItem ID="52" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Instrument read and scale - Part 1</Text>
@@ -4239,20 +4725,22 @@ Scale value calculation part 1 is (RAW_ANALOG − RAW_MIN)
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="49" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="53" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MAX" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -4286,9 +4774,9 @@ Scale value calculation part 1 is (RAW_ANALOG − RAW_MIN)
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="4A" CompositionName="Comment">
+          <MultilingualText ID="54" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="4B" CompositionName="Items">
+              <MultilingualTextItem ID="55" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -4298,9 +4786,9 @@ Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="4C" CompositionName="Title">
+          <MultilingualText ID="56" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="4D" CompositionName="Items">
+              <MultilingualTextItem ID="57" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Instrument read and scale - Part 2</Text>
@@ -4310,20 +4798,22 @@ Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="4E" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="58" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_RAW_MAX" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_RAW_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiRawData" />
+        <Component Name="RAW_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -4398,9 +4888,9 @@ Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="4F" CompositionName="Comment">
+          <MultilingualText ID="59" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="50" CompositionName="Items">
+              <MultilingualTextItem ID="5A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -4410,15 +4900,15 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
      (resulting from incorrect range data and indicated by status_ConfigError = TRUE), the
      denominator of the calculation (CalPart3) is set to 3.402823 × 1038 (i.e. a very large 
      number), the result of this is that the  actual_Value will equal RANGE_SCALE_MIN for 
-     all permitted values of RAW_ANALOG.
+     all permitted values of AI_RAW_SIGNAL.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="51" CompositionName="Title">
+          <MultilingualText ID="5B" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="52" CompositionName="Items">
+              <MultilingualTextItem ID="5C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Instrument read and scale - Part 3</Text>
@@ -4428,7 +4918,7 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="53" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="5D" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -4469,8 +4959,9 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
     </Access>
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
@@ -4584,9 +5075,9 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="54" CompositionName="Comment">
+          <MultilingualText ID="5E" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="55" CompositionName="Items">
+              <MultilingualTextItem ID="5F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -4600,9 +5091,9 @@ If a configuration error exists, the actual value is set to zero for all conditi
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="56" CompositionName="Title">
+          <MultilingualText ID="60" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="57" CompositionName="Items">
+              <MultilingualTextItem ID="61" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Instrument read and scale - Part 4</Text>
@@ -4612,20 +5103,22 @@ If a configuration error exists, the actual value is set to zero for all conditi
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="58" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="62" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MAX" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
@@ -4666,8 +5159,9 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MAX" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="31">
@@ -4683,8 +5177,9 @@ If a configuration error exists, the actual value is set to zero for all conditi
     </Access>
     <Access Scope="LocalVariable" UId="33">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="34">
@@ -4799,28 +5294,28 @@ If a configuration error exists, the actual value is set to zero for all conditi
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="59" CompositionName="Comment">
+          <MultilingualText ID="63" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="5A" CompositionName="Items">
+              <MultilingualTextItem ID="64" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 The out of range limits are calculated from the scaled span of the instrument 
-(RANGE_SCALE_MAX - RANGE_SCALE_MIN).
+(actual_AiScaleData.SCALE_MAX - actual_AiScaleData.SCALE_MIN).
 
 The absolute value of the out of range tolerance is stored in calAbsOOR and is calculated as
 follows:
 
-┌───────────────────────────────────────┐
-│                            (RANGE_SCALE_MAX ─ RANGE_SCALE_MIN) ╳ RANGE_OOR_PERCENT  │
-│ calAbsOOR =  ――――――――――――――――――――――――――――――    │
-│                        100                 │
-└───────────────────────────────────────┘
+┌────────────────────────────────┐
+│                            (SCALE_MAX ─ SCALE_MIN) ╳ RANGE_OOR_PERCENT  │
+│ calAbsOOR =  ―――――――――――――――――――――――    │
+│                       100           │
+└────────────────────────────────┘
 
 The instrument is over range if the actual_Value is greater than SCALE_MAX + calcAbsOOR,
 this absolute value is stored in the calculation variable cal_OR_Abs.
 
-The instrument is under range if the RAW_ANALOG is less than SCALE_MIN - calcAbsOOR,
+The instrument is under range if the AI_RAW_SIGNAL is less than SCALE_MIN - calcAbsOOR,
 this absolute value is stored in the calculation variable cal_UR_Abs.
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
@@ -4829,9 +5324,9 @@ this absolute value is stored in the calculation variable cal_UR_Abs.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="5B" CompositionName="Title">
+          <MultilingualText ID="65" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="5C" CompositionName="Items">
+              <MultilingualTextItem ID="66" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Calculate out of range value</Text>
@@ -4841,7 +5336,7 @@ this absolute value is stored in the calculation variable cal_UR_Abs.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="5D" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="67" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -5069,9 +5564,9 @@ this absolute value is stored in the calculation variable cal_UR_Abs.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="5E" CompositionName="Comment">
+          <MultilingualText ID="68" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="5F" CompositionName="Items">
+              <MultilingualTextItem ID="69" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -5092,9 +5587,9 @@ Note:    If the range information is incorrect (status_ConfigError = TRUE),
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="60" CompositionName="Title">
+          <MultilingualText ID="6A" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="61" CompositionName="Items">
+              <MultilingualTextItem ID="6B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Out of range signals</Text>
@@ -5104,7 +5599,7 @@ Note:    If the range information is incorrect (status_ConfigError = TRUE),
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="62" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="6C" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -5161,9 +5656,9 @@ Note:    If the range information is incorrect (status_ConfigError = TRUE),
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="63" CompositionName="Comment">
+          <MultilingualText ID="6D" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="64" CompositionName="Items">
+              <MultilingualTextItem ID="6E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -5176,9 +5671,9 @@ Note:    The signal is ignored if simulation mode is on
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="65" CompositionName="Title">
+          <MultilingualText ID="6F" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="66" CompositionName="Items">
+              <MultilingualTextItem ID="70" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — External fault detection</Text>
@@ -5188,7 +5683,7 @@ Note:    The signal is ignored if simulation mode is on
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="67" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="71" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -5206,14 +5701,16 @@ Note:    The signal is ignored if simulation mode is on
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MIN" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -5230,14 +5727,16 @@ Note:    The signal is ignored if simulation mode is on
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MAX" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
-        <Component Name="STATIC_DATA" />
-        <Component Name="RANGE_SCALE_MAX" />
+        <Component Name="DYNAMIC_DATA" />
+        <Component Name="actual_AiScaleData" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
@@ -5408,9 +5907,9 @@ Note:    The signal is ignored if simulation mode is on
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="68" CompositionName="Comment">
+          <MultilingualText ID="72" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="69" CompositionName="Items">
+              <MultilingualTextItem ID="73" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -5422,15 +5921,15 @@ Note:    Any fault signals will be suppressed (turned off) is simulation mod
      and a configuration error is not present
 
      The simulated value (mode_SimValue) is restricted to the range given in 
-     RANGE_SCALE_MIN and RANGE_SCALE_MAX
+     actual_AiScaleData.SCALE_MIN and actual_AiScaleData.SCALE_MAX
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="6A" CompositionName="Title">
+          <MultilingualText ID="74" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="6B" CompositionName="Items">
+              <MultilingualTextItem ID="75" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Operating mode — Simulation mode</Text>
@@ -5440,7 +5939,7 @@ Note:    Any fault signals will be suppressed (turned off) is simulation mod
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="6C" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="76" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -5573,9 +6072,9 @@ Note:    Any fault signals will be suppressed (turned off) is simulation mod
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="6D" CompositionName="Comment">
+          <MultilingualText ID="77" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="6E" CompositionName="Items">
+              <MultilingualTextItem ID="78" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -5602,9 +6101,9 @@ Note:    The hysteresis is only checked if alarm is being evaluated
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="6F" CompositionName="Title">
+          <MultilingualText ID="79" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="70" CompositionName="Items">
+              <MultilingualTextItem ID="7A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>High alarm — Ensure hysteresis is not negative (error check)</Text>
@@ -5614,7 +6113,7 @@ Note:    The hysteresis is only checked if alarm is being evaluated
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="71" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="7B" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -5825,9 +6324,9 @@ Note:    The hysteresis is only checked if alarm is being evaluated
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="72" CompositionName="Comment">
+          <MultilingualText ID="7C" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="73" CompositionName="Items">
+              <MultilingualTextItem ID="7D" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -5847,9 +6346,9 @@ the ON-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="74" CompositionName="Title">
+          <MultilingualText ID="7E" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="75" CompositionName="Items">
+              <MultilingualTextItem ID="7F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>High alarm — Check for activation level and ON-DELAY timer</Text>
@@ -5859,7 +6358,7 @@ the ON-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="76" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="80" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -6066,9 +6565,9 @@ the ON-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="77" CompositionName="Comment">
+          <MultilingualText ID="81" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="78" CompositionName="Items">
+              <MultilingualTextItem ID="82" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -6088,9 +6587,9 @@ the OFF-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="79" CompositionName="Title">
+          <MultilingualText ID="83" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="7A" CompositionName="Items">
+              <MultilingualTextItem ID="84" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>High alarm — Check for reset level and OFF-DELAY timer</Text>
@@ -6100,7 +6599,7 @@ the OFF-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="7B" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="85" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -6234,9 +6733,9 @@ the OFF-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="7C" CompositionName="Comment">
+          <MultilingualText ID="86" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="7D" CompositionName="Items">
+              <MultilingualTextItem ID="87" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -6263,9 +6762,9 @@ Note:    The hysteresis is only checked if alarm is being evaluated
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="7E" CompositionName="Title">
+          <MultilingualText ID="88" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="7F" CompositionName="Items">
+              <MultilingualTextItem ID="89" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Low alarm — Ensure hysteresis is not negative (error check)</Text>
@@ -6275,7 +6774,7 @@ Note:    The hysteresis is only checked if alarm is being evaluated
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="80" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="8A" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -6486,9 +6985,9 @@ Note:    The hysteresis is only checked if alarm is being evaluated
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="81" CompositionName="Comment">
+          <MultilingualText ID="8B" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="82" CompositionName="Items">
+              <MultilingualTextItem ID="8C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -6508,9 +7007,9 @@ the ON-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="83" CompositionName="Title">
+          <MultilingualText ID="8D" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="84" CompositionName="Items">
+              <MultilingualTextItem ID="8E" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Low alarm — Check for activation level and ON-DELAY timer</Text>
@@ -6520,7 +7019,7 @@ the ON-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="85" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="8F" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -6727,9 +7226,9 @@ the ON-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="86" CompositionName="Comment">
+          <MultilingualText ID="90" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="87" CompositionName="Items">
+              <MultilingualTextItem ID="91" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -6749,9 +7248,9 @@ the OFF-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="88" CompositionName="Title">
+          <MultilingualText ID="92" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="89" CompositionName="Items">
+              <MultilingualTextItem ID="93" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Low alarm — Check for reset level and OFF-DELAY timer</Text>
@@ -6761,7 +7260,7 @@ the OFF-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="8A" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="94" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -6894,9 +7393,9 @@ the OFF-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="8B" CompositionName="Comment">
+          <MultilingualText ID="95" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="8C" CompositionName="Items">
+              <MultilingualTextItem ID="96" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -6923,9 +7422,9 @@ Note:    The hysteresis is only checked if warning is being evaluated
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="8D" CompositionName="Title">
+          <MultilingualText ID="97" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="8E" CompositionName="Items">
+              <MultilingualTextItem ID="98" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>High warning — Ensure hysteresis is not negative (error check)</Text>
@@ -6935,7 +7434,7 @@ Note:    The hysteresis is only checked if warning is being evaluated
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="8F" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="99" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -7146,9 +7645,9 @@ Note:    The hysteresis is only checked if warning is being evaluated
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="90" CompositionName="Comment">
+          <MultilingualText ID="9A" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="91" CompositionName="Items">
+              <MultilingualTextItem ID="9B" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -7168,9 +7667,9 @@ the ON-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="92" CompositionName="Title">
+          <MultilingualText ID="9C" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="93" CompositionName="Items">
+              <MultilingualTextItem ID="9D" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>High warning — Check for activation level and ON-DELAY timer</Text>
@@ -7180,7 +7679,7 @@ the ON-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="94" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="9E" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -7387,9 +7886,9 @@ the ON-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="95" CompositionName="Comment">
+          <MultilingualText ID="9F" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="96" CompositionName="Items">
+              <MultilingualTextItem ID="A0" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -7409,9 +7908,9 @@ the OFF-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="97" CompositionName="Title">
+          <MultilingualText ID="A1" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="98" CompositionName="Items">
+              <MultilingualTextItem ID="A2" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>High warning — Check for reset level and OFF-DELAY timer</Text>
@@ -7421,7 +7920,7 @@ the OFF-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="99" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="A3" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -7555,9 +8054,9 @@ the OFF-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="9A" CompositionName="Comment">
+          <MultilingualText ID="A4" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="9B" CompositionName="Items">
+              <MultilingualTextItem ID="A5" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -7584,9 +8083,9 @@ Note:    The hysteresis is only checked if warning is being evaluated
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="9C" CompositionName="Title">
+          <MultilingualText ID="A6" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="9D" CompositionName="Items">
+              <MultilingualTextItem ID="A7" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Low warning — Ensure hysteresis is not negative (error check)</Text>
@@ -7596,7 +8095,7 @@ Note:    The hysteresis is only checked if warning is being evaluated
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="9E" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="A8" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -7807,9 +8306,9 @@ Note:    The hysteresis is only checked if warning is being evaluated
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="9F" CompositionName="Comment">
+          <MultilingualText ID="A9" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="A0" CompositionName="Items">
+              <MultilingualTextItem ID="AA" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -7829,9 +8328,9 @@ the ON-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="A1" CompositionName="Title">
+          <MultilingualText ID="AB" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="A2" CompositionName="Items">
+              <MultilingualTextItem ID="AC" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Low warning — Check for activation level and ON-DELAY timer</Text>
@@ -7841,7 +8340,7 @@ the ON-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="A3" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="AD" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -8048,9 +8547,9 @@ the ON-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="A4" CompositionName="Comment">
+          <MultilingualText ID="AE" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="A5" CompositionName="Items">
+              <MultilingualTextItem ID="AF" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -8070,9 +8569,9 @@ the OFF-DELAY to start again.
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="A6" CompositionName="Title">
+          <MultilingualText ID="B0" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="A7" CompositionName="Items">
+              <MultilingualTextItem ID="B1" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Low warning — Check for reset level and OFF-DELAY timer</Text>
@@ -8082,7 +8581,7 @@ the OFF-DELAY to start again.
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="A8" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="B2" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -8620,9 +9119,9 @@ the OFF-DELAY to start again.
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="A9" CompositionName="Comment">
+          <MultilingualText ID="B3" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="AA" CompositionName="Items">
+              <MultilingualTextItem ID="B4" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -8664,6 +9163,7 @@ The following is a full list of the status signals:
                  msg_Flt_OverRange
                  msg_Flt_OutOfRange
                  msg_Flt_External 
+
                Note: msg_Flt_OutOfRange is already a combination of
                           msg_Flt_UnderRange and msg_Flt_OverRange
 
@@ -8682,9 +9182,9 @@ The following is a full list of the status signals:
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="AB" CompositionName="Title">
+          <MultilingualText ID="B5" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="AC" CompositionName="Items">
+              <MultilingualTextItem ID="B6" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>Status signals</Text>
@@ -8694,7 +9194,7 @@ The following is a full list of the status signals:
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="AD" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="B7" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
@@ -8769,9 +9269,9 @@ The following is a full list of the status signals:
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="AE" CompositionName="Comment">
+          <MultilingualText ID="B8" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="AF" CompositionName="Items">
+              <MultilingualTextItem ID="B9" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -8812,9 +9312,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="B0" CompositionName="Title">
+          <MultilingualText ID="BA" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="B1" CompositionName="Items">
+              <MultilingualTextItem ID="BB" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>LICENCE AND CONTACT INFORMATION</Text>
@@ -8824,9 +9324,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="B2" CompositionName="Title">
+      <MultilingualText ID="BC" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="B3" CompositionName="Items">
+          <MultilingualTextItem ID="BD" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text>Standard Module [INSTRUMENTATION] — Analog Instrument Read, Scale and Monitor</Text>

@@ -155,7 +155,7 @@ The current revision status of the master branch and any development branches is
 | Branch             | Revision                                                      | Status
 | ------------------ | ------------------------------------------------------------- | -----------------------------
 | **master**         | <img src="https://img.shields.io/badge/Dev-D0017-000000.svg"> | FC19511 - Released for use
-| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--103-BF504D.svg"> | DB00800 - Released for use
+| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--104-BF504D.svg"> | FC02001 - Released for test
 |   &emsp;                 |                                                                |  
 
 
@@ -323,7 +323,7 @@ The full, historic workflow for the project is shown below:
 
 The workflow diagram shows the current state of the repository and identifies all development branches (both past and present) as well as the main ```master``` branch. The workflow diagram(s) lists all the commit points within the repository and the tag identifiers given to each.
 
-<img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/01-workflow/wf-001p.svg?bxno=d0017A-000-103">
+<img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/01-workflow/wf-001p.svg?bxno=d0017A-000-104">
 <p align="center"><sup>Workflow diagram</sup></p>
 
 
