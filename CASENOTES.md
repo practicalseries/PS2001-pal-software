@@ -14,6 +14,13 @@ Chester &mdash; May 2024
 <hr />
 <br />
 
+## 0002 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--06--02-00B050.svg">
+
+1. Add enumerated "STATUS" variable (reflecting opened, closing, starting &c.) to all device types to allow GraphicIO objects to interact better
+<hr />
+<br />
+
+
 ## 0001 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--05--11-00B050.svg">
 
 | Branch             | Associated Commits
