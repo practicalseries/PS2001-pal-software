@@ -14,6 +14,19 @@ Chester &mdash; May 2024
 <hr />
 <br />
 
+## 0004 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--07--02-00B050.svg">
+
+### PAL Website Development
+
+<br />
+
+- [ ] Update standard web engine for PAL website (review all CSS/HTML exisiting files and pages)
+- [ ] Put together landing pages for base website, add links to project documentation and install sitemap and analytic file for Google.
+
+<hr />
+<br />
+
+
 ## 0003 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--06--13-00B050.svg">
 
 | Branch             | Associated Commits
