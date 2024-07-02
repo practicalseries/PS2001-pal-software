@@ -19,16 +19,24 @@ Chester &mdash; May 2024
 | Branch             | Associated Commits
 | ------------------ | -----------------------------------------------------
 | **master** | <img  eight="20px" src="https://img.shields.io/badge/Dev-D0017-000000.svg">
-| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--104-BF504D.svg"> 
+| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--106-BF504D.svg"> 
 
 <br />
 
 ### Outstanding items
-- [ ] Update FC18001 (AI read subroutine) with DB00801 interface
+- [x] UT00851 change USER_DESC to USER_INFO <img height="20px" src="https://img.shields.io/badge/-D0017A--000--106-BF504D.svg">
+- [x] UT00852 change USER_DESC to USER_INFO <img height="20px" src="https://img.shields.io/badge/-D0017A--000--106-BF504D.svg">
+- [ ] SMDS for UT00851 change USER_DESC to USER_INFO
+- [ ] SMDS for UT00852 change USER_DESC to USER_INFO
+- [ ] SMDS for FC02001 change USER_DESC to USER_INFO
+- [ ] SMDS for FC18001 change USER_DESC to USER_INFO
+- [ ] Update FC18001 (AI read subroutine) with DB00801/851 interface
+- [ ] Update FC18001 (AI read subroutine)with comments from revised SMDS
+- [ ] Update FC02001 (Inst read and scale) with DB00801/851 interface
+- [ ] Update FC02001 (Inst read and scale) with comments from revised SMDS
 - [ ] Retest/reissue FC18001
 - [ ] Retest/reissue FC02001
-- [ ] UT00851 change USER_DESC to USER_INFO (also all affected SMDSs UT00851, UT00801, FC02001, FC18001 &c.)
-- [ ] UT00852 change USER_DESC to USER_INFO (also all affected SMDSs UT00852, UT00802 &c.)
+- [ ] Write FC18002 AQ Scale
 
 
 
