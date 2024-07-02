@@ -21,6 +21,8 @@ Chester &mdash; May 2024
 <br />
 
 - [ ] Update standard web engine for PAL website (review all CSS/HTML exisiting files and pages)
+- [ ] Update Google analytics
+- [ ] Add Google programmable search engine to site (all pages in nav bar)
 - [ ] Put together landing pages for base website, add links to project documentation and install sitemap and analytic file for Google.
 
 <hr />
