@@ -14,6 +14,25 @@ Chester &mdash; May 2024
 <hr />
 <br />
 
+## 0005 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--07--04-00B050.svg">
+
+| Branch             | Associated Commits
+| ------------------ | -----------------------------------------------------
+| **master** | <img  eight="20px" src="https://img.shields.io/badge/Dev-D0017-000000.svg">
+| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--106-BF504D.svg"> 
+
+<br />
+
+### Outstanding items
+- [ ] FC02001 &mdash; change out of range calculation to be based on scaled range rather than raw range
+- [ ] FC18001 &mdash; change out of range calculation to be based on scaled range rather than raw range
+
+>*Note:&emsp;Orignally, the out of range was calculated as a function of the RAW range (RAW_MAX-RAW_MIN), the problem with this is that the our of range limits would be different for bipolar/unipolar ranges. Better to calculate the out of range value from the scaled range, this will return the same results irrespective of the raw input type.*
+
+<hr />
+<br />
+
+
 ## 0004 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--07--02-00B050.svg">
 
 ### PAL Website Development
