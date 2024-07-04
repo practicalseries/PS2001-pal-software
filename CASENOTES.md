@@ -24,7 +24,7 @@ Chester &mdash; May 2024
 <br />
 
 ### Outstanding items
-- [ ] FC02001 &mdash; change out of range calculation to be based on scaled range rather than raw range
+- [x] FC02001 &mdash; change out of range calculation to be based on scaled range rather than raw range (SMDS updated too) <img height="20px" src="https://img.shields.io/badge/-D0017A--000--106-BF504D.svg">
 - [ ] FC18001 &mdash; change out of range calculation to be based on scaled range rather than raw range
 
 >*Note:&emsp;Orignally, the out of range was calculated as a function of the RAW range (RAW_MAX-RAW_MIN), the problem with this is that the our of range limits would be different for bipolar/unipolar ranges. Better to calculate the out of range value from the scaled range, this will return the same results irrespective of the raw input type.*
@@ -60,17 +60,17 @@ Chester &mdash; May 2024
 ### Outstanding items
 - [x] UT00851 change USER_DESC to USER_INFO <img height="20px" src="https://img.shields.io/badge/-D0017A--000--106-BF504D.svg">
 - [x] UT00852 change USER_DESC to USER_INFO <img height="20px" src="https://img.shields.io/badge/-D0017A--000--106-BF504D.svg">
-- [ ] SMDS for UT00851 change USER_DESC to USER_INFO
-- [ ] SMDS for UT00852 change USER_DESC to USER_INFO
-- [ ] SMDS for FC02001 change USER_DESC to USER_INFO
+- [x] SMDS for UT00851 change USER_DESC to USER_INFO
+- [x] SMDS for UT00852 change USER_DESC to USER_INFO
+- [x] SMDS for FC02001 change USER_DESC to USER_INFO
 - [ ] SMDS for FC18001 change USER_DESC to USER_INFO
 - [ ] Update FC18001 (AI read subroutine) with DB00801/851 interface
 - [ ] Update FC18001 (AI read subroutine)with comments from revised SMDS
-- [ ] Update FC02001 (Inst read and scale) with DB00801/851 interface
-- [ ] Update FC02001 (Inst read and scale) with comments from revised SMDS
+- [x] Update FC02001 (Inst read and scale) with DB00801/851 interface
+- [x] Update FC02001 (Inst read and scale) with comments from revised SMDS
 - [ ] Retest/reissue FC18001
-- [ ] Retest/reissue FC02001
-- [ ] Write FC18002 AQ Scale
+- [x] Retest/reissue FC02001
+- [ ] Write FC18002 AQ Scale SMDS
 
 
 
