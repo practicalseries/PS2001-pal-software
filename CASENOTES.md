@@ -26,6 +26,12 @@ Chester &mdash; May 2024
 ### Outstanding items
 - [x] FC02001 &mdash; change out of range calculation to be based on scaled range rather than raw range (SMDS updated too) <img height="20px" src="https://img.shields.io/badge/-D0017A--000--106-BF504D.svg">
 - [ ] FC18001 &mdash; change out of range calculation to be based on scaled range rather than raw range
+- [ ] Add OOR_percentage to UT00851
+- [ ] Add OOR_percentage to UT00852
+- [ ] Add OOR_percentage to SMDS DB00851
+- [ ] Add OOR_percentage to SMDS DB00851
+- [ ] Modify SMDS FC02001 for OOR
+- [ ] Modify SMDS FC18001 for OOR
 
 >*Note:&emsp;Orignally, the out of range was calculated as a function of the RAW range (RAW_MAX-RAW_MIN), the problem with this is that the our of range limits would be different for bipolar/unipolar ranges. Better to calculate the out of range value from the scaled range, this will return the same results irrespective of the raw input type.*
 
