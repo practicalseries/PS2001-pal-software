@@ -29,7 +29,7 @@ Chester &mdash; May 2024
 - [ ] Add OOR_percentage to UT00851
 - [ ] Add OOR_percentage to UT00852
 - [ ] Add OOR_percentage to SMDS DB00851
-- [ ] Add OOR_percentage to SMDS DB00851
+- [ ] Add OOR_percentage to SMDS DB00852
 - [ ] Modify SMDS FC02001 for OOR
 - [ ] Modify SMDS FC18001 for OOR
 
