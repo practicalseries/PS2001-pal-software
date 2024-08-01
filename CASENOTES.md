@@ -56,6 +56,7 @@ _It leads to some problems though:_
 - [ ] Modify SMDS FC18001 for OVER/UNDER range limits 
 
 >*Note:&emsp;Orignally, the out of range was calculated as a function of the RAW range (RAW_MAX-RAW_MIN), the problem with this is that the our of range limits would be different for bipolar/unipolar ranges. Better to calculate the out of range value from the scaled range, this will return the same results irrespective of the raw input type.*
+>* My other thought on this is that if the OOR is set too high, it may be beyond the range of the actual RAW input (i.e. outside the numerical range of the analog input itself), I'm not sure how to check this, it depends on the uni/bipolar range of the card itself.*
 
 <hr />
 <br />
