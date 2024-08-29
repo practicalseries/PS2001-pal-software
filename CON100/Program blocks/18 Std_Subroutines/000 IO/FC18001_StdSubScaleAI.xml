@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-08-19T08:04:41.1523718Z</Created>
+    <Created>2024-08-29T13:25:09.5766042Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,12 +37,17 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Subroutine</HeaderFamily>
       <HeaderName>StdSubScaleAI</HeaderName>
-      <HeaderVersion>2.0</HeaderVersion>
+      <HeaderVersion>2.8</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
-    <Member Name="SYS_SIGNALS" Datatype="&quot;UT21000_Dy_SysSignals&quot;" Accessibility="Public">
+    <Member Name="AI_RAW_SIGNAL" Datatype="Int" Accessibility="Public">
       <Comment>
-        <MultiLanguageText Lang="en-US">The system logic and timing signals for parametric access</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Analogue Input (IW)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="AI_RAW_DATA" Datatype="&quot;UT00801_St_ConstAiRawData&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Analog Input Signal — raw range and configuration data</MultiLanguageText>
       </Comment>
       <Sections>
         <Section Name="None">
@@ -58,58 +63,65 @@
           </Member>
           <Member Name="___________0010_0" Datatype="Bool" />
           <Member Name="___________0010_1" Datatype="Bool" />
-          <Member Name="_False" Datatype="Bool" />
-          <Member Name="_True" Datatype="Bool" />
-          <Member Name="_50ms" Datatype="Bool" />
-          <Member Name="_100ms" Datatype="Bool" />
-          <Member Name="_200ms" Datatype="Bool" />
-          <Member Name="_500ms" Datatype="Bool" />
-          <Member Name="_1s" Datatype="Bool" />
-          <Member Name="_2s" Datatype="Bool" />
-          <Member Name="_CycleTick" Datatype="Bool" />
-          <Member Name="_CycleTock" Datatype="Bool" />
-          <Member Name="_CycleFirst" Datatype="Bool" />
-          <Member Name="_100msSqW" Datatype="Bool" />
-          <Member Name="_200msSqW" Datatype="Bool" />
-          <Member Name="_500msSqW" Datatype="Bool" />
-          <Member Name="_1sSqW" Datatype="Bool" />
-          <Member Name="_2sSqW" Datatype="Bool" />
+          <Member Name="AI_CODE" Datatype="UInt" />
+          <Member Name="___________0020_0" Datatype="Bool" />
+          <Member Name="___________0020_1" Datatype="Bool" />
+          <Member Name="RAW_MIN" Datatype="Int" />
+          <Member Name="RAW_MAX" Datatype="Int" />
+          <Member Name="RAW_DESC" Datatype="String[60]" />
+          <Member Name="___________0030_1" Datatype="Bool" />
+          <Member Name="___________0030_2" Datatype="Bool" />
+          <Member Name="PARAM_TYPE" Datatype="Byte" />
+          <Member Name="PARAM_RANGE" Datatype="Byte" />
+          <Member Name="PARAM_COEF" Datatype="Byte" />
+          <Member Name="___________0040_1" Datatype="Bool" />
+          <Member Name="___________0040_2" Datatype="Bool" />
+          <Member Name="VALUE_COEF" Datatype="Real" />
         </Section>
       </Sections>
     </Member>
-    <Member Name="RAW_ANALOG" Datatype="Int" Accessibility="Public">
+    <Member Name="AI_SCALE_DATA" Datatype="&quot;UT00851_Sy_ConstAiScaleData&quot;" Accessibility="Public">
       <Comment>
-        <MultiLanguageText Lang="en-US">Analogue Input (IW)</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Analog Input Signal — scaled range and configuration data</MultiLanguageText>
       </Comment>
-    </Member>
-    <Member Name="RAW_MIN" Datatype="Int" Accessibility="Public">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Minimum Valve of the Raw Analogue Input</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="RAW_MAX" Datatype="Int" Accessibility="Public">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Maximum Valve of the Raw Analogue Input</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="SCALE_MIN" Datatype="Real" Accessibility="Public">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Minimum value of the scaled output (engineering units)</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="SCALE_MAX" Datatype="Real" Accessibility="Public">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Maximum value of the scaled output(engineering units)</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="OOR_PERCENT" Datatype="Real" Accessibility="Public">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Out of range tolerance as a percentage of raw range (RAW_MAX - RAW_MIN)</MultiLanguageText>
-      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="AI_TAG" Datatype="String[20]" />
+          <Member Name="___________0020_0" Datatype="Bool" />
+          <Member Name="___________0020_1" Datatype="Bool" />
+          <Member Name="SCALE_MIN" Datatype="Real" />
+          <Member Name="SCALE_MAX" Datatype="Real" />
+          <Member Name="SCALE_UNITS" Datatype="String[20]" />
+          <Member Name="SCALE_DESC" Datatype="String[60]" />
+          <Member Name="___________0030_0" Datatype="Bool" />
+          <Member Name="___________0030_1" Datatype="Bool" />
+          <Member Name="LIMIT_UNDER" Datatype="Real" />
+          <Member Name="LIMIT_OVER" Datatype="Real" />
+          <Member Name="___________0040_0" Datatype="Bool" />
+          <Member Name="___________0040_1" Datatype="Bool" />
+          <Member Name="USER_INFO_1" Datatype="String[60]" />
+          <Member Name="USER_INFO_2" Datatype="String[60]" />
+          <Member Name="USER_INFO_3" Datatype="String[60]" />
+          <Member Name="USER_INFO_4" Datatype="String[60]" />
+          <Member Name="USER_INFO_5" Datatype="String[60]" />
+        </Section>
+      </Sections>
     </Member>
   </Section>
   <Section Name="Output">
-    <Member Name="SCALE_VALUE" Datatype="Real" Accessibility="Public">
+    <Member Name="AI_SCALE_SIGNAL" Datatype="Real" Accessibility="Public">
       <Comment>
         <MultiLanguageText Lang="en-US">Scaled Output (as a Floating Point value)</MultiLanguageText>
       </Comment>
@@ -171,24 +183,14 @@
         <MultiLanguageText Lang="en-US">Scale value calculation part 1 (RAW_MAX − RAW_MIN)</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calAbsOOR" Datatype="Real">
+    <Member Name="wrkLimitUnder" Datatype="Real">
       <Comment>
-        <MultiLanguageText Lang="en-US">Calculated OOR absolute value in terms of the RAW_VALUE</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Actual LIMIT_UNDER in use</MultiLanguageText>
       </Comment>
     </Member>
-    <Member Name="calOverRange" Datatype="Real">
+    <Member Name="wrkLimitOver" Datatype="Real">
       <Comment>
-        <MultiLanguageText Lang="en-US">Calculated over range limit (in raw units)</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="calUnderRange" Datatype="Real">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Calculated under range limit (in raw units)</MultiLanguageText>
-      </Comment>
-    </Member>
-    <Member Name="wrkOORPercent" Datatype="Real">
-      <Comment>
-        <MultiLanguageText Lang="en-US">Working out of range percentage</MultiLanguageText>
+        <MultiLanguageText Lang="en-US">Actual LIMIT_OVER in use</MultiLanguageText>
       </Comment>
     </Member>
     <Member Name="wrkConfigError" Datatype="Bool">
@@ -260,7 +262,7 @@ TITLE:    SUBROUTINE — ANALOG INPUT SCALE
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵈʰᴬ ┘
 
 FC18001_StdSubScaleAI is a subroutine block that is used to scale the integer signal from an 
 analog instrument, in the form of an input word (IW).
@@ -309,8 +311,8 @@ This is a subroutine block.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       23.9 μs¹
- LOAD MEMORY       28.3 kB
- WORK MEMORY           0.6 kB  
+ LOAD MEMORY       31.1 kB
+ WORK MEMORY           0.5 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
                             https://psop.uk/pal-ds-cpu1515
@@ -318,18 +320,26 @@ This is a subroutine block.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-1.1      Additional document references
+Additional document references
 
 
-Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
-block. There are no additional document references.
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
+following documents are associated with this module:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.       TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 101  PS2001-5-2312-db00801   DB00801 (analog input raw data) SMDS
+ 102  PS2001-5-2312-db00851   DB00851 (analog input scale data) SMDS
+ ――――――――――――――――――――――――――――――――――――――――――
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-2.     FUNCTIONAL DESCRIPTION
+1.     FUNCTIONAL DESCRIPTION
 
 
 FC18001 is the Analog Input Scale block, it is a comprehensive block designed to read and scale 
@@ -338,14 +348,12 @@ an analog instrument; it provides the following broad functions:
    •   Read an analog input, convert it to a real number that represents the calibrated 
      range of the instrument in engineering units
 
-   •   Generate fault signals if the instrument is out of range or is indi-cating a 
-     specific fault conditiongnals necessary for symbolic representation at 
-     a supervisory system (SCADA or HMI)
+   •   Generate fault signals if the instrument is out of range
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-2.1     Read and scale and instrument signal
+1.1     Read and scale and instrument signal
 
 
 The principal function of the block is to read a raw integer signal from an analog instrument 
@@ -374,7 +382,32 @@ typical values have been shown):
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-2.2     Supervisory system interface
+1.2     Fault signals
+
+
+The block is able to generate three fault signals:
+
+   •   Instrument is over-range
+
+   •   Instrument is under-range
+
+   •   Instrument is out-of-range (common signal)
+
+Over-range and under-range faults are generated if the instrument is reading outside its normal 
+calibrated range. Over-range if the instrument is reading higher than its maximum configured 
+value and under-range if lower than its minimum configured value.
+
+The levels at which the instrument is considered to be either over-range or under-range 
+(out-of-range), are set as a configurable values passed to the module.
+
+The out-of-range fault signal is a common signal that activates if either the over-range or 
+under-range signal is active. It indicates the instrument is either over-range or under-range, but 
+doesn’t specify which.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.2     Supervisory system interface
 
 
 FC18001 is a Subroutine block used to scale an analog input. It does not have a supervisory
@@ -383,7 +416,7 @@ system interface.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-3.     DETAILED BLOCK DESCRIPTION
+2.     DETAILED BLOCK DESCRIPTION
 
 
 This block, FC18001_StdSubAnalogScaleAI is a subroutine block that can be called from other 
@@ -396,7 +429,7 @@ It has the following formal parameters:
 
  ――――――――――――――――――――――――――――――――――――――――――
  PARAM          FUNCTION                      TYPE      IN-OUT 
- ――――――――――――――――――――――――――――――――――――――――――█ █ █
+ ――――――――――――――――――――――――――――――――――――――――――
  AI_RAW_SIGNAL       The unscaled analog input (input word          RWord     In
            address for the IO card to which the instrument 
            is connected)
@@ -408,20 +441,8 @@ It has the following formal parameters:
  AI_SCALE_DATA      Analog input signal scaled value data (instrument   UT00851   In
            tag, range, descriptions and engineering units)
 
- OOR_PERCENT      Out of range tolerance as a percentage of      Real      In
-           the raw range (RAW_MAX − RAW_MIN), the value 
-           is limited to the range 0.001% to 10.0%
-
- AI_SCALE_VALUE    The scaled output value of the instrument in        Real      Out
+ AI_SCALE_SIGNAL     The scaled output value of the instrument in        Real      Out
            engineering units
-
- ACTUAL_RAW_DATA   A copy of the analog input AI_RAW_DATA       UT00801    Out
-           information (makes the data available to the 
-           calling block)
-
- ACTUAL_SCALE_DATA  A copy of the analog input AI_SCALE_DATA      UT00851    Out
-           information (makes the data available to the 
-           calling block)
 
  OVER_RANGE       Indicates the instrument is above its          Bool      Out
            calibrated range by more than the tolerance
@@ -437,7 +458,7 @@ It has the following formal parameters:
            under range
  ――――――――――――――――――――――――――――――――――――――――――
  Note:   If a configuration error is present (see § 3.1.3) the three out of range parameters 
-     will be activated (set true) and the AI_SCALE_VALUE signal will be set to zero 
+     will be activated (set true) and the AI_SCALE_SIGNAL signal will be set to zero 
      irrespective of the AI_RAW_SIGNAL value.
 
 
@@ -446,8 +467,8 @@ AI_RAW_SIGNAL is the input signal provided directly from the instrument itself (
 The AI_RAW_DATA and AI_SCALE_DATA parameters are UDTs that hold information about the 
 nature of the AI_RAW_SIGNAL, in the case of AI_RAW_DATA its input type: voltage, current &amp;c., 
 its range in integer values and various parametric information and a textual description of the 
-signal. In the case of AI_SCALE_DATA the scaled range of the signal, its engineering units, a 
-textual description of the instrument and the instrument tag itself.
+signal. In the case of AI_SCALE_DATA it specifies the scaled range of the signal, its engineering 
+units, out-of-range values, a textual description of the instrument and the instrument tag itself.
 
 
  ――――――――――――――――――――――――――――――――――――――――――
@@ -457,14 +478,14 @@ textual description of the instrument and the instrument tag itself.
  AI_SCALE_DATA     UT00851_St_ConstAiScaleData       DB00851_St_ConstAiScaleData
  ――――――――――――――――――――――――――――――――――――――――――
 
-Section 3.1.1 contains a full description of the AI_RAW_DATA and AI_SCALE_DATA parameters.
+Section 2.1.1 contains a full description of the AI_RAW_DATA and AI_SCALE_DATA parameters.
 
-AI_SCALE_VALUE is the true scaled value of the analog input (AI_RAW_SIGNAL) in engineering 
+AI_SCALE_SIGNAL is the true scaled value of the analog input (AI_RAW_SIGNAL) in engineering 
 units.
 
-OVER_RANGE and UNDER_RANGE indicate if the signal is outside the permitted range. This is 
-determined by the parameter OOR_PERCENT.This is the Out-of-range tolerance as a percentage 
-of the scale range, the value is limited to the range 0.0%-10.0%
+OVER_RANGE and UNDER_RANGE indicate if the signal is outside the permitted range. The limits at 
+which under-range and over-range faults activate are provided as part of the information supplied 
+via the AI_SCALE_DATA parameter
 
 OVER_RANGE indicates the input is higher than the permitted tolerance and UNDER_RANGE 
 indicates the input is lower than the permitted tolerance.
@@ -472,10 +493,14 @@ indicates the input is lower than the permitted tolerance.
 OUT_OF_RANGE is simply a common signal indicating the either OVER_RANGE or UNDER_RANGE 
 is active.
 
+This arrangement conforms with the PAL philosophy where IO card connections, safety signals 
+and interlocks have unique formal parameters; all remaining signals are passed as variables 
+within UDTs, see the Software Design Specification [Ref 008].
+
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-3.1     Converting the raw instrument signal to a scaled value
+2.1     Converting the raw instrument signal to a scaled value
 
 
 The AI_RAW_SIGNAL is the raw instrument signal received from an analog input card; this has 
@@ -505,12 +530,12 @@ The following table shows example ranges for the AI_RAW_SIGNAL signal:
 
 The RAW_MIN and the RAW_MAX values in the above tables are the numerical values for the 
 instrument range; the appropriate values are supplied as the RAW_MIN and RAW_MAX variables 
-provided in the UDT of parameter AI_RAW_DATA. (see § 3.1.1 for a full description).
+provided in the UDT of parameter AI_RAW_DATA. (see § 2.1.1 for a full description).
 	
 
 The corresponding values for the scaled instrument signal are similarly provided by the 
 SCALE_MIN and SCALE_MAX values provided in the UDT of parameter AI_SCALE_DATA. 
-(see § 3.1.1 for a full description).
+(see § 2.1.1 for a full description).
 
 Thus, if a flow meter with a calibrated range of –100 l/s to +100 l/s provided a 4-20 mA signal 
 to the PLC, 
@@ -529,18 +554,21 @@ to the PLC,
                     signal [engineering units]
  ――――――――――――――――――――――――――――――――――――――――――
 
-The scaled value is passed from the block as parameter: AI_SCALE_VALUE.
+The scaled value is passed from the block as parameter: AI_SCALE_SIGNAL.
 
-The scaled value (actual_Value) is calculated as follows:
+The scaled value (AI_SCALE_SIGNAL) is calculated as follows:
 
 
-┌─────────────────────────────────────────────┐
-│                               (AI_RAW_SIGNAL ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)           │
-│AI_SCALE_VALUE =  ――――――――――――――――――――――――――――  ┼ SCALE_MIN  │
-│                               (RAW_MAX ─ RAW_MIN)                       │
-└───────────────────────────────────────  (3.1)  ───┘
+┌──────────────────────────────────────────────┐
+│                                (AI_RAW_SIGNAL ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)           │
+│AI_SCALE_SIGNAL =  ――――――――――――――――――――――――――――  ┼ SCALE_MIN  │
+│                               (RAW_MAX ─ RAW_MIN)                        │
+└────────────────────────────────────────  (2.1)  ───┘
 
-The three signals: AI_SCALE_VALUE, SCALE_MIN and SCALE_MAX are all floating-point numbers 
+In the above calculation, RAW_MIN and RAW_MAX are preceded by AI_RAW_DATA. and SCALE_MIN and 
+SCALE_MAX are preceded by AI_SCALE_DATA.
+
+The three signals: AI_SCALE_SIGNAL, SCALE_MIN and SCALE_MAX are all floating-point numbers 
 (real data type), the signals AI_RAW_SIGNAL, RAW_MIN and RAW_MAX are all integers (int data type).
 
 Note:    It is assumed that the instrument has a linear response.
@@ -556,7 +584,7 @@ Note:    It is assumed that the instrument has a linear response.
             │              ╱    |
             │             ╱     |
             │            ╱      |
-    AI_SCALE_VALUE  │&lt;- - - - - - - - - - - - - - - - - - - - - ╱       |
+   AI_SCALE_SIGNAL │&lt;- - - - - - - - - - - - - - - - - - - - - ╱       |
             │          ╱ ⌃           |
             │         ╱ ╎       |
             │        ╱  ╎       |
@@ -572,13 +600,13 @@ Note:    It is assumed that the instrument has a linear response.
                RAW_MIN        ╎        RAW_MAX
                       AI_RAW_SIGNAL
 
-           Linear relationship between AI_RAW_SIGNAL and AI_SCALE_VALUE 
-
+   Figure 2.1    Linear relationship between AI_RAW_SIGNAL and AI_SCALE_SIGNAL 
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.1.1     Using AI_RAW_DATA and AI_SCALE_DATA
+2.1.1     Using AI_RAW_DATA and AI_SCALE_DATA
+
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
@@ -626,7 +654,7 @@ input signal, this information is given in in the variables:
                range being used by the module
  ――――――――――――――――――――――――――――――――――――――――――
 
-These are the RAW_MIN and RAW_MAX values used in (3.1).
+These are the RAW_MIN and RAW_MAX values used in equation (2.1).
 
 
 
@@ -653,6 +681,10 @@ dataset. E.g.
   SCALE_DESC      String[60]    'Inlet flow (0 to 1000 l/s)'
   ___________0030_0  Bool     false
   ___________0030_1  Bool     false
+  LIMIT_UNDER      Real        -5.0     
+  LIMIT_OVER        Real        105.0     
+  ___________0040_0  Bool     false
+  ___________0040_1  Bool     false
   USER_INFO_1       String[60]    'Instrument Manufacturer: Siemens'
   USER_INFO_2       String[60]    'Instrument Mode: Sitrans FM 5000'
   USER_INFO_3       String[60]    'Instrument Part No.: MAG5000'
@@ -663,10 +695,9 @@ dataset. E.g.
 A full description of DB00851_St_ConstAiScaleData and its application is given in [Ref. 102].
 
 The primary in formation needed by the module are maximum and minimum ranges for the 
-scaled signal, this information is given in in the DYNAMIC_DATA variables
+scaled signal, this information is given in in the AI_SCALE_DATA parameter:
 
 
- UT22001_Dy_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
  SIGNAL NAME            FUNCTION                    TYPE
  ――――――――――――――――――――――――――――――――――――――――――
@@ -677,118 +708,76 @@ scaled signal, this information is given in in the DYNAMIC_DATA variables
                 range being used by the module
  ――――――――――――――――――――――――――――――――――――――――――
 
-These are the SCALE_MIN and SCALE_MAX values used in (3.1).
+These are the SCALE_MIN and SCALE_MAX values used in (2.1).
 
 Additionally, the instrument tag is contained in the variable (copied from the parameter 
 AI_SCALE_DATA): 
 
- UT22001_Dy_InstAnalogRead
  ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME            FUNCTION                    TYPE
+ SIGNAL NAME            FUNCTION                   TYPE
  ――――――――――――――――――――――――――――――――――――――――――
- AI_SCALE_DATA.AI_TAG       Tag name of instrument            String[20]
+ AI_SCALE_DATA.AI_TAG       Minimum value of the analog input          String[20]
+                range being used by the module
  ――――――――――――――――――――――――――――――――――――――――――
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.1.2     Passing configuration data from the block
-
-
-The raw configuration data and the scaled configuration data passed to the block in the 
-parameters AI_RAW_DATA and AI_SCALE_DATA, are passed as input only signals and whilst these
- are readable by the block itself, they cannot be accessed externally to the block (by, for example, 
-the block calling the subroutine). 
-
-To overcome this, two additional output parameters are included with the block: 
-ACTUAL_RAW_DATA and ACTUAL_SCALE_DATA. The first is a copy of the input parameter 
-AI_RAW_DATA and the second a copy of parameter AI_SCALE_DATA; these two parameters are 
-output parameters and are accessible to the calling module.
-
-If these parameters are not required, they should be linked to temporary variables within the 
-calling module.
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.1.3     Configuration errors
+2.1.2     Configuration errors
 
 
 The block requires that both the RAW_MAX/MIN and SCALE_MAX/MIN signals conform to certain 
 rules:
 
-   1.  AI_RAW_DATA.RAW_MIN must be less than, and not equal to AI_RAW_DATA.RAW_MAX
-   2.  AI_SCALE_DATA.SCALE_MIN must be less than, and not equal to 
-     AI_SCALE_DATA.SCALE_MAX
+   1.  RAW_MIN must be less than, and not equal to RAW_MAX
+   2.  SCALE_MIN must be less than, and not equal to SCALE_MAX
 
-Should either of these conditions not be met, the three out of range parameters (see § 3.3.1) will 
+Should either of these conditions not be met, the three out of range parameters will all 
 be activated (set true) 
 
      OVER_RANGE
      UNDER_RANGE
      OUT_OF_RANGE
 
-The AI_SCALE_VALUE signal will be set to zero irrespective of the AI_RAW_SIGNAL value.
-
-Note:    This avoids the potential for a divide by zero error, if the RANGE_RAW_MIN and 
-     RANGE_RAW_MAX are exactly equal, the calculation of the actual_Value in 
-     equation (3.1) would result in a divide by zero error. 
+In addition, the AI_SCALE_SIGNAL signal will be set to zero irrespective of the AI_RAW_SIGNAL 
+value.
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-3.2     Out of range signals
+2.2     Out of range signals
 
 
-If the RAW_ANALOG signal is outside the RAW_MIN to RAW_MAX range, SCALE_VALUE will still be 
-calculated correctly; however, an appropriate, OVER_RANGE or UNDER_RANGE signal will be 
-generated to indicate that the SCALE_VALUE signal is outside the calibrated range of the 
-instrument and is potentially no longer accurate.
+If the AI_SCALE_VALUE signal is outside the SCALE_MIN to SCALE_MAX range (red dotted area of the 
+graph, Figure 2.1), the AI_SCALE_VALUE will still be calculated correctly; however, an appropriate, 
+OVER_RANGE or UNDER_RANGE signal will be generated to indicate that the AI_SCALE_VALUE
+signal is outside the calibrated range of the instrument and is potentially no longer accurate.
 
 Some tolerance is permitted before the OVER_RANGE and UNDER_RANGE signals are activated 
-(this is to prevent nuisance alarms — most instruments are tolerant of slight over and under 
-shoot readings).
+(most instruments are tolerant of slight over and under shoot readings).
 
-The tolerance applied to the out of range signals is a percentage of the raw range of the 
-instrument (the raw range being RAW_MAX − RAW_MIN). 
+The limits at which an over-range or under-range signal is generated is specified in the dataset 
+passed to the module in the AI_SCALE_DATA parameter. Each such dataset is stored in 
+DB00851_St_ConstAiScaleData (see § 2.1.1) in the variables LIMIT_OVER and LIMIT_UNDER 
+respectively. These represent the highest and lowest values that the scaled instrument value 
+can read without being either over-range or under-range:
 
-The tolerance to be applied is given in the parameter OOR_PERCENT, this is a real (floating point) 
-number in the range 0.0-10.0%.
-
-If the tolerance for the instrument is not known, a generic value of 2.5% should be used.
-
-The out of range tolerance absolute value (in terms of the RAW_ANALOG rather than as a
-percentage) is calculated as:
-
-┌─────────────────────────────┐
-│                                 (RAW_MAX ─ RAW_MIN) ╳ OOR_PERCENT    │
-│ calAbsOOR =  ―――――――――――――――――――     │
-│                  100          │
-└────────────────────────  (3.2)  ──┘
-
-Thus, if RAW_MIN is 0, RAW_MAX is 27648 and an OOR_PERCENT of 2.5% is selected, the 
-absolute out of range value (calAbsOOR in the above equation) has a calculated value 
-of 691. 
-
-In this example, the OVER_RANGE signal would activate when the RAW_ANALOG exceeded a 
-value of RAW_MAX + 691 (or 28,339). The UNDER_RANGE signal would activate when the 
-RAW_ANALOG fell below a value of RAW_MIN ─ 691 (or −691).
-
-The OOR_PERCENT is applied directly to the RAW_ANALOG signal, however, because the 
-instrument is considered to be linear, the same calculation can also be applied directly to 
-the SCALE_VALUE. In the above example, if the instrument were to span the range of 
-−100 l/s to +100 l/s (i.e. SCALE_MIN = −100 SCALE_MAX = +100) then the scaled range of the 
-instrument is 200 l/s (SCALE_MAX ─ SCALE_MIN) and the absolute out of range value would 
-be 2.5% of the scaled range (or 5 l/s). thus, the OVER_RANGE signal would activate above 105 l/s 
-and the UNDER_RANGE signal would activate below −105 l/s.
-
-The OOR_PERCENT must be in the range 0.0 to 10.0; If it is outside this range, it 
-is fixed at either the upper or lower limit.
+ AI_SCALE_DATA
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ LIMIT_UNDER        Lower limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              under-range
+ LIMIT_OVER           Upper limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              over-range
+ ――――――――――――――――――――――――――――――――――――――――――
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.3.1     Common out of range signal
+2.2.1     Common out of range signal
 
 
 There is a third out of range signal: OUT_OF_RANGE, this signal is a common signal that just 
@@ -801,88 +790,28 @@ Note:    If a configuration error exists, see § 3.2.1, all three out of ran
      UNDER_RANGE and OUT_OF_RANGE) will be activated irrespective of the 
      RAW_ANALOG value
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     Supervisory system interface
-
-
-FC18001 is a Subroutine block used to scale an analog input. 
-
-It does not have a supervisory system interface.
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.2.2    Over and under range restrictions
 
 
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+The out-of-range limits passed to the module (AI_SCALE_DATA) must meet the following 
+conditions:
+
+   •   LIMIT_UNDER ≤ SCALE_MIN
+   •   LIMIT_OVER ≥ SCALE_MAX
+
+I.e. the instrument cannot be considered either under range or over range if it is within the 
+normal range of the instrument.
+
+If the over-range limit (LIMIT_OVER) is less than SCALE_MAX, then it’s value will be replaced by 
+SCALE_MAX in all calculations. Similarly, if the under-range limit (LIMIT_UNDER) is greater than 
+SCALE_MIN, then it’s value will be replaced by SCALE_MIN in all calculations.
 
 
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     PARAMETERS
-
-
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     DATA STRUCTURES AND USAGE
-
-
-The block has the following associated data structure:
-
-
- ――――――――――――――――――――――――――――――――――――――――――
- DATA STRUCTURE             DESCRIPTION
- ――――――――――――――――――――――――――――――――――――――――――
- UT01000_St_SysRevision          Revision information for this block    See FC01001
- UT01001_St_SysLicence           Licence information for this block  See FC01001
- UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
- ――――――――――――――――――――――――――――――――――――――――――
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.1     Constants
-
-
-No constants are used in this block.
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.2     Temporary (local) data
-
-
-The following temporary data is used:
-
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME          FUNCTION                  TYPE
- ――――――――――――――――――――――――――――――――――――――――――
- revInfo             Revision information for the block         UT01000
- licInfo           Licensing information for the block      UT01001
- calPart1             Scale value part 1 (RAW_ANALOG − RAW_MIN)    Real
- calPart2             Scale value part 2 (SCALE_MAX − SCALE_MIN)   Real
- calPart3             Scale value part 3 (RAW_MAX − RAW_MIN)     Real
- calAbsOOR           Calculated OOR absolute value          Real
- calOverRange         Calculated over range limit (in raw units)    Real
- calUnderRange         Calculated under range limit (in raw units)     Real
- wrkOORPercent         Working out of range percentage       Real
- wrkConfigError        Working configuration error exists         Bool
- wrkReal           Working storage (Real)             Real
- ―――――――――――――――――――――――――――――――――――――――――
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
 
 
 
@@ -896,7 +825,7 @@ The following temporary data is used:
               <MultilingualTextItem ID="7" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description</Text>
+                  <Text>Block description — Sections 1 to 2</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -914,162 +843,28 @@ The following temporary data is used:
               <MultilingualTextItem ID="A" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     Supervisory system interface
 
 
-TITLE:    SUBROUTINE — ANALOG INPUT SCALE
+FC18001 is a Subroutine block used to scale an analog input. 
 
+It does not have a supervisory system interface.
 
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
-
-┌──────────────────────────────────────────┐
-│                                          │
-│          FC18001 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
-│                                          │
-│      The PDF version of the SMDS for this module is available online here:        │
-│              https://psop.uk/pal-smds-fc18001-p               │
-│                                          │
-│      It is also available as part of the Project User Defined Documentation,      │
-│      it can be accessed by selecting this module in the Project Tree          │
-│      (on the left) and pressing SHIFT+F1                        │
-│                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
-
-FC18001_StdSubScaleAI is a subroutine block that is used to scale the integer signal from an 
-analog instrument, in the form of an input word (IW).
-
-The resultant scaled value is a real (floating point) number that matches the calibrated range 
-of the instrument.
-
-The block monitors the instrument to see if the scaled value is out-of-range, the following three 
-fault signals are generated:
-
-   •   Over-range (signal is more than a specified percentage above the calibrated 
-     range of the instrument
-
-   •   Under-range (signal is more than a specified percentage below the calibrated 
-     range of the instrument
-
-   •   Common out-of-range, either the over-range or under-range fault is active
-
-This is a subroutine block.
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-1.     BLOCK TECHNICAL SUMMARY
-
-
- ――――――――――――――――――――――――――――――――――――――――――
- NOMENCLATURE &amp; ADDRESSING
- ――――――――――――――――――――――――――――――――――――――――――
- BLOCK TITLE         Analog Input Scale
- BLOCK FUNCTION GROUP    Subroutine
- BLOCK ADDRESS       FC18001
- BLOCK SYMBOL        FC18001_StdSubScaleAI
- BLOCK USER ID         StdSubScaleAI
-
- ――――――――――――――――――――――――――――――――――――――――――
- BLOCK TYPE &amp; USAGE
- ――――――――――――――――――――――――――――――――――――――――――
- BLOCK TYPE         Function (FC)
- BLOCK NUMBER        18001
- LANGUAGE           LAD
- OPTIMISED ACCESS     Yes
- PAL USAGE TYPE       Standard block
-
- ――――――――――――――――――――――――――――――――――――――――――
- METRICS
- ――――――――――――――――――――――――――――――――――――――――――
- EXECUTION TIME       23.9 μs¹
- LOAD MEMORY       28.3 kB
- WORK MEMORY           0.6 kB  
- ――――――――――――――――――――――――――――――――――――――――――
-               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
-                            https://psop.uk/pal-ds-cpu1515
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-1.1      Additional document references
-
-
-Only those documents specified in OB1 (section DOCUMENT REFERENCES) are listed within this 
-block. There are no additional document references.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-2.     FUNCTIONAL DESCRIPTION
+4.     PARAMETERS
 
-
-FC18001 is the Analog Input Scale block, it is a comprehensive block designed to read and scale 
-an analog instrument; it provides the following broad functions:
-
-   •   Read an analog input, convert it to a real number that represents the calibrated 
-     range of the instrument in engineering units
-
-   •   Generate fault signals if the instrument is out of range or is indi-cating a 
-     specific fault conditiongnals necessary for symbolic representation at 
-     a supervisory system (SCADA or HMI)
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-2.1     Read and scale and instrument signal
-
-
-The principal function of the block is to read a raw integer signal from an analog instrument 
-(in the form of an input word, IW), and convert it into a scaled, floating point (real) number that 
-reflects the calibrated reading of the instrument in question.
-
-For example, if a flow meter with a calibrated range of -100 l/s to +100 l/s provided a 4-20 mA 
-signal to the PLC, then 4 mA would represent -100 l/s and 20 mA would represent +100 l/s.
-
-A typical 4-20 mA analog input signal returns a raw value of 0 at 4 mA and 27648 at 20 mA. 
-
-The block would return scaled values as follows (it would also return every value in between; five 
-typical values have been shown):
-
-
- ――――――――――――――――――――――――――――――――――――――――――
- RAW_SIGNAL          RAW INTEGER VALUE        RETURNED SCALE VALUE
- ――――――――――――――――――――――――――――――――――――――――――
-    4 mA                      0             -100 l/s
-    8 mA               6912                   -50 l/s
-  12 mA             13824                   0 l/s
-  16 mA             20736              +50 l/s
-  20 mA             27648            +100 l/s
- ――――――――――――――――――――――――――――――――――――――――――
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-2.2     Supervisory system interface
-
-
-FC18001 is a Subroutine block used to scale an analog input. It does not have a supervisory
-system interface.
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-3.     DETAILED BLOCK DESCRIPTION
-
-
-This block, FC18001_StdSubAnalogScaleAI is a subroutine block that can be called from other 
-blocks within the PAL. It is designed to provide a linear conversion of a raw analog input signal 
-(in integer format) to a scaled value that represents the calibrated range of the instrument as a 
-real (floating point) value in engineering units.
-
-It has the following formal parameters:
+The following parameters are associated with this module:
 
 
  ――――――――――――――――――――――――――――――――――――――――――
  PARAM          FUNCTION                      TYPE      IN-OUT 
- ――――――――――――――――――――――――――――――――――――――――――█ █ █
+ ――――――――――――――――――――――――――――――――――――――――――
  AI_RAW_SIGNAL       The unscaled analog input (input word          RWord     In
            address for the IO card to which the instrument 
            is connected)
@@ -1081,20 +876,8 @@ It has the following formal parameters:
  AI_SCALE_DATA      Analog input signal scaled value data (instrument   UT00851   In
            tag, range, descriptions and engineering units)
 
- OOR_PERCENT      Out of range tolerance as a percentage of      Real      In
-           the raw range (RAW_MAX − RAW_MIN), the value 
-           is limited to the range 0.001% to 10.0%
-
- AI_SCALE_VALUE    The scaled output value of the instrument in        Real      Out
+ AI_SCALE_SIGNAL     The scaled output value of the instrument in        Real      Out
            engineering units
-
- ACTUAL_RAW_DATA   A copy of the analog input AI_RAW_DATA       UT00801    Out
-           information (makes the data available to the 
-           calling block)
-
- ACTUAL_SCALE_DATA  A copy of the analog input AI_SCALE_DATA      UT00851    Out
-           information (makes the data available to the 
-           calling block)
 
  OVER_RANGE       Indicates the instrument is above its          Bool      Out
            calibrated range by more than the tolerance
@@ -1109,374 +892,13 @@ It has the following formal parameters:
            value (OOR_PERCENT), either over or 
            under range
  ――――――――――――――――――――――――――――――――――――――――――
- Note:   If a configuration error is present (see § 3.1.3) the three out of range parameters 
-     will be activated (set true) and the AI_SCALE_VALUE signal will be set to zero 
-     irrespective of the AI_RAW_SIGNAL value.
-
-
-AI_RAW_SIGNAL is the input signal provided directly from the instrument itself (via input cards). 
-
-The AI_RAW_DATA and AI_SCALE_DATA parameters are UDTs that hold information about the 
-nature of the AI_RAW_SIGNAL, in the case of AI_RAW_DATA its input type: voltage, current &amp;c., 
-its range in integer values and various parametric information and a textual description of the 
-signal. In the case of AI_SCALE_DATA the scaled range of the signal, its engineering units, a 
-textual description of the instrument and the instrument tag itself.
-
-
- ――――――――――――――――――――――――――――――――――――――――――
- PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
- ――――――――――――――――――――――――――――――――――――――――――
- AI_RAW_DATA      UT00801_St_ConstAiRawData       DB00801_St_ConstAiRawData
- AI_SCALE_DATA     UT00851_St_ConstAiScaleData       DB00851_St_ConstAiScaleData
- ――――――――――――――――――――――――――――――――――――――――――
-
-Section 3.1.1 contains a full description of the AI_RAW_DATA and AI_SCALE_DATA parameters.
-
-AI_SCALE_VALUE is the true scaled value of the analog input (AI_RAW_SIGNAL) in engineering 
-units.
-
-OVER_RANGE and UNDER_RANGE indicate if the signal is outside the permitted range. This is 
-determined by the parameter OOR_PERCENT.This is the Out-of-range tolerance as a percentage 
-of the scale range, the value is limited to the range 0.0%-10.0%
-
-OVER_RANGE indicates the input is higher than the permitted tolerance and UNDER_RANGE 
-indicates the input is lower than the permitted tolerance.
-
-OUT_OF_RANGE is simply a common signal indicating the either OVER_RANGE or UNDER_RANGE 
-is active.
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-3.1     Converting the raw instrument signal to a scaled value
-
-
-The AI_RAW_SIGNAL is the raw instrument signal received from an analog input card; this has 
-specific ranges depending on the type of IO card and the type of signal in use.
- 
-The following table shows example ranges for the AI_RAW_SIGNAL signal:
-
- ―――――――――――――――――――――――――――――――――――――――――― 
-            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT
- SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      
- ―――――――――――――――――――――――――――――――――――――――――― 
- -10 V to 10 V         -27648     -10 V        27648      +10 V      
- 1 V to 5 V          0      +1 V        27648     +5 V      
- -20 mA to 20 mA       -27648     -20 mA    27648      +20 mA      
- 0 mA to 20 mA         0        0 mA    27648      +20 mA      
- 4 mA to 20 mA (2w)      0        4 mA    27648      +20 mA      
- 4 mA to 20 mA (4w)      0        4 mA    27648      +20 mA      
- RTD 150 Ω            0        0 Ω       27648      150 Ω      
- RTD 300 Ω            0        0 Ω       27648      300 Ω      
- PT x00           -2000       200.0°C      8500      850.0°C     
- Ni x00          -600     -60.0°C        250      250.0°C     
- Type B thermocouple     -2100      -210.0°C      12000    1200.0°C     
- Type K thermocouple     -2700      -270.0°C      13720    1372.0°C     
- ――――――――――――――――――――――――――――――――――――――――――
- Input ranges for typical instrument types (resistance thermometers and thermocouples)
-
-
-The RAW_MIN and the RAW_MAX values in the above tables are the numerical values for the 
-instrument range; the appropriate values are supplied as the RAW_MIN and RAW_MAX variables 
-provided in the UDT of parameter AI_RAW_DATA. (see § 3.1.1 for a full description).
-	
-
-The corresponding values for the scaled instrument signal are similarly provided by the 
-SCALE_MIN and SCALE_MAX values provided in the UDT of parameter AI_SCALE_DATA. 
-(see § 3.1.1 for a full description).
-
-Thus, if a flow meter with a calibrated range of –100 l/s to +100 l/s provided a 4-20 mA signal 
-to the PLC, 
-
-
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME          FUNCTION                   VALUE
- ――――――――――――――――――――――――――――――――――――――――――
- AI_RAW_DATA.RAW_MIN     RANGE — Minimum value of the raw analog      0
-                    signal (at the card)
- AI_RAW_DATA.RAW_MAX    RANGE — Maximum value of the raw analog        27648
-                    signal (at the card)
- AI_SCALE_DATA.SCALE_MIN   RANGE — Minimum value of the scaled analog       -100 l/s
-                    signal [engineering units]
- AI_SCALE_DATA.SCALE_MAX  RANGE — Maximum value of the scaled analog      +100 l/s
-                    signal [engineering units]
- ――――――――――――――――――――――――――――――――――――――――――
-
-The scaled value is passed from the block as parameter: AI_SCALE_VALUE.
-
-The scaled value (actual_Value) is calculated as follows:
-
-
-┌─────────────────────────────────────────────┐
-│                               (AI_RAW_SIGNAL ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)           │
-│AI_SCALE_VALUE =  ――――――――――――――――――――――――――――  ┼ SCALE_MIN  │
-│                               (RAW_MAX ─ RAW_MIN)                       │
-└───────────────────────────────────────  (3.1)  ───┘
-
-The three signals: AI_SCALE_VALUE, SCALE_MIN and SCALE_MAX are all floating-point numbers 
-(real data type), the signals AI_RAW_SIGNAL, RAW_MIN and RAW_MAX are all integers (int data type).
-
-Note:    It is assumed that the instrument has a linear response.
-
-
-          AI_ SCALE_VALUE
-            ↑                    ⋰
-           SCALE_MAX__│______________________________________⋰
-            │                  ╱|
-            │                 ╱ |     
-            │                ╱  |
-            │               ╱   |
-            │              ╱    |
-            │             ╱     |
-            │            ╱      |
-    AI_SCALE_VALUE  │&lt;- - - - - - - - - - - - - - - - - - - - - ╱       |
-            │          ╱ ⌃           |
-            │         ╱ ╎       |
-            │        ╱  ╎       |
-            │       ╱   ╎       |   
-            │      ╱    ╎       |
-            │     ╱     ╎       |
-            │    ╱         ╎          |
-            SCALE_MIN__│______╱          ╎          |
-            │  ⋰|           ╎          |
-            │ ⋰ |           ╎          |
-            ┼─────────────────────────→ AI_RAW_SIGNAL
-                  |           ╎           |
-               RAW_MIN        ╎        RAW_MAX
-                      AI_RAW_SIGNAL
-
-           Linear relationship between AI_RAW_SIGNAL and AI_SCALE_VALUE 
-
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.1.1     Using AI_RAW_DATA and AI_SCALE_DATA
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-The AI_RAW_DATA parameter
-
-The parameter AI_RAW_DATA is used to pass the analog input card type, range, description and
-coefficient data used by all analog input card channels. Data is supplied to this parameter using
-DB00801_St_ConstAiRawData, this contains a formal set of data for every type of Siemens 
-analog input (datasets), E.g.: for a 4-wire 4-20 mA signal it is:
-
- AI_RAW_2003     "UT00801_St_ConstAiRawData" AI Current - 4-wire (4 mA to 20 mA)
-  revInfo          "UT01000_St_SysRevision"
-  ___________0010_0  Bool     false	 
-  ___________0010_1  Bool     false
-  AI_CODE       UInt      16#2003
-  ___________0020_0  Bool     false
-  ___________0020_1  Bool     false
-  RAW_MIN          Int        0
-  RAW_MAX         Int        27648
-  RAW_DESC       String[60]    'Current - 4-wire (4 mA to 20 mA)'
-  ___________0030_1  Bool     false
-  ___________0030_2  Bool     false
-  PARAM_TYPE       Byte        16#02
-  PARAM_RANGE      Byte        16#03
-  PARAM_COEF        Byte        16#00
-  ___________0040_1  Bool     false
-  ___________0040_2  Bool     false
-  VALUE_COEF        Real        0.0
-
-A full description of DB00801_St_ConstAiRawData and its associated datasets is given in 
-[Ref. 101].
-
-The primary in formation needed by the module are maximum and minimum ranges for the 
-input signal, this information is given in in the variables:
-
-
- UT22001_Dy_InstAnalogRead
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME           FUNCTION                    TYPE
- ――――――――――――――――――――――――――――――――――――――――――
- AI_RAW_DATA.RAW_MIN      Minimum value of the analog input           Int
-               range being used by the module
-
- AI_RAW_DATA.RAW_MAX     Maximum value of the analog input           Int
-               range being used by the module
- ――――――――――――――――――――――――――――――――――――――――――
-
-These are the RAW_MIN and RAW_MAX values used in (3.1).
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-The AI_SCALE_DATA parameter
-
-
-The AI_SCALE_DATA parameter is similar to the AI_RAW_DATA parameter except that in this case
-it holds the scaled range, instrument tag, signal description and as-sociated engineering unit 
-information. Data is supplied to this parameter using DB00851_St_ConstAiScaleData, this 
-contains a set of data each instrument configured for the project, each instrument being a 
-dataset. E.g.
-
- AI_SCALE_FC001   "UT00851_Sy_ConstAiScaleData"	
-  revInfo        "UT01000_St_SysRevision"	
-  ___________0010_0  Bool     false
-  ___________0010_1  Bool     false
-  AI_TAG           String[20]    'FC001'
-  ___________0020_0  Bool     false
-  ___________0020_1  Bool     false
-  SCALE_MIN         Real        0.0
-  SCALE_MAX        Real        1000.0
-  SCALE_UNITS     String[20]    'l/s'
-  SCALE_DESC      String[60]    'Inlet flow (0 to 1000 l/s)'
-  ___________0030_0  Bool     false
-  ___________0030_1  Bool     false
-  USER_INFO_1       String[60]    'Instrument Manufacturer: Siemens'
-  USER_INFO_2       String[60]    'Instrument Mode: Sitrans FM 5000'
-  USER_INFO_3       String[60]    'Instrument Part No.: MAG5000'
-  USER_INFO_4       String[60]    ''
-  USER_INFO_5       String[60]    ''
-
-
-A full description of DB00851_St_ConstAiScaleData and its application is given in [Ref. 102].
-
-The primary in formation needed by the module are maximum and minimum ranges for the 
-scaled signal, this information is given in in the DYNAMIC_DATA variables
-
-
- UT22001_Dy_InstAnalogRead
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME            FUNCTION                    TYPE
- ――――――――――――――――――――――――――――――――――――――――――
- AI_SCALE_DATA.SCALE_MIN     Minimum value of the analog input           Int
-                range being used by the module
-
- AI_SCALE_DATA.SCALE_MAX    Maximum value of the analog input           Int
-                range being used by the module
- ――――――――――――――――――――――――――――――――――――――――――
-
-These are the SCALE_MIN and SCALE_MAX values used in (3.1).
-
-Additionally, the instrument tag is contained in the variable (copied from the parameter 
-AI_SCALE_DATA): 
-
- UT22001_Dy_InstAnalogRead
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME            FUNCTION                    TYPE
- ――――――――――――――――――――――――――――――――
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.2.1     Configuration errors
-
-
-The block requires that both the RAW_MAX/MIN and SCALE_MAX/MIN signals conform to certain 
-rules:
-
-   1.  RAW_MIN must be less than, and not equal to RAW_MAX
-   2.  SCALE_MIN must be less than, and not equal to SCALE_MAX
-
-Should either of these conditions not be met, the three out of range parameters (see § 3.3.1) will 
-be activated (set true) 
-
-     OVER_RANGE
-     UNDER_RANGE
-     OUT_OF_RANGE
-
-The SCALE_VALUE signal will be set to zero irrespective of the RAW_ANALOG value.
-
-Note:    This avoids the potential for a divide by zero error, if the RANGE_RAW_MIN and 
-     RANGE_RAW_MAX are exactly equal, the calculation of the actual_Value in 
-     equation (3.1) would result in a divide by zero error. 
-
-
-
-▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-3.3     Out of range signals
-
-
-If the RAW_ANALOG signal is outside the RAW_MIN to RAW_MAX range, SCALE_VALUE will still be 
-calculated correctly; however, an appropriate, OVER_RANGE or UNDER_RANGE signal will be 
-generated to indicate that the SCALE_VALUE signal is outside the calibrated range of the 
-instrument and is potentially no longer accurate.
-
-Some tolerance is permitted before the OVER_RANGE and UNDER_RANGE signals are activated 
-(this is to prevent nuisance alarms — most instruments are tolerant of slight over and under 
-shoot readings).
-
-The tolerance applied to the out of range signals is a percentage of the raw range of the 
-instrument (the raw range being RAW_MAX − RAW_MIN). 
-
-The tolerance to be applied is given in the parameter OOR_PERCENT, this is a real (floating point) 
-number in the range 0.0-10.0%.
-
-If the tolerance for the instrument is not known, a generic value of 2.5% should be used.
-
-The out of range tolerance absolute value (in terms of the RAW_ANALOG rather than as a
-percentage) is calculated as:
-
-┌─────────────────────────────┐
-│                                 (RAW_MAX ─ RAW_MIN) ╳ OOR_PERCENT    │
-│ calAbsOOR =  ―――――――――――――――――――     │
-│                  100          │
-└────────────────────────  (3.2)  ──┘
-
-Thus, if RAW_MIN is 0, RAW_MAX is 27648 and an OOR_PERCENT of 2.5% is selected, the 
-absolute out of range value (calAbsOOR in the above equation) has a calculated value 
-of 691. 
-
-In this example, the OVER_RANGE signal would activate when the RAW_ANALOG exceeded a 
-value of RAW_MAX + 691 (or 28,339). The UNDER_RANGE signal would activate when the 
-RAW_ANALOG fell below a value of RAW_MIN ─ 691 (or −691).
-
-The OOR_PERCENT is applied directly to the RAW_ANALOG signal, however, because the 
-instrument is considered to be linear, the same calculation can also be applied directly to 
-the SCALE_VALUE. In the above example, if the instrument were to span the range of 
-−100 l/s to +100 l/s (i.e. SCALE_MIN = −100 SCALE_MAX = +100) then the scaled range of the 
-instrument is 200 l/s (SCALE_MAX ─ SCALE_MIN) and the absolute out of range value would 
-be 2.5% of the scaled range (or 5 l/s). thus, the OVER_RANGE signal would activate above 105 l/s 
-and the UNDER_RANGE signal would activate below −105 l/s.
-
-The OOR_PERCENT must be in the range 0.0 to 10.0; If it is outside this range, it 
-is fixed at either the upper or lower limit.
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.3.1     Common out of range signal
-
-
-There is a third out of range signal: OUT_OF_RANGE, this signal is a common signal that just 
-indicates the instrument is out of its calibrated range (it does not specify whether it is over or 
-under range). 
-
-It is activated if either the OVER_RANGE or UNDER_RANGE signal is active.
-
-Note:    If a configuration error exists, see § 3.2.1, all three out of range signals (OVER_RANGE, 
-     UNDER_RANGE and OUT_OF_RANGE) will be activated irrespective of the 
-     RAW_ANALOG value
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-4.     Supervisory system interface
-
-
-FC18001 is a Subroutine block used to scale an analog input. 
-
-It does not have a supervisory system interface.
-
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-5.     PARAMETERS
-
-
-
-               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
-
-
-
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-6.     DATA STRUCTURES AND USAGE
+5.     DATA STRUCTURES AND USAGE
 
 
 The block has the following associated data structure:
@@ -1487,20 +909,102 @@ The block has the following associated data structure:
  ――――――――――――――――――――――――――――――――――――――――――
  UT01000_St_SysRevision          Revision information for this block    See FC01001
  UT01001_St_SysLicence           Licence information for this block  See FC01001
- UT21000_Dy_SysSignals           System signals for logic and timing  See FC01001
+
+ UT00801_St_ConstAiRawData        Analog input signal configuration data 
+                    (type, range, descriptions card parameters and 
+                    coefficients)
+
+ UT00851_St_ConstAiScaleData     Analog input signal scaled value data 
+                    (instrument tag, range, descriptions and 
+                    engineering units)
  ――――――――――――――――――――――――――――――――――――――――――
+ Note:   This subroutine does not require the system signals data interface 
+        (DB21001_Dy_SysSignals). The module is entirely autonomous.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.1     UT00801_St_ConstAiRawData
+
+
+The static data structure for an analog instrument.
+
+
+ UT00801_St_ConstAiRawData (full contents)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AI_CODE            A 16-bit hex value that uniquely identifies dataset   UInt
+              (it is the variable name of the dataset in DB00801)
+ RAW_MIN         Minimum value of the raw analog signal        Int
+              (at the card)
+
+ RAW_MAX           Maximum value of the raw analog signal        Int
+ RAW_DESC         Textual plain English description of the channel     String[60]
+              type and range
+ PARAM_TYPE         An 8-bit hex code that represents the input type    Byte
+              See [Ref. 101]
+
+ PARAM_RANGE        An 8-bit hex code that represents the input range    Byte
+              See [Ref. 101]
+
+ PARAM_COEF        An 8-bit hex code that represents a thermal        Byte
+              coefficient (thermal resistance channels only, 
+              otherwise set to 0). See [Ref. 101]
+
+ VALUE_COEF        The actual value of the temperature coefficient in    Real
+              use (thermal resistance channels only)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.2     UT00851_St_ConstAiScaleData
+
+
+The static data structure for an analog instrument.
+
+
+ UT00801_St_ConstAiRawData (full contents)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AI_TAG          Tag name of the instrument             String[20]
+
+ SCALE_MIN        Minimum value of the scaled input signal range    Real
+              being used by the module
+ SCALE_MAX          Maximum value of the scaled input signal range      Real
+              being used by the module
+
+ SCALE_UNITS          Engineering units for the instrument         String[20]
+ SCALE_DESC           Textual plain English description of the instrument  String[60]
+
+ LIMIT_UNDER        Lower limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              under-range
+ LIMIT_OVER           Upper limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              over-range
+
+ USER_INFO_1          Optional user information (text) line 1       String[60]
+ USER_INFO_2          Optional user information (text) line 2       String[60]
+ USER_INFO_3          Optional user information (text) line 3       String[60]
+ USER_INFO_4          Optional user information (text) line 4       String[60]
+ USER_INFO_5          Optional user information (text) line 5       String[60]
+ ―――――――――――――――――――――――――――――――――――――――――― 
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 
 
 
+
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-7.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.1     Constants
+6.1     Constants
 
 
 No constants are used in this block.
@@ -1508,7 +1012,7 @@ No constants are used in this block.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-7.2     Temporary (local) data
+6.2     Temporary (local) data
 
 
 The following temporary data is used:
@@ -1521,10 +1025,8 @@ The following temporary data is used:
  calPart1             Scale value part 1 (RAW_ANALOG − RAW_MIN)    Real
  calPart2             Scale value part 2 (SCALE_MAX − SCALE_MIN)   Real
  calPart3             Scale value part 3 (RAW_MAX − RAW_MIN)     Real
- calAbsOOR           Calculated OOR absolute value          Real
- calOverRange         Calculated over range limit (in raw units)    Real
- calUnderRange         Calculated under range limit (in raw units)     Real
- wrkOORPercent         Working out of range percentage       Real
+ wrkLimitUnder        Actual LIMIT_UNDER in use          Real
+ wrkLimitOver          Actual LIMIT_OVER in use            Real
  wrkConfigError        Working configuration error exists         Bool
  wrkReal           Working storage (Real)             Real
  ―――――――――――――――――――――――――――――――――――――――――
@@ -1533,8 +1035,9 @@ The following temporary data is used:
 
 
 
+
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-8.     BLOCK CALLS AND ASSOCIATIONS
+7.     BLOCK CALLS AND ASSOCIATIONS
 
 
 This section details any blocks which may be called from within this software module (subroutine 
@@ -1549,7 +1052,7 @@ the default arrangement).
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-8.1     Block calls from within this module
+7.1     Block calls from within this module
 
 
 There are no PAL block calls from within this block.
@@ -1557,7 +1060,7 @@ There are no PAL block calls from within this block.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-8.2     Blocks associated with this module
+7.2     Blocks associated with this module
 
 
 This is a stand-alone block and is not associated with any other blocks.
@@ -1565,19 +1068,19 @@ This is a stand-alone block and is not associated with any other blocks.
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-8.3     System block calls and system data types
+7.3     System block calls and system data types
 
 There are no system block calls
 
 
 
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-8.4     Special properties and requirements
+7.4     Special properties and requirements
 
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-8.4.1     Block optimisation, IEC compatibility and library conformance
+7.4.1     Block optimisation, IEC compatibility and library conformance
 
 
    •   Block optimisation is ACTIVE for this block.
@@ -1589,7 +1092,7 @@ There are no system block calls
 
 
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-8.4.2     Calling requirements
+7.4.2     Calling requirements
 
 
 There are no special calling requirements for this block.
@@ -1599,31 +1102,31 @@ There are no special calling requirements for this block.
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-9.     EXAMPLE USAGE
+8.     EXAMPLE USAGE
 
 
 The following shows a typical deployment of FC18001:
 
-               ┌─────────────
- ──────────────┤ FC18001
-               ├───────────
-               │
-       #SYS_SIGNALS ─┤ SYS_SIGNALS
-               │
-       #RAW_ANALOG ─┤ RAW_ANALOG
-               │
-                0 ─┤ RAW_MIN
-               │
-             27648 ─┤ RAW_MAX       SCALE_VALUE├─ #VALUE
-               │                 │
-             -100.0 ─┤ SCALE_MIN        UNDER_RANGE ├─ #ALM_OOR
-               │                 │
-              100.0 ─┤ SCALE_MAX       OVER_RANGE├─ #ALM_OVER_R
-               │                 │
-                   2.5 ─┤ OOR_PERCENT       OUT_OF_RANGE├─ #ALM_UNDER_R  
-               │                 │
-                                 │
-                    ─────────────┘
+
+                           ┌─────────────
+        ───────────────────┤ FC18001
+                           ├───────────
+                           │               │                       
+                               "FC001" ─┤ AI_RAW_SIGNAL          │
+                           │               │
+      "DB00801_St_ConstAiRawData".AI_RAW_2003 ─┤ AI_RAW_DATA           │
+                           │               │
+"DB00851_St_ConstAiScaleData".AI_SCALE_FC001 ─┤ AI_SCALE_DATA          │
+                           │               │
+                                   AI_SCALE_SIGNAL├─ #VALUE
+                                        │
+                                  UNDER_RANGE ├─ #ALM_UNDER
+                                        │
+                                     OVER_RANGE├─ #ALM_OVER
+                                        │
+                                      OUT_OF_RANGE├─ #ALM_OOR  
+                                        │
+                           ─────────────┘
 
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
@@ -1631,7 +1134,7 @@ The following shows a typical deployment of FC18001:
 
 
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-10.     TEST AND VERIFICATION PATH
+9.     TEST AND VERIFICATION PATH
 
 
 The following diagram shows the full test and verification path for the formal release of each 
@@ -1639,22 +1142,22 @@ version of the software module. See the Test Plan [Ref. 003] for full details, a
         https://psop.uk/pal-tp-p
 
 
-        FC18001-T001         FC18001-T002
+        FC18001-T001         FC18001-T002         FC18001-T003
 
-    Test version: 000.801     Test version: 001.801
- Released version: 001.000     Released version: 002.000
-Released commit: D0007    Released commit: D0011
+    Test version: 000.801     Test version: 001.801     Test version: 002.801
+ Released version: 001.000     Released version: 002.000     Released version: 003.000
+Released commit: D0007    Released commit: D0011    Released commit: D0018
 
-       SCR      SMT              SCV     
-＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿╓╖＿＿
-      └┘   ▙▟             ╙╜  
-Initial test           Comments standardised
+       SCR      SMT              SCV               SMT     
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿╓╖＿＿＿＿＿＿＿＿＿＿＿＿ ▛▜＿＿
+      └┘   ▙▟             ╙╜             ▙▟   
+Initial test           Comments standardised     AI_RAW_DATA &amp; AI_SCALE_DATA
 
-Initial test to release the      Comments updated &amp; 
-module following the      minor typographical 
-development stage.       corrections
-Full SMT              SCV only
-
+Initial test to release the      Comments updated &amp;    DB00801 and DB00851 added  
+module following the      minor typographical        and used throughout, minor 
+development stage.       corrections            name changes, comments 
+Full SMT              SCV only           updated.
+                            
 
 Where:
 ――――――――――――――――――――――――――――――――――――――――――――
@@ -1669,6 +1172,10 @@ Where:
                It tests all the interfaces to the module, any data recorded or 
                stored by the module, all error and exception handling functions 
                and tests all timed and interrupt driven operations.
+
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
 
  SCV Software Compatibility     A mechanism for verifying that no executable code software 
 ╓╖    Verification          changes have been made to a module following changes to
@@ -1696,7 +1203,7 @@ both the SCR and the SMT for the test iteration in question.
               <MultilingualTextItem ID="C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Block description</Text>
+                  <Text>Block description — Sections 3 to 9</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -1707,115 +1214,98 @@ both the SCR and the SMT for the test iteration in question.
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalVariable" UId="21">
-      <Symbol>
-        <Component Name="SYS_SIGNALS" />
-        <Component Name="_False" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="22">
+    <Access Scope="LiteralConstant" UId="21">
       <Constant>
         <ConstantType>String</ConstantType>
         <ConstantValue>'FC18001'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="23">
+    <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="revInfo" />
         <Component Name="REV_BLOCK" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="24">
+    <Access Scope="LiteralConstant" UId="23">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'002.000'</ConstantValue>
+        <ConstantValue>'002.801'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="25">
+    <Access Scope="LocalVariable" UId="24">
       <Symbol>
         <Component Name="revInfo" />
         <Component Name="REV_NUMBER" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="26">
+    <Access Scope="LiteralConstant" UId="25">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.16'</ConstantValue>
+        <ConstantValue>'2024.08.31'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="27">
+    <Access Scope="LocalVariable" UId="26">
       <Symbol>
         <Component Name="revInfo" />
         <Component Name="REV_DATE" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="28">
+    <Access Scope="LiteralConstant" UId="27">
       <Constant>
         <ConstantType>String</ConstantType>
         <ConstantValue>'M. Gledhill'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="29">
+    <Access Scope="LocalVariable" UId="28">
       <Symbol>
         <Component Name="revInfo" />
         <Component Name="REV_AUTHOR" />
       </Symbol>
     </Access>
-    <Part Name="Contact" UId="30">
-      <Negated Name="operand" />
-    </Part>
+    <Part Name="S_Move" UId="29" DisabledENO="true" />
+    <Part Name="S_Move" UId="30" DisabledENO="true" />
     <Part Name="S_Move" UId="31" DisabledENO="true" />
     <Part Name="S_Move" UId="32" DisabledENO="true" />
-    <Part Name="S_Move" UId="33" DisabledENO="true" />
-    <Part Name="S_Move" UId="34" DisabledENO="true" />
   </Parts>
   <Wires>
-    <Wire UId="35">
+    <Wire UId="33">
       <Powerrail />
-      <NameCon UId="30" Name="in" />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="en" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="21" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="29" Name="out" />
+      <IdentCon UId="22" />
     </Wire>
     <Wire UId="36">
-      <IdentCon UId="21" />
-      <NameCon UId="30" Name="operand" />
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="in" />
     </Wire>
     <Wire UId="37">
       <NameCon UId="30" Name="out" />
-      <NameCon UId="31" Name="en" />
-      <NameCon UId="32" Name="en" />
-      <NameCon UId="33" Name="en" />
-      <NameCon UId="34" Name="en" />
+      <IdentCon UId="24" />
     </Wire>
     <Wire UId="38">
-      <IdentCon UId="22" />
+      <IdentCon UId="25" />
       <NameCon UId="31" Name="in" />
     </Wire>
     <Wire UId="39">
       <NameCon UId="31" Name="out" />
-      <IdentCon UId="23" />
+      <IdentCon UId="26" />
     </Wire>
     <Wire UId="40">
-      <IdentCon UId="24" />
+      <IdentCon UId="27" />
       <NameCon UId="32" Name="in" />
     </Wire>
     <Wire UId="41">
       <NameCon UId="32" Name="out" />
-      <IdentCon UId="25" />
-    </Wire>
-    <Wire UId="42">
-      <IdentCon UId="26" />
-      <NameCon UId="33" Name="in" />
-    </Wire>
-    <Wire UId="43">
-      <NameCon UId="33" Name="out" />
-      <IdentCon UId="27" />
-    </Wire>
-    <Wire UId="44">
       <IdentCon UId="28" />
-      <NameCon UId="34" Name="in" />
-    </Wire>
-    <Wire UId="45">
-      <NameCon UId="34" Name="out" />
-      <IdentCon UId="29" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -1850,6 +1340,11 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2024.08.31    002.801   D0017A-000.107   D0017 N/A     D017A   M. Gledhill
+                       RAW_ANALOG changed to AI_RAW_SIGNAL
+                       AI_RAW_DATA and AI_SCALE_DATA added
+                       OOR calculation uses AI_SCALE_DATA
+
  2022.04.16    002.000   D0011      D0010 D0011  None    M. Gledhill
                        FC18001 — RELEASED FOR USE
                          Merge back to master branch
@@ -1901,21 +1396,25 @@ The MIT licence is reproduced in full in the last network of this software modul
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
+        <Component Name="AI_RAW_DATA" />
         <Component Name="RAW_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
+        <Component Name="AI_RAW_DATA" />
         <Component Name="RAW_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
+        <Component Name="AI_SCALE_DATA" />
         <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
+        <Component Name="AI_SCALE_DATA" />
         <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
@@ -2014,65 +1513,72 @@ If either, or both, conditions are true, the wrkConfigError signal is activated
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="SYS_SIGNALS" />
-        <Component Name="_True" />
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="LIMIT_UNDER" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="OOR_PERCENT" />
+        <Component Name="wrkLimitUnder" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="wrkOORPercent" />
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="LIMIT_UNDER" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="OOR_PERCENT" />
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="25">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>10.0</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
+      </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="26">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>10.0</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="wrkLimitUnder" />
+      </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="wrkOORPercent" />
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="LIMIT_OVER" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
-        <Component Name="OOR_PERCENT" />
+        <Component Name="wrkLimitOver" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="29">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>0.0</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="LIMIT_OVER" />
+      </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="30">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>0.0</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="SCALE_MAX" />
+      </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="31">
       <Symbol>
-        <Component Name="wrkOORPercent" />
+        <Component Name="AI_SCALE_DATA" />
+        <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
-    <Part Name="Contact" UId="32" />
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="wrkLimitOver" />
+      </Symbol>
+    </Access>
     <Part Name="Move" UId="33" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
@@ -2082,75 +1588,79 @@ If either, or both, conditions are true, the wrkConfigError signal is activated
     <Part Name="Move" UId="35" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
-    <Part Name="Lt" UId="36">
+    <Part Name="Move" UId="36" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Lt" UId="37">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Move" UId="37" DisabledENO="true">
+    <Part Name="Move" UId="38" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
   </Parts>
   <Wires>
-    <Wire UId="38">
-      <Powerrail />
-      <NameCon UId="32" Name="in" />
-      <NameCon UId="34" Name="pre" />
-      <NameCon UId="36" Name="pre" />
-    </Wire>
     <Wire UId="39">
-      <IdentCon UId="21" />
-      <NameCon UId="32" Name="operand" />
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="pre" />
+      <NameCon UId="36" Name="en" />
+      <NameCon UId="37" Name="pre" />
     </Wire>
     <Wire UId="40">
-      <NameCon UId="32" Name="out" />
-      <NameCon UId="33" Name="en" />
-    </Wire>
-    <Wire UId="41">
-      <IdentCon UId="22" />
+      <IdentCon UId="21" />
       <NameCon UId="33" Name="in" />
     </Wire>
-    <Wire UId="42">
+    <Wire UId="41">
       <NameCon UId="33" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="42">
       <IdentCon UId="23" />
+      <NameCon UId="34" Name="in1" />
     </Wire>
     <Wire UId="43">
       <IdentCon UId="24" />
-      <NameCon UId="34" Name="in1" />
-    </Wire>
-    <Wire UId="44">
-      <IdentCon UId="25" />
       <NameCon UId="34" Name="in2" />
     </Wire>
-    <Wire UId="45">
+    <Wire UId="44">
       <NameCon UId="34" Name="out" />
       <NameCon UId="35" Name="en" />
     </Wire>
-    <Wire UId="46">
-      <IdentCon UId="26" />
+    <Wire UId="45">
+      <IdentCon UId="25" />
       <NameCon UId="35" Name="in" />
     </Wire>
-    <Wire UId="47">
+    <Wire UId="46">
       <NameCon UId="35" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="47">
       <IdentCon UId="27" />
+      <NameCon UId="36" Name="in" />
     </Wire>
     <Wire UId="48">
+      <NameCon UId="36" Name="out1" />
       <IdentCon UId="28" />
-      <NameCon UId="36" Name="in1" />
     </Wire>
     <Wire UId="49">
       <IdentCon UId="29" />
-      <NameCon UId="36" Name="in2" />
+      <NameCon UId="37" Name="in1" />
     </Wire>
     <Wire UId="50">
-      <NameCon UId="36" Name="out" />
-      <NameCon UId="37" Name="en" />
+      <IdentCon UId="30" />
+      <NameCon UId="37" Name="in2" />
     </Wire>
     <Wire UId="51">
-      <IdentCon UId="30" />
-      <NameCon UId="37" Name="in" />
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="en" />
     </Wire>
     <Wire UId="52">
-      <NameCon UId="37" Name="out1" />
       <IdentCon UId="31" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out1" />
+      <IdentCon UId="32" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -2163,10 +1673,20 @@ If either, or both, conditions are true, the wrkConfigError signal is activated
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The OOR_PERCENT signal is checked to ensure it is within the range 0.0 to 10.0.
+The out-of-range limits passed to the module (AI_SCALE_DATA) must meet the following 
+conditions:
 
-The local data wrkOORPercent holds the corrected value and is used in the out of range 
-calculations
+   •   LIMIT_UNDER ≤ SCALE_MIN
+   •   LIMIT_OVER ≥ SCALE_MAX
+
+I.e. the instrument cannot be considered either under range or over range if it is within the 
+normal range of the instrument.
+
+If the over-range limit (LIMIT_OVER) is less than SCALE_MAX, then it’s value will be replaced by 
+SCALE_MAX in all calculations. Similarly, if the under-range limit (LIMIT_UNDER) is greater than 
+SCALE_MIN, then it’s value will be replaced by SCALE_MIN in all calculations.
+
+The limits in use are stored in wrkLimitUnder and wrkLimitOver
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -2190,11 +1710,12 @@ calculations
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="RAW_ANALOG" />
+        <Component Name="AI_RAW_SIGNAL" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
+        <Component Name="AI_RAW_DATA" />
         <Component Name="RAW_MIN" />
       </Symbol>
     </Access>
@@ -2236,13 +1757,13 @@ calculations
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 The following formula is used to calculate the scaled (actual_Value) signal:
-┌──────────────────────────────────────────┐
-│                                    (RAW_ANALOG ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)          │
-│ SCALE_VALUE =  ――――――――――――――――――――――――――  ┼ SCALE_MIN   │
-│                                    (RAW_MAX ─ RAW_MIN)                  │
-└──────────────────────────────────────────┘
+┌────────────────────────────────────────────┐
+│                                     (AI_RAW_SIGNAL ─ RAW_MIN) ╳ (SCALE_MAX ─ SCALE_MIN)       │
+│ AI_SCALE_SIGNAL =  ――――――――――――――――――――――――――  ┼ SCALE_MIN    │
+│                                    (RAW_MAX ─ RAW_MIN)                    │
+└────────────────────────────────────────────┘
 
-Scale value calculation part 1 is (RAW_ANALOG − RAW_MIN)
+Scale value calculation part 1 is (AI_RAW_SIGNA − RAW_MIN)
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -2266,11 +1787,13 @@ Scale value calculation part 1 is (RAW_ANALOG − RAW_MIN)
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
+        <Component Name="AI_SCALE_DATA" />
         <Component Name="SCALE_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
+        <Component Name="AI_SCALE_DATA" />
         <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
@@ -2335,11 +1858,13 @@ Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
+        <Component Name="AI_RAW_DATA" />
         <Component Name="RAW_MAX" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
+        <Component Name="AI_RAW_DATA" />
         <Component Name="RAW_MIN" />
       </Symbol>
     </Access>
@@ -2485,111 +2010,157 @@ Note:    To prevent inconsistencies and divide by zero errors, if a configur
     </Access>
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
+        <Component Name="AI_SCALE_DATA" />
         <Component Name="SCALE_MIN" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
       <Symbol>
-        <Component Name="SCALE_VALUE" />
+        <Component Name="wrkReal" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="AI_SCALE_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
         <Component Name="wrkConfigError" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="31">
+    <Access Scope="LiteralConstant" UId="33">
       <Constant>
         <ConstantType>Real</ConstantType>
         <ConstantValue>0.0</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="32">
+    <Access Scope="LocalVariable" UId="34">
       <Symbol>
-        <Component Name="SCALE_VALUE" />
+        <Component Name="AI_SCALE_SIGNAL" />
       </Symbol>
     </Access>
-    <Part Name="Mul" UId="33" DisabledENO="false">
+    <Access Scope="LiteralConstant" UId="35">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Part Name="Mul" UId="37" DisabledENO="false">
       <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Div" UId="34" DisabledENO="false">
+    <Part Name="Div" UId="38" DisabledENO="false">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Add" UId="35" DisabledENO="false">
+    <Part Name="Add" UId="39" DisabledENO="false">
       <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Contact" UId="36" />
-    <Part Name="Move" UId="37" DisabledENO="true">
+    <Part Name="Move" UId="40" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="41" />
+    <Part Name="Move" UId="42" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="43" DisabledENO="true">
       <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
     </Part>
   </Parts>
   <Wires>
-    <Wire UId="38">
-      <Powerrail />
-      <NameCon UId="33" Name="en" />
-      <NameCon UId="36" Name="in" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="21" />
-      <NameCon UId="33" Name="in1" />
-    </Wire>
-    <Wire UId="40">
-      <IdentCon UId="22" />
-      <NameCon UId="33" Name="in2" />
-    </Wire>
-    <Wire UId="41">
-      <NameCon UId="33" Name="eno" />
-      <NameCon UId="34" Name="en" />
-    </Wire>
-    <Wire UId="42">
-      <NameCon UId="33" Name="out" />
-      <IdentCon UId="23" />
-    </Wire>
-    <Wire UId="43">
-      <IdentCon UId="24" />
-      <NameCon UId="34" Name="in1" />
-    </Wire>
     <Wire UId="44">
-      <IdentCon UId="25" />
-      <NameCon UId="34" Name="in2" />
+      <Powerrail />
+      <NameCon UId="37" Name="en" />
+      <NameCon UId="41" Name="in" />
     </Wire>
     <Wire UId="45">
-      <NameCon UId="34" Name="eno" />
-      <NameCon UId="35" Name="en" />
+      <IdentCon UId="21" />
+      <NameCon UId="37" Name="in1" />
     </Wire>
     <Wire UId="46">
-      <NameCon UId="34" Name="out" />
-      <IdentCon UId="26" />
+      <IdentCon UId="22" />
+      <NameCon UId="37" Name="in2" />
     </Wire>
     <Wire UId="47">
-      <IdentCon UId="27" />
-      <NameCon UId="35" Name="in1" />
+      <NameCon UId="37" Name="eno" />
+      <NameCon UId="38" Name="en" />
     </Wire>
     <Wire UId="48">
-      <IdentCon UId="28" />
-      <NameCon UId="35" Name="in2" />
+      <NameCon UId="37" Name="out" />
+      <IdentCon UId="23" />
     </Wire>
     <Wire UId="49">
-      <NameCon UId="35" Name="out" />
-      <IdentCon UId="29" />
+      <IdentCon UId="24" />
+      <NameCon UId="38" Name="in1" />
     </Wire>
     <Wire UId="50">
-      <IdentCon UId="30" />
-      <NameCon UId="36" Name="operand" />
+      <IdentCon UId="25" />
+      <NameCon UId="38" Name="in2" />
     </Wire>
     <Wire UId="51">
-      <NameCon UId="36" Name="out" />
-      <NameCon UId="37" Name="en" />
+      <NameCon UId="38" Name="eno" />
+      <NameCon UId="39" Name="en" />
+      <NameCon UId="40" Name="en" />
     </Wire>
     <Wire UId="52">
-      <IdentCon UId="31" />
-      <NameCon UId="37" Name="in" />
+      <NameCon UId="38" Name="out" />
+      <IdentCon UId="26" />
     </Wire>
     <Wire UId="53">
-      <NameCon UId="37" Name="out1" />
+      <IdentCon UId="27" />
+      <NameCon UId="39" Name="in1" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="28" />
+      <NameCon UId="39" Name="in2" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="39" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="40" Name="out1" />
+      <IdentCon UId="31" />
+    </Wire>
+    <Wire UId="58">
       <IdentCon UId="32" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="en" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="42" Name="out1" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="43" Name="out1" />
+      <IdentCon UId="36" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -2630,141 +2201,208 @@ If a configuration error exists, the SCALE_VALUE is set to zero for all conditio
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="calPart3" />
+        <Component Name="wrkReal" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="wrkOORPercent" />
+        <Component Name="wrkLimitUnder" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="calAbsOOR" />
+        <Component Name="wrkConfigError" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="calAbsOOR" />
+        <Component Name="UNDER_RANGE" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="25">
-      <Constant>
-        <ConstantType>Real</ConstantType>
-        <ConstantValue>100.0</ConstantValue>
-      </Constant>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="26">
       <Symbol>
-        <Component Name="calAbsOOR" />
+        <Component Name="wrkLimitOver" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="27">
       <Symbol>
-        <Component Name="RAW_MAX" />
+        <Component Name="wrkConfigError" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="28">
       <Symbol>
-        <Component Name="calAbsOOR" />
+        <Component Name="OVER_RANGE" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="29">
       <Symbol>
-        <Component Name="calOverRange" />
+        <Component Name="wrkReal" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="30">
       <Symbol>
-        <Component Name="RAW_MIN" />
+        <Component Name="wrkLimitUnder" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="31">
       <Symbol>
-        <Component Name="calAbsOOR" />
+        <Component Name="wrkReal" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="32">
       <Symbol>
-        <Component Name="calUnderRange" />
+        <Component Name="wrkLimitOver" />
       </Symbol>
     </Access>
-    <Part Name="Mul" UId="33" DisabledENO="false">
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="OUT_OF_RANGE" />
+      </Symbol>
+    </Access>
+    <Part Name="Lt" UId="35">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="36" />
+    <Part Name="O" UId="37">
       <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="38" />
+    <Part Name="Gt" UId="39">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Div" UId="34" DisabledENO="true">
-      <AutomaticTyped Name="SrcType" />
-    </Part>
-    <Part Name="Add" UId="35" DisabledENO="false">
+    <Part Name="Contact" UId="40" />
+    <Part Name="O" UId="41">
       <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="42" />
+    <Part Name="Lt" UId="43">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
-    <Part Name="Sub" UId="36" DisabledENO="false">
+    <Part Name="Gt" UId="44">
       <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
     </Part>
+    <Part Name="Contact" UId="45" />
+    <Part Name="O" UId="46">
+      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="47" />
   </Parts>
   <Wires>
-    <Wire UId="37">
-      <Powerrail />
-      <NameCon UId="33" Name="en" />
-    </Wire>
-    <Wire UId="38">
-      <IdentCon UId="21" />
-      <NameCon UId="33" Name="in1" />
-    </Wire>
-    <Wire UId="39">
-      <IdentCon UId="22" />
-      <NameCon UId="33" Name="in2" />
-    </Wire>
-    <Wire UId="40">
-      <NameCon UId="33" Name="eno" />
-      <NameCon UId="34" Name="en" />
-    </Wire>
-    <Wire UId="41">
-      <NameCon UId="33" Name="out" />
-      <IdentCon UId="23" />
-    </Wire>
-    <Wire UId="42">
-      <IdentCon UId="24" />
-      <NameCon UId="34" Name="in1" />
-    </Wire>
-    <Wire UId="43">
-      <IdentCon UId="25" />
-      <NameCon UId="34" Name="in2" />
-    </Wire>
-    <Wire UId="44">
-      <NameCon UId="34" Name="eno" />
-      <NameCon UId="35" Name="en" />
-      <NameCon UId="36" Name="en" />
-    </Wire>
-    <Wire UId="45">
-      <NameCon UId="34" Name="out" />
-      <IdentCon UId="26" />
-    </Wire>
-    <Wire UId="46">
-      <IdentCon UId="27" />
-      <NameCon UId="35" Name="in1" />
-    </Wire>
-    <Wire UId="47">
-      <IdentCon UId="28" />
-      <NameCon UId="35" Name="in2" />
-    </Wire>
     <Wire UId="48">
-      <NameCon UId="35" Name="out" />
-      <IdentCon UId="29" />
+      <Powerrail />
+      <NameCon UId="35" Name="pre" />
+      <NameCon UId="36" Name="in" />
+      <NameCon UId="39" Name="pre" />
+      <NameCon UId="40" Name="in" />
+      <NameCon UId="43" Name="pre" />
+      <NameCon UId="44" Name="pre" />
+      <NameCon UId="45" Name="in" />
     </Wire>
     <Wire UId="49">
-      <IdentCon UId="30" />
-      <NameCon UId="36" Name="in1" />
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="in1" />
     </Wire>
     <Wire UId="50">
-      <IdentCon UId="31" />
-      <NameCon UId="36" Name="in2" />
+      <IdentCon UId="22" />
+      <NameCon UId="35" Name="in2" />
     </Wire>
     <Wire UId="51">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="37" Name="in1" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="53">
       <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="in2" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="24" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="25" />
+      <NameCon UId="39" Name="in1" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="26" />
+      <NameCon UId="39" Name="in2" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="41" Name="in1" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="27" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="in2" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="28" />
+      <NameCon UId="42" Name="operand" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="29" />
+      <NameCon UId="43" Name="in1" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="30" />
+      <NameCon UId="43" Name="in2" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="43" Name="out" />
+      <NameCon UId="46" Name="in1" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="31" />
+      <NameCon UId="44" Name="in1" />
+    </Wire>
+    <Wire UId="67">
       <IdentCon UId="32" />
+      <NameCon UId="44" Name="in2" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="46" Name="in2" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="33" />
+      <NameCon UId="45" Name="operand" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="45" Name="out" />
+      <NameCon UId="46" Name="in3" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="46" Name="out" />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="34" />
+      <NameCon UId="47" Name="operand" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
@@ -2777,284 +2415,9 @@ If a configuration error exists, the SCALE_VALUE is set to zero for all conditio
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The out of range limits are calculated from the raw span of the instrument 
-(RAW_MAX - RAW_MIN, stored in calPart3).
+The instrument is over range if the scaled value (stored in wrkReal) is greater than wrkLimitOver
 
-The absolute value of the out of range tolerance is stored in calAbsOOR and is calculated as
-follows:
-
-
-                            (RAW_MAX - RAW_MIN) x wrkOORPercent
-calAbsOOR  =  ——————————————————
-                                                             100
-
-OR
-
-                            calPart3 x wrkOORPercent
-calAbsOOR  =  ————————————
-                                              100
-
-
-The instrument is over range if the RAW_ANALOG exceeds RAW_MAX + calAbsOOR 
-
-The instrument is under range if the RAW_ANALOG is less than RAW_MIN - calAbsOOR 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="33" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="34" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>IO evaluation — Calculate out of range value</Text>
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="LocalVariable" UId="21">
-      <Symbol>
-        <Component Name="SYS_SIGNALS" />
-        <Component Name="_True" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="22">
-      <Symbol>
-        <Component Name="RAW_ANALOG" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="23">
-      <Symbol>
-        <Component Name="calUnderRange" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="24">
-      <Symbol>
-        <Component Name="wrkConfigError" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="25">
-      <Symbol>
-        <Component Name="UNDER_RANGE" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="26">
-      <Symbol>
-        <Component Name="RAW_ANALOG" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="27">
-      <Symbol>
-        <Component Name="calOverRange" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="28">
-      <Symbol>
-        <Component Name="wrkConfigError" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="29">
-      <Symbol>
-        <Component Name="OVER_RANGE" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="30">
-      <Symbol>
-        <Component Name="RAW_ANALOG" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="31">
-      <Symbol>
-        <Component Name="calUnderRange" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="32">
-      <Symbol>
-        <Component Name="RAW_ANALOG" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="33">
-      <Symbol>
-        <Component Name="calOverRange" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="34">
-      <Symbol>
-        <Component Name="wrkConfigError" />
-      </Symbol>
-    </Access>
-    <Access Scope="LocalVariable" UId="35">
-      <Symbol>
-        <Component Name="OUT_OF_RANGE" />
-      </Symbol>
-    </Access>
-    <Part Name="Contact" UId="36" />
-    <Part Name="Lt" UId="37">
-      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
-    </Part>
-    <Part Name="Contact" UId="38" />
-    <Part Name="O" UId="39">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Coil" UId="40" />
-    <Part Name="Gt" UId="41">
-      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
-    </Part>
-    <Part Name="Contact" UId="42" />
-    <Part Name="O" UId="43">
-      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
-    </Part>
-    <Part Name="Coil" UId="44" />
-    <Part Name="Lt" UId="45">
-      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
-    </Part>
-    <Part Name="Gt" UId="46">
-      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
-    </Part>
-    <Part Name="Contact" UId="47" />
-    <Part Name="O" UId="48">
-      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
-    </Part>
-    <Part Name="Coil" UId="49" />
-  </Parts>
-  <Wires>
-    <Wire UId="50">
-      <Powerrail />
-      <NameCon UId="36" Name="in" />
-    </Wire>
-    <Wire UId="51">
-      <IdentCon UId="21" />
-      <NameCon UId="36" Name="operand" />
-    </Wire>
-    <Wire UId="52">
-      <NameCon UId="36" Name="out" />
-      <NameCon UId="37" Name="pre" />
-      <NameCon UId="38" Name="in" />
-      <NameCon UId="41" Name="pre" />
-      <NameCon UId="42" Name="in" />
-      <NameCon UId="45" Name="pre" />
-      <NameCon UId="46" Name="pre" />
-      <NameCon UId="47" Name="in" />
-    </Wire>
-    <Wire UId="53">
-      <IdentCon UId="22" />
-      <NameCon UId="37" Name="in1" />
-    </Wire>
-    <Wire UId="54">
-      <IdentCon UId="23" />
-      <NameCon UId="37" Name="in2" />
-    </Wire>
-    <Wire UId="55">
-      <NameCon UId="37" Name="out" />
-      <NameCon UId="39" Name="in1" />
-    </Wire>
-    <Wire UId="56">
-      <IdentCon UId="24" />
-      <NameCon UId="38" Name="operand" />
-    </Wire>
-    <Wire UId="57">
-      <NameCon UId="38" Name="out" />
-      <NameCon UId="39" Name="in2" />
-    </Wire>
-    <Wire UId="58">
-      <NameCon UId="39" Name="out" />
-      <NameCon UId="40" Name="in" />
-    </Wire>
-    <Wire UId="59">
-      <IdentCon UId="25" />
-      <NameCon UId="40" Name="operand" />
-    </Wire>
-    <Wire UId="60">
-      <IdentCon UId="26" />
-      <NameCon UId="41" Name="in1" />
-    </Wire>
-    <Wire UId="61">
-      <IdentCon UId="27" />
-      <NameCon UId="41" Name="in2" />
-    </Wire>
-    <Wire UId="62">
-      <NameCon UId="41" Name="out" />
-      <NameCon UId="43" Name="in1" />
-    </Wire>
-    <Wire UId="63">
-      <IdentCon UId="28" />
-      <NameCon UId="42" Name="operand" />
-    </Wire>
-    <Wire UId="64">
-      <NameCon UId="42" Name="out" />
-      <NameCon UId="43" Name="in2" />
-    </Wire>
-    <Wire UId="65">
-      <NameCon UId="43" Name="out" />
-      <NameCon UId="44" Name="in" />
-    </Wire>
-    <Wire UId="66">
-      <IdentCon UId="29" />
-      <NameCon UId="44" Name="operand" />
-    </Wire>
-    <Wire UId="67">
-      <IdentCon UId="30" />
-      <NameCon UId="45" Name="in1" />
-    </Wire>
-    <Wire UId="68">
-      <IdentCon UId="31" />
-      <NameCon UId="45" Name="in2" />
-    </Wire>
-    <Wire UId="69">
-      <NameCon UId="45" Name="out" />
-      <NameCon UId="48" Name="in1" />
-    </Wire>
-    <Wire UId="70">
-      <IdentCon UId="32" />
-      <NameCon UId="46" Name="in1" />
-    </Wire>
-    <Wire UId="71">
-      <IdentCon UId="33" />
-      <NameCon UId="46" Name="in2" />
-    </Wire>
-    <Wire UId="72">
-      <NameCon UId="46" Name="out" />
-      <NameCon UId="48" Name="in2" />
-    </Wire>
-    <Wire UId="73">
-      <IdentCon UId="34" />
-      <NameCon UId="47" Name="operand" />
-    </Wire>
-    <Wire UId="74">
-      <NameCon UId="47" Name="out" />
-      <NameCon UId="48" Name="in3" />
-    </Wire>
-    <Wire UId="75">
-      <NameCon UId="48" Name="out" />
-      <NameCon UId="49" Name="in" />
-    </Wire>
-    <Wire UId="76">
-      <IdentCon UId="35" />
-      <NameCon UId="49" Name="operand" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="36" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="37" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-The instrument is over range if the RAW_ANALOG is greater than or equal to calOverRange.
-
-The instrument is under range if the RAW_ANALOG is less than or equal to calUnderRange.
+The instrument is under range if the scaled value (stored in wrkReal)  is less than wrkLimitUnder
 
 If either of these conditions is true, the common out of range signal is activated
 
@@ -3066,9 +2429,9 @@ Note:    If the range information is incorrect (wrkConfigError = TRUE),
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="38" CompositionName="Title">
+          <MultilingualText ID="33" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="39" CompositionName="Items">
+              <MultilingualTextItem ID="34" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>IO evaluation — Out of range signals</Text>
@@ -3078,84 +2441,67 @@ Note:    If the range information is incorrect (wrkConfigError = TRUE),
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalVariable" UId="21">
-      <Symbol>
-        <Component Name="SYS_SIGNALS" />
-        <Component Name="_False" />
-      </Symbol>
-    </Access>
-    <Access Scope="LiteralConstant" UId="22">
+    <Access Scope="LiteralConstant" UId="21">
       <Constant>
         <ConstantType>String</ConstantType>
         <ConstantValue>'MIT LICENSE'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="23">
+    <Access Scope="LocalVariable" UId="22">
       <Symbol>
         <Component Name="licInfo" />
         <Component Name="LICENCE_TYPE" />
       </Symbol>
     </Access>
-    <Access Scope="LiteralConstant" UId="24">
+    <Access Scope="LiteralConstant" UId="23">
       <Constant>
         <ConstantType>String</ConstantType>
         <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
       </Constant>
     </Access>
-    <Access Scope="LocalVariable" UId="25">
+    <Access Scope="LocalVariable" UId="24">
       <Symbol>
         <Component Name="licInfo" />
         <Component Name="COPYRIGHT" />
       </Symbol>
     </Access>
-    <Part Name="Contact" UId="26">
-      <Negated Name="operand" />
-    </Part>
-    <Part Name="S_Move" UId="27" DisabledENO="true" />
-    <Part Name="S_Move" UId="28" DisabledENO="true" />
+    <Part Name="S_Move" UId="25" DisabledENO="true" />
+    <Part Name="S_Move" UId="26" DisabledENO="true" />
   </Parts>
   <Wires>
-    <Wire UId="29">
+    <Wire UId="27">
       <Powerrail />
-      <NameCon UId="26" Name="in" />
+      <NameCon UId="25" Name="en" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="out" />
+      <IdentCon UId="22" />
     </Wire>
     <Wire UId="30">
-      <IdentCon UId="21" />
-      <NameCon UId="26" Name="operand" />
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="in" />
     </Wire>
     <Wire UId="31">
       <NameCon UId="26" Name="out" />
-      <NameCon UId="27" Name="en" />
-      <NameCon UId="28" Name="en" />
-    </Wire>
-    <Wire UId="32">
-      <IdentCon UId="22" />
-      <NameCon UId="27" Name="in" />
-    </Wire>
-    <Wire UId="33">
-      <NameCon UId="27" Name="out" />
-      <IdentCon UId="23" />
-    </Wire>
-    <Wire UId="34">
       <IdentCon UId="24" />
-      <NameCon UId="28" Name="in" />
-    </Wire>
-    <Wire UId="35">
-      <NameCon UId="28" Name="out" />
-      <IdentCon UId="25" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="3B" CompositionName="Comment">
+          <MultilingualText ID="36" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="3C" CompositionName="Items">
+              <MultilingualTextItem ID="37" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -3197,9 +2543,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="3D" CompositionName="Title">
+          <MultilingualText ID="38" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="3E" CompositionName="Items">
+              <MultilingualTextItem ID="39" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>LICENCE AND CONTACT INFORMATION</Text>
@@ -3209,9 +2555,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="3F" CompositionName="Title">
+      <MultilingualText ID="3A" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="40" CompositionName="Items">
+          <MultilingualTextItem ID="3B" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text>Standard Module [SUBROUTINE] — Analog Input Scale</Text>

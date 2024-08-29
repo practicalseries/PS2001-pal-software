@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-08-19T08:04:40.8262922Z</Created>
+    <Created>2024-08-29T13:25:09.2523304Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -1645,7 +1645,7 @@ other software modules. These are broken down as follows:
 
 COMMENT STRUCTURE EXAMPLES
 
-NW 9.    Example — Headings, lists and indented text
+NW 9.    Example — Titles, headings, lists, indented text and test paths
 NW 10.    Example — Body text
 NW 11.    Example — Standard Tables
 NW 12.    Example — Other tables
@@ -1656,7 +1656,7 @@ NW 14.    Example — Figures
 Examining these in turn:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-NW 9 — Titles, headings, lists and indented text
+NW 9 — Titles, headings, lists, indented text and test paths
 
 Contains the following:
    •   a block header
@@ -1730,7 +1730,7 @@ CHARACTER LISTS
 
 NW 15.    Special characters — Hyphens, whitespace and construction lines
 NW 16.    Special characters — Arrows, box and block characters
-NW 17.    Special characters — Currency, punctuation and full-width characters
+NW 17.    Special characters — Currency, punctuation and full-width and small characters
 NW 18.    Special characters — Greek, indexing characters and Roman numerals
 NW 19.    Special characters — Mathematical operators (including vulgar fractions)
 NW 20.    Special characters — Geometrical and ornamental characters
@@ -2242,6 +2242,10 @@ Where:
                It tests all the interfaces to the module, any data recorded or 
                stored by the module, all error and exception handling functions 
                and tests all timed and interrupt driven operations.
+
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
 
  SCV Software Compatibility     A mechanism for verifying that no executable code software 
 ╓╖    Verification          changes have been made to a module following changes to
@@ -3899,7 +3903,7 @@ both the SCR and the SMT for the test iteration in question.
               <MultilingualTextItem ID="2F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Example — Headings, lists and indented text</Text>
+                  <Text>Example — Titles, headings, lists, indented text and test paths</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>

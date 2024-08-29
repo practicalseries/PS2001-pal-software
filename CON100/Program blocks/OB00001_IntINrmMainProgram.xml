@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-08-19T08:04:39.636409Z</Created>
+    <Created>2024-08-29T13:25:08.1437506Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0017A-000-105
+TIA PROJECT NAME:    PS2001-PAL-D0017A-000-107
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -267,7 +267,7 @@ COMPLETED MODULES
  DB00801 St_ConstAiRawData  001.000   UT 00801   001.000    UT 00801   001.000
                  2024-05-16   DB00801   001.000       DB00801   001.000
  ――――――――――――――――――――――――――――――――――――――――――
- DB00801 St_ConstAiScaleData  001.000   UT 00851   001.000    UT 00851   001.000
+ DB00851 St_ConstAiScaleData  001.000   UT 00851   001.000    UT 00851   001.000
                  2024-05-16   DB00851   001.000       DB00851   001.000
  ――――――――――――――――――――――――――――――――――――――――――
  FC01001 StdSysGlobalData      002.000   None           UT 21000   002.000
@@ -389,7 +389,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0017A.000.104'</ConstantValue>
+        <ConstantValue>'D0017A.000.107'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -402,7 +402,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.05.11'</ConstantValue>
+        <ConstantValue>'2023.08.31'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
@@ -696,53 +696,50 @@ The block must be the first non-debug block call within the main organisation bl
   <Parts>
     <Access Scope="GlobalVariable" UId="21">
       <Symbol>
-        <Component Name="DB21001_Dy_SysGlobalData" />
-        <Component Name="SysSignals" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="22">
-      <Symbol>
         <Component Name="FIC101_RAW" />
       </Symbol>
     </Access>
-    <Access Scope="GlobalVariable" UId="23">
+    <Access Scope="GlobalVariable" UId="22">
       <Symbol>
         <Component Name="DB00801_St_ConstAiRawData" />
         <Component Name="AI_RAW_2003" />
       </Symbol>
     </Access>
-    <Access Scope="GlobalVariable" UId="24">
+    <Access Scope="GlobalVariable" UId="23">
       <Symbol>
         <Component Name="DB00851_St_ConstAiScaleData" />
-        <Component Name="AI_SCALE_TST001" />
+        <Component Name="AI_SCALE_TST005" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="FIC101_SCALE" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
       <Symbol>
-        <Component Name="FIC101_FLT" />
+        <Component Name="FIC1010_OVER" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="26">
       <Symbol>
-        <Component Name="DB02001_St_InstAnalogRead" />
-        <Component Name="FIC101" />
+        <Component Name="FIC1010_UNDER" />
       </Symbol>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
       <Symbol>
-        <Component Name="DB22001_Dy_InstAnalogRead" />
-        <Component Name="FIC101" />
+        <Component Name="FIC1010_OOR" />
       </Symbol>
     </Access>
     <Call UId="28">
-      <CallInfo Name="FC02001_StdInstAnalogRead" BlockType="FC">
-        <Parameter Name="SYS_SIGNALS" Section="Input" Type="&quot;UT21000_Dy_SysSignals&quot;" />
+      <CallInfo Name="FC18001_StdSubScaleAI" BlockType="FC">
         <Parameter Name="AI_RAW_SIGNAL" Section="Input" Type="Int" />
         <Parameter Name="AI_RAW_DATA" Section="Input" Type="&quot;UT00801_St_ConstAiRawData&quot;" />
         <Parameter Name="AI_SCALE_DATA" Section="Input" Type="&quot;UT00851_Sy_ConstAiScaleData&quot;" />
-        <Parameter Name="EXT_FAULT" Section="Input" Type="Bool" />
-        <Parameter Name="STATIC_DATA" Section="InOut" Type="&quot;UT02001_St_InstAnalogRead&quot;" />
-        <Parameter Name="DYNAMIC_DATA" Section="InOut" Type="&quot;UT22001_Dy_InstAnalogRead&quot;" />
+        <Parameter Name="AI_SCALE_SIGNAL" Section="Output" Type="Real" />
+        <Parameter Name="OVER_RANGE" Section="Output" Type="Bool" />
+        <Parameter Name="UNDER_RANGE" Section="Output" Type="Bool" />
+        <Parameter Name="OUT_OF_RANGE" Section="Output" Type="Bool" />
       </CallInfo>
     </Call>
   </Parts>
@@ -753,31 +750,31 @@ The block must be the first non-debug block call within the main organisation bl
     </Wire>
     <Wire UId="30">
       <IdentCon UId="21" />
-      <NameCon UId="28" Name="SYS_SIGNALS" />
+      <NameCon UId="28" Name="AI_RAW_SIGNAL" />
     </Wire>
     <Wire UId="31">
       <IdentCon UId="22" />
-      <NameCon UId="28" Name="AI_RAW_SIGNAL" />
+      <NameCon UId="28" Name="AI_RAW_DATA" />
     </Wire>
     <Wire UId="32">
       <IdentCon UId="23" />
-      <NameCon UId="28" Name="AI_RAW_DATA" />
-    </Wire>
-    <Wire UId="33">
-      <IdentCon UId="24" />
       <NameCon UId="28" Name="AI_SCALE_DATA" />
     </Wire>
+    <Wire UId="33">
+      <NameCon UId="28" Name="AI_SCALE_SIGNAL" />
+      <IdentCon UId="24" />
+    </Wire>
     <Wire UId="34">
+      <NameCon UId="28" Name="OVER_RANGE" />
       <IdentCon UId="25" />
-      <NameCon UId="28" Name="EXT_FAULT" />
     </Wire>
     <Wire UId="35">
+      <NameCon UId="28" Name="UNDER_RANGE" />
       <IdentCon UId="26" />
-      <NameCon UId="28" Name="STATIC_DATA" />
     </Wire>
     <Wire UId="36">
+      <NameCon UId="28" Name="OUT_OF_RANGE" />
       <IdentCon UId="27" />
-      <NameCon UId="28" Name="DYNAMIC_DATA" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
