@@ -155,7 +155,7 @@ The current revision status of the master branch and any development branches is
 | Branch             | Revision                                                      | Status
 | ------------------ | ------------------------------------------------------------- | -----------------------------
 | **master**         | <img src="https://img.shields.io/badge/Dev-D0017-000000.svg"> | FC19511 - Released for use
-| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--105-BF504D.svg"> | FC02001 - Released for test
+| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--108-BF504D.svg"> | FC18001 - Released for use
 |   &emsp;                 |                                                                |  
 
 
@@ -182,13 +182,16 @@ The full workflow for the project is shown in the [Software Control](#5--softwar
 
 |Block     |Name                   |Revision    |Date        |
 |----------|-----------------------| -----------| -----------|
-|DB00800   |St_ConstAiRawData      |001.000     |2024-05-07  |
+|DB00801   |St_ConstAiRawData      |001.000     |2024-05-16  |
+|DB00802   |St_ConstAqRawData      |001.000     |2024-05-17  |
+|DB00851   |St_ConstAiScaleData    |001.000     |2024-05-16  |
+|DB00852   |St_ConstAqScaleData    |001.000     |2024-05-17  |
 |FC01001   |StdSysGlobalData       |002.000     |2022-04-16  |
-|FC02001   |StdInstAnalogRead      |002.000     |2022-04-16  |
+|FC02001   |StdInstAnalogRead      |003.000     |2024-05-16  |
 |FC11001   |StdDevValveIsol        |002.000     |2022-04-16  |
 |FC11011   |StdDevValve3Way        |001.000     |2022-06-11  |
 |FC11101   |StdDevValveBi          |001.000     |2023-02-02  |
-|FC18001   |StdSubScaleAI          |002.000     |2022-04-16  |
+|FC18001   |StdSubScaleAI          |003.000     |2024-08-31  |
 |FC18151   |StdSubTimeEventRTC     |002.000     |2022-04-16  |
 |FC19512   |StdDebugInst2Order     |002.000     |2022-04-16  |
 |FC61000   |DocGenExample          |002.000     |2022-04-16  |         

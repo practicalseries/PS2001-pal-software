@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-08-29T13:25:09.5766042Z</Created>
+    <Created>2024-08-30T11:36:04.5563828Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Subroutine</HeaderFamily>
       <HeaderName>StdSubScaleAI</HeaderName>
-      <HeaderVersion>2.8</HeaderVersion>
+      <HeaderVersion>3.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="AI_RAW_SIGNAL" Datatype="Int" Accessibility="Public">
@@ -311,7 +311,7 @@ This is a subroutine block.
  METRICS
  ――――――――――――――――――――――――――――――――――――――――――
  EXECUTION TIME       23.9 μs¹
- LOAD MEMORY       31.1 kB
+ LOAD MEMORY       31.2 kB
  WORK MEMORY           0.5 kB  
  ――――――――――――――――――――――――――――――――――――――――――
                ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
@@ -1229,7 +1229,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="23">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'002.801'</ConstantValue>
+        <ConstantValue>'003.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="24">
@@ -1340,6 +1340,10 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.08.31    003.000   D0018      D0017 D0018  None    M. Gledhill
+                       FC18001 — RELEASED FOR USE
+                         Merge back to master branch
+
  2024.08.31    002.801   D0017A-000.107   D0017 N/A     D017A   M. Gledhill
                        RAW_ANALOG changed to AI_RAW_SIGNAL
                        AI_RAW_DATA and AI_SCALE_DATA added

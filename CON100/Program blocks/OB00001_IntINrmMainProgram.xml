@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-08-29T13:25:08.1437506Z</Created>
+    <Created>2024-08-30T11:44:07.8176813Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0017A-000-107
+TIA PROJECT NAME:    PS2001-PAL-D0017A-000-108
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -264,11 +264,17 @@ COMPLETED MODULES
  ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
  BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
  ――――――――――――――――――――――――――――――――――――――――――
- DB00801 St_ConstAiRawData  001.000   UT 00801   001.000    UT 00801   001.000
-                 2024-05-16   DB00801   001.000       DB00801   001.000
+ DB00801 St_ConstAiRawData  001.000   UT 00801   001.000       None
+                 2024-05-16   DB00801   001.000       None
  ――――――――――――――――――――――――――――――――――――――――――
- DB00851 St_ConstAiScaleData  001.000   UT 00851   001.000    UT 00851   001.000
-                 2024-05-16   DB00851   001.000       DB00851   001.000
+ DB00802 St_ConstAqRawData    001.000   UT 00802   001.000       None
+                 2024-05-17   DB00802   001.000       None
+ ――――――――――――――――――――――――――――――――――――――――――
+ DB00851 St_ConstAiScaleData  001.000   UT 00851   001.000       None
+                 2024-05-16   DB00851   001.000       None
+ ――――――――――――――――――――――――――――――――――――――――――
+ DB00851 St_ConstAqScaleData    001.000   UT 00852   001.000       None
+                 2024-05-17   DB00852   001.000       None
  ――――――――――――――――――――――――――――――――――――――――――
  FC01001 StdSysGlobalData      002.000   None           UT 21000   002.000
                  2022-04-16                  UT 21001   002.000
@@ -286,8 +292,8 @@ COMPLETED MODULES
  FC11101 StdDevValveBi      001.000   UT 11101   001.000    UT 31101   001.000
                  2023-02-02   DB11101   001.000       DB31101   001.000
  ――――――――――――――――――――――――――――――――――――――――――
- FC18001 StdSubScaleAI      002.000   None           None 
-                 2022.04.16   None           None          
+ FC18001 StdSubScaleAI      003.000   None           None 
+                 2022.08.31   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
  FC18151 StdSubTimeEventRTC   002.000   None           UT 38151   002.000
                  2022-04-16   None           DB38151   002.000
@@ -516,6 +522,16 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2024.08.31    D0017A.000.108   M. Gledhill      FC18001 — RELEASED FOR USE
+
+ 2024.08.31    D0017A.000.107   M. Gledhill      FC18001 released for test
+
+ 2024.05.16    D0017A.000.106   M. Gledhill      FC02001 — RELEASED FOR USE
+
+ 2024.05.11    D0017A.000.105   M. Gledhill      DB00802 and UT00802 added
+                           DB00852 and UT00852 added
+                           FC02001 released for test
+
  2024.05.11    D0017A.000.104   M. Gledhill      DB00800 and UT00800 renumbered
                            as DB00801 and UT00801
                            DB/UT00851 added, FC02001
@@ -696,119 +712,6 @@ The block must be the first non-debug block call within the main organisation bl
   <Parts>
     <Access Scope="GlobalVariable" UId="21">
       <Symbol>
-        <Component Name="FIC101_RAW" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="22">
-      <Symbol>
-        <Component Name="DB00801_St_ConstAiRawData" />
-        <Component Name="AI_RAW_2003" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="23">
-      <Symbol>
-        <Component Name="DB00851_St_ConstAiScaleData" />
-        <Component Name="AI_SCALE_TST005" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="24">
-      <Symbol>
-        <Component Name="FIC101_SCALE" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="25">
-      <Symbol>
-        <Component Name="FIC1010_OVER" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="26">
-      <Symbol>
-        <Component Name="FIC1010_UNDER" />
-      </Symbol>
-    </Access>
-    <Access Scope="GlobalVariable" UId="27">
-      <Symbol>
-        <Component Name="FIC1010_OOR" />
-      </Symbol>
-    </Access>
-    <Call UId="28">
-      <CallInfo Name="FC18001_StdSubScaleAI" BlockType="FC">
-        <Parameter Name="AI_RAW_SIGNAL" Section="Input" Type="Int" />
-        <Parameter Name="AI_RAW_DATA" Section="Input" Type="&quot;UT00801_St_ConstAiRawData&quot;" />
-        <Parameter Name="AI_SCALE_DATA" Section="Input" Type="&quot;UT00851_Sy_ConstAiScaleData&quot;" />
-        <Parameter Name="AI_SCALE_SIGNAL" Section="Output" Type="Real" />
-        <Parameter Name="OVER_RANGE" Section="Output" Type="Bool" />
-        <Parameter Name="UNDER_RANGE" Section="Output" Type="Bool" />
-        <Parameter Name="OUT_OF_RANGE" Section="Output" Type="Bool" />
-      </CallInfo>
-    </Call>
-  </Parts>
-  <Wires>
-    <Wire UId="29">
-      <Powerrail />
-      <NameCon UId="28" Name="en" />
-    </Wire>
-    <Wire UId="30">
-      <IdentCon UId="21" />
-      <NameCon UId="28" Name="AI_RAW_SIGNAL" />
-    </Wire>
-    <Wire UId="31">
-      <IdentCon UId="22" />
-      <NameCon UId="28" Name="AI_RAW_DATA" />
-    </Wire>
-    <Wire UId="32">
-      <IdentCon UId="23" />
-      <NameCon UId="28" Name="AI_SCALE_DATA" />
-    </Wire>
-    <Wire UId="33">
-      <NameCon UId="28" Name="AI_SCALE_SIGNAL" />
-      <IdentCon UId="24" />
-    </Wire>
-    <Wire UId="34">
-      <NameCon UId="28" Name="OVER_RANGE" />
-      <IdentCon UId="25" />
-    </Wire>
-    <Wire UId="35">
-      <NameCon UId="28" Name="UNDER_RANGE" />
-      <IdentCon UId="26" />
-    </Wire>
-    <Wire UId="36">
-      <NameCon UId="28" Name="OUT_OF_RANGE" />
-      <IdentCon UId="27" />
-    </Wire>
-  </Wires>
-</FlgNet></NetworkSource>
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
-          <MultilingualText ID="13" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="14" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="15" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="16" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
-  <Parts>
-    <Access Scope="GlobalVariable" UId="21">
-      <Symbol>
         <Component Name="_True" />
       </Symbol>
     </Access>
@@ -875,9 +778,9 @@ The block must be the first non-debug block call within the main organisation bl
           <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="18" CompositionName="Comment">
+          <MultilingualText ID="13" CompositionName="Comment">
             <ObjectList>
-              <MultilingualTextItem ID="19" CompositionName="Items">
+              <MultilingualTextItem ID="14" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -919,9 +822,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
               </MultilingualTextItem>
             </ObjectList>
           </MultilingualText>
-          <MultilingualText ID="1A" CompositionName="Title">
+          <MultilingualText ID="15" CompositionName="Title">
             <ObjectList>
-              <MultilingualTextItem ID="1B" CompositionName="Items">
+              <MultilingualTextItem ID="16" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
                   <Text>LICENCE AND CONTACT INFORMATION</Text>
@@ -931,9 +834,9 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="1C" CompositionName="Title">
+      <MultilingualText ID="17" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="1D" CompositionName="Items">
+          <MultilingualTextItem ID="18" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text>Interrupt Module [NORMAL INTERRUPT] — Main Program Cyclic Execution</Text>
