@@ -23,7 +23,7 @@
 <table>
     <tr>
         <td><h1>LATEST SOFTWARE &mdash; TIA PORTAL DOWNLOAD </h1>
-        <h2>LATEST RELEASED SOFTWARE VERSION: <sub><img height="35px" src="https://img.shields.io/badge/Dev-D0017-000000.svg"></sub></h2></td>
+        <h2>LATEST RELEASED SOFTWARE VERSION: <sub><img height="35px" src="https://img.shields.io/badge/Dev-D0018-000000.svg"></sub></h2></td>
     </tr>
     <tr>
         <td align="left"> 
@@ -154,9 +154,7 @@ The current revision status of the master branch and any development branches is
 
 | Branch             | Revision                                                      | Status
 | ------------------ | ------------------------------------------------------------- | -----------------------------
-| **master**         | <img src="https://img.shields.io/badge/Dev-D0017-000000.svg"> | FC19511 - Released for use
-| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--110-BF504D.svg"> | FC18002 - Released for use
-|   &emsp;                 |                                                                |  
+| **master**         | <img src="https://img.shields.io/badge/Dev-D0018-000000.svg"> | FC02001, FC18001, FC18002 - Released for use
 
 
 The full workflow for the project is shown in the [Software Control](#5--software-control) section of this document.
@@ -175,7 +173,7 @@ The full workflow for the project is shown in the [Software Control](#5--softwar
 |D0009A-FC19512 |StdDebugInst2Order                  |Released for use                    |
 |D0010A-UNIFY   |All blocks - standardisation        |All blocks re-release at R002.000   |
 |D0014A-FC11011 |StdDevValve3Way                     |Released for use                    |
-|D0014A-FC11101 |StdDevValveBi                       |Released for use                    |
+|D0017A-FC18002 |Analog read/write blocks updated    |FC02001, FC18001 and fc18002 Released for use                    |
 <br />
 
 ## 2.3.&emsp;&emsp;Module Release Status
@@ -192,6 +190,7 @@ The full workflow for the project is shown in the [Software Control](#5--softwar
 |FC11011   |StdDevValve3Way        |001.000     |2022-06-11  |
 |FC11101   |StdDevValveBi          |001.000     |2023-02-02  |
 |FC18001   |StdSubScaleAI          |003.000     |2024-08-31  |
+|FC18002   |StdSubScaleAQ          |001.000     |2024-09-03  |
 |FC18151   |StdSubTimeEventRTC     |002.000     |2022-04-16  |
 |FC19512   |StdDebugInst2Order     |002.000     |2022-04-16  |
 |FC61000   |DocGenExample          |002.000     |2022-04-16  |         

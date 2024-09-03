@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-09-03T16:01:16.047361Z</Created>
+    <Created>2024-09-03T16:17:04.5561184Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0017A-000-110
+TIA PROJECT NAME:    PS2001-PAL-D0018
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -398,7 +398,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0017A.000.107'</ConstantValue>
+        <ConstantValue>'D0018'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -411,7 +411,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.08.31'</ConstantValue>
+        <ConstantValue>'2023.09.03'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
@@ -525,31 +525,11 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
- 2024.08.03    D0017A.000.110   M. Gledhill      FC18002 — RELEASED FOR USE
-
- 2024.09.02    D0017A.000.109   M. Gledhill      FC18002 released for test
-
- 2024.08.31    D0017A.000.108   M. Gledhill      FC18001 — RELEASED FOR USEt
-
- 2024.08.31    D0017A.000.107   M. Gledhill      FC18001 released for test
-
- 2024.05.16    D0017A.000.106   M. Gledhill      FC02001 — RELEASED FOR USE
-
- 2024.05.11    D0017A.000.105   M. Gledhill      DB00802 and UT00802 added
-                           DB00852 and UT00852 added
-                           FC02001 released for test
-
- 2024.05.11    D0017A.000.104   M. Gledhill      DB00800 and UT00800 renumbered
-                           as DB00801 and UT00801
-                           DB/UT00851 added, FC02001
-                           retested
-
- 2024.05.07    D0017A.000.103   M. Gledhill      DB00800 — RELEASED FOR USE
-
- 2024.05.03    D0017A.000.102   M. Gledhill      DB00800 — Created, populated
-                           and released for test
-
- 2023.03.08    D0017A.000.101   M. Gledhill      FC18002 — Created
+ 2024.09.03    D0018      M. Gledhill      FC02001 — RELEASED FOR USE
+                           FC18001 — RELEASED FOR USE
+                           FC18002 — RELEASED FOR USE
+                           DB00801, DB00802, DC00851 and
+                           DB00852 all released for use
 
  2023.03.03    D0017      M. Gledhill      FC19511 — RELEASED FOR USE
 

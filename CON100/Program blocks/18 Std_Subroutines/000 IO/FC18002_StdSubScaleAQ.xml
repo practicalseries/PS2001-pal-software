@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-09-03T15:58:14.9994763Z</Created>
+    <Created>2024-09-03T16:17:04.7207683Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -37,7 +37,7 @@
       <HeaderAuthor>M_Gledhill</HeaderAuthor>
       <HeaderFamily>Subroutine</HeaderFamily>
       <HeaderName>StdSubScaleAQ</HeaderName>
-      <HeaderVersion>0.8</HeaderVersion>
+      <HeaderVersion>1.0</HeaderVersion>
       <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
   <Section Name="Input">
     <Member Name="AQ_SCALE_SIGNAL" Datatype="Real" Accessibility="Public">
