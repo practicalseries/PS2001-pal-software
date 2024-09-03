@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2024-08-29T13:25:09.8157283Z</Created>
+    <Created>2024-09-03T15:47:33.1954347Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -2059,32 +2059,6 @@ The following is a full list of the status signals:
                               0 = ALL mode off
  ――――――――――――――――――――――――――――――――――――――――――
  Block status signals 
-
-
-
-▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-3.5.1     String constants for tag name and units
-
-
-The STATIC_DATA structure holds two string values:
-
-
- UT02001_St_InstAnalogRead
- ――――――――――――――――――――――――――――――――――――――――――
- SIGNAL NAME          FUNCTION                     TYPE
- ――――――――――――――――――――――――――――――――――――――――――
- INFO_TAG          INFORMATION — Instrument ID tag          String[20]
-
- INFO_UNITS          INFORMATION — Instrument engineering units       String[10]
-                       (unit of measure)
- ――――――――――――――――――――――――――――――――――――――――――
- String constants for the instrument
-
-
-These two strings allow the supervisory system to populate the instrument tag (e.g. FIC001) and 
-the engineering units applicable to the instrument (L/s for example) directly from the data 
-stored in the PLC; it means the block icon can be used directly within the supervisory system 
-graphic without customisation; all the data will be populated directly at runtime.
 
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 

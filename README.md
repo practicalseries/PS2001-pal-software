@@ -155,7 +155,7 @@ The current revision status of the master branch and any development branches is
 | Branch             | Revision                                                      | Status
 | ------------------ | ------------------------------------------------------------- | -----------------------------
 | **master**         | <img src="https://img.shields.io/badge/Dev-D0017-000000.svg"> | FC19511 - Released for use
-| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--108-BF504D.svg"> | FC18001 - Released for use
+| **D0017A-FC18002** | <img src="https://img.shields.io/badge/Dev-D0017A--000--109-BF504D.svg"> | FC18002 - Released for test
 |   &emsp;                 |                                                                |  
 
 
