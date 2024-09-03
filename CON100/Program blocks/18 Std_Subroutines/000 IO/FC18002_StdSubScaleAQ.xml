@@ -1,0 +1,2530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2024-09-03T15:58:14.9994763Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor>M_Gledhill</HeaderAuthor>
+      <HeaderFamily>Subroutine</HeaderFamily>
+      <HeaderName>StdSubScaleAQ</HeaderName>
+      <HeaderVersion>0.8</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="AQ_SCALE_SIGNAL" Datatype="Real" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Scaled Input</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="AQ_RAW_DATA" Datatype="&quot;UT00802_St_ConstAqRawData&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Analog Output Signal — raw range and configuration data</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="AQ_CODE" Datatype="UInt" />
+          <Member Name="___________0020_0" Datatype="Bool" />
+          <Member Name="___________0020_1" Datatype="Bool" />
+          <Member Name="RAW_MIN" Datatype="Int" />
+          <Member Name="RAW_MAX" Datatype="Int" />
+          <Member Name="RAW_DESC" Datatype="String[60]" />
+          <Member Name="___________0030_1" Datatype="Bool" />
+          <Member Name="___________0030_2" Datatype="Bool" />
+          <Member Name="PARAM_TYPE" Datatype="Byte" />
+          <Member Name="PARAM_RANGE" Datatype="Byte" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="AQ_SCALE_DATA" Datatype="&quot;UT00852_Sy_ConstAqScaleData&quot;" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Analog Output Signal — scaled range and configuration data</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+            <Sections>
+              <Section Name="None">
+                <Member Name="REV_BLOCK" Datatype="String[7]" />
+                <Member Name="REV_NUMBER" Datatype="String[20]" />
+                <Member Name="REV_DATE" Datatype="String[10]" />
+                <Member Name="REV_AUTHOR" Datatype="String[20]" />
+              </Section>
+            </Sections>
+          </Member>
+          <Member Name="___________0010_0" Datatype="Bool" />
+          <Member Name="___________0010_1" Datatype="Bool" />
+          <Member Name="AQ_TAG" Datatype="String[20]" />
+          <Member Name="___________0020_0" Datatype="Bool" />
+          <Member Name="___________0020_1" Datatype="Bool" />
+          <Member Name="SCALE_MIN" Datatype="Real" />
+          <Member Name="SCALE_MAX" Datatype="Real" />
+          <Member Name="SCALE_UNITS" Datatype="String[20]" />
+          <Member Name="SCALE_DESC" Datatype="String[60]" />
+          <Member Name="___________0030_0" Datatype="Bool" />
+          <Member Name="___________0030_1" Datatype="Bool" />
+          <Member Name="LIMIT_UNDER" Datatype="Real" />
+          <Member Name="LIMIT_OVER" Datatype="Real" />
+          <Member Name="___________0040_0" Datatype="Bool" />
+          <Member Name="___________0040_1" Datatype="Bool" />
+          <Member Name="USER_INFO_1" Datatype="String[60]" />
+          <Member Name="USER_INFO_2" Datatype="String[60]" />
+          <Member Name="USER_INFO_3" Datatype="String[60]" />
+          <Member Name="USER_INFO_4" Datatype="String[60]" />
+          <Member Name="USER_INFO_5" Datatype="String[60]" />
+        </Section>
+      </Sections>
+    </Member>
+  </Section>
+  <Section Name="Output">
+    <Member Name="AQ_RAW_SIGNAL" Datatype="Int" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Actual Output (as an integer for output card)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="OVER_RANGE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Signal Fault - Over range</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="UNDER_RANGE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Signal Fault - Under range</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="OUT_OF_RANGE" Datatype="Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Signal Fault - Out of Range (either over or under)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="revInfo" Datatype="&quot;UT01000_St_SysRevision&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Revision information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="REV_BLOCK" Datatype="String[7]" />
+          <Member Name="REV_NUMBER" Datatype="String[20]" />
+          <Member Name="REV_DATE" Datatype="String[10]" />
+          <Member Name="REV_AUTHOR" Datatype="String[20]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="licInfo" Datatype="&quot;UT01001_St_SysLicence&quot;">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Licence information for this block</MultiLanguageText>
+      </Comment>
+      <Sections>
+        <Section Name="None">
+          <Member Name="LICENCE_TYPE" Datatype="String[20]" />
+          <Member Name="COPYRIGHT" Datatype="String[30]" />
+        </Section>
+      </Sections>
+    </Member>
+    <Member Name="calPart1" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Raw value calculation part 1 (AQ_SCALE_VALUE − SCALE_MIN)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="calPart2" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Raw value calculation part 2 (SCALE_MAX − SCALE_MIN)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="calPart3" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Raw value calculation part 1 (RAW_MAX − RAW_MIN)</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkLimitUnder" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Actual LIMIT_UNDER in use</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkLimitOver" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Actual LIMIT_OVER in use</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkConfigError" Datatype="Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working configuration error exists</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="wrkReal" Datatype="Real">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Working storage (real)</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>true</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>FC18002_StdSubScaleAQ</Name>
+      <Number>18002</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>
+PRACTICAL SERIES AUTOMATION LIBRARY (PAL)   —   COPYRIGHT 2020 – M. GLEDHILL (MIT LICENCE)
+                  ———— ◆ ————
+FULL ONLINE DOCUMENTATION IS AVAILABLE AT: https://practicalseries.com/2001-pal/index.html</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＳＴＡＮＤＡＲＤ  ▄▄ 
+
+
+TITLE:    SUBROUTINE — ANALOG OUTPUT SCALE
+
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ 
+
+┌──────────────────────────────────────────┐
+│                                          │
+│          FC18002 — SOFTWARE MODULE DESIGN SPECIFICATION (SMDS)            │
+│                                          │
+│      The PDF version of the SMDS for this module is available online here:        │
+│              https://psop.uk/pal-smds-fc18002-p               │
+│                                          │
+│      It is also available as part of the Project User Defined Documentation,      │
+│      it can be accessed by selecting this module in the Project Tree          │
+│      (on the left) and pressing SHIFT+F1                        │
+│                                          │
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵈᶤᵇ  ┘
+
+FC18001_StdSubScaleAI is a subroutine block that is used to convert a scaled device signal to 
+an integer signal being passed to an analog output in the form of an output word (QW).
+
+The initial scaled value is a real (floating point) number that matches the calibrated range of 
+the device in engineering units.
+
+The block monitors the scaled signal to see if the scaled value is out-of-range, the following three 
+fault signals are generated:
+
+
+   •   Over-range (signal is more than a specified percentage above the calibrated 
+     range of the instrument
+
+   •   Under-range (signal is more than a specified percentage below the calibrated 
+     range of the instrument
+
+   •   Common out-of-range, either the over-range or under-range fault is active
+
+This is a subroutine block.
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     BLOCK TECHNICAL SUMMARY
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ NOMENCLATURE &amp; ADDRESSING
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TITLE         Analog Output Scale
+ BLOCK FUNCTION GROUP    Subroutine
+ BLOCK ADDRESS       FC18002
+ BLOCK SYMBOL        FC18002_StdSubScaleAQ
+ BLOCK USER ID         StdSubScaleAQ
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE &amp; USAGE
+ ――――――――――――――――――――――――――――――――――――――――――
+ BLOCK TYPE         Function (FC)
+ BLOCK NUMBER        18002
+ LANGUAGE           LAD
+ OPTIMISED ACCESS     Yes
+ PAL USAGE TYPE       Standard block
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ METRICS
+ ――――――――――――――――――――――――――――――――――――――――――
+ EXECUTION TIME       23.6 μs¹
+ LOAD MEMORY       30.5 kB
+ WORK MEMORY           0.5 kB  
+ ――――――――――――――――――――――――――――――――――――――――――
+               ¹ Measured on: CPU-1515-2PN (order no. 6ES7512-2AM02-0AB0) 
+                            https://psop.uk/pal-ds-cpu1515
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+Additional document references
+
+
+In addition to the documents referenced in OB1 (section DOCUMENT REFERENCES), the 
+following documents are associated with this module:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ REF.     DOCUMENT NO.       TITLE
+ ――――――――――――――――――――――――――――――――――――――――――
+ 101  PS2001-5-2312-db00801   DB00802 (analog output raw data) SMDS
+ 102  PS2001-5-2312-db00851   DB00852 (analog output scale data) SMDS
+ ――――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+1.     FUNCTIONAL DESCRIPTION
+
+
+FC18002 is the Analog Output Scale block, it is a subroutine block designed to convert a scaled 
+signal into a form suitable for an analog output it provides the following broad functions:
+
+   •   Converts a scaled, floating point (real) number that reflects the output range of a 
+     device, into a raw integer signal for an analog output 
+
+   •   Generate fault signals if the instrument is out of range
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.1     Convert a scaled value into an analog output
+
+
+The principal function of the block is to convert a scaled, floating point (real) number that reflects 
+the output range of a device, into a raw integer signal for an analog output (in the form of an 
+output word, QW).
+
+For example, if a variable speed drive had a scaled operating range of 150 rpm to 1500 rpm and 
+was driven via a 4-20 mA analog output signal from the PLC, then 4 mA would represent 150 rpm 
+and 20 mA would represent 1500 rpm.
+
+A typical 4-20 mA analog output signal has a raw value of 0 at 4 mA and 27648 at 20 mA.
+ 
+The block would generate output values as follows (it would also return every value in between; 
+five typical values have been shown):
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SCALED OUTPUT SIGNAL   RAW INTEGER VALUE FOR OUTPUT   ACTUAL OUTPUT SIGNAL
+ ――――――――――――――――――――――――――――――――――――――――――
+    150.0 rpm                     0              4 MA
+    487.5 rpm             6,912              8 MA
+    825.0 rpm           13,824            12 MA
+     1162.5 rpm           20,736            16 MA
+     1500.0 rpm           27,648            20 MA
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+1.2     Fault signals
+
+
+The block is able to generate three fault signals:
+
+   •   Device is over-range
+
+   •   Device is under-range
+
+   •   Device is out-of-range (common signal)
+
+Over-range and under-range faults are generated if the device is reading outside its normal 
+calibrated range. Over-range if the device is reading higher than its maximum configured value 
+and under-range if lower than its minimum configured value.
+
+The levels at which the device is considered to be either over-range or under-range (out-of-range), 
+are set as configurable values passed to the module.
+
+The out-of-range fault signal is a common signal that activates if either the over-range or 
+under-range signal is 
+
+All three signal activate if there is a configuration error with the data provided to the 
+module (see § 2.1.2).
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+2.     DETAILED BLOCK DESCRIPTION
+
+
+This module, FC18001_StdSubScaleAI is a subroutine block that can be called from other blocks 
+within the PAL. It is designed to provide a linear conversion of a scaled device output signal in 
+engineering units (in real format) to an integer value that repre-sents the analog output value 
+passed to an analog output card (as an integer).
+
+These are the formal module parameters: 
+
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM          FUNCTION                      TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_SCALE_SIGNAL   The scaled value of the device output in       Real      In
+           engineering units
+
+ AQ_RAW_DATA     Analog output signal configuration data (type,     UT00802    In
+           range, descriptions card parameters and 
+           coefficients)
+
+ AQ_SCALE_DATA    Analog output signal scaled value data        UT00852   In
+           (instrument tag, range, descriptions and 
+           engineering units)
+
+ AQ_RAW_SIGNAL       The actual analog output             Word     Out
+           engineering units
+
+ OVER_RANGE       Indicates the scaled signal is above its         Bool      Out
+           calibrated range by more than the tolerance
+           value
+
+ UNDER_RANGE     Indicates the scaled signal is below its         Bool      Out
+           calibrated range by more than the tolerance 
+           value
+
+ OUT_OF_RANGE      Indicates the scaled signal is outside of its     Bool      Out
+           calibrated range either over or under range
+ ――――――――――――――――――――――――――――――――――――――――――
+ Note:   If a configuration error is present (see § 2.1.2) the three out of range parameters 
+     will be activated (set true) and the AI_SCALE_SIGNAL signal will be set to zero 
+     irrespective of the AI_RAW_SIGNAL value.
+
+
+The AQ_SCALE_SIGNAL signal is provided directly from the module controlling the device and is 
+a real number in engineering units (e.g. 1220.4 rpm).
+
+The AQ_RAW_SIGNAL signal is the integer value passed directly to the specific output channel 
+of the analog output card.
+
+The AQ_RAW_DATA and AQ_SCALE_DATA parameters are UDTs that hold information about the 
+nature of the AQ_RAW_SIGNAL. In the case of AQ_RAW_DATA it specifies the output type: 
+voltage, current &amp;c., its range in integer values, various par-ametric information and a textual 
+description of the signal. In the case of AQ_SCALE_DATA it specifies the scaled range of the 
+signal, its engineering units, out-of-range values, a textual description of the device and the 
+device tag itself.
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM         ASSOCIATED UDT            ASSOCIATED DATA BLOCK
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_RAW_DATA    UT00802_St_ConstAqRawData     DB00802_St_ConstAqRawData
+ AQ_SCALE_DATA   UT00852_St_ConstAqScaleData      DB00852_St_ConstAqScaleData
+ ――――――――――――――――――――――――――――――――――――――――――
+
+Section 2.1.1 contains a full description of the AQ_RAW_DATA and AQ_SCALE_DATA parameters.
+
+AQ_SCALE_SIGNAL is the true scaled value of the signal being passed to the analog output 
+(AQ_RAW_SIGNAL) in engineering units.
+
+OVER_RANGE and UNDER_RANGE indicate if the scaled signal is outside its permitted range. 
+The limits at which under-range and over-range faults activate are provided as part of the 
+information supplied via the AQ_SCALE_DATA parameter.
+
+OVER_RANGE indicates the output is higher than the permitted tolerance and UNDER_RANGE 
+indicates the output is lower than the permitted tolerance.
+
+OUT_OF_RANGE is simply a common signal indicating the either OVER_RANGE or UNDER_RANGE 
+is active.
+
+This arrangement conforms with the PAL philosophy where IO card connections, safety signals 
+and interlocks have unique formal parameters; all remaining signals are passed as variables 
+within UDTs, see the Software Design Specification [Ref 008].
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.1     Converting the scaled device signal to an analog output value
+
+
+The AQ_RAW_SIGNAL is the raw device signal passed to the analog output card; this has specific 
+ranges depending on the type of IO card and the type of signal in use. 
+ 
+The following table shows example ranges for the AI_RAW_SIGNAL signal:
+
+ ―――――――――――――――――――――――――――――――――――――――――― 
+            LOWER LIMIT    EQUIVALENT UPPER LIMIT   EQUIVALENT
+ SIGNAL TYPE      (RAW_MIN)         TO    (RAW_MAX)       TO      
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ -10 V to 10 V         -27648     -10 V        27648      +10 V      
+ 0 V to 10 V          0       +10 V     27648      +10 V      
+ 1 V to 5 V          0      +1 V        27648     +5 V      
+ -20 mA to 20 mA       -27648     -20 mA    27648      +20 mA      
+ 0 mA to 20 mA         0        0 mA    27648      +20 mA      
+ 4 mA to 20 mA (2/4w)      0        4 mA    27648      +20 mA      
+ ――――――――――――――――――――――――――――――――――――――――――
+ Example ranges for an analog output signal
+
+
+The RAW_MIN and the RAW_MAX values in the above tables are the numerical values for the 
+analog output range; the appropriate values are supplied as the RAW_MIN and RAW_MAX 
+variables provided in the UDT of parameter AQ_RAW_DATA. (see § 2.1.1 for a full description).
+	
+
+The corresponding values for the originating scaled device signal are similarly provided by the 
+SCALE_MIN and SCALE_MAX values provided in the UDT of parameter AQ_SCALE_DATA 
+(see § 2.1.1 for a full description).
+
+Thus, if a variable speed drive had a scaled operating range of 150 rpm to 1500 rpm that was 
+passed from the PLC as a 4 20 mA signal, 
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME            FUNCTION                   VALUE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_RAW_DATA.RAW_MIN     RANGE — Minimum value of the raw analog      0
+                      signal (at the card)
+ AQ_RAW_DATA.RAW_MAX    RANGE — Maximum value of the raw analog        27648
+                      signal (at the card)
+ AQ_SCALE_DATA.SCALE_MIN   RANGE — Minimum value of the scaled analog       150 rpm
+                      signal [engineering units]
+ AQ_SCALE_DATA.SCALE_MAX  RANGE — Maximum value of the scaled analog      1500 rpm
+                      signal [engineering units]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+The scaled value from the originating device is passed to the module as a real number in the 
+parameter: AQ_SCALE_SIGNAL
+
+The analog output signal (AQ_RAW_SIGNAL) is calculated as follows:
+
+
+┌────────────────────────────────────────────┐
+│                                 (AQ_SCALE_SIGNAL ─ SCALE_MIN) ╳ (RAW_MAX ─ RAW_MIN)         │
+│AQ_RAW_SIGNAL =  ――――――――――――――――――――――――――――  ┼ RAW_MIN      │
+│                                    (SCALE_MAX ─ SCALE_MIN)                  │
+└──────────────────────────────────────  (2.1)  ───┘
+
+In the above calculation, RAW_MIN and RAW_MAX are preceded by AQ_RAW_DATA. and SCALE_MIN and 
+SCALE_MAX are preceded by AQ_SCALE_DATA.
+
+The three signals: AQ_SCALE_SIGNAL, SCALE_MIN and SCALE_MAX are all floating-point numbers 
+(real data type), the signals AQ_RAW_SIGNAL, RAW_MIN and RAW_MAX are all integers (int data type).
+
+Note:    It is assumed that the instrument has a linear response.
+
+
+          AQ_ SCALE_VALUE
+            ↑                    ⋰
+           SCALE_MAX__│______________________________________⋰
+            │                  ╱|
+            │                 ╱ |     
+            │                ╱  |
+            │               ╱   |
+            │              ╱    |
+            │             ╱     |
+            │            ╱      |
+    AQ_SCALE_SIGNAL │- - - - - - - - - - - - - - - - - - - - -&gt; ╱       |
+            │          ╱╎          |
+            │         ╱ ╎       |
+            │        ╱  ╎       |
+            │       ╱   ╎       |   
+            │      ╱    ╎       |
+            │     ╱     ╎       |
+            │    ╱         ╎          |
+            SCALE_MIN__│______╱          ╎          |
+            │  ⋰|           ╎          |
+            │ ⋰ |           ↓          |
+            ┼─────────────────────────→ AQ_RAW_SIGNAL
+                  |           ╎           |
+               RAW_MIN        ╎        RAW_MAX
+                      AQ_RAW_SIGNAL
+
+   Figure 2.1    Linear relationship between AQ_SCALE_SIGNAL and AQ_RAW_SIGNAL
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.1     Using AQ_RAW_DATA and AQ_SCALE_DATA
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+The AQ_RAW_DATA parameter
+
+The parameter AQ_RAW_DATA is used to pass the analog output card type, range, and description 
+data used by all analog output card channels. Data is supplied to this parameter using
+DB00802_St_ConstAqRawData, this contains a formal set of data for every type of Siemens 
+analog output (datasets), E.g.: for a 4-wire 4-20 mA signal it is:
+
+ AQ_RAW_2002      "UT00802_St_ConstAqRawData" AQ Current (4 mA to 20 mA)
+  revInfo          "UT01000_St_SysRevision"
+  ___________0010_0  Bool     false	 
+  ___________0010_1  Bool     false
+  AQ_CODE        UInt      16#2002
+  ___________0020_0  Bool     false
+  ___________0020_1  Bool     false
+  RAW_MIN          Int        0
+  RAW_MAX         Int        27648
+  RAW_DESC       String[60]    'Current (4 mA to 20 mA)'
+  ___________0030_1  Bool     false
+  ___________0030_2  Bool     false
+  PARAM_TYPE       Byte        16#02
+  PARAM_RANGE      Byte        16#02
+
+A full description of DB00801_St_ConstAiRawData and its associated datasets is given in 
+[Ref. 101].
+
+The primary in formation needed by the module are maximum and minimum ranges for the 
+input signal, this information is given in in the variables:
+
+
+ AQ_RAW_DATA
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME           FUNCTION                    TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_RAW_DATA.RAW_MIN       Minimum value of the analog input           Int
+               range being used by the module
+
+ AQ_RAW_DATA.RAW_MAX      Maximum value of the analog input           Int
+               range being used by the module
+ ――――――――――――――――――――――――――――――――――――――――――
+
+These are the RAW_MIN and RAW_MAX values used in equation (2.1).
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+The AQ_SCALE_DATA parameter
+
+
+The AQ_SCALE_DATA parameter is similar to the AI_RAW_DATA parameter except that in this 
+case it holds the scaled range, instrument tag, signal description and as-sociated engineering 
+unit information. Data is supplied to this parameter using DB00852_St_ConstAqScaleData, this 
+contains a set of data each device configured for the project, each device being a 
+dataset. E.g.
+
+ AQ_SCALE_FC001    "UT00852_Sy_ConstAqScaleData"	
+  revInfo        "UT01000_St_SysRevision"	
+  ___________0010_0  Bool     false
+  ___________0010_1  Bool     false
+  AQ_TAG         String[20]    'FC001'
+  ___________0020_0  Bool     false
+  ___________0020_1  Bool     false
+  SCALE_MIN         Real        0.0
+  SCALE_MAX        Real        100.0
+  SCALE_UNITS     String[20]    '%'
+  SCALE_DESC      String[60]    'Inlet flow control valve (0 to 100%)'
+  ___________0030_0  Bool     false
+  ___________0030_1  Bool     false
+  LIMIT_UNDER      Real        -2.2     
+  LIMIT_OVER        Real        102.5     
+  ___________0040_0  Bool     false
+  ___________0040_1  Bool     false
+  USER_INFO_1       String[60]    'Instrument Manufacturer: Siemens'
+  USER_INFO_2       String[60]    'Instrument type: 2-port magnetic'
+  USER_INFO_3       String[60]    'Instrument part no.: MXG461.15-0.6'
+  USER_INFO_4       String[60]    'Instrument serial no.:2075181118'
+  USER_INFO_5       String[60]    ''
+
+
+A full description of DB00852_St_ConstAqScaleData and its application is given in [Ref. 102].
+
+The primary in formation needed by the module are maximum and minimum ranges for the 
+scaled signal, this information is given in in the AI_SCALE_DATA parameter:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME            FUNCTION                    TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_SCALE_DATA.SCALE_MIN      Minimum value of the analog input           Real
+                range being used by the module
+
+ AQ_SCALE_DATA.SCALE_MAX     Maximum value of the analog input           Real
+                range being used by the module
+ ――――――――――――――――――――――――――――――――――――――――――
+
+These are the SCALE_MIN and SCALE_MAX values used in (2.1).
+
+Additionally, the instrument tag is contained in the variable 
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME            FUNCTION                   TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_SCALE_DATA.AQ_TAG      Tag name of the device             String[20]
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.1.2     Configuration errors
+
+
+The block requires that both the RAW_MAX/MIN and SCALE_MAX/MIN signals conform to certain 
+rules:
+
+   1.  RAW_MIN must be less than, and not equal to RAW_MAX
+   2.  SCALE_MIN must be less than, and not equal to SCALE_MAX
+
+Should either of these conditions not be met, the three out of range parameters will all 
+be activated (set true) 
+
+     OVER_RANGE
+     UNDER_RANGE
+     OUT_OF_RANGE
+
+In addition, the AQ_RAW_SIGNAL signal will be set to zero irrespective of the AQ_SCALE_SIGNAL 
+value.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+2.2     Out of range signals
+
+
+If the AQ_SCALE_SIGNAL signal is outside the SCALE_MIN to SCALE_MAX range (red dotted area 
+of the graph, Figure 2.1), the AQ_RAW_VALUE will still be calculated correctly; however, an 
+appropriate, OVER_RANGE or UNDER_RANGE signal will be generated to indicate that the 
+AQ_SCALE_SIGNAL signal is outside the calibrated range of the instrument and is potentially no 
+longer accurate.
+
+Some tolerance is permitted before the OVER_RANGE and UNDER_RANGE signals are activated 
+(most devices are tolerant of slight over and under shoot readings).
+
+The limits at which an over-range or under-range signal is generated is specified in the dataset 
+passed to the module in the AQ_SCALE_DATA parameter. Each such dataset is stored in 
+DB00852_St_ConstAqScaleData (see § 2.1.1) in the variables LIMIT_OVER and LIMIT_UNDER 
+respectively. These represent the highest and lowest values that the scaled instrument value 
+can read without being either over-range or under-range:
+
+ AQ_SCALE_DATA
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ LIMIT_UNDER        Lower limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              under-range
+
+ LIMIT_OVER           Upper limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              over-range
+ ――――――――――――――――――――――――――――――――――――――――――
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.2.1     Common out of range signal
+
+
+There is a third out of range signal: OUT_OF_RANGE, this signal is a common signal that just 
+indicates the device is out of its calibrated range (it does not specify whether it is over or 
+under range). 
+
+It is activated if either the OVER_RANGE or UNDER_RANGE signal is active.
+
+Note:    If a configuration error exists, see § 2.1.2, all three out of range signals (OVER_RANGE, 
+     UNDER_RANGE and OUT_OF_RANGE) will be activated irrespective of the 
+     RAW_ANALOG value
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+2.2.2    Over and under range restrictions
+
+
+The out-of-range limits passed to the module (AQ_SCALE_DATA) must meet the following 
+conditions:
+
+   •   LIMIT_UNDER ≤ SCALE_MIN
+   •   LIMIT_OVER ≥ SCALE_MAX
+
+I.e. the device cannot be considered either under range or over range if it is within the 
+normal range of the device.
+
+If the over-range limit (LIMIT_OVER) is less than SCALE_MAX, then it’s value will be replaced by 
+SCALE_MAX in all calculations. Similarly, if the under-range limit (LIMIT_UNDER) is greater than 
+SCALE_MIN, then it’s value will be replaced by SCALE_MIN in all calculations.
+
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 1 to 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+3.     Supervisory system interface
+
+
+FC18002 is a Subroutine block used to scale an analog input. 
+
+It does not have a supervisory system interface.
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+4.     PARAMETERS
+
+The following parameters are associated with this module:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ PARAM          FUNCTION                      TYPE      IN-OUT 
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_SCALE_SIGNAL   The scaled value of the device output in       Real      In
+           engineering units
+
+ AQ_RAW_DATA     Analog output signal configuration data (type,     UT00802    In
+           range, descriptions card parameters and 
+           coefficients)
+
+ AQ_SCALE_DATA    Analog output signal scaled value data        UT00852   In
+           (instrument tag, range, descriptions and 
+           engineering units)
+
+ AQ_RAW_SIGNAL       The actual analog output             Word     Out
+           engineering units
+
+ OVER_RANGE       Indicates the scaled signal is above its         Bool      Out
+           calibrated range by more than the tolerance
+           value
+
+ UNDER_RANGE     Indicates the scaled signal is below its         Bool      Out
+           calibrated range by more than the tolerance 
+           value
+
+ OUT_OF_RANGE      Indicates the scaled signal is outside of its     Bool      Out
+           calibrated range either over or under range
+ ――――――――――――――――――――――――――――――――――――――――――
+ Note:   If a configuration error is present (see § 2.1.2) the three out of range parameters 
+     will be activated (set true) and the AI_SCALE_SIGNAL signal will be set to zero 
+     irrespective of the AI_RAW_SIGNAL value.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+5.     DATA STRUCTURES AND USAGE
+
+
+The block has the following associated data structure:
+
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ DATA STRUCTURE             DESCRIPTION
+ ――――――――――――――――――――――――――――――――――――――――――
+ UT01000_St_SysRevision          Revision information for this block    See FC01001
+ UT01001_St_SysLicence           Licence information for this block  See FC01001
+
+ UT00802_St_ConstAqRawData      Analog output signal configuration data 
+                    (type, range, descriptions card parameters &amp;c.)
+
+ UT00852_St_ConstAqScaleData       Analog output signal scaled value data 
+                    (instrument tag, range, descriptions and 
+                    engineering units)
+ ――――――――――――――――――――――――――――――――――――――――――
+ Note:   This subroutine does not require the system signals data interface 
+        (DB21001_Dy_SysSignals). The module is entirely autonomous.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.1     UT00802_St_ConstAqRawData
+
+
+The static data structure for an analog instrument.
+
+
+ UT00802_St_ConstAqRawData (full contents)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_CODE             A 16-bit hex value that uniquely identifies dataset   UInt
+              (it is the variable name of the dataset in DB00802)
+ RAW_MIN         Minimum value of the raw analog signal        Int
+              (at the card)
+
+ RAW_MAX           Maximum value of the raw analog signal        Int
+ RAW_DESC         Textual plain English description of the channel     String[60]
+              type and range
+ PARAM_TYPE         An 8-bit hex code that represents the input type    Byte
+              See [Ref. 101]
+
+ PARAM_RANGE        An 8-bit hex code that represents the input range    Byte
+              See [Ref. 101]
+
+ ―――――――――――――――――――――――――――――――――――――――――― 
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+5.2     UT00852_St_ConstAqScaleData
+
+
+The static data structure for an analog instrument.
+
+
+ UT00852_St_ConstAqScaleDataa (full contents)
+ ―――――――――――――――――――――――――――――――――――――――――― 
+ SIGNAL NAME          FUNCTION                     TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ AQ_TAG           Tag name of the instrument             String[20]
+
+ SCALE_MIN        Minimum value of the scaled input signal range    Real
+              being used by the module
+ SCALE_MAX          Maximum value of the scaled input signal range      Real
+              being used by the module
+
+ SCALE_UNITS          Engineering units for the instrument         String[20]
+ SCALE_DESC           Textual plain English description of the instrument  String[60]
+
+ LIMIT_UNDER        Lower limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              under-range
+ LIMIT_OVER           Upper limit of the scaled instrument value in      Real
+              engineering units before instrument is 
+              over-range
+
+ USER_INFO_1          Optional user information (text) line 1       String[60]
+ USER_INFO_2          Optional user information (text) line 2       String[60]
+ USER_INFO_3          Optional user information (text) line 3       String[60]
+ USER_INFO_4          Optional user information (text) line 4       String[60]
+ USER_INFO_5          Optional user information (text) line 5       String[60]
+ ―――――――――――――――――――――――――――――――――――――――――― 
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+6.     CONSTANTS AND TEMPORARY (LOCAL) DATA
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+6.1     Constants
+
+
+No constants are used in this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+6.2     Temporary (local) data
+
+
+The following temporary data is used:
+
+ ――――――――――――――――――――――――――――――――――――――――――
+ SIGNAL NAME          FUNCTION                    TYPE
+ ――――――――――――――――――――――――――――――――――――――――――
+ revInfo             Revision information for the block           UT01000
+ licInfo           Licensing information for the block        UT01001
+ calPart1             Raw value part 1 (SCALE_ANALOG − SCALE_MIN)       Real
+ calPart2             Raw value part 2 (SCALE_MAX − SCALE_MIN)        Real
+ calPart3             Raw value part 3 (RAW_MAX − RAW_MIN)      Real
+ wrkLimitUnder        Actual LIMIT_UNDER in use            Real
+ wrkLimitOver          Actual LIMIT_OVER in use              Real
+ wrkConfigError        Working configuration error exists           Bool
+ wrkReal           Working storage (Real)               Real
+ ―――――――――――――――――――――――――――――――――――――――――
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+7.     BLOCK CALLS AND ASSOCIATIONS
+
+
+This section details any blocks which may be called from within this software module (subroutine 
+functions for example), any partner blocks with which it may be associated (for example a 
+receive module that is partner with a transmit module &amp;c.). It lists any system functions which 
+may be called (e.g. reading the real time clock) and any system data types that may be used.
+
+Finally, it lists any special calling requirements for the block (for example, must be called from 
+within a cyclic interrupt organisation block) and if the block is using “optimised access” (this is 
+the default arrangement).
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.1     Block calls from within this module
+
+
+There are no PAL block calls from within this block.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.2     Blocks associated with this module
+
+
+This is a stand-alone block and is not associated with any other blocks.
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.3     System block calls and system data types
+
+There are no system block calls
+
+
+
+▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+7.4     Special properties and requirements
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+7.4.1     Block optimisation, IEC compatibility and library conformance
+
+
+   •   Block optimisation is ACTIVE for this block.
+
+   •   The block has been checked for IEC compatibility and is compliant.
+
+   •   The block is compatible with all IEC library-conformance module constraints
+
+
+
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+7.4.2     Calling requirements
+
+
+There are no special calling requirements for this block.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+8.     EXAMPLE USAGE
+
+
+The following shows a typical deployment of FC18002:
+
+
+                       ┌─────────────
+        ───────────────┤ FC18002
+                       ├───────────
+                       │              │                       
+                          "FCV001"   ─┤ AQ_SCALE_SIGNAL      │
+                       │              │
+       "DB00802".AQ_RAW_2003    ─┤ AQ_RAW_DATA        │
+                       │              │
+       "DB00852".AQ_SCALE_FCV001 ─┤ AQ_SCALE_DATA       │
+                       │              │
+                            AQ_SCALE_SIGNAL├─ #FCV001_RAW
+                                   │
+                             UNDER_RANGE ├─ #ALM_UNDER
+                                   │
+                                OVER_RANGE├─ #ALM_OVER
+                                   │
+                                 OUT_OF_RANGE├─ #ALM_OOR  
+                                   │
+                      ─────────────┘
+
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+9.     TEST AND VERIFICATION PATH
+
+
+The following diagram shows the full test and verification path for the formal release of each 
+version of the software module. See the Test Plan [Ref. 003] for full details, available here:
+        https://psop.uk/pal-tp-p
+
+
+        FC18002-T001   
+
+    Test version: 000.801     
+ Released version: 001.000     
+Released commit: D0018    
+
+       SCR      SMT  
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿
+      └┘   ▙▟   
+Initial test           
+
+Initial test to release the      
+module following the      
+development stage.       
+Full SMT              
+                            
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
+
+               ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
+
+
+██████████████ █ █ █ █  END   █ █ █ █ ██████████████
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Block description — Sections 3 to 9</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'FC18002'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_BLOCK" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'001.000'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_NUMBER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2024.09.03'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_DATE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'M. Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="revInfo" />
+        <Component Name="REV_AUTHOR" />
+      </Symbol>
+    </Access>
+    <Part Name="S_Move" UId="29" DisabledENO="true" />
+    <Part Name="S_Move" UId="30" DisabledENO="true" />
+    <Part Name="S_Move" UId="31" DisabledENO="true" />
+    <Part Name="S_Move" UId="32" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="33">
+      <Powerrail />
+      <NameCon UId="29" Name="en" />
+      <NameCon UId="30" Name="en" />
+      <NameCon UId="31" Name="en" />
+      <NameCon UId="32" Name="en" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="21" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="35">
+      <NameCon UId="29" Name="out" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="in" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="30" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="25" />
+      <NameCon UId="31" Name="in" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="31" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="27" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="32" Name="out" />
+      <IdentCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+MODIFICATION HISTORY
+
+
+The revision data shown here, in the network comments, contains additional information 
+reflecting the software development workflow under the version control system (VCS) employed 
+to track all software changes.
+
+The VCS in use is the Git Source Code Management system in conjunction with the GitHub online 
+hosting system. The software in its entirety is available in the GitHub remote repository:
+
+     https://github.com/practicalseries/PS2001-pal-software
+
+The repository is public and can be freely copied (forked in GitHub terminology) and used 
+under the MIT licence. 
+
+The MIT licence is reproduced in full in the last network of this software module.
+
+
+ ―――――――――――――――――――――――――――――――――――――――――――
+ DATE       REVISION             MASTER BRANCH     DEV
+         (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
+ ———————————————————————————————————————————
+ 2022.09.03    001.000   D0018      D0017 D0018  None    M. Gledhill
+                       FC18001 — RELEASED FOR USE
+                         Merge back to master branch
+
+ 2024.09.02    000.101   D0017A-000.109   D0017 N/A     D0017A   M. Gledhill
+                       Block created
+ ———————————————————————————————————————————
+  Where: nnn  =  Major revision
+        a  =  Type (1-7 Development, 8 Proving, 9 Qualification, 0 Release)
+      mm  =  Minor revision (must be 00 if a = 0)
+        Block properties version number should be set to nn.a (only one decimal place)
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Current revision and modification history</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AQ_RAW_DATA" />
+        <Component Name="RAW_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="AQ_RAW_DATA" />
+        <Component Name="RAW_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Part Name="Le" UId="26">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Le" UId="27">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="O" UId="28">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="29" />
+  </Parts>
+  <Wires>
+    <Wire UId="30">
+      <Powerrail />
+      <NameCon UId="26" Name="pre" />
+      <NameCon UId="27" Name="pre" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="in1" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="in2" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="28" Name="in1" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="23" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="24" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="27" Name="out" />
+      <NameCon UId="28" Name="in2" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="25" />
+      <NameCon UId="29" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Determines if a configuration error has occurred, this is true if either the RAW range or SCALED 
+range has not been specified correctly, either:
+
+   •   RAW_MAX &lt;= RAW_MIN (raw range error) OR
+   •   SCALE_MAX &lt;= SCALE_MIN (scaled range error)
+
+If either, or both, conditions are true, the wrkConfigError signal is activated
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Configuration Error Check</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="LIMIT_UNDER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="wrkLimitUnder" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="LIMIT_UNDER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="wrkLimitUnder" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="LIMIT_OVER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="wrkLimitOver" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="LIMIT_OVER" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="wrkLimitOver" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="33" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Gt" UId="34">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="35" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="36" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Lt" UId="37">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="38" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="39">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="34" Name="pre" />
+      <NameCon UId="36" Name="en" />
+      <NameCon UId="37" Name="pre" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="21" />
+      <NameCon UId="33" Name="in" />
+    </Wire>
+    <Wire UId="41">
+      <NameCon UId="33" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="23" />
+      <NameCon UId="34" Name="in1" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="24" />
+      <NameCon UId="34" Name="in2" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="34" Name="out" />
+      <NameCon UId="35" Name="en" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="25" />
+      <NameCon UId="35" Name="in" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="35" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="27" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="36" Name="out1" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="29" />
+      <NameCon UId="37" Name="in1" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="30" />
+      <NameCon UId="37" Name="in2" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="31" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out1" />
+      <IdentCon UId="32" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The out-of-range limits passed to the module (AQ_SCALE_DATA) must meet the following 
+conditions:
+
+   •   LIMIT_UNDER ≤ SCALE_MIN
+   •   LIMIT_OVER ≥ SCALE_MAX
+
+I.e. the instrument cannot be considered either under range or over range if it is within the 
+normal range of the instrument.
+
+If the over-range limit (LIMIT_OVER) is less than SCALE_MAX, then it’s value will be replaced by 
+SCALE_MAX in all calculations. Similarly, if the under-range limit (LIMIT_UNDER) is greater than 
+SCALE_MIN, then it’s value will be replaced by SCALE_MIN in all calculations.
+
+The limits in use are stored in wrkLimitUnder and wrkLimitOver
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Signal conditioning — Ensure Out of Range percentage is 10% or less</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AQ_SCALE_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="calPart1" />
+      </Symbol>
+    </Access>
+    <Part Name="Sub" UId="24" DisabledENO="false">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <Powerrail />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="in1" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="in2" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The following formula is used to calculate the raw analog output signal (AQ_RAW_SIGNAL):
+┌────────────────────────────────────────────┐
+│                                 (AQ_SCALE_SIGNAL ─ SCALE_MIN) ╳ (RAW_MAX ─ RAW_MIN)         │
+│AQ_RAW_SIGNAL =  ――――――――――――――――――――――――――――  ┼ RAW_MIN      │
+│                                    (SCALE_MAX ─ SCALE_MIN)                  │
+└────────────────────────────────────────────┘
+
+Rawvalue calculation part 1 is (AQ_SCALE_SIGNAL − SCALE_MIN)
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>IO evaluation — Analog output calculation - Part 1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="AQ_SCALE_DATA" />
+        <Component Name="SCALE_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="calPart2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>3.402823E+38</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="calPart2" />
+      </Symbol>
+    </Access>
+    <Part Name="Sub" UId="27" DisabledENO="false">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="28" />
+    <Part Name="Move" UId="29" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="30">
+      <Powerrail />
+      <NameCon UId="27" Name="en" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="in1" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="in2" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="27" Name="eno" />
+      <NameCon UId="28" Name="in" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="27" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="operand" />
+    </Wire>
+    <Wire UId="36">
+      <NameCon UId="28" Name="out" />
+      <NameCon UId="29" Name="en" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="29" Name="in" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="29" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Scale value calculation part 2 (SCALE_MAX − SCALE_MIN)
+
+Note:    To prevent inconsistencies and divide by zero errors, if a configuration error is present
+     (resulting from incorrect range data and indicated by status_ConfigError = TRUE), the
+     denominator of the calculation (CalPart2) is set to 3.402823 × 1038 (i.e. a very large 
+     number), the result of this is that the  raw signa will equal RAW_MIN for 
+     all permitted values of AQ_SCALE_SIGNAL
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>IO evaluation —Analog output calculation - Part 2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AQ_RAW_DATA" />
+        <Component Name="RAW_MAX" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="AQ_RAW_DATA" />
+        <Component Name="RAW_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="calPart3" />
+      </Symbol>
+    </Access>
+    <Part Name="Sub" UId="24" DisabledENO="false">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <Powerrail />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="in1" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="24" Name="in2" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="27" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Scale value calculation part 3 (RAW_MAX − RAW_MIN)
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="29" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>IO evaluation — Analog output calculation - Part 3</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="calPart1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="calPart3" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="calPart2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="AQ_RAW_DATA" />
+        <Component Name="RAW_MIN" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="AQ_RAW_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="33">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="AQ_RAW_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="35">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="wrkReal" />
+      </Symbol>
+    </Access>
+    <Part Name="Mul" UId="37" DisabledENO="false">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Div" UId="38" DisabledENO="false">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Add" UId="39" DisabledENO="false">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="40" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="41" />
+    <Part Name="Move" UId="42" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="43" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="44">
+      <Powerrail />
+      <NameCon UId="37" Name="en" />
+      <NameCon UId="41" Name="in" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="21" />
+      <NameCon UId="37" Name="in1" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="22" />
+      <NameCon UId="37" Name="in2" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="37" Name="eno" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="48">
+      <NameCon UId="37" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="24" />
+      <NameCon UId="38" Name="in1" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="25" />
+      <NameCon UId="38" Name="in2" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="38" Name="eno" />
+      <NameCon UId="39" Name="en" />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="38" Name="out" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="27" />
+      <NameCon UId="39" Name="in1" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="28" />
+      <NameCon UId="39" Name="in2" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="39" Name="out" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="in" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="40" Name="out" />
+      <IdentCon UId="31" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="32" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="en" />
+      <NameCon UId="43" Name="en" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="33" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="42" Name="out1" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="43" Name="out1" />
+      <IdentCon UId="36" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                                                                             (calPart1 x CalPart3)
+Complete the calculation SCALE_VALUE =  —————————— + RAW_MIN
+                                                                                        calPart2
+
+If a configuration error exists, the SCALE_VALUE is set to zero for all conditions
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2E" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>IO evaluation —Analog output calculation - Part 4</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="AQ_SCALE_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="wrkLimitUnder" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="UNDER_RANGE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="AQ_SCALE_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="wrkLimitOver" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="OVER_RANGE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="AQ_SCALE_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="wrkLimitUnder" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="AQ_SCALE_SIGNAL" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="wrkLimitOver" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="wrkConfigError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="OUT_OF_RANGE" />
+      </Symbol>
+    </Access>
+    <Part Name="Lt" UId="35">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="36" />
+    <Part Name="O" UId="37">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="38" />
+    <Part Name="Gt" UId="39">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="40" />
+    <Part Name="O" UId="41">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="42" />
+    <Part Name="Lt" UId="43">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Gt" UId="44">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="45" />
+    <Part Name="O" UId="46">
+      <TemplateValue Name="Card" Type="Cardinality">3</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="47" />
+  </Parts>
+  <Wires>
+    <Wire UId="48">
+      <Powerrail />
+      <NameCon UId="35" Name="pre" />
+      <NameCon UId="36" Name="in" />
+      <NameCon UId="39" Name="pre" />
+      <NameCon UId="40" Name="in" />
+      <NameCon UId="43" Name="pre" />
+      <NameCon UId="44" Name="pre" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="in1" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="22" />
+      <NameCon UId="35" Name="in2" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="37" Name="in1" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="in2" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="24" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="25" />
+      <NameCon UId="39" Name="in1" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="26" />
+      <NameCon UId="39" Name="in2" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="39" Name="out" />
+      <NameCon UId="41" Name="in1" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="27" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="in2" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="28" />
+      <NameCon UId="42" Name="operand" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="29" />
+      <NameCon UId="43" Name="in1" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="30" />
+      <NameCon UId="43" Name="in2" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="43" Name="out" />
+      <NameCon UId="46" Name="in1" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="31" />
+      <NameCon UId="44" Name="in1" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="32" />
+      <NameCon UId="44" Name="in2" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="46" Name="in2" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="33" />
+      <NameCon UId="45" Name="operand" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="45" Name="out" />
+      <NameCon UId="46" Name="in3" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="46" Name="out" />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="34" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="31" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+The device signal is over range if AQ_SCALED_SIGNAL is greater than wrkLimitOver
+
+The instrument is under range if AQ_SCALED_SIGNAL is less than wrkLimitUnder
+
+If either of these conditions is true, the common out of range signal is activated
+
+Note:    If the range information is incorrect (wrkConfigError = TRUE),
+     Then all the out of range signals are activated (UNDER_RANGE, 
+     OVER_RANGE and OUT_OF_RANGE) simultaneously
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="33" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>IO evaluation — Out of range signals</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'MIT LICENSE'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="LICENCE_TYPE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>String</ConstantType>
+        <ConstantValue>'2020 Michael Gledhill'</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="licInfo" />
+        <Component Name="COPYRIGHT" />
+      </Symbol>
+    </Access>
+    <Part Name="S_Move" UId="25" DisabledENO="true" />
+    <Part Name="S_Move" UId="26" DisabledENO="true" />
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <Powerrail />
+      <NameCon UId="25" Name="en" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="25" Name="out" />
+      <IdentCon UId="22" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+LICENCE AND CONTACT INFORMATION
+
+This software and its associated documentation is made available under the MIT Licence:
+
+════════════════════════════════════════════
+
+The MIT License (MIT)
+
+Copyright © 2020 Michael Gledhill
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the “Software”), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or 
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+════════════════════════════════════════════
+                   ┌────────────┐
+You can reach the author by email here:   │  mg@practicalseries.com  │
+                   └────────────┘
+Questions, corrections, constructive criticism and complaints (polite ones) are invited.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="38" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LICENCE AND CONTACT INFORMATION</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="3A" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="3B" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Standard Module [SUBROUTINE] — Analog Output Scale</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>
