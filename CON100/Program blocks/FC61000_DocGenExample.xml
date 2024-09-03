@@ -2,24 +2,24 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2022-05-03T13:49:38.3618026Z</Created>
+    <Created>2024-09-03T15:47:32.7773308Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
         <DisplayName>Totally Integrated Automation Portal</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>TIA Portal Version Control Interface</DisplayName>
-        <DisplayVersion>V16 Update 2</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <OptionPackage>
         <DisplayName>TIA Portal Openness</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <Product>
         <DisplayName>STEP 7 Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>STEP 7 Safety</DisplayName>
@@ -27,7 +27,7 @@
       </OptionPackage>
       <Product>
         <DisplayName>WinCC Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
     </InstalledProducts>
   </DocumentInfo>
@@ -191,7 +191,7 @@ TITLE:    GENERAL — EXAMPLE DOCUMENTATION
 │      it can be accessed by selecting this module in the Project Tree          │
 │      (on the left) and pressing SHIFT+F1                        │
 │                                          │
-└─────────────────────────────────────── ʷᴵᴰ⁻ᵇᵈᵖ ┘
+└─────────────────────────────────────── ʷᴵᴰ⁻ᵈᵉᵏ ┘
 
 FC61000_DocGenExample is a documentation block that contains examples of all the typical 
 forms of documentation used within the PAL.
@@ -322,7 +322,7 @@ CHARACTER LISTS
 
 NW 15.    Special characters — Hyphens, whitespace and construction lines
 NW 16.    Special characters — Arrows, box and block characters
-NW 17.    Special characters — Currency, punctuation and full-width characters
+NW 17.    Special characters — Currency, punctuation and full-width and small characters
 NW 18.    Special characters — Greek, indexing characters and Roman numerals
 NW 19.    Special characters — Mathematical operators (including vulgar fractions)
 NW 20.    Special characters — Geometrical and ornamental characters
@@ -1645,7 +1645,7 @@ other software modules. These are broken down as follows:
 
 COMMENT STRUCTURE EXAMPLES
 
-NW 9.    Example — Headings, lists and indented text
+NW 9.    Example — Titles, headings, lists, indented text and test paths
 NW 10.    Example — Body text
 NW 11.    Example — Standard Tables
 NW 12.    Example — Other tables
@@ -1656,7 +1656,7 @@ NW 14.    Example — Figures
 Examining these in turn:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-NW 9 — Titles, headings, lists and indented text
+NW 9 — Titles, headings, lists, indented text and test paths
 
 Contains the following:
    •   a block header
@@ -1730,7 +1730,7 @@ CHARACTER LISTS
 
 NW 15.    Special characters — Hyphens, whitespace and construction lines
 NW 16.    Special characters — Arrows, box and block characters
-NW 17.    Special characters — Currency, punctuation and full-width characters
+NW 17.    Special characters — Currency, punctuation and full-width and small characters
 NW 18.    Special characters — Greek, indexing characters and Roman numerals
 NW 19.    Special characters — Mathematical operators (including vulgar fractions)
 NW 20.    Special characters — Geometrical and ornamental characters
@@ -2243,6 +2243,10 @@ Where:
                stored by the module, all error and exception handling functions 
                and tests all timed and interrupt driven operations.
 
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
+
  SCV Software Compatibility     A mechanism for verifying that no executable code software 
 ╓╖    Verification          changes have been made to a module following changes to
 ╙╜             comment fields.
@@ -2303,7 +2307,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'002.000'</ConstantValue>
+        <ConstantValue>'002.101'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -2315,7 +2319,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2022.04.16'</ConstantValue>
+        <ConstantValue>'2022.08.31'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -2425,6 +2429,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2022.08.31    002.101   D0017A-000.108   D0017 N/A     D017A   M. Gledhill
+                       Comments updated (partial test text)
+
  2022.04.16    002.000   D0011      D0010 D0011  None    M. Gledhill
                        FC61000 — RELEASED FOR USE
                          Merge back to master branch
@@ -3401,6 +3408,10 @@ Where:
                stored by the module, all error and exception handling functions 
                and tests all timed and interrupt driven operations.
 
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
+
  SCV Software Compatibility     A mechanism for verifying that no executable code software 
 ╓╖    Verification          changes have been made to a module following changes to
 ╙╜             comment fields.
@@ -3460,7 +3471,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'001.000'</ConstantValue>
+        <ConstantValue>'002.000'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="25">
@@ -3472,7 +3483,7 @@ both the SCR and the SMT for the test iteration in question.
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2020.11.09'</ConstantValue>
+        <ConstantValue>'2024.05.11'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -3582,6 +3593,9 @@ The MIT licence is reproduced in full in the last network of this software modul
  DATE       REVISION             MASTER BRANCH     DEV
          (nnn.amm)   COMMIT TAG    (Base ---> Merge)    BRANCH   Author
  ———————————————————————————————————————————
+ 2024.05.11    002.000   D0017A-000.104   D0017 N/A     D017A   M. Gledhill
+                       SMTp added and CONSTANT heading
+
  2020.11.09    001.000   D0003      D0002 D0003  None    M. Gledhill
                        FC01001 — RELEASED FOR USE
                          Merge back to master branch
@@ -3684,6 +3698,7 @@ TITLE:    FULL DESCRIPTION — FUNCTION
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＴＥＭＰＬＡＴＥ  ▄▄
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＤＯＣＵＭＥＮＴＡＴＩＯＮ  ▄▄
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＩＮＴＥＲＲＵＰＴ  ▄▄
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ＣＯＮＳＴＡＮＴＳ  ▄▄
 
 [Additional references]
 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
@@ -3808,6 +3823,10 @@ TEST PATH ELEMENTS AND CONSTRUCTION
     SMT  █    ＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 ＿ ▛▜ ＿█       [Each area is 14 em spaces]   
   ▙▟  █    ▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+
+SMTp     █
+＿ ▛ ┐＿█
+ └ ▟  █
          
   SCV    █
 ＿╓╖＿█
@@ -3829,27 +3848,55 @@ Released commit: D0002    Released commit: D0011
 
 
 
-        FC61000-T001         FC61000-T002
+        FC02001-T001         FC02001-T002         FC02001-T003
 ↳
-    Test version: 000.801     Test version: 001.801
- Released version: 001.000     Released version: 002.000
-Released commit: D0002    Released commit: D0011
+       SCR      SMT         SCR      SMT                 SMTp  
+＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿ ▛ ┐＿＿
+      └┘   ▙▟         └┘   ▙▟             └ ▟   
+Initial test           IEC compliance       AI_RAW_DATA &amp; AI_SCALE_DATA
 ↳
-       SCR      SMT              SCV     
-＿＿＿＿＿＿┌┐＿＿ ▛▜ ＿＿＿＿＿＿＿＿＿＿＿＿╓╖＿＿
-      └┘   ▙▟             ╙╜  
-Initial test           Comment update
-↳
-Initial test to release the      Comments updated &amp; 
-module following the      expanded. Empty networks 
-development stage.       added.
-Full SMTS            Full SMTS
+Initial test to release the      Comments updated &amp;    DB00801 and DB00851 added 
+module following the      UDT  variable names       and used throughout, minor 
+development stage.       standardised        name changes, comments 
+Full SMT              Full SMT            updated. Partial retest only
+
+Where:
+――――――――――――――――――――――――――――――――――――――――――――
+ SCR    Source Code Review      A visual inspection of the software to ensure it has been written  
+┌┐             to the correct standards, uses the correct structures within the
+└┘             software and is generally suitable for deployment.               
+
+ SMT Software Module Test    A full and detailed test of an individual software module in
+  ▛▜              isolation; such testing requires that all branches of the 
+  ▙▟              software are tested. 
+
+               It tests all the interfaces to the module, any data recorded or 
+               stored by the module, all error and exception handling functions 
+               and tests all timed and interrupt driven operations.
+
+ SMTp SMT partial retest      A partial repeat of some aspect of the full SMT to retest a small
+  ▛ ┐               change made to some aspect of the software. The change 
+└ ▟                must be small, specific and localised.
+
+ SCV Software Compatibility     A mechanism for verifying that no executable code software 
+╓╖    Verification          changes have been made to a module following changes to
+╙╜             comment fields.
+
+               Allows typographical errors &amp;c. to be corrected without forcing 
+               a full SMT on a module that has not functionally changed.
+――――――――――――――――――――――――――――――――――――――――――――
+
+An SCV can only be performed on a module that has at some point previously, successfully 
+completed both an SCR and SMT. Where an SCV is implemented, it replaces the requirement for 
+both the SCR and the SMT for the test iteration in question.
 ↳
                ━━━   ⬙⬙⬙⬙⬙⬙   ━━━
 ↳
 ↳
 ██████████████ █ █ █ █  END   █ █ █ █ ██████████████
-↳</Text>
+↳
+
+</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -3859,7 +3906,7 @@ Full SMTS            Full SMTS
               <MultilingualTextItem ID="2F" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>Example — Headings, lists and indented text</Text>
+                  <Text>Example — Titles, headings, lists, indented text and test paths</Text>
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>

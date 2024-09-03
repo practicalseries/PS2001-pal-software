@@ -2,24 +2,24 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2023-03-03T13:49:15.3656111Z</Created>
+    <Created>2024-09-03T16:17:04.5561184Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
         <DisplayName>Totally Integrated Automation Portal</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>TIA Portal Version Control Interface</DisplayName>
-        <DisplayVersion>V16 Update 2</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <OptionPackage>
         <DisplayName>TIA Portal Openness</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </OptionPackage>
       <Product>
         <DisplayName>STEP 7 Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
       <OptionPackage>
         <DisplayName>STEP 7 Safety</DisplayName>
@@ -27,7 +27,7 @@
       </OptionPackage>
       <Product>
         <DisplayName>WinCC Professional</DisplayName>
-        <DisplayVersion>V16 Update 3</DisplayVersion>
+        <DisplayVersion>V16</DisplayVersion>
       </Product>
     </InstalledProducts>
   </DocumentInfo>
@@ -140,7 +140,7 @@ CONTROLLER NAME:    CON100
 
 IP ADDRESS:      192.168.001.100
 ――――――――――――――――――――――――――――――――――
-TIA PROJECT NAME:    PS2001-PAL-D0017
+TIA PROJECT NAME:    PS2001-PAL-D0018
 STATUS:        DEVELOPMENT
 ――――――――――――――――――――――――――――――――――
 PROTECTION:     To minimise the risk of inadvertent modification to 
@@ -264,12 +264,24 @@ COMPLETED MODULES
  ――――――――――――――――――――-―-- STATIC DATA       ― DYNAMIC  DAT A   ―
  BLOCK     NAME         REVISION    UDT/DB    REVISION  UDT/DB    REVISION  
  ――――――――――――――――――――――――――――――――――――――――――
+ DB00801 St_ConstAiRawData  001.000   UT 00801   001.000       None
+                 2024-05-16   DB00801   001.000       None
+ ――――――――――――――――――――――――――――――――――――――――――
+ DB00802 St_ConstAqRawData    001.000   UT 00802   001.000       None
+                 2024-05-17   DB00802   001.000       None
+ ――――――――――――――――――――――――――――――――――――――――――
+ DB00851 St_ConstAiScaleData  001.000   UT 00851   001.000       None
+                 2024-05-16   DB00851   001.000       None
+ ――――――――――――――――――――――――――――――――――――――――――
+ DB00851 St_ConstAqScaleData    001.000   UT 00852   001.000       None
+                 2024-05-17   DB00852   001.000       None
+ ――――――――――――――――――――――――――――――――――――――――――
  FC01001 StdSysGlobalData      002.000   None           UT 21000   002.000
                  2022-04-16                  UT 21001   002.000
                                    DB21001   002.000
  ――――――――――――――――――――――――――――――――――――――――――
- FC02001 StdInstAnalogRead    002.000   UT 02001   002.000    UT 22001   002.000
-                 2022-04-16   DB02001   002.000       DB22001   002.000
+ FC02001 StdInstAnalogRead    003.000   UT 02001   003.000    UT 22001   003.000
+                 2024-05-16   DB02001   003.000       DB22001   003.000
  ――――――――――――――――――――――――――――――――――――――――――
  FC11001 StdDevValveIsol      002.000   UT 11001   002.000    UT 31001   002.000
                  2022-04-16   DB11001   002.000       DB31001   002.000
@@ -280,8 +292,11 @@ COMPLETED MODULES
  FC11101 StdDevValveBi      001.000   UT 11101   001.000    UT 31101   001.000
                  2023-02-02   DB11101   001.000       DB31101   001.000
  ――――――――――――――――――――――――――――――――――――――――――
- FC18001 StdSubScaleAI      002.000   None           None 
-                 2022.04.16   None           None          
+ FC18001 StdSubScaleAI      003.000   None           None 
+                 2022.08.31   None           None          
+ ――――――――――――――――――――――――――――――――――――――――――
+ FC18002 StdSubScaleAQ       001.000   None           None 
+                 2022.09.01   None           None          
  ――――――――――――――――――――――――――――――――――――――――――
  FC18151 StdSubTimeEventRTC   002.000   None           UT 38151   002.000
                  2022-04-16   None           DB38151   002.000
@@ -383,7 +398,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="24">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'D0017'</ConstantValue>
+        <ConstantValue>'D0018'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="25">
@@ -396,7 +411,7 @@ Questions, corrections, constructive criticism and complaints (polite ones) are 
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>String</ConstantType>
-        <ConstantValue>'2023.03.03'</ConstantValue>
+        <ConstantValue>'2023.09.03'</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="GlobalVariable" UId="27">
@@ -510,6 +525,12 @@ The MIT licence is reproduced in full in the last network of this software modul
  ———————————————————————————————————————————
  DATE       COMMIT TAG     AUTHOR        REASON FOR MODIFICATION
  ———————————————————————————————————————————
+ 2024.09.03    D0018      M. Gledhill      FC02001 — RELEASED FOR USE
+                           FC18001 — RELEASED FOR USE
+                           FC18002 — RELEASED FOR USE
+                           DB00801, DB00802, DC00851 and
+                           DB00852 all released for use
+
  2023.03.03    D0017      M. Gledhill      FC19511 — RELEASED FOR USE
 
  2023.02.02    D0016      M. Gledhill      FC11101 — RELEASED FOR USE

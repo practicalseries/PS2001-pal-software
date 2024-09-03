@@ -6,7 +6,10 @@ These case notes are intended as a brief points list of current and upcoming ite
 
 It is written in the form of an engineering log book in reverse chronological order (most recent at the top). I know that GitHub provides similar facilities: issues, milestones, actions &c. all of which have their uses. I just wanted something that was a bit more free-flowing and less official. I also wanted something that I could keep in the main repository (on my PC) rather than something that I could only access via GitHub.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> D0017A-FC18002
 This Case Notes file was created on May 8th, 2024.
 
 Michael Gledhill
@@ -15,6 +18,7 @@ Chester &mdash; May 2024
 <hr />
 <br />
 
+<<<<<<< HEAD
 ## 0005 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--07--13-00B050.svg">
 
 | Branch             | Associated Commits
@@ -113,6 +117,8 @@ _It leads to some problems though:_
 <br />
 
 
+=======
+>>>>>>> D0017A-FC18002
 ## 0002 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--06--02-00B050.svg">
 
 1. Add enumerated "STATUS" variable (reflecting opened, closing, starting &c.) to all device types to allow GraphicIO objects to interact better
@@ -120,7 +126,11 @@ _It leads to some problems though:_
 <br />
 
 
+<<<<<<< HEAD
 ## 0001 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--05--11--CLOSED-808080.svg">
+=======
+## 0001 &mdash; ENGINEER'S LOG &emsp;&emsp; &emsp;&emsp; <img height="25px" src="https://img.shields.io/badge/Date-2024--05--11-00B050.svg">
+>>>>>>> D0017A-FC18002
 
 | Branch             | Associated Commits
 | ------------------ | -----------------------------------------------------
@@ -133,6 +143,19 @@ _It leads to some problems though:_
 - [x] UT/DB00800 to be renamed UT/DB00801 (inline with analog input and output subroutines)
 - [x] Write/test runtime AI parameterisation using DB00801 and update SMDS with example code
 - [x] UT/DB00851 (SCALE_VALUE) structure to be developed, common values to be added
+<<<<<<< HEAD
 - [x] Update FC02001 (analog instrument read/scale) with DB00801/DB20801 interface
+=======
+- [ ] Update FC18001 (AI read subroutine) with DB00801 interface
+- [ ] Retest/reissue FC18001
+- [x] Update FC02001 (analog instrument read/scale) with DB00801/DB20801 interface
+- [x] Retest/reissue FC02001
+
+
+<br />
+
+### Outstanding items
+- [ ] FC18002 (Analog output write) create and build
+>>>>>>> D0017A-FC18002
 
 <hr />

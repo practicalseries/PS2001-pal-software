@@ -1,4 +1,4 @@
-# PracticalSeries Automation Library &mdash; PAL <img height="25px" src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-badge.svg?bxno=d0017">
+# PracticalSeries Automation Library &mdash; PAL <img height="25px" src="https://img.shields.io/badge/Dev-D0017-000000.svg">
 
 <br />
 
@@ -23,7 +23,7 @@
 <table>
     <tr>
         <td><h1>LATEST SOFTWARE &mdash; TIA PORTAL DOWNLOAD </h1>
-        <h2>LATEST RELEASED SOFTWARE VERSION: <sub><img height="35px" src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-badge.svg?bxno=d0018"></sub></h2></td>
+        <h2>LATEST RELEASED SOFTWARE VERSION: <sub><img height="35px" src="https://img.shields.io/badge/Dev-D0018-000000.svg"></sub></h2></td>
     </tr>
     <tr>
         <td align="left"> 
@@ -138,7 +138,7 @@ The PAL contains fully deployable software that has been developed by the author
 
 This software is suitable for controlling and automating most industrial applications (typical process applications). It is easy to use and configure, but does have a degree of practical complexity appropriate for the environments within which it is employed. It is heavily configurable, has various operating modes and is suitable for a multitude of industrial applications.
 
-<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/warning.svg?bxno=d0017">
+<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/warning.svg">
 
 <br />
 
@@ -152,12 +152,10 @@ The current revision status of the master branch and any development branches is
 
 ## 2.1.&emsp;&emsp;Branch revision status
 
-| Branch             | Revision                               | Status
-| ------------------ | -------------------------------------- | -----------------------------
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-name.svg?bxno=d0017">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-badge.svg?bxno=d0017"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-text.svg?bxno=d0017">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d1-name.svg?bxno=d0017">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d1-badge.svg?bxno=d0017"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d1-text.svg?bxno=d0017">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d2-name.svg?bxno=d0017">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d2-badge.svg?bxno=d0017"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d2-text.svg?bxno=d0017">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d3-name.svg?bxno=d0017">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d3-badge.svg?bxno=d0017"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/d3-text.svg?bxno=d0017">
+| Branch             | Revision                                                      | Status
+| ------------------ | ------------------------------------------------------------- | -----------------------------
+| **master**         | <img src="https://img.shields.io/badge/Dev-D0018-000000.svg"> | FC02001, FC18001, FC18002 - Released for use
+
 
 The full workflow for the project is shown in the [Software Control](#5--software-control) section of this document.
 
@@ -175,19 +173,24 @@ The full workflow for the project is shown in the [Software Control](#5--softwar
 |D0009A-FC19512 |StdDebugInst2Order                  |Released for use                    |
 |D0010A-UNIFY   |All blocks - standardisation        |All blocks re-release at R002.000   |
 |D0014A-FC11011 |StdDevValve3Way                     |Released for use                    |
-|D0014A-FC11101 |StdDevValveBi                       |Released for use                    |
+|D0017A-FC18002 |Analog read/write blocks updated    |FC02001, FC18001 and fc18002 Released for use                    |
 <br />
 
 ## 2.3.&emsp;&emsp;Module Release Status
 
 |Block     |Name                   |Revision    |Date        |
 |----------|-----------------------| -----------| -----------|
+|DB00801   |St_ConstAiRawData      |001.000     |2024-05-16  |
+|DB00802   |St_ConstAqRawData      |001.000     |2024-05-17  |
+|DB00851   |St_ConstAiScaleData    |001.000     |2024-05-16  |
+|DB00852   |St_ConstAqScaleData    |001.000     |2024-05-17  |
 |FC01001   |StdSysGlobalData       |002.000     |2022-04-16  |
-|FC02001   |StdInstAnalogRead      |002.000     |2022-04-16  |
+|FC02001   |StdInstAnalogRead      |003.000     |2024-05-16  |
 |FC11001   |StdDevValveIsol        |002.000     |2022-04-16  |
 |FC11011   |StdDevValve3Way        |001.000     |2022-06-11  |
 |FC11101   |StdDevValveBi          |001.000     |2023-02-02  |
-|FC18001   |StdSubScaleAI          |002.000     |2022-04-16  |
+|FC18001   |StdSubScaleAI          |003.000     |2024-08-31  |
+|FC18002   |StdSubScaleAQ          |001.000     |2024-09-03  |
 |FC18151   |StdSubTimeEventRTC     |002.000     |2022-04-16  |
 |FC19512   |StdDebugInst2Order     |002.000     |2022-04-16  |
 |FC61000   |DocGenExample          |002.000     |2022-04-16  |         
@@ -322,7 +325,7 @@ The full, historic workflow for the project is shown below:
 
 The workflow diagram shows the current state of the repository and identifies all development branches (both past and present) as well as the main ```master``` branch. The workflow diagram(s) lists all the commit points within the repository and the tag identifiers given to each.
 
-<img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/01-workflow/wf-001p.svg?bxno=d0017">
+<img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/01-workflow/wf-001p.svg?bxno=d0017A-000-105">
 <p align="center"><sup>Workflow diagram</sup></p>
 
 
@@ -351,7 +354,7 @@ Generally, a development branch will contain all the things associated with that
 
 When the module development is complete and tested, it will be merged back to the ```master``` branch, the merge point will be given a five-character tag):
 
-<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-05-01.svg?bxno=d0017">
+<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-05-01.svg">
 <p align="center"><sup>Fig 05-01 &mdash; A development branch</sup></p>
 
 ### 5.2.1&emsp;&emsp; Development branch names
@@ -373,7 +376,7 @@ The remainder of the branch name refers to the object being developed; these are
 
 This arrangement can be seen below:
 
-<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-05-02.svg?bxno=d0017">
+<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-05-02.svg">
 <p align="center"><sup>Fig 05-02 &mdash; Multiple development branches</sup></p>
 
 <br />
@@ -409,7 +412,7 @@ To use the Workspace version of the software, do the following:
 4. Click the configure **workspace** button (point 1 below):
 
 <p align="center">
-    <img width="600px" src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-06-01.png?bxno=d0017">
+    <img width="600px" src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-06-01.png">
 </p>
 
 5. In the dialogue box enter the location of the folder you want to use in the **Workspace path** field (click the three dots to navigate, or create a folder). Leave the **version control add-in** field blank
@@ -417,7 +420,7 @@ To use the Workspace version of the software, do the following:
 6. In this repository, navigate to the latest commit on the ```master``` branch (this will be the default location when you go to the repository page), download the ```CON100``` folder (if its zipped, unzip it and paste the contents into the folder you allocated as the Workspace, it will look like this:
 
 <p align="center">
-    <img width="600px" src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-06-02.png?bxno=d0017">
+    <img width="600px" src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/fig-06-02.png">
 </p>
 
 7. In the Workspace in TIA Portal, copy the ```CON100``` folder from the right-hand side to the left-hand side to update the project
@@ -515,7 +518,7 @@ Bear in mind this is proper industrial software and has a degree of practical co
 
 One final point, this is complicated software suitable for a multitude of industrial applications, it is heavily configurable and has lots of operating modes. 
 
-<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/warning.svg?bxno=d0017">
+<img src="https://practicalseries.com/2001-pal/31-git/01-pages/00-00-index/02-images/warning.svg">
 
 To avoid any confusion *(and, if I’m being honest, to avoid any liability)* I’m making this software available under the MIT Open Source licence. The MIT licence is a *“permissive”* licence; it is what most people think of when they think about open-source software. The licence is easy to comply with; essentially, you or your organisation need only reproduce the MIT licence and copyright notice, when using the code. Otherwise, you may do as you wish with the code, including modifying it, adding it to your software or just selling it. You must however, include the copyright notice.
 
