@@ -325,7 +325,7 @@ The full, historic workflow for the project is shown below:
 
 The workflow diagram shows the current state of the repository and identifies all development branches (both past and present) as well as the main ```master``` branch. The workflow diagram(s) lists all the commit points within the repository and the tag identifiers given to each.
 
-<img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/01-workflow/wf-001p.svg?bxno=d00185">
+<img src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/01-workflow/wf-001p.svg?bxno=d0018">
 <p align="center"><sup>Workflow diagram</sup></p>
 
 
