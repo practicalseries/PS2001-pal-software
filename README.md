@@ -45,7 +45,6 @@ All the associated documentation is available to download here:
 
 
 
-
 <table>
     <tr>
         <td colspan="2"><h1>Contents</h1></td>
@@ -89,6 +88,9 @@ All the associated documentation is available to download here:
     </tr>
 </table> 
 
+<br />
+
+**Additional documentation is available in the Wiki for this repository: [PAL Software Wiki](../../wiki)**
  
 
 <br />
